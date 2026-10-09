@@ -94,7 +94,11 @@ def buscar_produto_ia(nome: str) -> dict | None:
     if not chave:
         return None
 
-    cliente = anthropic.Anthropic(api_key=chave)
+    headers = {}
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    if workspace:
+        headers["anthropic-workspace-id"] = workspace
+    cliente = anthropic.Anthropic(api_key=chave, default_headers=headers)
 
     try:
         resposta = cliente.messages.create(

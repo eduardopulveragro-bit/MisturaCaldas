@@ -94,7 +94,11 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     if not chave:
         raise EnvironmentError("ANTHROPIC_API_KEY não definida. Configure o arquivo .env")
 
-    cliente = anthropic.Anthropic(api_key=chave)
+    headers = {}
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    if workspace:
+        headers["anthropic-workspace-id"] = workspace
+    cliente = anthropic.Anthropic(api_key=chave, default_headers=headers)
     inicio = datetime.now()
 
     resposta = cliente.messages.create(
