@@ -67,8 +67,6 @@ def processar():
                 "dose": it.get("dose", "—"),
                 "unidade": it.get("unidade", "—"),
                 "base": it.get("base", "—"),
-                "pendente": it.get("pendente", False),
-                "alerta": it.get("alerta_pendente", ""),
                 "alerta_prediluicao": it.get("alerta_prediluicao", ""),
                 "total_tanque": it.get("total_tanque"),
                 "total_unidade": it.get("total_unidade", ""),

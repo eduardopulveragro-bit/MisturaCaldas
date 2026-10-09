@@ -41,11 +41,8 @@
     table.ordem th { background: #1A237E; color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
     table.ordem td { padding: 8px 10px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
     table.ordem tr:nth-child(even) { background: #f5f5f5; }
-    table.ordem tr.pendente { background: #fff3e0; }
-    table.ordem tr.pendente td { color: #E65100; }
-    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
-    .tag-ok { background: #e8f5e9; color: #2e7d32; }
-    .tag-pendente { background: #fff3e0; color: #e65100; }
+    table.ordem tr.desconhecido { background: #fff3e0; }
+    table.ordem tr.desconhecido td { color: #E65100; }
     .prediluicao { display: block; font-size: 11px; color: #1565C0; font-style: italic; margin-top: 3px; }
     .alertas-box { background: #fce4ec; border-left: 4px solid #c62828; padding: 10px 16px; margin-top: 12px; border-radius: 4px; }
     .alertas-box p { font-size: 13px; color: #c62828; margin: 4px 0; }
@@ -95,7 +92,6 @@
             <th>Produto</th>
             <th>Formulacao</th>
             <th>Dose</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody id="tabela-corpo"></tbody>
@@ -147,16 +143,13 @@
 
         dados.ordem.forEach((item, i) => {
           const tr = document.createElement('tr');
-          if (item.pendente) tr.className = 'pendente';
+          const formUpper = (item.formulacao || '').toUpperCase();
+          if (formUpper === 'DESCONHECIDA' || formUpper === '—') tr.className = 'desconhecido';
 
           let doseStr = item.dose + ' ' + item.unidade + '/' + item.base;
           if (temTotais && item.total_tanque) {
             doseStr += ' = <strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>';
           }
-
-          const statusTag = item.pendente
-            ? '<span class="tag tag-pendente" title="' + (item.alerta || '') + '">pendente</span>'
-            : '<span class="tag tag-ok">ok</span>';
 
           let produtoHtml = '<strong>' + item.produto + '</strong>';
           if (item.alerta_prediluicao) {
@@ -166,9 +159,8 @@
           tr.innerHTML =
             '<td>' + (i + 1) + '</td>' +
             '<td>' + produtoHtml + '</td>' +
-            '<td>' + item.formulacao + '</td>' +
-            '<td>' + doseStr + '</td>' +
-            '<td>' + statusTag + '</td>';
+            '<td>' + formUpper + '</td>' +
+            '<td>' + doseStr + '</td>';
           tabelaCorpo.appendChild(tr);
         });
 

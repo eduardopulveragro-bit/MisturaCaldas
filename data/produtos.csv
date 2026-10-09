@@ -18,7 +18,7 @@ Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,SL,2,bula_fabrica
 Fox Xpro,fox x pro,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08)
 Mancozeb,Dithane|Manzate|Mancozeb Nortox,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozeb
-"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),2,4-D
+"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),2,4-D
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
 Heat,Heat 70 WG|Saflufenacil,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
 Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
@@ -26,7 +26,7 @@ Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina,,EC,11,análise ordem agrônomo 
 Dessek,,,SL,2,condicionador de água — pendente confirmação,pendente (2026-10-08)
 Triclon,Triclopyr|Triclon EC,,EC,11,UPL — confirmado pelo consultor,pendente (2026-10-08)
 Insectrin,,,EC,11,piretroide — pendente confirmação formulação,pendente (2026-10-08)
-Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
+Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
 Bivack,Bivak|Bivack EC,,EC,11,inseticida EC — pendente confirmação,pendente (2026-10-08)
 Terrador,Terrador 339 SC|Tiafenacil,,SC,8,bula SC 339g/L tiafenacil — Ouro Fino/FarmHannong,pendente (2026-10-08)
 Glufosinato,Glufusinato|Glufosinato de amônio|Finale|Liberty|Trusinate|Glufour|Glufosinate Wood,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
@@ -69,3 +69,4 @@ Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Gli
 Xeque Mate SG,Glifumax|Glifosato SG,,SG,3,herbicida SG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Atrazina WG,Gesaprim|Gesaprim GrDa|Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueo WG|Atrast 900 WG|Atrazina 900 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,,EC,11,graminicida EC — pesquisa MAPA,pendente (2026-10-09),haloxifop
+Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
