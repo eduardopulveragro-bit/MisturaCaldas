@@ -1,0 +1,31 @@
+{
+  "nome": "Fazenda Exemplo",
+  "grupo_whatsapp": "",
+  "maquinas": [
+    {
+      "nome": "Uniport 3030",
+      "modelo": "Jacto Uniport 3030",
+      "volume_tanque_L": 3000,
+      "faixa_m": 17,
+      "velocidade_km_h": 18
+    }
+  ],
+  "pontas": [
+    {
+      "modelo": "TT110015",
+      "pressao_bar": 2.0,
+      "vazao_L_min": 0.80,
+      "tipo_gota": "media"
+    },
+    {
+      "modelo": "Leque HI 35",
+      "pressao_bar": 2.5,
+      "vazao_L_min": 0.90,
+      "tipo_gota": "fina"
+    }
+  ],
+  "talhoes": [
+    {"nome": "Talhão 1", "area_ha": 50},
+    {"nome": "Talhão 2", "area_ha": 35}
+  ]
+}

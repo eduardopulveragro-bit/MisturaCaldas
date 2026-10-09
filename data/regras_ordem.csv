@@ -1,0 +1,21 @@
+posicao,codigo,descricao,grupo
+1,AGUA_INICIAL,Encher o tanque com 70% de água,ÁGUA
+2,ADJUV_CORRETIVO,"Adjuvantes Corretivos/Condicionadores de Água (pH, quelatizantes)",ESPECIAIS
+3,SG,Granulado Solúvel,SÓLIDOS
+4,SP,Pó Solúvel,SÓLIDOS
+5,WP,Pó Molhável,SÓLIDOS
+6,WG,Granulado Dispersível,SÓLIDOS
+7,CS,Suspensão de Encapsulado,SUSPENSÕES
+8,SC,Suspensão Concentrada,SUSPENSÕES
+9,OD,Dispersão de Óleo/Suspensão Concentrada em Óleo,SUSPENSÕES
+10,SE,Suspo-Emulsão,INTERMEDIÁRIO
+11,EC,Concentrado Emulsionável,EMULSÕES
+12,ADJUV_OLEO,Adjuvantes em Óleo,EMULSÕES
+13,EO,Emulsão de Água em Óleo,EMULSÕES
+14,EW,Emulsão de Óleo em Água,EMULSÕES
+15,ME,Microemulsão,EMULSÕES
+16,SL,Concentrado Solúvel,ALTA SOLUBILIDADE
+17,ADJUV_SURFACT,"Adjuvantes Surfactantes, Espalhantes, Estabilizadores",ESPECIAIS
+18,FERT_FOLIAR,Fertilizantes Foliares,ESPECIAIS
+19,ADJUV_ESPUMA,Adjuvantes Redutores de Espuma,ESPECIAIS
+20,AGUA_FINAL,Terminar de encher o tanque com água,ÁGUA

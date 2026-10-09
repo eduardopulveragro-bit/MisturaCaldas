@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordem de Mistura na Calda</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+    header { background: #1A237E; color: white; padding: 18px 24px; }
+    header h1 { font-size: 20px; font-weight: 600; }
+    header p { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+    .aviso-aprovacao {
+      background: #fff3e0; border-left: 4px solid #E65100;
+      padding: 10px 16px; margin: 16px 24px 0;
+      font-size: 13px; color: #bf360c; font-weight: 600;
+    }
+    main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #1A237E; }
+    textarea { width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px 12px; font-size: 14px; height: 160px; resize: vertical; font-family: monospace; }
+    textarea:focus { outline: none; border-color: #1A237E; box-shadow: 0 0 0 2px rgba(26,35,126,0.15); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #1A237E; color: white; border: none; border-radius: 6px;
+      padding: 12px 28px; font-size: 15px; font-weight: 600; cursor: pointer;
+      margin-top: 16px;
+    }
+    .btn:hover { background: #283593; }
+    .btn:disabled { background: #9e9e9e; cursor: not-allowed; }
+    #status { margin-top: 14px; font-size: 14px; min-height: 20px; }
+    .erro { color: #C62828; font-weight: 600; }
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .exemplo { font-size: 12px; color: #666; margin-top: 8px; background: #f8f8f8; padding: 10px; border-radius: 4px; font-family: monospace; line-height: 1.6; }
+
+    #resultado { display: none; }
+    #resultado h2 { font-size: 16px; color: #1A237E; margin-bottom: 12px; }
+    .operacao-info { font-size: 13px; color: #555; margin-bottom: 12px; font-style: italic; }
+    table.ordem { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.ordem th { background: #1A237E; color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
+    table.ordem td { padding: 8px 10px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+    table.ordem tr:nth-child(even) { background: #f5f5f5; }
+    table.ordem tr.pendente { background: #fff3e0; }
+    table.ordem tr.pendente td { color: #E65100; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+    .tag-ok { background: #e8f5e9; color: #2e7d32; }
+    .tag-pendente { background: #fff3e0; color: #e65100; }
+    .prediluicao { display: block; font-size: 11px; color: #1565C0; font-style: italic; margin-top: 3px; }
+    .alertas-box { background: #fce4ec; border-left: 4px solid #c62828; padding: 10px 16px; margin-top: 12px; border-radius: 4px; }
+    .alertas-box p { font-size: 13px; color: #c62828; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Assistente de Ordem de Mistura na Calda</h1>
+    <p>Cole a mensagem do aplicador e receba a ordem corrigida.</p>
+  </header>
+
+  <div class="aviso-aprovacao">
+    SUGERIDO — Nenhuma recomendacao tem validade tecnica sem aprovacao do Responsavel Tecnico.
+  </div>
+
+  <main>
+    <div class="card">
+      <form id="form">
+        <div>
+          <label for="mensagem">Ordem de mistura (cole a mensagem do aplicador)</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Cole aqui a mensagem enviada pelo aplicador..." required></textarea>
+          <div class="exemplo">
+            Exemplo:<br>
+            Roundup 2 L/ha<br>
+            Engeo Pleno S 200 mL/ha<br>
+            Score 0,5 L/ha<br>
+            Nimbus 0,5 L/ha<br>
+            Tanque para 50 ha | Vazao 80 L/ha
+          </div>
+        </div>
+
+        <button type="submit" class="btn" id="btn">
+          <span id="btn-text">Gerar Ordem</span>
+        </button>
+
+        <div id="status"></div>
+      </form>
+    </div>
+
+    <div id="resultado" class="card">
+      <h2>ORDEM DE ADICAO NA CALDA</h2>
+      <div id="operacao-info" class="operacao-info"></div>
+      <table class="ordem">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Produto</th>
+            <th>Formulacao</th>
+            <th>Dose</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+      <div id="alertas-container"></div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('form');
+    const btn = document.getElementById('btn');
+    const btnText = document.getElementById('btn-text');
+    const status = document.getElementById('status');
+    const resultado = document.getElementById('resultado');
+    const tabelaCorpo = document.getElementById('tabela-corpo');
+    const alertasContainer = document.getElementById('alertas-container');
+    const operacaoInfo = document.getElementById('operacao-info');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btnText.innerHTML = '<span class="spinner"></span> Processando...';
+      status.textContent = '';
+      resultado.style.display = 'none';
+
+      const fd = new FormData(form);
+      try {
+        const resp = await fetch('/processar', { method: 'POST', body: fd });
+        const dados = await resp.json();
+
+        if (!resp.ok) {
+          status.innerHTML = '<span class="erro">Erro: ' + (dados.erro || 'falha desconhecida') + '</span>';
+          return;
+        }
+
+        // Operacao info
+        operacaoInfo.textContent = '';
+        if (dados.operacao) {
+          const partes = [];
+          if (dados.operacao.area_tanque_ha) partes.push('Tanque: ' + dados.operacao.area_tanque_ha + ' ha');
+          if (dados.operacao.vazao_L_ha) partes.push('Vazao: ' + dados.operacao.vazao_L_ha + ' L/ha');
+          if (dados.operacao.ponta) partes.push('Ponta: ' + dados.operacao.ponta);
+          if (partes.length) operacaoInfo.textContent = partes.join(' | ');
+        }
+
+        // Montar tabela
+        tabelaCorpo.innerHTML = '';
+        const temTotais = dados.ordem.some(item => item.total_tanque);
+
+        dados.ordem.forEach((item, i) => {
+          const tr = document.createElement('tr');
+          if (item.pendente) tr.className = 'pendente';
+
+          let doseStr = item.dose + ' ' + item.unidade + '/' + item.base;
+          if (temTotais && item.total_tanque) {
+            doseStr += ' = <strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>';
+          }
+
+          const statusTag = item.pendente
+            ? '<span class="tag tag-pendente" title="' + (item.alerta || '') + '">pendente</span>'
+            : '<span class="tag tag-ok">ok</span>';
+
+          let produtoHtml = '<strong>' + item.produto + '</strong>';
+          if (item.alerta_prediluicao) {
+            produtoHtml += '<span class="prediluicao">&gt;&gt; ' + item.alerta_prediluicao + '</span>';
+          }
+
+          tr.innerHTML =
+            '<td>' + (i + 1) + '</td>' +
+            '<td>' + produtoHtml + '</td>' +
+            '<td>' + item.formulacao + '</td>' +
+            '<td>' + doseStr + '</td>' +
+            '<td>' + statusTag + '</td>';
+          tabelaCorpo.appendChild(tr);
+        });
+
+        // Alertas
+        alertasContainer.innerHTML = '';
+        if (dados.alertas && dados.alertas.length > 0) {
+          let html = '<div class="alertas-box"><p><strong>ALERTAS:</strong></p>';
+          dados.alertas.forEach(a => {
+            html += '<p>[' + (a.tipo || '').toUpperCase() + '] ' + a.descricao + (a.item ? ' — ' + a.item : '') + '</p>';
+          });
+          html += '</div>';
+          alertasContainer.innerHTML = html;
+        }
+
+        resultado.style.display = 'block';
+        resultado.scrollIntoView({ behavior: 'smooth' });
+
+      } catch (err) {
+        status.innerHTML = '<span class="erro">Erro de conexao: ' + err.message + '</span>';
+      } finally {
+        btn.disabled = false;
+        btnText.textContent = 'Gerar Ordem';
+      }
+    });
+  </script>
+</body>
+</html>
