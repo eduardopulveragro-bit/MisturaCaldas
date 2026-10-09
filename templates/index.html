@@ -40,12 +40,7 @@
     table.ordem { width: 100%; border-collapse: collapse; font-size: 13px; }
     table.ordem th { background: #1A237E; color: white; padding: 8px 10px; text-align: left; font-weight: 600; }
     table.ordem td { padding: 8px 10px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
-    table.ordem tr:nth-child(even) { background: #f5f5f5; }
-    table.ordem tr.desconhecido { background: #fff3e0; }
-    table.ordem tr.desconhecido td { color: #E65100; }
     .prediluicao { display: block; font-size: 11px; color: #1565C0; font-style: italic; margin-top: 3px; }
-    .alertas-box { background: #fce4ec; border-left: 4px solid #c62828; padding: 10px 16px; margin-top: 12px; border-radius: 4px; }
-    .alertas-box p { font-size: 13px; color: #c62828; margin: 4px 0; }
   </style>
 </head>
 <body>
@@ -96,7 +91,6 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
-      <div id="alertas-container"></div>
     </div>
   </main>
 
@@ -107,7 +101,6 @@
     const status = document.getElementById('status');
     const resultado = document.getElementById('resultado');
     const tabelaCorpo = document.getElementById('tabela-corpo');
-    const alertasContainer = document.getElementById('alertas-container');
     const operacaoInfo = document.getElementById('operacao-info');
 
     form.addEventListener('submit', async (e) => {
@@ -144,7 +137,6 @@
         dados.ordem.forEach((item, i) => {
           const tr = document.createElement('tr');
           const formUpper = (item.formulacao || '').toUpperCase();
-          if (formUpper === 'DESCONHECIDA' || formUpper === '—') tr.className = 'desconhecido';
 
           let doseStr = item.dose + ' ' + item.unidade + '/' + item.base;
           if (temTotais && item.total_tanque) {
@@ -156,24 +148,16 @@
             produtoHtml += '<span class="prediluicao">&gt;&gt; ' + item.alerta_prediluicao + '</span>';
           }
 
+          const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
+
           tr.innerHTML =
             '<td>' + (i + 1) + '</td>' +
             '<td>' + produtoHtml + '</td>' +
-            '<td>' + formUpper + '</td>' +
+            '<td>' + formDisplay + '</td>' +
             '<td>' + doseStr + '</td>';
           tabelaCorpo.appendChild(tr);
         });
 
-        // Alertas
-        alertasContainer.innerHTML = '';
-        if (dados.alertas && dados.alertas.length > 0) {
-          let html = '<div class="alertas-box"><p><strong>ALERTAS:</strong></p>';
-          dados.alertas.forEach(a => {
-            html += '<p>[' + (a.tipo || '').toUpperCase() + '] ' + a.descricao + (a.item ? ' — ' + a.item : '') + '</p>';
-          });
-          html += '</div>';
-          alertasContainer.innerHTML = html;
-        }
 
         resultado.style.display = 'block';
         resultado.scrollIntoView({ behavior: 'smooth' });
