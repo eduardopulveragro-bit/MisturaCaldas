@@ -7,14 +7,14 @@ Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|
 Ally,Ally 60 WG|Metsulfuron,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10
 Priori Xtra,Priori|Priori Top,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10
 Nomolt 150,Nomolt|Teflubenzuron,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10
-Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,ÓLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
-Agral,Agral 90|Espalhante adesivo Agral,BR-010-EXEMPLO,SURF,17,bula_fabricante,2024-01-10
+Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,ADJ,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
+Agral,Agral 90|Espalhante adesivo Agral,BR-010-EXEMPLO,ADJ,17,bula_fabricante,2024-01-10
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10
 Karate Zeon,Karate|Lambda-cialotrina|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
 Galil SC,Galil|Azoxistrobina+Benzovindiflupir,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
-Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,COND,2,bula_fabricante,2024-01-10
-Óleo de laranja,oleo da laranja,,ÓLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08)
+Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJ,2,bula_fabricante,2024-01-10
+Óleo de laranja,oleo da laranja,,ADJ,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08)
 Fox Xpro,fox x pro,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08)
 Mancozeb,Dithane|Manzate|Mancozeb Nortox,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozeb
@@ -22,8 +22,8 @@ Mancozeb,Dithane|Manzate|Mancozeb Nortox,,WP,5,consulta_ia — pendente confirma
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
 Heat,Heat 70 WG|Saflufenacil,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
 Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
-Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,ÓLEO,12,adjuvante óleo — confirmado pelo consultor,2026-10-09
-Dessek,,,COND,2,adjuvante condicionador de calda,2026-10-09
+Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,ADJ,12,adjuvante óleo — confirmado pelo consultor,2026-10-09
+Dessek,,,ADJ,2,adjuvante condicionador de calda,2026-10-09
 Triclon,Triclopyr|Triclon EC,,EC,11,UPL — confirmado pelo consultor,pendente (2026-10-08)
 Insectrin,,,EC,11,piretroide — pendente confirmação formulação,pendente (2026-10-08)
 Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
@@ -31,29 +31,29 @@ Bivack,Bivak|Bivack EC,,EC,11,inseticida EC — pendente confirmação,pendente 
 Terrador,Terrador 339 SC|Tiafenacil,,SC,8,bula SC 339g/L tiafenacil — Ouro Fino/FarmHannong,pendente (2026-10-08)
 Glufosinato,Glufusinato|Glufosinato de amônio|Finale|Liberty|Trusinate|Glufour|Glufosinate Wood,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
-Li 700,Li700|LI 700|LI-700,,COND,2,adjuvante condicionador de calda,2026-10-09
+Li 700,Li700|LI 700|LI-700,,ADJ,2,adjuvante condicionador de calda,2026-10-09
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,pendente (2026-10-08)
 Aclamado,Aclamado BR|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
 Methos,Methos 960 TM|S-metolacloro,,EC,11,herbicida EC Proventis — bula confirmada,pendente (2026-10-08)
-Ativon,Ativon Adjuvante,,COND,2,adjuvante condicionador de calda,2026-10-09
+Ativon,Ativon Adjuvante,,ADJ,2,adjuvante condicionador de calda,2026-10-09
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,pendente (2026-10-08),cletodim
 Diflumax,Diflumax 240 SC|Diflubenzurom,,SC,8,inseticida SC Helm — bula confirmada,pendente (2026-10-08)
-Ademir Wet,Ademir,,COND,2,adjuvante condicionador de calda,2026-10-09
+Ademir Wet,Ademir,,ADJ,2,adjuvante condicionador de calda,2026-10-09
 Soberan,Soberam|Soberan 420 SC|Tembotriona,,SC,8,herbicida SC Bayer — bula confirmada,pendente (2026-10-08)
 Kasumin,Kassumin|Kasumaiz|Casugamicina,,SL,16,fungicida/bactericida SL UPL — bula confirmada,pendente (2026-10-08)
 Belt,Belt 480 SC|Flubendiamida,,SC,8,inseticida SC Bayer — bula confirmada,pendente (2026-10-08),flubendiamida
-Multikel Zinco,Multikel Zn|Multikel,,FOLIAR,18,fertilizante foliar zinco,2026-10-09
-Biocomoni,BioCoMoNi|Bio Co Mo Ni,,FOLIAR,18,fertilizante foliar Co+Mo+Ni,2026-10-09
-Actron,,,COND,2,adjuvante condicionador de calda,2026-10-09
-Terpen,Terpen Óleo de Laranja,,ÓLEO,12,óleo de laranja — confirmado pelo consultor,2026-10-09
+Multikel Zinco,Multikel Zn|Multikel,,ADJ,18,fertilizante foliar zinco,2026-10-09
+Biocomoni,BioCoMoNi|Bio Co Mo Ni,,ADJ,18,fertilizante foliar Co+Mo+Ni,2026-10-09
+Actron,,,ADJ,2,adjuvante condicionador de calda,2026-10-09
+Terpen,Terpen Óleo de Laranja,,ADJ,12,óleo de laranja — confirmado pelo consultor,2026-10-09
 Unizeb Gold,Unizeb|Mancozeb 750 WG|Disarm|Vigold,,WG,6,fungicida WG UPL — bula confirmada,pendente (2026-10-08),mancozeb
 Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol,,SC,8,fungicida SC Syngenta — bula confirmada,pendente (2026-10-08),pydiflumetofen+difenoconazol
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,,SC,8,inseticida SC etiprole — bula confirmada,pendente (2026-10-08)
-Intense,,,ÓLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09
+Intense,,,ADJ,12,óleo vegetal — confirmado pelo consultor,2026-10-09
 Flumioxazina,Flumioxazin|Flumioxazin 500 SC,,SC,8,herbicida SC — bula confirmada,pendente (2026-10-08)
 Flumizin,Flumyzin|Flumyzin 500 WP,,WP,5,herbicida WP — confirmado pelo consultor (dose em kg),pendente (2026-10-08)
 Diquat,Diquate|Reglone|Diquat 200 SL,,SL,16,herbicida dessecante SL — bula confirmada,pendente (2026-10-08),diquate
-Auron,,,ÓLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09
+Auron,,,ADJ,12,óleo vegetal — confirmado pelo consultor,2026-10-09
 Abamectina,Abamectin|Kraft|Epimec|Pausato|Abamectin Nortox|Abamectin CCAB|Acarigen,,EC,11,inseticida/acaricida EC — pesquisa MAPA,pendente (2026-10-09),abamectina
 Vertimec,Vertimec 84 SC|Savivo,,SC,8,inseticida SC Syngenta — pesquisa MAPA,pendente (2026-10-09),abamectina
 Teburaz,Teburaz CI|Azoxistrobina+Tebuconazol,,SC,8,fungicida SC Ouro Fino — bula confirmada,pendente (2026-10-08),azoxistrobina+tebuconazol
@@ -64,10 +64,10 @@ Primatop,Primatop SC|Atrazina+Simazina,,SC,8,herbicida SC Syngenta — bula conf
 Adengo,Adengo SC|Isoxaflutol+Tiencarbazona,,SC,8,herbicida SC Bayer — bula confirmada,pendente (2026-10-08)
 Elevore,Elevore SC|Halauxifeno,,SC,8,herbicida SC Corteva — bula confirmada,pendente (2026-10-08)
 Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda,,SC,8,inseticida Syngenta reg 0610 — bula confirmada,pendente (2026-10-08)
-Kellus Zinc,Kellus Zn|Kellus Zinco,,FOLIAR,18,fertilizante foliar zinco quelatado,2026-10-09
+Kellus Zinc,Kellus Zn|Kellus Zinco,,ADJ,18,fertilizante foliar zinco quelatado,2026-10-09
 Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Xeque Mate SG,Glifumax|Glifosato SG,,SG,3,herbicida SG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Atrazina WG,Gesaprim|Gesaprim GrDa|Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueo WG|Atrast 900 WG|Atrazina 900 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,,EC,11,graminicida EC — pesquisa MAPA,pendente (2026-10-09),haloxifop
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
-Oxyon,,,ÓLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
+Oxyon,,,ADJ,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
