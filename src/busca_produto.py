@@ -6,11 +6,8 @@ Resultado fica marcado como "pendente confirmação" até o agrônomo validar.
 import csv
 import json
 import logging
-import os
 from datetime import datetime
 from pathlib import Path
-
-import anthropic
 
 logger = logging.getLogger(__name__)
 
@@ -90,15 +87,11 @@ def buscar_produto_ia(nome: str) -> dict | None:
     Consulta a IA sobre um produto não cadastrado.
     Retorna dict com dados do produto ou None se não encontrado.
     """
-    chave = os.environ.get("ANTHROPIC_API_KEY")
-    if not chave:
+    from src.parser import _criar_cliente
+    try:
+        cliente = _criar_cliente()
+    except EnvironmentError:
         return None
-
-    headers = {}
-    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
-    if workspace:
-        headers["anthropic-workspace-id"] = workspace
-    cliente = anthropic.Anthropic(api_key=chave, default_headers=headers)
 
     try:
         resposta = cliente.messages.create(

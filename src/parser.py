@@ -11,6 +11,17 @@ import anthropic
 
 logger = logging.getLogger(__name__)
 
+def _criar_cliente() -> anthropic.Anthropic:
+    chave = os.environ.get("ANTHROPIC_API_KEY")
+    if not chave:
+        raise EnvironmentError("ANTHROPIC_API_KEY não definida")
+    headers = {}
+    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
+    if workspace:
+        headers["anthropic-workspace-id"] = workspace
+    return anthropic.Anthropic(api_key=chave, default_headers=headers)
+
+
 _SYSTEM_PROMPT = """Você é um extrator de dados de ordens de pulverização agrícola brasileira.
 
 TABELA DE ORDEM DE ADIÇÃO NA CALDA:
@@ -90,15 +101,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     Chama a API Claude para extrair itens estruturados da mensagem.
     Loga tokens e custo estimado. Lança ValueError se encontrar dados pessoais.
     """
-    chave = os.environ.get("ANTHROPIC_API_KEY")
-    if not chave:
-        raise EnvironmentError("ANTHROPIC_API_KEY não definida. Configure o arquivo .env")
-
-    headers = {}
-    workspace = os.environ.get("ANTHROPIC_WORKSPACE_ID")
-    if workspace:
-        headers["anthropic-workspace-id"] = workspace
-    cliente = anthropic.Anthropic(api_key=chave, default_headers=headers)
+    cliente = _criar_cliente()
     inicio = datetime.now()
 
     resposta = cliente.messages.create(
