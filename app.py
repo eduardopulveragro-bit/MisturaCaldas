@@ -54,6 +54,20 @@ def processar():
     itens_ordenados = ordenar_itens(itens)
 
     operacao = extrair_operacao(mensagem)
+
+    form_vazao = request.form.get("vazao", "").strip()
+    form_area = request.form.get("area", "").strip()
+    if form_vazao:
+        try:
+            operacao["vazao_L_ha"] = float(form_vazao.replace(",", "."))
+        except ValueError:
+            pass
+    if form_area:
+        try:
+            operacao["area_tanque_ha"] = float(form_area.replace(",", "."))
+        except ValueError:
+            pass
+
     area = operacao.get("area_tanque_ha")
     if area:
         calcular_totais_tanque(itens_ordenados, area)
