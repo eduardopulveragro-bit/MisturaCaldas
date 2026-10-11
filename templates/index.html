@@ -172,7 +172,7 @@
           const formUpper = (item.formulacao || '').toUpperCase();
           const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
 
-          const doseHa = (item.dose != null && item.unidade)
+          const doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
             ? item.dose + ' ' + item.unidade + '/' + item.base
             : '—';
 
