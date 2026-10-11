@@ -172,7 +172,9 @@
           const formUpper = (item.formulacao || '').toUpperCase();
           const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
 
-          const doseHa = item.dose + ' ' + item.unidade + '/' + item.base;
+          const doseHa = (item.dose != null && item.unidade)
+            ? item.dose + ' ' + item.unidade + '/' + item.base
+            : '—';
 
           let produtoHtml = '<strong>' + item.produto + '</strong>';
           if (item.alerta_prediluicao) {

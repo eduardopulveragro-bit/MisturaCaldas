@@ -16,7 +16,7 @@ Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,B
 Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10
 Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08)
 Fox Xpro,fox x pro,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
-Adjuvante (genérico),adjuvante,,,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08)
+Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08)
 Mancozeb,Dithane|Manzate|Mancozeb Nortox,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozeb
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),2,4-D
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
@@ -167,3 +167,4 @@ Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual �
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
 Curavial,Curavial WG|Sulfometurom|Sulfometurom-metilico,,WG,6,cadastro manual — herbicida WG pastagem,2026-10-09,sulfometurom-metilico
 Permit,Permit WG|Halosulfurom WG|Sempra,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
+Zethamaxx Evo,Zethamaxx|Zetamax|Zethamax|Zethamaxx evo,,ADJUVANTE,17,cadastro manual — adjuvante surfactante BASF,2026-10-10,alquil poliglicosídeo
