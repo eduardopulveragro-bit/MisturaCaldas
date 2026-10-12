@@ -253,6 +253,7 @@
       btn.disabled = true;
       btnText.innerHTML = '<span class="spinner"></span> Processando...';
       status.textContent = '';
+      status.className = '';
       resultado.style.display = 'none';
       perguntaForm.style.display = 'none';
 
@@ -266,7 +267,8 @@
         const dados = await resp.json();
 
         if (!resp.ok) {
-          status.innerHTML = '<span class="erro">Erro: ' + (dados.erro || 'falha desconhecida') + '</span>';
+          status.textContent = 'Erro: ' + (dados.erro || 'falha desconhecida');
+          status.className = 'erro';
           return;
         }
 
@@ -285,7 +287,8 @@
         }
 
       } catch (err) {
-        status.innerHTML = '<span class="erro">Erro de conexao: ' + err.message + '</span>';
+        status.textContent = 'Erro de conexao: ' + err.message;
+        status.className = 'erro';
       } finally {
         btn.disabled = false;
         btnText.textContent = 'Gerar Ordem';

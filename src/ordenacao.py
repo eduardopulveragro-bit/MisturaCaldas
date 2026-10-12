@@ -71,8 +71,8 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     Ordena itens pela posição de adição na calda.
     Prioridade:
       1) produtos.csv (cadastro confirmado)
-      2) busca automática: consulta IA, salva em produtos.csv, marca pendente
-      3) formulação informada pelo usuário (formulacoes_usuario)
+      2) formulação informada pelo usuário (formulacoes_usuario)
+      3) busca automática: consulta IA, salva em produtos.csv, marca pendente
       4) formulação extraída na mensagem
       5) posicao=999 (desconhecido)
     """
@@ -96,6 +96,21 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
             })
             continue
 
+        # Formulação informada pelo usuário via interface (antes da IA para não desperdiçar chamada)
+        form_usuario = formulacoes_usuario.get(item["produto"], "").upper()
+        if form_usuario:
+            pos_usr = _FORMULACAO_PARA_POSICAO.get(form_usuario) or _FORM_ESPECIAL_POSICAO.get(form_usuario)
+            if pos_usr:
+                resultado.append({
+                    **item,
+                    "posicao": pos_usr,
+                    "formulacao": form_usuario,
+                    "registro_mapa": "",
+                    "fonte": "formulação informada pelo usuário",
+                    "pendente": True,
+                })
+                continue
+
         # Produto não cadastrado: busca via IA e salva
         dados_ia = buscar_produto_ia(item["produto"])
         if dados_ia:
@@ -111,21 +126,6 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
                 "alerta_pendente": f"produto cadastrado automaticamente ({produto_salvo['formulacao']}) — confirmar com agrônomo",
             })
             continue
-
-        # Formulação informada pelo usuário via interface
-        form_usuario = formulacoes_usuario.get(item["produto"], "").upper()
-        if form_usuario:
-            pos_usr = _FORMULACAO_PARA_POSICAO.get(form_usuario) or _FORM_ESPECIAL_POSICAO.get(form_usuario)
-            if pos_usr:
-                resultado.append({
-                    **item,
-                    "posicao": pos_usr,
-                    "formulacao": form_usuario,
-                    "registro_mapa": "",
-                    "fonte": "formulação informada pelo usuário",
-                    "pendente": True,
-                })
-                continue
 
         # Fallback: tenta formulação extraída pela IA na mensagem original
         formulacao_ia = item.get("formulacao")
@@ -284,38 +284,34 @@ def _oleo_laranja_com_mancozeb(resultado: list[dict]) -> list[dict]:
     return resultado
 
 
+def _inserir_prediluicao(resultado, produto, oleo):
+    """Remove produto e óleo, insere ambos juntos no final dos regulares."""
+    resultado.remove(produto)
+    resultado.remove(oleo)
+    ponto = len(resultado)
+    for i, item in enumerate(resultado):
+        if item["posicao"] > 16:
+            ponto = i
+            break
+    produto["alerta_prediluicao"] = f"pré-diluir com {oleo['produto']} antes de adicionar"
+    oleo["alerta_prediluicao"] = f"pré-diluir com {produto['produto']} antes de adicionar"
+    resultado.insert(ponto, oleo)
+    resultado.insert(ponto, produto)
+    return resultado
+
+
 def _prediluir_cletodim_oleo(resultado: list[dict]) -> list[dict]:
-    """
-    Cletodim + óleo mineral devem ser pré-diluídos juntos e adicionados
-    por último entre os produtos regulares (antes de adjuvantes pos 17+).
-    """
     cletodim = None
     oleo = None
-
     for item in resultado:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("cletodim", "cletodin", "clethodim", "select", "cartago")):
             cletodim = item
         elif item["posicao"] == 12 and not any(x in nome for x in ("laranja", "terpen")):
             oleo = item
-
     if not cletodim or not oleo:
         return resultado
-
-    resultado.remove(cletodim)
-    resultado.remove(oleo)
-
-    ponto = len(resultado)
-    for i, item in enumerate(resultado):
-        if item["posicao"] > 16:
-            ponto = i
-            break
-
-    cletodim["alerta_prediluicao"] = "pré-diluir com óleo mineral antes de adicionar"
-    oleo["alerta_prediluicao"] = "pré-diluir com cletodim antes de adicionar"
-    resultado.insert(ponto, oleo)
-    resultado.insert(ponto, cletodim)
-    return resultado
+    return _inserir_prediluicao(resultado, cletodim, oleo)
 
 
 def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
@@ -329,18 +325,7 @@ def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
             oleo = item
     if not abamectina or not oleo:
         return resultado
-    resultado.remove(abamectina)
-    resultado.remove(oleo)
-    ponto = len(resultado)
-    for i, item in enumerate(resultado):
-        if item["posicao"] > 16:
-            ponto = i
-            break
-    abamectina["alerta_prediluicao"] = f"pré-diluir com {oleo['produto']} antes de adicionar"
-    oleo["alerta_prediluicao"] = f"pré-diluir com {abamectina['produto']} antes de adicionar"
-    resultado.insert(ponto, oleo)
-    resultado.insert(ponto, abamectina)
-    return resultado
+    return _inserir_prediluicao(resultado, abamectina, oleo)
 
 
 def _prediluir_haloxifop_oleo(resultado: list[dict]) -> list[dict]:
@@ -354,18 +339,7 @@ def _prediluir_haloxifop_oleo(resultado: list[dict]) -> list[dict]:
             oleo = item
     if not halox or not oleo:
         return resultado
-    resultado.remove(halox)
-    resultado.remove(oleo)
-    ponto = len(resultado)
-    for i, item in enumerate(resultado):
-        if item["posicao"] > 16:
-            ponto = i
-            break
-    halox["alerta_prediluicao"] = f"pré-diluir com {oleo['produto']} antes de adicionar"
-    oleo["alerta_prediluicao"] = f"pré-diluir com {halox['produto']} antes de adicionar"
-    resultado.insert(ponto, oleo)
-    resultado.insert(ponto, halox)
-    return resultado
+    return _inserir_prediluicao(resultado, halox, oleo)
 
 
 def _separar_glif_24d(resultado: list[dict]) -> list[dict]:

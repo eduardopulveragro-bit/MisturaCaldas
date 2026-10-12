@@ -9,6 +9,9 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
+from src.parser import _limpar_markdown, _PRECO_INPUT_POR_TOKEN, _PRECO_OUTPUT_POR_TOKEN
+from src.ordenacao import _FORMULACAO_PARA_POSICAO, _FORM_ESPECIAL_POSICAO
+
 logger = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
@@ -148,7 +151,11 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
     tokens_in = resposta.usage.input_tokens
     tokens_out = resposta.usage.output_tokens
-    logger.info("busca_produto nome='%s' tokens_in=%d tokens_out=%d", nome, tokens_in, tokens_out)
+    custo_usd = tokens_in * _PRECO_INPUT_POR_TOKEN + tokens_out * _PRECO_OUTPUT_POR_TOKEN
+    logger.info(
+        "busca_produto id=%s nome='%s' tokens_in=%d tokens_out=%d custo_usd=%.6f",
+        resposta.id, nome, tokens_in, tokens_out, custo_usd,
+    )
 
     texto = ""
     for bloco in resposta.content:
@@ -156,10 +163,7 @@ def buscar_produto_ia(nome: str) -> dict | None:
             texto = bloco.text.strip()
             break
 
-    if texto.startswith("```"):
-        linhas = texto.split("\n")
-        linhas = [l for l in linhas if not l.strip().startswith("```")]
-        texto = "\n".join(linhas).strip()
+    texto = _limpar_markdown(texto)
 
     try:
         dados = json.loads(texto)
@@ -190,10 +194,6 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
 _POSICOES_DEFENSIVO = {3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16}
 _POSICOES_ADJUVANTE = {2, 12, 17, 19}
-_FORM_POSICAO = {
-    "SG": 3, "SP": 4, "WP": 5, "WG": 6, "CS": 7, "SC": 8,
-    "OD": 9, "SE": 10, "EC": 11, "EO": 13, "EW": 14, "ME": 15, "SL": 16,
-}
 
 
 def _validar_resposta(classe: str, formulacao: str, posicao) -> bool:
@@ -208,7 +208,7 @@ def _validar_resposta(classe: str, formulacao: str, posicao) -> bool:
     if classe in defensivos:
         if posicao not in _POSICOES_DEFENSIVO:
             return False
-        if formulacao in _FORM_POSICAO and _FORM_POSICAO[formulacao] != posicao:
+        if formulacao in _FORMULACAO_PARA_POSICAO and _FORMULACAO_PARA_POSICAO[formulacao] != posicao:
             return False
     elif classe in adjuvantes:
         if posicao not in _POSICOES_ADJUVANTE:
@@ -225,15 +225,9 @@ def salvar_produto(nome_original: str, dados_ia: dict) -> dict:
     Salva produto encontrado pela IA em produtos.csv.
     Retorna o dict do produto salvo (com posicao).
     """
-    from src.ordenacao import _FORMULACAO_PARA_POSICAO
-
     formulacao = (dados_ia.get("formulacao") or "").upper()
-    posicao_ia = dados_ia.get("posicao")
 
-    if posicao_ia and isinstance(posicao_ia, int) and 1 <= posicao_ia <= 20:
-        posicao = posicao_ia
-    else:
-        posicao = _FORMULACAO_PARA_POSICAO.get(formulacao, 999)
+    posicao = _FORMULACAO_PARA_POSICAO.get(formulacao) or _FORM_ESPECIAL_POSICAO.get(formulacao) or 999
 
     _FORM_ESPECIAL = {2: "ADJUVANTE", 12: "OLEO", 17: "ADJUVANTE", 18: "FERTILIZANTE", 19: "ADJUVANTE"}
     if posicao in _FORM_ESPECIAL and formulacao not in _FORMULACAO_PARA_POSICAO:
@@ -257,6 +251,15 @@ def salvar_produto(nome_original: str, dados_ia: dict) -> dict:
 
     caminho = DATA_DIR / "produtos.csv"
     try:
+        ja_existe = False
+        with open(caminho, encoding="utf-8", newline="") as f:
+            for row in csv.DictReader(f):
+                if row["nome"].lower().strip() == nome_completo.lower().strip():
+                    ja_existe = True
+                    break
+        if ja_existe:
+            logger.info("Produto '%s' ja existe em CSV — pulando duplicata", nome_completo)
+            return produto
         with open(caminho, "a", encoding="utf-8", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=["nome", "nomes_alternativos", "registro_mapa",
                                                     "formulacao", "posicao", "fonte", "data_conferencia",

@@ -96,6 +96,15 @@ _PRECO_INPUT_POR_TOKEN = 0.80 / 1_000_000
 _PRECO_OUTPUT_POR_TOKEN = 4 / 1_000_000
 
 
+def _limpar_markdown(texto: str) -> str:
+    """Remove cercas de markdown da resposta da IA."""
+    if texto.startswith("```"):
+        linhas = texto.split("\n")
+        linhas = [l for l in linhas if not l.strip().startswith("```")]
+        texto = "\n".join(linhas).strip()
+    return texto
+
+
 def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     """
     Chama a API Claude para extrair itens estruturados da mensagem.
@@ -134,11 +143,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     if not texto:
         raise ValueError("API não retornou texto na resposta")
 
-    # Remove cercas de markdown (```json ... ```)
-    if texto.startswith("```"):
-        linhas = texto.split("\n")
-        linhas = [l for l in linhas if not l.strip().startswith("```")]
-        texto = "\n".join(linhas).strip()
+    texto = _limpar_markdown(texto)
 
     try:
         dados = json.loads(texto)
