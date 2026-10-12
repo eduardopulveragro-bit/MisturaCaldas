@@ -60,17 +60,25 @@ def _posicao_por_formulacao(formulacao: str | None) -> int | None:
     return _FORMULACAO_PARA_POSICAO.get(formulacao.strip().upper())
 
 
-def ordenar_itens(itens: list[dict]) -> list[dict]:
+_FORM_ESPECIAL_POSICAO = {
+    "OLEO": 12, "ADJUVANTE": 17, "FERTILIZANTE": 18,
+    "CONDICIONADOR": 2, "ANTIESPUMANTE": 19,
+}
+
+
+def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) -> list[dict]:
     """
     Ordena itens pela posição de adição na calda.
     Prioridade:
       1) produtos.csv (cadastro confirmado)
       2) busca automática: consulta IA, salva em produtos.csv, marca pendente
-      3) formulação extraída na mensagem
-      4) posicao=999 (desconhecido)
+      3) formulação informada pelo usuário (formulacoes_usuario)
+      4) formulação extraída na mensagem
+      5) posicao=999 (desconhecido)
     """
     from src.busca_produto import buscar_produto_ia, salvar_produto
 
+    formulacoes_usuario = formulacoes_usuario or {}
     produtos = _carregar_csv(DATA_DIR / "produtos.csv")
     resultado = []
 
@@ -103,6 +111,21 @@ def ordenar_itens(itens: list[dict]) -> list[dict]:
                 "alerta_pendente": f"produto cadastrado automaticamente ({produto_salvo['formulacao']}) — confirmar com agrônomo",
             })
             continue
+
+        # Formulação informada pelo usuário via interface
+        form_usuario = formulacoes_usuario.get(item["produto"], "").upper()
+        if form_usuario:
+            pos_usr = _FORMULACAO_PARA_POSICAO.get(form_usuario) or _FORM_ESPECIAL_POSICAO.get(form_usuario)
+            if pos_usr:
+                resultado.append({
+                    **item,
+                    "posicao": pos_usr,
+                    "formulacao": form_usuario,
+                    "registro_mapa": "",
+                    "fonte": "formulação informada pelo usuário",
+                    "pendente": True,
+                })
+                continue
 
         # Fallback: tenta formulação extraída pela IA na mensagem original
         formulacao_ia = item.get("formulacao")

@@ -1,4 +1,5 @@
 """Flask app — interface web na porta 3002."""
+import json as _json
 import logging
 import os
 from pathlib import Path
@@ -51,7 +52,15 @@ def processar():
     if not itens:
         return jsonify({"erro": "Nenhum produto encontrado na mensagem"}), 422
 
-    itens_ordenados = ordenar_itens(itens)
+    formulacoes_raw = request.form.get("formulacoes", "").strip()
+    formulacoes_usuario = {}
+    if formulacoes_raw:
+        try:
+            formulacoes_usuario = _json.loads(formulacoes_raw)
+        except _json.JSONDecodeError:
+            pass
+
+    itens_ordenados = ordenar_itens(itens, formulacoes_usuario)
 
     operacao = extrair_operacao(mensagem)
 

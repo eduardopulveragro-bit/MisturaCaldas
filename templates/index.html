@@ -59,6 +59,24 @@
     .col-num { width: 28px; }
     .col-dose { white-space: nowrap; }
 
+    #pergunta-form { display: none; }
+    #pergunta-form h2 { font-size: 15px; color: #E65100; margin-bottom: 4px; }
+    #pergunta-form p { font-size: 13px; color: #666; margin-bottom: 14px; }
+    .pergunta-item { margin-bottom: 12px; }
+    .pergunta-item label { font-size: 14px; color: #1a1a2e; font-weight: 600; margin-bottom: 4px; }
+    .pergunta-item select {
+      width: 100%; border: 1px solid #ccc; border-radius: 6px;
+      padding: 10px 12px; font-size: 14px; background: white;
+    }
+    .pergunta-item select:focus { outline: none; border-color: #1A237E; box-shadow: 0 0 0 2px rgba(26,35,126,0.15); }
+    .btn-secundario {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #E65100; color: white; border: none; border-radius: 6px;
+      padding: 10px 24px; font-size: 14px; font-weight: 600; cursor: pointer;
+      margin-top: 8px; width: 100%; justify-content: center;
+    }
+    .btn-secundario:hover { background: #BF360C; }
+
     @media (max-width: 600px) {
       .card { padding: 16px; }
       table.ordem { font-size: 12px; }
@@ -107,6 +125,15 @@
       </form>
     </div>
 
+    <div id="pergunta-form" class="card">
+      <h2>Produto nao encontrado</h2>
+      <p>Verifique na bula ou embalagem do produto qual a formulacao.</p>
+      <div id="perguntas-lista"></div>
+      <button type="button" class="btn-secundario" id="btn-confirmar-form">
+        Atualizar Ordem
+      </button>
+    </div>
+
     <div id="resultado" class="card">
       <h2>ORDEM DE ADICAO NA CALDA</h2>
       <div id="operacao-info" class="operacao-info"></div>
@@ -134,15 +161,106 @@
     const tabelaCorpo = document.getElementById('tabela-corpo');
     const operacaoInfo = document.getElementById('operacao-info');
     const thTanque = document.getElementById('th-tanque');
+    const perguntaForm = document.getElementById('pergunta-form');
+    const perguntasLista = document.getElementById('perguntas-lista');
+    const btnConfirmar = document.getElementById('btn-confirmar-form');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    const OPCOES_FORM = [
+      {grupo: 'Solidos', opts: [['WG','WG — Granulado Dispersivel'],['WP','WP — Po Molhavel'],['SG','SG — Granulado Soluvel'],['SP','SP — Po Soluvel']]},
+      {grupo: 'Suspensoes', opts: [['SC','SC — Suspensao Concentrada'],['CS','CS — Suspensao Encapsulada'],['OD','OD — Dispersao de Oleo']]},
+      {grupo: 'Emulsoes', opts: [['SE','SE — Suspo-Emulsao'],['EC','EC — Concentrado Emulsionavel'],['EW','EW — Emulsao Oleo em Agua'],['EO','EO — Emulsao Agua em Oleo'],['ME','ME — Microemulsao']]},
+      {grupo: 'Soluvel', opts: [['SL','SL — Concentrado Soluvel']]},
+      {grupo: 'Especiais', opts: [['OLEO','Oleo mineral / vegetal'],['ADJUVANTE','Adjuvante / Espalhante'],['CONDICIONADOR','Condicionador de pH'],['FERTILIZANTE','Fertilizante foliar'],['ANTIESPUMANTE','Antiespumante']]},
+    ];
+
+    function criarSelect(nomeProduto) {
+      const div = document.createElement('div');
+      div.className = 'pergunta-item';
+      const lbl = document.createElement('label');
+      lbl.textContent = nomeProduto;
+      const sel = document.createElement('select');
+      sel.dataset.produto = nomeProduto;
+      const optVazio = document.createElement('option');
+      optVazio.value = '';
+      optVazio.textContent = 'Selecione a formulacao...';
+      sel.appendChild(optVazio);
+      OPCOES_FORM.forEach(g => {
+        const og = document.createElement('optgroup');
+        og.label = g.grupo;
+        g.opts.forEach(([val, txt]) => {
+          const o = document.createElement('option');
+          o.value = val;
+          o.textContent = txt;
+          og.appendChild(o);
+        });
+        sel.appendChild(og);
+      });
+      div.appendChild(lbl);
+      div.appendChild(sel);
+      return div;
+    }
+
+    function montarTabela(dados) {
+      operacaoInfo.textContent = '';
+      if (dados.operacao) {
+        const partes = [];
+        if (dados.operacao.area_tanque_ha) partes.push('Tanque: ' + dados.operacao.area_tanque_ha + ' ha');
+        if (dados.operacao.vazao_L_ha) partes.push('Vazao: ' + dados.operacao.vazao_L_ha + ' L/ha');
+        if (dados.operacao.ponta) partes.push('Ponta: ' + dados.operacao.ponta);
+        if (partes.length) operacaoInfo.textContent = partes.join(' | ');
+      }
+
+      tabelaCorpo.innerHTML = '';
+      const temTotais = dados.ordem.some(item => item.total_tanque);
+      thTanque.style.display = temTotais ? '' : 'none';
+
+      dados.ordem.forEach((item, i) => {
+        const tr = document.createElement('tr');
+        const formUpper = (item.formulacao || '').toUpperCase();
+        const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
+
+        const doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
+          ? item.dose + ' ' + item.unidade + '/' + item.base
+          : '—';
+
+        let produtoHtml = '<strong>' + item.produto + '</strong>';
+        if (item.alerta_prediluicao) {
+          produtoHtml += '<span class="prediluicao">&gt;&gt; ' + item.alerta_prediluicao + '</span>';
+        }
+
+        let html =
+          '<td class="col-num">' + (i + 1) + '</td>' +
+          '<td>' + produtoHtml + '</td>' +
+          '<td>' + formDisplay + '</td>' +
+          '<td class="col-dose">' + doseHa + '</td>';
+
+        if (temTotais) {
+          const doseTanque = item.total_tanque
+            ? '<strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>'
+            : '—';
+          html += '<td class="col-dose">' + doseTanque + '</td>';
+        }
+
+        tr.innerHTML = html;
+        tabelaCorpo.appendChild(tr);
+      });
+
+      resultado.style.display = 'block';
+      resultado.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function enviar(formulacoesExtra) {
       btn.disabled = true;
       btnText.innerHTML = '<span class="spinner"></span> Processando...';
       status.textContent = '';
       resultado.style.display = 'none';
+      perguntaForm.style.display = 'none';
 
       const fd = new FormData(form);
+      if (formulacoesExtra) {
+        fd.set('formulacoes', JSON.stringify(formulacoesExtra));
+      }
+
       try {
         const resp = await fetch('/processar', { method: 'POST', body: fd });
         const dados = await resp.json();
@@ -152,54 +270,19 @@
           return;
         }
 
-        // Operacao info
-        operacaoInfo.textContent = '';
-        if (dados.operacao) {
-          const partes = [];
-          if (dados.operacao.area_tanque_ha) partes.push('Tanque: ' + dados.operacao.area_tanque_ha + ' ha');
-          if (dados.operacao.vazao_L_ha) partes.push('Vazao: ' + dados.operacao.vazao_L_ha + ' L/ha');
-          if (dados.operacao.ponta) partes.push('Ponta: ' + dados.operacao.ponta);
-          if (partes.length) operacaoInfo.textContent = partes.join(' | ');
+        const desconhecidos = dados.ordem.filter(it => (it.formulacao || '').toUpperCase() === 'DESCONHECIDA');
+
+        if (desconhecidos.length > 0 && !formulacoesExtra) {
+          perguntasLista.innerHTML = '';
+          desconhecidos.forEach(it => {
+            perguntasLista.appendChild(criarSelect(it.produto));
+          });
+          perguntaForm.style.display = 'block';
+          perguntaForm.scrollIntoView({ behavior: 'smooth' });
+          montarTabela(dados);
+        } else {
+          montarTabela(dados);
         }
-
-        // Montar tabela
-        tabelaCorpo.innerHTML = '';
-        const temTotais = dados.ordem.some(item => item.total_tanque);
-        thTanque.style.display = temTotais ? '' : 'none';
-
-        dados.ordem.forEach((item, i) => {
-          const tr = document.createElement('tr');
-          const formUpper = (item.formulacao || '').toUpperCase();
-          const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
-
-          const doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
-            ? item.dose + ' ' + item.unidade + '/' + item.base
-            : '—';
-
-          let produtoHtml = '<strong>' + item.produto + '</strong>';
-          if (item.alerta_prediluicao) {
-            produtoHtml += '<span class="prediluicao">&gt;&gt; ' + item.alerta_prediluicao + '</span>';
-          }
-
-          let html =
-            '<td class="col-num">' + (i + 1) + '</td>' +
-            '<td>' + produtoHtml + '</td>' +
-            '<td>' + formDisplay + '</td>' +
-            '<td class="col-dose">' + doseHa + '</td>';
-
-          if (temTotais) {
-            const doseTanque = item.total_tanque
-              ? '<strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>'
-              : '—';
-            html += '<td class="col-dose">' + doseTanque + '</td>';
-          }
-
-          tr.innerHTML = html;
-          tabelaCorpo.appendChild(tr);
-        });
-
-        resultado.style.display = 'block';
-        resultado.scrollIntoView({ behavior: 'smooth' });
 
       } catch (err) {
         status.innerHTML = '<span class="erro">Erro de conexao: ' + err.message + '</span>';
@@ -207,6 +290,25 @@
         btn.disabled = false;
         btnText.textContent = 'Gerar Ordem';
       }
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      enviar(null);
+    });
+
+    btnConfirmar.addEventListener('click', () => {
+      const selects = perguntasLista.querySelectorAll('select');
+      const formulacoes = {};
+      let algumPreenchido = false;
+      selects.forEach(sel => {
+        if (sel.value) {
+          formulacoes[sel.dataset.produto] = sel.value;
+          algumPreenchido = true;
+        }
+      });
+      if (!algumPreenchido) return;
+      enviar(formulacoes);
     });
   </script>
 </body>
