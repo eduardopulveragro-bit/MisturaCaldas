@@ -22,78 +22,29 @@ def _criar_cliente() -> anthropic.Anthropic:
     return anthropic.Anthropic(api_key=chave, default_headers=headers)
 
 
-_SYSTEM_PROMPT = """Você é um extrator de dados de ordens de pulverização agrícola brasileira.
+_SYSTEM_PROMPT = """Extraia produtos de uma mensagem de pulverização agrícola. Retorne APENAS JSON.
 
-TABELA DE ORDEM DE ADIÇÃO NA CALDA:
-Pos | Sigla | Tipo                                               | Grupo
-  1 | —     | Encher tanque com 70% de água                       | ÁGUA
-  2 | —     | Adjuvantes Corretivos/Condicionadores (pH, quelat.) | ESPECIAIS
-  3 | SG    | Granulado Solúvel                                   | SÓLIDOS
-  4 | SP    | Pó Solúvel                                          | SÓLIDOS
-  5 | WP    | Pó Molhável                                         | SÓLIDOS
-  6 | WG    | Granulado Dispersível                               | SÓLIDOS
-  7 | CS    | Suspensão de Encapsulado                            | SUSPENSÕES
-  8 | SC    | Suspensão Concentrada                               | SUSPENSÕES
-  9 | OD    | Dispersão de Óleo / Susp. Conc. em Óleo             | SUSPENSÕES
- 10 | SE    | Suspo-Emulsão                                       | INTERMEDIÁRIO
- 11 | EC    | Concentrado Emulsionável                            | EMULSÕES
- 12 | —     | Adjuvantes em Óleo (óleo mineral/vegetal)            | EMULSÕES
- 13 | EO    | Emulsão de Água em Óleo                             | EMULSÕES
- 14 | EW    | Emulsão de Óleo em Água                             | EMULSÕES
- 15 | ME    | Microemulsão                                        | EMULSÕES
- 16 | SL    | Concentrado Solúvel                                 | ALTA SOLUBILIDADE
- 17 | —     | Adjuvantes Surfactantes, Espalhantes, Estabiliz.    | ESPECIAIS
- 18 | —     | Fertilizantes Foliares                              | ESPECIAIS
- 19 | —     | Adjuvantes Redutores de Espuma                      | ESPECIAIS
- 20 | —     | Terminar de encher tanque com água                   | ÁGUA
-
-TAREFA: Extraia os produtos da mensagem. Retorne APENAS JSON válido.
-
-Para CADA produto, extraia:
+Para CADA produto extraia:
 - produto: nome exato como aparece na mensagem
-- dose: valor numérico
-- unidade: L, mL, kg, g
-- base: "ha" (por hectare) ou "L_calda" (por litro de calda)
-- formulacao: a sigla da formulação (SG, SP, WP, WG, CS, SC, OD, SE, EC, EO, EW, ME, SL)
-
-COMO DETERMINAR A FORMULAÇÃO:
-1. Se o nome inclui a sigla (ex: "Score 250 EC"), use-a diretamente.
-2. Se é um produto comercial conhecido, use a formulação da bula.
-3. Se é um INGREDIENTE ATIVO sem nome comercial (ex: "mancozeb", "atrazina"):
-   use a formulação MAIS COMUM para aquele ingrediente no Brasil.
-   Exemplos: mancozeb → WP, glifosato → SL, atrazina → SC, 2,4-D → SL.
-4. Se é um ADJUVANTE ou ÓLEO genérico, classifique pela natureza:
-   - "adjuvante" genérico sem especificação → posição 17 (surfactante/espalhante)
-   - "óleo" / "óleo mineral" / "óleo vegetal" / "óleo de laranja" → posição 12
-   - "condicionador" / "corretor de pH" → posição 2
-   - "espalhante" / "surfactante" → posição 17
-   - "fertilizante foliar" / "aminoácidos" → posição 18
-   - "antiespumante" → posição 19
-5. Se realmente não sabe, use null — mas tente antes.
+- dose: valor numérico (null se ausente)
+- unidade: L, mL, kg, g (null se ausente)
+- base: "ha" ou "L_calda" (null se ausente)
+- formulacao: sigla se aparecer no nome (ex: "Score 250 EC" → "EC"), senão null
 
 REGRAS:
-- NÃO decida a ordem de adição — isso não é sua função.
-- Se encontrar nome de pessoa, telefone, CPF ou fazenda identificável, retorne:
+- Extraia o nome do produto como escrito, sem corrigir.
+- Se a dose usa vírgula como decimal (ex: "0,5 L"), converta para ponto: 0.5
+- Se encontrar nome de pessoa, telefone, CPF ou fazenda, retorne:
   {"erro": "dados_pessoais", "descricao": "dados pessoais detectados"}
 
-ALERTAS (somente quando realmente ambíguo):
-- "ambiguidade": unidade ambígua ("/ga" em vez de "/ha")
-- "unidade_ausente": dose sem unidade
-- "dose_estranha": dose improvável
-
 FORMATO:
-{
-  "itens": [
-    {"produto": "Nome", "dose": 2.5, "unidade": "L", "base": "ha", "formulacao": "SC"}
-  ],
-  "alertas": [
-    {"tipo": "ambiguidade", "descricao": "descrição", "item": "produto"}
-  ]
-}"""
+{"itens": [{"produto": "Nome", "dose": 2.5, "unidade": "L", "base": "ha", "formulacao": "EC"}], "alertas": []}
 
-# Preços estimados claude-haiku-5-5 (USD por token)
-_PRECO_INPUT_POR_TOKEN = 0.80 / 1_000_000
-_PRECO_OUTPUT_POR_TOKEN = 4 / 1_000_000
+Alertas só quando ambíguo: "unidade_ausente", "dose_estranha"."""
+
+# Preços estimados claude-3-haiku (USD por token)
+_PRECO_INPUT_POR_TOKEN = 0.25 / 1_000_000
+_PRECO_OUTPUT_POR_TOKEN = 1.25 / 1_000_000
 
 
 def _limpar_markdown(texto: str) -> str:
@@ -105,7 +56,7 @@ def _limpar_markdown(texto: str) -> str:
     return texto
 
 
-def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
+def extrair_itens(mensagem: str, modelo: str = "claude-3-haiku-20240307") -> dict:
     """
     Chama a API Claude para extrair itens estruturados da mensagem.
     Loga tokens e custo estimado. Lança ValueError se encontrar dados pessoais.
@@ -115,7 +66,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     resposta = cliente.messages.create(
         model=modelo,
-        max_tokens=4096,
+        max_tokens=1024,
         system=_SYSTEM_PROMPT,
         messages=[{"role": "user", "content": mensagem}],
     )
