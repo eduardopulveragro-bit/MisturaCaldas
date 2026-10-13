@@ -76,6 +76,13 @@
       margin-top: 8px; width: 100%; justify-content: center;
     }
     .btn-secundario:hover { background: #BF360C; }
+    .btn-pdf {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #1B5E20; color: white; border: none; border-radius: 6px;
+      padding: 12px 28px; font-size: 15px; font-weight: 600; cursor: pointer;
+      margin-top: 16px; width: 100%; justify-content: center;
+    }
+    .btn-pdf:hover { background: #2E7D32; }
 
     @media (max-width: 600px) {
       .card { padding: 16px; }
@@ -149,9 +156,15 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
+      <button type="button" class="btn-pdf" id="btn-pdf" style="display:none;" onclick="gerarPDF()">
+        Baixar PDF
+      </button>
     </div>
   </main>
 
+  <img id="logo-pdf" src="/static/logo.jpg" style="display:none;">
+  <script src="/static/jspdf.umd.min.js"></script>
+  <script src="/static/jspdf.plugin.autotable.min.js"></script>
   <script>
     const form = document.getElementById('form');
     const btn = document.getElementById('btn');
@@ -164,6 +177,8 @@
     const perguntaForm = document.getElementById('pergunta-form');
     const perguntasLista = document.getElementById('perguntas-lista');
     const btnConfirmar = document.getElementById('btn-confirmar-form');
+
+    let dadosAtual = null;
 
     const OPCOES_FORM = [
       {grupo: 'Solidos', opts: [['WG','WG — Granulado Dispersivel'],['WP','WP — Po Molhavel'],['SG','SG — Granulado Soluvel'],['SP','SP — Po Soluvel']]},
@@ -201,6 +216,7 @@
     }
 
     function montarTabela(dados) {
+      dadosAtual = dados;
       operacaoInfo.textContent = '';
       if (dados.operacao) {
         const partes = [];
@@ -245,6 +261,7 @@
         tabelaCorpo.appendChild(tr);
       });
 
+      document.getElementById('btn-pdf').style.display = '';
       resultado.style.display = 'block';
       resultado.scrollIntoView({ behavior: 'smooth' });
     }
@@ -313,6 +330,137 @@
       if (!algumPreenchido) return;
       enviar(formulacoes);
     });
+
+    function gerarPDF() {
+      if (!dadosAtual) return;
+      var jsPDF = window.jspdf.jsPDF;
+      var doc = new jsPDF('p', 'mm', 'a4');
+      var pw = doc.internal.pageSize.getWidth();
+      var verde = [27, 94, 32];
+      var cinza = [100, 100, 100];
+      var y = 8;
+
+      var logo = document.getElementById('logo-pdf');
+      if (logo.complete && logo.naturalWidth > 0) {
+        var h = 30;
+        var w = h * (logo.naturalWidth / logo.naturalHeight);
+        doc.addImage(logo, 'JPEG', (pw - w) / 2, y, w, h);
+        y += h + 4;
+      }
+
+      doc.setDrawColor(27, 94, 32);
+      doc.setLineWidth(0.6);
+      doc.line(20, y, pw - 20, y);
+      y += 8;
+
+      doc.setFontSize(15);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(27, 94, 32);
+      doc.text('ORDEM DE ADICAO NA CALDA', pw / 2, y, { align: 'center' });
+      y += 8;
+
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(100, 100, 100);
+      var op = dadosAtual.operacao;
+      var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
+      var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
+      doc.text('Vazao: ' + vazaoTxt + '    |    Area/tanque: ' + areaTxt, pw / 2, y, { align: 'center' });
+      y += 5;
+
+      var hoje = new Date();
+      var dataTxt = hoje.toLocaleDateString('pt-BR');
+      doc.text('Data: ' + dataTxt, pw / 2, y, { align: 'center' });
+      y += 8;
+
+      var temTotais = dadosAtual.ordem.some(function(it) { return it.total_tanque; });
+      var head = [['#', 'Produto', 'Form.', 'Dose/ha']];
+      if (temTotais) head[0].push('Dose/tanque');
+
+      var body = dadosAtual.ordem.map(function(item, i) {
+        var formUpper = (item.formulacao || '').toUpperCase();
+        var formDisplay = formUpper === 'DESCONHECIDA' ? '---' : formUpper;
+        var doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
+          ? item.dose + ' ' + item.unidade + '/' + item.base
+          : '---';
+        var nome = item.produto;
+        if (item.alerta_prediluicao) {
+          nome += '\n>> ' + item.alerta_prediluicao;
+        }
+        var row = [String(i + 1), nome, formDisplay, doseHa];
+        if (temTotais) {
+          row.push(item.total_tanque ? item.total_tanque + ' ' + item.total_unidade : '---');
+        }
+        return row;
+      });
+
+      var colStyles = {
+        0: { halign: 'center', cellWidth: 10 },
+        1: { halign: 'left' },
+        2: { halign: 'center', cellWidth: 18 },
+        3: { halign: 'center', cellWidth: 28 }
+      };
+      if (temTotais) colStyles[4] = { halign: 'center', cellWidth: 28 };
+
+      doc.autoTable({
+        head: head,
+        body: body,
+        startY: y,
+        margin: { left: 15, right: 15 },
+        styles: {
+          fontSize: 9,
+          cellPadding: 3,
+          lineColor: [200, 200, 200],
+          lineWidth: 0.2,
+          textColor: [30, 30, 30],
+          font: 'helvetica'
+        },
+        headStyles: {
+          fillColor: verde,
+          textColor: [255, 255, 255],
+          fontStyle: 'bold',
+          halign: 'center',
+          fontSize: 9
+        },
+        alternateRowStyles: {
+          fillColor: [245, 248, 245]
+        },
+        columnStyles: colStyles,
+        didParseCell: function(data) {
+          if (data.section === 'body' && data.column.index === 1) {
+            var txt = data.cell.raw || '';
+            if (txt.indexOf('\n>>') !== -1) {
+              data.cell.styles.fontSize = 8;
+            }
+          }
+        }
+      });
+
+      var finalY = doc.lastAutoTable.finalY + 12;
+      if (finalY > 270) {
+        doc.addPage();
+        finalY = 20;
+      }
+
+      doc.setDrawColor(27, 94, 32);
+      doc.setLineWidth(0.3);
+      doc.line(20, finalY - 4, pw - 20, finalY - 4);
+
+      doc.setFontSize(8);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(191, 54, 12);
+      doc.text(
+        'SUGERIDO — Nenhuma recomendacao tem validade tecnica sem aprovacao do Responsavel Tecnico.',
+        pw / 2, finalY, { align: 'center', maxWidth: pw - 40 }
+      );
+
+      doc.setFontSize(7);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(150, 150, 150);
+      doc.text('PulverAgro — Consultoria em Pulverizacao', pw / 2, 290, { align: 'center' });
+
+      doc.save('ordem_mistura_calda.pdf');
+    }
   </script>
 </body>
 </html>
