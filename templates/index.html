@@ -348,46 +348,45 @@
       var verde = [27, 94, 32];
       var y = 8;
 
+      var logoX = 15;
+      var logoH = 28;
+      var logoW = 0;
       var logo = document.getElementById('logo-pdf');
       if (logo.complete && logo.naturalWidth > 0) {
-        var maxW = pw - 40;
-        var h = 75;
-        var w = h * (logo.naturalWidth / logo.naturalHeight);
-        if (w > maxW) { h = h * (maxW / w); w = maxW; }
-        doc.addImage(logo, 'JPEG', (pw - w) / 2, y, w, h);
-        y += h + 4;
+        logoW = logoH * (logo.naturalWidth / logo.naturalHeight);
+        if (logoW > 60) { logoH = logoH * (60 / logoW); logoW = 60; }
+        doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
       }
 
-      doc.setDrawColor(27, 94, 32);
-      doc.setLineWidth(0.6);
-      doc.line(20, y, pw - 20, y);
-      y += 8;
-
+      var textX = logoW ? logoX + logoW + 8 : 15;
+      var titleY = y + 8;
       doc.setFontSize(16);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(27, 94, 32);
-      doc.text('Formação da Calda', pw / 2, y, { align: 'center' });
-      y += 6;
-
-      doc.setFontSize(11);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(80, 80, 80);
-      doc.text('Ordem de Adição de Produtos', pw / 2, y, { align: 'center' });
-      y += 8;
+      doc.text('Formação da Calda', textX, titleY);
 
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(100, 100, 100);
+      doc.setTextColor(80, 80, 80);
+      doc.text('Ordem de Adição de Produtos', textX, titleY + 6);
+
       var op = dadosAtual.operacao;
       var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
       var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
-      doc.text('Vazão: ' + vazaoTxt + '    |    Área/tanque: ' + areaTxt, pw / 2, y, { align: 'center' });
-      y += 5;
+      doc.setFontSize(9);
+      doc.setTextColor(100, 100, 100);
+      doc.text('Vazão: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 12);
 
       var hoje = new Date();
       var dataTxt = hoje.toLocaleDateString('pt-BR');
-      doc.text('Data: ' + dataTxt, pw / 2, y, { align: 'center' });
-      y += 8;
+      doc.text('Data: ' + dataTxt, textX, titleY + 17);
+
+      y = Math.max(y + logoH, titleY + 20) + 4;
+
+      doc.setDrawColor(27, 94, 32);
+      doc.setLineWidth(0.4);
+      doc.line(15, y, pw - 15, y);
+      y += 4;
 
       var area = (op && op.area_tanque_ha) ? op.area_tanque_ha : null;
       var head = [['#', 'Produto', 'Form.', 'Dose/ha', 'Qtd/tanque']];
