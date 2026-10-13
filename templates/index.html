@@ -10,11 +10,6 @@
     header { background: #1A237E; color: white; padding: 18px 24px; }
     header h1 { font-size: 20px; font-weight: 600; }
     header p { font-size: 12px; opacity: 0.8; margin-top: 4px; }
-    .aviso-aprovacao {
-      background: #fff3e0; border-left: 4px solid #E65100;
-      padding: 10px 16px; margin: 16px 24px 0;
-      font-size: 13px; color: #bf360c; font-weight: 600;
-    }
     main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
     .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
     label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #1A237E; }
@@ -98,10 +93,6 @@
     <h1>Assistente de Ordem de Mistura na Calda</h1>
     <p>Cole a mensagem do aplicador e receba a ordem corrigida.</p>
   </header>
-
-  <div class="aviso-aprovacao">
-    SUGERIDO — Nenhuma recomendacao tem validade tecnica sem aprovacao do Responsavel Tecnico.
-  </div>
 
   <main>
     <div class="card">
@@ -435,24 +426,6 @@
           }
         }
       });
-
-      var finalY = doc.lastAutoTable.finalY + 12;
-      if (finalY > 270) {
-        doc.addPage();
-        finalY = 20;
-      }
-
-      doc.setDrawColor(27, 94, 32);
-      doc.setLineWidth(0.3);
-      doc.line(20, finalY - 4, pw - 20, finalY - 4);
-
-      doc.setFontSize(8);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(191, 54, 12);
-      doc.text(
-        'SUGERIDO — Nenhuma recomendacao tem validade tecnica sem aprovacao do Responsavel Tecnico.',
-        pw / 2, finalY, { align: 'center', maxWidth: pw - 40 }
-      );
 
       doc.setFontSize(7);
       doc.setFont('helvetica', 'normal');
