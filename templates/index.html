@@ -327,17 +327,17 @@
       var total = dose * area;
       var un = (unidade || '').toLowerCase();
       if (un === 'l' || un === 'lt') {
-        return Math.round(total * 10) / 10 + ' L';
+        return Math.round(total * 100) / 100 + ' L';
       } else if (un === 'ml') {
-        if (total >= 1000) return Math.round(total / 100) / 10 + ' L';
+        if (total >= 1000) return Math.round(total / 10) / 100 + ' L';
         return Math.round(total) + ' mL';
       } else if (un === 'kg') {
-        return Math.round(total * 10) / 10 + ' kg';
+        return Math.round(total * 100) / 100 + ' kg';
       } else if (un === 'g' || un === 'gr') {
-        if (total >= 1000) return Math.round(total / 100) / 10 + ' kg';
+        if (total >= 1000) return Math.round(total / 10) / 100 + ' kg';
         return Math.round(total) + ' g';
       }
-      return Math.round(total * 10) / 10 + ' ' + unidade;
+      return Math.round(total * 100) / 100 + ' ' + unidade;
     }
 
     function gerarPDF() {

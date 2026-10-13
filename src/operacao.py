@@ -64,27 +64,27 @@ def calcular_totais_tanque(itens: list[dict], area_ha: float) -> list[dict]:
 
         total = dose * area_ha
         if unidade in ("l", "lt"):
-            item["total_tanque"] = round(total, 1)
+            item["total_tanque"] = round(total, 2)
             item["total_unidade"] = "L"
         elif unidade == "ml":
             if total >= 1000:
-                item["total_tanque"] = round(total / 1000, 1)
+                item["total_tanque"] = round(total / 1000, 2)
                 item["total_unidade"] = "L"
             else:
                 item["total_tanque"] = round(total, 0)
                 item["total_unidade"] = "mL"
         elif unidade in ("kg",):
-            item["total_tanque"] = round(total, 1)
+            item["total_tanque"] = round(total, 2)
             item["total_unidade"] = "kg"
         elif unidade in ("g", "gr"):
             if total >= 1000:
-                item["total_tanque"] = round(total / 1000, 1)
+                item["total_tanque"] = round(total / 1000, 2)
                 item["total_unidade"] = "kg"
             else:
                 item["total_tanque"] = round(total, 0)
                 item["total_unidade"] = "g"
         else:
-            item["total_tanque"] = round(total, 1)
+            item["total_tanque"] = round(total, 2)
             item["total_unidade"] = unidade
 
     return itens
