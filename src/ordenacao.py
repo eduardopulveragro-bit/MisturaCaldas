@@ -160,6 +160,7 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     resultado = _prediluir_abamectina_oleo(resultado)
     resultado = _prediluir_haloxifop_oleo(resultado)
     resultado = _separar_glif_24d(resultado)
+    resultado = _posicionar_foliares(resultado)
     return resultado
 
 
@@ -379,6 +380,37 @@ def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
             ponto_final = i
             break
     resultado.insert(ponto_final, para_final)
+    return resultado
+
+
+_FORMULACOES_SOLIDAS = {"SG", "SP", "WP", "WG"}
+
+
+def _posicionar_foliares(resultado: list[dict]) -> list[dict]:
+    """Foliares sempre por último na calda. Pó primeiro, líquido depois."""
+    foliares = [item for item in resultado if item["posicao"] == 18]
+    if not foliares:
+        return resultado
+    for f in foliares:
+        resultado.remove(f)
+
+    def _chave_foliar(item):
+        form = item.get("formulacao", "").upper()
+        if form in _FORMULACOES_SOLIDAS:
+            return 0
+        unidade = (item.get("unidade") or "").lower()
+        if unidade in ("kg", "g", "gr"):
+            return 0
+        return 1
+
+    foliares.sort(key=_chave_foliar)
+    ponto = len(resultado)
+    for i, item in enumerate(resultado):
+        if item["posicao"] >= 999:
+            ponto = i
+            break
+    for i, f in enumerate(foliares):
+        resultado.insert(ponto + i, f)
     return resultado
 
 
