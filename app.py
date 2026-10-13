@@ -13,6 +13,7 @@ load_dotenv(_ENV_PATH, override=True)
 from src.parser import extrair_itens
 from src.ordenacao import ordenar_itens
 from src.operacao import extrair_operacao, calcular_totais_tanque
+from src import clientes as clientes_mod
 
 _handlers = [logging.StreamHandler()]
 if os.path.isdir("logs"):
@@ -99,6 +100,43 @@ def processar():
         "alertas": alertas,
         "operacao": operacao if operacao else None,
     })
+
+
+@app.route("/clientes")
+def pagina_clientes():
+    return render_template("clientes.html")
+
+
+@app.route("/api/clientes", methods=["GET"])
+def api_listar_clientes():
+    return jsonify(clientes_mod.listar())
+
+
+@app.route("/api/clientes", methods=["POST"])
+def api_criar_cliente():
+    dados = request.get_json(silent=True) or {}
+    if not dados.get("nome", "").strip():
+        return jsonify({"erro": "Nome é obrigatório"}), 400
+    cliente = clientes_mod.criar(dados)
+    return jsonify(cliente), 201
+
+
+@app.route("/api/clientes/<cliente_id>", methods=["PUT"])
+def api_atualizar_cliente(cliente_id):
+    dados = request.get_json(silent=True) or {}
+    if not dados.get("nome", "").strip():
+        return jsonify({"erro": "Nome é obrigatório"}), 400
+    cliente = clientes_mod.atualizar(cliente_id, dados)
+    if not cliente:
+        return jsonify({"erro": "Cliente não encontrado"}), 404
+    return jsonify(cliente)
+
+
+@app.route("/api/clientes/<cliente_id>", methods=["DELETE"])
+def api_excluir_cliente(cliente_id):
+    if clientes_mod.excluir(cliente_id):
+        return jsonify({"ok": True})
+    return jsonify({"erro": "Cliente não encontrado"}), 404
 
 
 @app.route("/webhook", methods=["POST"])
