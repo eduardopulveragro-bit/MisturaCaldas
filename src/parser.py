@@ -42,9 +42,9 @@ FORMATO:
 
 Alertas só quando ambíguo: "unidade_ausente", "dose_estranha"."""
 
-# Preços estimados claude-3-haiku (USD por token)
-_PRECO_INPUT_POR_TOKEN = 0.25 / 1_000_000
-_PRECO_OUTPUT_POR_TOKEN = 1.25 / 1_000_000
+# Preços estimados claude-haiku-5-5 (USD por token)
+_PRECO_INPUT_POR_TOKEN = 0.80 / 1_000_000
+_PRECO_OUTPUT_POR_TOKEN = 4 / 1_000_000
 
 
 def _limpar_markdown(texto: str) -> str:
@@ -56,7 +56,7 @@ def _limpar_markdown(texto: str) -> str:
     return texto
 
 
-def extrair_itens(mensagem: str, modelo: str = "claude-3-haiku-20240307") -> dict:
+def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     """
     Chama a API Claude para extrair itens estruturados da mensagem.
     Loga tokens e custo estimado. Lança ValueError se encontrar dados pessoais.
