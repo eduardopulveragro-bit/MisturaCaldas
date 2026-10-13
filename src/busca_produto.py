@@ -9,7 +9,7 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
-from src.parser import _limpar_markdown, _PRECO_INPUT_POR_TOKEN, _PRECO_OUTPUT_POR_TOKEN
+from src.parser import _limpar_markdown, _PRECOS_POR_MODELO, _PRECO_FALLBACK
 from src.ordenacao import _FORMULACAO_PARA_POSICAO, _FORM_ESPECIAL_POSICAO
 
 logger = logging.getLogger(__name__)
@@ -151,7 +151,8 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
     tokens_in = resposta.usage.input_tokens
     tokens_out = resposta.usage.output_tokens
-    custo_usd = tokens_in * _PRECO_INPUT_POR_TOKEN + tokens_out * _PRECO_OUTPUT_POR_TOKEN
+    preco_in, preco_out = _PRECOS_POR_MODELO.get("claude-haiku-5-5", _PRECO_FALLBACK)
+    custo_usd = tokens_in * preco_in + tokens_out * preco_out
     logger.info(
         "busca_produto id=%s nome='%s' tokens_in=%d tokens_out=%d custo_usd=%.6f",
         resposta.id, nome, tokens_in, tokens_out, custo_usd,

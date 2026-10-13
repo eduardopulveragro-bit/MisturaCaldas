@@ -350,8 +350,10 @@
 
       var logo = document.getElementById('logo-pdf');
       if (logo.complete && logo.naturalWidth > 0) {
+        var maxW = pw - 40;
         var h = 50;
         var w = h * (logo.naturalWidth / logo.naturalHeight);
+        if (w > maxW) { h = h * (maxW / w); w = maxW; }
         doc.addImage(logo, 'JPEG', (pw - w) / 2, y, w, h);
         y += h + 4;
       }
@@ -395,7 +397,7 @@
           nome += '\n>> ' + item.alerta_prediluicao;
         }
         var qtdTanque = '---';
-        if (item.total_tanque) {
+        if (item.total_tanque != null) {
           qtdTanque = item.total_tanque + ' ' + item.total_unidade;
         } else if (area && typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
           var calc = calcularTotalTanque(item.dose, item.unidade, area);

@@ -42,18 +42,20 @@ FORMATO:
 
 Alertas só quando ambíguo: "unidade_ausente", "dose_estranha"."""
 
-# Preços estimados claude-haiku-5-5 (USD por token)
-_PRECO_INPUT_POR_TOKEN = 0.80 / 1_000_000
-_PRECO_OUTPUT_POR_TOKEN = 4 / 1_000_000
+_PRECOS_POR_MODELO = {
+    "claude-haiku-5-5": (1.0 / 1_000_000, 5.0 / 1_000_000),
+}
+_PRECO_FALLBACK = (1.0 / 1_000_000, 5.0 / 1_000_000)
 
 
 def _limpar_markdown(texto: str) -> str:
-    """Remove cercas de markdown da resposta da IA."""
-    if texto.startswith("```"):
-        linhas = texto.split("\n")
-        linhas = [l for l in linhas if not l.strip().startswith("```")]
-        texto = "\n".join(linhas).strip()
-    return texto
+    """Remove apenas a primeira e última cerca de markdown."""
+    linhas = texto.split("\n")
+    if linhas and linhas[0].strip().startswith("```"):
+        linhas = linhas[1:]
+    if linhas and linhas[-1].strip().startswith("```"):
+        linhas = linhas[:-1]
+    return "\n".join(linhas).strip()
 
 
 def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
@@ -74,7 +76,8 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     tokens_in = resposta.usage.input_tokens
     tokens_out = resposta.usage.output_tokens
-    custo_usd = tokens_in * _PRECO_INPUT_POR_TOKEN + tokens_out * _PRECO_OUTPUT_POR_TOKEN
+    preco_in, preco_out = _PRECOS_POR_MODELO.get(modelo, _PRECO_FALLBACK)
+    custo_usd = tokens_in * preco_in + tokens_out * preco_out
 
     logger.info(
         "chamada_api id=%s modelo=%s tokens_in=%d tokens_out=%d custo_usd=%.6f duracao_s=%.2f",
