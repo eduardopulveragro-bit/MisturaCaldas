@@ -351,7 +351,7 @@
       var logo = document.getElementById('logo-pdf');
       if (logo.complete && logo.naturalWidth > 0) {
         var maxW = pw - 40;
-        var h = 50;
+        var h = 75;
         var w = h * (logo.naturalWidth / logo.naturalHeight);
         if (w > maxW) { h = h * (maxW / w); w = maxW; }
         doc.addImage(logo, 'JPEG', (pw - w) / 2, y, w, h);
