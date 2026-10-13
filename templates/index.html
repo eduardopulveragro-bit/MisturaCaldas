@@ -218,7 +218,7 @@
       }
 
       tabelaCorpo.innerHTML = '';
-      const temTotais = dados.ordem.some(item => item.total_tanque);
+      const temTotais = dados.ordem.some(item => item.total_tanque != null);
       thTanque.style.display = temTotais ? '' : 'none';
 
       dados.ordem.forEach((item, i) => {
@@ -242,7 +242,7 @@
           '<td class="col-dose">' + doseHa + '</td>';
 
         if (temTotais) {
-          const doseTanque = item.total_tanque
+          const doseTanque = item.total_tanque != null
             ? '<strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>'
             : '—';
           html += '<td class="col-dose">' + doseTanque + '</td>';
