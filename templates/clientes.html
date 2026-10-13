@@ -84,15 +84,11 @@
       </div>
       <div class="row">
         <div>
-          <label for="faixa">Largura da faixa</label>
-          <input type="number" id="faixa" placeholder="17" min="1" step="any">
-          <div class="unidade">metros</div>
-        </div>
-        <div>
           <label for="vazao">Vazao de trabalho</label>
           <input type="number" id="vazao" placeholder="80" min="1" step="any">
           <div class="unidade">L/ha</div>
         </div>
+        <div></div>
       </div>
 
       <div class="row">
@@ -159,7 +155,6 @@
       const infos = [];
       if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
       if (pulv.volume_tanque_L) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
-      if (pulv.faixa_m) infos.push('<strong>Faixa:</strong> ' + pulv.faixa_m + ' m');
       if (c.vazao_L_ha) infos.push('<strong>Vazao:</strong> ' + c.vazao_L_ha + ' L/ha');
       if (c.area_tanque_ha) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
       if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
@@ -187,7 +182,6 @@
         nome: document.getElementById('nome').value,
         pulverizador_modelo: document.getElementById('pulverizador_modelo').value,
         volume_tanque: document.getElementById('volume_tanque').value,
-        faixa: document.getElementById('faixa').value,
         vazao: document.getElementById('vazao').value,
         area_tanque: document.getElementById('area_tanque').value,
         pontas: document.getElementById('pontas').value,
@@ -201,7 +195,6 @@
       document.getElementById('nome').value = c.nome || '';
       document.getElementById('pulverizador_modelo').value = (c.pulverizador || {}).modelo || '';
       document.getElementById('volume_tanque').value = (c.pulverizador || {}).volume_tanque_L || '';
-      document.getElementById('faixa').value = (c.pulverizador || {}).faixa_m || '';
       document.getElementById('vazao').value = c.vazao_L_ha || '';
       document.getElementById('area_tanque').value = c.area_tanque_ha || '';
       document.getElementById('pontas').value = (c.pontas || []).join(', ');
@@ -216,7 +209,6 @@
       document.getElementById('nome').value = '';
       document.getElementById('pulverizador_modelo').value = '';
       document.getElementById('volume_tanque').value = '';
-      document.getElementById('faixa').value = '';
       document.getElementById('vazao').value = '';
       document.getElementById('area_tanque').value = '';
       document.getElementById('pontas').value = '';

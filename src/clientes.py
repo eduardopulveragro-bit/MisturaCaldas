@@ -39,7 +39,6 @@ def criar(dados: dict) -> dict:
         "pulverizador": {
             "modelo": (dados.get("pulverizador_modelo") or "").strip(),
             "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
-            "faixa_m": _float_ou_none(dados.get("faixa")),
         },
         "vazao_L_ha": _float_ou_none(dados.get("vazao")),
         "area_tanque_ha": _float_ou_none(dados.get("area_tanque")),
