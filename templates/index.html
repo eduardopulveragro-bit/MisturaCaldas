@@ -360,28 +360,28 @@
 
       var textX = logoW ? logoX + logoW + 8 : 15;
       var titleY = y + 8;
-      doc.setFontSize(16);
+      doc.setFontSize(18);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(27, 94, 32);
       doc.text('Formação da Calda', textX, titleY);
 
-      doc.setFontSize(10);
+      doc.setFontSize(12);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(80, 80, 80);
-      doc.text('Ordem de Adição de Produtos', textX, titleY + 6);
+      doc.text('Ordem de Adição de Produtos', textX, titleY + 7);
 
       var op = dadosAtual.operacao;
       var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
       var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
-      doc.setFontSize(9);
+      doc.setFontSize(11);
       doc.setTextColor(100, 100, 100);
-      doc.text('Vazão: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 12);
+      doc.text('Vazão: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 14);
 
       var hoje = new Date();
       var dataTxt = hoje.toLocaleDateString('pt-BR');
-      doc.text('Data: ' + dataTxt, textX, titleY + 17);
+      doc.text('Data: ' + dataTxt, textX, titleY + 19);
 
-      y = Math.max(y + logoH, titleY + 20) + 4;
+      y = Math.max(y + logoH, titleY + 22) + 4;
 
       doc.setDrawColor(27, 94, 32);
       doc.setLineWidth(0.4);
@@ -425,7 +425,7 @@
         startY: y,
         margin: { left: 15, right: 15 },
         styles: {
-          fontSize: 9,
+          fontSize: 11,
           cellPadding: 3,
           lineColor: [200, 200, 200],
           lineWidth: 0.2,
@@ -437,7 +437,7 @@
           textColor: [255, 255, 255],
           fontStyle: 'bold',
           halign: 'center',
-          fontSize: 9
+          fontSize: 11
         },
         alternateRowStyles: {
           fillColor: [245, 248, 245]
@@ -447,13 +447,13 @@
           if (data.section === 'body' && data.column.index === 1) {
             var txt = data.cell.raw || '';
             if (txt.indexOf('\n>>') !== -1) {
-              data.cell.styles.fontSize = 8;
+              data.cell.styles.fontSize = 10;
             }
           }
         }
       });
 
-      doc.setFontSize(7);
+      doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(150, 150, 150);
       doc.text('PulverAgro — Consultoria em Pulverização', pw / 2, 290, { align: 'center' });
