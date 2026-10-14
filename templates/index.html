@@ -349,17 +349,17 @@
       var y = 8;
 
       var logoX = 15;
-      var logoH = 28;
+      var logoH = 75;
       var logoW = 0;
       var logo = document.getElementById('logo-pdf');
       if (logo.complete && logo.naturalWidth > 0) {
         logoW = logoH * (logo.naturalWidth / logo.naturalHeight);
-        if (logoW > 60) { logoH = logoH * (60 / logoW); logoW = 60; }
+        if (logoW > 80) { logoH = logoH * (80 / logoW); logoW = 80; }
         doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
       }
 
-      var textX = logoW ? logoX + logoW + 8 : 15;
-      var titleY = y + 8;
+      var textX = logoW ? logoX + logoW + 10 : 15;
+      var titleY = y + logoH / 2 - 10;
       doc.setFontSize(18);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(27, 94, 32);
