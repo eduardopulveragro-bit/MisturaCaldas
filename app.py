@@ -121,6 +121,14 @@ def api_criar_cliente():
     return jsonify(cliente), 201
 
 
+@app.route("/api/clientes/<cliente_id>", methods=["GET"])
+def api_buscar_cliente(cliente_id):
+    cliente = clientes_mod.buscar(cliente_id)
+    if not cliente:
+        return jsonify({"erro": "Cliente não encontrado"}), 404
+    return jsonify(cliente)
+
+
 @app.route("/api/clientes/<cliente_id>", methods=["PUT"])
 def api_atualizar_cliente(cliente_id):
     dados = request.get_json(silent=True) or {}

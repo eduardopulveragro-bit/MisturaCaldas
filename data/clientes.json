@@ -4,8 +4,7 @@
     "nome": "Fazenda Sao Jose - Carlos",
     "pulverizador": {
       "modelo": "Jacto Uniport 3030",
-      "volume_tanque_L": 3000.0,
-      "faixa_m": 17.0
+      "volume_tanque_L": 3000.0
     },
     "vazao_L_ha": 100.0,
     "area_tanque_ha": 30.0,

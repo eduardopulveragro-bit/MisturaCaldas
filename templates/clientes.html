@@ -144,7 +144,8 @@
           div.innerHTML = '<div class="lista-vazia">Nenhum cliente cadastrado ainda.</div>';
           return;
         }
-        div.innerHTML = clientes.map(renderCliente).join('');
+        div.innerHTML = '';
+        clientes.forEach(function(c) { div.appendChild(renderCliente(c)); });
       } catch (e) {
         div.innerHTML = '<div class="lista-vazia" style="color:#C62828;">Erro ao carregar clientes.</div>';
       }
@@ -154,21 +155,30 @@
       const pulv = c.pulverizador || {};
       const infos = [];
       if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
-      if (pulv.volume_tanque_L) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
-      if (c.vazao_L_ha) infos.push('<strong>Vazao:</strong> ' + c.vazao_L_ha + ' L/ha');
-      if (c.area_tanque_ha) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
+      if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
+      if (c.vazao_L_ha != null) infos.push('<strong>Vazao:</strong> ' + c.vazao_L_ha + ' L/ha');
+      if (c.area_tanque_ha != null) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
       if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
       if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));
       if (c.observacao) infos.push('<strong>Obs:</strong> ' + esc(c.observacao));
 
-      return '<div class="cliente-item">' +
-        '<h3>' + esc(c.nome) + '</h3>' +
+      var div = document.createElement('div');
+      div.className = 'cliente-item';
+      div.innerHTML = '<h3>' + esc(c.nome) + '</h3>' +
         '<div class="cliente-info">' + infos.join('<br>') + '</div>' +
-        '<div class="cliente-acoes">' +
-          '<button class="btn btn-editar" onclick="editar(\'' + c.id + '\')">Editar</button>' +
-          '<button class="btn btn-vermelho" onclick="excluir(\'' + c.id + '\', \'' + esc(c.nome).replace(/'/g, "\\'") + '\')">Excluir</button>' +
-        '</div>' +
-      '</div>';
+        '<div class="cliente-acoes"></div>';
+      var acoes = div.querySelector('.cliente-acoes');
+      var btnEdit = document.createElement('button');
+      btnEdit.className = 'btn btn-editar';
+      btnEdit.textContent = 'Editar';
+      btnEdit.addEventListener('click', function() { editar(c.id); });
+      var btnDel = document.createElement('button');
+      btnDel.className = 'btn btn-vermelho';
+      btnDel.textContent = 'Excluir';
+      btnDel.addEventListener('click', function() { excluir(c.id, c.nome); });
+      acoes.appendChild(btnEdit);
+      acoes.appendChild(btnDel);
+      return div;
     }
 
     function esc(s) {
@@ -194,9 +204,10 @@
       document.getElementById('editando-id').value = c.id;
       document.getElementById('nome').value = c.nome || '';
       document.getElementById('pulverizador_modelo').value = (c.pulverizador || {}).modelo || '';
-      document.getElementById('volume_tanque').value = (c.pulverizador || {}).volume_tanque_L || '';
-      document.getElementById('vazao').value = c.vazao_L_ha || '';
-      document.getElementById('area_tanque').value = c.area_tanque_ha || '';
+      var vol = (c.pulverizador || {}).volume_tanque_L;
+      document.getElementById('volume_tanque').value = vol != null ? vol : '';
+      document.getElementById('vazao').value = c.vazao_L_ha != null ? c.vazao_L_ha : '';
+      document.getElementById('area_tanque').value = c.area_tanque_ha != null ? c.area_tanque_ha : '';
       document.getElementById('pontas').value = (c.pontas || []).join(', ');
       document.getElementById('calibracao').value = c.calibracao || '';
       document.getElementById('observacao').value = c.observacao || '';
@@ -249,10 +260,10 @@
 
     async function editar(id) {
       try {
-        const resp = await fetch(API);
-        const clientes = await resp.json();
-        const c = clientes.find(x => x.id === id);
-        if (c) preencherForm(c);
+        const resp = await fetch(API + '/' + id);
+        if (!resp.ok) { mostrarStatus('Cliente não encontrado.', true); return; }
+        const c = await resp.json();
+        preencherForm(c);
       } catch (e) {
         mostrarStatus('Erro ao carregar cliente.', true);
       }
