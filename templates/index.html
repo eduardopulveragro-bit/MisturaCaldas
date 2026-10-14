@@ -109,8 +109,6 @@
             </select>
           </div>
         </div>
-        <div id="obs-cliente" style="display:none;font-size:12px;color:#1B5E20;background:#e8f5e9;padding:8px 12px;border-radius:6px;margin-bottom:12px;"></div>
-
         <div class="campos-operacao">
           <div class="campo-num">
             <label for="vazao">Volume de calda</label>
@@ -127,6 +125,11 @@
         <div>
           <label for="mensagem">Produtos (cole a mensagem do aplicador)</label>
           <textarea id="mensagem" name="mensagem" placeholder="Cole aqui a lista de produtos...&#10;&#10;Exemplo:&#10;Roundup 2 L/ha&#10;Engeo Pleno S 200 mL/ha&#10;Score 0,5 L/ha&#10;Nimbus 0,5 L/ha" required></textarea>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="observacao">Observação (aparece no PDF)</label>
+          <textarea id="observacao" name="observacao" style="height:50px;resize:vertical;" placeholder="Ex: Colocar 500L de água antes de adicionar produtos."></textarea>
         </div>
 
         <button type="submit" class="btn" id="btn">
@@ -185,7 +188,7 @@
 
     let dadosAtual = null;
     const clienteSel = document.getElementById('cliente-sel');
-    const obsCliente = document.getElementById('obs-cliente');
+    const obsField = document.getElementById('observacao');
 
     (async function carregarClientes() {
       try {
@@ -204,18 +207,12 @@
     clienteSel.addEventListener('change', function() {
       const opt = this.selectedOptions[0];
       if (!opt || !opt.dataset.cliente) {
-        obsCliente.style.display = 'none';
         return;
       }
       const c = JSON.parse(opt.dataset.cliente);
       if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
       if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
-      if (c.observacao) {
-        obsCliente.textContent = c.observacao;
-        obsCliente.style.display = 'block';
-      } else {
-        obsCliente.style.display = 'none';
-      }
+      obsField.value = c.observacao || '';
     });
 
     const OPCOES_FORM = [
@@ -495,7 +492,22 @@
         }
       });
 
-      doc.setFontSize(7);
+      var obsTexto = (document.getElementById('observacao').value || '').trim();
+      if (obsTexto) {
+        var finalY = doc.lastAutoTable.finalY + 8;
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(27, 94, 32);
+        doc.text('Observação:', 15, finalY);
+        finalY += 5;
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(60, 60, 60);
+        var linhas = doc.splitTextToSize(obsTexto, pw - 30);
+        doc.text(linhas, 15, finalY);
+      }
+
+      doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');
       doc.setTextColor(150, 150, 150);
       doc.text('PulverAgro — Consultoria em Pulverização', pw / 2, 290, { align: 'center' });
