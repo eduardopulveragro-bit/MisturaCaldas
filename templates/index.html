@@ -7,9 +7,10 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
-    header { background: #1A237E; color: white; padding: 18px 24px; }
+    header { background: #1A237E; color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
     header h1 { font-size: 20px; font-weight: 600; }
     header p { font-size: 12px; opacity: 0.8; margin-top: 4px; }
+    header a:hover { color: white; }
     main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
     .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
     label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #1A237E; }
@@ -90,13 +91,24 @@
 </head>
 <body>
   <header>
-    <h1>Assistente de Ordem de Mistura na Calda</h1>
-    <p>Cole a mensagem do aplicador e receba a ordem corrigida.</p>
+    <div>
+      <h1>Assistente de Ordem de Mistura na Calda</h1>
+      <p>Cole a mensagem do aplicador e receba a ordem corrigida.</p>
+    </div>
+    <a href="/clientes" style="color:rgba(255,255,255,0.85);text-decoration:none;font-size:13px;">Clientes &rarr;</a>
   </header>
 
   <main>
     <div class="card">
       <form id="form">
+        <div style="margin-bottom: 14px;">
+          <label for="cliente-sel">Cliente</label>
+          <div style="display:flex;gap:8px;">
+            <select id="cliente-sel" style="flex:1;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
+              <option value="">-- Sem cliente --</option>
+            </select>
+          </div>
+        </div>
         <div class="campos-operacao">
           <div class="campo-num">
             <label for="vazao">Volume de calda</label>
@@ -113,6 +125,11 @@
         <div>
           <label for="mensagem">Produtos (cole a mensagem do aplicador)</label>
           <textarea id="mensagem" name="mensagem" placeholder="Cole aqui a lista de produtos...&#10;&#10;Exemplo:&#10;Roundup 2 L/ha&#10;Engeo Pleno S 200 mL/ha&#10;Score 0,5 L/ha&#10;Nimbus 0,5 L/ha" required></textarea>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="observacao">Observação (aparece no PDF)</label>
+          <textarea id="observacao" name="observacao" style="height:50px;resize:vertical;" placeholder="Ex: Colocar 500L de água antes de adicionar produtos."></textarea>
         </div>
 
         <button type="submit" class="btn" id="btn">
@@ -170,6 +187,33 @@
     const btnConfirmar = document.getElementById('btn-confirmar-form');
 
     let dadosAtual = null;
+    const clienteSel = document.getElementById('cliente-sel');
+    const obsField = document.getElementById('observacao');
+
+    (async function carregarClientes() {
+      try {
+        const resp = await fetch('/api/clientes');
+        const clientes = await resp.json();
+        clientes.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = c.nome;
+          opt.dataset.cliente = JSON.stringify(c);
+          clienteSel.appendChild(opt);
+        });
+      } catch (e) {}
+    })();
+
+    clienteSel.addEventListener('change', function() {
+      const opt = this.selectedOptions[0];
+      if (!opt || !opt.dataset.cliente) {
+        return;
+      }
+      const c = JSON.parse(opt.dataset.cliente);
+      if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
+      if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
+      obsField.value = c.observacao || '';
+    });
 
     const OPCOES_FORM = [
       {grupo: 'Solidos', opts: [['WG','WG — Granulado Dispersivel'],['WP','WP — Po Molhavel'],['SG','SG — Granulado Soluvel'],['SP','SP — Po Soluvel']]},
@@ -452,6 +496,21 @@
           }
         }
       });
+
+      var obsTexto = (document.getElementById('observacao').value || '').trim();
+      if (obsTexto) {
+        var finalY = doc.lastAutoTable.finalY + 8;
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(27, 94, 32);
+        doc.text('Observação:', 15, finalY);
+        finalY += 5;
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(60, 60, 60);
+        var linhas = doc.splitTextToSize(obsTexto, pw - 30);
+        doc.text(linhas, 15, finalY);
+      }
 
       doc.setFontSize(9);
       doc.setFont('helvetica', 'normal');

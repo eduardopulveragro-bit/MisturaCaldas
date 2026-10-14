@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Clientes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+    header { background: #1A237E; color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 20px; font-weight: 600; }
+    header a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; }
+    header a:hover { color: white; }
+    main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    h2 { font-size: 16px; color: #1A237E; margin-bottom: 16px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #1A237E; }
+    input, textarea { width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px 12px; font-size: 14px; font-family: inherit; }
+    input:focus, textarea:focus { outline: none; border-color: #1A237E; box-shadow: 0 0 0 2px rgba(26,35,126,0.15); }
+    textarea { height: 60px; resize: vertical; }
+    .row { display: flex; gap: 12px; margin-bottom: 12px; }
+    .row > div { flex: 1; }
+    .campo { margin-bottom: 12px; }
+    .unidade { font-size: 11px; color: #888; margin-top: 2px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #1A237E; color: white; border: none; border-radius: 6px;
+      padding: 10px 24px; font-size: 14px; font-weight: 600; cursor: pointer;
+    }
+    .btn:hover { background: #283593; }
+    .btn-verde { background: #1B5E20; }
+    .btn-verde:hover { background: #2E7D32; }
+    .btn-vermelho { background: #C62828; font-size: 12px; padding: 6px 12px; }
+    .btn-vermelho:hover { background: #B71C1C; }
+    .btn-editar { background: #E65100; font-size: 12px; padding: 6px 12px; }
+    .btn-editar:hover { background: #BF360C; }
+    .lista-vazia { text-align: center; color: #999; padding: 32px 0; font-size: 14px; }
+
+    .cliente-item {
+      border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
+      margin-bottom: 12px; background: #fafafa;
+    }
+    .cliente-item h3 { font-size: 15px; color: #1A237E; margin-bottom: 8px; }
+    .cliente-info { font-size: 13px; color: #555; line-height: 1.8; }
+    .cliente-info strong { color: #333; }
+    .cliente-acoes { display: flex; gap: 8px; margin-top: 12px; }
+
+    .secao-titulo { font-size: 13px; font-weight: 700; color: #1A237E; margin-bottom: 8px; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
+
+    @media (max-width: 600px) {
+      .card { padding: 16px; }
+      .row { flex-direction: column; gap: 0; }
+      header { padding: 14px 16px; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cadastro de Clientes</h1>
+    <a href="/">&larr; Voltar para Ordem de Mistura</a>
+  </header>
+
+  <main>
+    <div class="card" id="form-card">
+      <h2 id="form-titulo">Novo Cliente</h2>
+      <input type="hidden" id="editando-id" value="">
+
+      <div class="campo">
+        <label for="nome">Nome do cliente / propriedade</label>
+        <input type="text" id="nome" placeholder="Ex: Fazenda Boa Vista - Joao">
+      </div>
+
+      <div class="secao-titulo">Pulverizador</div>
+      <div class="row">
+        <div>
+          <label for="pulverizador_modelo">Modelo</label>
+          <input type="text" id="pulverizador_modelo" placeholder="Ex: Jacto Uniport 3030">
+        </div>
+        <div>
+          <label for="volume_tanque">Volume do tanque</label>
+          <input type="number" id="volume_tanque" placeholder="3000" min="1" step="any">
+          <div class="unidade">Litros</div>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="vazao">Vazao de trabalho</label>
+          <input type="number" id="vazao" placeholder="80" min="1" step="any">
+          <div class="unidade">L/ha</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="area_tanque">Hectares por tanque</label>
+          <input type="number" id="area_tanque" placeholder="50" min="1" step="any">
+          <div class="unidade">ha</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div class="secao-titulo">Pontas</div>
+      <div class="campo">
+        <label for="pontas">Pontas que possui</label>
+        <input type="text" id="pontas" placeholder="Ex: TT110015, AIXR110015, Leque HI 35">
+        <div class="unidade">Separe por virgula</div>
+      </div>
+
+      <div class="secao-titulo">Extras</div>
+      <div class="campo">
+        <label for="calibracao">Calibracao (opcional)</label>
+        <textarea id="calibracao" placeholder="Ex: Ultima calibracao 15/09/2026 - 80 L/ha a 18 km/h com TT110015 a 2 bar"></textarea>
+      </div>
+      <div class="campo">
+        <label for="observacao">Observacao (opcional)</label>
+        <textarea id="observacao" placeholder="Ex: Sempre colocar 200L de agua antes de adicionar produtos. Tanque de pre-mistura de 50L."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 16px;">
+        <button class="btn btn-verde" onclick="salvar()">Salvar Cliente</button>
+        <button class="btn" onclick="limparForm()" style="background: #757575;">Limpar</button>
+      </div>
+      <div id="form-status" style="margin-top: 10px; font-size: 13px;"></div>
+    </div>
+
+    <div class="card">
+      <h2>Clientes Cadastrados</h2>
+      <div id="lista-clientes">
+        <div class="lista-vazia">Carregando...</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const API = '/api/clientes';
+
+    async function carregarClientes() {
+      const div = document.getElementById('lista-clientes');
+      try {
+        const resp = await fetch(API);
+        const clientes = await resp.json();
+        if (!clientes.length) {
+          div.innerHTML = '<div class="lista-vazia">Nenhum cliente cadastrado ainda.</div>';
+          return;
+        }
+        div.innerHTML = '';
+        clientes.forEach(function(c) { div.appendChild(renderCliente(c)); });
+      } catch (e) {
+        div.innerHTML = '<div class="lista-vazia" style="color:#C62828;">Erro ao carregar clientes.</div>';
+      }
+    }
+
+    function renderCliente(c) {
+      const pulv = c.pulverizador || {};
+      const infos = [];
+      if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
+      if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
+      if (c.vazao_L_ha != null) infos.push('<strong>Vazao:</strong> ' + c.vazao_L_ha + ' L/ha');
+      if (c.area_tanque_ha != null) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
+      if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
+      if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));
+      if (c.observacao) infos.push('<strong>Obs:</strong> ' + esc(c.observacao));
+
+      var div = document.createElement('div');
+      div.className = 'cliente-item';
+      div.innerHTML = '<h3>' + esc(c.nome) + '</h3>' +
+        '<div class="cliente-info">' + infos.join('<br>') + '</div>' +
+        '<div class="cliente-acoes"></div>';
+      var acoes = div.querySelector('.cliente-acoes');
+      var btnEdit = document.createElement('button');
+      btnEdit.className = 'btn btn-editar';
+      btnEdit.textContent = 'Editar';
+      btnEdit.addEventListener('click', function() { editar(c.id); });
+      var btnDel = document.createElement('button');
+      btnDel.className = 'btn btn-vermelho';
+      btnDel.textContent = 'Excluir';
+      btnDel.addEventListener('click', function() { excluir(c.id, c.nome); });
+      acoes.appendChild(btnEdit);
+      acoes.appendChild(btnDel);
+      return div;
+    }
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s || '';
+      return d.innerHTML;
+    }
+
+    function lerForm() {
+      return {
+        nome: document.getElementById('nome').value,
+        pulverizador_modelo: document.getElementById('pulverizador_modelo').value,
+        volume_tanque: document.getElementById('volume_tanque').value,
+        vazao: document.getElementById('vazao').value,
+        area_tanque: document.getElementById('area_tanque').value,
+        pontas: document.getElementById('pontas').value,
+        calibracao: document.getElementById('calibracao').value,
+        observacao: document.getElementById('observacao').value,
+      };
+    }
+
+    function preencherForm(c) {
+      document.getElementById('editando-id').value = c.id;
+      document.getElementById('nome').value = c.nome || '';
+      document.getElementById('pulverizador_modelo').value = (c.pulverizador || {}).modelo || '';
+      var vol = (c.pulverizador || {}).volume_tanque_L;
+      document.getElementById('volume_tanque').value = vol != null ? vol : '';
+      document.getElementById('vazao').value = c.vazao_L_ha != null ? c.vazao_L_ha : '';
+      document.getElementById('area_tanque').value = c.area_tanque_ha != null ? c.area_tanque_ha : '';
+      document.getElementById('pontas').value = (c.pontas || []).join(', ');
+      document.getElementById('calibracao').value = c.calibracao || '';
+      document.getElementById('observacao').value = c.observacao || '';
+      document.getElementById('form-titulo').textContent = 'Editando: ' + c.nome;
+      document.getElementById('form-card').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function limparForm() {
+      document.getElementById('editando-id').value = '';
+      document.getElementById('nome').value = '';
+      document.getElementById('pulverizador_modelo').value = '';
+      document.getElementById('volume_tanque').value = '';
+      document.getElementById('vazao').value = '';
+      document.getElementById('area_tanque').value = '';
+      document.getElementById('pontas').value = '';
+      document.getElementById('calibracao').value = '';
+      document.getElementById('observacao').value = '';
+      document.getElementById('form-titulo').textContent = 'Novo Cliente';
+      document.getElementById('form-status').textContent = '';
+    }
+
+    async function salvar() {
+      const dados = lerForm();
+      if (!dados.nome.trim()) {
+        mostrarStatus('Preencha o nome do cliente.', true);
+        return;
+      }
+      const editId = document.getElementById('editando-id').value;
+      const url = editId ? API + '/' + editId : API;
+      const method = editId ? 'PUT' : 'POST';
+
+      try {
+        const resp = await fetch(url, {
+          method: method,
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(dados),
+        });
+        const resultado = await resp.json();
+        if (!resp.ok) {
+          mostrarStatus('Erro: ' + (resultado.erro || 'falha'), true);
+          return;
+        }
+        mostrarStatus(editId ? 'Cliente atualizado!' : 'Cliente cadastrado!', false);
+        limparForm();
+        carregarClientes();
+      } catch (e) {
+        mostrarStatus('Erro de conexao: ' + e.message, true);
+      }
+    }
+
+    async function editar(id) {
+      try {
+        const resp = await fetch(API + '/' + id);
+        if (!resp.ok) { mostrarStatus('Cliente não encontrado.', true); return; }
+        const c = await resp.json();
+        preencherForm(c);
+      } catch (e) {
+        mostrarStatus('Erro ao carregar cliente.', true);
+      }
+    }
+
+    async function excluir(id, nome) {
+      if (!confirm('Excluir o cliente "' + nome + '"?')) return;
+      try {
+        const resp = await fetch(API + '/' + id, { method: 'DELETE' });
+        if (resp.ok) {
+          carregarClientes();
+          const editId = document.getElementById('editando-id').value;
+          if (editId === id) limparForm();
+        }
+      } catch (e) {
+        mostrarStatus('Erro ao excluir.', true);
+      }
+    }
+
+    function mostrarStatus(msg, erro) {
+      const el = document.getElementById('form-status');
+      el.textContent = msg;
+      el.style.color = erro ? '#C62828' : '#1B5E20';
+      if (!erro) setTimeout(() => { el.textContent = ''; }, 3000);
+    }
+
+    carregarClientes();
+  </script>
+</body>
+</html>
