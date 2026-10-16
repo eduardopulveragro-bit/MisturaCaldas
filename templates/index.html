@@ -122,6 +122,22 @@
           </div>
         </div>
 
+        <div id="pontas-pressao" style="display:none;margin-bottom:16px;">
+          <div class="campos-operacao">
+            <div class="campo-num" style="flex:2;">
+              <label for="ponta-sel">Ponta</label>
+              <select id="ponta-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
+                <option value="">-- Selecione a ponta --</option>
+              </select>
+            </div>
+            <div class="campo-num">
+              <label for="pressao">Pressão</label>
+              <input type="number" id="pressao" placeholder="3.0" min="0" step="0.1">
+              <div class="unidade">bar</div>
+            </div>
+          </div>
+        </div>
+
         <div>
           <label for="mensagem">Produtos (cole a mensagem do aplicador)</label>
           <textarea id="mensagem" name="mensagem" placeholder="Cole aqui a lista de produtos...&#10;&#10;Exemplo:&#10;Roundup 2 L/ha&#10;Engeo Pleno S 200 mL/ha&#10;Score 0,5 L/ha&#10;Nimbus 0,5 L/ha" required></textarea>
@@ -204,15 +220,34 @@
       } catch (e) {}
     })();
 
+    const pontaSel = document.getElementById('ponta-sel');
+    const pressaoField = document.getElementById('pressao');
+    const pontasPressaoDiv = document.getElementById('pontas-pressao');
+
     clienteSel.addEventListener('change', function() {
       const opt = this.selectedOptions[0];
+      pontaSel.innerHTML = '<option value="">-- Selecione a ponta --</option>';
+      pressaoField.value = '';
       if (!opt || !opt.dataset.cliente) {
+        pontasPressaoDiv.style.display = 'none';
         return;
       }
       const c = JSON.parse(opt.dataset.cliente);
       if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
       if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
       obsField.value = c.observacao || '';
+
+      if (c.pontas && c.pontas.length > 0) {
+        c.pontas.forEach(p => {
+          const o = document.createElement('option');
+          o.value = p;
+          o.textContent = p;
+          pontaSel.appendChild(o);
+        });
+        pontasPressaoDiv.style.display = 'block';
+      } else {
+        pontasPressaoDiv.style.display = 'none';
+      }
     });
 
     const OPCOES_FORM = [
@@ -421,11 +456,22 @@
       doc.setTextColor(100, 100, 100);
       doc.text('Vazão: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 14);
 
+      var pontaTxt = (document.getElementById('ponta-sel').value || '').trim();
+      var pressaoTxt = (document.getElementById('pressao').value || '').trim();
+      var nextInfoY = titleY + 19;
+      if (pontaTxt || pressaoTxt) {
+        var partes = [];
+        if (pontaTxt) partes.push('Ponta: ' + pontaTxt);
+        if (pressaoTxt) partes.push('Pressão: ' + pressaoTxt + ' bar');
+        doc.text(partes.join('   |   '), textX, nextInfoY);
+        nextInfoY += 5;
+      }
+
       var hoje = new Date();
       var dataTxt = hoje.toLocaleDateString('pt-BR');
-      doc.text('Data: ' + dataTxt, textX, titleY + 19);
+      doc.text('Data: ' + dataTxt, textX, nextInfoY);
 
-      y = Math.max(y + logoH, titleY + 22) + 4;
+      y = Math.max(y + logoH, nextInfoY + 3) + 4;
 
       doc.setDrawColor(27, 94, 32);
       doc.setLineWidth(0.4);

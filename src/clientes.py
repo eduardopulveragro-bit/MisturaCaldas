@@ -1,17 +1,33 @@
 """CRUD de clientes — armazena em data/clientes.json."""
 import json
 import os
+import shutil
 import uuid
 from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 
 DATA_DIR = Path(__file__).parent.parent / "data"
-ARQUIVO = DATA_DIR / "clientes.json"
-_LOCK = DATA_DIR / "clientes.lock"
+_SOURCE_ARQUIVO = DATA_DIR / "clientes.json"
+
+_ON_VERCEL = bool(os.environ.get("VERCEL"))
+if _ON_VERCEL:
+    _TMP_DIR = Path("/tmp")
+    ARQUIVO = _TMP_DIR / "clientes.json"
+    _LOCK = _TMP_DIR / "clientes.lock"
+else:
+    ARQUIVO = _SOURCE_ARQUIVO
+    _LOCK = DATA_DIR / "clientes.lock"
+
+
+def _seed_tmp():
+    """Copy bundled clientes.json to /tmp on Vercel cold start."""
+    if _ON_VERCEL and not ARQUIVO.exists() and _SOURCE_ARQUIVO.exists():
+        shutil.copy2(_SOURCE_ARQUIVO, ARQUIVO)
 
 
 def _carregar() -> list[dict]:
+    _seed_tmp()
     if not ARQUIVO.exists():
         return []
     with open(ARQUIVO, encoding="utf-8") as f:
@@ -19,6 +35,7 @@ def _carregar() -> list[dict]:
 
 
 def _salvar(clientes: list[dict]):
+    _seed_tmp()
     with open(ARQUIVO, "w", encoding="utf-8") as f:
         json.dump(clientes, f, ensure_ascii=False, indent=2)
 
