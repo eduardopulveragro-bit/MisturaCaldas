@@ -89,7 +89,6 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
         if info is not None:
             resultado.append({
                 **item,
-                "produto": info["nome"],
                 "posicao": int(info["posicao"]),
                 "formulacao": info["formulacao"],
                 "registro_mapa": info["registro_mapa"],
