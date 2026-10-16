@@ -313,7 +313,7 @@
         const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
 
         const doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
-          ? item.dose + ' ' + item.unidade + '/' + item.base
+          ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
           : '—';
 
         let produtoHtml = '<strong>' + item.produto + '</strong>';
@@ -493,7 +493,7 @@
         var formUpper = (item.formulacao || '').toUpperCase();
         var formDisplay = formUpper === 'DESCONHECIDA' ? '---' : formUpper;
         var doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
-          ? item.dose + ' ' + item.unidade + '/' + item.base
+          ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
           : '---';
         var nome = item.produto;
         if (item.alerta_prediluicao) {

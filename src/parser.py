@@ -109,4 +109,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     dados.setdefault("itens", [])
     dados.setdefault("alertas", [])
+    for item in dados["itens"]:
+        if not item.get("base"):
+            item["base"] = "ha"
     return dados
