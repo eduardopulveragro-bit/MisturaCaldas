@@ -132,8 +132,14 @@
             </div>
             <div class="campo-num">
               <label for="pressao">Pressão</label>
-              <input type="number" id="pressao" placeholder="3.0" min="0" step="0.1">
-              <div class="unidade">bar</div>
+              <div style="display:flex;gap:6px;">
+                <input type="text" id="pressao" placeholder="Ex: 2.5 ou 250 a 300" style="flex:1;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;text-align:center;">
+                <select id="pressao-unidade" style="border:1px solid #ccc;border-radius:6px;padding:10px 8px;font-size:14px;background:white;">
+                  <option value="bar">bar</option>
+                  <option value="PSI">PSI</option>
+                  <option value="kPa">kPa</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -458,11 +464,12 @@
 
       var pontaTxt = (document.getElementById('ponta-sel').value || '').trim();
       var pressaoTxt = (document.getElementById('pressao').value || '').trim();
+      var pressaoUnidade = (document.getElementById('pressao-unidade').value || 'bar');
       var nextInfoY = titleY + 19;
       if (pontaTxt || pressaoTxt) {
         var partes = [];
         if (pontaTxt) partes.push('Ponta: ' + pontaTxt);
-        if (pressaoTxt) partes.push('Pressão: ' + pressaoTxt + ' bar');
+        if (pressaoTxt) partes.push('Pressão: ' + pressaoTxt + ' ' + pressaoUnidade);
         doc.text(partes.join('   |   '), textX, nextInfoY);
         nextInfoY += 5;
       }
