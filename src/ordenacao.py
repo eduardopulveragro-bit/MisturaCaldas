@@ -27,29 +27,62 @@ def _normalizar(texto: str) -> str:
     return ''.join(c for c in nfkd if not unicodedata.category(c).startswith('M'))
 
 
-def buscar_produto(nome: str, produtos: list[dict]) -> dict | None:
-    """Busca produto por nome ou nome alternativo (case-insensitive, parcial)."""
+_FORM_SOLIDA = {"WG", "WP", "SG", "SP"}
+_FORM_LIQUIDA = {"SL", "SC", "EC", "EW", "ME", "SE", "OD", "CS", "EO"}
+
+
+def _melhor_match(matches: list[dict], unidade: str | None) -> dict:
+    """Quando há vários matches, usa a unidade da dose para desambiguar."""
+    if len(matches) == 1 or not unidade:
+        return matches[0]
+    u = unidade.lower()
+    eh_solida = u in ("kg", "g", "gr")
+    for p in matches:
+        form = (p.get("formulacao") or "").upper()
+        if eh_solida and form in _FORM_SOLIDA:
+            return p
+        if not eh_solida and form in _FORM_LIQUIDA:
+            return p
+    return matches[0]
+
+
+def buscar_produto(nome: str, produtos: list[dict], unidade: str | None = None) -> dict | None:
+    """Busca produto por nome ou nome alternativo (case-insensitive, parcial).
+    Quando há múltiplos matches, usa a unidade (kg/g → sólido, L/mL → líquido) para escolher."""
     chave = _normalizar(nome)
+    visto = set()
+    matches = []
+
+    def _add(p):
+        pid = id(p)
+        if pid not in visto:
+            visto.add(pid)
+            matches.append(p)
 
     # 1. Busca exata
     for p in produtos:
         if _normalizar(p["nome"]) == chave:
-            return p
+            _add(p)
         alternativos = str(p.get("nomes_alternativos", "") or "")
         for alt in alternativos.split("|"):
             if _normalizar(alt) == chave:
-                return p
+                _add(p)
+
+    if matches:
+        return _melhor_match(matches, unidade)
 
     # 2. Busca parcial: nome digitado contém o alternativo ou vice-versa
     for p in produtos:
         if chave in _normalizar(p["nome"]) or _normalizar(p["nome"]) in chave:
-            return p
+            _add(p)
         alternativos = str(p.get("nomes_alternativos", "") or "")
         for alt in alternativos.split("|"):
             alt_norm = _normalizar(alt)
             if alt_norm and (chave in alt_norm or alt_norm in chave):
-                return p
+                _add(p)
 
+    if matches:
+        return _melhor_match(matches, unidade)
     return None
 
 
@@ -84,7 +117,7 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     resultado = []
 
     for item in itens:
-        info = buscar_produto(item["produto"], produtos)
+        info = buscar_produto(item["produto"], produtos, item.get("unidade"))
 
         if info is not None:
             resultado.append({
