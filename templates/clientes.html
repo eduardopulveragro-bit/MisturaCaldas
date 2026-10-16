@@ -84,7 +84,7 @@
       </div>
       <div class="row">
         <div>
-          <label for="vazao">Vazao de trabalho</label>
+          <label for="vazao">Taxa de aplicação</label>
           <input type="number" id="vazao" placeholder="80" min="1" step="any">
           <div class="unidade">L/ha</div>
         </div>
@@ -156,7 +156,7 @@
       const infos = [];
       if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
       if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
-      if (c.vazao_L_ha != null) infos.push('<strong>Vazao:</strong> ' + c.vazao_L_ha + ' L/ha');
+      if (c.vazao_L_ha != null) infos.push('<strong>Taxa de aplicação:</strong> ' + c.vazao_L_ha + ' L/ha');
       if (c.area_tanque_ha != null) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
       if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
       if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));

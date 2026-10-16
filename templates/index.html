@@ -111,7 +111,7 @@
         </div>
         <div class="campos-operacao">
           <div class="campo-num">
-            <label for="vazao">Volume de calda</label>
+            <label for="vazao">Taxa de aplicação</label>
             <input type="number" id="vazao" name="vazao" placeholder="80" min="1" step="any">
             <div class="unidade">L/ha</div>
           </div>
@@ -298,7 +298,7 @@
       if (dados.operacao) {
         const partes = [];
         if (dados.operacao.area_tanque_ha) partes.push('Tanque: ' + dados.operacao.area_tanque_ha + ' ha');
-        if (dados.operacao.vazao_L_ha) partes.push('Vazao: ' + dados.operacao.vazao_L_ha + ' L/ha');
+        if (dados.operacao.vazao_L_ha) partes.push('Taxa de aplicação: ' + dados.operacao.vazao_L_ha + ' L/ha');
         if (dados.operacao.ponta) partes.push('Ponta: ' + dados.operacao.ponta);
         if (partes.length) operacaoInfo.textContent = partes.join(' | ');
       }
@@ -461,18 +461,27 @@
       var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
       doc.setFontSize(11);
       doc.setTextColor(100, 100, 100);
-      doc.text('Vazão: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 14);
+      doc.text('Taxa de aplicação: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 14);
 
       var pontaTxt = (document.getElementById('ponta-sel').value || '').trim();
       var pressaoTxt = (document.getElementById('pressao').value || '').trim();
       var pressaoUnidade = (document.getElementById('pressao-unidade').value || 'bar');
       var nextInfoY = titleY + 19;
       if (pontaTxt || pressaoTxt) {
-        var partes = [];
-        if (pontaTxt) partes.push('Ponta: ' + pontaTxt);
-        if (pressaoTxt) partes.push('Pressão: ' + pressaoTxt + ' ' + pressaoUnidade);
-        doc.text(partes.join('   |   '), textX, nextInfoY);
-        nextInfoY += 5;
+        doc.setFillColor(27, 94, 32);
+        var boxW = pw - 30;
+        doc.roundedRect(15, nextInfoY - 5, boxW, 12, 3, 3, 'F');
+        doc.setFontSize(13);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(255, 255, 255);
+        var partesPonta = [];
+        if (pontaTxt) partesPonta.push('Ponta: ' + pontaTxt);
+        if (pressaoTxt) partesPonta.push('Pressão: ' + pressaoTxt + ' ' + pressaoUnidade);
+        doc.text(partesPonta.join('   |   '), pw / 2, nextInfoY + 2, { align: 'center' });
+        doc.setFont('helvetica', 'normal');
+        doc.setTextColor(100, 100, 100);
+        doc.setFontSize(11);
+        nextInfoY += 14;
       }
 
       var hoje = new Date();
@@ -511,8 +520,8 @@
 
       var colStyles = {
         0: { halign: 'center', cellWidth: 10 },
-        1: { halign: 'left' },
-        2: { halign: 'center', cellWidth: 36 },
+        1: { halign: 'left', cellWidth: 52 },
+        2: { halign: 'center', cellWidth: 38 },
         3: { halign: 'center', cellWidth: 26 },
         4: { halign: 'center', cellWidth: 26 }
       };

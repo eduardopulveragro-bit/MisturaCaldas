@@ -221,3 +221,9 @@ biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante óleo vegetal/biológico �
 Strong,Strong Nutricional|Strong Foliar,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
 Leaf,Leaf Foliar|Leaf Nutricional,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
 Actron,Actron Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-16,
+Dipel,Dipel WG|Dipel WP|Dipel SC,4519,BIO_BACTERIANO,20,inseticida biológico Sumitomo — Bt kurstaki,pendente (2026-10-16),Bacillus thuringiensis kurstaki
+Agree,Agree SC,4421,BIO_BACTERIANO,20,inseticida biológico UPL — Bt aizawai,pendente (2026-10-16),Bacillus thuringiensis aizawai
+Trichodermil,Trichodermil SC|Trichodermil 1306,19112,BIO_FUNGICO,21,fungicida biológico Koppert — Trichoderma,pendente (2026-10-16),Trichoderma harzianum
+Quality,Quality WG|Quality Koppert,27915,BIO_FUNGICO,21,fungicida biológico Koppert — Beauveria,pendente (2026-10-16),Beauveria bassiana
+Metarriz,Metarriz WP|Metarriz Koppert,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
+Baculovirus AEE,Baculovirus|Baculovírus|CoolGuard,,BIO_VIRAL,22,inseticida biológico viral — lagartas,pendente (2026-10-16),Baculovirus anticarsia

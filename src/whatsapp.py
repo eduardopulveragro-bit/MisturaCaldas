@@ -50,7 +50,7 @@ def _formatar_resposta(itens: list[dict], alertas: list[dict], operacao: dict | 
         if operacao.get("area_tanque_ha"):
             partes.append(f"Tanque: {operacao['area_tanque_ha']:.0f} ha")
         if operacao.get("vazao_L_ha"):
-            partes.append(f"Vazao: {operacao['vazao_L_ha']:.0f} L/ha")
+            partes.append(f"Taxa de aplicação: {operacao['vazao_L_ha']:.0f} L/ha")
         if operacao.get("ponta"):
             partes.append(f"Ponta: {operacao['ponta']}")
         if operacao.get("pressao_bar"):
