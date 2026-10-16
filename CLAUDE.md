@@ -21,7 +21,7 @@
 
 ```
 data/
-  regras_ordem.csv   — 20 posições (fonte da verdade para ordenação)
+  regras_ordem.csv   — 23 posições (fonte da verdade para ordenação)
   produtos.csv       — cadastro de produtos (chave: registro_mapa)
   pares.csv          — pares para teste de ordenação
   pontas.csv         — tabela de ponta × pressão × vazão
@@ -43,6 +43,14 @@ logs/app.log         — log de chamadas de IA
 ```
 L/ha = vazão(L/min) × 600 / (velocidade km/h × faixa m)
 ```
+
+## Regras de ordenação
+
+- Quando 2+ produtos têm a mesma formulação (ex: dois SL), o herbicida vai primeiro e o inseticida/bactericida depois.
+  - Exemplo: Glifosato (SL, herbicida) → posição 2; Kassumin (SL, bactericida) → posição 6.
+  - Implementado em `_posicionar_sl()` no `ordenacao.py`.
+- A IA extrai itens; o CÓDIGO decide a ordem — nunca a IA.
+- Nome exibido na tabela = nome que o usuário digitou, não o nome do CSV.
 
 ## Produto não cadastrado
 
