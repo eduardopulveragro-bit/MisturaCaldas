@@ -216,3 +216,9 @@ Equip Plus,Equip|Equip WG,,WG,6,herbicida WG Bayer — foramsulfurom+iodosulfuro
 Accent,Accent WG|Nicosulfurom WG,,WG,6,herbicida WG Corteva — nicosulfurom — milho,2026-10-13,nicosulfurom
 Brodal,Brodal SC|Brodal Bayer|Diflufenican,,SC,8,herbicida SC Bayer — trigo,2026-10-13,diflufenican
 Cytron,Cytron|Óleo de Laranja,,ADJUV_OLEO,12,adjuvante óleo de laranja — espalhante e penetrante,2026-10-16,d-limoneno (óleo de laranja)
+Tec Catp 2.8,Catp|Catp 2.8|Tec Catp|Comando BT,8323,BIO_BACTERIANO,20,inseticida biológico Solubio — bula ADAPAR/PR 2024,2026-10-16,Bacillus thuringiensis kurstaki CBMAI 1398
+Calaris,Calaris SC|Calaris Syngenta,9419,SC,8,herbicida SC Syngenta — mesotrione+atrazine — milho,2026-10-16,mesotrione+atrazine
+biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante óleo vegetal/biológico — compatível com biológicos,2026-10-16,óleo vegetal
+Strong,Strong Nutricional|Strong Foliar,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
+Leaf,Leaf Foliar|Leaf Nutricional,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
+Actron,Actron Adjuvante,,ADJUVANTE,17,adjuvante surfactante espalhante adesivo,2026-10-16,surfactante não-iônico

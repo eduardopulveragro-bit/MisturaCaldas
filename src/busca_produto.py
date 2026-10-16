@@ -29,6 +29,8 @@ Primeiro determine a CLASSE do produto. As classes possíveis são:
   - herbicida, fungicida, inseticida, acaricida, nematicida, regulador (= DEFENSIVO)
   - adjuvante, óleo mineral, óleo vegetal, condicionador, espalhante, surfactante (= ADJUVANTE)
   - fertilizante foliar, aminoácido, bioestimulante (= FERTILIZANTE)
+  - biologico — produto à base de microrganismo vivo (= BIOLÓGICO): Bacillus spp., Trichoderma spp.,
+    Beauveria bassiana, Metarhizium anisopliae, Baculovírus, Granulovírus, etc.
 
 ⚠️  ATENÇÃO: A MAIORIA dos produtos agrícolas são DEFENSIVOS (herbicidas, fungicidas, inseticidas).
     NÃO assuma que um produto é adjuvante só porque o nome parece genérico.
@@ -76,15 +78,23 @@ Pos | Sigla | Tipo                                               | Uso
  17 | —     | Surfactantes/Espalhantes/Estabilizantes              | SÓ adjuvantes
  18 | —     | Fertilizantes Foliares                              | SÓ fertilizantes
  19 | —     | Redutores de Espuma                                 | SÓ antiespumantes
+ 20 | —     | Biológicos Bacterianos (Bacillus spp.)              | SÓ biológicos bacterianos
+ 21 | —     | Biológicos Fúngicos (Trichoderma, Beauveria)        | SÓ biológicos fúngicos
+ 22 | —     | Biológicos Virais (Baculovírus, Granulovírus)       | SÓ biológicos virais
 
 REGRA: Posições 2, 12, 17, 18, 19 são EXCLUSIVAS para adjuvantes/fertilizantes.
+       Posições 20-22 são EXCLUSIVAS para BIOLÓGICOS (produtos à base de microrganismo vivo).
        DEFENSIVOS (herbicidas, fungicidas, inseticidas etc.) NUNCA vão nessas posições.
        Um defensivo SE vai na posição 10, um EC na 11, um SC na 8, etc.
+       Um biológico bacteriano (Bacillus) vai na posição 20, fúngico na 21, viral na 22.
 
 ETAPA 4 — VALIDAÇÃO CRUZADA (antes de responder):
   ✓ Se classe=defensivo, a posição DEVE ser 3-11, 13-16 (posições com sigla)
   ✓ Se classe=adjuvante, a posição DEVE ser 2, 12, 17, ou 19
   ✓ Se classe=fertilizante, a posição DEVE ser 18
+  ✓ Se classe=biologico bacteriano (Bacillus), a posição DEVE ser 20 e formulacao="BIO_BACTERIANO"
+  ✓ Se classe=biologico fúngico (Trichoderma, Beauveria, Metarhizium), posição=21 e formulacao="BIO_FUNGICO"
+  ✓ Se classe=biologico viral (Baculovírus, Granulovírus), posição=22 e formulacao="BIO_VIRAL"
   ✓ A formulação e a posição devem ser compatíveis (ex: SC→8, EC→11, WG→6)
   ✓ Se qualquer validação falhar, revise sua classificação antes de responder
 
@@ -195,16 +205,19 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
 _POSICOES_DEFENSIVO = {3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16}
 _POSICOES_ADJUVANTE = {2, 12, 17, 19}
+_POSICOES_BIOLOGICO = {20, 21, 22}
 
 
 def _validar_resposta(classe: str, formulacao: str, posicao) -> bool:
     """Valida que classe, formulação e posição são compatíveis."""
-    if not isinstance(posicao, int) or not (1 <= posicao <= 20):
+    if not isinstance(posicao, int) or not (1 <= posicao <= 23):
         return False
 
     defensivos = {"herbicida", "fungicida", "inseticida", "acaricida", "nematicida", "regulador"}
     adjuvantes = {"adjuvante", "óleo mineral", "óleo vegetal", "condicionador", "espalhante", "surfactante"}
     fertilizantes = {"fertilizante foliar", "fertilizante", "aminoácido", "bioestimulante"}
+    biologicos = {"biologico", "biológico", "inseticida biológico", "fungicida biológico",
+                  "biocontrole", "biopesticida", "microrganismo"}
 
     if classe in defensivos:
         if posicao not in _POSICOES_DEFENSIVO:
@@ -216,6 +229,9 @@ def _validar_resposta(classe: str, formulacao: str, posicao) -> bool:
             return False
     elif classe in fertilizantes:
         if posicao != 18:
+            return False
+    elif classe in biologicos:
+        if posicao not in _POSICOES_BIOLOGICO:
             return False
 
     return True
@@ -230,7 +246,10 @@ def salvar_produto(nome_original: str, dados_ia: dict) -> dict:
 
     posicao = _FORMULACAO_PARA_POSICAO.get(formulacao) or _FORM_ESPECIAL_POSICAO.get(formulacao) or 999
 
-    _FORM_ESPECIAL = {2: "ADJUVANTE", 12: "OLEO", 17: "ADJUVANTE", 18: "FERTILIZANTE", 19: "ADJUVANTE"}
+    _FORM_ESPECIAL = {
+        2: "ADJUVANTE", 12: "OLEO", 17: "ADJUVANTE", 18: "FERTILIZANTE", 19: "ADJUVANTE",
+        20: "BIO_BACTERIANO", 21: "BIO_FUNGICO", 22: "BIO_VIRAL",
+    }
     if posicao in _FORM_ESPECIAL and formulacao not in _FORMULACAO_PARA_POSICAO:
         formulacao = _FORM_ESPECIAL[posicao]
 

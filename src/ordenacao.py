@@ -63,6 +63,7 @@ def _posicao_por_formulacao(formulacao: str | None) -> int | None:
 _FORM_ESPECIAL_POSICAO = {
     "OLEO": 12, "ADJUVANTE": 17, "FERTILIZANTE": 18,
     "CONDICIONADOR": 2, "ANTIESPUMANTE": 19,
+    "BIO_BACTERIANO": 20, "BIO_FUNGICO": 21, "BIO_VIRAL": 22,
 }
 
 
@@ -220,6 +221,9 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
 
     if tem_glif_sl and tem_24d_sl:
         primeiro_sl = next(s for s in sls if _eh_24d(s))
+    elif tem_glif_sl:
+        # Glifosato vai cedo; outros SLs (Kassumin, bactericidas, etc.) ficam na pos normal
+        primeiro_sl = next(s for s in sls if _eh_glifosato(s))
     elif tem_24d_sl and tem_glif_wg and len(sls) >= 2:
         outros = [s for s in sls if not _eh_24d(s)]
         primeiro_sl = outros[0] if outros else sls[0]

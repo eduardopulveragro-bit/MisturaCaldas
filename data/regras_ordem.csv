@@ -18,4 +18,7 @@ posicao,codigo,descricao,grupo
 17,ADJUV_SURFACT,"Adjuvantes Surfactantes, Espalhantes, Estabilizadores",ESPECIAIS
 18,FERT_FOLIAR,Fertilizantes Foliares,ESPECIAIS
 19,ADJUV_ESPUMA,Adjuvantes Redutores de Espuma,ESPECIAIS
-20,AGUA_FINAL,Terminar de encher o tanque com água,ÁGUA
+20,BIO_BACTERIANO,"Biológicos Bacterianos (Bacillus subtilis, B. thuringiensis, B. amyloliquefaciens)",BIOLÓGICOS
+21,BIO_FUNGICO,"Biológicos Fúngicos (Trichoderma, Beauveria bassiana, Metarhizium anisopliae)",BIOLÓGICOS
+22,BIO_VIRAL,"Biológicos Virais (Baculovírus, Granulovírus)",BIOLÓGICOS
+23,AGUA_FINAL,Terminar de encher o tanque com água,ÁGUA
