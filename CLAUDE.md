@@ -49,6 +49,9 @@ L/ha = vazão(L/min) × 600 / (velocidade km/h × faixa m)
 - Quando 2+ produtos têm a mesma formulação (ex: dois SL), o herbicida vai primeiro e o inseticida/bactericida depois.
   - Exemplo: Glifosato (SL, herbicida) → posição 2; Kassumin (SL, bactericida) → posição 6.
   - Implementado em `_posicionar_sl()` no `ordenacao.py`.
+- Glifosato SL + 2,4-D SL: 2,4-D começa primeiro, Glifosato finaliza. Glifosato só vai primeiro se for WG.
+- Graminicida EC (Kennox, cletodim, haloxifop, etc.) + Óleo: sempre pré-diluir juntos e posicionar ENTRE o 2,4-D e o Glifosato.
+  - Implementado em `_prediluir_graminicida_oleo()` + `_separar_glif_24d()` no `ordenacao.py`.
 - A IA extrai itens; o CÓDIGO decide a ordem — nunca a IA.
 - Nome exibido na tabela = nome que o usuário digitou, não o nome do CSV.
 

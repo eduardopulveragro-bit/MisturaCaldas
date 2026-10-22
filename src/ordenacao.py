@@ -190,9 +190,8 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     resultado = _posicionar_sl(resultado)
     resultado = _posicionar_oleo(resultado)
     resultado = _oleo_laranja_com_mancozeb(resultado)
-    resultado = _prediluir_cletodim_oleo(resultado)
+    resultado = _prediluir_graminicida_oleo(resultado)
     resultado = _prediluir_abamectina_oleo(resultado)
-    resultado = _prediluir_haloxifop_oleo(resultado)
     resultado = _separar_glif_24d(resultado)
     resultado = _posicionar_foliares(resultado)
     return resultado
@@ -205,7 +204,18 @@ def _eh_glifosato(item: dict) -> bool:
 
 def _eh_24d(item: dict) -> bool:
     nome = _normalizar(item["produto"])
-    return any(x in nome for x in ("2,4-d", "2,4 d", "2,4d", "aminol", "dma 806", "u-46"))
+    return any(x in nome for x in ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46"))
+
+
+def _eh_graminicida_ec(item: dict) -> bool:
+    """EC herbicidas graminicidas (pré-diluir com óleo, posicionar entre 2,4-D e Glifosato)."""
+    nome = _normalizar(item["produto"])
+    return any(x in nome for x in (
+        "kennox", "clodinafop", "cyhalofop",
+        "cletodim", "cletodin", "clethodim", "select", "cartago",
+        "haloxifop", "haloxyfop", "verdict", "gallant", "missil ultra", "viggie",
+        "podium", "fenoxaprop", "fluazifop", "tepraloxydim",
+    ))
 
 
 def _eh_heat(item: dict) -> bool:
@@ -338,18 +348,23 @@ def _inserir_prediluicao(resultado, produto, oleo):
     return resultado
 
 
-def _prediluir_cletodim_oleo(resultado: list[dict]) -> list[dict]:
-    cletodim = None
+def _prediluir_graminicida_oleo(resultado: list[dict]) -> list[dict]:
+    """Graminicida EC + Óleo: pré-diluir juntos. A posição entre 2,4-D e Glifosato é
+    garantida porque _inserir_prediluicao coloca o par antes dos SL (pos 16), e
+    _separar_glif_24d move Glifosato SL para o final após este passo."""
+    graminicida = None
     oleo = None
     for item in resultado:
         nome = _normalizar(item["produto"])
-        if any(x in nome for x in ("cletodim", "cletodin", "clethodim", "select", "cartago")):
-            cletodim = item
-        elif item["posicao"] == 12 and not any(x in nome for x in ("laranja", "terpen")):
+        if _eh_graminicida_ec(item) and not item.get("alerta_prediluicao"):
+            graminicida = item
+        elif (item["posicao"] == 12
+              and not item.get("alerta_prediluicao")
+              and not any(x in nome for x in ("laranja", "terpen"))):
             oleo = item
-    if not cletodim or not oleo:
+    if not graminicida or not oleo:
         return resultado
-    return _inserir_prediluicao(resultado, cletodim, oleo)
+    return _inserir_prediluicao(resultado, graminicida, oleo)
 
 
 def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
@@ -364,20 +379,6 @@ def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
     if not abamectina or not oleo:
         return resultado
     return _inserir_prediluicao(resultado, abamectina, oleo)
-
-
-def _prediluir_haloxifop_oleo(resultado: list[dict]) -> list[dict]:
-    halox = None
-    oleo = None
-    for item in resultado:
-        nome = _normalizar(item["produto"])
-        if any(x in nome for x in ("haloxifop", "haloxifope", "haloxyfop", "verdict", "gallant", "missil ultra", "viggie")):
-            halox = item
-        elif item["posicao"] == 12 and not item.get("alerta_prediluicao"):
-            oleo = item
-    if not halox or not oleo:
-        return resultado
-    return _inserir_prediluicao(resultado, halox, oleo)
 
 
 def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
