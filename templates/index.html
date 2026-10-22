@@ -208,6 +208,10 @@
     const perguntasLista = document.getElementById('perguntas-lista');
     const btnConfirmar = document.getElementById('btn-confirmar-form');
 
+    function escHtml(s) {
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
     let dadosAtual = null;
     const clienteSel = document.getElementById('cliente-sel');
     const obsField = document.getElementById('observacao');
@@ -316,9 +320,9 @@
           ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
           : '—';
 
-        let produtoHtml = '<strong>' + item.produto + '</strong>';
+        let produtoHtml = '<strong>' + escHtml(item.produto) + '</strong>';
         if (item.alerta_prediluicao) {
-          produtoHtml += '<span class="prediluicao">&gt;&gt; ' + item.alerta_prediluicao + '</span>';
+          produtoHtml += '<span class="prediluicao">&gt;&gt; ' + escHtml(item.alerta_prediluicao) + '</span>';
         }
 
         let html =
@@ -504,9 +508,9 @@
         var doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
           ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
           : '---';
-        var nome = item.produto;
+        var nome = escHtml(item.produto);
         if (item.alerta_prediluicao) {
-          nome += '\n>> ' + item.alerta_prediluicao;
+          nome += '\n>> ' + escHtml(item.alerta_prediluicao);
         }
         var qtdTanque = '---';
         if (item.total_tanque != null) {
