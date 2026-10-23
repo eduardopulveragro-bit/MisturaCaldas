@@ -1,7 +1,7 @@
 {
-  "name": "Formação de Calda",
-  "short_name": "Calda",
-  "description": "Ordem de mistura na calda — PulverAgro",
+  "name": "FieldMix",
+  "short_name": "FieldMix",
+  "description": "Mistura Certa — Ordem de adição na calda",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
