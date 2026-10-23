@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 
 _ENV_PATH = Path(__file__).parent / ".env"
 load_dotenv(_ENV_PATH, override=True)
@@ -26,6 +26,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return Response(status=204)
 
 
 @app.route("/")
