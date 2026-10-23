@@ -7,16 +7,16 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
-    header { background: #1A237E; color: white; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; }
+    header { background: #10315A; color: white; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
     header h1 { font-size: 20px; font-weight: 600; }
     header a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 13px; }
     header a:hover { color: white; }
     main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
     .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
-    h2 { font-size: 16px; color: #1A237E; margin-bottom: 16px; }
-    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #1A237E; }
+    h2 { font-size: 16px; color: #10315A; margin-bottom: 16px; }
+    label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #10315A; }
     input, textarea { width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px 12px; font-size: 14px; font-family: inherit; }
-    input:focus, textarea:focus { outline: none; border-color: #1A237E; box-shadow: 0 0 0 2px rgba(26,35,126,0.15); }
+    input:focus, textarea:focus { outline: none; border-color: #267A25; box-shadow: 0 0 0 2px rgba(38,122,37,0.15); }
     textarea { height: 60px; resize: vertical; }
     .row { display: flex; gap: 12px; margin-bottom: 12px; }
     .row > div { flex: 1; }
@@ -24,12 +24,12 @@
     .unidade { font-size: 11px; color: #888; margin-top: 2px; }
     .btn {
       display: inline-flex; align-items: center; gap: 6px;
-      background: #1A237E; color: white; border: none; border-radius: 6px;
+      background: #10315A; color: white; border: none; border-radius: 6px;
       padding: 10px 24px; font-size: 14px; font-weight: 600; cursor: pointer;
     }
-    .btn:hover { background: #283593; }
-    .btn-verde { background: #1B5E20; }
-    .btn-verde:hover { background: #2E7D32; }
+    .btn:hover { background: #1a4070; }
+    .btn-verde { background: #267A25; }
+    .btn-verde:hover { background: #5FB038; }
     .btn-vermelho { background: #C62828; font-size: 12px; padding: 6px 12px; }
     .btn-vermelho:hover { background: #B71C1C; }
     .btn-editar { background: #E65100; font-size: 12px; padding: 6px 12px; }
@@ -40,12 +40,12 @@
       border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
       margin-bottom: 12px; background: #fafafa;
     }
-    .cliente-item h3 { font-size: 15px; color: #1A237E; margin-bottom: 8px; }
+    .cliente-item h3 { font-size: 15px; color: #10315A; margin-bottom: 8px; }
     .cliente-info { font-size: 13px; color: #555; line-height: 1.8; }
     .cliente-info strong { color: #333; }
     .cliente-acoes { display: flex; gap: 8px; margin-top: 12px; }
 
-    .secao-titulo { font-size: 13px; font-weight: 700; color: #1A237E; margin-bottom: 8px; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
+    .secao-titulo { font-size: 13px; font-weight: 700; color: #10315A; margin-bottom: 8px; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
 
     @media (max-width: 600px) {
       .card { padding: 16px; }
@@ -286,7 +286,7 @@
     function mostrarStatus(msg, erro) {
       const el = document.getElementById('form-status');
       el.textContent = msg;
-      el.style.color = erro ? '#C62828' : '#1B5E20';
+      el.style.color = erro ? '#C62828' : '#267A25';
       if (!erro) setTimeout(() => { el.textContent = ''; }, 3000);
     }
 
