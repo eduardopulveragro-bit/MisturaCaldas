@@ -15,5 +15,23 @@
     "calibracao": "",
     "observacao": "Colocar 500L de agua antes de adicionar produtos. Tanque pre-mistura 50L.",
     "criado_em": "2026-10-13"
+  },
+  {
+    "id": "51d7b686c461",
+    "nome": "Fazenda Santa Clara - Joao",
+    "pulverizador": {
+      "modelo": "Jacto Uniport 2000",
+      "volume_tanque_L": 2000.0
+    },
+    "vazao_L_ha": 100.0,
+    "area_tanque_ha": 20.0,
+    "pontas": [
+      "TT110015",
+      "AIXR110015",
+      "Leque HI 35"
+    ],
+    "calibracao": "",
+    "observacao": "",
+    "criado_em": "2026-10-16"
   }
 ]

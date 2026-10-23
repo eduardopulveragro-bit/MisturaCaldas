@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ordem de Mistura na Calda</title>
+  <meta name="theme-color" content="#1B5E20">
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
@@ -103,11 +106,13 @@
       <form id="form">
         <div style="margin-bottom: 14px;">
           <label for="cliente-sel">Cliente</label>
-          <div style="display:flex;gap:8px;">
-            <select id="cliente-sel" style="flex:1;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
-              <option value="">-- Sem cliente --</option>
-            </select>
-          </div>
+          <select id="cliente-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
+            <option value="">-- Sem cliente --</option>
+          </select>
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label for="nome-aplicacao">Nome da aplicação (aparece no PDF)</label>
+          <input type="text" id="nome-aplicacao" placeholder="Ex: Dessecação Canola — Talhão 2" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;">
         </div>
         <div class="campos-operacao">
           <div class="campo-num">
@@ -438,64 +443,96 @@
       var verde = [27, 94, 32];
       var y = 8;
 
+      // Logo pequena (max 22mm de altura)
       var logoX = 15;
-      var logoH = 75;
+      var logoH = 22;
       var logoW = 0;
       var logo = document.getElementById('logo-pdf');
       if (logo.complete && logo.naturalWidth > 0) {
         logoW = logoH * (logo.naturalWidth / logo.naturalHeight);
-        if (logoW > 80) { logoH = logoH * (80 / logoW); logoW = 80; }
+        if (logoW > 35) { logoH = logoH * (35 / logoW); logoW = 35; }
         doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
       }
 
-      var textX = logoW ? logoX + logoW + 10 : 15;
-      var titleY = y + logoH / 2 - 10;
-      doc.setFontSize(18);
+      var textX = logoW ? logoX + logoW + 6 : 15;
+
+      // Titulo
+      doc.setFontSize(17);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(27, 94, 32);
-      doc.text('Formação da Calda', textX, titleY);
+      doc.text('Formação da Calda', textX, y + 6);
 
-      doc.setFontSize(12);
+      doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(80, 80, 80);
-      doc.text('Ordem de Adição de Produtos', textX, titleY + 7);
-
-      var op = dadosAtual.operacao;
-      var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
-      var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
-      doc.setFontSize(11);
       doc.setTextColor(100, 100, 100);
-      doc.text('Taxa de aplicação: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt, textX, titleY + 14);
+      doc.text('Ordem de Adição de Produtos', textX, y + 12);
 
+      // Cliente
+      var clienteOpt = document.getElementById('cliente-sel').selectedOptions[0];
+      var clienteNome = (clienteOpt && clienteOpt.value) ? clienteOpt.textContent.trim() : '';
+      var infoY = y + 17;
+      if (clienteNome) {
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(40, 40, 40);
+        doc.text('Cliente: ', textX, infoY);
+        doc.setFont('helvetica', 'normal');
+        doc.text(clienteNome, textX + doc.getTextWidth('Cliente: '), infoY);
+        infoY += 5;
+      }
+
+      // Nome da aplicação
+      var nomeApl = (document.getElementById('nome-aplicacao').value || '').trim();
+      if (nomeApl) {
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(40, 40, 40);
+        doc.text('Aplicação: ', textX, infoY);
+        doc.setFont('helvetica', 'normal');
+        doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Aplicação: '), infoY);
+        infoY += 5;
+      }
+
+      y = Math.max(y + logoH, infoY) + 3;
+
+      // Linha separadora
+      doc.setDrawColor(27, 94, 32);
+      doc.setLineWidth(0.5);
+      doc.line(15, y, pw - 15, y);
+      y += 4;
+
+      // Ponta + pressão (box verde)
       var pontaTxt = (document.getElementById('ponta-sel').value || '').trim();
       var pressaoTxt = (document.getElementById('pressao').value || '').trim();
       var pressaoUnidade = (document.getElementById('pressao-unidade').value || 'bar');
-      var nextInfoY = titleY + 19;
       if (pontaTxt || pressaoTxt) {
         doc.setFillColor(27, 94, 32);
-        var boxW = pw - 30;
-        doc.roundedRect(15, nextInfoY - 5, boxW, 12, 3, 3, 'F');
-        doc.setFontSize(13);
+        doc.roundedRect(15, y, pw - 30, 10, 2, 2, 'F');
+        doc.setFontSize(11);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(255, 255, 255);
         var partesPonta = [];
         if (pontaTxt) partesPonta.push('Ponta: ' + pontaTxt);
         if (pressaoTxt) partesPonta.push('Pressão: ' + pressaoTxt + ' ' + pressaoUnidade);
-        doc.text(partesPonta.join('   |   '), pw / 2, nextInfoY + 2, { align: 'center' });
+        doc.text(partesPonta.join('   |   '), pw / 2, y + 6.5, { align: 'center' });
         doc.setFont('helvetica', 'normal');
-        doc.setTextColor(100, 100, 100);
-        doc.setFontSize(11);
-        nextInfoY += 14;
+        y += 13;
       }
 
+      // Taxa / área / data numa linha
+      var op = dadosAtual.operacao;
+      var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
+      var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
       var hoje = new Date();
       var dataTxt = hoje.toLocaleDateString('pt-BR');
-      doc.text('Data: ' + dataTxt, textX, nextInfoY);
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'normal');
+      doc.setTextColor(80, 80, 80);
+      doc.text('Taxa: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt + '   |   Data: ' + dataTxt, 15, y + 4);
+      y += 9;
 
-      y = Math.max(y + logoH, nextInfoY + 3) + 4;
-
-      doc.setDrawColor(27, 94, 32);
-      doc.setLineWidth(0.4);
+      doc.setDrawColor(200, 200, 200);
+      doc.setLineWidth(0.2);
       doc.line(15, y, pw - 15, y);
       y += 4;
 
