@@ -314,3 +314,6 @@ Muralla Max,Muralla|Muralla OD|Muralla Max Bayer,,OD,9,inseticida OD Bayer — b
 Talendo,Talendo EC|Talendo Corteva|Proquinazida EC,,EC,11,fungicida EC Corteva — proquinazida — oídio — IA busca web confirmou EC,2026-10-26,proquinazida
 Abamex 18 CE,Abamex|Abamex CE|Abamectina CE|Abamex 18,,EC,11,acaricida/inseticida EC — abamectina — CE=EC no Brasil — IA busca web confirmou EC,2026-10-26,abamectina
 Kraft 36 EC,Kraft|Kraft EC|Abamectina 36 EC,,EC,11,acaricida/inseticida EC — abamectina+eprinomectina — IA busca web confirmou EC,2026-10-26,abamectina
+Apollo 500 SC,Apollo|Apollo SC|Apollo Agroquimico|Clofentezina SC,,SC,8,acaricida SC — clofentezina — IA busca web confirmou SC,2026-10-26,clofentezina
+Acaramik SC,Acaramik|Acaramik EC|Acaramik acaricida,,EC,11,acaricida — abamectina/milbemectina — IA busca web retornou EC; verificar se SC ou EC,pendente (2026-10-26),abamectina
+Nissorum 100 EC,Nissorum|Nissorum EC|Hexitiazox EC,,EC,11,acaricida EC — hexitiazox — IA busca web confirmou EC,2026-10-26,hexitiazox
