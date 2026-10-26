@@ -10,7 +10,7 @@ Nomolt 150,Nomolt|Teflubenzuron,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10
 Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral,BR-010-EXEMPLO,ADJUVANTE,17,bula_fabricante,2024-01-10
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10
-Karate Zeon,Karate|Lambda-cialotrina|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
+Karate Zeon,Karate|Lambda-cialotrina|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
 Galil SC,Galil|Azoxistrobina+Benzovindiflupir,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
 Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10
@@ -235,3 +235,19 @@ Kennox,Kennox 240 EC|Kennox CI,24518,EC,11,graminicida EC UPL — bula confirmad
 Boro Max,Boro max|Boro Max Foliar|Boro Máx|Boromax,,FERTILIZANTE,18,fertilizante foliar boro — cadastro manual,2026-10-26,boro
 Compat,Compat Nortox|Compat Adama|Compat Buffer,,ADJUVANTE,2,condicionador/buffer de calda — cadastro manual,2026-10-26,
 Arkeiro Nortox,Arkeiro|Arkeiro Nortox CI,6723,WG,6,herbicida WG Nortox — bula MAPA reg 6723 pré-semeadura soja,2026-10-26,clorimurom-etilico+flumioxazina+imazetapir
+Miravis Top,Miravis Top SC|Miravis,14922,SC,8,fungicida SC Syngenta — bula MAPA reg 14922 pidiflumetofen+difenoconazol,2026-10-26,pidiflumetofen+difenoconazol
+Pristine WG,Pristine|Pristine BASF|Pristine Xpro,,WG,6,fungicida WG BASF — boscalida+piraclostrobina — pendente confirmação reg MAPA BR,pendente (2026-10-26),boscalida+piraclostrobina
+Flint 500 WG,Flint|Flint WG|Flint Bayer,11301,WG,6,fungicida WG Bayer — bula MAPA reg 11301 trifloxistrobina,2026-10-26,trifloxistrobina
+Sercadis,Sercadis SC|Sercadis BASF,35121,SC,8,fungicida SC BASF — fluxapiroxade — reg Agrolink 35121 pendente Agrofit,pendente (2026-10-26),fluxapiroxade
+Quilt Xcel,Quilt|Quilt Xcel SE,,SE,10,fungicida SE Syngenta — azoxistrobina+propiconazol — pendente confirmação reg MAPA BR,pendente (2026-10-26),azoxistrobina+propiconazol
+Galigan 240 EC,Galigan|Galigan EC|Oxifluorfem EC Adama,8598,EC,11,herbicida EC Adama — bula MAPA reg 8598 oxifluorfem,2026-10-26,oxifluorfem
+Stratego 250 EC,Stratego|Stratego EC|Stratego YLD|Stratego Bayer,302,EC,11,fungicida EC Bayer — bula MAPA reg 302 trifloxistrobina+propiconazol,2026-10-26,trifloxistrobina+propiconazol
+Domark 100 EC,Domark|Domark EC|Tetraconazol EC,6099,EC,11,fungicida EC Gowan — bula MAPA reg 6099 tetraconazol,2026-10-26,tetraconazol
+Luna Experience,Luna Experience SC|Luna Bayer,,SC,8,fungicida SC Bayer — fluopyram+tebuconazol — consulta IA busca web pendente,pendente (2026-10-26),fluopyram+tebuconazol
+Duett Ultra,Duett|Duett Ultra BASF,,SC,8,fungicida SC BASF — epoxiconazol+tiofanato-metilico — consulta IA busca web pendente,pendente (2026-10-26),epoxiconazol+tiofanato-metilico
+Aprovia Top,Aprovia|Aprovia Top Syngenta,,EC,11,fungicida EC Syngenta — benzovindiflupir+difenoconazol — consulta IA busca web pendente,pendente (2026-10-26),benzovindiflupir+difenoconazol
+Indar 75 EW,Indar|Indar EW|Fenbuconazol EW,,EW,14,fungicida EW Bayer — fenbuconazol — consulta IA busca web pendente,pendente (2026-10-26),fenbuconazol
+Movento,Movento SC|Movento Bayer|Spirotetramat SC,,SC,8,inseticida SC Bayer — spirotetramat — consulta IA busca web pendente,pendente (2026-10-26),spirotetramat
+Takumi SC,Takumi|Takumi Nichino,16320,SC,8,inseticida SC Nichino — bula MAPA reg 16320 flubendiamida,2026-10-26,flubendiamida
+Exirel,Exirel SE|Exirel FMC,,SE,10,inseticida SE FMC — ciantraniliprole — consulta IA busca web pendente,pendente (2026-10-26),ciantraniliprole
+Plenum,Plenum WG|Plenum Syngenta|Pymetrozine,,ME,15,inseticida ME Syngenta — pymetrozine — consulta IA busca web pendente,pendente (2026-10-26),pymetrozine
