@@ -291,3 +291,7 @@ Plateau,Plateau WG|Plateau BASF|Imazapique WG,,WG,6,herbicida WG BASF — imazap
 Flexidor,Flexidor SL|Flexidor Bayer|Isoxaflutol SL,,SL,16,herbicida SL Bayer — isoxaflutol — IA busca web retornou SL (pendente confirmacao bula),pendente (2026-10-26),isoxaflutol
 Alion,Alion SC|Alion Syngenta|Indaziflam SC,,SC,8,herbicida SC Syngenta — indaziflam — IA busca web confirmou SC,2026-10-26,indaziflam
 Hussar OD,Hussar OD Bayer|Iodosulfurom OD|Hussar Maxx OD,,OD,9,herbicida OD Bayer — iodosulfurom — trigo — variante OD diferente do WG,2026-10-26,iodosulfurom
+Tivian 40 WG,Tivian|Tivian WG|Tivian Syngenta|Tiametoxam+Clorantraniliprole WG,,WG,6,inseticida WG Syngenta — tiametoxam+clorantraniliprole — IA busca web confirmou WG,2026-10-26,tiametoxam+clorantraniliprole
+Epoxiconazol 125 SC,Epoxiconazol SC|Epoxiconazol generico,,SC,8,fungicida SC generico — epoxiconazol — IA busca web confirmou SC,2026-10-26,epoxiconazol
+Azoxistrobina 500 SC,Azoxistrobina 500|Azoxistrobina generico SC,,SC,8,fungicida SC generico — azoxistrobina — IA busca web confirmou SC,2026-10-26,azoxistrobina
+Piraclostrobina 250 EC,Piraclostrobina EC|Piraclostrobina generico EC,,EC,11,fungicida EC generico — piraclostrobina — IA busca web confirmou EC,2026-10-26,piraclostrobina
