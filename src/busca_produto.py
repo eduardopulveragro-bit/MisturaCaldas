@@ -18,6 +18,8 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 
 _PROMPT_BUSCA = """Você é um consultor de registro de defensivos agrícolas no Brasil (MAPA/Agrofit).
 
+FERRAMENTA DISPONÍVEL: Você tem acesso a busca na web. Quando não conhecer o produto com certeza ALTA ou MÉDIA, USE A BUSCA antes de responder. Pesquise por: "{nome do produto} herbicida fungicida bula MAPA formulação ingrediente ativo". Priorize resultados de agrolink.com.br, agrofit.agricultura.gov.br, e sites de fabricantes.
+
 TAREFA: Dado o nome de um produto, identifique com precisão sua CLASSE, FORMULAÇÃO e POSIÇÃO na tabela de ordem de adição na calda.
 
 ═══════════════════════════════════════════════════════════════
@@ -148,12 +150,24 @@ def buscar_produto_ia(nome: str) -> dict | None:
     except EnvironmentError:
         return None
 
+    # Ferramenta de busca web server-side: Anthropic executa a busca e devolve
+    # os resultados no mesmo response — sem loop de tool_use no cliente.
+    _FERRAMENTAS_BUSCA = [{"type": "web_search_20250305", "name": "web_search"}]
+
     try:
         resposta = cliente.messages.create(
             model="claude-haiku-5-5",
-            max_tokens=512,
+            max_tokens=1024,
+            tools=_FERRAMENTAS_BUSCA,
             system=_PROMPT_BUSCA,
-            messages=[{"role": "user", "content": f"Produto: {nome}"}],
+            messages=[{
+                "role": "user",
+                "content": (
+                    f"Produto: {nome}\n\n"
+                    f"Se não tiver certeza, pesquise na web: "
+                    f'"{nome} herbicida fungicida inseticida bula MAPA formulação ingrediente ativo"'
+                ),
+            }],
         )
     except Exception as e:
         logger.error("Erro ao buscar produto '%s': %s", nome, e)
@@ -168,11 +182,12 @@ def buscar_produto_ia(nome: str) -> dict | None:
         resposta.id, nome, tokens_in, tokens_out, custo_usd,
     )
 
+    # Pega o ÚLTIMO bloco de texto — com web_search pode haver blocos intermediários
+    # (web_search_tool_result) antes da resposta final em JSON.
     texto = ""
     for bloco in resposta.content:
         if bloco.type == "text":
             texto = bloco.text.strip()
-            break
 
     texto = _limpar_markdown(texto)
 
