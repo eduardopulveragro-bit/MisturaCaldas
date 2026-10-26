@@ -282,3 +282,8 @@ Ronstar 250 EC,Ronstar|Ronstar EC|Oxifluorfem Bayer,,EC,11,herbicida EC Bayer �
 Select 240 EC,Select|Select EC|Clethodim EC|Clethodim Select,,EC,11,graminicida EC — clethodim — IA busca web confirmou EC,2026-10-26,clethodim
 Topik 240 EC,Topik|Topik EC|Clodinafop EC|Clodinafop Syngenta,,EC,11,graminicida EC Syngenta — clodinafop-propargil — IA busca web confirmou EC,2026-10-26,clodinafop-propargil
 Podium 125 EW,Podium|Podium EW|Fenoxaprop EW|Fenoxaprop-p Bayer,,EW,14,graminicida EW Bayer — fenoxaprop-p-etilico — IA busca web confirmou EW,2026-10-26,fenoxaprop-p-etilico
+Vydate 240 L,Vydate|Vydate SL|Oxamil SL|Oxamyl SL,,SL,16,nematicida/inseticida SL — oxamil — IA busca web confirmou SL,2026-10-26,oxamil
+Nimitz 480 SL,Nimitz|Nimitz SL|Fluensulfone SL,,SL,16,nematicida SL FMC — fluensulfone — nome contém SL portanto pos 16,2026-10-26,fluensulfone
+Pyrinex 480 EC,Pyrinex|Pyrinex EC|Clorpirifos EC|Clorpirifos Dow,,EC,11,inseticida EC Corteva — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
+Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC,,EC,11,inseticida EC BASF — dimetoato — IA busca web confirmou EC,2026-10-26,dimetoato
+Clinic 480 SL,Clinic|Clinic SL|Glifosato Clinic|Glifosato Zeneca,,SL,16,herbicida SL — glifosato — IA busca web confirmou SL,2026-10-26,glifosato
