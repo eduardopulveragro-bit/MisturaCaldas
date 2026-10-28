@@ -303,7 +303,7 @@ def _posicionar_oleo(resultado: list[dict]) -> list[dict]:
         resultado.remove(oleo)
     ponto = len(resultado)
     for i, item in enumerate(resultado):
-        if item["posicao"] > 16:
+        if item["posicao"] >= 16:
             ponto = i
             break
     for oleo in oleos:
