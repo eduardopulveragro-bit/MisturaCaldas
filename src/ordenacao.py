@@ -283,7 +283,7 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
 
     ponto = 0
     for i, item in enumerate(resultado):
-        if item["posicao"] <= 6:
+        if item["posicao"] < 12:
             ponto = i + 1
 
     if ponto == 0:
