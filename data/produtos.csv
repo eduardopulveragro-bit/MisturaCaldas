@@ -215,7 +215,7 @@ Hussar,Hussar WG|Hussar Plus|Iodosulfurom,,WG,6,herbicida WG Bayer — trigo,202
 Equip Plus,Equip|Equip WG,,WG,6,herbicida WG Bayer — foramsulfurom+iodosulfurom — milho,2026-10-13,foramsulfurom+iodosulfurom
 Accent,Accent WG|Nicosulfurom WG,,WG,6,herbicida WG Corteva — nicosulfurom — milho,2026-10-13,nicosulfurom
 Brodal,Brodal SC|Brodal Bayer|Diflufenican,,SC,8,herbicida SC Bayer — trigo,2026-10-13,diflufenican
-Cytron,Cytron|Óleo de Laranja,,ADJUV_OLEO,12,adjuvante óleo de laranja — espalhante e penetrante,2026-10-16,d-limoneno (óleo de laranja)
+Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO DE LARANJA,12,óleo de laranja d-limoneno — espalhante e penetrante,2026-10-16,d-limoneno (óleo de laranja)
 Tec Catp 2.8,Catp|Catp 2.8|Tec Catp|Comando BT,8323,BIO_BACTERIANO,20,inseticida biológico Solubio — bula ADAPAR/PR 2024,2026-10-16,Bacillus thuringiensis kurstaki CBMAI 1398
 Calaris,Calaris SC|Calaris Syngenta,9419,SC,8,herbicida SC Syngenta — mesotrione+atrazine — milho,2026-10-16,mesotrione+atrazine
 biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante óleo vegetal/biológico — compatível com biológicos,2026-10-16,óleo vegetal
@@ -323,9 +323,7 @@ Talisman,Talisman EC|Talisman Bayer|Deltametrina+Piridafentiona,,EC,11,inseticid
 Pirimor 500 WG,Pirimor|Pirimor WG|Pirimor Syngenta|Pirimicarbe WG,,WG,6,aficida WG Syngenta — pirimicarbe — IA busca web confirmou WG,2026-10-26,pirimicarbe
 Marafix 480 EC,Marafix|Marafix EC|Clorpirifos Marafix,,EC,11,inseticida EC — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
 Cloropirifos 480 EC,Cloropirifos|Clorpirifos 480|Cloropirifos EC generico,,EC,11,inseticida EC generico — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
-Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boro
-Cytron,Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO,12,óleo de laranja — informado pelo usuário,2026-10-27,óleo de laranja
-Stomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
+Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boroStomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
 Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta|Finale,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
 Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,fosfito de potassio SL generico — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
