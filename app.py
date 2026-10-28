@@ -13,6 +13,7 @@ load_dotenv(_ENV_PATH, override=True)
 from src.parser import extrair_itens
 from src.ordenacao import ordenar_itens
 from src.operacao import extrair_operacao, calcular_totais_tanque
+from src.alertas_incompatibilidade import verificar_incompatibilidades
 from src import clientes as clientes_mod
 
 _handlers = [logging.StreamHandler()]
@@ -87,6 +88,9 @@ def processar():
     if area:
         calcular_totais_tanque(itens_ordenados, area)
 
+    vazao = operacao.get("vazao_L_ha")
+    alertas_incomp = verificar_incompatibilidades(itens_ordenados, vazao)
+
     return jsonify({
         "ordem": [
             {
@@ -103,6 +107,7 @@ def processar():
             for it in itens_ordenados
         ],
         "alertas": alertas,
+        "alertas_incompatibilidade": alertas_incomp,
         "operacao": operacao if operacao else None,
     })
 
