@@ -490,12 +490,12 @@
         doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
       }
 
-      // Logo Pulveragro (direita)
+      // Logo Pulveragro (direita) — mesmo tamanho que FieldMix
       var logoPulv = document.getElementById('logo-pulveragro');
       if (logoPulv.complete && logoPulv.naturalWidth > 0) {
-        var pulvH = 18;
+        var pulvH = logoH;
         var pulvW = pulvH * (logoPulv.naturalWidth / logoPulv.naturalHeight);
-        if (pulvW > 55) { pulvH = pulvH * (55 / pulvW); pulvW = 55; }
+        if (pulvW > 35) { pulvH = pulvH * (35 / pulvW); pulvW = 35; }
         doc.addImage(logoPulv, 'JPEG', pw - 15 - pulvW, y + (logoH - pulvH) / 2, pulvW, pulvH);
       }
 
