@@ -490,12 +490,14 @@
         doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
       }
 
-      // Logo Pulveragro (direita)
+      // Logo Pulveragro (direita) — escala pela altura, sem limitar largura
       var logoPulv = document.getElementById('logo-pulveragro');
       if (logoPulv.complete && logoPulv.naturalWidth > 0) {
         var pulvH = logoH;
         var pulvW = pulvH * (logoPulv.naturalWidth / logoPulv.naturalHeight);
-        if (pulvW > 60) { pulvH = pulvH * (60 / pulvW); pulvW = 60; }
+        // se não couber na metade direita da página, reduz proporcionalmente
+        var maxPulvW = (pw / 2) - 20;
+        if (pulvW > maxPulvW) { pulvH = pulvH * (maxPulvW / pulvW); pulvW = maxPulvW; }
         doc.addImage(logoPulv, 'JPEG', pw - 15 - pulvW, y + (logoH - pulvH) / 2, pulvW, pulvH);
       }
 
