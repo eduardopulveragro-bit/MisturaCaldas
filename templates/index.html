@@ -219,6 +219,7 @@
   </main>
 
   <img id="logo-pdf" src="/static/logo.png" style="display:none;">
+  <img id="logo-pulveragro" src="/static/pulveragro.jpg" style="display:none;">
   <script src="/static/jspdf.umd.min.js"></script>
   <script src="/static/jspdf.plugin.autotable.min.js"></script>
   <script>
@@ -478,7 +479,7 @@
       var verde = [27, 94, 32];
       var y = 8;
 
-      // Logo pequena (max 22mm de altura)
+      // Logo FieldMix (esquerda)
       var logoX = 15;
       var logoH = 22;
       var logoW = 0;
@@ -487,6 +488,15 @@
         logoW = logoH * (logo.naturalWidth / logo.naturalHeight);
         if (logoW > 35) { logoH = logoH * (35 / logoW); logoW = 35; }
         doc.addImage(logo, 'JPEG', logoX, y, logoW, logoH);
+      }
+
+      // Logo Pulveragro (direita)
+      var logoPulv = document.getElementById('logo-pulveragro');
+      if (logoPulv.complete && logoPulv.naturalWidth > 0) {
+        var pulvH = 18;
+        var pulvW = pulvH * (logoPulv.naturalWidth / logoPulv.naturalHeight);
+        if (pulvW > 55) { pulvH = pulvH * (55 / pulvW); pulvW = 55; }
+        doc.addImage(logoPulv, 'JPEG', pw - 15 - pulvW, y + (logoH - pulvH) / 2, pulvW, pulvH);
       }
 
       var textX = logoW ? logoX + logoW + 6 : 15;
