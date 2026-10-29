@@ -219,7 +219,7 @@
   </main>
 
   <img id="logo-pdf" src="/static/logo.png" style="display:none;">
-  <img id="logo-pulveragro" src="/static/pulveragro.jpg" style="display:none;">
+  <img id="logo-pulveragro" src="/static/pulveragro.png" style="display:none;">
   <script src="/static/jspdf.umd.min.js"></script>
   <script src="/static/jspdf.plugin.autotable.min.js"></script>
   <script>
@@ -497,7 +497,7 @@
         var pulvW = pulvH * (logoPulv.naturalWidth / logoPulv.naturalHeight);
         var pulvX = pw - 15 - pulvW;
         if (pulvX < pw / 2) { pulvX = pw / 2; }
-        doc.addImage(logoPulv, 'JPEG', pulvX, y + (logoH - pulvH) / 2, pulvW, pulvH);
+        doc.addImage(logoPulv, 'PNG', pulvX, y + (logoH - pulvH) / 2, pulvW, pulvH);
       }
 
       var textX = logoW ? logoX + logoW + 6 : 15;
