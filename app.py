@@ -103,6 +103,8 @@ def processar():
                 "alerta_prediluicao": it.get("alerta_prediluicao", ""),
                 "total_tanque": it.get("total_tanque"),
                 "total_unidade": it.get("total_unidade", ""),
+                "dose_ha_calculada": it.get("dose_ha_calculada"),
+                "dose_ha_unidade": it.get("dose_ha_unidade", ""),
             }
             for it in itens_ordenados
         ],

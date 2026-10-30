@@ -25,21 +25,21 @@ def _criar_cliente() -> anthropic.Anthropic:
 _SYSTEM_PROMPT = """Extraia produtos de uma mensagem de pulverização agrícola. Retorne APENAS JSON.
 
 Para CADA produto extraia:
-- produto: SOMENTE o nome comercial do produto, SEM dose, SEM unidade, SEM "/ha". Ex: "Glifosato 2 l/ha" → produto="Glifosato". Ex: "Fox Xpro 500 ml/ha" → produto="Fox Xpro". Ex: "Score 250 EC 0,5 L/ha" → produto="Score 250 EC"
+- produto: SOMENTE o nome comercial, SEM dose, SEM unidade, SEM "/ha". Ex: "Glifosato 2 l/ha" → produto="Glifosato". Ex: "Score 250 EC 0,5 L" → produto="Score 250 EC"
 - dose: valor numérico (null se ausente)
 - unidade: L, mL, kg, g (null se ausente)
-- base: "ha" ou "L_calda" (null se ausente)
+- base: "ha" (por hectare), "L_calda" (por litro de calda), "tanque" (dose total por carga/tanque), null se omitido
 - formulacao: sigla se aparecer no nome (ex: "Score 250 EC" → "EC"), senão null
 
 REGRAS:
-- O campo "produto" deve conter APENAS o nome, nunca a dose ou unidade junto.
-- Extraia o nome do produto como escrito, sem corrigir.
-- Se a dose usa vírgula como decimal (ex: "0,5 L"), converta para ponto: 0.5
-- Se encontrar nome de pessoa, telefone, CPF ou fazenda, retorne:
-  {"erro": "dados_pessoais", "descricao": "dados pessoais detectados"}
+- produto: APENAS o nome, nunca dose ou unidade junto.
+- Use base="tanque" quando a mensagem indicar "por tanque", "por carga", "por tq", "carga cheia" ou similar.
+- Se não houver indicação de base (ex: "Drive 2.5 L"), use base=null — não assuma.
+- Dose com vírgula decimal (ex: "0,5 L") → converta para ponto: 0.5
+- Se encontrar nome de pessoa, telefone, CPF ou fazenda: {"erro":"dados_pessoais","descricao":"dados pessoais detectados"}
 
 FORMATO:
-{"itens": [{"produto": "Nome", "dose": 2.5, "unidade": "L", "base": "ha", "formulacao": "EC"}], "alertas": []}
+{"itens":[{"produto":"Nome","dose":2.5,"unidade":"L","base":"ha","formulacao":"EC"}],"alertas":[]}
 
 Alertas só quando ambíguo: "unidade_ausente", "dose_estranha"."""
 
@@ -69,7 +69,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     resposta = cliente.messages.create(
         model=modelo,
-        max_tokens=512,
+        max_tokens=1024,
         system=[{
             "type": "text",
             "text": _SYSTEM_PROMPT,

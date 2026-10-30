@@ -57,10 +57,23 @@ def extrair_operacao(texto: str) -> dict:
 
 
 def calcular_totais_tanque(itens: list[dict], area_ha: float) -> list[dict]:
-    """Adiciona 'total_tanque' e 'total_formatado' a cada item."""
+    """Adiciona 'total_tanque' e 'total_formatado' a cada item.
+    Quando base='tanque': dose já é o total; calcula dose/ha de volta.
+    """
     for item in itens:
         dose = item.get("dose") or 0
         unidade = (item.get("unidade") or "").lower()
+        base = item.get("base") or ""
+
+        if base == "tanque" and area_ha:
+            # Dose informada é o total por carga — calcula equivalente por ha
+            item["total_tanque"] = dose
+            item["total_unidade"] = unidade.upper() or "?"
+            if area_ha:
+                dose_ha = round(dose / area_ha, 4)
+                item["dose_ha_calculada"] = dose_ha
+                item["dose_ha_unidade"] = unidade.upper() or "?"
+            continue
 
         total = dose * area_ha
         if unidade in ("l", "lt"):

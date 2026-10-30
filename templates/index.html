@@ -357,9 +357,17 @@
         const formUpper = (item.formulacao || '').toUpperCase();
         const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
 
-        const doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
-          ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
-          : '—';
+        let doseHa = '—';
+        if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
+          if (item.base === 'tanque') {
+            doseHa = item.dose + ' ' + item.unidade + '/tanque';
+            if (item.dose_ha_calculada != null) {
+              doseHa += '<br><small style="color:#555;font-weight:600">= ' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha</small>';
+            }
+          } else {
+            doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
+          }
+        }
 
         let produtoHtml = '<strong>' + escHtml(item.produto) + '</strong>';
         if (item.alerta_prediluicao) {
@@ -588,9 +596,18 @@
       var body = dadosAtual.ordem.map(function(item, i) {
         var formUpper = (item.formulacao || '').toUpperCase();
         var formDisplay = formUpper === 'DESCONHECIDA' ? '---' : formUpper;
-        var doseHa = (typeof item.dose === 'number' && item.unidade && item.unidade !== '—')
-          ? item.dose + ' ' + item.unidade + '/' + (item.base || 'ha')
-          : '---';
+        var doseHa;
+        if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
+          if (item.base === 'tanque' && item.dose_ha_calculada != null) {
+            doseHa = item.dose + ' ' + item.unidade + '/tq\n(=' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha)';
+          } else if (item.base === 'tanque') {
+            doseHa = item.dose + ' ' + item.unidade + '/tanque';
+          } else {
+            doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
+          }
+        } else {
+          doseHa = '---';
+        }
         var nome = escHtml(item.produto);
         if (item.alerta_prediluicao) {
           nome += '\n>> ' + escHtml(item.alerta_prediluicao);
