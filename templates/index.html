@@ -146,6 +146,12 @@
             <div class="unidade">ha</div>
           </div>
         </div>
+        <div style="margin-bottom:12px;">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#444;cursor:pointer;">
+            <input type="checkbox" id="doses-por-tanque" name="doses_por_tanque" value="on" style="width:16px;height:16px;cursor:pointer;">
+            <span>Doses informadas por tanque <span style="color:#888;font-weight:400">(app divide pela área para calcular dose/ha)</span></span>
+          </label>
+        </div>
 
         <div id="pontas-pressao" style="display:none;margin-bottom:16px;">
           <div class="campos-operacao">
@@ -503,7 +509,7 @@
       // Logo Pulveragro (direita) — proporção natural, sem compressão
       var logoPulv = document.getElementById('logo-pulveragro');
       if (logoPulv.complete && logoPulv.naturalWidth > 0) {
-        var pulvH = logoH;
+        var pulvH = logoH * 0.85;
         var pulvW = pulvH * (logoPulv.naturalWidth / logoPulv.naturalHeight);
         var pulvX = pw - 15 - pulvW;
         if (pulvX < pw / 2) { pulvX = pw / 2; }
@@ -531,9 +537,9 @@
         doc.setFontSize(10);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(40, 40, 40);
-        doc.text('Cliente: ', textX, infoY);
+        doc.text('Cliente:', textX, infoY);
         doc.setFont('helvetica', 'normal');
-        doc.text(clienteNome, textX + doc.getTextWidth('Cliente: '), infoY);
+        doc.text(clienteNome, textX + doc.getTextWidth('Cliente:') + 12, infoY);
         infoY += 5;
       }
 
@@ -543,9 +549,9 @@
         doc.setFontSize(10);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(40, 40, 40);
-        doc.text('Aplicação: ', textX, infoY);
+        doc.text('Aplicação:', textX, infoY);
         doc.setFont('helvetica', 'normal');
-        doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Aplicação: '), infoY);
+        doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Aplicação:') + 12, infoY);
         infoY += 5;
       }
 

@@ -84,6 +84,11 @@ def processar():
         except ValueError:
             pass
 
+    doses_por_tanque = request.form.get("doses_por_tanque") == "on"
+    for item in itens_ordenados:
+        if not item.get("base"):
+            item["base"] = "tanque" if doses_por_tanque else "ha"
+
     area = operacao.get("area_tanque_ha")
     if area:
         calcular_totais_tanque(itens_ordenados, area)
