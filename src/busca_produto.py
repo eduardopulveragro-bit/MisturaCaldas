@@ -19,130 +19,25 @@ DATA_DIR = Path(__file__).parent.parent / "data"
 # Cache em memória: evita re-chamar a API para o mesmo produto na mesma instância.
 _CACHE_PRODUTOS: dict[str, dict | None] = {}
 
-_PROMPT_BUSCA = """Você é um consultor de registro de defensivos agrícolas no Brasil (MAPA/Agrofit).
+_PROMPT_BUSCA = """Você é um especialista em defensivos agrícolas no Brasil. Dado um nome de produto, retorne APENAS JSON.
 
-FERRAMENTA DISPONÍVEL: Você tem acesso a busca na web. Use a busca SOMENTE se NÃO souber o produto com confiança ALTA pelo seu treinamento. Se conhecer bem o produto (formulação, classe e registro), responda diretamente SEM buscar. Quando buscar, pesquise: "{nome do produto} herbicida fungicida bula MAPA formulação ingrediente ativo". Priorize agrolink.com.br, agrofit.agricultura.gov.br e sites de fabricantes.
+CLASSES e POSIÇÕES:
+- Defensivos (herbicida/fungicida/inseticida/acaricida): posição pela formulação: SG=3, SP=4, WP=5, WG=6, CS=7, SC=8, OD=9, SE=10, EC=11, EO=13, EW=14, ME=15, SL=16
+- Adjuvante óleo (mineral/vegetal/OLEO DE LARANJA): formulacao="OLEO", posicao=12
+- Adjuvante condicionador/pH/quelante: formulacao="ADJUVANTE", posicao=2
+- Adjuvante espalhante/surfactante: formulacao="ADJUVANTE", posicao=17
+- Fertilizante foliar/bioestimulante: formulacao="FERTILIZANTE", posicao=18
+- Biológico bacteriano (Bacillus): formulacao="BIO_BACTERIANO", posicao=20
+- Biológico fúngico (Trichoderma/Beauveria): formulacao="BIO_FUNGICO", posicao=21
+- Biológico viral (Baculovírus): formulacao="BIO_VIRAL", posicao=22
 
-TAREFA: Dado o nome de um produto, identifique com precisão sua CLASSE, FORMULAÇÃO e POSIÇÃO na tabela de ordem de adição na calda.
+REGRAS:
+- Defensivos NUNCA vão em posições de adjuvante/fertilizante/biológico.
+- Se não souber com confiança média ou alta: {"encontrado": false, "motivo": "..."}
+- confianca "baixa" = retorne encontrado:false.
 
-═══════════════════════════════════════════════════════════════
-ETAPAS OBRIGATÓRIAS — siga TODAS na ordem, sem pular nenhuma:
-═══════════════════════════════════════════════════════════════
-
-ETAPA 1 — CLASSIFICAR O PRODUTO:
-Primeiro determine a CLASSE do produto. As classes possíveis são:
-  - herbicida, fungicida, inseticida, acaricida, nematicida, regulador (= DEFENSIVO)
-  - adjuvante, óleo mineral, óleo vegetal, condicionador, espalhante, surfactante (= ADJUVANTE)
-  - fertilizante foliar, aminoácido, bioestimulante (= FERTILIZANTE)
-  - biologico — produto à base de microrganismo vivo (= BIOLÓGICO): Bacillus spp., Trichoderma spp.,
-    Beauveria bassiana, Metarhizium anisopliae, Baculovírus, Granulovírus, etc.
-
-⚠️  ATENÇÃO: A MAIORIA dos produtos agrícolas são DEFENSIVOS (herbicidas, fungicidas, inseticidas).
-    NÃO assuma que um produto é adjuvante só porque o nome parece genérico.
-    Exemplos de DEFENSIVOS que podem parecer adjuvantes:
-    - Zethamaxx Evo → herbicida SE (s-metolacloro+flumioxazina+imazetapir)
-    - Dual Gold → herbicida EC (s-metolacloro)
-    - Permit → herbicida WG (halosulfurom)
-    - Verdict → herbicida EC (haloxifop)
-    SÓ classifique como adjuvante se tiver CERTEZA de que o produto NÃO possui ingrediente ativo defensivo.
-
-ETAPA 2 — BUSCAR FORMULAÇÃO NA BULA:
-Para DEFENSIVOS: A formulação vem da BULA do produto registrado no MAPA.
-  - Muitos produtos trazem a sigla no nome: "Score 250 EC" → EC, "Heat 70 WG" → WG
-  - Se a sigla não está no nome, busque na bula pelo tipo físico da formulação
-  - As siglas válidas são: SG, SP, WP, WG, CS, SC, OD, SE, EC, EO, EW, ME, SL
-  - NUNCA invente uma formulação. Se não sabe, retorne {"encontrado": false}
-
-Para ADJUVANTES genéricos (sem formulação de bula):
-  - Óleo mineral/vegetal → use "OLEO"
-  - Condicionador/corretor de pH → use "ADJUVANTE"
-  - Surfactante/espalhante → use "ADJUVANTE"
-  - Antiespumante → use "ADJUVANTE"
-
-Para FERTILIZANTES FOLIARES: use "FERTILIZANTE"
-
-ETAPA 3 — DETERMINAR POSIÇÃO na tabela:
-A posição é determinada pela FORMULAÇÃO, usando esta tabela:
-
-Pos | Sigla | Tipo                                               | Uso
-  2 | —     | Adjuvantes Corretivos/Condicionadores               | SÓ adjuvantes pH/quelat.
-  3 | SG    | Granulado Solúvel                                   | defensivos SG
-  4 | SP    | Pó Solúvel                                          | defensivos SP
-  5 | WP    | Pó Molhável                                         | defensivos WP
-  6 | WG    | Granulado Dispersível                               | defensivos WG
-  7 | CS    | Suspensão de Encapsulado                            | defensivos CS
-  8 | SC    | Suspensão Concentrada                               | defensivos SC
-  9 | OD    | Dispersão de Óleo                                   | defensivos OD
- 10 | SE    | Suspo-Emulsão                                       | defensivos SE
- 11 | EC    | Concentrado Emulsionável                            | defensivos EC
- 12 | —     | Óleos (mineral/vegetal)                              | SÓ adjuvantes óleo
- 13 | EO    | Emulsão de Água em Óleo                             | defensivos EO
- 14 | EW    | Emulsão de Óleo em Água                             | defensivos EW
- 15 | ME    | Microemulsão                                        | defensivos ME
- 16 | SL    | Concentrado Solúvel                                 | defensivos SL
- 17 | —     | Surfactantes/Espalhantes/Estabilizantes              | SÓ adjuvantes
- 18 | —     | Fertilizantes Foliares                              | SÓ fertilizantes
- 19 | —     | Redutores de Espuma                                 | SÓ antiespumantes
- 20 | —     | Biológicos Bacterianos (Bacillus spp.)              | SÓ biológicos bacterianos
- 21 | —     | Biológicos Fúngicos (Trichoderma, Beauveria)        | SÓ biológicos fúngicos
- 22 | —     | Biológicos Virais (Baculovírus, Granulovírus)       | SÓ biológicos virais
-
-REGRA: Posições 2, 12, 17, 18, 19 são EXCLUSIVAS para adjuvantes/fertilizantes.
-       Posições 20-22 são EXCLUSIVAS para BIOLÓGICOS (produtos à base de microrganismo vivo).
-       DEFENSIVOS (herbicidas, fungicidas, inseticidas etc.) NUNCA vão nessas posições.
-       Um defensivo SE vai na posição 10, um EC na 11, um SC na 8, etc.
-       Um biológico bacteriano (Bacillus) vai na posição 20, fúngico na 21, viral na 22.
-
-ETAPA 4 — VALIDAÇÃO CRUZADA (antes de responder):
-  ✓ Se classe=defensivo, a posição DEVE ser 3-11, 13-16 (posições com sigla)
-  ✓ Se classe=adjuvante, a posição DEVE ser 2, 12, 17, ou 19
-  ✓ Se classe=fertilizante, a posição DEVE ser 18
-  ✓ Se classe=biologico bacteriano (Bacillus), a posição DEVE ser 20 e formulacao="BIO_BACTERIANO"
-  ✓ Se classe=biologico fúngico (Trichoderma, Beauveria, Metarhizium), posição=21 e formulacao="BIO_FUNGICO"
-  ✓ Se classe=biologico viral (Baculovírus, Granulovírus), posição=22 e formulacao="BIO_VIRAL"
-  ✓ A formulação e a posição devem ser compatíveis (ex: SC→8, EC→11, WG→6)
-  ✓ Se qualquer validação falhar, revise sua classificação antes de responder
-
-═══════════════════════════════════════════════════════════════
-FORMATO DE RESPOSTA — apenas JSON válido, sem texto adicional:
-═══════════════════════════════════════════════════════════════
-
-Para DEFENSIVOS:
-{
-  "encontrado": true,
-  "nome_completo": "Zethamaxx Evo",
-  "classe": "herbicida",
-  "formulacao": "SE",
-  "posicao": 10,
-  "registro_mapa": "45924",
-  "ingrediente_ativo": "s-metolacloro+flumioxazina+imazetapir",
-  "tipo_adjuvante": null,
-  "confianca": "alta"
-}
-
-Para ADJUVANTES:
-{
-  "encontrado": true,
-  "nome_completo": "Nimbus",
-  "classe": "adjuvante",
-  "formulacao": "OLEO",
-  "posicao": 12,
-  "registro_mapa": null,
-  "ingrediente_ativo": "óleo mineral",
-  "tipo_adjuvante": "óleo mineral",
-  "confianca": "alta"
-}
-
-CAMPO "confianca":
-  - "alta": produto conhecido, formulação confirmada pela bula
-  - "media": produto provável mas sem certeza da formulação exata
-  - "baixa": chute — prefira retornar {"encontrado": false} em vez de chutar
-
-Se NÃO consegue identificar com confiança média ou alta:
-{"encontrado": false, "motivo": "explicação curta"}"""
-
-
-_FERRAMENTAS_BUSCA = [{"type": "web_search_20250305", "name": "web_search"}]
+FORMATO (JSON puro):
+{"encontrado":true,"nome_completo":"Nome","classe":"herbicida","formulacao":"EC","posicao":11,"registro_mapa":"12345","ingrediente_ativo":"glifosato","tipo_adjuvante":null,"confianca":"alta"}"""
 
 
 def buscar_produto_ia(nome: str) -> dict | None:
@@ -165,8 +60,7 @@ def buscar_produto_ia(nome: str) -> dict | None:
     try:
         resposta = cliente.messages.create(
             model="claude-haiku-5-5",
-            max_tokens=1024,
-            tools=_FERRAMENTAS_BUSCA,
+            max_tokens=300,
             system=[{
                 "type": "text",
                 "text": _PROMPT_BUSCA,
