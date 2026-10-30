@@ -360,9 +360,11 @@
         let doseHa = '—';
         if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
           if (item.base === 'tanque') {
-            doseHa = item.dose + ' ' + item.unidade + '/tanque';
             if (item.dose_ha_calculada != null) {
-              doseHa += '<br><small style="color:#555;font-weight:600">= ' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha</small>';
+              doseHa = '<strong>' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha</strong>' +
+                       '<br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
+            } else {
+              doseHa = '<span style="color:#888">—</span><br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
             }
           } else {
             doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
@@ -599,9 +601,9 @@
         var doseHa;
         if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
           if (item.base === 'tanque' && item.dose_ha_calculada != null) {
-            doseHa = item.dose + ' ' + item.unidade + '/tq\n(=' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha)';
+            doseHa = item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha\n(tq:' + item.dose + ' ' + item.unidade + ')';
           } else if (item.base === 'tanque') {
-            doseHa = item.dose + ' ' + item.unidade + '/tanque';
+            doseHa = '-- (tq:' + item.dose + ' ' + item.unidade + ')';
           } else {
             doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
           }

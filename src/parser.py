@@ -33,7 +33,7 @@ Para CADA produto extraia:
 
 REGRAS:
 - produto: APENAS o nome, nunca dose ou unidade junto.
-- Use base="tanque" quando a mensagem indicar "por tanque", "por carga", "por tq", "carga cheia" ou similar.
+- Use base="tanque" quando a dose for seguida de "/tanque", "/tq", "/carga", ou a mensagem indicar "por tanque", "por carga", "por tq", "carga cheia" ou similar. Ex: "2 L/tanque" → base="tanque".
 - Se não houver indicação de base (ex: "Drive 2.5 L"), use base=null — não assuma.
 - Dose com vírgula decimal (ex: "0,5 L") → converta para ponto: 0.5
 - Se encontrar nome de pessoa, telefone, CPF ou fazenda: {"erro":"dados_pessoais","descricao":"dados pessoais detectados"}
