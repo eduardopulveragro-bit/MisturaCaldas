@@ -69,8 +69,12 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     resposta = cliente.messages.create(
         model=modelo,
-        max_tokens=2048,
-        system=_SYSTEM_PROMPT,
+        max_tokens=512,
+        system=[{
+            "type": "text",
+            "text": _SYSTEM_PROMPT,
+            "cache_control": {"type": "ephemeral"},
+        }],
         messages=[{"role": "user", "content": mensagem}],
     )
     duracao = (datetime.now() - inicio).total_seconds()

@@ -16,9 +16,12 @@ logger = logging.getLogger(__name__)
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 
+# Cache em memória: evita re-chamar a API para o mesmo produto na mesma instância.
+_CACHE_PRODUTOS: dict[str, dict | None] = {}
+
 _PROMPT_BUSCA = """Você é um consultor de registro de defensivos agrícolas no Brasil (MAPA/Agrofit).
 
-FERRAMENTA DISPONÍVEL: Você tem acesso a busca na web. Quando não conhecer o produto com certeza ALTA ou MÉDIA, USE A BUSCA antes de responder. Pesquise por: "{nome do produto} herbicida fungicida bula MAPA formulação ingrediente ativo". Priorize resultados de agrolink.com.br, agrofit.agricultura.gov.br, e sites de fabricantes.
+FERRAMENTA DISPONÍVEL: Você tem acesso a busca na web. Use a busca SOMENTE se NÃO souber o produto com confiança ALTA pelo seu treinamento. Se conhecer bem o produto (formulação, classe e registro), responda diretamente SEM buscar. Quando buscar, pesquise: "{nome do produto} herbicida fungicida bula MAPA formulação ingrediente ativo". Priorize agrolink.com.br, agrofit.agricultura.gov.br e sites de fabricantes.
 
 TAREFA: Dado o nome de um produto, identifique com precisão sua CLASSE, FORMULAÇÃO e POSIÇÃO na tabela de ordem de adição na calda.
 
@@ -139,34 +142,39 @@ Se NÃO consegue identificar com confiança média ou alta:
 {"encontrado": false, "motivo": "explicação curta"}"""
 
 
+_FERRAMENTAS_BUSCA = [{"type": "web_search_20250305", "name": "web_search"}]
+
+
 def buscar_produto_ia(nome: str) -> dict | None:
     """
     Consulta a IA sobre um produto não cadastrado.
     Retorna dict com dados do produto ou None se não encontrado.
+    Usa cache em memória para evitar chamadas repetidas.
     """
+    chave = nome.lower().strip()
+    if chave in _CACHE_PRODUTOS:
+        logger.info("busca_produto CACHE_HIT nome='%s'", nome)
+        return _CACHE_PRODUTOS[chave]
+
     from src.parser import _criar_cliente
     try:
         cliente = _criar_cliente()
     except EnvironmentError:
         return None
 
-    # Ferramenta de busca web server-side: Anthropic executa a busca e devolve
-    # os resultados no mesmo response — sem loop de tool_use no cliente.
-    _FERRAMENTAS_BUSCA = [{"type": "web_search_20250305", "name": "web_search"}]
-
     try:
         resposta = cliente.messages.create(
             model="claude-haiku-5-5",
             max_tokens=1024,
             tools=_FERRAMENTAS_BUSCA,
-            system=_PROMPT_BUSCA,
+            system=[{
+                "type": "text",
+                "text": _PROMPT_BUSCA,
+                "cache_control": {"type": "ephemeral"},
+            }],
             messages=[{
                 "role": "user",
-                "content": (
-                    f"Produto: {nome}\n\n"
-                    f"Se não tiver certeza, pesquise na web: "
-                    f'"{nome} herbicida fungicida inseticida bula MAPA formulação ingrediente ativo"'
-                ),
+                "content": f"Produto: {nome}",
             }],
         )
     except Exception as e:
@@ -198,10 +206,12 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
     if not dados.get("encontrado"):
         logger.info("busca_produto nome='%s' nao_encontrado motivo='%s'", nome, dados.get("motivo", ""))
+        _CACHE_PRODUTOS[chave] = None
         return None
 
     if dados.get("confianca") == "baixa":
         logger.warning("busca_produto nome='%s' confianca=baixa — descartado", nome)
+        _CACHE_PRODUTOS[chave] = None
         return None
 
     formulacao = (dados.get("formulacao") or "").upper()
@@ -213,8 +223,10 @@ def buscar_produto_ia(nome: str) -> dict | None:
             "busca_produto nome='%s' VALIDACAO_FALHOU classe=%s form=%s pos=%s — descartado",
             nome, classe, formulacao, posicao,
         )
+        _CACHE_PRODUTOS[chave] = None
         return None
 
+    _CACHE_PRODUTOS[chave] = dados
     return dados
 
 
