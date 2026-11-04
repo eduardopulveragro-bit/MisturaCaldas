@@ -5,7 +5,8 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify, Response
+from flask import Flask, render_template, request, jsonify, Response, redirect, url_for
+from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 
 _ENV_PATH = Path(__file__).parent / ".env"
 load_dotenv(_ENV_PATH, override=True)
@@ -15,6 +16,7 @@ from src.ordenacao import ordenar_itens
 from src.operacao import extrair_operacao, calcular_totais_tanque
 from src.alertas_incompatibilidade import verificar_incompatibilidades
 from src import clientes as clientes_mod
+from src import usuarios as usuarios_mod
 
 _handlers = [logging.StreamHandler()]
 if os.path.isdir("logs"):
@@ -27,6 +29,32 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-troque-em-producao")
+
+login_manager = LoginManager(app)
+login_manager.login_view = "login"
+login_manager.login_message = ""
+
+
+class User(UserMixin):
+    def __init__(self, data: dict):
+        self.id = data["id"]
+        self.email = data["email"]
+        self.nome = data.get("nome", "")
+        self.admin = data.get("admin", False)
+
+
+@login_manager.user_loader
+def carregar_usuario(user_id: str):
+    data = usuarios_mod.buscar_por_id(user_id)
+    return User(data) if data else None
+
+
+@login_manager.unauthorized_handler
+def nao_autorizado():
+    if request.is_json or request.headers.get("X-Requested-With") == "XMLHttpRequest":
+        return jsonify({"erro": "Sessão expirada. Faça login novamente.", "redirect": "/login"}), 401
+    return redirect(url_for("login"))
 
 
 @app.route("/favicon.ico")
@@ -34,12 +62,110 @@ def favicon():
     return Response(status=204)
 
 
+# ── Auth ─────────────────────────────────────────────────────────────────────
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+    if usuarios_mod.contar() == 0:
+        return redirect(url_for("setup"))
+    erro = None
+    if request.method == "POST":
+        email = request.form.get("email", "").strip()
+        senha = request.form.get("senha", "")
+        usuario = usuarios_mod.verificar_senha(email, senha)
+        if usuario:
+            login_user(User(usuario), remember=True)
+            return redirect(url_for("index"))
+        erro = "Email ou senha incorretos."
+    return render_template("login.html", erro=erro)
+
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("login"))
+
+
+@app.route("/setup", methods=["GET", "POST"])
+def setup():
+    if usuarios_mod.contar() > 0:
+        return redirect(url_for("login"))
+    erro = None
+    if request.method == "POST":
+        nome = request.form.get("nome", "").strip()
+        email = request.form.get("email", "").strip()
+        senha = request.form.get("senha", "")
+        if not nome or not email or not senha:
+            erro = "Preencha todos os campos."
+        elif len(senha) < 6:
+            erro = "Senha deve ter no mínimo 6 caracteres."
+        else:
+            try:
+                u = usuarios_mod.criar(email, nome, senha, admin=True)
+                login_user(User(u), remember=True)
+                return redirect(url_for("index"))
+            except Exception as e:
+                logger.exception("Erro ao criar primeiro admin: %s", e)
+                erro = "Erro ao criar usuário. Verifique as configurações do Supabase."
+    return render_template("setup.html", erro=erro)
+
+
+# ── App principal ─────────────────────────────────────────────────────────────
+
 @app.route("/")
+@login_required
 def index():
     return render_template("index.html")
 
 
+# ── Admin usuários ────────────────────────────────────────────────────────────
+
+@app.route("/admin/usuarios")
+@login_required
+def admin_usuarios():
+    if not current_user.admin:
+        return redirect(url_for("index"))
+    usuarios = usuarios_mod.listar()
+    return render_template("admin_usuarios.html", usuarios=usuarios)
+
+
+@app.route("/admin/usuarios/criar", methods=["POST"])
+@login_required
+def admin_criar_usuario():
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
+    nome = request.form.get("nome", "").strip()
+    email = request.form.get("email", "").strip()
+    senha = request.form.get("senha", "")
+    admin = request.form.get("admin") == "on"
+    if nome and email and senha:
+        try:
+            usuarios_mod.criar(email, nome, senha, admin=admin)
+        except Exception as e:
+            logger.error("Erro ao criar usuário: %s", e)
+    return redirect(url_for("admin_usuarios"))
+
+
+@app.route("/admin/usuarios/<user_id>/toggle", methods=["POST"])
+@login_required
+def admin_toggle_usuario(user_id):
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
+    if user_id == current_user.id:
+        return redirect(url_for("admin_usuarios"))
+    usuario = usuarios_mod.buscar_por_id(user_id)
+    if usuario:
+        usuarios_mod.atualizar_ativo(user_id, not usuario.get("ativo", True))
+    return redirect(url_for("admin_usuarios"))
+
+
+# ── API ───────────────────────────────────────────────────────────────────────
+
 @app.route("/processar", methods=["POST"])
+@login_required
 def processar():
     mensagem = request.form.get("mensagem", "").strip()
 
@@ -120,16 +246,19 @@ def processar():
 
 
 @app.route("/clientes")
+@login_required
 def pagina_clientes():
     return render_template("clientes.html")
 
 
 @app.route("/api/clientes", methods=["GET"])
+@login_required
 def api_listar_clientes():
     return jsonify(clientes_mod.listar())
 
 
 @app.route("/api/clientes", methods=["POST"])
+@login_required
 def api_criar_cliente():
     dados = request.get_json(silent=True) or {}
     if not dados.get("nome", "").strip():
@@ -139,6 +268,7 @@ def api_criar_cliente():
 
 
 @app.route("/api/clientes/<cliente_id>", methods=["GET"])
+@login_required
 def api_buscar_cliente(cliente_id):
     cliente = clientes_mod.buscar(cliente_id)
     if not cliente:
@@ -147,6 +277,7 @@ def api_buscar_cliente(cliente_id):
 
 
 @app.route("/api/clientes/<cliente_id>", methods=["PUT"])
+@login_required
 def api_atualizar_cliente(cliente_id):
     dados = request.get_json(silent=True) or {}
     if not dados.get("nome", "").strip():
@@ -158,6 +289,7 @@ def api_atualizar_cliente(cliente_id):
 
 
 @app.route("/api/clientes/<cliente_id>", methods=["DELETE"])
+@login_required
 def api_excluir_cliente(cliente_id):
     if clientes_mod.excluir(cliente_id):
         return jsonify({"ok": True})
