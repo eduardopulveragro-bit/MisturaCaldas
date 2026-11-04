@@ -103,3 +103,31 @@ def atualizar_ativo(user_id: str, ativo: bool) -> None:
         headers={**_headers(), "Prefer": "return=minimal"},
         json={"ativo": ativo}, timeout=10,
     ).raise_for_status()
+
+
+def criar_tabela() -> dict:
+    """Cria a tabela usuarios via API pg-meta do Supabase (uso único no /init-db)."""
+    sql = """
+    CREATE TABLE IF NOT EXISTS usuarios (
+      id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+      email text UNIQUE NOT NULL,
+      nome text NOT NULL,
+      password_hash text NOT NULL,
+      ativo boolean DEFAULT true,
+      admin boolean DEFAULT false,
+      plano text DEFAULT 'trial',
+      criado_em timestamptz DEFAULT now()
+    );
+    """
+    headers_pg = {
+        "apikey": _SUPA_KEY,
+        "Authorization": f"Bearer {_SUPA_KEY}",
+        "Content-Type": "application/json",
+    }
+    r = requests.post(
+        f"{_SUPA_URL}/pg/query",
+        headers=headers_pg,
+        json={"query": sql},
+        timeout=15,
+    )
+    return {"status": r.status_code, "body": r.text}

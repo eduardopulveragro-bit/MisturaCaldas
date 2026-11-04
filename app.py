@@ -89,6 +89,15 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/init-db")
+def init_db():
+    """Cria a tabela usuarios no Supabase. Visitar uma vez após o deploy."""
+    resultado = usuarios_mod.criar_tabela()
+    if resultado["status"] == 200:
+        return jsonify({"ok": True, "msg": "Tabela usuarios criada com sucesso."})
+    return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
+
+
 @app.route("/setup", methods=["GET", "POST"])
 def setup():
     if usuarios_mod.contar() > 0:
