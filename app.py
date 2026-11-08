@@ -98,6 +98,35 @@ def init_db():
     return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
 
 
+@app.route("/cadastro", methods=["GET", "POST"])
+def cadastro():
+    if current_user.is_authenticated:
+        return redirect(url_for("index"))
+    if usuarios_mod.contar() == 0:
+        return redirect(url_for("setup"))
+    erro = None
+    if request.method == "POST":
+        nome = request.form.get("nome", "").strip()
+        email = request.form.get("email", "").strip()
+        senha = request.form.get("senha", "")
+        if not nome or not email or not senha:
+            erro = "Preencha todos os campos."
+        elif len(senha) < 6:
+            erro = "Senha deve ter no mínimo 6 caracteres."
+        else:
+            try:
+                u = usuarios_mod.criar(email, nome, senha, admin=False)
+                login_user(User(u), remember=True)
+                return redirect(url_for("index"))
+            except Exception as e:
+                logger.exception("Erro ao criar usuário: %s", e)
+                if "duplicate" in str(e).lower() or "unique" in str(e).lower():
+                    erro = "Este email já está cadastrado."
+                else:
+                    erro = "Erro ao criar conta. Tente novamente."
+    return render_template("cadastro.html", erro=erro)
+
+
 @app.route("/setup", methods=["GET", "POST"])
 def setup():
     if usuarios_mod.contar() > 0:
