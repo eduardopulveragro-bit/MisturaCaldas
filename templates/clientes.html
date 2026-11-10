@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Clientes</title>
+  <title>{% if current_user.tipo == 'produtor' %}Minha Fazenda{% else %}Cadastro de Clientes{% endif %}</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
@@ -82,12 +82,12 @@
 
   <main>
     <div class="card" id="form-card">
-      <h2 id="form-titulo">Novo Cliente</h2>
+      <h2 id="form-titulo">{% if current_user.tipo == 'produtor' %}Minha Fazenda{% else %}Novo Cliente{% endif %}</h2>
       <input type="hidden" id="editando-id" value="">
 
       <div class="campo">
         <label for="nome">Nome do cliente / propriedade</label>
-        <input type="text" id="nome" placeholder="Ex: Fazenda Boa Vista - Joao">
+        <input type="text" id="nome" placeholder="{% if current_user.tipo == 'produtor' %}Ex: Fazenda Boa Vista{% else %}Ex: Fazenda Boa Vista - Joao{% endif %}">
       </div>
 
       <div class="secao-titulo">Pulverizador</div>
@@ -125,14 +125,14 @@
       </div>
 
       <div style="display: flex; gap: 8px; margin-top: 16px;">
-        <button class="btn btn-verde" onclick="salvar()">Salvar Cliente</button>
+        <button class="btn btn-verde" onclick="salvar()">{% if current_user.tipo == 'produtor' %}Salvar Fazenda{% else %}Salvar Cliente{% endif %}</button>
         <button class="btn" onclick="limparForm()" style="background: #757575;">Limpar</button>
       </div>
       <div id="form-status" style="margin-top: 10px; font-size: 13px;"></div>
     </div>
 
     <div class="card">
-      <h2>Clientes Cadastrados</h2>
+      <h2>{% if current_user.tipo == 'produtor' %}Minhas Fazendas{% else %}Clientes Cadastrados{% endif %}</h2>
       <div id="lista-clientes">
         <div class="lista-vazia">Carregando...</div>
       </div>

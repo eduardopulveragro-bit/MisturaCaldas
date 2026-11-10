@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Histórico de Caldas</title>
+  <title>{% if current_user.tipo == 'produtor' %}Histórico de Aplicação{% else %}Histórico de Caldas{% endif %}</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
@@ -72,7 +72,7 @@
 
   <main>
     <div class="card">
-      <h2>Histórico de Caldas</h2>
+      <h2>{% if current_user.tipo == 'produtor' %}Histórico de Aplicação{% else %}Histórico de Caldas{% endif %}</h2>
       <div class="filtros">
         <input type="text" id="filtro-busca" placeholder="Buscar por cultura, talhão...">
         <input type="month" id="filtro-mes" title="Filtrar por mês">

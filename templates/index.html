@@ -160,8 +160,8 @@
       <img src="/static/logo.png" alt="FieldMix">
     </a>
     <div style="display:flex;gap:20px;align-items:center;">
-      <a href="/clientes" class="nav-link">Clientes</a>
-      <a href="/historico" class="nav-link">Histórico</a>
+      <a href="/clientes" class="nav-link">{% if current_user.tipo == 'produtor' %}Minha Fazenda{% else %}Clientes{% endif %}</a>
+      <a href="/historico" class="nav-link">{% if current_user.tipo == 'produtor' %}Histórico de Aplicação{% else %}Histórico{% endif %}</a>
       <a href="/delta-t" class="nav-link">Delta T</a>
       {% if current_user.admin %}<a href="/admin/usuarios" class="nav-link">Usuários</a>{% endif %}
       <a href="/logout" class="nav-link">Sair</a>
