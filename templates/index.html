@@ -866,6 +866,14 @@
 
       doc.save('ordem_mistura_calda.pdf');
     }
+
+    /* Atualiza Delta T em tempo real quando os campos de condição ambiental mudam */
+    document.getElementById('temp-amb').addEventListener('input', function() {
+      if (dadosAtual) renderDeltaT();
+    });
+    document.getElementById('rh-amb').addEventListener('input', function() {
+      if (dadosAtual) renderDeltaT();
+    });
   </script>
 </body>
 </html>
