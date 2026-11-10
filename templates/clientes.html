@@ -52,6 +52,15 @@
     .cliente-acoes { display: flex; gap: 8px; margin-top: 12px; }
 
     .secao-titulo { font-size: 13px; font-weight: 700; color: #10315A; margin-bottom: 8px; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
+    .config-entry { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 8px; flex-wrap: wrap; }
+    .config-entry > div { flex: 1; min-width: 120px; }
+    .config-entry > div.desc { flex: 2; min-width: 160px; }
+    .btn-remover { background: #ef4444; color: white; border: none; border-radius: 6px; padding: 9px 12px; font-size: 13px; cursor: pointer; align-self: flex-end; white-space: nowrap; }
+    .btn-remover:hover { background: #dc2626; }
+    .btn-add { background: none; border: 1.5px dashed #267A25; color: #267A25; border-radius: 6px; padding: 7px 14px; font-size: 13px; font-weight: 600; cursor: pointer; margin-top: 2px; }
+    .btn-add:hover { background: #e8f5e9; }
+    .btn-calcular { background: none; border: none; color: #888; font-size: 11px; cursor: pointer; padding: 2px 0; text-decoration: underline; }
+    .btn-calcular:hover { color: #267A25; }
 
     @media (max-width: 600px) {
       .card { padding: 16px; }
@@ -93,23 +102,10 @@
           <div class="unidade">Litros</div>
         </div>
       </div>
-      <div class="row">
-        <div>
-          <label for="vazao">Taxa de aplicação</label>
-          <input type="number" id="vazao" placeholder="80" min="1" step="any">
-          <div class="unidade">L/ha</div>
-        </div>
-        <div></div>
-      </div>
-
-      <div class="row">
-        <div>
-          <label for="area_tanque">Hectares por tanque</label>
-          <input type="number" id="area_tanque" placeholder="50" min="1" step="any">
-          <div class="unidade">ha</div>
-        </div>
-        <div></div>
-      </div>
+      <div class="secao-titulo" style="margin-top:12px;">Configurações de aplicação</div>
+      <div style="font-size:12px;color:#888;margin-bottom:8px;">Adicione uma configuração por ponta/pressão. Ex: "TT110015 a 2 bar"</div>
+      <div id="configs-lista"></div>
+      <button type="button" class="btn-add" onclick="adicionarConfig()">+ Adicionar configuração</button>
 
       <div class="secao-titulo">Pontas</div>
       <div class="campo">
@@ -167,8 +163,16 @@
       const infos = [];
       if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
       if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
-      if (c.vazao_L_ha != null) infos.push('<strong>Taxa de aplicação:</strong> ' + c.vazao_L_ha + ' L/ha');
-      if (c.area_tanque_ha != null) infos.push('<strong>Area/tanque:</strong> ' + c.area_tanque_ha + ' ha');
+      const configs = c.configs || [];
+      if (configs.length === 1) {
+        const cfg = configs[0];
+        if (cfg.vazao_L_ha != null) infos.push('<strong>Taxa de aplicação:</strong> ' + cfg.vazao_L_ha + ' L/ha' + (cfg.descricao ? ' (' + esc(cfg.descricao) + ')' : ''));
+        if (cfg.area_tanque_ha != null) infos.push('<strong>Área/tanque:</strong> ' + cfg.area_tanque_ha + ' ha');
+      } else if (configs.length > 1) {
+        infos.push('<strong>Configurações:</strong><br>' + configs.map((cfg, i) =>
+          '&nbsp;&nbsp;' + (i+1) + '. ' + (cfg.descricao ? esc(cfg.descricao) + ' — ' : '') + cfg.vazao_L_ha + ' L/ha' + (cfg.area_tanque_ha ? ' / ' + cfg.area_tanque_ha + ' ha' : '')
+        ).join('<br>'));
+      }
       if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
       if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));
       if (c.observacao) infos.push('<strong>Obs:</strong> ' + esc(c.observacao));
@@ -198,13 +202,61 @@
       return d.innerHTML;
     }
 
+    /* ── Configurações dinâmicas ───────────────────────────────── */
+    function adicionarConfig(cfg) {
+      const lista = document.getElementById('configs-lista');
+      const entry = document.createElement('div');
+      entry.className = 'config-entry';
+      entry.innerHTML =
+        '<div class="desc">' +
+          '<label style="font-size:12px;font-weight:600;color:#10315A;">Descrição</label>' +
+          '<input type="text" class="cfg-desc" placeholder="Ex: TT110015 a 2 bar" value="' + esc(cfg ? cfg.descricao : '') + '">' +
+        '</div>' +
+        '<div>' +
+          '<label style="font-size:12px;font-weight:600;color:#10315A;">Vazão (L/ha)</label>' +
+          '<input type="number" class="cfg-vazao" placeholder="80" min="1" step="any" value="' + (cfg && cfg.vazao_L_ha != null ? cfg.vazao_L_ha : '') + '">' +
+        '</div>' +
+        '<div>' +
+          '<label style="font-size:12px;font-weight:600;color:#10315A;">Ha/tanque</label>' +
+          '<input type="number" class="cfg-area" placeholder="auto" min="0.1" step="any" value="' + (cfg && cfg.area_tanque_ha != null ? cfg.area_tanque_ha : '') + '">' +
+        '</div>' +
+        '<button type="button" class="btn-remover" onclick="this.closest(\'.config-entry\').remove()">✕</button>';
+
+      // auto-calcula ha/tanque quando usuário preenche vazão
+      entry.querySelector('.cfg-vazao').addEventListener('input', function() {
+        const vol = parseFloat(document.getElementById('volume_tanque').value);
+        const vazao = parseFloat(this.value);
+        if (vol > 0 && vazao > 0) {
+          entry.querySelector('.cfg-area').value = (vol / vazao).toFixed(1);
+        }
+      });
+      lista.appendChild(entry);
+    }
+
+    function lerConfigs() {
+      const entries = document.querySelectorAll('.config-entry');
+      const configs = [];
+      entries.forEach(function(entry) {
+        const vazao = parseFloat(entry.querySelector('.cfg-vazao').value);
+        if (!isNaN(vazao) && vazao > 0) {
+          const cfg = {
+            descricao: entry.querySelector('.cfg-desc').value.trim(),
+            vazao_L_ha: vazao,
+          };
+          const area = parseFloat(entry.querySelector('.cfg-area').value);
+          if (!isNaN(area) && area > 0) cfg.area_tanque_ha = area;
+          configs.push(cfg);
+        }
+      });
+      return configs;
+    }
+
     function lerForm() {
       return {
         nome: document.getElementById('nome').value,
         pulverizador_modelo: document.getElementById('pulverizador_modelo').value,
         volume_tanque: document.getElementById('volume_tanque').value,
-        vazao: document.getElementById('vazao').value,
-        area_tanque: document.getElementById('area_tanque').value,
+        configs: lerConfigs(),
         pontas: document.getElementById('pontas').value,
         calibracao: document.getElementById('calibracao').value,
         observacao: document.getElementById('observacao').value,
@@ -217,8 +269,14 @@
       document.getElementById('pulverizador_modelo').value = (c.pulverizador || {}).modelo || '';
       var vol = (c.pulverizador || {}).volume_tanque_L;
       document.getElementById('volume_tanque').value = vol != null ? vol : '';
-      document.getElementById('vazao').value = c.vazao_L_ha != null ? c.vazao_L_ha : '';
-      document.getElementById('area_tanque').value = c.area_tanque_ha != null ? c.area_tanque_ha : '';
+      // preenche configs
+      document.getElementById('configs-lista').innerHTML = '';
+      var configs = c.configs || [];
+      if (configs.length === 0 && c.vazao_L_ha != null) {
+        configs = [{descricao: '', vazao_L_ha: c.vazao_L_ha, area_tanque_ha: c.area_tanque_ha}];
+      }
+      configs.forEach(adicionarConfig);
+      if (configs.length === 0) adicionarConfig();
       document.getElementById('pontas').value = (c.pontas || []).join(', ');
       document.getElementById('calibracao').value = c.calibracao || '';
       document.getElementById('observacao').value = c.observacao || '';
@@ -231,8 +289,8 @@
       document.getElementById('nome').value = '';
       document.getElementById('pulverizador_modelo').value = '';
       document.getElementById('volume_tanque').value = '';
-      document.getElementById('vazao').value = '';
-      document.getElementById('area_tanque').value = '';
+      document.getElementById('configs-lista').innerHTML = '';
+      adicionarConfig();
       document.getElementById('pontas').value = '';
       document.getElementById('calibracao').value = '';
       document.getElementById('observacao').value = '';
@@ -302,6 +360,7 @@
     }
 
     carregarClientes();
+    adicionarConfig(); // inicia com uma config vazia
   </script>
 </body>
 </html>

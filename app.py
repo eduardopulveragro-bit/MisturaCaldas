@@ -17,6 +17,7 @@ from src.operacao import extrair_operacao, calcular_totais_tanque
 from src.alertas_incompatibilidade import verificar_incompatibilidades
 from src import clientes as clientes_mod
 from src import usuarios as usuarios_mod
+from src import historico as historico_mod
 
 _handlers = [logging.StreamHandler()]
 if os.path.isdir("logs"):
@@ -63,6 +64,7 @@ _SKIP_ONBOARDING = {
     "login", "logout", "cadastro", "setup",
     "onboarding", "onboarding_equipamentos",
     "static", "favicon", "webhook", "init_db",
+    "historico", "api_historico_listar", "api_historico_criar", "api_historico_excluir",
 }
 
 
@@ -397,6 +399,43 @@ def api_excluir_cliente(cliente_id):
     if clientes_mod.excluir(cliente_id):
         return jsonify({"ok": True})
     return jsonify({"erro": "Cliente não encontrado"}), 404
+
+
+@app.route("/historico")
+@login_required
+def historico():
+    return render_template("historico.html")
+
+
+@app.route("/api/historico", methods=["GET"])
+@login_required
+def api_historico_listar():
+    registros = historico_mod.listar(current_user.id)
+    return jsonify(registros)
+
+
+@app.route("/api/historico", methods=["POST"])
+@login_required
+def api_historico_criar():
+    dados = request.get_json(silent=True) or {}
+    dados["usuario_id"] = current_user.id
+    try:
+        registro = historico_mod.criar(dados)
+        return jsonify(registro), 201
+    except Exception as e:
+        logger.exception("Erro ao salvar histórico: %s", e)
+        return jsonify({"erro": str(e)}), 500
+
+
+@app.route("/api/historico/<historico_id>", methods=["DELETE"])
+@login_required
+def api_historico_excluir(historico_id):
+    try:
+        historico_mod.excluir(historico_id, current_user.id)
+        return jsonify({"ok": True})
+    except Exception as e:
+        logger.exception("Erro ao excluir histórico: %s", e)
+        return jsonify({"erro": str(e)}), 500
 
 
 @app.route("/webhook", methods=["POST"])

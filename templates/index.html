@@ -89,6 +89,42 @@
       margin-top: 16px; width: 100%; justify-content: center;
     }
     .btn-pdf:hover { background: #5FB038; }
+    .btn-historico {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #10315A; color: white; border: none; border-radius: 6px;
+      padding: 11px 28px; font-size: 14px; font-weight: 600; cursor: pointer;
+      margin-top: 10px; width: 100%; justify-content: center;
+    }
+    .btn-historico:hover { background: #1a4070; }
+
+    /* Modal histórico */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+      z-index: 999; align-items: center; justify-content: center;
+    }
+    .modal-overlay.ativo { display: flex; }
+    .modal-box {
+      background: white; border-radius: 10px; padding: 24px; width: 100%;
+      max-width: 480px; margin: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      max-height: 90vh; overflow-y: auto;
+    }
+    .modal-box h3 { font-size: 16px; color: #10315A; margin-bottom: 16px; }
+    .modal-campo { margin-bottom: 12px; }
+    .modal-campo label { display: block; font-size: 12px; font-weight: 600; color: #10315A; margin-bottom: 4px; }
+    .modal-campo input, .modal-campo textarea {
+      width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 9px 12px;
+      font-size: 14px; font-family: inherit;
+    }
+    .modal-campo input:focus, .modal-campo textarea:focus { outline: none; border-color: #267A25; }
+    .modal-campo textarea { height: 70px; resize: vertical; }
+    .modal-row { display: flex; gap: 10px; }
+    .modal-row > .modal-campo { flex: 1; }
+    .modal-acoes { display: flex; gap: 10px; margin-top: 16px; }
+    .modal-acoes button { flex: 1; padding: 10px; border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    .btn-modal-salvar { background: #267A25; color: white; }
+    .btn-modal-salvar:hover { background: #5FB038; }
+    .btn-modal-cancelar { background: #e0e0e0; color: #333; }
+    .btn-modal-cancelar:hover { background: #bdbdbd; }
 
     .alerta-incomp {
       border-radius: 6px; padding: 10px 14px; margin-bottom: 10px;
@@ -125,6 +161,7 @@
     </a>
     <div style="display:flex;gap:20px;align-items:center;">
       <a href="/clientes" class="nav-link">Clientes</a>
+      <a href="/historico" class="nav-link">Histórico</a>
       <a href="/delta-t" class="nav-link">Delta T</a>
       {% if current_user.admin %}<a href="/admin/usuarios" class="nav-link">Usuários</a>{% endif %}
       <a href="/logout" class="nav-link">Sair</a>
@@ -251,8 +288,47 @@
       <button type="button" class="btn-pdf" id="btn-pdf" style="display:none;" onclick="gerarPDF()">
         Baixar PDF
       </button>
+      <button type="button" class="btn-historico" id="btn-historico" style="display:none;" onclick="abrirModalHistorico()">
+        Salvar no Histórico
+      </button>
     </div>
   </main>
+
+  <!-- Modal histórico -->
+  <div class="modal-overlay" id="modal-historico">
+    <div class="modal-box">
+      <h3>Salvar no Histórico</h3>
+      <div class="modal-row">
+        <div class="modal-campo">
+          <label>Data de aplicação</label>
+          <input type="date" id="hst-data">
+        </div>
+        <div class="modal-campo">
+          <label>Área aplicada (ha)</label>
+          <input type="number" id="hst-area" placeholder="Ex: 150" min="0.1" step="any">
+        </div>
+      </div>
+      <div class="modal-row">
+        <div class="modal-campo">
+          <label>Cultura</label>
+          <input type="text" id="hst-cultura" placeholder="Ex: Soja">
+        </div>
+        <div class="modal-campo">
+          <label>Talhão (opcional)</label>
+          <input type="text" id="hst-talhao" placeholder="Ex: Talhão 3A">
+        </div>
+      </div>
+      <div class="modal-campo">
+        <label>Notas (opcional)</label>
+        <textarea id="hst-notas" placeholder="Ex: aplicação preventiva contra ferrugem..."></textarea>
+      </div>
+      <div id="hst-status" style="font-size:13px;min-height:18px;"></div>
+      <div class="modal-acoes">
+        <button class="btn-modal-salvar" onclick="salvarHistorico()">Salvar</button>
+        <button class="btn-modal-cancelar" onclick="fecharModalHistorico()">Cancelar</button>
+      </div>
+    </div>
+  </div>
 
   <img id="logo-pdf" src="/static/logo.png" style="display:none;">
   <img id="logo-pulveragro" src="/static/pulveragro.png" style="display:none;">
@@ -306,8 +382,15 @@
         return;
       }
       const c = JSON.parse(opt.dataset.cliente);
-      if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
-      if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
+      // suporta formato novo (configs) e antigo (vazao_L_ha)
+      const cfgs = c.configs || [];
+      if (cfgs.length > 0) {
+        document.getElementById('vazao').value = cfgs[0].vazao_L_ha != null ? cfgs[0].vazao_L_ha : '';
+        document.getElementById('area').value  = cfgs[0].area_tanque_ha != null ? cfgs[0].area_tanque_ha : '';
+      } else {
+        if (c.vazao_L_ha)    document.getElementById('vazao').value = c.vazao_L_ha;
+        if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
+      }
       obsField.value = c.observacao || '';
 
       if (c.pontas && c.pontas.length > 0) {
@@ -430,6 +513,7 @@
       });
 
       document.getElementById('btn-pdf').style.display = '';
+      document.getElementById('btn-historico').style.display = '';
       renderDeltaT();
       resultado.style.display = 'block';
       resultado.scrollIntoView({ behavior: 'smooth' });
@@ -441,6 +525,7 @@
       status.textContent = '';
       status.className = '';
       resultado.style.display = 'none';
+      document.getElementById('btn-historico').style.display = 'none';
       perguntaForm.style.display = 'none';
 
       const fd = new FormData(form);
@@ -869,6 +954,90 @@
 
     /* Renderiza chart no load (sem marcador — só as zonas) */
     renderDeltaT();
+
+    /* ── Modal histórico ─────────────────────────────────────── */
+    function abrirModalHistorico() {
+      const hoje = new Date().toISOString().split('T')[0];
+      document.getElementById('hst-data').value = hoje;
+      // preenche vazão do operacao atual se disponível
+      if (dadosAtual && dadosAtual.operacao) {
+        const op = dadosAtual.operacao;
+        if (op.area_tanque_ha && !document.getElementById('hst-area').value) {
+          document.getElementById('hst-area').value = '';
+        }
+      }
+      document.getElementById('hst-status').textContent = '';
+      document.getElementById('modal-historico').classList.add('ativo');
+    }
+
+    function fecharModalHistorico() {
+      document.getElementById('modal-historico').classList.remove('ativo');
+    }
+
+    async function salvarHistorico() {
+      const data = document.getElementById('hst-data').value;
+      if (!data) {
+        document.getElementById('hst-status').textContent = 'Informe a data de aplicação.';
+        document.getElementById('hst-status').style.color = '#C62828';
+        return;
+      }
+
+      // lê temp/rh/delta-t dos campos do formulário
+      const tempVal = parseFloat(document.getElementById('temp-amb').value);
+      const rhVal   = parseFloat(document.getElementById('rh-amb').value);
+      let deltaTVal = null;
+      if (!isNaN(tempVal) && !isNaN(rhVal)) {
+        function wetBulbHst(tdb, rh) {
+          return tdb * Math.atan(0.151977 * Math.sqrt(rh + 8.313659)) +
+            Math.atan(tdb + rh) - Math.atan(rh - 1.676331) +
+            0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) - 4.686035;
+        }
+        deltaTVal = parseFloat((tempVal - wetBulbHst(tempVal, rhVal)).toFixed(2));
+      }
+
+      const payload = {
+        data_aplicacao: data,
+        cultura: document.getElementById('hst-cultura').value.trim(),
+        talhao:  document.getElementById('hst-talhao').value.trim(),
+        area_ha: document.getElementById('hst-area').value || null,
+        vazao_L_ha: (dadosAtual && dadosAtual.operacao) ? dadosAtual.operacao.vazao_L_ha || null : null,
+        produtos: dadosAtual ? dadosAtual.ordem : [],
+        operacao: dadosAtual ? dadosAtual.operacao : null,
+        temp_amb:  isNaN(tempVal) ? null : tempVal,
+        rh_amb:    isNaN(rhVal)   ? null : rhVal,
+        delta_t:   deltaTVal,
+        notas: document.getElementById('hst-notas').value.trim(),
+      };
+
+      const statusEl = document.getElementById('hst-status');
+      statusEl.textContent = 'Salvando...';
+      statusEl.style.color = '#888';
+
+      try {
+        const resp = await fetch('/api/historico', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (resp.ok) {
+          statusEl.textContent = 'Salvo com sucesso!';
+          statusEl.style.color = '#267A25';
+          setTimeout(fecharModalHistorico, 1200);
+        } else {
+          const err = await resp.json();
+          statusEl.textContent = 'Erro: ' + (err.erro || 'falha');
+          statusEl.style.color = '#C62828';
+        }
+      } catch (e) {
+        statusEl.textContent = 'Erro de conexão.';
+        statusEl.style.color = '#C62828';
+      }
+    }
+
+    // fecha modal clicando fora
+    document.getElementById('modal-historico').addEventListener('click', function(e) {
+      if (e.target === this) fecharModalHistorico();
+    });
   </script>
 </body>
 </html>

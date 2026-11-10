@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Caldas</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a1a2e; }
+    header {
+      background: white; color: #10315A; padding: 10px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .header-brand { display: flex; align-items: center; text-decoration: none; }
+    .header-brand img { height: 110px; display: block; }
+    header a.nav-link { color: #10315A; text-decoration: none; font-size: 13px; font-weight: 600; }
+    header a.nav-link:hover { color: #267A25; }
+    main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    h2 { font-size: 16px; color: #10315A; margin-bottom: 16px; }
+
+    .filtros { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+    .filtros input, .filtros select {
+      border: 1px solid #ccc; border-radius: 6px; padding: 8px 12px;
+      font-size: 13px; font-family: inherit; flex: 1; min-width: 140px;
+    }
+    .filtros input:focus, .filtros select:focus { outline: none; border-color: #267A25; }
+
+    .registro {
+      border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
+      margin-bottom: 12px; background: #fafafa;
+    }
+    .registro-topo { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .registro-data { font-size: 13px; color: #888; white-space: nowrap; }
+    .registro-titulo { font-size: 15px; font-weight: 700; color: #10315A; }
+    .registro-sub { font-size: 13px; color: #555; margin-top: 2px; }
+    .registro-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tag {
+      display: inline-block; padding: 3px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 600; background: #e8f0fe; color: #10315A;
+    }
+    .tag-verde { background: #e8f5e9; color: #267A25; }
+    .tag-laranja { background: #fff3e0; color: #E65100; }
+    .produtos-lista { margin-top: 10px; border-top: 1px solid #e0e0e0; padding-top: 10px; }
+    .produto-linha { display: flex; gap: 8px; font-size: 12px; color: #555; padding: 3px 0; align-items: center; }
+    .produto-num { width: 18px; height: 18px; background: #10315A; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .produto-nome { font-weight: 600; color: #333; }
+    .notas-box { margin-top: 8px; font-size: 12px; color: #666; background: #f5f5f5; padding: 8px 10px; border-radius: 6px; border-left: 3px solid #ccc; }
+    .registro-acoes { display: flex; gap: 8px; margin-top: 12px; }
+    .btn-del { background: #C62828; color: white; border: none; border-radius: 6px; padding: 6px 14px; font-size: 12px; font-weight: 600; cursor: pointer; }
+    .btn-del:hover { background: #B71C1C; }
+    .lista-vazia { text-align: center; color: #999; padding: 40px 0; font-size: 14px; }
+    .delta-t-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+
+    @media (max-width: 600px) {
+      header { padding: 14px 16px; flex-direction: column; gap: 8px; }
+      .card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="header-brand">
+      <img src="/static/logo.png" alt="FieldMix">
+    </a>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <a href="/" class="nav-link">&larr; Voltar</a>
+      <a href="/logout" class="nav-link">Sair</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Histórico de Caldas</h2>
+      <div class="filtros">
+        <input type="text" id="filtro-busca" placeholder="Buscar por cultura, talhão...">
+        <input type="month" id="filtro-mes" title="Filtrar por mês">
+      </div>
+      <div id="lista-historico">
+        <div class="lista-vazia">Carregando...</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let registros = [];
+
+    async function carregar() {
+      try {
+        const resp = await fetch('/api/historico');
+        registros = await resp.json();
+        renderizar();
+      } catch (e) {
+        document.getElementById('lista-historico').innerHTML =
+          '<div class="lista-vazia" style="color:#C62828;">Erro ao carregar histórico.</div>';
+      }
+    }
+
+    function renderizar() {
+      const busca = document.getElementById('filtro-busca').value.toLowerCase();
+      const mes = document.getElementById('filtro-mes').value; // "2026-11"
+      const div = document.getElementById('lista-historico');
+
+      let filtrados = registros.filter(r => {
+        if (mes && !r.data_aplicacao.startsWith(mes)) return false;
+        if (busca) {
+          const texto = [(r.cultura || ''), (r.talhao || ''), (r.notas || '')].join(' ').toLowerCase();
+          if (!texto.includes(busca)) return false;
+        }
+        return true;
+      });
+
+      if (!filtrados.length) {
+        div.innerHTML = '<div class="lista-vazia">Nenhum registro encontrado.</div>';
+        return;
+      }
+      div.innerHTML = '';
+      filtrados.forEach(r => div.appendChild(criarCard(r)));
+    }
+
+    function criarCard(r) {
+      const produtos = r.produtos || [];
+      const data = r.data_aplicacao ? formatarData(r.data_aplicacao) : '—';
+
+      const tags = [];
+      if (r.area_ha) tags.push({txt: r.area_ha + ' ha', cls: ''});
+      if (r.vazao_L_ha) tags.push({txt: r.vazao_L_ha + ' L/ha', cls: ''});
+      if (r.temp_amb != null && r.rh_amb != null) {
+        tags.push({txt: r.temp_amb + '°C / ' + r.rh_amb + '% UR', cls: 'tag-laranja'});
+      }
+      if (r.delta_t != null) {
+        const dtCor = r.delta_t < 2 ? '#E65100' : r.delta_t <= 8 ? '#267A25' : r.delta_t <= 10 ? '#ca8a04' : '#C62828';
+        const dtLabel = r.delta_t < 2 ? 'Névoa' : r.delta_t <= 8 ? 'Ideal' : r.delta_t <= 10 ? 'Atenção' : 'Evap. rápida';
+        tags.push({txt: 'ΔT ' + r.delta_t.toFixed(1) + '°C — ' + dtLabel, cls: '', cor: dtCor});
+      }
+
+      const div = document.createElement('div');
+      div.className = 'registro';
+
+      const titulo = [r.cultura, r.talhao].filter(Boolean).join(' — ') || 'Sem identificação';
+
+      let html = '<div class="registro-topo">' +
+        '<div>' +
+          '<div class="registro-titulo">' + esc(titulo) + '</div>' +
+        '</div>' +
+        '<div class="registro-data">' + data + '</div>' +
+      '</div>';
+
+      if (tags.length) {
+        html += '<div class="registro-tags">';
+        tags.forEach(t => {
+          const style = t.cor ? ' style="background:' + t.cor + '18;color:' + t.cor + ';border:1px solid ' + t.cor + '44"' : '';
+          html += '<span class="tag ' + (t.cls || '') + '"' + style + '>' + esc(t.txt) + '</span>';
+        });
+        html += '</div>';
+      }
+
+      if (produtos.length) {
+        html += '<div class="produtos-lista">';
+        produtos.forEach((p, i) => {
+          html += '<div class="produto-linha">' +
+            '<div class="produto-num">' + (i + 1) + '</div>' +
+            '<span class="produto-nome">' + esc(p.produto || '') + '</span>';
+          if (p.dose && p.unidade && p.unidade !== '—') {
+            html += '<span style="color:#888">— ' + esc(p.dose + ' ' + p.unidade) + '/' + (p.base || 'ha') + '</span>';
+          }
+          if (p.total_tanque != null) {
+            html += '<span style="color:#10315A;font-weight:600"> (' + esc(p.total_tanque + ' ' + p.total_unidade) + '/tanque)</span>';
+          }
+          html += '</div>';
+        });
+        html += '</div>';
+      }
+
+      if (r.notas) {
+        html += '<div class="notas-box">' + esc(r.notas) + '</div>';
+      }
+
+      html += '<div class="registro-acoes"></div>';
+      div.innerHTML = html;
+
+      const btnDel = document.createElement('button');
+      btnDel.className = 'btn-del';
+      btnDel.textContent = 'Excluir';
+      btnDel.addEventListener('click', () => excluir(r.id));
+      div.querySelector('.registro-acoes').appendChild(btnDel);
+
+      return div;
+    }
+
+    async function excluir(id) {
+      if (!confirm('Excluir este registro do histórico?')) return;
+      try {
+        await fetch('/api/historico/' + id, { method: 'DELETE' });
+        registros = registros.filter(r => r.id !== id);
+        renderizar();
+      } catch (e) {
+        alert('Erro ao excluir.');
+      }
+    }
+
+    function formatarData(s) {
+      if (!s) return '—';
+      const [a, m, d] = s.split('-');
+      return d + '/' + m + '/' + a;
+    }
+
+    function esc(s) {
+      const div = document.createElement('div');
+      div.textContent = String(s || '');
+      return div.innerHTML;
+    }
+
+    document.getElementById('filtro-busca').addEventListener('input', renderizar);
+    document.getElementById('filtro-mes').addEventListener('change', renderizar);
+
+    carregar();
+  </script>
+</body>
+</html>

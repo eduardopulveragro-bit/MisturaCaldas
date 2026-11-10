@@ -93,6 +93,13 @@ def _row_para_cliente(row: dict) -> dict:
     dados = row.get("dados") or {}
     if isinstance(dados, str):
         dados = json.loads(dados)
+    # migra formato antigo (vazao_L_ha / area_tanque_ha soltos) para configs
+    if "vazao_L_ha" in dados and "configs" not in dados:
+        cfg = {"descricao": "Configuração padrão", "vazao_L_ha": dados.pop("vazao_L_ha")}
+        area = dados.pop("area_tanque_ha", None)
+        if area is not None:
+            cfg["area_tanque_ha"] = area
+        dados["configs"] = [cfg]
     return {"id": row["id"], "nome": row["nome"], "criado_em": row.get("criado_em", ""), **dados}
 
 
@@ -165,8 +172,7 @@ def criar(dados: dict) -> dict:
             "modelo": (dados.get("pulverizador_modelo") or "").strip(),
             "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
         },
-        "vazao_L_ha": _float_ou_none(dados.get("vazao")),
-        "area_tanque_ha": _float_ou_none(dados.get("area_tanque")),
+        "configs": _parse_configs(dados.get("configs")),
         "pontas": _parse_pontas(dados.get("pontas", "")),
         "calibracao": (dados.get("calibracao") or "").strip(),
         "observacao": (dados.get("observacao") or "").strip(),
@@ -188,8 +194,7 @@ def atualizar(cliente_id: str, dados: dict) -> dict | None:
             "modelo": (dados.get("pulverizador_modelo") or "").strip(),
             "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
         },
-        "vazao_L_ha": _float_ou_none(dados.get("vazao")),
-        "area_tanque_ha": _float_ou_none(dados.get("area_tanque")),
+        "configs": _parse_configs(dados.get("configs")),
         "pontas": _parse_pontas(dados.get("pontas", "")),
         "calibracao": (dados.get("calibracao") or "").strip(),
         "observacao": (dados.get("observacao") or "").strip(),
@@ -235,3 +240,30 @@ def _parse_pontas(texto: str) -> list[str]:
     if not texto:
         return []
     return [p.strip() for p in texto.split(",") if p.strip()]
+
+
+def _parse_configs(valor) -> list[dict]:
+    """Aceita lista de dicts ou JSON string; garante estrutura mínima."""
+    if not valor:
+        return []
+    if isinstance(valor, str):
+        try:
+            valor = json.loads(valor)
+        except (ValueError, TypeError):
+            return []
+    if not isinstance(valor, list):
+        return []
+    result = []
+    for item in valor:
+        if not isinstance(item, dict):
+            continue
+        cfg = {
+            "descricao": (item.get("descricao") or "").strip(),
+            "vazao_L_ha": _float_ou_none(item.get("vazao_L_ha")),
+        }
+        area = _float_ou_none(item.get("area_tanque_ha"))
+        if area is not None:
+            cfg["area_tanque_ha"] = area
+        if cfg["vazao_L_ha"] is not None:
+            result.append(cfg)
+    return result
