@@ -342,6 +342,12 @@ def processar():
     })
 
 
+@app.route("/delta-t")
+@login_required
+def delta_t():
+    return render_template("delta_t.html")
+
+
 @app.route("/clientes")
 @login_required
 def pagina_clientes():

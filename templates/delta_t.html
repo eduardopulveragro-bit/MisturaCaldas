@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FieldMix — Delta T</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; min-height: 100vh; }
+
+    .topbar {
+      background: #10315A; color: white; padding: 12px 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .topbar a { color: #93c5fd; text-decoration: none; font-size: 13px; }
+    .topbar a:hover { color: white; }
+    .topbar .sep { color: #4a7bae; }
+    .topbar .titulo { font-size: 15px; font-weight: 700; }
+
+    .content { max-width: 520px; margin: 24px auto; padding: 0 16px 40px; }
+
+    .card {
+      background: white; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.09); overflow: hidden;
+    }
+
+    .card-header { padding: 18px 20px 14px; border-bottom: 1px solid #f0f0f0; }
+    .card-header h2 { font-size: 16px; font-weight: 700; color: #10315A; }
+    .card-header p  { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+
+    .inputs {
+      padding: 16px 20px 12px;
+      display: flex; gap: 16px;
+    }
+    .inp-group { flex: 1; }
+    .inp-group label {
+      display: block; font-size: 11px; font-weight: 600;
+      color: #555; text-transform: uppercase; letter-spacing: .4px; margin-bottom: 5px;
+    }
+    .inp-group input {
+      width: 100%; border: 1px solid #ccc; border-radius: 7px;
+      padding: 9px 12px; font-size: 15px; font-family: inherit;
+      text-align: center; font-weight: 600; color: #10315A;
+    }
+    .inp-group input:focus {
+      outline: none; border-color: #267A25; box-shadow: 0 0 0 2px rgba(38,122,37,.15);
+    }
+    .inp-group .unit {
+      font-size: 11px; color: #9ca3af; text-align: center; margin-top: 3px;
+    }
+
+    .badge {
+      mx: 20px; margin: 0 20px 14px;
+      padding: 10px 14px; border-radius: 8px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600;
+      transition: all .2s;
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+
+    .chart-wrap { padding: 0 12px 16px; }
+    svg { display: block; width: 100%; border-radius: 6px; }
+
+    .legenda {
+      padding: 12px 20px 20px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+    }
+    .leg-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; color: #555;
+    }
+    .leg-dot { width: 10px; height: 10px; border-radius: 2px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="{{ url_for('index') }}">← Voltar</a>
+  <span class="sep">|</span>
+  <span class="titulo">Delta T</span>
+</div>
+
+<div class="content">
+  <div class="card">
+    <div class="card-header">
+      <h2>Tabela Delta T</h2>
+      <p>Temperatura seca vs Umidade relativa — condições de pulverização</p>
+    </div>
+
+    <div class="inputs">
+      <div class="inp-group">
+        <label>Temperatura seca</label>
+        <input type="number" id="inp-temp" min="0" max="40" step="0.5" placeholder="—">
+        <div class="unit">°C</div>
+      </div>
+      <div class="inp-group">
+        <label>Umidade relativa</label>
+        <input type="number" id="inp-rh" min="10" max="100" step="1" placeholder="—">
+        <div class="unit">%</div>
+      </div>
+    </div>
+
+    <div id="badge" class="badge" style="display:none"></div>
+
+    <div class="chart-wrap">
+      <svg id="chart" viewBox="0 0 320 240"></svg>
+    </div>
+
+    <div class="legenda">
+      <div class="leg-item"><div class="leg-dot" style="background:#f97316"></div> Névoa / Neblina (ΔT &lt; 2)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#4ade80"></div> Zona ideal (2–8)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fbbf24"></div> Atenção (8–10)</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#fb923c"></div> Evaporação rápida (&gt; 10)</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── Psicrometria (Stull 2011) ──────────────────────────────── */
+function wetBulb(tdb, rh) {
+  return (
+    tdb * Math.atan(0.151977 * Math.sqrt(rh + 8.313659)) +
+    Math.atan(tdb + rh) -
+    Math.atan(rh - 1.676331) +
+    0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) -
+    4.686035
+  )
+}
+function calcDT(tdb, rh)  { return tdb - wetBulb(tdb, rh) }
+
+function rhForDT(tdb, target) {
+  let lo = 10, hi = 100
+  for (let i = 0; i < 60; i++) {
+    const mid = (lo + hi) / 2
+    calcDT(tdb, mid) > target ? (lo = mid) : (hi = mid)
+  }
+  return (lo + hi) / 2
+}
+
+/* ── Geometria ──────────────────────────────────────────────── */
+const W = 320, H = 240
+const PL = 42, PR = 52, PT = 14, PB = 32
+const T_MIN = 0, T_MAX = 40, RH_MIN = 10, RH_MAX = 100
+
+const xOf = t  => PL + (t - T_MIN)  / (T_MAX - T_MIN)  * (W - PL - PR)
+const yOf = rh => PT + (RH_MAX - rh) / (RH_MAX - RH_MIN) * (H - PT - PB)
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v))
+
+/* ── Cores ──────────────────────────────────────────────────── */
+const NEVOA   = '#f97316'
+const IDEAL   = '#4ade80'
+const ATENCAO = '#fbbf24'
+const RAPIDA  = '#fb923c'
+
+const DT_LINES = [
+  { dt: 2,  cor: '#2563eb' },
+  { dt: 4,  cor: '#dc2626' },
+  { dt: 6,  cor: '#111827' },
+  { dt: 8,  cor: '#7dd3fc' },
+  { dt: 10, cor: '#15803d' },
+  { dt: 12, cor: '#1e40af' },
+]
+
+function curvePath(dt) {
+  const pts = []
+  for (let t = T_MIN; t <= T_MAX; t += 0.5) {
+    const rh  = rhForDT(t, dt)
+    const rhC = clamp(rh, RH_MIN, RH_MAX)
+    if (Math.abs(rh - rhC) < 0.5) pts.push(`${xOf(t).toFixed(1)},${yOf(rhC).toFixed(1)}`)
+  }
+  return pts.length > 1 ? 'M' + pts.join('L') : ''
+}
+
+function svgEl(tag, attrs) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag)
+  Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v))
+  return el
+}
+function svgText(el, txt) { el.textContent = txt; return el }
+
+/* ── Render ─────────────────────────────────────────────────── */
+function render(temp, rh) {
+  const svg = document.getElementById('chart')
+  svg.innerHTML = ''
+
+  const dtAtual = (temp !== null && rh !== null) ? calcDT(temp, rh) : null
+
+  /* Fundo */
+  svg.appendChild(svgEl('rect', { x: PL, y: PT, width: W - PL - PR, height: H - PT - PB, fill: '#e5e7eb' }))
+
+  /* Tiras de zona */
+  const TEMPS = Array.from({ length: 161 }, (_, i) => i * 0.25)
+  const STRIP_W = (W - PL - PR) / 160 + 0.6
+
+  TEMPS.slice(0, -1).forEach(t => {
+    const x    = xOf(t)
+    const dt2  = clamp(rhForDT(t, 2),  RH_MIN, RH_MAX)
+    const dt8  = clamp(rhForDT(t, 8),  RH_MIN, RH_MAX)
+    const dt10 = clamp(rhForDT(t, 10), RH_MIN, RH_MAX)
+    const y100 = yOf(RH_MAX), yDT2 = yOf(dt2), yDT8 = yOf(dt8), yDT10 = yOf(dt10), y10 = yOf(RH_MIN)
+
+    if (yDT2  > y100) svg.appendChild(svgEl('rect', { x, y: y100, width: STRIP_W, height: yDT2  - y100, fill: NEVOA   }))
+    if (yDT8  > yDT2) svg.appendChild(svgEl('rect', { x, y: yDT2, width: STRIP_W, height: yDT8  - yDT2, fill: IDEAL   }))
+    if (yDT10 > yDT8) svg.appendChild(svgEl('rect', { x, y: yDT8, width: STRIP_W, height: yDT10 - yDT8, fill: ATENCAO }))
+    if (y10  > yDT10) svg.appendChild(svgEl('rect', { x, y: yDT10,width: STRIP_W, height: y10  - yDT10, fill: RAPIDA  }))
+  })
+
+  /* Grade */
+  const ticks_t  = [0, 5, 10, 15, 20, 25, 30, 35, 40]
+  const ticks_rh = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  ticks_t .forEach(t  => svg.appendChild(svgEl('line', { x1: xOf(t),  y1: PT,     x2: xOf(t),  y2: H - PB, stroke: 'white', 'stroke-width': 0.6, opacity: 0.5 })))
+  ticks_rh.forEach(r  => svg.appendChild(svgEl('line', { x1: PL,       y1: yOf(r), x2: W - PR,  y2: yOf(r), stroke: 'white', 'stroke-width': 0.6, opacity: 0.5 })))
+
+  /* Curvas ΔT */
+  DT_LINES.forEach(({ dt, cor }) => {
+    const d = curvePath(dt)
+    if (!d) return
+    svg.appendChild(svgEl('path', { d, fill: 'none', stroke: cor, 'stroke-width': 1.8, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }))
+  })
+
+  /* Labels ΔT (direita) */
+  DT_LINES.forEach(({ dt, cor }) => {
+    const rh = clamp(rhForDT(T_MAX, dt), RH_MIN, RH_MAX)
+    const lx = xOf(T_MAX), ly = yOf(rh)
+    svg.appendChild(svgText(svgEl('text', { x: lx + 5, y: ly + 3.5, 'font-size': 9, 'font-weight': 700, fill: cor }), dt))
+  })
+
+  /* Textos de zona */
+  svg.appendChild(svgText(svgEl('text', { x: PL + 5, y: PT + 11, 'font-size': 7.5, 'font-weight': 700, fill: 'white' }), 'Névoa / Neblina'))
+  svg.appendChild(svgText(svgEl('text', { x: PL + 5, y: PT + 20, 'font-size': 6.5, fill: 'white', opacity: 0.85 }), 'Evaporação muito lenta'))
+  svg.appendChild(svgText(svgEl('text', { x: xOf(22), y: yOf(55), 'font-size': 8, 'font-weight': 700, fill: 'white', 'text-anchor': 'middle' }), 'Zona Ideal'))
+  svg.appendChild(svgText(svgEl('text', { x: xOf(34), y: yOf(18), 'font-size': 7, 'font-weight': 700, fill: 'white', 'text-anchor': 'middle' }), 'Evaporação'))
+  svg.appendChild(svgText(svgEl('text', { x: xOf(34), y: yOf(12), 'font-size': 7, fill: 'white', 'text-anchor': 'middle' }), 'muito rápida'))
+
+  /* Eixo X */
+  ticks_t.forEach(t => svg.appendChild(svgText(svgEl('text', { x: xOf(t), y: H - PB + 11, 'font-size': 7.5, 'text-anchor': 'middle', fill: '#374151' }), t)))
+  svg.appendChild(svgText(svgEl('text', { x: PL + (W - PL - PR) / 2, y: H - 3, 'font-size': 7.5, 'text-anchor': 'middle', fill: '#6b7280' }), 'Temperatura seca (°C)'))
+
+  /* Eixo Y */
+  ticks_rh.forEach(r => svg.appendChild(svgText(svgEl('text', { x: PL - 4, y: yOf(r) + 3, 'font-size': 7.5, 'text-anchor': 'end', fill: '#374151' }), r)))
+  const yLabel = svgText(svgEl('text', { x: 11, y: PT + (H - PT - PB) / 2, 'font-size': 7.5, 'text-anchor': 'middle', fill: '#6b7280', transform: `rotate(-90, 11, ${PT + (H - PT - PB) / 2})` }), 'Umidade relativa (%)')
+  svg.appendChild(yLabel)
+
+  /* Label ΔT cabeçalho */
+  svg.appendChild(svgText(svgEl('text', { x: W - PR + 6, y: PT + 8,  'font-size': 8, 'font-weight': 700, fill: '#374151' }), 'Delta'))
+  svg.appendChild(svgText(svgEl('text', { x: W - PR + 6, y: PT + 18, 'font-size': 8, 'font-weight': 700, fill: '#374151' }), 'T'))
+
+  /* Borda */
+  svg.appendChild(svgEl('rect', { x: PL, y: PT, width: W - PL - PR, height: H - PT - PB, fill: 'none', stroke: '#9ca3af', 'stroke-width': 1 }))
+
+  /* Marcador */
+  if (temp !== null && rh !== null) {
+    const mx = xOf(clamp(temp, T_MIN, T_MAX))
+    const my = yOf(clamp(rh,   RH_MIN, RH_MAX))
+    svg.appendChild(svgEl('line', { x1: mx, y1: PT,    x2: mx,    y2: H - PB, stroke: '#1e3a5f', 'stroke-width': 1, 'stroke-dasharray': '3,2', opacity: 0.8 }))
+    svg.appendChild(svgEl('line', { x1: PL, y1: my,    x2: W - PR,y2: my,     stroke: '#1e3a5f', 'stroke-width': 1, 'stroke-dasharray': '3,2', opacity: 0.8 }))
+    svg.appendChild(svgEl('rect', { x: mx - 9, y: my - 9, width: 18, height: 18, rx: 4, fill: 'transparent', stroke: '#1e3a5f', 'stroke-width': 2.5 }))
+  }
+
+  /* Badge */
+  const badge = document.getElementById('badge')
+  if (dtAtual !== null) {
+    let cor, label
+    if      (dtAtual < 2)  { cor = '#ea580c'; label = 'Névoa / Neblina'    }
+    else if (dtAtual <= 8) { cor = '#15803d'; label = 'Zona ideal'         }
+    else if (dtAtual <= 10){ cor = '#ca8a04'; label = 'Atenção'            }
+    else                   { cor = '#c2410c'; label = 'Evaporação rápida'  }
+    badge.style.display = 'flex'
+    badge.style.background = cor + '18'
+    badge.style.border = `1px solid ${cor}44`
+    badge.innerHTML = `<span class="dot" style="background:${cor}"></span>
+      <span style="color:${cor}">ΔT = ${dtAtual.toFixed(1)}°C — ${label}</span>`
+  } else {
+    badge.style.display = 'none'
+  }
+}
+
+/* ── Eventos ────────────────────────────────────────────────── */
+function lerInputs() {
+  const t  = parseFloat(document.getElementById('inp-temp').value)
+  const rh = parseFloat(document.getElementById('inp-rh').value)
+  render(isNaN(t) ? null : t, isNaN(rh) ? null : rh)
+}
+
+document.getElementById('inp-temp').addEventListener('input', lerInputs)
+document.getElementById('inp-rh').addEventListener('input', lerInputs)
+
+/* Render inicial sem marcador */
+render(null, null)
+</script>
+</body>
+</html>
