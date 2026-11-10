@@ -105,6 +105,21 @@ def atualizar_ativo(user_id: str, ativo: bool) -> None:
     ).raise_for_status()
 
 
+def atualizar_onboarding(user_id: str, tipo: str, config_equipamento=None) -> bool:
+    payload: dict = {"tipo": tipo, "onboarding_completo": True}
+    if config_equipamento is not None:
+        payload["config_equipamento"] = config_equipamento
+    try:
+        requests.patch(
+            f"{_SUPA_URL}/rest/v1/usuarios?id=eq.{user_id}",
+            headers={**_headers(), "Prefer": "return=minimal"},
+            json=payload, timeout=10,
+        ).raise_for_status()
+        return True
+    except Exception:
+        return False
+
+
 def criar_tabela() -> dict:
     """Cria a tabela usuarios via API pg-meta do Supabase (uso único no /init-db)."""
     sql = """

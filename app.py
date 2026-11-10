@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify, Response, redirect, url_for
+from flask import Flask, render_template, request, jsonify, Response, redirect, url_for, session
 from flask_login import LoginManager, UserMixin, login_required, login_user, logout_user, current_user
 
 _ENV_PATH = Path(__file__).parent / ".env"
@@ -42,6 +42,8 @@ class User(UserMixin):
         self.email = data["email"]
         self.nome = data.get("nome", "")
         self.admin = data.get("admin", False)
+        self.tipo = data.get("tipo", "produtor")
+        self.onboarding_completo = data.get("onboarding_completo", False)
 
 
 @login_manager.user_loader
@@ -55,6 +57,26 @@ def nao_autorizado():
     if request.is_json or request.headers.get("X-Requested-With") == "XMLHttpRequest":
         return jsonify({"erro": "Sessão expirada. Faça login novamente.", "redirect": "/login"}), 401
     return redirect(url_for("login"))
+
+
+_SKIP_ONBOARDING = {
+    "login", "logout", "cadastro", "setup",
+    "onboarding", "onboarding_equipamentos",
+    "static", "favicon", "webhook", "init_db",
+}
+
+
+@app.before_request
+def verificar_onboarding():
+    if not request.endpoint:
+        return None
+    ep = request.endpoint
+    if ep in _SKIP_ONBOARDING or ep.startswith("static"):
+        return None
+    if (current_user.is_authenticated
+            and not current_user.onboarding_completo
+            and not session.get("onboarding_done")):
+        return redirect(url_for("onboarding"))
 
 
 @app.route("/favicon.ico")
@@ -117,7 +139,7 @@ def cadastro():
             try:
                 u = usuarios_mod.criar(email, nome, senha, admin=False)
                 login_user(User(u), remember=True)
-                return redirect(url_for("index"))
+                return redirect(url_for("onboarding"))
             except Exception as e:
                 logger.exception("Erro ao criar usuário: %s", e)
                 if "duplicate" in str(e).lower() or "unique" in str(e).lower():
@@ -144,11 +166,48 @@ def setup():
             try:
                 u = usuarios_mod.criar(email, nome, senha, admin=True)
                 login_user(User(u), remember=True)
-                return redirect(url_for("index"))
+                return redirect(url_for("onboarding"))
             except Exception as e:
                 logger.exception("Erro ao criar primeiro admin: %s", e)
                 erro = "Erro ao criar usuário. Verifique as configurações do Supabase."
     return render_template("setup.html", erro=erro)
+
+
+# ── Onboarding ───────────────────────────────────────────────────────────────
+
+@app.route("/onboarding", methods=["GET", "POST"])
+@login_required
+def onboarding():
+    if current_user.onboarding_completo:
+        return redirect(url_for("index"))
+    if request.method == "POST":
+        tipo = request.form.get("tipo")
+        if tipo not in ("produtor", "consultor"):
+            return render_template("onboarding_tipo.html", erro="Escolha um tipo.")
+        if tipo == "produtor":
+            usuarios_mod.atualizar_onboarding(current_user.id, tipo)
+            session["onboarding_done"] = True
+            return redirect(url_for("index"))
+        session["onboarding_tipo"] = tipo
+        return redirect(url_for("onboarding_equipamentos"))
+    return render_template("onboarding_tipo.html")
+
+
+@app.route("/onboarding/equipamentos", methods=["GET", "POST"])
+@login_required
+def onboarding_equipamentos():
+    if current_user.onboarding_completo:
+        return redirect(url_for("index"))
+    if request.method == "POST":
+        tipo = session.pop("onboarding_tipo", "consultor")
+        try:
+            pulverizadores = _json.loads(request.form.get("pulverizadores_json", "[]"))
+        except _json.JSONDecodeError:
+            pulverizadores = []
+        usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores})
+        session["onboarding_done"] = True
+        return redirect(url_for("index"))
+    return render_template("onboarding_equipamentos.html")
 
 
 # ── App principal ─────────────────────────────────────────────────────────────

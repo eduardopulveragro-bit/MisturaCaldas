@@ -159,7 +159,7 @@ def buscar(cliente_id: str) -> dict | None:
 
 def criar(dados: dict) -> dict:
     cliente = {
-        "id": uuid.uuid4().hex[:12],
+        "id": str(uuid.uuid4()),
         "nome": (dados.get("nome") or "").strip(),
         "pulverizador": {
             "modelo": (dados.get("pulverizador_modelo") or "").strip(),

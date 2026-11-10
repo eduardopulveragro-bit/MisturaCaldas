@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FieldMix — Bem-vindo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+    .card { background: white; border-radius: 12px; padding: 40px 36px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); width: 100%; max-width: 480px; }
+    .logo-wrap { text-align: center; margin-bottom: 20px; }
+    .logo-wrap img { height: 64px; }
+    h1 { font-size: 22px; color: #10315A; text-align: center; font-weight: 700; margin-bottom: 6px; }
+    p.sub { font-size: 14px; color: #777; text-align: center; margin-bottom: 32px; }
+    .opcoes { display: flex; gap: 16px; }
+    .opcao input[type=radio] { display: none; }
+    .opcao label {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      border: 2px solid #ddd; border-radius: 10px; padding: 28px 16px; cursor: pointer;
+      flex: 1; text-align: center; transition: border-color .15s, background .15s;
+      gap: 10px;
+    }
+    .opcao label:hover { border-color: #267A25; background: #f6fbf6; }
+    .opcao input[type=radio]:checked + label { border-color: #267A25; background: #edf7ed; }
+    .opcao .icon { font-size: 36px; }
+    .opcao .titulo { font-weight: 700; font-size: 15px; color: #10315A; }
+    .opcao .desc { font-size: 12px; color: #888; }
+    .btn { width: 100%; background: #267A25; color: white; border: none; border-radius: 6px; padding: 13px; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 24px; }
+    .btn:hover { background: #1e6020; }
+    .erro { background: #fce4e4; color: #C62828; border-radius: 6px; padding: 10px 14px; font-size: 13px; margin-bottom: 16px; }
+    .step { font-size: 12px; color: #aaa; text-align: center; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-wrap"><img src="/static/logo.png" alt="FieldMix"></div>
+    <h1>Olá, {{ current_user.nome.split()[0] }}!</h1>
+    <p class="sub">Como você vai usar o FieldMix?</p>
+    <p class="step">Passo 1 de 2</p>
+    {% if erro %}<div class="erro">{{ erro }}</div>{% endif %}
+    <form method="POST">
+      <div class="opcoes">
+        <div class="opcao">
+          <input type="radio" name="tipo" id="produtor" value="produtor" required>
+          <label for="produtor">
+            <span class="icon">🌱</span>
+            <span class="titulo">Produtor Rural</span>
+            <span class="desc">Recebo recomendações do meu agrônomo</span>
+          </label>
+        </div>
+        <div class="opcao">
+          <input type="radio" name="tipo" id="consultor" value="consultor">
+          <label for="consultor">
+            <span class="icon">👨‍🌾</span>
+            <span class="titulo">Consultor / Agrônomo</span>
+            <span class="desc">Faço prescrições e acompanho clientes</span>
+          </label>
+        </div>
+      </div>
+      <button class="btn" type="submit">Continuar →</button>
+    </form>
+  </div>
+</body>
+</html>
