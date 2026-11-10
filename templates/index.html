@@ -104,6 +104,11 @@
     .alerta-incomp-icone { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
     #alertas-incomp-box { margin-bottom: 14px; }
 
+    .dt-badge {
+      padding: 9px 13px; border-radius: 7px;
+      display: flex; align-items: center; gap: 9px; margin-bottom: 12px;
+      font-size: 13px; font-weight: 600;
+    }
     @media (max-width: 600px) {
       .card { padding: 16px; }
       table.ordem { font-size: 12px; }
@@ -190,6 +195,27 @@
           <textarea id="observacao" name="observacao" style="height:50px;resize:vertical;" placeholder="Ex: Colocar 500L de água antes de adicionar produtos."></textarea>
         </div>
 
+        <div style="margin-top:14px;border-top:1px solid #eee;padding-top:12px;">
+          <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#444;cursor:pointer;margin-bottom:0;">
+            <input type="checkbox" id="toggle-condicoes" style="width:16px;height:16px;cursor:pointer;">
+            <span>Condições ambientais <span style="color:#888;font-weight:400">(Delta T — aparece no resultado e no PDF)</span></span>
+          </label>
+          <div id="condicoes-box" style="display:none;margin-top:12px;">
+            <div class="campos-operacao">
+              <div class="campo-num">
+                <label for="temp-amb">Temperatura seca</label>
+                <input type="number" id="temp-amb" min="0" max="40" step="0.5" placeholder="Ex: 28">
+                <div class="unidade">°C</div>
+              </div>
+              <div class="campo-num">
+                <label for="rh-amb">Umidade relativa</label>
+                <input type="number" id="rh-amb" min="10" max="100" step="1" placeholder="Ex: 60">
+                <div class="unidade">%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <button type="submit" class="btn" id="btn">
           <span id="btn-text">Gerar Ordem</span>
         </button>
@@ -223,6 +249,12 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
+      <div id="delta-t-secao" style="display:none;margin-top:18px;border-top:1px solid #eee;padding-top:14px;">
+        <div style="font-size:11px;font-weight:700;color:#10315A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Condições de Aplicação — Delta T</div>
+        <div id="dt-badge" class="dt-badge" style="display:none;"></div>
+        <svg id="dt-chart" viewBox="0 0 320 240" style="width:100%;max-width:400px;display:block;border-radius:6px;overflow:hidden;"></svg>
+      </div>
+
       <button type="button" class="btn-pdf" id="btn-pdf" style="display:none;" onclick="gerarPDF()">
         Baixar PDF
       </button>
@@ -405,6 +437,7 @@
       });
 
       document.getElementById('btn-pdf').style.display = '';
+      renderDeltaT();
       resultado.style.display = 'block';
       resultado.scrollIntoView({ behavior: 'smooth' });
     }
@@ -455,6 +488,10 @@
       }
     }
 
+    document.getElementById('toggle-condicoes').addEventListener('change', function() {
+      document.getElementById('condicoes-box').style.display = this.checked ? '' : 'none';
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       enviar(null);
@@ -490,6 +527,118 @@
         return Math.round(total) + ' g';
       }
       return Math.round(total * 100) / 100 + ' ' + unidade;
+    }
+
+    /* ── Delta T ──────────────────────────────────────────────────── */
+    function _wetBulb(tdb, rh) {
+      return tdb * Math.atan(0.151977 * Math.sqrt(rh + 8.313659)) +
+             Math.atan(tdb + rh) - Math.atan(rh - 1.676331) +
+             0.00391838 * Math.pow(rh, 1.5) * Math.atan(0.023101 * rh) - 4.686035;
+    }
+    function _calcDT(t, rh) { return t - _wetBulb(t, rh); }
+    function _rhForDT(tdb, tgt) {
+      var lo = 10, hi = 100;
+      for (var i = 0; i < 60; i++) { var m = (lo+hi)/2; _calcDT(tdb,m) > tgt ? (lo=m) : (hi=m); }
+      return (lo+hi)/2;
+    }
+    var _NS = 'http://www.w3.org/2000/svg';
+    function _se(tag, a, t) {
+      var e = document.createElementNS(_NS, tag);
+      Object.entries(a).forEach(([k,v]) => e.setAttribute(k,v));
+      if (t !== undefined) e.textContent = t;
+      return e;
+    }
+    var _DT_LINES = [
+      {dt:2,cor:'#2563eb'},{dt:4,cor:'#dc2626'},{dt:6,cor:'#374151'},
+      {dt:8,cor:'#0ea5e9'},{dt:10,cor:'#15803d'},{dt:12,cor:'#6d28d9'}
+    ];
+    function _dtPath(dt) {
+      var xOf=function(t){return 42+(t/40)*(320-42-52);};
+      var yOf=function(rh){return 14+(100-rh)/(90)*(240-14-32);};
+      var cl=function(v,a,b){return Math.min(b,Math.max(a,v));};
+      var pts=[];
+      for (var t=0; t<=40; t+=0.5) {
+        var rh=_rhForDT(t,dt), rhC=cl(rh,10,100);
+        if (Math.abs(rh-rhC)<0.5) pts.push(xOf(t).toFixed(1)+','+yOf(rhC).toFixed(1));
+      }
+      return pts.length>1 ? 'M'+pts.join('L') : '';
+    }
+
+    function renderDeltaT() {
+      var W=320,H=240,PL=42,PR=52,PT=14,PB=32;
+      var xOf=function(t){return PL+(t/40)*(W-PL-PR);};
+      var yOf=function(rh){return PT+(100-rh)/90*(H-PT-PB);};
+      var cl=function(v,a,b){return Math.min(b,Math.max(a,v));};
+      var temp=parseFloat(document.getElementById('temp-amb').value);
+      var rh=parseFloat(document.getElementById('rh-amb').value);
+      var ok=!isNaN(temp)&&!isNaN(rh);
+      var dt=ok?_calcDT(temp,rh):null;
+      var secao=document.getElementById('delta-t-secao');
+      secao.style.display='';
+      var svg=document.getElementById('dt-chart');
+      svg.innerHTML='';
+
+      svg.appendChild(_se('rect',{x:PL,y:PT,width:W-PL-PR,height:H-PT-PB,fill:'#d1d5db'}));
+
+      var TEMPS=Array.from({length:161},(_,i)=>i*0.25);
+      var SW=(W-PL-PR)/160+0.6;
+      TEMPS.slice(0,-1).forEach(function(t){
+        var x=xOf(t),d2=cl(_rhForDT(t,2),10,100),d8=cl(_rhForDT(t,8),10,100),d10=cl(_rhForDT(t,10),10,100);
+        var y100=yOf(100),yD2=yOf(d2),yD8=yOf(d8),yD10=yOf(d10),y10=yOf(10);
+        if(yD2 >y100) svg.appendChild(_se('rect',{x:x,y:y100,width:SW,height:yD2 -y100,fill:'#f97316'}));
+        if(yD8 >yD2 ) svg.appendChild(_se('rect',{x:x,y:yD2, width:SW,height:yD8 -yD2, fill:'#4ade80'}));
+        if(yD10>yD8 ) svg.appendChild(_se('rect',{x:x,y:yD8, width:SW,height:yD10-yD8, fill:'#fbbf24'}));
+        if(y10 >yD10) svg.appendChild(_se('rect',{x:x,y:yD10,width:SW,height:y10 -yD10,fill:'#fb923c'}));
+      });
+
+      [0,5,10,15,20,25,30,35,40].forEach(function(t){svg.appendChild(_se('line',{x1:xOf(t),y1:PT,x2:xOf(t),y2:H-PB,stroke:'white','stroke-width':.6,opacity:.4}));});
+      [10,20,30,40,50,60,70,80,90,100].forEach(function(r){svg.appendChild(_se('line',{x1:PL,y1:yOf(r),x2:W-PR,y2:yOf(r),stroke:'white','stroke-width':.6,opacity:.4}));});
+
+      _DT_LINES.forEach(function(l){
+        var d=_dtPath(l.dt); if(!d)return;
+        svg.appendChild(_se('path',{d:d,fill:'none',stroke:l.cor,'stroke-width':1.6,'stroke-linecap':'round','stroke-linejoin':'round'}));
+        var rh2=cl(_rhForDT(40,l.dt),10,100);
+        svg.appendChild(_se('text',{x:xOf(40)+5,y:yOf(rh2)+3.5,'font-size':9,'font-weight':700,fill:l.cor},l.dt));
+      });
+
+      svg.appendChild(_se('text',{x:PL+5,y:PT+11,'font-size':7.5,'font-weight':700,fill:'white'},'Névoa / Neblina'));
+      svg.appendChild(_se('text',{x:PL+5,y:PT+20,'font-size':6.5,fill:'white',opacity:.85},'Evaporação muito lenta'));
+      svg.appendChild(_se('text',{x:xOf(22),y:yOf(55),'font-size':8,'font-weight':700,fill:'white','text-anchor':'middle'},'Zona Ideal'));
+      svg.appendChild(_se('text',{x:xOf(34),y:yOf(19),'font-size':7,'font-weight':700,fill:'white','text-anchor':'middle'},'Evaporação'));
+      svg.appendChild(_se('text',{x:xOf(34),y:yOf(13),'font-size':7,fill:'white','text-anchor':'middle'},'muito rápida'));
+
+      [0,5,10,15,20,25,30,35,40].forEach(function(t){svg.appendChild(_se('text',{x:xOf(t),y:H-PB+11,'font-size':7.5,'text-anchor':'middle',fill:'#374151'},t));});
+      svg.appendChild(_se('text',{x:PL+(W-PL-PR)/2,y:H-3,'font-size':7.5,'text-anchor':'middle',fill:'#6b7280'},'Temperatura seca (°C)'));
+      [10,20,30,40,50,60,70,80,90,100].forEach(function(r){svg.appendChild(_se('text',{x:PL-4,y:yOf(r)+3,'font-size':7.5,'text-anchor':'end',fill:'#374151'},r));});
+      var cy=PT+(H-PT-PB)/2;
+      svg.appendChild(_se('text',{x:11,y:cy,'font-size':7.5,'text-anchor':'middle',fill:'#6b7280',transform:'rotate(-90,11,'+cy+')'},'Umidade relativa (%)'));
+      svg.appendChild(_se('text',{x:W-PR+5,y:PT+8,'font-size':7.5,'font-weight':700,fill:'#374151'},'Delta'));
+      svg.appendChild(_se('text',{x:W-PR+5,y:PT+17,'font-size':7.5,'font-weight':700,fill:'#374151'},'T'));
+      svg.appendChild(_se('rect',{x:PL,y:PT,width:W-PL-PR,height:H-PT-PB,fill:'none',stroke:'#9ca3af','stroke-width':1}));
+
+      if (ok) {
+        var mx=xOf(cl(temp,0,40)), my=yOf(cl(rh,10,100));
+        svg.appendChild(_se('line',{x1:mx,y1:PT,x2:mx,y2:H-PB,stroke:'#1e3a5f','stroke-width':1.2,'stroke-dasharray':'3,2',opacity:.9}));
+        svg.appendChild(_se('line',{x1:PL,y1:my,x2:W-PR,y2:my,stroke:'#1e3a5f','stroke-width':1.2,'stroke-dasharray':'3,2',opacity:.9}));
+        svg.appendChild(_se('rect',{x:mx-9,y:my-9,width:18,height:18,rx:4,fill:'rgba(30,58,95,.12)',stroke:'#1e3a5f','stroke-width':2.5}));
+      }
+
+      var badge=document.getElementById('dt-badge');
+      if (dt !== null) {
+        var cor,zona;
+        if      (dt<2)  {cor='#ea580c';zona='Névoa / Neblina';}
+        else if (dt<=8) {cor='#16a34a';zona='Zona ideal';}
+        else if (dt<=10){cor='#ca8a04';zona='Atenção';}
+        else            {cor='#c2410c';zona='Evaporação rápida';}
+        badge.style.display='flex';
+        badge.style.background=cor+'15';
+        badge.style.border='1px solid '+cor+'44';
+        badge.innerHTML='<span style="width:8px;height:8px;border-radius:50%;background:'+cor+';flex-shrink:0;"></span>'+
+          '<span style="color:'+cor+'">ΔT = '+dt.toFixed(1)+'°C — '+zona+'</span>'+
+          '<span style="font-size:12px;color:#888;margin-left:auto">'+temp+'°C / '+rh+'% UR</span>';
+      } else {
+        badge.style.display='none';
+      }
     }
 
     function gerarPDF() {
@@ -677,9 +826,36 @@
         }
       });
 
+      var pdfNextY = doc.lastAutoTable.finalY + 6;
+
+      // Delta T no PDF
+      var tempAmb = parseFloat(document.getElementById('temp-amb').value);
+      var rhAmb   = parseFloat(document.getElementById('rh-amb').value);
+      if (!isNaN(tempAmb) && !isNaN(rhAmb)) {
+        var dtV = tempAmb - (
+          tempAmb * Math.atan(0.151977 * Math.sqrt(rhAmb + 8.313659)) +
+          Math.atan(tempAmb + rhAmb) - Math.atan(rhAmb - 1.676331) +
+          0.00391838 * Math.pow(rhAmb, 1.5) * Math.atan(0.023101 * rhAmb) - 4.686035
+        );
+        var dtZ = dtV<2 ? 'Nevoa / Neblina' : dtV<=8 ? 'Zona ideal' : dtV<=10 ? 'Atencao' : 'Evaporacao rapida';
+        var dR = dtV<2?234:dtV<=8?22:dtV<=10?202:194;
+        var dG = dtV<2?88:dtV<=8?163:dtV<=10?138:65;
+        var dB = dtV<2?12:dtV<=8?74:dtV<=10?4:12;
+        doc.setFillColor(dR, dG, dB);
+        doc.roundedRect(15, pdfNextY, pw - 30, 10, 2, 2, 'F');
+        doc.setFontSize(11);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(255, 255, 255);
+        doc.text(
+          'Delta T: ' + dtV.toFixed(1) + '°C  —  ' + dtZ + '   |   ' + tempAmb + '°C / ' + rhAmb + '% UR',
+          pw / 2, pdfNextY + 6.5, { align: 'center' }
+        );
+        pdfNextY += 14;
+      }
+
       var obsTexto = (document.getElementById('observacao').value || '').trim();
       if (obsTexto) {
-        var finalY = doc.lastAutoTable.finalY + 8;
+        var finalY = pdfNextY + 2;
         doc.setFontSize(11);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(27, 94, 32);
