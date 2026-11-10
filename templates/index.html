@@ -209,6 +209,10 @@
               <div class="unidade">%</div>
             </div>
           </div>
+          <div style="margin-top:12px;">
+            <div id="dt-badge" class="dt-badge" style="display:none;margin-bottom:8px;"></div>
+            <svg id="dt-chart" viewBox="0 0 320 240" style="width:100%;max-width:400px;display:block;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb;"></svg>
+          </div>
         </div>
 
         <button type="submit" class="btn" id="btn">
@@ -244,12 +248,6 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
-      <div id="delta-t-secao" style="display:none;margin-top:18px;border-top:1px solid #eee;padding-top:14px;">
-        <div style="font-size:11px;font-weight:700;color:#10315A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Condições de Aplicação — Delta T</div>
-        <div id="dt-badge" class="dt-badge" style="display:none;"></div>
-        <svg id="dt-chart" viewBox="0 0 320 240" style="width:100%;max-width:400px;display:block;border-radius:6px;overflow:hidden;"></svg>
-      </div>
-
       <button type="button" class="btn-pdf" id="btn-pdf" style="display:none;" onclick="gerarPDF()">
         Baixar PDF
       </button>
@@ -564,8 +562,6 @@
       var rh=parseFloat(document.getElementById('rh-amb').value);
       var ok=!isNaN(temp)&&!isNaN(rh);
       var dt=ok?_calcDT(temp,rh):null;
-      var secao=document.getElementById('delta-t-secao');
-      secao.style.display='';
       var svg=document.getElementById('dt-chart');
       svg.innerHTML='';
 
@@ -867,13 +863,12 @@
       doc.save('ordem_mistura_calda.pdf');
     }
 
-    /* Atualiza Delta T em tempo real quando os campos de condição ambiental mudam */
-    document.getElementById('temp-amb').addEventListener('input', function() {
-      if (dadosAtual) renderDeltaT();
-    });
-    document.getElementById('rh-amb').addEventListener('input', function() {
-      if (dadosAtual) renderDeltaT();
-    });
+    /* Delta T: atualiza em tempo real conforme o usuário digita */
+    document.getElementById('temp-amb').addEventListener('input', renderDeltaT);
+    document.getElementById('rh-amb').addEventListener('input', renderDeltaT);
+
+    /* Renderiza chart no load (sem marcador — só as zonas) */
+    renderDeltaT();
   </script>
 </body>
 </html>
