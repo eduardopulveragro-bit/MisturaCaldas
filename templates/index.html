@@ -196,22 +196,17 @@
         </div>
 
         <div style="margin-top:14px;border-top:1px solid #eee;padding-top:12px;">
-          <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#444;cursor:pointer;margin-bottom:0;">
-            <input type="checkbox" id="toggle-condicoes" style="width:16px;height:16px;cursor:pointer;">
-            <span>Condições ambientais <span style="color:#888;font-weight:400">(Delta T — aparece no resultado e no PDF)</span></span>
-          </label>
-          <div id="condicoes-box" style="display:none;margin-top:12px;">
-            <div class="campos-operacao">
-              <div class="campo-num">
-                <label for="temp-amb">Temperatura seca</label>
-                <input type="number" id="temp-amb" min="0" max="40" step="0.5" placeholder="Ex: 28">
-                <div class="unidade">°C</div>
-              </div>
-              <div class="campo-num">
-                <label for="rh-amb">Umidade relativa</label>
-                <input type="number" id="rh-amb" min="10" max="100" step="1" placeholder="Ex: 60">
-                <div class="unidade">%</div>
-              </div>
+          <label style="font-size:13px;color:#10315A;font-weight:600;display:block;margin-bottom:8px;">Condições ambientais <span style="color:#888;font-weight:400">(opcional — Delta T no resultado e no PDF)</span></label>
+          <div class="campos-operacao">
+            <div class="campo-num">
+              <label for="temp-amb">Temperatura seca</label>
+              <input type="number" id="temp-amb" min="0" max="40" step="0.5" placeholder="Ex: 28">
+              <div class="unidade">°C</div>
+            </div>
+            <div class="campo-num">
+              <label for="rh-amb">Umidade relativa</label>
+              <input type="number" id="rh-amb" min="10" max="100" step="1" placeholder="Ex: 60">
+              <div class="unidade">%</div>
             </div>
           </div>
         </div>
@@ -487,10 +482,6 @@
         btnText.textContent = 'Gerar Ordem';
       }
     }
-
-    document.getElementById('toggle-condicoes').addEventListener('change', function() {
-      document.getElementById('condicoes-box').style.display = this.checked ? '' : 'none';
-    });
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
