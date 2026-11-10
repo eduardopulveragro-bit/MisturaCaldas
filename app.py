@@ -410,7 +410,8 @@ def historico():
 @app.route("/api/historico", methods=["GET"])
 @login_required
 def api_historico_listar():
-    registros = historico_mod.listar(current_user.id)
+    cliente_id = request.args.get("cliente_id") or None
+    registros = historico_mod.listar(current_user.id, cliente_id=cliente_id)
     return jsonify(registros)
 
 

@@ -74,6 +74,11 @@
     <div class="card">
       <h2>{% if current_user.tipo == 'produtor' %}Histórico de Aplicação{% else %}Histórico de Caldas{% endif %}</h2>
       <div class="filtros">
+        {% if current_user.tipo == 'consultor' %}
+        <select id="filtro-fazenda" style="flex:1.5;min-width:160px;">
+          <option value="">Todas as fazendas</option>
+        </select>
+        {% endif %}
         <input type="text" id="filtro-busca" placeholder="Buscar por cultura, talhão...">
         <input type="month" id="filtro-mes" title="Filtrar por mês">
       </div>
@@ -85,6 +90,24 @@
 
   <script>
     let registros = [];
+    const clientesMap = {}; // { id: nome }
+
+    async function carregarFazendas() {
+      const sel = document.getElementById('filtro-fazenda');
+      if (!sel) return;
+      try {
+        const resp = await fetch('/api/clientes');
+        const lista = await resp.json();
+        lista.forEach(c => {
+          clientesMap[c.id] = c.nome;
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = c.nome;
+          sel.appendChild(opt);
+        });
+        sel.addEventListener('change', renderizar);
+      } catch (e) {}
+    }
 
     async function carregar() {
       try {
@@ -99,13 +122,16 @@
 
     function renderizar() {
       const busca = document.getElementById('filtro-busca').value.toLowerCase();
-      const mes = document.getElementById('filtro-mes').value; // "2026-11"
+      const mes = document.getElementById('filtro-mes').value;
+      const fazendaId = (document.getElementById('filtro-fazenda') || {}).value || '';
       const div = document.getElementById('lista-historico');
 
       let filtrados = registros.filter(r => {
         if (mes && !r.data_aplicacao.startsWith(mes)) return false;
+        if (fazendaId && r.cliente_id !== fazendaId) return false;
         if (busca) {
-          const texto = [(r.cultura || ''), (r.talhao || ''), (r.notas || '')].join(' ').toLowerCase();
+          const fazendaNome = r.cliente_id ? (clientesMap[r.cliente_id] || '') : '';
+          const texto = [(r.cultura || ''), (r.talhao || ''), (r.notas || ''), fazendaNome].join(' ').toLowerCase();
           if (!texto.includes(busca)) return false;
         }
         return true;
@@ -139,9 +165,11 @@
       div.className = 'registro';
 
       const titulo = [r.cultura, r.talhao].filter(Boolean).join(' — ') || 'Sem identificação';
+      const fazendaNome = r.cliente_id ? (clientesMap[r.cliente_id] || null) : null;
 
       let html = '<div class="registro-topo">' +
         '<div>' +
+          (fazendaNome ? '<div style="font-size:11px;font-weight:700;color:#267A25;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px;">' + esc(fazendaNome) + '</div>' : '') +
           '<div class="registro-titulo">' + esc(titulo) + '</div>' +
         '</div>' +
         '<div class="registro-data">' + data + '</div>' +
@@ -215,6 +243,7 @@
     document.getElementById('filtro-busca').addEventListener('input', renderizar);
     document.getElementById('filtro-mes').addEventListener('change', renderizar);
 
+    carregarFazendas();
     carregar();
   </script>
 </body>

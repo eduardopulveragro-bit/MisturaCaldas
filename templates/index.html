@@ -160,7 +160,7 @@
       <img src="/static/logo.png" alt="FieldMix">
     </a>
     <div style="display:flex;gap:20px;align-items:center;">
-      <a href="/clientes" class="nav-link">{% if current_user.tipo == 'produtor' %}Minha Fazenda{% else %}Clientes{% endif %}</a>
+      <a href="/clientes" class="nav-link">{% if current_user.tipo == 'produtor' %}Minha Fazenda{% else %}Fazendas{% endif %}</a>
       <a href="/historico" class="nav-link">{% if current_user.tipo == 'produtor' %}Histórico de Aplicação{% else %}Histórico{% endif %}</a>
       <a href="/delta-t" class="nav-link">Delta T</a>
       {% if current_user.admin %}<a href="/admin/usuarios" class="nav-link">Usuários</a>{% endif %}
@@ -298,6 +298,14 @@
   <div class="modal-overlay" id="modal-historico">
     <div class="modal-box">
       <h3>Salvar no Histórico</h3>
+      {% if current_user.tipo == 'consultor' %}
+      <div class="modal-campo">
+        <label>Fazenda</label>
+        <select id="hst-fazenda" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:9px 12px;font-size:14px;background:white;">
+          <option value="">— Sem vínculo —</option>
+        </select>
+      </div>
+      {% endif %}
       <div class="modal-row">
         <div class="modal-campo">
           <label>Data de aplicação</label>
@@ -956,16 +964,25 @@
     renderDeltaT();
 
     /* ── Modal histórico ─────────────────────────────────────── */
+    // carrega fazendas no select do modal (consultor)
+    (async function carregarFazendasModal() {
+      const sel = document.getElementById('hst-fazenda');
+      if (!sel) return;
+      try {
+        const resp = await fetch('/api/clientes');
+        const lista = await resp.json();
+        lista.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c.id;
+          opt.textContent = c.nome;
+          sel.appendChild(opt);
+        });
+      } catch (e) {}
+    })();
+
     function abrirModalHistorico() {
       const hoje = new Date().toISOString().split('T')[0];
       document.getElementById('hst-data').value = hoje;
-      // preenche vazão do operacao atual se disponível
-      if (dadosAtual && dadosAtual.operacao) {
-        const op = dadosAtual.operacao;
-        if (op.area_tanque_ha && !document.getElementById('hst-area').value) {
-          document.getElementById('hst-area').value = '';
-        }
-      }
       document.getElementById('hst-status').textContent = '';
       document.getElementById('modal-historico').classList.add('ativo');
     }
@@ -995,8 +1012,10 @@
         deltaTVal = parseFloat((tempVal - wetBulbHst(tempVal, rhVal)).toFixed(2));
       }
 
+      const fazendaSel = document.getElementById('hst-fazenda');
       const payload = {
         data_aplicacao: data,
+        cliente_id: fazendaSel ? (fazendaSel.value || null) : null,
         cultura: document.getElementById('hst-cultura').value.trim(),
         talhao:  document.getElementById('hst-talhao').value.trim(),
         area_ha: document.getElementById('hst-area').value || null,

@@ -19,12 +19,15 @@ def _headers():
     }
 
 
-def listar(usuario_id: str) -> list[dict]:
+def listar(usuario_id: str, cliente_id: str | None = None) -> list[dict]:
     if not _USA_SUPABASE:
         return []
+    filtro = f"usuario_id=eq.{usuario_id}"
+    if cliente_id:
+        filtro += f"&cliente_id=eq.{cliente_id}"
     r = requests.get(
         f"{_SUPA_URL}/rest/v1/historico_caldas"
-        f"?usuario_id=eq.{usuario_id}"
+        f"?{filtro}"
         f"&order=data_aplicacao.desc,criado_em.desc"
         f"&select=*",
         headers=_headers(), timeout=10,
@@ -39,6 +42,7 @@ def criar(dados: dict) -> dict:
     row = {
         "id": str(uuid.uuid4()),
         "usuario_id": dados["usuario_id"],
+        "cliente_id": dados.get("cliente_id") or None,
         "data_aplicacao": dados.get("data_aplicacao") or datetime.now().strftime("%Y-%m-%d"),
         "cultura": (dados.get("cultura") or "").strip(),
         "talhao": (dados.get("talhao") or "").strip(),
