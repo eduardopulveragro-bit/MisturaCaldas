@@ -79,18 +79,13 @@
       <div id="lista-pulv"></div>
       <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
 
-      <!-- TALHÕES -->
-      <div class="secao-titulo">🌾 Talhões</div>
-      <div id="lista-talhoes"></div>
-      <button type="button" class="btn-add" id="btn-add-talhao">+ Adicionar talhão</button>
-
-      <button type="submit" class="btn-salvar">Salvar e entrar →</button>
+<button type="submit" class="btn-salvar">Salvar e entrar →</button>
       <button type="button" class="btn-pular" id="btn-pular">Pular por agora</button>
     </form>
   </div>
 
   <script>
-    let cntPulv = 0, cntTalhao = 0;
+    let cntPulv = 0;
 
     /* ── Pulverizadores ── */
     function criarPulv() {
@@ -143,47 +138,15 @@
       bloco.querySelector('[data-campo="vazao_L_ha"]').addEventListener('input', calcularHa);
     }
 
-    /* ── Talhões ── */
-    function criarTalhao() {
-      cntTalhao++;
-      const n = cntTalhao;
-      const bloco = document.createElement('div');
-      bloco.className = 'bloco';
-      bloco.dataset.id = 't' + n;
-      bloco.innerHTML = `
-        <div class="bloco-titulo">Talhão ${n}</div>
-        ${n > 1 ? `<button type="button" class="btn-remover" onclick="removerBloco('t${n}')">✕</button>` : ''}
-        <div class="linha">
-          <div class="campo" style="flex:2;">
-            <label>Nome do talhão</label>
-            <input type="text" placeholder="Ex: Talhão Norte, Área A" data-campo="nome">
-          </div>
-          <div class="campo">
-            <label>Área (ha)</label>
-            <input type="number" step="0.1" min="0" placeholder="Ex: 45" data-campo="area_ha">
-          </div>
-        </div>
-      `;
-      document.getElementById('lista-talhoes').appendChild(bloco);
-      renumerarTalhoes();
-    }
-
     function removerBloco(id) {
       const el = document.querySelector(`.bloco[data-id="${id}"]`);
       if (el) el.remove();
-      if (id.startsWith('p')) renumerarPulv();
-      else renumerarTalhoes();
+      renumerarPulv();
     }
 
     function renumerarPulv() {
       document.querySelectorAll('#lista-pulv .bloco').forEach((b, i) => {
         b.querySelector('.bloco-titulo').textContent = `Pulverizador ${i + 1}`;
-      });
-    }
-
-    function renumerarTalhoes() {
-      document.querySelectorAll('#lista-talhoes .bloco').forEach((b, i) => {
-        b.querySelector('.bloco-titulo').textContent = `Talhão ${i + 1}`;
       });
     }
 
@@ -205,20 +168,7 @@
       });
     }
 
-    function coletarTalhoes() {
-      return Array.from(document.querySelectorAll('#lista-talhoes .bloco')).map(b => {
-        const obj = {};
-        b.querySelectorAll('[data-campo]').forEach(el => {
-          const k = el.dataset.campo;
-          const v = el.value.trim();
-          obj[k] = k === 'area_ha' ? (v !== '' ? parseFloat(v) : null) : v;
-        });
-        return obj;
-      }).filter(t => t.nome);
-    }
-
     document.getElementById('btn-add-pulv').addEventListener('click', criarPulv);
-    document.getElementById('btn-add-talhao').addEventListener('click', criarTalhao);
 
     document.getElementById('btn-pular').addEventListener('click', function() {
       document.getElementById('pulverizadores_json').value = '[]';
@@ -228,11 +178,10 @@
 
     document.getElementById('form-dados').addEventListener('submit', function() {
       document.getElementById('pulverizadores_json').value = JSON.stringify(coletarPulv());
-      document.getElementById('talhoes_json').value = JSON.stringify(coletarTalhoes());
+      document.getElementById('talhoes_json').value = '[]';
     });
 
     criarPulv();
-    criarTalhao();
   </script>
 </body>
 </html>
