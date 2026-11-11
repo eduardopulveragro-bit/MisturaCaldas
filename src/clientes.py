@@ -104,8 +104,11 @@ def _row_para_cliente(row: dict) -> dict:
 
 
 def _cliente_para_row(cliente: dict) -> dict:
-    dados = {k: v for k, v in cliente.items() if k not in ("id", "nome", "criado_em")}
-    return {"id": cliente["id"], "nome": cliente["nome"], "dados": dados, "criado_em": cliente.get("criado_em", "")}
+    dados = {k: v for k, v in cliente.items() if k not in ("id", "nome", "criado_em", "usuario_id")}
+    row = {"id": cliente["id"], "nome": cliente["nome"], "dados": dados, "criado_em": cliente.get("criado_em", "")}
+    if cliente.get("usuario_id"):
+        row["usuario_id"] = cliente["usuario_id"]
+    return row
 
 
 # ── Fallback JSON local ──────────────────────────────────────────────────────
@@ -168,6 +171,7 @@ def criar(dados: dict) -> dict:
     cliente = {
         "id": str(uuid.uuid4()),
         "nome": (dados.get("nome") or "").strip(),
+        "usuario_id": dados.get("usuario_id", ""),
         "pulverizador": {
             "modelo": (dados.get("pulverizador_modelo") or "").strip(),
             "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
@@ -203,7 +207,10 @@ def atualizar(cliente_id: str, dados: dict) -> dict | None:
         existente = _supa_buscar(cliente_id)
         if not existente:
             return None
-        return _supa_atualizar(cliente_id, {"id": cliente_id, "criado_em": existente.get("criado_em", ""), **campos})
+        row = {"id": cliente_id, "criado_em": existente.get("criado_em", ""), **campos}
+        if dados.get("usuario_id"):
+            row["usuario_id"] = dados["usuario_id"]
+        return _supa_atualizar(cliente_id, row)
     with _lock_clientes():
         clientes = _carregar()
         for c in clientes:

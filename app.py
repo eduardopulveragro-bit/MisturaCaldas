@@ -390,6 +390,7 @@ def api_criar_cliente():
     dados = request.get_json(silent=True) or {}
     if not dados.get("nome", "").strip():
         return jsonify({"erro": "Nome é obrigatório"}), 400
+    dados["usuario_id"] = current_user.id
     cliente = clientes_mod.criar(dados)
     return jsonify(cliente), 201
 
@@ -409,6 +410,7 @@ def api_atualizar_cliente(cliente_id):
     dados = request.get_json(silent=True) or {}
     if not dados.get("nome", "").strip():
         return jsonify({"erro": "Nome é obrigatório"}), 400
+    dados["usuario_id"] = current_user.id
     cliente = clientes_mod.atualizar(cliente_id, dados)
     if not cliente:
         return jsonify({"erro": "Cliente não encontrado"}), 404
