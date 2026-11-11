@@ -46,6 +46,12 @@
       cursor: pointer; margin-bottom: 8px;
     }
     .btn-add:hover { background: #e3ecf5; }
+    .btn-add-fazenda {
+      width: 100%; background: #f0f4f8; color: #267A25; border: 2px dashed #267A25;
+      border-radius: 8px; padding: 10px; font-size: 13px; font-weight: 600;
+      cursor: pointer; margin-bottom: 20px;
+    }
+    .btn-add-fazenda:hover { background: #edf7ed; }
     .btn-salvar {
       width: 100%; background: #267A25; color: white; border: none;
       border-radius: 6px; padding: 13px; font-size: 15px; font-weight: 600; cursor: pointer;
@@ -54,6 +60,8 @@
     .btn-salvar:hover { background: #1e6020; }
     .btn-pular { width: 100%; background: none; border: none; color: #aaa; font-size: 13px; cursor: pointer; margin-top: 12px; text-decoration: underline; }
     .btn-pular:hover { color: #666; }
+    .sub-titulo-pulv { font-size: 11px; font-weight: 700; color: #10315A; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+    .sep-pulv { border-top: 1px solid #e8edf4; margin: 4px -16px 0; padding: 12px 16px 0; }
     @media (max-width: 480px) { .card { padding: 24px 16px; } }
   </style>
 </head>
@@ -65,23 +73,18 @@
     <p class="step">Passo 2 de 2</p>
 
     <form id="form-dados" method="POST">
+{% if tipo_onboarding == 'consultor' %}
+      <input type="hidden" name="fazendas_json" id="fazendas_json">
+{% else %}
       <input type="hidden" name="pulverizadores_json" id="pulverizadores_json">
       <input type="hidden" name="talhoes_json" id="talhoes_json">
+{% endif %}
 
 {% if tipo_onboarding == 'consultor' %}
-      <!-- CONSULTOR: fazenda + pulverizadores em um único cartão -->
+      <!-- CONSULTOR: múltiplas fazendas, cada uma com seus pulverizadores -->
       <div class="secao-titulo" style="margin-top:0;">🌾 Fazendas</div>
-      <div class="bloco" style="margin-bottom:20px;">
-        <div class="campo">
-          <label>Nome da fazenda / cliente</label>
-          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="Ex: Fazenda Boa Vista — João Silva" style="font-size:15px;">
-        </div>
-        <div style="border-top:1px solid #e8edf4; margin:4px -16px 0; padding:12px 16px 0;">
-          <div style="font-size:11px;font-weight:700;color:#10315A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🚜 Pulverizadores</div>
-          <div id="lista-pulv"></div>
-          <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
-        </div>
-      </div>
+      <div id="lista-fazendas"></div>
+      <button type="button" class="btn-add-fazenda" id="btn-add-fazenda">+ Adicionar fazenda</button>
 {% else %}
       <!-- PRODUTOR: seções separadas -->
       <div class="secao-titulo" style="margin-top:0;">🌾 Fazenda</div>
@@ -98,15 +101,134 @@
       <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
 {% endif %}
 
-<button type="submit" class="btn-salvar">Salvar e entrar →</button>
+      <button type="submit" class="btn-salvar">Salvar e entrar →</button>
       <button type="button" class="btn-pular" id="btn-pular">Pular por agora</button>
     </form>
   </div>
 
   <script>
+{% if tipo_onboarding == 'consultor' %}
+    /* ── CONSULTOR: múltiplas fazendas ── */
+    let cntFazenda = 0;
+
+    function criarPulvNaFazenda(listaEl) {
+      const n = listaEl.querySelectorAll('.bloco').length + 1;
+      const bloco = document.createElement('div');
+      bloco.className = 'bloco';
+      bloco.innerHTML = `
+        <div class="bloco-titulo">Pulverizador ${n}</div>
+        ${n > 1 ? `<button type="button" class="btn-remover" onclick="const b=this.closest('.bloco');b.remove();renumerarPulvs(b.closest('.sep-pulv').querySelector('.lista-pulv-fazenda'))">✕</button>` : ''}
+        <div class="campo">
+          <label>Nome / Modelo</label>
+          <input type="text" placeholder="Ex: Jacto Uniport 2500, Montana AM-30..." data-campo="nome">
+        </div>
+        <div class="linha">
+          <div class="campo">
+            <label>Volume do tanque (L)</label>
+            <input type="number" step="1" min="0" placeholder="Ex: 2000" data-campo="volume_tanque_L">
+          </div>
+          <div class="campo">
+            <label>Taxa de aplicação (L/ha)</label>
+            <input type="number" step="0.1" min="0" placeholder="Ex: 150" data-campo="vazao_L_ha">
+          </div>
+        </div>
+        <div class="campo">
+          <label>Pontas</label>
+          <input type="text" placeholder="Ex: TT 11001, CVE 9001" data-campo="pontas">
+          <div class="hint">Separe por vírgula se tiver mais de uma</div>
+        </div>
+        <div class="campo">
+          <label>Hectares / tanque (ha)</label>
+          <input type="number" step="0.1" min="0" placeholder="Calculado automaticamente" data-campo="area_tanque_ha" readonly style="background:#f5f7fa;color:#555;">
+        </div>
+      `;
+      listaEl.appendChild(bloco);
+
+      function calcularHa() {
+        const vol = parseFloat(bloco.querySelector('[data-campo="volume_tanque_L"]').value);
+        const taxa = parseFloat(bloco.querySelector('[data-campo="vazao_L_ha"]').value);
+        const haInput = bloco.querySelector('[data-campo="area_tanque_ha"]');
+        if (vol > 0 && taxa > 0) haInput.value = (vol / taxa).toFixed(1);
+        else haInput.value = '';
+      }
+      ['input','change'].forEach(ev => {
+        bloco.querySelector('[data-campo="volume_tanque_L"]').addEventListener(ev, calcularHa);
+        bloco.querySelector('[data-campo="vazao_L_ha"]').addEventListener(ev, calcularHa);
+      });
+    }
+
+    function renumerarPulvs(listaEl) {
+      listaEl.querySelectorAll('.bloco').forEach((b, i) => {
+        b.querySelector('.bloco-titulo').textContent = `Pulverizador ${i + 1}`;
+      });
+    }
+
+    function criarFazenda() {
+      cntFazenda++;
+      const n = cntFazenda;
+      const fazenda = document.createElement('div');
+      fazenda.className = 'bloco bloco-fazenda';
+      fazenda.innerHTML = `
+        ${n > 1 ? `<button type="button" class="btn-remover" onclick="this.closest('.bloco-fazenda').remove()">✕</button>` : ''}
+        <div class="campo">
+          <label>Nome da fazenda / cliente</label>
+          <input type="text" class="nome-fazenda" placeholder="Ex: Fazenda Boa Vista — João Silva" style="font-size:15px;">
+        </div>
+        <div class="sep-pulv">
+          <div class="sub-titulo-pulv">🚜 Pulverizadores</div>
+          <div class="lista-pulv-fazenda"></div>
+          <button type="button" class="btn-add btn-add-pulv-fazenda">+ Adicionar pulverizador</button>
+        </div>
+      `;
+      document.getElementById('lista-fazendas').appendChild(fazenda);
+
+      const listaEl = fazenda.querySelector('.lista-pulv-fazenda');
+      criarPulvNaFazenda(listaEl);
+
+      fazenda.querySelector('.btn-add-pulv-fazenda').addEventListener('click', () => {
+        criarPulvNaFazenda(listaEl);
+      });
+    }
+
+    function coletarFazendas() {
+      return Array.from(document.querySelectorAll('.bloco-fazenda')).map(fazenda => {
+        const nome = fazenda.querySelector('.nome-fazenda').value.trim();
+        const pulverizadores = Array.from(fazenda.querySelectorAll('.lista-pulv-fazenda .bloco')).map(b => {
+          const obj = {};
+          b.querySelectorAll('[data-campo]').forEach(el => {
+            const k = el.dataset.campo;
+            const v = el.value.trim();
+            if (k === 'pontas') {
+              obj[k] = v ? v.split(',').map(s => s.trim()).filter(Boolean) : [];
+            } else if (['volume_tanque_L','vazao_L_ha','pressao_bar','area_tanque_ha'].includes(k)) {
+              obj[k] = v !== '' ? parseFloat(v) : null;
+            } else {
+              obj[k] = v;
+            }
+          });
+          return obj;
+        });
+        return { nome, pulverizadores };
+      });
+    }
+
+    document.getElementById('btn-add-fazenda').addEventListener('click', criarFazenda);
+
+    document.getElementById('btn-pular').addEventListener('click', function() {
+      document.getElementById('fazendas_json').value = '[]';
+      document.getElementById('form-dados').submit();
+    });
+
+    document.getElementById('form-dados').addEventListener('submit', function() {
+      document.getElementById('fazendas_json').value = JSON.stringify(coletarFazendas());
+    });
+
+    criarFazenda();
+
+{% else %}
+    /* ── PRODUTOR ── */
     let cntPulv = 0;
 
-    /* ── Pulverizadores ── */
     function criarPulv() {
       cntPulv++;
       const n = cntPulv;
@@ -142,16 +264,12 @@
       `;
       document.getElementById('lista-pulv').appendChild(bloco);
 
-      // Cálculo automático: ha/tanque = volume / taxa
       function calcularHa() {
         const vol = parseFloat(bloco.querySelector('[data-campo="volume_tanque_L"]').value);
         const taxa = parseFloat(bloco.querySelector('[data-campo="vazao_L_ha"]').value);
         const haInput = bloco.querySelector('[data-campo="area_tanque_ha"]');
-        if (vol > 0 && taxa > 0) {
-          haInput.value = (vol / taxa).toFixed(1);
-        } else {
-          haInput.value = '';
-        }
+        if (vol > 0 && taxa > 0) haInput.value = (vol / taxa).toFixed(1);
+        else haInput.value = '';
       }
       ['input','change'].forEach(ev => {
         bloco.querySelector('[data-campo="volume_tanque_L"]').addEventListener(ev, calcularHa);
@@ -203,6 +321,7 @@
     });
 
     criarPulv();
+{% endif %}
   </script>
 </body>
 </html>

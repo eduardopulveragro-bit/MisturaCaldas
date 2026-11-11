@@ -207,39 +207,74 @@ def onboarding_equipamentos():
         return redirect(url_for("index"))
     if request.method == "POST":
         tipo = session.pop("onboarding_tipo", "produtor")
-        try:
-            pulverizadores = _json.loads(request.form.get("pulverizadores_json", "[]"))
-        except _json.JSONDecodeError:
-            pulverizadores = []
-        try:
-            talhoes = _json.loads(request.form.get("talhoes_json", "[]"))
-        except _json.JSONDecodeError:
-            talhoes = []
-        usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores, "talhoes": talhoes})
-        nome_fazenda = request.form.get("nome_fazenda", "").strip()
-        # Cria um cliente por pulverizador cadastrado
-        for i, pulv in enumerate(pulverizadores):
-            modelo = (pulv.get("nome") or pulv.get("modelo") or "").strip()
-            if not modelo and not nome_fazenda:
-                continue
-            if nome_fazenda and len(pulverizadores) == 1:
-                nome_cliente = nome_fazenda
-            elif nome_fazenda:
-                nome_cliente = f"{nome_fazenda} — {modelo}" if modelo else f"{nome_fazenda} {i+1}"
-            else:
-                nome_cliente = modelo
+
+        fazendas_raw = request.form.get("fazendas_json")
+        if fazendas_raw:
+            # Fluxo consultor: múltiplas fazendas
             try:
-                clientes_mod.criar({
-                    "nome": nome_cliente,
-                    "usuario_id": current_user.id,
-                    "pulverizador_modelo": modelo,
-                    "volume_tanque": pulv.get("volume_tanque_L"),
-                    "pontas": ",".join(pulv.get("pontas") or []),
-                    "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
-                             if pulv.get("vazao_L_ha") else [],
-                })
-            except Exception as e:
-                logger.warning("Onboarding: erro ao criar cliente '%s': %s", nome_cliente, e)
+                fazendas = _json.loads(fazendas_raw)
+            except _json.JSONDecodeError:
+                fazendas = []
+            usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"fazendas": fazendas})
+            for fazenda in fazendas:
+                nome_fazenda = (fazenda.get("nome") or "").strip()
+                pulverizadores = fazenda.get("pulverizadores") or []
+                for i, pulv in enumerate(pulverizadores):
+                    modelo = (pulv.get("nome") or pulv.get("modelo") or "").strip()
+                    if not modelo and not nome_fazenda:
+                        continue
+                    if nome_fazenda and len(pulverizadores) == 1:
+                        nome_cliente = nome_fazenda
+                    elif nome_fazenda:
+                        nome_cliente = f"{nome_fazenda} — {modelo}" if modelo else f"{nome_fazenda} {i+1}"
+                    else:
+                        nome_cliente = modelo
+                    try:
+                        clientes_mod.criar({
+                            "nome": nome_cliente,
+                            "usuario_id": current_user.id,
+                            "pulverizador_modelo": modelo,
+                            "volume_tanque": pulv.get("volume_tanque_L"),
+                            "pontas": ",".join(pulv.get("pontas") or []),
+                            "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
+                                     if pulv.get("vazao_L_ha") else [],
+                        })
+                    except Exception as e:
+                        logger.warning("Onboarding: erro ao criar cliente '%s': %s", nome_cliente, e)
+        else:
+            # Fluxo produtor: fazenda única + pulverizadores
+            try:
+                pulverizadores = _json.loads(request.form.get("pulverizadores_json", "[]"))
+            except _json.JSONDecodeError:
+                pulverizadores = []
+            try:
+                talhoes = _json.loads(request.form.get("talhoes_json", "[]"))
+            except _json.JSONDecodeError:
+                talhoes = []
+            usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores, "talhoes": talhoes})
+            nome_fazenda = request.form.get("nome_fazenda", "").strip()
+            for i, pulv in enumerate(pulverizadores):
+                modelo = (pulv.get("nome") or pulv.get("modelo") or "").strip()
+                if not modelo and not nome_fazenda:
+                    continue
+                if nome_fazenda and len(pulverizadores) == 1:
+                    nome_cliente = nome_fazenda
+                elif nome_fazenda:
+                    nome_cliente = f"{nome_fazenda} — {modelo}" if modelo else f"{nome_fazenda} {i+1}"
+                else:
+                    nome_cliente = modelo
+                try:
+                    clientes_mod.criar({
+                        "nome": nome_cliente,
+                        "usuario_id": current_user.id,
+                        "pulverizador_modelo": modelo,
+                        "volume_tanque": pulv.get("volume_tanque_L"),
+                        "pontas": ",".join(pulv.get("pontas") or []),
+                        "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
+                                 if pulv.get("vazao_L_ha") else [],
+                    })
+                except Exception as e:
+                    logger.warning("Onboarding: erro ao criar cliente '%s': %s", nome_cliente, e)
         session["onboarding_done"] = True
         return redirect(url_for("index"))
     tipo_onboarding = session.get("onboarding_tipo", current_user.tipo)
