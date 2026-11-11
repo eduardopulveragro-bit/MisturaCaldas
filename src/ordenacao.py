@@ -293,6 +293,8 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
             if item["posicao"] <= 2:
                 ponto = i + 1
 
+    # Atualiza posicao para EC-level (11) so que _posicionar_oleo nao insira oleo antes deste SL
+    primeiro_sl["posicao"] = 11
     resultado.insert(ponto, primeiro_sl)
     return resultado
 
