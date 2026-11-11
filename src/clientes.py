@@ -63,7 +63,8 @@ def _supa_criar(cliente: dict) -> dict:
         f"{_SUPA_URL}/rest/v1/clientes",
         headers=_headers(), json=row, timeout=10
     )
-    r.raise_for_status()
+    if not r.ok:
+        raise RuntimeError(f"Supabase {r.status_code}: {r.text}")
     return _row_para_cliente(r.json()[0])
 
 

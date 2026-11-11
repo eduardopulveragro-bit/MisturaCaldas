@@ -391,7 +391,11 @@ def api_criar_cliente():
     if not dados.get("nome", "").strip():
         return jsonify({"erro": "Nome é obrigatório"}), 400
     dados["usuario_id"] = current_user.id
-    cliente = clientes_mod.criar(dados)
+    try:
+        cliente = clientes_mod.criar(dados)
+    except Exception as e:
+        logger.exception("Erro ao criar cliente: %s", e)
+        return jsonify({"erro": str(e)}), 500
     return jsonify(cliente), 201
 
 
