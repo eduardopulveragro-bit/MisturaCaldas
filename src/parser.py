@@ -105,7 +105,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     texto = _limpar_markdown(texto)
 
     try:
-        dados = json.loads(texto)
+        dados, _ = json.JSONDecoder().raw_decode(texto)
     except json.JSONDecodeError as e:
         raise ValueError(f"API retornou JSON inválido: {e}\nTexto recebido: {texto[:300]}")
 
