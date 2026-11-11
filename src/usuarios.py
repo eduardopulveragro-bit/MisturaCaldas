@@ -107,16 +107,21 @@ def atualizar_ativo(user_id: str, ativo: bool) -> None:
 
 def atualizar_onboarding(user_id: str, tipo: str, config_equipamento=None) -> bool:
     payload: dict = {"tipo": tipo, "onboarding_completo": True}
-    if config_equipamento is not None:
-        payload["config_equipamento"] = config_equipamento
     try:
-        requests.patch(
+        r = requests.patch(
             f"{_SUPA_URL}/rest/v1/usuarios?id=eq.{user_id}",
             headers={**_headers(), "Prefer": "return=minimal"},
             json=payload, timeout=10,
-        ).raise_for_status()
+        )
+        if not r.ok:
+            import logging
+            logging.getLogger(__name__).error("atualizar_onboarding falhou: %s %s", r.status_code, r.text)
+            return False
+        r.raise_for_status()
         return True
-    except Exception:
+    except Exception as e:
+        import logging
+        logging.getLogger(__name__).error("atualizar_onboarding exception: %s", e)
         return False
 
 
