@@ -33,6 +33,13 @@
     .admin-check { display: flex; align-items: center; gap: 5px; font-size: 13px; color: #444; padding-bottom: 2px; }
     .btn-criar { background: #10315A; color: white; border: none; border-radius: 5px; padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer; }
     .btn-criar:hover { background: #1a4070; }
+    @media (max-width: 600px) {
+      header { padding: 10px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
+      .header-brand img { height: 55px; }
+      header > div { flex-wrap: wrap; gap: 8px 14px !important; }
+      header a.nav-link { font-size: 12px; }
+      .card { padding: 16px; }
+    }
   </style>
 </head>
 <body>
