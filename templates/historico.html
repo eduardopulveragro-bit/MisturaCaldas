@@ -54,10 +54,11 @@
     .delta-t-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
 
     @media (max-width: 600px) {
-      header { padding: 10px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
-      .header-brand img { height: 65px; }
-      header > div { flex-wrap: wrap; gap: 8px 14px !important; }
-      header a.nav-link { font-size: 12px; }
+      header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
+      .header-brand img { height: 52px; }
+      header > div { flex-wrap: nowrap !important; overflow-x: auto; gap: 0 !important; width: 100%; scrollbar-width: none; border-top: 1px solid #e8edf2; margin-top: 6px; padding: 2px 0 8px; }
+      header > div::-webkit-scrollbar { display: none; }
+      header a.nav-link { font-size: 12px; white-space: nowrap; padding: 6px 12px 6px 0; }
       .card { padding: 16px; }
     }
   </style>
