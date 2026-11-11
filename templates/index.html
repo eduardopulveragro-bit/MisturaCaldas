@@ -482,10 +482,18 @@
     // recalcula ha/tanque ao mudar taxa de aplicação
     ['input','change'].forEach(ev => {
       document.getElementById('vazao').addEventListener(ev, function() {
-        if (!volumeTanqueAtual) return;
+        // lê volume direto do pulverizador selecionado
+        var vol = volumeTanqueAtual;
+        if (!vol && clienteSel && clienteSel.selectedOptions && clienteSel.selectedOptions[0]) {
+          try {
+            var cd = JSON.parse(clienteSel.selectedOptions[0].dataset.cliente || 'null');
+            if (cd && cd.pulverizador) vol = cd.pulverizador.volume_tanque_L;
+          } catch(e) {}
+        }
+        if (!vol) return;
         const taxa = parseFloat(this.value);
         if (taxa > 0) {
-          document.getElementById('area').value = (volumeTanqueAtual / taxa).toFixed(1);
+          document.getElementById('area').value = (vol / taxa).toFixed(1);
         }
       });
     });
