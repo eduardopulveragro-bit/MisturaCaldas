@@ -200,6 +200,10 @@
         </div>
         {% else %}
         <div style="margin-bottom: 14px;">
+          <label>Fazenda</label>
+          <div id="fazenda-nome" style="border:1px solid #e0e0e0;border-radius:6px;padding:10px 12px;font-size:14px;background:#f8f9fa;color:#333;min-height:42px;"></div>
+        </div>
+        <div style="margin-bottom: 14px;">
           <label for="cliente-sel">Pulverizador</label>
           <select id="cliente-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
             <option value="">-- Selecione o pulverizador --</option>
@@ -425,17 +429,24 @@
         const resp = await fetch('/api/clientes');
         const clientes = await resp.json();
         if (clienteSel && clienteSel.tagName === 'SELECT') {
+          const nomeEl = document.getElementById('fazenda-nome');
           clientes.forEach(c => {
             const opt = document.createElement('option');
             opt.value = c.id;
-            opt.textContent = c.nome;
+            // para produtor: mostra o modelo do pulverizador no select; fallback para nome
+            const modelo = (c.pulverizador && c.pulverizador.modelo) ? c.pulverizador.modelo : c.nome;
+            opt.textContent = modelo;
             opt.dataset.cliente = JSON.stringify(c);
+            opt.dataset.fazenda = c.nome;
             clienteSel.appendChild(opt);
           });
           // seleciona automaticamente se só tem um
           if (clientes.length === 1) {
             clienteSel.value = clientes[0].id;
+            if (nomeEl) nomeEl.textContent = clientes[0].nome;
             clienteSel.dispatchEvent(new Event('change'));
+          } else if (nomeEl && clientes.length === 0) {
+            nomeEl.textContent = 'Nenhuma fazenda cadastrada';
           }
         }
       } catch (e) {}
@@ -449,6 +460,9 @@
       const opt = this.selectedOptions[0];
       pontaSel.innerHTML = '<option value="">-- Selecione a ponta --</option>';
       pressaoField.value = '';
+      // atualiza o div "Fazenda" se existir (produtor)
+      const nomeEl = document.getElementById('fazenda-nome');
+      if (nomeEl) nomeEl.textContent = (opt && opt.dataset.fazenda) ? opt.dataset.fazenda : '';
       if (!opt || !opt.dataset.cliente) {
         pontasPressaoDiv.style.display = 'none';
         return;
