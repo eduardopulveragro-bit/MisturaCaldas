@@ -596,7 +596,8 @@
       dados.ordem.forEach((item, i) => {
         const tr = document.createElement('tr');
         const formUpper = (item.formulacao || '').toUpperCase();
-        const formDisplay = (formUpper === 'DESCONHECIDA') ? '—' : formUpper;
+        const _formMap = {'OLEO': 'ÓLEO', 'DESCONHECIDA': '—'};
+        const formDisplay = _formMap[formUpper] !== undefined ? _formMap[formUpper] : formUpper;
 
         let doseHa = '—';
         if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
