@@ -266,7 +266,10 @@
         </div>
 
         <div style="margin-top:14px;border-top:1px solid #eee;padding-top:12px;">
-          <label style="font-size:13px;color:#10315A;font-weight:600;display:block;margin-bottom:8px;">Condições ambientais <span style="color:#888;font-weight:400">(opcional — Delta T no resultado e no PDF)</span></label>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <label style="font-size:13px;color:#10315A;font-weight:600;margin:0;">Condições ambientais <span style="color:#888;font-weight:400">(opcional)</span></label>
+            <button type="button" id="btn-delta-t" onclick="toggleDeltaT()" style="font-size:11px;color:#267A25;background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;">Ver gráfico Delta T</button>
+          </div>
           <div class="campos-operacao">
             <div class="campo-num">
               <label for="temp-amb">Temperatura seca</label>
@@ -279,7 +282,7 @@
               <div class="unidade">%</div>
             </div>
           </div>
-          <div style="margin-top:12px;text-align:center;">
+          <div id="dt-chart-box" style="display:none;margin-top:12px;text-align:center;">
             <div id="dt-badge" class="dt-badge" style="display:none;margin-bottom:8px;justify-content:center;"></div>
             <svg id="dt-chart" viewBox="0 0 320 240" style="width:100%;max-width:560px;display:block;margin:0 auto;border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;"></svg>
           </div>
@@ -698,6 +701,14 @@
     }
 
     /* ── Delta T ──────────────────────────────────────────────────── */
+    function toggleDeltaT() {
+      var box = document.getElementById('dt-chart-box');
+      var btn = document.getElementById('btn-delta-t');
+      var visible = box.style.display !== 'none';
+      box.style.display = visible ? 'none' : 'block';
+      btn.textContent = visible ? 'Ver gráfico Delta T' : 'Ocultar gráfico';
+    }
+
     function _wetBulb(tdb, rh) {
       return tdb * Math.atan(0.151977 * Math.sqrt(rh + 8.313659)) +
              Math.atan(tdb + rh) - Math.atan(rh - 1.676331) +
