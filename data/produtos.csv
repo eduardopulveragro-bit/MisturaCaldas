@@ -33,7 +33,7 @@ Glufosinato,Glufusinato|Glufosinato de amônio|Finale|Liberty|Trusinate|Glufour|
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,pendente (2026-10-08)
-Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
+Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
 Methos,Methos 960 TM|S-metolacloro,,EC,11,herbicida EC Proventis — bula confirmada,pendente (2026-10-08)
 Ativon,Ativon Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,pendente (2026-10-08),cletodim
@@ -78,7 +78,7 @@ Amistar Top,Amistar,,SC,8,cadastro manual — produto comercial comum,2026-10-09
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
 Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+protioconazol
 Comet,Comet EC|Comet BASF,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
-Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
+Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox SC|Ciproconazol Nortox,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
 Spider,Spider WG|Spider 840|Diclosulam WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
 Classic,Classic WG|Clorimuron|Clorimuron-etilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
@@ -104,7 +104,7 @@ Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG,,WG,6,cadastro manual — 
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
 Tordon,Tordon SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,2,4-D+picloram
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
-Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
+Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
 Actara,Actara WG|Actara 250|Tiametoxam WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
 Boral,Boral SC|Boral 500|Sulfentrazona SC|Sulfentrazone|Sulfentrazona|Sulfentrazon,,SC,8,cadastro manual — produto comercial comum,2026-10-09,sulfentrazona
@@ -138,8 +138,8 @@ Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminic
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Transform|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
-Amistar,Amistar SC|Azoxistrobina SC|Azoxistrobina solo,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
-Recop,Recop WP|Oxicloreto de cobre|Cuprogarb|Cobre WP|Cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
+Amistar,Amistar SC|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
+Recop,Recop WP|Oxicloreto de cobre|Cuprogarb|Cobre WP|Cobre|Oxicloreto de Cobre Nortox|Cobre Nortox,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
 Velpar K,Velpar|Diuron Hexazinona|Advance,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
@@ -147,7 +147,7 @@ Propiconazol,Propiconazol Nortox|Tilt|Tilt EC|Juno,,EC,11,cadastro manual — fu
 Flutriafol,Flutriafol SC|Impact|Impact SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,flutriafol
 Thiobel,Thiobel 500|Cartape SP|Cartape,,SP,4,cadastro manual — inseticida SP comum,2026-10-09,cartape
 Fenpropatrina,Danimen|Danimen 300|Meothrin EC,,EC,11,cadastro manual — inseticida EC piretroide,2026-10-09,fenpropatrina
-Malationa,Malathion|Malatol|Malationa 500 EC,,EC,11,cadastro manual — inseticida EC generico,2026-10-09,malationa
+Malationa,Malathion|Malatol|Malationa 500 EC|Malationa Nortox|Malationa Nortox EC,,EC,11,cadastro manual — inseticida EC generico,2026-10-09,malationa
 Sivanto,Sivanto Prime|Sivanto SL|Flupyradifurone,,SL,16,cadastro manual — inseticida SL Bayer,2026-10-09,flupyradifurone
 Agree,Agree WG|Bt WG|Xentari WG,,WG,6,cadastro manual — biologico WG Bt,2026-10-09,bacillus thuringiensis
 Hexazinona,Hexazinona Nortox|Hexazinona SL,,SL,16,cadastro manual — herbicida SL cana,2026-10-09,hexazinona
@@ -160,7 +160,7 @@ Artea,Artea EC|Artea Syngenta,,EC,11,cadastro manual — fungicida EC Syngenta,2
 Guapo,Guapo SC|Guapo BASF,,SC,8,cadastro manual — fungicida SC BASF,2026-10-09,epoxiconazol+cresoxim-metilico
 Stroby,Stroby WG|Cresoxim-metilico WG,,WG,6,cadastro manual — fungicida WG estrobilurina,2026-10-09,cresoxim-metilico
 Manfil,Manfil WP|Manfil 800|Troia,,WP,5,cadastro manual — fungicida WP mancozebe,2026-10-09,mancozebe
-Provado,Provado SC|Provado 200 SC|Imidacloprido SC,,SC,8,cadastro manual — inseticida SC Bayer,2026-10-09,imidacloprido
+Provado,Provado SC|Provado 200 SC|Imidacloprido SC|Imidacloprido Nortox 700 SC|Imidacloprido Nortox,,SC,8,cadastro manual — inseticida SC Bayer,2026-10-09,imidacloprido
 Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC,,EC,11,cadastro manual — herbicida pre-emergente EC,2026-10-09,pendimetalina
 Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,,EC,11,cadastro manual — herbicida pre-emergente Syngenta,2026-10-09,s-metolacloro
 Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
@@ -326,7 +326,7 @@ Marafix 480 EC,Marafix|Marafix EC|Clorpirifos Marafix,,EC,11,inseticida EC — c
 Cloropirifos 480 EC,Cloropirifos|Clorpirifos 480|Cloropirifos EC generico,,EC,11,inseticida EC generico — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
 Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boro
 Stomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
-Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
+Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta|Nortrel|Nortrel Nortox|Paraquate Nortox SL,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
 Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,fosfito de potassio SL generico — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Picoxistrobina 250 SC,Picoxistrobina SC|Picoxistrobina generico,,SC,8,estrobilurina SC generica — IA busca web confirmou SC,2026-10-27,picoxistrobina
@@ -512,3 +512,13 @@ Bravo 720 SC,Bravo SC|Bravo 720|Bravo Syngenta Clorotalonil,,SC,8,pesquisa web �
 Actellic 500 DP,Actellic DP|Actellic Pó|Pirimifos-metil DP armazenamento,,SP,4,pesquisa web — inseticida grãos armazenados SP pirimifos-metil,2026-11-11,pirimifos-metil
 Sivanto One,Sivanto One SC|Sivanto One Bayer|Flupyradifurone SC nova versao,,SC,8,pesquisa web — inseticida SC Bayer flupyradifurone nova formulacao,2026-11-11,flupyradifurone
 Bay Fox SC,Bay Fox|Spirotetramate SC|Spirotetramat Bayer,,SC,8,pesquisa web — inseticida SC Bayer spirotetramate movento similar,2026-11-11,spirotetramate
+Trioxil SL,Trioxil|Trioxil Nortox|Glifosato+2.4-D SL Nortox,,SL,16,pesquisa web — Nortox,2026-11-11,"glifosato+2,4-D"
+Nortox 600 CS,Nortox 600|Clorpirifos CS Nortox|Nortox Clorpirifos CS 600,,CS,7,pesquisa web — Nortox,2026-11-11,clorpirifos-etilico
+Nortox Silicone SC,Silicone Nortox|Nortox Silicone|Espalhante Silicone Nortox,,ADJUVANTE,2,pesquisa web — Nortox,2026-11-11,surfactante siliconado
+Tiametoxam Nortox WG,Tiametoxam Nortox|Tiametoxam Nortox 250|Nortox 250 WG Tiametoxam,,WG,6,pesquisa web — Nortox,2026-11-11,tiametoxam
+Clotianidina Nortox WS,Clotianidina Nortox|Nortox Clotianidina|Clotianidina Nortox tratamento sementes,,WG,6,pesquisa web — Nortox,2026-11-11,clotianidina
+Alfa-cipermetrina Nortox EC,Alfa-cipermetrina Nortox 100 EC|Alfacipermetrina Nortox|Nortox Alfa-cipermetrina,,EC,11,pesquisa web — Nortox,2026-11-11,alfa-cipermetrina
+Bifentrina Nortox EC,Bifentrina Nortox 100 EC|Nortox Bifentrina|Bifentrina Nortox 100,,EC,11,pesquisa web — Nortox,2026-11-11,bifentrina
+Permetrina Nortox EC,Permetrina Nortox 384 EC|Nortox Permetrina|Permetrina Nortox,,EC,11,pesquisa web — Nortox,2026-11-11,permetrina
+Lambda Nortox CS,Lambda-cialotrina Nortox CS|Lambda Nortox 50 CS|Nortox Lambda CS,,CS,7,pesquisa web — Nortox,2026-11-11,lambda-cialotrina
+Metribuzin Nortox WP,Metribuzim Nortox|Metribuzin Nortox WP|Nortox Metribuzim 480,,WP,5,pesquisa web — Nortox,2026-11-11,metribuzim
