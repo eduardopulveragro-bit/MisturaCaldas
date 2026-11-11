@@ -38,9 +38,9 @@ def _headers():
     }
 
 
-def _supa_listar() -> list[dict]:
+def _supa_listar(usuario_id: str) -> list[dict]:
     r = requests.get(
-        f"{_SUPA_URL}/rest/v1/clientes?select=*&order=criado_em.asc",
+        f"{_SUPA_URL}/rest/v1/clientes?usuario_id=eq.{usuario_id}&select=*&order=criado_em.asc",
         headers=_headers(), timeout=10
     )
     r.raise_for_status()
@@ -153,10 +153,13 @@ def _lock_clientes():
 
 # ── API pública ──────────────────────────────────────────────────────────────
 
-def listar() -> list[dict]:
+def listar(usuario_id: str = "") -> list[dict]:
     if _USA_SUPABASE:
-        return _supa_listar()
-    return _carregar()
+        return _supa_listar(usuario_id)
+    clientes = _carregar()
+    if usuario_id:
+        clientes = [c for c in clientes if c.get("usuario_id") == usuario_id]
+    return clientes
 
 
 def buscar(cliente_id: str) -> dict | None:

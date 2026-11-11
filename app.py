@@ -462,7 +462,7 @@ def pagina_clientes():
 @app.route("/api/clientes", methods=["GET"])
 @login_required
 def api_listar_clientes():
-    return jsonify(clientes_mod.listar())
+    return jsonify(clientes_mod.listar(current_user.id))
 
 
 @app.route("/api/clientes", methods=["POST"])
