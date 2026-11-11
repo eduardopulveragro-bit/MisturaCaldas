@@ -988,6 +988,17 @@
         infoY += 5;
       }
 
+      // Data no bloco de info
+      var hoje = new Date();
+      var dataTxt = hoje.toLocaleDateString('pt-BR');
+      doc.setFontSize(10);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(40, 40, 40);
+      doc.text('Data:', textX, infoY);
+      doc.setFont('helvetica', 'normal');
+      doc.text(dataTxt, textX + doc.getTextWidth('Data: ') + 1.5, infoY);
+      infoY += 5;
+
       y = Math.max(y + logoH, infoY) + 3;
 
       // Linha separadora
@@ -1014,17 +1025,31 @@
         y += 13;
       }
 
-      // Taxa / área / data numa linha
+      // Taxa / área — dois cards verdes lado a lado
       var op = dadosAtual.operacao;
       var vazaoTxt = (op && op.vazao_L_ha) ? op.vazao_L_ha + ' L/ha' : '---';
       var areaTxt = (op && op.area_tanque_ha) ? op.area_tanque_ha + ' ha' : '---';
-      var hoje = new Date();
-      var dataTxt = hoje.toLocaleDateString('pt-BR');
-      doc.setFontSize(10);
+      var boxX = 15, boxW = pw - 30, boxH = 16;
+      doc.setFillColor(27, 94, 32);
+      doc.roundedRect(boxX, y, boxW, boxH, 2.5, 2.5, 'F');
+      doc.setDrawColor(255, 255, 255);
+      doc.setLineWidth(0.3);
+      doc.setLineDash([1, 1], 0);
+      doc.line(boxX + boxW / 2, y + 3, boxX + boxW / 2, y + boxH - 3);
+      doc.setLineDash([], 0);
+      var midL = boxX + boxW / 4;
+      var midR = boxX + boxW * 3 / 4;
+      doc.setFontSize(7);
       doc.setFont('helvetica', 'normal');
-      doc.setTextColor(80, 80, 80);
-      doc.text('Taxa: ' + vazaoTxt + '   |   Área/tanque: ' + areaTxt + '   |   Data: ' + dataTxt, 15, y + 4);
-      y += 9;
+      doc.setTextColor(180, 220, 180);
+      doc.text('Taxa de aplicação', midL, y + 5.5, { align: 'center' });
+      doc.text('Área/tanque', midR, y + 5.5, { align: 'center' });
+      doc.setFontSize(12);
+      doc.setFont('helvetica', 'bold');
+      doc.setTextColor(255, 255, 255);
+      doc.text(vazaoTxt, midL, y + 12.5, { align: 'center' });
+      doc.text(areaTxt, midR, y + 12.5, { align: 'center' });
+      y += boxH + 3;
 
       doc.setDrawColor(200, 200, 200);
       doc.setLineWidth(0.2);
