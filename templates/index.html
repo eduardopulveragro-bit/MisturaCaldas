@@ -1156,6 +1156,11 @@
       const hoje = new Date().toISOString().split('T')[0];
       document.getElementById('hst-data').value = hoje;
       document.getElementById('hst-status').textContent = '';
+      // pré-seleciona a fazenda já escolhida no formulário principal (consultor)
+      const fazendaSel = document.getElementById('hst-fazenda');
+      if (fazendaSel && clienteSel && clienteSel.value) {
+        fazendaSel.value = clienteSel.value;
+      }
       document.getElementById('modal-historico').classList.add('ativo');
     }
 
