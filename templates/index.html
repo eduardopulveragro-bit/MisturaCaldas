@@ -721,7 +721,25 @@
       }
     }
 
-    function gerarPDF() {
+    function _svgToPng(svgEl) {
+      return new Promise(function(resolve, reject) {
+        var svgStr = new XMLSerializer().serializeToString(svgEl);
+        var blob = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
+        var url = URL.createObjectURL(blob);
+        var img = new Image();
+        img.onload = function() {
+          var canvas = document.createElement('canvas');
+          canvas.width = 640; canvas.height = 480;
+          canvas.getContext('2d').drawImage(img, 0, 0, 640, 480);
+          URL.revokeObjectURL(url);
+          resolve(canvas.toDataURL('image/png'));
+        };
+        img.onerror = function() { URL.revokeObjectURL(url); reject(); };
+        img.src = url;
+      });
+    }
+
+    async function gerarPDF() {
       if (!dadosAtual) return;
       var jsPDF = window.jspdf.jsPDF;
       var doc = new jsPDF('p', 'mm', 'a4');
@@ -931,6 +949,22 @@
           pw / 2, pdfNextY + 6.5, { align: 'center' }
         );
         pdfNextY += 14;
+
+        // Gráfico Delta T como imagem
+        try {
+          var chartSvg = document.getElementById('dt-chart');
+          var chartPng = await _svgToPng(chartSvg);
+          var chartW = 150, chartH = chartW * (240 / 320);
+          var chartX = (pw - chartW) / 2;
+          if (pdfNextY + chartH + 6 > 285) { doc.addPage(); pdfNextY = 10; }
+          doc.setFontSize(9);
+          doc.setFont('helvetica', 'bold');
+          doc.setTextColor(80, 80, 80);
+          doc.text('Gráfico Delta T — Condições de pulverização', pw / 2, pdfNextY, {align:'center'});
+          pdfNextY += 4;
+          doc.addImage(chartPng, 'PNG', chartX, pdfNextY, chartW, chartH);
+          pdfNextY += chartH + 4;
+        } catch(e) {}
       }
 
       var obsTexto = (document.getElementById('observacao').value || '').trim();
