@@ -200,9 +200,10 @@
         </div>
         {% else %}
         <div style="margin-bottom: 14px;">
-          <label>Fazenda</label>
-          <div id="fazenda-nome" style="border:1px solid #e0e0e0;border-radius:6px;padding:10px 12px;font-size:14px;background:#f8f9fa;color:#333;min-height:42px;"></div>
-          <input type="hidden" id="cliente-sel" value="">
+          <label for="cliente-sel">Pulverizador</label>
+          <select id="cliente-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
+            <option value="">-- Selecione o pulverizador --</option>
+          </select>
         </div>
         {% endif %}
         <div style="margin-bottom: 14px;">
@@ -431,31 +432,10 @@
             opt.dataset.cliente = JSON.stringify(c);
             clienteSel.appendChild(opt);
           });
-        } else if (clienteSel) {
-          const nomeEl = document.getElementById('fazenda-nome');
-          if (clientes.length > 0) {
-            const c = clientes[0];
-            clienteSel.value = c.id;
-            if (nomeEl) nomeEl.textContent = c.nome;
-            const cfgs = c.configs || [];
-            if (cfgs.length > 0) {
-              if (cfgs[0].vazao_L_ha != null) document.getElementById('vazao').value = cfgs[0].vazao_L_ha;
-              if (cfgs[0].area_tanque_ha != null) document.getElementById('area').value = cfgs[0].area_tanque_ha;
-            } else {
-              if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
-              if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
-            }
-            obsField.value = c.observacao || '';
-            if (c.pontas && c.pontas.length > 0) {
-              c.pontas.forEach(p => {
-                const o = document.createElement('option');
-                o.value = p; o.textContent = p;
-                pontaSel.appendChild(o);
-              });
-              pontasPressaoDiv.style.display = 'block';
-            }
-          } else {
-            if (nomeEl) nomeEl.textContent = 'Nenhuma fazenda cadastrada';
+          // seleciona automaticamente se só tem um
+          if (clientes.length === 1) {
+            clienteSel.value = clientes[0].id;
+            clienteSel.dispatchEvent(new Event('change'));
           }
         }
       } catch (e) {}
