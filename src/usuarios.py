@@ -97,6 +97,13 @@ def verificar_senha(email: str, senha: str) -> dict | None:
     return None
 
 
+def excluir(user_id: str) -> None:
+    requests.delete(
+        f"{_SUPA_URL}/rest/v1/usuarios?id=eq.{user_id}",
+        headers={**_headers(), "Prefer": "return=minimal"}, timeout=10,
+    ).raise_for_status()
+
+
 def atualizar_ativo(user_id: str, ativo: bool) -> None:
     requests.patch(
         f"{_SUPA_URL}/rest/v1/usuarios?id=eq.{user_id}",

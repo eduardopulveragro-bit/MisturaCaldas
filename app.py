@@ -351,6 +351,19 @@ def admin_toggle_usuario(user_id):
     return redirect(url_for("admin_usuarios"))
 
 
+@app.route("/admin/usuarios/<user_id>/excluir", methods=["POST"])
+@login_required
+def admin_excluir_usuario(user_id):
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
+    if user_id == current_user.id:
+        return redirect(url_for("admin_usuarios"))
+    usuario = usuarios_mod.buscar_por_id(user_id)
+    if usuario and not usuario.get("ativo", True):
+        usuarios_mod.excluir(user_id)
+    return redirect(url_for("admin_usuarios"))
+
+
 # ── API ───────────────────────────────────────────────────────────────────────
 
 @app.route("/processar", methods=["POST"])
