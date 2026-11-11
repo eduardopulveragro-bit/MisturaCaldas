@@ -113,6 +113,8 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     from src.busca_produto import buscar_produto_ia, salvar_produto
 
     formulacoes_usuario = formulacoes_usuario or {}
+    # lookup case-insensitive para tolerar diferenças de capitalização entre chamadas
+    _form_usr_lower = {k.lower(): v for k, v in formulacoes_usuario.items()}
     produtos = _carregar_csv(DATA_DIR / "produtos.csv")
     resultado = []
 
@@ -131,7 +133,7 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
             continue
 
         # Formulação informada pelo usuário via interface (antes da IA para não desperdiçar chamada)
-        form_usuario = formulacoes_usuario.get(item["produto"], "").upper()
+        form_usuario = _form_usr_lower.get(item["produto"].lower(), "").upper()
         if form_usuario:
             pos_usr = _FORMULACAO_PARA_POSICAO.get(form_usuario) or _FORM_ESPECIAL_POSICAO.get(form_usuario)
             if pos_usr:

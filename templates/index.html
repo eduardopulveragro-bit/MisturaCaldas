@@ -553,9 +553,14 @@
 
         const desconhecidos = dados.ordem.filter(it => (it.formulacao || '').toUpperCase() === 'DESCONHECIDA');
 
-        if (desconhecidos.length > 0 && !formulacoesExtra) {
+        // Produtos ainda desconhecidos que o usuário NÃO selecionou (nova pergunta)
+        // ou que ainda faltam resposta (re-pergunta quando lookup falhou)
+        const jaRespondidos = new Set(Object.keys(formulacoesExtra || {}));
+        const precisamResposta = desconhecidos.filter(it => !jaRespondidos.has(it.produto));
+
+        if (precisamResposta.length > 0) {
           perguntasLista.innerHTML = '';
-          desconhecidos.forEach(it => {
+          precisamResposta.forEach(it => {
             perguntasLista.appendChild(criarSelect(it.produto));
           });
           perguntaForm.style.display = 'block';
