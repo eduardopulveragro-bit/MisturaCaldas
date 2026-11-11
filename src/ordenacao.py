@@ -276,12 +276,23 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
         primeiro_sl = sls[0]
 
     dose_ml = _dose_em_ml(primeiro_sl)
-    tem_po_suspensao = any(item["posicao"] in (5, 6) for item in resultado)
+    tem_po_suspensao = any(item["posicao"] in (5, 6, 7, 8) for item in resultado)
     deve_mover = len(sls) >= 2 or dose_ml >= 2500 or (dose_ml >= 2000 and tem_po_suspensao)
     if not deve_mover:
         return resultado
 
     resultado.remove(primeiro_sl)
+
+    # SL de alto volume (>=2.5 L/ha) e nao e glifosato nem 2,4-D: vai primeiro
+    # para dilucao maxima na agua do tanque
+    if dose_ml >= 2500 and not tem_glif_sl and not tem_24d_sl:
+        ponto = 0
+        for i, item in enumerate(resultado):
+            if item["posicao"] <= 2:  # condicionadores/antiespumantes tem prioridade
+                ponto = i + 1
+        primeiro_sl["posicao"] = 3  # antes de solidos WP/SC
+        resultado.insert(ponto, primeiro_sl)
+        return resultado
 
     ponto = 0
     for i, item in enumerate(resultado):
