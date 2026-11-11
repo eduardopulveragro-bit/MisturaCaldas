@@ -484,3 +484,31 @@ Methomex SC,Methomex|Methomex Nortox|Metomil SC Nortox,,SC,8,pesquisa web — so
 Baythroid SC,Baythroid|Baythroid Bayer|Beta-ciflutrina SC Bayer,,SC,8,pesquisa web — soja/milho,2026-11-11,beta-ciflutrina
 Rumo SC,Rumo|Rumo BASF|Mancozebe+Piraclostrobina SC BASF,,SC,8,pesquisa web — soja/milho,2026-11-11,mancozebe+piraclostrobina
 Prevathon SC,Prevathon|Prevathon FMC|Prevathon 300 SC|Clorantraniliprole FMC SC,,SC,8,pesquisa web — soja/milho,2026-11-11,clorantraniliprole
+Muralla Delta EC,Muralla Delta|Imidacloprido+Deltametrina EC Bayer,,EC,11,pesquisa web — inseticidas soja/milho por empresa,2026-11-11,imidacloprido+deltametrina
+Bariachi EC,Bariachi|Bariachi Bayer|Bifentrina+Imidacloprido EC Bayer,,EC,11,pesquisa web — inseticidas soja/milho por empresa,2026-11-11,bifentrina+imidacloprido
+Proline 250 EC,Proline|Proline EC|Proline Bayer|Protioconazol Bayer,,EC,11,pesquisa web — fungicida EC Bayer protioconazol,2026-11-11,protioconazol
+Pulsar 40 SL,Pulsar|Pulsar SL|Pulsar BASF|Imazapique+Imazapir SL,,SL,16,pesquisa web — herbicida SL BASF imazapique+imazapir soja,2026-11-11,imazapique+imazapir
+Gaucho 600 FS,Gaucho|Gaucho Bayer|Gaucho FS|Imidacloprido FS Bayer,,SC,8,pesquisa web — tratamento sementes inseticida Bayer imidacloprido,2026-11-11,imidacloprido
+Cruiser 350 FS,Cruiser|Cruiser Syngenta|Cruiser FS|Tiametoxam FS Syngenta,,SC,8,pesquisa web — tratamento sementes inseticida Syngenta tiametoxam,2026-11-11,tiametoxam
+Sumicidin 25 EC,Sumicidin|Sumicidin EC|Fenvalerato EC Sumitomo,,EC,11,pesquisa web — inseticida piretroide EC Sumitomo,2026-11-11,fenvalerato
+Atabron 500 SC,Atabron|Atabron SC|Clorfluazurom SC UPL,,SC,8,pesquisa web — inseticida regulador crescimento UPL lagartas,2026-11-11,clorfluazurom
+Danitol 100 EC,Danitol|Danitol EC|Danitol Sumitomo|Fenpropathrin EC,,EC,11,pesquisa web — acaricida/inseticida EC Sumitomo,2026-11-11,fenpropathrin
+Sumilarv 0.5 WP,Sumilarv|Sumilarv WP|Piriproxifeno WP Sumitomo,,WP,5,pesquisa web — inseticida regulador crescimento Sumitomo piriproxifeno,2026-11-11,piriproxifeno
+Diazonon 600 EC,Diazonon|Diazonon EC|Diazinon EC Adama,,EC,11,pesquisa web — inseticida organofosforado EC diazinon,2026-11-11,diazinon
+Supracide 400 EC,Supracide|Supracide EC|IHARA Supracide|Metidation EC,,EC,11,pesquisa web — inseticida organofosforado EC IHARA pragas sugadores,2026-11-11,metidation
+Pounce 384 EC,Pounce|Pounce EC|Pounce Corteva|Permetrina 384 EC Corteva,,EC,11,pesquisa web — inseticida piretroide EC Corteva permetrina,2026-11-11,permetrina
+Rufast 100 EC,Rufast|Rufast BASF|Alfacipermetrina 100 EC BASF|Alfa-cipermetrina EC,,EC,11,pesquisa web — inseticida piretroide EC BASF alfa-cipermetrina,2026-11-11,alfa-cipermetrina
+Lannate 25 WP,Lannate WP|Lannate 25|Metomil 25 WP|Metomil WP Corteva,,WP,5,pesquisa web — inseticida WP metomil formulacao po molhavel,2026-11-11,metomil
+Talstar S SC,Talstar S|Talstar S SC|Bifentrina+Espinosade SC FMC,,SC,8,pesquisa web — inseticida SC FMC bifentrina+espinosade lagartas,2026-11-11,bifentrina+espinosade
+Nortox 500 EC,Nortox 500|Nortox Deltametrina Triazofos|Deltametrina+Triazofos EC Nortox,,EC,11,pesquisa web — inseticida EC Nortox piretroide+organofosforado,2026-11-11,deltametrina+triazofos
+Galil CE 100 EC,Galil CE|Galil EC Adama|Lambda-cialotrina 100 EC Adama,,EC,11,pesquisa web — inseticida piretroide EC Adama lambda-cialotrina,2026-11-11,lambda-cialotrina
+Dursban 480 EC,Dursban|Dursban EC|Dursban BR|Clorpirifos Corteva Dow,,EC,11,pesquisa web — inseticida EC Corteva clorpirifos marca Dursban,2026-11-11,clorpirifos-etilico
+Poncho Beta FS,Poncho Beta|Clotianidina+Beta-ciflutrina TS Bayer|Poncho Beta SC,,SC,8,pesquisa web — tratamento sementes Bayer clotianidina+beta-ciflutrina,2026-11-11,clotianidina+beta-ciflutrina
+Engeo Pleno SC,Engeo Pleno 247|Engeo SC Original|Tiametoxam 141+Lambda 106 SC,,SC,8,pesquisa web — inseticida SC Syngenta versao original alta dose,2026-11-11,tiametoxam+lambda-cialotrina
+Platinum 600 FS,Platinum|Platinum FS|Platinum Syngenta|Tiametoxam 600 FS,,SC,8,pesquisa web — tratamento sementes Syngenta tiametoxam 600 FS,2026-11-11,tiametoxam
+Talcord 250 EC,Talcord|Talcord EC|Talcord Adama|Permetrina EC Adama,,EC,11,pesquisa web — inseticida piretroide EC Adama permetrina 250,2026-11-11,permetrina
+Warrior CS,Warrior|Warrior CS|Lambda-cialotrina CS Syngenta urbano,,CS,7,pesquisa web — inseticida CS Syngenta lambda-cialotrina,2026-11-11,lambda-cialotrina
+Bravo 720 SC,Bravo SC|Bravo 720|Bravo Syngenta Clorotalonil,,SC,8,pesquisa web — fungicida multissitio SC Syngenta clorotalonil,2026-11-11,clorotalonil
+Actellic 500 DP,Actellic DP|Actellic Pó|Pirimifos-metil DP armazenamento,,SP,4,pesquisa web — inseticida grãos armazenados SP pirimifos-metil,2026-11-11,pirimifos-metil
+Sivanto One,Sivanto One SC|Sivanto One Bayer|Flupyradifurone SC nova versao,,SC,8,pesquisa web — inseticida SC Bayer flupyradifurone nova formulacao,2026-11-11,flupyradifurone
+Bay Fox SC,Bay Fox|Spirotetramate SC|Spirotetramat Bayer,,SC,8,pesquisa web — inseticida SC Bayer spirotetramate movento similar,2026-11-11,spirotetramate
