@@ -129,6 +129,8 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
                 "registro_mapa": info["registro_mapa"],
                 "fonte": info.get("fonte", ""),
                 "pendente": "pendente" in info.get("data_conferencia", ""),
+                "_principio_ativo": _normalizar(info.get("principio_ativo", "") or ""),
+                "_nome_cadastrado": _normalizar(info.get("nome", "") or ""),
             })
             continue
 
@@ -199,14 +201,23 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     return resultado
 
 
+def _textos_item(item: dict) -> list[str]:
+    """Retorna todos os textos disponíveis para identificar o produto."""
+    return [
+        _normalizar(item.get("produto", "") or ""),
+        item.get("_principio_ativo", "") or "",
+        item.get("_nome_cadastrado", "") or "",
+    ]
+
+
 def _eh_glifosato(item: dict) -> bool:
-    nome = _normalizar(item["produto"])
-    return any(x in nome for x in ("glifosato", "roundup", "glifos"))
+    termos = ("glifosato", "roundup", "glifos", "glyphosate")
+    return any(t in txt for txt in _textos_item(item) for t in termos)
 
 
 def _eh_24d(item: dict) -> bool:
-    nome = _normalizar(item["produto"])
-    return any(x in nome for x in ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46", "tordon"))
+    termos = ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46", "tordon")
+    return any(t in txt for txt in _textos_item(item) for t in termos)
 
 
 def _eh_graminicida_ec(item: dict) -> bool:
