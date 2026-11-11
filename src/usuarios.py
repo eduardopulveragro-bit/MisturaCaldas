@@ -134,14 +134,9 @@ def migrar_tabela() -> dict:
       ADD COLUMN IF NOT EXISTS tipo text NOT NULL DEFAULT 'produtor',
       ADD COLUMN IF NOT EXISTS onboarding_completo boolean NOT NULL DEFAULT false;
     """
-    headers_pg = {
-        "apikey": _SUPA_KEY,
-        "Authorization": f"Bearer {_SUPA_KEY}",
-        "Content-Type": "application/json",
-    }
     r = requests.post(
-        f"{_SUPA_URL}/pg/query",
-        headers=headers_pg,
+        f"{_SUPA_URL}/rest/v1/rpc/exec_sql",
+        headers={**_headers(), "Prefer": ""},
         json={"query": sql},
         timeout=15,
     )
@@ -149,7 +144,7 @@ def migrar_tabela() -> dict:
 
 
 def criar_tabela() -> dict:
-    """Cria a tabela usuarios via API pg-meta do Supabase (uso único no /init-db)."""
+    """Cria a tabela usuarios via RPC exec_sql do Supabase (uso único no /init-db)."""
     sql = """
     CREATE TABLE IF NOT EXISTS usuarios (
       id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
@@ -164,14 +159,9 @@ def criar_tabela() -> dict:
       criado_em timestamptz DEFAULT now()
     );
     """
-    headers_pg = {
-        "apikey": _SUPA_KEY,
-        "Authorization": f"Bearer {_SUPA_KEY}",
-        "Content-Type": "application/json",
-    }
     r = requests.post(
-        f"{_SUPA_URL}/pg/query",
-        headers=headers_pg,
+        f"{_SUPA_URL}/rest/v1/rpc/exec_sql",
+        headers={**_headers(), "Prefer": ""},
         json={"query": sql},
         timeout=15,
     )

@@ -114,10 +114,9 @@ def migrar_tabela() -> dict:
       ADD COLUMN IF NOT EXISTS notas text NOT NULL DEFAULT '',
       ADD COLUMN IF NOT EXISTS talhao text NOT NULL DEFAULT '';
     """
-    key = os.environ.get("SUPABASE_SERVICE_KEY", "")
     r = requests.post(
-        os.environ.get("SUPABASE_URL", "").rstrip("/") + "/pg/query",
-        headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+        _url("/rest/v1/rpc/exec_sql"),
+        headers={**_headers(), "Prefer": ""},
         json={"query": sql},
         timeout=15,
     )
