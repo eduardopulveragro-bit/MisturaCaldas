@@ -930,17 +930,6 @@
 
       var textX = logoW ? logoX + logoW + 6 : 15;
 
-      // Titulo
-      doc.setFontSize(17);
-      doc.setFont('helvetica', 'bold');
-      doc.setTextColor(27, 94, 32);
-      doc.text('FieldMix', textX, y + 6);
-
-      doc.setFontSize(10);
-      doc.setFont('helvetica', 'normal');
-      doc.setTextColor(100, 100, 100);
-      doc.text('Mistura Certa', textX, y + 12);
-
       // Cliente
       var clienteSelEl = document.getElementById('cliente-sel');
       var clienteNome = '';
@@ -951,7 +940,7 @@
         var fazNomeEl = document.getElementById('fazenda-nome');
         clienteNome = fazNomeEl ? fazNomeEl.textContent.trim() : '';
       }
-      var infoY = y + 17;
+      var infoY = y + 6;
       if (clienteNome) {
         doc.setFontSize(10);
         doc.setFont('helvetica', 'bold');
@@ -968,9 +957,9 @@
         doc.setFontSize(10);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(40, 40, 40);
-        doc.text('Aplicação:', textX, infoY);
+        doc.text('Talhão:', textX, infoY);
         doc.setFont('helvetica', 'normal');
-        doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Aplicação: ') + 1.5, infoY);
+        doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Talhão: ') + 1.5, infoY);
         infoY += 5;
       }
 
