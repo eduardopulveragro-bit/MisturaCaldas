@@ -125,6 +125,29 @@ def atualizar_onboarding(user_id: str, tipo: str, config_equipamento=None) -> bo
         return False
 
 
+def migrar_tabela() -> dict:
+    """Adiciona colunas tipo e onboarding_completo se ainda não existirem."""
+    if not _disponivel():
+        return {"status": 503, "body": "Supabase não configurado"}
+    sql = """
+    ALTER TABLE usuarios
+      ADD COLUMN IF NOT EXISTS tipo text NOT NULL DEFAULT 'produtor',
+      ADD COLUMN IF NOT EXISTS onboarding_completo boolean NOT NULL DEFAULT false;
+    """
+    headers_pg = {
+        "apikey": _SUPA_KEY,
+        "Authorization": f"Bearer {_SUPA_KEY}",
+        "Content-Type": "application/json",
+    }
+    r = requests.post(
+        f"{_SUPA_URL}/pg/query",
+        headers=headers_pg,
+        json={"query": sql},
+        timeout=15,
+    )
+    return {"status": r.status_code, "body": r.text}
+
+
 def criar_tabela() -> dict:
     """Cria a tabela usuarios via API pg-meta do Supabase (uso único no /init-db)."""
     sql = """
@@ -135,6 +158,8 @@ def criar_tabela() -> dict:
       password_hash text NOT NULL,
       ativo boolean DEFAULT true,
       admin boolean DEFAULT false,
+      tipo text NOT NULL DEFAULT 'produtor',
+      onboarding_completo boolean NOT NULL DEFAULT false,
       plano text DEFAULT 'trial',
       criado_em timestamptz DEFAULT now()
     );

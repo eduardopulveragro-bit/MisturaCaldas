@@ -63,7 +63,7 @@ def nao_autorizado():
 _SKIP_ONBOARDING = {
     "login", "logout", "cadastro", "setup",
     "onboarding", "onboarding_equipamentos",
-    "static", "favicon", "webhook", "init_db",
+    "static", "favicon", "webhook", "init_db", "init_db_historico", "migrate_db",
     "historico", "api_historico_listar", "api_historico_criar", "api_historico_excluir",
 }
 
@@ -119,6 +119,15 @@ def init_db():
     resultado = usuarios_mod.criar_tabela()
     if resultado["status"] == 200:
         return jsonify({"ok": True, "msg": "Tabela usuarios criada com sucesso."})
+    return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
+
+
+@app.route("/migrate-db")
+def migrate_db():
+    """Adiciona colunas tipo/onboarding_completo se não existirem. Idempotente."""
+    resultado = usuarios_mod.migrar_tabela()
+    if resultado["status"] in (200, 201, 204):
+        return jsonify({"ok": True, "msg": "Migração aplicada (ou já estava atualizada)."})
     return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
 
 
