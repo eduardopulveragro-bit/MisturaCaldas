@@ -291,8 +291,8 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
     tem_po_suspensao = any(item["posicao"] in (5, 6) and not _eh_heat(item) for item in resultado)
 
     if tem_glif_sl and tem_24d_sl:
-        # Ambos SL: move GLIFOSATO cedo (primeiro SL); 2,4-D vai pro final via _separar_glif_24d
-        primeiro_sl = next(s for s in sls if _eh_glifosato(s))
+        # Ambos SL: move 2,4-D logo após pós/adjuvantes; glif vai antes do foliar via _separar_glif_24d
+        primeiro_sl = next(s for s in sls if _eh_24d(s))
     elif tem_glif_sl:
         # Glifosato + outros SLs: mover glifosato para região EC (separar dos outros SLs)
         primeiro_sl = next(s for s in sls if _eh_glifosato(s))
@@ -328,19 +328,30 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
         resultado.insert(ponto, primeiro_sl)
         return resultado
 
-    # Glif/24D: posicionar apos ultimos ECs (antes do oleo e dos SLs restantes)
-    ponto = 0
-    for i, item in enumerate(resultado):
-        if item["posicao"] < 12:
-            ponto = i + 1
-
-    if ponto == 0:
+    # 2,4-D com glif SL: logo após pós/adjuvantes (antes dos ECs)
+    # Outros casos (glif sozinho, etc.): após últimos ECs
+    if tem_glif_sl and tem_24d_sl and _eh_24d(primeiro_sl):
+        ponto = 0
         for i, item in enumerate(resultado):
-            if item["posicao"] <= 2:
+            if item["posicao"] <= 6:
                 ponto = i + 1
+        if ponto == 0:
+            for i, item in enumerate(resultado):
+                if item["posicao"] <= 2:
+                    ponto = i + 1
+        primeiro_sl["posicao"] = 7  # entre WG(6) e EC(11)
+    else:
+        ponto = 0
+        for i, item in enumerate(resultado):
+            if item["posicao"] < 12:
+                ponto = i + 1
+        if ponto == 0:
+            for i, item in enumerate(resultado):
+                if item["posicao"] <= 2:
+                    ponto = i + 1
+        # posicao=11 para que _posicionar_oleo nao insira oleo antes deste SL
+        primeiro_sl["posicao"] = 11
 
-    # posicao=11 para que _posicionar_oleo nao insira oleo antes deste SL
-    primeiro_sl["posicao"] = 11
     resultado.insert(ponto, primeiro_sl)
     return resultado
 
@@ -450,11 +461,11 @@ def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
     if not item_24d or not item_glif:
         return resultado
 
-    if item_glif["posicao"] <= 11:
-        # Glif WG (pos≤6) ou glif SL movido cedo (pos=11): 2,4-D vai pro final
+    if item_glif["posicao"] <= 6:
+        # Glif WG (pos≤6, sólido): posição cedo natural → 2,4-D vai pro final
         para_final = item_24d
     else:
-        # Glif ainda em posição normal (pos=16): glif vai pro final
+        # Glif SL (pos=7 ou 16): vai antes dos foliares; 24D já foi colocado cedo
         para_final = item_glif
 
     idx = resultado.index(para_final)
