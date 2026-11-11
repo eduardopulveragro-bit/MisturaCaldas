@@ -122,6 +122,15 @@ def init_db():
     return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
 
 
+@app.route("/init-db-historico")
+def init_db_historico():
+    """Cria a tabela historico_caldas no Supabase. Visitar uma vez após o deploy."""
+    resultado = historico_mod.criar_tabela()
+    if resultado["status"] in (200, 201, 204):
+        return jsonify({"ok": True, "msg": "Tabela historico_caldas criada com sucesso."})
+    return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
+
+
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
     if current_user.is_authenticated:
@@ -180,16 +189,16 @@ def setup():
 @app.route("/onboarding", methods=["GET", "POST"])
 @login_required
 def onboarding():
-    if current_user.onboarding_completo:
+    if current_user.onboarding_completo and not session.get("onboarding_tipo"):
         return redirect(url_for("index"))
     if request.method == "POST":
         tipo = request.form.get("tipo")
         if tipo not in ("produtor", "consultor"):
             return render_template("onboarding_tipo.html", erro="Escolha um tipo.")
-        if tipo == "produtor":
+        if tipo == "consultor":
             usuarios_mod.atualizar_onboarding(current_user.id, tipo)
             session["onboarding_done"] = True
-            return redirect(url_for("index"))
+            return redirect(url_for("pagina_clientes"))
         session["onboarding_tipo"] = tipo
         return redirect(url_for("onboarding_equipamentos"))
     return render_template("onboarding_tipo.html")
@@ -198,15 +207,19 @@ def onboarding():
 @app.route("/onboarding/equipamentos", methods=["GET", "POST"])
 @login_required
 def onboarding_equipamentos():
-    if current_user.onboarding_completo:
+    if current_user.onboarding_completo and not session.get("onboarding_tipo"):
         return redirect(url_for("index"))
     if request.method == "POST":
-        tipo = session.pop("onboarding_tipo", "consultor")
+        tipo = session.pop("onboarding_tipo", "produtor")
         try:
             pulverizadores = _json.loads(request.form.get("pulverizadores_json", "[]"))
         except _json.JSONDecodeError:
             pulverizadores = []
-        usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores})
+        try:
+            talhoes = _json.loads(request.form.get("talhoes_json", "[]"))
+        except _json.JSONDecodeError:
+            talhoes = []
+        usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores, "talhoes": talhoes})
         session["onboarding_done"] = True
         return redirect(url_for("index"))
     return render_template("onboarding_equipamentos.html")
@@ -228,6 +241,9 @@ def admin_usuarios():
     if not current_user.admin:
         return redirect(url_for("index"))
     usuarios = usuarios_mod.listar()
+    contagem_caldas = historico_mod.contar_todos()
+    for u in usuarios:
+        u["num_caldas"] = contagem_caldas.get(u["id"], 0)
     return render_template("admin_usuarios.html", usuarios=usuarios)
 
 

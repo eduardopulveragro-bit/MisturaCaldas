@@ -126,6 +126,22 @@
     .btn-modal-cancelar { background: #e0e0e0; color: #333; }
     .btn-modal-cancelar:hover { background: #bdbdbd; }
 
+    /* Banner PWA */
+    .pwa-banner {
+      display: none; position: fixed; bottom: 16px; left: 16px; right: 16px;
+      background: white; border-radius: 12px; padding: 12px 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.22); z-index: 1200;
+      align-items: center; gap: 12px; max-width: 480px; margin: 0 auto;
+    }
+    .pwa-banner.visivel { display: flex; }
+    .pwa-banner img { width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; }
+    .pwa-banner-info { flex: 1; min-width: 0; }
+    .pwa-banner-info strong { display: block; font-size: 14px; color: #10315A; }
+    .pwa-banner-info span { font-size: 12px; color: #666; }
+    .btn-instalar-pwa { background: #10315A; color: white; border: none; border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+    .btn-instalar-pwa:hover { background: #1a4070; }
+    .btn-fechar-banner { background: none; border: none; font-size: 22px; color: #bbb; cursor: pointer; padding: 0 2px; flex-shrink: 0; line-height: 1; }
+
     .alerta-incomp {
       border-radius: 6px; padding: 10px 14px; margin-bottom: 10px;
       font-size: 13px; font-weight: 600; line-height: 1.5;
@@ -175,12 +191,20 @@
   <main>
     <div class="card">
       <form id="form">
+        {% if current_user.tipo == 'consultor' %}
         <div style="margin-bottom: 14px;">
-          <label for="cliente-sel">Cliente</label>
+          <label for="cliente-sel">Fazenda / Cliente</label>
           <select id="cliente-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
             <option value="">-- Sem cliente --</option>
           </select>
         </div>
+        {% else %}
+        <div style="margin-bottom: 14px;">
+          <label>Fazenda</label>
+          <div id="fazenda-nome" style="border:1px solid #e0e0e0;border-radius:6px;padding:10px 12px;font-size:14px;background:#f8f9fa;color:#333;min-height:42px;"></div>
+          <input type="hidden" id="cliente-sel" value="">
+        </div>
+        {% endif %}
         <div style="margin-bottom: 14px;">
           <label for="nome-aplicacao">Nome da aplicação (aparece no PDF)</label>
           <input type="text" id="nome-aplicacao" placeholder="Ex: Dessecação Canola — Talhão 2" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;">
@@ -342,6 +366,34 @@
     </div>
   </div>
 
+  <!-- Banner instalação PWA -->
+  <div class="pwa-banner" id="pwa-banner">
+    <img src="/static/icon-192.png" alt="FieldMix">
+    <div class="pwa-banner-info">
+      <strong>Instalar FieldMix</strong>
+      <span id="pwa-banner-desc">Acesse como aplicativo no celular</span>
+    </div>
+    <button class="btn-instalar-pwa" id="btn-instalar-pwa">Instalar</button>
+    <button class="btn-fechar-banner" id="btn-fechar-banner" title="Fechar">×</button>
+  </div>
+
+  <!-- Modal instruções iOS -->
+  <div class="modal-overlay" id="modal-ios-pwa">
+    <div class="modal-box">
+      <h3>Instalar no iPhone / iPad</h3>
+      <p style="font-size:13px;color:#555;line-height:1.7;margin-bottom:16px;">
+        1. Toque no ícone <strong>Compartilhar</strong> (□↑) na barra inferior do Safari<br>
+        2. Role a lista e toque em <strong>"Adicionar à Tela de Início"</strong><br>
+        3. Toque em <strong>Adicionar</strong> no canto superior direito
+      </p>
+      <div style="text-align:center;font-size:36px;margin-bottom:16px;">📲</div>
+      <button onclick="document.getElementById('modal-ios-pwa').classList.remove('ativo')"
+        style="width:100%;padding:10px;border:none;border-radius:6px;background:#10315A;color:white;font-size:14px;font-weight:600;cursor:pointer;">
+        Entendi
+      </button>
+    </div>
+  </div>
+
   <img id="logo-pdf" src="/static/logo.png" style="display:none;">
   <img id="logo-pulveragro" src="/static/pulveragro.png" style="display:none;">
   <script src="/static/jspdf.umd.min.js"></script>
@@ -371,13 +423,41 @@
       try {
         const resp = await fetch('/api/clientes');
         const clientes = await resp.json();
-        clientes.forEach(c => {
-          const opt = document.createElement('option');
-          opt.value = c.id;
-          opt.textContent = c.nome;
-          opt.dataset.cliente = JSON.stringify(c);
-          clienteSel.appendChild(opt);
-        });
+        if (clienteSel && clienteSel.tagName === 'SELECT') {
+          clientes.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c.id;
+            opt.textContent = c.nome;
+            opt.dataset.cliente = JSON.stringify(c);
+            clienteSel.appendChild(opt);
+          });
+        } else if (clienteSel) {
+          const nomeEl = document.getElementById('fazenda-nome');
+          if (clientes.length > 0) {
+            const c = clientes[0];
+            clienteSel.value = c.id;
+            if (nomeEl) nomeEl.textContent = c.nome;
+            const cfgs = c.configs || [];
+            if (cfgs.length > 0) {
+              if (cfgs[0].vazao_L_ha != null) document.getElementById('vazao').value = cfgs[0].vazao_L_ha;
+              if (cfgs[0].area_tanque_ha != null) document.getElementById('area').value = cfgs[0].area_tanque_ha;
+            } else {
+              if (c.vazao_L_ha) document.getElementById('vazao').value = c.vazao_L_ha;
+              if (c.area_tanque_ha) document.getElementById('area').value = c.area_tanque_ha;
+            }
+            obsField.value = c.observacao || '';
+            if (c.pontas && c.pontas.length > 0) {
+              c.pontas.forEach(p => {
+                const o = document.createElement('option');
+                o.value = p; o.textContent = p;
+                pontaSel.appendChild(o);
+              });
+              pontasPressaoDiv.style.display = 'block';
+            }
+          } else {
+            if (nomeEl) nomeEl.textContent = 'Nenhuma fazenda cadastrada';
+          }
+        }
       } catch (e) {}
     })();
 
@@ -385,7 +465,7 @@
     const pressaoField = document.getElementById('pressao');
     const pontasPressaoDiv = document.getElementById('pontas-pressao');
 
-    clienteSel.addEventListener('change', function() {
+    if (clienteSel && clienteSel.tagName === 'SELECT') clienteSel.addEventListener('change', function() {
       const opt = this.selectedOptions[0];
       pontaSel.innerHTML = '<option value="">-- Selecione a ponta --</option>';
       pressaoField.value = '';
@@ -791,8 +871,15 @@
       doc.text('Mistura Certa', textX, y + 12);
 
       // Cliente
-      var clienteOpt = document.getElementById('cliente-sel').selectedOptions[0];
-      var clienteNome = (clienteOpt && clienteOpt.value) ? clienteOpt.textContent.trim() : '';
+      var clienteSelEl = document.getElementById('cliente-sel');
+      var clienteNome = '';
+      if (clienteSelEl && clienteSelEl.tagName === 'SELECT') {
+        var clienteOpt = clienteSelEl.selectedOptions[0];
+        clienteNome = (clienteOpt && clienteOpt.value) ? clienteOpt.textContent.trim() : '';
+      } else {
+        var fazNomeEl = document.getElementById('fazenda-nome');
+        clienteNome = fazNomeEl ? fazNomeEl.textContent.trim() : '';
+      }
       var infoY = y + 17;
       if (clienteNome) {
         doc.setFontSize(10);
@@ -1056,9 +1143,10 @@
       }
 
       const fazendaSel = document.getElementById('hst-fazenda');
+      const clienteIdVal = fazendaSel ? (fazendaSel.value || null) : (clienteSel ? clienteSel.value || null : null);
       const payload = {
         data_aplicacao: data,
-        cliente_id: fazendaSel ? (fazendaSel.value || null) : null,
+        cliente_id: clienteIdVal,
         cultura: document.getElementById('hst-cultura').value.trim(),
         talhao:  document.getElementById('hst-talhao').value.trim(),
         area_ha: document.getElementById('hst-area').value || null,
@@ -1100,6 +1188,61 @@
     document.getElementById('modal-historico').addEventListener('click', function(e) {
       if (e.target === this) fecharModalHistorico();
     });
+    document.getElementById('modal-ios-pwa').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('ativo');
+    });
+
+    // PWA install banner
+    (function() {
+      const banner = document.getElementById('pwa-banner');
+      const btnInstalar = document.getElementById('btn-instalar-pwa');
+      const btnFechar = document.getElementById('btn-fechar-banner');
+      const desc = document.getElementById('pwa-banner-desc');
+      let deferredPrompt = null;
+
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+      if (isStandalone) return;
+
+      const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      const isSafari = /safari/i.test(navigator.userAgent) && !/crios|fxios|opios|chrome/i.test(navigator.userAgent);
+
+      function mostrarBanner() {
+        try { if (localStorage.getItem('pwa-banner-fechado')) return; } catch(e) {}
+        setTimeout(() => banner.classList.add('visivel'), 2500);
+      }
+
+      if (isIos) {
+        if (!isSafari) return;
+        desc.textContent = 'Adicione à tela de início para usar offline';
+        btnInstalar.textContent = 'Como instalar';
+        btnInstalar.addEventListener('click', () => {
+          banner.classList.remove('visivel');
+          document.getElementById('modal-ios-pwa').classList.add('ativo');
+        });
+        mostrarBanner();
+      } else {
+        window.addEventListener('beforeinstallprompt', (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+          mostrarBanner();
+        });
+        btnInstalar.addEventListener('click', async () => {
+          if (!deferredPrompt) return;
+          banner.classList.remove('visivel');
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          deferredPrompt = null;
+        });
+        window.addEventListener('appinstalled', () => {
+          banner.classList.remove('visivel');
+        });
+      }
+
+      btnFechar.addEventListener('click', () => {
+        banner.classList.remove('visivel');
+        try { localStorage.setItem('pwa-banner-fechado', '1'); } catch(e) {}
+      });
+    })();
   </script>
 </body>
 </html>

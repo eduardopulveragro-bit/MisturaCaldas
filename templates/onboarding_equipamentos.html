@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FieldMix — Meus Pulverizadores</title>
+  <title>FieldMix — Minha Fazenda</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 24px 16px 40px; }
@@ -13,15 +13,19 @@
     h1 { font-size: 20px; color: #10315A; font-weight: 700; margin-bottom: 4px; text-align: center; }
     p.sub { font-size: 13px; color: #777; text-align: center; margin-bottom: 8px; }
     .step { font-size: 12px; color: #aaa; text-align: center; margin-bottom: 24px; }
-    .pulv-bloco {
-      border: 1px solid #dde; border-radius: 8px; padding: 18px 16px 12px;
-      margin-bottom: 16px; position: relative; background: #fafcff;
+    .secao-titulo {
+      font-size: 13px; font-weight: 700; color: #10315A; text-transform: uppercase;
+      letter-spacing: .5px; margin: 24px 0 12px; padding-bottom: 6px;
+      border-bottom: 2px solid #e8edf4; display: flex; align-items: center; gap: 8px;
     }
-    .pulv-titulo {
-      font-size: 13px; font-weight: 700; color: #10315A; margin-bottom: 14px;
+    .secao-titulo:first-of-type { margin-top: 0; }
+    .bloco {
+      border: 1px solid #dde; border-radius: 8px; padding: 16px 16px 10px;
+      margin-bottom: 12px; position: relative; background: #fafcff;
     }
+    .bloco-titulo { font-size: 13px; font-weight: 700; color: #10315A; margin-bottom: 12px; }
     .linha { display: flex; gap: 12px; }
-    .campo { flex: 1; margin-bottom: 12px; }
+    .campo { flex: 1; margin-bottom: 10px; }
     label { display: block; font-size: 11px; font-weight: 600; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .4px; }
     input, textarea {
       width: 100%; border: 1px solid #ccc; border-radius: 6px;
@@ -38,34 +42,41 @@
     .btn-remover:hover { color: #8b0000; }
     .btn-add {
       width: 100%; background: #f0f4f8; color: #10315A; border: 2px dashed #b0c0d0;
-      border-radius: 8px; padding: 12px; font-size: 14px; font-weight: 600;
-      cursor: pointer; margin-bottom: 24px;
+      border-radius: 8px; padding: 10px; font-size: 13px; font-weight: 600;
+      cursor: pointer; margin-bottom: 8px;
     }
     .btn-add:hover { background: #e3ecf5; }
     .btn-salvar {
       width: 100%; background: #267A25; color: white; border: none;
       border-radius: 6px; padding: 13px; font-size: 15px; font-weight: 600; cursor: pointer;
+      margin-top: 20px;
     }
     .btn-salvar:hover { background: #1e6020; }
     .btn-pular { width: 100%; background: none; border: none; color: #aaa; font-size: 13px; cursor: pointer; margin-top: 12px; text-decoration: underline; }
     .btn-pular:hover { color: #666; }
+    @media (max-width: 480px) { .card { padding: 24px 16px; } }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="logo-wrap"><img src="/static/logo.png" alt="FieldMix"></div>
-    <h1>Meus Pulverizadores</h1>
-    <p class="sub">Cadastre os equipamentos que você usa. Pode adicionar mais depois.</p>
+    <h1>Minha Fazenda</h1>
+    <p class="sub">Configure seus equipamentos e talhões. Pode editar depois.</p>
     <p class="step">Passo 2 de 2</p>
 
-    <form id="form-pulv" method="POST">
+    <form id="form-dados" method="POST">
       <input type="hidden" name="pulverizadores_json" id="pulverizadores_json">
+      <input type="hidden" name="talhoes_json" id="talhoes_json">
 
-      <div id="lista-pulv">
-        <!-- bloco inserido por JS -->
-      </div>
+      <!-- PULVERIZADORES -->
+      <div class="secao-titulo">🚜 Pulverizadores</div>
+      <div id="lista-pulv"></div>
+      <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
 
-      <button type="button" class="btn-add" id="btn-add">+ Adicionar pulverizador</button>
+      <!-- TALHÕES -->
+      <div class="secao-titulo">🌾 Talhões</div>
+      <div id="lista-talhoes"></div>
+      <button type="button" class="btn-add" id="btn-add-talhao">+ Adicionar talhão</button>
 
       <button type="submit" class="btn-salvar">Salvar e entrar →</button>
       <button type="button" class="btn-pular" id="btn-pular">Pular por agora</button>
@@ -73,17 +84,18 @@
   </div>
 
   <script>
-    let contador = 0;
+    let cntPulv = 0, cntTalhao = 0;
 
-    function criarBloco() {
-      contador++;
-      const n = contador;
+    /* ── Pulverizadores ── */
+    function criarPulv() {
+      cntPulv++;
+      const n = cntPulv;
       const bloco = document.createElement('div');
-      bloco.className = 'pulv-bloco';
-      bloco.dataset.id = n;
+      bloco.className = 'bloco';
+      bloco.dataset.id = 'p' + n;
       bloco.innerHTML = `
-        <div class="pulv-titulo">Pulverizador ${n}</div>
-        ${n > 1 ? `<button type="button" class="btn-remover" title="Remover" onclick="removerBloco(${n})">✕</button>` : ''}
+        <div class="bloco-titulo">Pulverizador ${n}</div>
+        ${n > 1 ? `<button type="button" class="btn-remover" onclick="removerBloco('p${n}')">✕</button>` : ''}
         <div class="campo">
           <label>Nome / Modelo</label>
           <input type="text" placeholder="Ex: Jacto Uniport 2500, Montana AM-30..." data-campo="nome">
@@ -94,7 +106,7 @@
             <input type="number" step="1" min="0" placeholder="Ex: 2000" data-campo="volume_tanque_L">
           </div>
           <div class="campo">
-            <label>Vazão (L/ha)</label>
+            <label>Taxa de aplicação (L/ha)</label>
             <input type="number" step="0.1" min="0" placeholder="Ex: 150" data-campo="vazao_L_ha">
           </div>
         </div>
@@ -121,25 +133,56 @@
       document.getElementById('lista-pulv').appendChild(bloco);
     }
 
-    function removerBloco(n) {
-      const bloco = document.querySelector(`.pulv-bloco[data-id="${n}"]`);
-      if (bloco) bloco.remove();
-      renumerar();
+    /* ── Talhões ── */
+    function criarTalhao() {
+      cntTalhao++;
+      const n = cntTalhao;
+      const bloco = document.createElement('div');
+      bloco.className = 'bloco';
+      bloco.dataset.id = 't' + n;
+      bloco.innerHTML = `
+        <div class="bloco-titulo">Talhão ${n}</div>
+        ${n > 1 ? `<button type="button" class="btn-remover" onclick="removerBloco('t${n}')">✕</button>` : ''}
+        <div class="linha">
+          <div class="campo" style="flex:2;">
+            <label>Nome do talhão</label>
+            <input type="text" placeholder="Ex: Talhão Norte, Área A" data-campo="nome">
+          </div>
+          <div class="campo">
+            <label>Área (ha)</label>
+            <input type="number" step="0.1" min="0" placeholder="Ex: 45" data-campo="area_ha">
+          </div>
+        </div>
+      `;
+      document.getElementById('lista-talhoes').appendChild(bloco);
+      renumerarTalhoes();
     }
 
-    function renumerar() {
-      document.querySelectorAll('.pulv-bloco').forEach((b, i) => {
-        b.querySelector('.pulv-titulo').textContent = `Pulverizador ${i + 1}`;
+    function removerBloco(id) {
+      const el = document.querySelector(`.bloco[data-id="${id}"]`);
+      if (el) el.remove();
+      if (id.startsWith('p')) renumerarPulv();
+      else renumerarTalhoes();
+    }
+
+    function renumerarPulv() {
+      document.querySelectorAll('#lista-pulv .bloco').forEach((b, i) => {
+        b.querySelector('.bloco-titulo').textContent = `Pulverizador ${i + 1}`;
       });
     }
 
-    function coletarDados() {
-      const blocos = document.querySelectorAll('.pulv-bloco');
-      return Array.from(blocos).map(b => {
+    function renumerarTalhoes() {
+      document.querySelectorAll('#lista-talhoes .bloco').forEach((b, i) => {
+        b.querySelector('.bloco-titulo').textContent = `Talhão ${i + 1}`;
+      });
+    }
+
+    function coletarPulv() {
+      return Array.from(document.querySelectorAll('#lista-pulv .bloco')).map(b => {
         const obj = {};
         b.querySelectorAll('[data-campo]').forEach(el => {
           const k = el.dataset.campo;
-          let v = el.value.trim();
+          const v = el.value.trim();
           if (k === 'pontas') {
             obj[k] = v ? v.split(',').map(s => s.trim()).filter(Boolean) : [];
           } else if (['volume_tanque_L','vazao_L_ha','pressao_bar','area_tanque_ha'].includes(k)) {
@@ -152,20 +195,34 @@
       });
     }
 
-    document.getElementById('btn-add').addEventListener('click', criarBloco);
+    function coletarTalhoes() {
+      return Array.from(document.querySelectorAll('#lista-talhoes .bloco')).map(b => {
+        const obj = {};
+        b.querySelectorAll('[data-campo]').forEach(el => {
+          const k = el.dataset.campo;
+          const v = el.value.trim();
+          obj[k] = k === 'area_ha' ? (v !== '' ? parseFloat(v) : null) : v;
+        });
+        return obj;
+      }).filter(t => t.nome);
+    }
+
+    document.getElementById('btn-add-pulv').addEventListener('click', criarPulv);
+    document.getElementById('btn-add-talhao').addEventListener('click', criarTalhao);
 
     document.getElementById('btn-pular').addEventListener('click', function() {
       document.getElementById('pulverizadores_json').value = '[]';
-      document.getElementById('form-pulv').submit();
+      document.getElementById('talhoes_json').value = '[]';
+      document.getElementById('form-dados').submit();
     });
 
-    document.getElementById('form-pulv').addEventListener('submit', function(e) {
-      const dados = coletarDados();
-      document.getElementById('pulverizadores_json').value = JSON.stringify(dados);
+    document.getElementById('form-dados').addEventListener('submit', function() {
+      document.getElementById('pulverizadores_json').value = JSON.stringify(coletarPulv());
+      document.getElementById('talhoes_json').value = JSON.stringify(coletarTalhoes());
     });
 
-    // Inicia com 1 bloco
-    criarBloco();
+    criarPulv();
+    criarTalhao();
   </script>
 </body>
 </html>

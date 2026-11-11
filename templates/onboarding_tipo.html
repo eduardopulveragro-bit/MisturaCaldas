@@ -36,7 +36,7 @@
     <div class="logo-wrap"><img src="/static/logo.png" alt="FieldMix"></div>
     <h1>Olá, {{ current_user.nome.split()[0] }}!</h1>
     <p class="sub">Como você vai usar o FieldMix?</p>
-    <p class="step">Passo 1 de 2</p>
+    <p class="step" id="step-txt">Passo 1</p>
     {% if erro %}<div class="erro">{{ erro }}</div>{% endif %}
     <form method="POST">
       <div class="opcoes">
@@ -60,5 +60,10 @@
       <button class="btn" type="submit">Continuar →</button>
     </form>
   </div>
+  <script>
+    document.querySelectorAll('input[name="tipo"]').forEach(r => r.addEventListener('change', function() {
+      document.getElementById('step-txt').textContent = this.value === 'produtor' ? 'Passo 1 de 2' : 'Passo 1 de 1';
+    }));
+  </script>
 </body>
 </html>
