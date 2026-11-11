@@ -63,7 +63,7 @@ def nao_autorizado():
 _SKIP_ONBOARDING = {
     "login", "logout", "cadastro", "setup",
     "onboarding", "onboarding_equipamentos",
-    "static", "favicon", "webhook", "init_db", "init_db_historico", "migrate_db",
+    "static", "favicon", "webhook", "init_db", "init_db_historico", "migrate_db", "migrate_db_historico",
     "historico", "api_historico_listar", "api_historico_criar", "api_historico_excluir",
 }
 
@@ -128,6 +128,15 @@ def migrate_db():
     resultado = usuarios_mod.migrar_tabela()
     if resultado["status"] in (200, 201, 204):
         return jsonify({"ok": True, "msg": "Migração aplicada (ou já estava atualizada)."})
+    return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
+
+
+@app.route("/migrate-db-historico")
+def migrate_db_historico():
+    """Adiciona colunas ausentes em historico_caldas. Idempotente."""
+    resultado = historico_mod.migrar_tabela()
+    if resultado["status"] in (200, 201, 204):
+        return jsonify({"ok": True, "msg": "Migração historico_caldas aplicada."})
     return jsonify({"ok": False, "status": resultado["status"], "detalhe": resultado["body"]}), 500
 
 

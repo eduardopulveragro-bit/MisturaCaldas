@@ -65,7 +65,10 @@ def criar(dados: dict) -> dict:
         _url("/rest/v1/historico_caldas"),
         headers=_headers(), json=row, timeout=10,
     )
-    r.raise_for_status()
+    if not r.ok:
+        import logging as _log
+        _log.getLogger(__name__).error("historico criar %s: %s", r.status_code, r.text)
+        raise RuntimeError(f"Supabase {r.status_code}: {r.text}")
     return r.json()[0]
 
 
@@ -96,6 +99,29 @@ def contar_todos() -> dict:
         if uid:
             contagem[uid] = contagem.get(uid, 0) + 1
     return contagem
+
+
+def migrar_tabela() -> dict:
+    """Adiciona colunas que podem estar ausentes em tabelas criadas antes dessas features."""
+    if not _disponivel():
+        return {"status": 503, "body": "Supabase não configurado"}
+    sql = """
+    ALTER TABLE historico_caldas
+      ADD COLUMN IF NOT EXISTS operacao jsonb,
+      ADD COLUMN IF NOT EXISTS temp_amb float,
+      ADD COLUMN IF NOT EXISTS rh_amb float,
+      ADD COLUMN IF NOT EXISTS delta_t float,
+      ADD COLUMN IF NOT EXISTS notas text NOT NULL DEFAULT '',
+      ADD COLUMN IF NOT EXISTS talhao text NOT NULL DEFAULT '';
+    """
+    key = os.environ.get("SUPABASE_SERVICE_KEY", "")
+    r = requests.post(
+        os.environ.get("SUPABASE_URL", "").rstrip("/") + "/pg/query",
+        headers={"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"},
+        json={"query": sql},
+        timeout=15,
+    )
+    return {"status": r.status_code, "body": r.text}
 
 
 def criar_tabela() -> dict:
