@@ -47,7 +47,6 @@ def criar(dados: dict) -> dict:
     row = {
         "id": str(uuid.uuid4()),
         "usuario_id": dados["usuario_id"],
-        "cliente_id": dados.get("cliente_id") or None,
         "data_aplicacao": dados.get("data_aplicacao") or datetime.now().strftime("%Y-%m-%d"),
         "cultura": (dados.get("cultura") or "").strip(),
         "talhao": (dados.get("talhao") or "").strip(),
@@ -59,8 +58,11 @@ def criar(dados: dict) -> dict:
         "rh_amb": _float_ou_none(dados.get("rh_amb")),
         "delta_t": _float_ou_none(dados.get("delta_t")),
         "notas": (dados.get("notas") or "").strip(),
-        "criado_em": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
+    if dados.get("cliente_id"):
+        row["cliente_id"] = dados["cliente_id"]
+    if dados.get("criado_em"):
+        row["criado_em"] = dados["criado_em"]
     r = requests.post(
         _url("/rest/v1/historico_caldas"),
         headers=_headers(), json=row, timeout=10,
