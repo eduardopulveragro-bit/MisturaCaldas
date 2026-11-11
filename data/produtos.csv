@@ -50,7 +50,7 @@ Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol,,SC,8,fungicida SC Syngenta —
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,,SC,8,inseticida SC etiprole — bula confirmada,pendente (2026-10-08)
 Intense,,,OLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09
 Flumioxazina,Flumioxazin|Flumioxazin 500 SC,,SC,8,herbicida SC — bula confirmada,pendente (2026-10-08)
-Flumizin,Flumyzin|Flumyzin 500|Flumioxazin,,SC,8,SC — corrigido pelo usuario 2026-11-10,2026-11-10,flumioxazina
+Flumizin,Flumyzin|Flumyzin 500|Flumyzyn,,SC,8,SC — corrigido pelo usuario 2026-11-10,2026-11-10,flumioxazina
 Stone,Stone Herbicida|Stone Nufarm,,SL,16,SL — adicionado pelo usuario 2026-11-10,2026-11-10,cloransulam-metilico
 Diquat,Diquate|Reglone|Diquat 200 SL,,SL,16,herbicida dessecante SL — bula confirmada,pendente (2026-10-08),diquate
 Auron,,,OLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09
@@ -325,7 +325,7 @@ Pirimor 500 WG,Pirimor|Pirimor WG|Pirimor Syngenta|Pirimicarbe WG,,WG,6,aficida 
 Marafix 480 EC,Marafix|Marafix EC|Clorpirifos Marafix,,EC,11,inseticida EC — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
 Cloropirifos 480 EC,Cloropirifos|Clorpirifos 480|Cloropirifos EC generico,,EC,11,inseticida EC generico — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
 Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boroStomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
-Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta|Finale,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
+Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
 Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,fosfito de potassio SL generico — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Picoxistrobina 250 SC,Picoxistrobina SC|Picoxistrobina generico,,SC,8,estrobilurina SC generica — IA busca web confirmou SC,2026-10-27,picoxistrobina
@@ -337,3 +337,5 @@ Nutrimol,Nutrimol foliar|Nutrimol fertilizante,,FERTILIZANTE,18,fertilizante fol
 Sulfato de Niquel,Sulfato de Niquel|Sulfato de Níquel|NiSO4 foliar|Niquel Sulfato,,FERTILIZANTE,18,micronutriente niquel - fertilizante foliar,2026-10-30,niquel
 Afiado,Afiado SC|Proud|Afiado inseticida,13323,SC,8,inseticida SC - acetamipride+bifentrina - Albaugh - confirmado Agrolink,2026-10-30,acetamipride+bifentrina
 Mitrion,Mitrion EC|Mitrion Syngenta,,EC,11,fungicida EC Syngenta - benzovindiflupyr+prothioconazol - controle ferrugem - extraido bula PDF,2026-10-30,benzovindiflupyr+prothioconazol
+
+Boro MEA,Boro MEA foliar|BorMEA|Boro Mea,,FERTILIZANTE,18,fertilizante foliar boro monoetanolamina — cadastro manual,2026-11-11,boro
