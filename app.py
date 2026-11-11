@@ -195,10 +195,6 @@ def onboarding():
         tipo = request.form.get("tipo")
         if tipo not in ("produtor", "consultor"):
             return render_template("onboarding_tipo.html", erro="Escolha um tipo.")
-        if tipo == "consultor":
-            usuarios_mod.atualizar_onboarding(current_user.id, tipo)
-            session["onboarding_done"] = True
-            return redirect(url_for("pagina_clientes"))
         session["onboarding_tipo"] = tipo
         return redirect(url_for("onboarding_equipamentos"))
     return render_template("onboarding_tipo.html")
@@ -246,7 +242,8 @@ def onboarding_equipamentos():
                 logger.warning("Onboarding: erro ao criar cliente '%s': %s", nome_cliente, e)
         session["onboarding_done"] = True
         return redirect(url_for("index"))
-    return render_template("onboarding_equipamentos.html")
+    tipo_onboarding = session.get("onboarding_tipo", current_user.tipo)
+    return render_template("onboarding_equipamentos.html", tipo_onboarding=tipo_onboarding)
 
 
 # ── App principal ─────────────────────────────────────────────────────────────

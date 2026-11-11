@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FieldMix — Minha Fazenda</title>
+  <title>FieldMix — {% if tipo_onboarding == 'consultor' %}Fazendas{% else %}Minha Fazenda{% endif %}</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 24px 16px 40px; }
@@ -60,8 +60,8 @@
 <body>
   <div class="card">
     <div class="logo-wrap"><img src="/static/logo.png" alt="FieldMix"></div>
-    <h1>Minha Fazenda</h1>
-    <p class="sub">Configure seus equipamentos e talhões. Pode editar depois.</p>
+    <h1>{% if tipo_onboarding == 'consultor' %}Fazendas{% else %}Minha Fazenda{% endif %}</h1>
+    <p class="sub">{% if tipo_onboarding == 'consultor' %}Cadastre a primeira fazenda do seu portfólio. Pode adicionar mais depois.{% else %}Configure seus equipamentos e talhões. Pode editar depois.{% endif %}</p>
     <p class="step">Passo 2 de 2</p>
 
     <form id="form-dados" method="POST">
@@ -69,11 +69,11 @@
       <input type="hidden" name="talhoes_json" id="talhoes_json">
 
       <!-- NOME DA FAZENDA -->
-      <div class="secao-titulo" style="margin-top:0;">🌾 Fazenda</div>
+      <div class="secao-titulo" style="margin-top:0;">🌾 {% if tipo_onboarding == 'consultor' %}Fazendas{% else %}Fazenda{% endif %}</div>
       <div class="bloco" style="margin-bottom:20px;">
         <div class="campo" style="margin-bottom:0;">
-          <label>Nome da fazenda</label>
-          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="Ex: Fazenda Boa Vista" style="font-size:15px;">
+          <label>{% if tipo_onboarding == 'consultor' %}Nome da fazenda / cliente{% else %}Nome da fazenda{% endif %}</label>
+          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="{% if tipo_onboarding == 'consultor' %}Ex: Fazenda Boa Vista — João Silva{% else %}Ex: Fazenda Boa Vista{% endif %}" style="font-size:15px;">
         </div>
       </div>
 
