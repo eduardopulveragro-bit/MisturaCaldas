@@ -402,6 +402,7 @@
     }
 
     let dadosAtual = null;
+    let volumeTanqueAtual = null;
     const clienteSel = document.getElementById('cliente-sel');
     const obsField = document.getElementById('observacao');
 
@@ -452,6 +453,8 @@
         return;
       }
       const c = JSON.parse(opt.dataset.cliente);
+      // guarda volume do tanque para recalcular ha ao mudar taxa
+      volumeTanqueAtual = (c.pulverizador && c.pulverizador.volume_tanque_L) ? c.pulverizador.volume_tanque_L : null;
       // suporta formato novo (configs) e antigo (vazao_L_ha)
       const cfgs = c.configs || [];
       if (cfgs.length > 0) {
@@ -474,6 +477,17 @@
       } else {
         pontasPressaoDiv.style.display = 'none';
       }
+    });
+
+    // recalcula ha/tanque ao mudar taxa de aplicação
+    ['input','change'].forEach(ev => {
+      document.getElementById('vazao').addEventListener(ev, function() {
+        if (!volumeTanqueAtual) return;
+        const taxa = parseFloat(this.value);
+        if (taxa > 0) {
+          document.getElementById('area').value = (volumeTanqueAtual / taxa).toFixed(1);
+        }
+      });
     });
 
     const OPCOES_FORM = [
