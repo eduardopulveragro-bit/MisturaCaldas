@@ -1026,16 +1026,16 @@
         var doseHa;
         if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
           if (item.base === 'tanque' && item.dose_ha_calculada != null) {
-            doseHa = item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha\n(tq:' + item.dose + ' ' + item.unidade + ')';
+            doseHa = item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha';
           } else if (item.base === 'tanque') {
-            doseHa = '-- (tq:' + item.dose + ' ' + item.unidade + ')';
+            doseHa = '--';
           } else {
             doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
           }
         } else {
           doseHa = '---';
         }
-        var nome = escHtml(item.produto);
+        var nome = escHtml(item.produto.replace(/\b\w/g, c => c.toUpperCase()));
         if (item.alerta_prediluicao) {
           nome += '\n>> ' + escHtml(item.alerta_prediluicao);
         }
