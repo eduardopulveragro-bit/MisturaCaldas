@@ -778,11 +778,13 @@
       var xOf=function(t){return PL+(t/40)*(W-PL-PR);};
       var yOf=function(rh){return PT+(100-rh)/90*(H-PT-PB);};
       var cl=function(v,a,b){return Math.min(b,Math.max(a,v));};
-      var temp=parseFloat(document.getElementById('temp-amb').value);
-      var rh=parseFloat(document.getElementById('rh-amb').value);
+      var tempEl=document.getElementById('temp-amb'), rhEl=document.getElementById('rh-amb');
+      var temp=tempEl?parseFloat(tempEl.value):NaN;
+      var rh=rhEl?parseFloat(rhEl.value):NaN;
       var ok=!isNaN(temp)&&!isNaN(rh);
       var dt=ok?_calcDT(temp,rh):null;
       var svg=document.getElementById('dt-chart');
+      if (!svg) return;
       svg.innerHTML='';
 
       svg.appendChild(_se('rect',{x:PL,y:PT,width:W-PL-PR,height:H-PT-PB,fill:'#d1d5db'}));
@@ -1061,8 +1063,9 @@
       var pdfNextY = doc.lastAutoTable.finalY + 6;
 
       // Delta T no PDF
-      var tempAmb = parseFloat(document.getElementById('temp-amb').value);
-      var rhAmb   = parseFloat(document.getElementById('rh-amb').value);
+      var tempAmbEl = document.getElementById('temp-amb'), rhAmbEl = document.getElementById('rh-amb');
+      var tempAmb = tempAmbEl ? parseFloat(tempAmbEl.value) : NaN;
+      var rhAmb   = rhAmbEl   ? parseFloat(rhAmbEl.value)   : NaN;
       if (!isNaN(tempAmb) && !isNaN(rhAmb)) {
         var dtV = tempAmb - (
           tempAmb * Math.atan(0.151977 * Math.sqrt(rhAmb + 8.313659)) +
@@ -1125,8 +1128,8 @@
     }
 
     /* Delta T: atualiza em tempo real conforme o usuário digita */
-    document.getElementById('temp-amb').addEventListener('input', renderDeltaT);
-    document.getElementById('rh-amb').addEventListener('input', renderDeltaT);
+    if (document.getElementById('temp-amb')) document.getElementById('temp-amb').addEventListener('input', renderDeltaT);
+    if (document.getElementById('rh-amb'))  document.getElementById('rh-amb').addEventListener('input', renderDeltaT);
 
     /* Renderiza chart no load (sem marcador — só as zonas) */
     renderDeltaT();
@@ -1168,8 +1171,9 @@
       }
 
       // lê temp/rh/delta-t dos campos do formulário
-      const tempVal = parseFloat(document.getElementById('temp-amb').value);
-      const rhVal   = parseFloat(document.getElementById('rh-amb').value);
+      const tempValEl = document.getElementById('temp-amb'), rhValEl = document.getElementById('rh-amb');
+      const tempVal = tempValEl ? parseFloat(tempValEl.value) : NaN;
+      const rhVal   = rhValEl   ? parseFloat(rhValEl.value)   : NaN;
       let deltaTVal = null;
       if (!isNaN(tempVal) && !isNaN(rhVal)) {
         function wetBulbHst(tdb, rh) {
