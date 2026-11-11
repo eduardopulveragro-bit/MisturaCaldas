@@ -221,11 +221,29 @@ def onboarding_equipamentos():
             talhoes = []
         usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores, "talhoes": talhoes})
         nome_fazenda = request.form.get("nome_fazenda", "").strip()
-        if nome_fazenda:
+        # Cria um cliente por pulverizador cadastrado
+        for i, pulv in enumerate(pulverizadores):
+            modelo = (pulv.get("nome") or pulv.get("modelo") or "").strip()
+            if not modelo and not nome_fazenda:
+                continue
+            if nome_fazenda and len(pulverizadores) == 1:
+                nome_cliente = nome_fazenda
+            elif nome_fazenda:
+                nome_cliente = f"{nome_fazenda} — {modelo}" if modelo else f"{nome_fazenda} {i+1}"
+            else:
+                nome_cliente = modelo
             try:
-                clientes_mod.criar({"nome": nome_fazenda})
-            except Exception:
-                pass
+                clientes_mod.criar({
+                    "nome": nome_cliente,
+                    "usuario_id": current_user.id,
+                    "pulverizador_modelo": modelo,
+                    "volume_tanque": pulv.get("volume_tanque_L"),
+                    "pontas": ",".join(pulv.get("pontas") or []),
+                    "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
+                             if pulv.get("vazao_L_ha") else [],
+                })
+            except Exception as e:
+                logger.warning("Onboarding: erro ao criar cliente '%s': %s", nome_cliente, e)
         session["onboarding_done"] = True
         return redirect(url_for("index"))
     return render_template("onboarding_equipamentos.html")
