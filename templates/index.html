@@ -198,6 +198,11 @@
             <option value="">-- Sem cliente --</option>
           </select>
         </div>
+        <div id="pulv-wrapper" style="margin-bottom: 14px; display:none;">
+          <label for="pulv-sel-consultor">Pulverizador</label>
+          <select id="pulv-sel-consultor" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
+          </select>
+        </div>
         {% else %}
         <div style="margin-bottom: 14px;">
           <label>Fazenda</label>
@@ -418,18 +423,22 @@
         const clientes = await resp.json();
         if (clienteSel && clienteSel.tagName === 'SELECT') {
           const nomeEl = document.getElementById('fazenda-nome');
-          // nome da fazenda = parte antes do " — " ou o nome inteiro
-          const nomeFazenda = clientes.length > 0
-            ? clientes[0].nome.split(' — ')[0]
-            : 'Nenhuma fazenda cadastrada';
-          if (nomeEl) nomeEl.textContent = nomeFazenda;
+          const isModoProdutor = !!nomeEl;
+
+          if (isModoProdutor) {
+            const nomeFazenda = clientes.length > 0
+              ? clientes[0].nome.split(' — ')[0]
+              : 'Nenhuma fazenda cadastrada';
+            nomeEl.textContent = nomeFazenda;
+          }
 
           // só entra no select clientes que têm modelo de pulverizador
           const comPulv = clientes.filter(c => c.pulverizador && c.pulverizador.modelo);
           comPulv.forEach(c => {
             const opt = document.createElement('option');
             opt.value = c.id;
-            opt.textContent = c.pulverizador.modelo;
+            // produtor: mostra modelo do pulverizador; consultor: mostra nome da fazenda
+            opt.textContent = isModoProdutor ? c.pulverizador.modelo : c.nome;
             opt.dataset.cliente = JSON.stringify(c);
             opt.dataset.fazenda = c.nome.split(' — ')[0];
             clienteSel.appendChild(opt);
@@ -454,6 +463,27 @@
       // atualiza o div "Fazenda" se existir (produtor)
       const nomeEl = document.getElementById('fazenda-nome');
       if (nomeEl) nomeEl.textContent = (opt && opt.dataset.fazenda) ? opt.dataset.fazenda : '';
+      // popula select de pulverizador se consultor
+      const pulvWrapper = document.getElementById('pulv-wrapper');
+      const pulvSelCons = document.getElementById('pulv-sel-consultor');
+      if (pulvWrapper && pulvSelCons) {
+        pulvSelCons.innerHTML = '';
+        if (opt && opt.dataset.cliente) {
+          const cTemp = JSON.parse(opt.dataset.cliente);
+          if (cTemp.pulverizador && cTemp.pulverizador.modelo) {
+            const o = document.createElement('option');
+            o.value = cTemp.id;
+            o.textContent = cTemp.pulverizador.modelo;
+            o.selected = true;
+            pulvSelCons.appendChild(o);
+            pulvWrapper.style.display = 'block';
+          } else {
+            pulvWrapper.style.display = 'none';
+          }
+        } else {
+          pulvWrapper.style.display = 'none';
+        }
+      }
       if (!opt || !opt.dataset.cliente) {
         pontasPressaoDiv.style.display = 'none';
         return;
