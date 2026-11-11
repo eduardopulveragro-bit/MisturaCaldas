@@ -217,7 +217,7 @@ def _eh_glifosato(item: dict) -> bool:
 
 
 def _eh_24d(item: dict) -> bool:
-    termos = ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46", "tordon")
+    termos = ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46", "u46", "enlist", "tordon")
     return any(t in txt for txt in _textos_item(item) for t in termos)
 
 
