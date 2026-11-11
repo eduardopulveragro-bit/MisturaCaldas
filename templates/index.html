@@ -430,23 +430,26 @@
         const clientes = await resp.json();
         if (clienteSel && clienteSel.tagName === 'SELECT') {
           const nomeEl = document.getElementById('fazenda-nome');
+          // nome da fazenda = parte antes do " — " ou o nome inteiro
+          const nomeFazenda = clientes.length > 0
+            ? clientes[0].nome.split(' — ')[0]
+            : 'Nenhuma fazenda cadastrada';
+          if (nomeEl) nomeEl.textContent = nomeFazenda;
+
           clientes.forEach(c => {
             const opt = document.createElement('option');
             opt.value = c.id;
-            // para produtor: mostra o modelo do pulverizador no select; fallback para nome
+            // mostra o modelo do pulverizador no select; fallback para nome
             const modelo = (c.pulverizador && c.pulverizador.modelo) ? c.pulverizador.modelo : c.nome;
             opt.textContent = modelo;
             opt.dataset.cliente = JSON.stringify(c);
-            opt.dataset.fazenda = c.nome;
+            opt.dataset.fazenda = c.nome.split(' — ')[0];
             clienteSel.appendChild(opt);
           });
           // seleciona automaticamente se só tem um
           if (clientes.length === 1) {
             clienteSel.value = clientes[0].id;
-            if (nomeEl) nomeEl.textContent = clientes[0].nome;
             clienteSel.dispatchEvent(new Event('change'));
-          } else if (nomeEl && clientes.length === 0) {
-            nomeEl.textContent = 'Nenhuma fazenda cadastrada';
           }
         }
       } catch (e) {}
