@@ -94,7 +94,7 @@
         <input type="text" id="nome" placeholder="Ex: Fazenda Boa Vista{% if current_user.tipo == 'consultor' %} — João{% endif %}">
       </div>
 
-      <div class="secao-titulo">Pulverizador</div>
+      <div class="secao-titulo">Equipamento</div>
       <div class="row">
         <div>
           <label for="pulverizador_modelo">Modelo</label>
@@ -165,7 +165,7 @@
     function renderCliente(c) {
       const pulv = c.pulverizador || {};
       const infos = [];
-      if (pulv.modelo) infos.push('<strong>Pulverizador:</strong> ' + esc(pulv.modelo));
+      if (pulv.modelo) infos.push('<strong>Equipamento:</strong> ' + esc(pulv.modelo));
       if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
       const configs = c.configs || [];
       if (configs.length === 1) {

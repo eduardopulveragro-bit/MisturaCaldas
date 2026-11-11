@@ -96,9 +96,9 @@
       </div>
 
       <!-- PULVERIZADORES -->
-      <div class="secao-titulo">🚜 Pulverizadores</div>
+      <div class="secao-titulo">🚜 Equipamentos</div>
       <div id="lista-pulv"></div>
-      <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
+      <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar equipamento</button>
 {% endif %}
 
       <button type="submit" class="btn-salvar">Salvar e entrar →</button>
@@ -116,7 +116,7 @@
       const bloco = document.createElement('div');
       bloco.className = 'bloco';
       bloco.innerHTML = `
-        <div class="bloco-titulo">Pulverizador ${n}</div>
+        <div class="bloco-titulo">Equipamento ${n}</div>
         ${n > 1 ? `<button type="button" class="btn-remover" onclick="const b=this.closest('.bloco');b.remove();renumerarPulvs(b.closest('.sep-pulv').querySelector('.lista-pulv-fazenda'))">✕</button>` : ''}
         <div class="campo">
           <label>Nome / Modelo</label>
@@ -159,7 +159,7 @@
 
     function renumerarPulvs(listaEl) {
       listaEl.querySelectorAll('.bloco').forEach((b, i) => {
-        b.querySelector('.bloco-titulo').textContent = `Pulverizador ${i + 1}`;
+        b.querySelector('.bloco-titulo').textContent = `Equipamento ${i + 1}`;
       });
     }
 
@@ -175,9 +175,9 @@
           <input type="text" class="nome-fazenda" placeholder="Ex: Fazenda Boa Vista — João Silva" style="font-size:15px;">
         </div>
         <div class="sep-pulv">
-          <div class="sub-titulo-pulv">🚜 Pulverizadores</div>
+          <div class="sub-titulo-pulv">🚜 Equipamentos</div>
           <div class="lista-pulv-fazenda"></div>
-          <button type="button" class="btn-add btn-add-pulv-fazenda">+ Adicionar pulverizador</button>
+          <button type="button" class="btn-add btn-add-pulv-fazenda">+ Adicionar equipamento</button>
         </div>
       `;
       document.getElementById('lista-fazendas').appendChild(fazenda);
@@ -236,7 +236,7 @@
       bloco.className = 'bloco';
       bloco.dataset.id = 'p' + n;
       bloco.innerHTML = `
-        <div class="bloco-titulo">Pulverizador ${n}</div>
+        <div class="bloco-titulo">Equipamento ${n}</div>
         ${n > 1 ? `<button type="button" class="btn-remover" onclick="removerBloco('p${n}')">✕</button>` : ''}
         <div class="campo">
           <label>Nome / Modelo</label>
@@ -285,7 +285,7 @@
 
     function renumerarPulv() {
       document.querySelectorAll('#lista-pulv .bloco').forEach((b, i) => {
-        b.querySelector('.bloco-titulo').textContent = `Pulverizador ${i + 1}`;
+        b.querySelector('.bloco-titulo').textContent = `Equipamento ${i + 1}`;
       });
     }
 

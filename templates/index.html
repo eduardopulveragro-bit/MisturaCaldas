@@ -199,7 +199,7 @@
           </select>
         </div>
         <div id="pulv-wrapper" style="margin-bottom: 14px; display:none;">
-          <label for="pulv-sel-consultor">Pulverizador</label>
+          <label for="pulv-sel-consultor">Equipamento</label>
           <select id="pulv-sel-consultor" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
           </select>
         </div>
@@ -209,9 +209,9 @@
           <div id="fazenda-nome" style="border:1px solid #e0e0e0;border-radius:6px;padding:10px 12px;font-size:14px;background:#f8f9fa;color:#333;min-height:42px;"></div>
         </div>
         <div style="margin-bottom: 14px;">
-          <label for="cliente-sel">Pulverizador</label>
+          <label for="cliente-sel">Equipamento</label>
           <select id="cliente-sel" style="width:100%;border:1px solid #ccc;border-radius:6px;padding:10px 12px;font-size:14px;background:white;">
-            <option value="">-- Selecione o pulverizador --</option>
+            <option value="">-- Selecione o equipamento --</option>
           </select>
         </div>
         {% endif %}
@@ -971,6 +971,31 @@
         doc.text('Aplicação:', textX, infoY);
         doc.setFont('helvetica', 'normal');
         doc.text(escHtml(nomeApl), textX + doc.getTextWidth('Aplicação: ') + 1.5, infoY);
+        infoY += 5;
+      }
+
+      // Equipamento
+      var equipamento = '';
+      var selEquip = document.getElementById('cliente-sel');
+      if (selEquip && selEquip.selectedOptions[0] && selEquip.selectedOptions[0].dataset.cliente) {
+        try {
+          var cd = JSON.parse(selEquip.selectedOptions[0].dataset.cliente);
+          if (cd && cd.pulverizador && cd.pulverizador.modelo) equipamento = cd.pulverizador.modelo;
+        } catch(e) {}
+      }
+      if (!equipamento) {
+        var selConsultor = document.getElementById('pulv-sel-consultor');
+        if (selConsultor && selConsultor.selectedOptions[0] && selConsultor.selectedOptions[0].value) {
+          equipamento = selConsultor.selectedOptions[0].textContent.trim();
+        }
+      }
+      if (equipamento) {
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(40, 40, 40);
+        doc.text('Equipamento:', textX, infoY);
+        doc.setFont('helvetica', 'normal');
+        doc.text(escHtml(equipamento), textX + doc.getTextWidth('Equipamento: ') + 1.5, infoY);
         infoY += 5;
       }
 
