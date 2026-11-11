@@ -226,6 +226,12 @@
             <div class="unidade">ha</div>
           </div>
         </div>
+        <div style="margin-bottom:8px;margin-top:-8px;text-align:right;">
+          <label style="display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#888;cursor:pointer;" title="Permite editar taxa e hectares livremente, sem cálculo automático">
+            <input type="checkbox" id="modo-manual-ha" style="width:13px;height:13px;cursor:pointer;accent-color:#267A25;">
+            <span>Editar manualmente</span>
+          </label>
+        </div>
         <div style="margin-bottom:12px;">
           <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:#444;cursor:pointer;">
             <input type="checkbox" id="doses-por-tanque" name="doses_por_tanque" value="on" style="width:16px;height:16px;cursor:pointer;">
@@ -479,21 +485,45 @@
       }
     });
 
-    // recalcula ha/tanque ao mudar taxa de aplicação
+    // cálculo bidirecional: taxa ↔ ha/tanque
+    let modoManualHa = false;
+    let atualizandoHa = false;
+    document.getElementById('modo-manual-ha').addEventListener('change', function() {
+      modoManualHa = this.checked;
+    });
+
+    function getVolumeTanque() {
+      var vol = volumeTanqueAtual;
+      if (!vol && clienteSel && clienteSel.selectedOptions && clienteSel.selectedOptions[0]) {
+        try {
+          var cd = JSON.parse(clienteSel.selectedOptions[0].dataset.cliente || 'null');
+          if (cd && cd.pulverizador) vol = cd.pulverizador.volume_tanque_L;
+        } catch(e) {}
+      }
+      return vol || null;
+    }
+
     ['input','change'].forEach(ev => {
       document.getElementById('vazao').addEventListener(ev, function() {
-        // lê volume direto do pulverizador selecionado
-        var vol = volumeTanqueAtual;
-        if (!vol && clienteSel && clienteSel.selectedOptions && clienteSel.selectedOptions[0]) {
-          try {
-            var cd = JSON.parse(clienteSel.selectedOptions[0].dataset.cliente || 'null');
-            if (cd && cd.pulverizador) vol = cd.pulverizador.volume_tanque_L;
-          } catch(e) {}
-        }
+        if (modoManualHa || atualizandoHa) return;
+        var vol = getVolumeTanque();
         if (!vol) return;
         const taxa = parseFloat(this.value);
         if (taxa > 0) {
+          atualizandoHa = true;
           document.getElementById('area').value = (vol / taxa).toFixed(1);
+          atualizandoHa = false;
+        }
+      });
+      document.getElementById('area').addEventListener(ev, function() {
+        if (modoManualHa || atualizandoHa) return;
+        var vol = getVolumeTanque();
+        if (!vol) return;
+        const ha = parseFloat(this.value);
+        if (ha > 0) {
+          atualizandoHa = true;
+          document.getElementById('vazao').value = (vol / ha).toFixed(1);
+          atualizandoHa = false;
         }
       });
     });
