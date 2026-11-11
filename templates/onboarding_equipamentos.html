@@ -68,12 +68,27 @@
       <input type="hidden" name="pulverizadores_json" id="pulverizadores_json">
       <input type="hidden" name="talhoes_json" id="talhoes_json">
 
-      <!-- NOME DA FAZENDA -->
-      <div class="secao-titulo" style="margin-top:0;">🌾 {% if tipo_onboarding == 'consultor' %}Fazendas{% else %}Fazenda{% endif %}</div>
+{% if tipo_onboarding == 'consultor' %}
+      <!-- CONSULTOR: fazenda + pulverizadores em um único cartão -->
+      <div class="secao-titulo" style="margin-top:0;">🌾 Fazendas</div>
+      <div class="bloco" style="margin-bottom:20px;">
+        <div class="campo">
+          <label>Nome da fazenda / cliente</label>
+          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="Ex: Fazenda Boa Vista — João Silva" style="font-size:15px;">
+        </div>
+        <div style="border-top:1px solid #e8edf4; margin:4px -16px 0; padding:12px 16px 0;">
+          <div style="font-size:11px;font-weight:700;color:#10315A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">🚜 Pulverizadores</div>
+          <div id="lista-pulv"></div>
+          <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
+        </div>
+      </div>
+{% else %}
+      <!-- PRODUTOR: seções separadas -->
+      <div class="secao-titulo" style="margin-top:0;">🌾 Fazenda</div>
       <div class="bloco" style="margin-bottom:20px;">
         <div class="campo" style="margin-bottom:0;">
-          <label>{% if tipo_onboarding == 'consultor' %}Nome da fazenda / cliente{% else %}Nome da fazenda{% endif %}</label>
-          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="{% if tipo_onboarding == 'consultor' %}Ex: Fazenda Boa Vista — João Silva{% else %}Ex: Fazenda Boa Vista{% endif %}" style="font-size:15px;">
+          <label>Nome da fazenda</label>
+          <input type="text" name="nome_fazenda" id="nome_fazenda" placeholder="Ex: Fazenda Boa Vista" style="font-size:15px;">
         </div>
       </div>
 
@@ -81,6 +96,7 @@
       <div class="secao-titulo">🚜 Pulverizadores</div>
       <div id="lista-pulv"></div>
       <button type="button" class="btn-add" id="btn-add-pulv">+ Adicionar pulverizador</button>
+{% endif %}
 
 <button type="submit" class="btn-salvar">Salvar e entrar →</button>
       <button type="button" class="btn-pular" id="btn-pular">Pular por agora</button>
