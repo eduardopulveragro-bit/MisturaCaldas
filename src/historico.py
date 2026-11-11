@@ -52,7 +52,7 @@ def criar(dados: dict) -> dict:
         "cultura": (dados.get("cultura") or "").strip(),
         "talhao": (dados.get("talhao") or "").strip(),
         "area_ha": _float_ou_none(dados.get("area_ha")),
-        "vazao_L_ha": _float_ou_none(dados.get("vazao_L_ha")),
+        "vazao_l_ha": _float_ou_none(dados.get("vazao_L_ha") or dados.get("vazao_l_ha")),
         "produtos": dados.get("produtos"),
         "operacao": dados.get("operacao"),
         "temp_amb": _float_ou_none(dados.get("temp_amb")),
