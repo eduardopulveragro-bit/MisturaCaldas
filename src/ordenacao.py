@@ -192,6 +192,7 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     resultado.sort(key=lambda x: (x["posicao"], 0 if x["posicao"] == 2 else -_dose_em_ml(x)))
     resultado = _posicionar_sl(resultado)
     resultado = _priorizar_heat(resultado)
+    resultado = _alertar_ally(resultado)
     resultado = _posicionar_oleo(resultado)
     resultado = _oleo_laranja_com_mancozeb(resultado)
     resultado = _prediluir_graminicida_oleo(resultado)
@@ -220,6 +221,11 @@ def _eh_24d(item: dict) -> bool:
     return any(t in txt for txt in _textos_item(item) for t in termos)
 
 
+def _eh_ally(item: dict) -> bool:
+    termos = ("ally", "metsulfuron", "metsulfurom")
+    return any(t in txt for txt in _textos_item(item) for t in termos)
+
+
 def _eh_graminicida_ec(item: dict) -> bool:
     """EC herbicidas graminicidas (pré-diluir com óleo, posicionar entre 2,4-D e Glifosato)."""
     nome = _normalizar(item["produto"])
@@ -244,6 +250,14 @@ def _dose_em_ml(item: dict) -> float:
     if unidade == "kg":
         return dose * 1000
     return dose
+
+
+def _alertar_ally(resultado: list[dict]) -> list[dict]:
+    """Ally (metsulfuron WG): pré-diluir em água morna antes de adicionar."""
+    for item in resultado:
+        if _eh_ally(item) and not item.get("alerta_prediluicao"):
+            item["alerta_prediluicao"] = "pré-diluir em água morna antes de adicionar ao tanque"
+    return resultado
 
 
 def _priorizar_heat(resultado: list[dict]) -> list[dict]:
@@ -277,8 +291,8 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
     tem_po_suspensao = any(item["posicao"] in (5, 6) and not _eh_heat(item) for item in resultado)
 
     if tem_glif_sl and tem_24d_sl:
-        # Ambos SL: move 2,4-D cedo; glif vai pro final via _separar_glif_24d
-        primeiro_sl = next(s for s in sls if _eh_24d(s))
+        # Ambos SL: move GLIFOSATO cedo (primeiro SL); 2,4-D vai pro final via _separar_glif_24d
+        primeiro_sl = next(s for s in sls if _eh_glifosato(s))
     elif tem_glif_sl:
         # Glifosato + outros SLs: mover glifosato para região EC (separar dos outros SLs)
         primeiro_sl = next(s for s in sls if _eh_glifosato(s))
@@ -436,9 +450,11 @@ def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
     if not item_24d or not item_glif:
         return resultado
 
-    if item_glif["posicao"] <= 6:
+    if item_glif["posicao"] <= 11:
+        # Glif WG (pos≤6) ou glif SL movido cedo (pos=11): 2,4-D vai pro final
         para_final = item_24d
     else:
+        # Glif ainda em posição normal (pos=16): glif vai pro final
         para_final = item_glif
 
     idx = resultado.index(para_final)
