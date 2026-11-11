@@ -134,8 +134,10 @@
           haInput.value = '';
         }
       }
-      bloco.querySelector('[data-campo="volume_tanque_L"]').addEventListener('input', calcularHa);
-      bloco.querySelector('[data-campo="vazao_L_ha"]').addEventListener('input', calcularHa);
+      ['input','change'].forEach(ev => {
+        bloco.querySelector('[data-campo="volume_tanque_L"]').addEventListener(ev, calcularHa);
+        bloco.querySelector('[data-campo="vazao_L_ha"]').addEventListener(ev, calcularHa);
+      });
     }
 
     function removerBloco(id) {
