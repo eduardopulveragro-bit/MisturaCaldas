@@ -187,9 +187,9 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
                 "alerta_pendente": "produto e formulação não identificados",
             })
 
-    resultado.sort(key=lambda x: (x["posicao"], 0 if x["posicao"] in (2, 16) else -_dose_em_ml(x)))
-    resultado = _priorizar_heat(resultado)
+    resultado.sort(key=lambda x: (x["posicao"], 0 if x["posicao"] == 2 else -_dose_em_ml(x)))
     resultado = _posicionar_sl(resultado)
+    resultado = _priorizar_heat(resultado)
     resultado = _posicionar_oleo(resultado)
     resultado = _oleo_laranja_com_mancozeb(resultado)
     resultado = _prediluir_graminicida_oleo(resultado)
@@ -206,7 +206,7 @@ def _eh_glifosato(item: dict) -> bool:
 
 def _eh_24d(item: dict) -> bool:
     nome = _normalizar(item["produto"])
-    return any(x in nome for x in ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46"))
+    return any(x in nome for x in ("2,4-d", "2,4 d", "2,4d", "2.4-d", "2.4 d", "2.4d", "aminol", "dma 806", "u-46", "tordon"))
 
 
 def _eh_graminicida_ec(item: dict) -> bool:
@@ -263,37 +263,47 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
     tem_glif_sl = any(_eh_glifosato(s) for s in sls)
     tem_24d_sl = any(_eh_24d(s) for s in sls)
     tem_glif_wg = any(_eh_glifosato(item) and item["posicao"] == 6 for item in resultado)
+    tem_po_suspensao = any(item["posicao"] in (5, 6) and not _eh_heat(item) for item in resultado)
 
     if tem_glif_sl and tem_24d_sl:
+        # Ambos SL: move 2,4-D cedo; glif vai pro final via _separar_glif_24d
         primeiro_sl = next(s for s in sls if _eh_24d(s))
     elif tem_glif_sl:
-        # Glifosato vai cedo; outros SLs (Kassumin, bactericidas, etc.) ficam na pos normal
+        # Glifosato + outros SLs: mover glifosato para região EC (separar dos outros SLs)
         primeiro_sl = next(s for s in sls if _eh_glifosato(s))
     elif tem_24d_sl and tem_glif_wg and len(sls) >= 2:
+        # 2,4-D SL com glifosato WG: mover o outro SL (nao-24D) para EC region
         outros = [s for s in sls if not _eh_24d(s)]
         primeiro_sl = outros[0] if outros else sls[0]
     else:
-        primeiro_sl = sls[0]
+        # Sem glif/24D: seleciona o de MAIOR DOSE (independente da ordem do input)
+        primeiro_sl = max(sls, key=_dose_em_ml)
 
     dose_ml = _dose_em_ml(primeiro_sl)
-    tem_po_suspensao = any(item["posicao"] in (5, 6) for item in resultado)
-    deve_mover = len(sls) >= 2 or dose_ml >= 2500 or (dose_ml >= 2000 and tem_po_suspensao)
+
+    if tem_glif_sl or tem_24d_sl:
+        # Glif/24D: mover se houver multiplos SLs ou dose consideravel
+        deve_mover = len(sls) >= 2 or dose_ml >= 2500 or (dose_ml >= 2000 and tem_po_suspensao)
+    else:
+        # Outros SLs: so mover se dose alta (precisa maxima agua de diluicao)
+        deve_mover = dose_ml >= 2500 or (dose_ml >= 2000 and tem_po_suspensao)
+
     if not deve_mover:
         return resultado
 
     resultado.remove(primeiro_sl)
 
-    # SL de alto volume (>=2.5 L/ha) e nao e glifosato nem 2,4-D: vai PRIMEIRO na calda
-    # precisa da maxima agua disponivel para dilucao
+    # SL de alto volume (>=2.5 L/ha) nao-glif/24D: vai PRIMEIRO para maxima diluicao
     if dose_ml >= 2500 and not tem_glif_sl and not tem_24d_sl:
         ponto = 0
         for i, item in enumerate(resultado):
-            if item["posicao"] <= 2:  # condicionadores/antiespumantes tem prioridade absoluta
+            if item["posicao"] <= 2:
                 ponto = i + 1
         primeiro_sl["posicao"] = 3
         resultado.insert(ponto, primeiro_sl)
         return resultado
 
+    # Glif/24D: posicionar apos ultimos ECs (antes do oleo e dos SLs restantes)
     ponto = 0
     for i, item in enumerate(resultado):
         if item["posicao"] < 12:
@@ -304,7 +314,7 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
             if item["posicao"] <= 2:
                 ponto = i + 1
 
-    # Atualiza posicao para EC-level (11) so que _posicionar_oleo nao insira oleo antes deste SL
+    # posicao=11 para que _posicionar_oleo nao insira oleo antes deste SL
     primeiro_sl["posicao"] = 11
     resultado.insert(ponto, primeiro_sl)
     return resultado
@@ -334,7 +344,8 @@ def _oleo_laranja_com_mancozeb(resultado: list[dict]) -> list[dict]:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("mancozeb", "mancozebe", "unizeb")):
             mancozeb = item
-        elif any(x in nome for x in ("oleo de laranja", "oleo da laranja", "terpen")):
+        elif (any(x in nome for x in ("oleo de laranja", "oleo da laranja", "terpen"))
+              or item.get("formulacao", "").upper() == "OLEO DE LARANJA"):
             oleo_laranja = item
     if not mancozeb or not oleo_laranja:
         return resultado
@@ -348,12 +359,13 @@ def _oleo_laranja_com_mancozeb(resultado: list[dict]) -> list[dict]:
 
 
 def _inserir_prediluicao(resultado, produto, oleo):
-    """Remove produto e óleo, insere ambos juntos no final dos regulares."""
+    """Remove produto e óleo, insere ambos juntos antes dos SLs."""
     resultado.remove(produto)
     resultado.remove(oleo)
     ponto = len(resultado)
     for i, item in enumerate(resultado):
-        if item["posicao"] > 16:
+        # SL pode ter sido reposicionado (posicao=11) por _posicionar_sl — detecta pela formulação
+        if item.get("formulacao", "").upper() == "SL" or item["posicao"] >= 16:
             ponto = i
             break
     produto["alerta_prediluicao"] = f"pré-diluir com {oleo['produto']} antes de adicionar"
@@ -389,7 +401,9 @@ def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("abamectina", "abamectin", "vertimec", "kraft")):
             abamectina = item
-        elif item["posicao"] == 12 and not item.get("alerta_prediluicao"):
+        elif (item["posicao"] == 12
+              and not item.get("alerta_prediluicao")
+              and not any(x in nome for x in ("laranja", "terpen"))):
             oleo = item
     if not abamectina or not oleo:
         return resultado
@@ -411,7 +425,7 @@ def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
     if not item_24d or not item_glif:
         return resultado
 
-    if item_glif["posicao"] == 6:
+    if item_glif["posicao"] <= 6:
         para_final = item_24d
     else:
         para_final = item_glif
@@ -459,7 +473,7 @@ def _posicionar_foliares(resultado: list[dict]) -> list[dict]:
     foliares.sort(key=_chave_foliar)
     ponto = len(resultado)
     for i, item in enumerate(resultado):
-        if item["posicao"] >= 999:
+        if item["posicao"] >= 19:
             ponto = i
             break
     for i, f in enumerate(foliares):
