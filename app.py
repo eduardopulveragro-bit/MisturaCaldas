@@ -220,6 +220,12 @@ def onboarding_equipamentos():
         except _json.JSONDecodeError:
             talhoes = []
         usuarios_mod.atualizar_onboarding(current_user.id, tipo, {"pulverizadores": pulverizadores, "talhoes": talhoes})
+        nome_fazenda = request.form.get("nome_fazenda", "").strip()
+        if nome_fazenda:
+            try:
+                clientes_mod.criar({"nome": nome_fazenda})
+            except Exception:
+                pass
         session["onboarding_done"] = True
         return redirect(url_for("index"))
     return render_template("onboarding_equipamentos.html")
