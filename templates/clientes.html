@@ -152,7 +152,7 @@
         const resp = await fetch(API);
         const clientes = await resp.json();
         if (!clientes.length) {
-          div.innerHTML = '<div class="lista-vazia">Nenhum cliente cadastrado ainda.</div>';
+          div.innerHTML = '<div class="lista-vazia">Nenhuma fazenda cadastrada ainda.</div>';
           return;
         }
         div.innerHTML = '';
@@ -298,7 +298,7 @@
       document.getElementById('pontas').value = '';
       document.getElementById('calibracao').value = '';
       document.getElementById('observacao').value = '';
-      document.getElementById('form-titulo').textContent = 'Novo Cliente';
+      document.getElementById('form-titulo').textContent = 'Nova Fazenda';
       document.getElementById('form-status').textContent = '';
     }
 
@@ -323,7 +323,7 @@
           mostrarStatus('Erro: ' + (resultado.erro || 'falha'), true);
           return;
         }
-        mostrarStatus(editId ? 'Cliente atualizado!' : 'Cliente cadastrado!', false);
+        mostrarStatus(editId ? 'Fazenda atualizada!' : 'Fazenda cadastrada!', false);
         limparForm();
         carregarClientes();
       } catch (e) {

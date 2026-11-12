@@ -486,6 +486,8 @@ def api_buscar_cliente(cliente_id):
     cliente = clientes_mod.buscar(cliente_id)
     if not cliente:
         return jsonify({"erro": "Cliente não encontrado"}), 404
+    if cliente.get("usuario_id") and cliente["usuario_id"] != current_user.id:
+        return jsonify({"erro": "Acesso negado"}), 403
     return jsonify(cliente)
 
 
@@ -495,6 +497,11 @@ def api_atualizar_cliente(cliente_id):
     dados = request.get_json(silent=True) or {}
     if not dados.get("nome", "").strip():
         return jsonify({"erro": "Nome é obrigatório"}), 400
+    cliente_existente = clientes_mod.buscar(cliente_id)
+    if not cliente_existente:
+        return jsonify({"erro": "Cliente não encontrado"}), 404
+    if cliente_existente.get("usuario_id") and cliente_existente["usuario_id"] != current_user.id:
+        return jsonify({"erro": "Acesso negado"}), 403
     dados["usuario_id"] = current_user.id
     cliente = clientes_mod.atualizar(cliente_id, dados)
     if not cliente:
@@ -505,6 +512,11 @@ def api_atualizar_cliente(cliente_id):
 @app.route("/api/clientes/<cliente_id>", methods=["DELETE"])
 @login_required
 def api_excluir_cliente(cliente_id):
+    cliente_existente = clientes_mod.buscar(cliente_id)
+    if not cliente_existente:
+        return jsonify({"erro": "Cliente não encontrado"}), 404
+    if cliente_existente.get("usuario_id") and cliente_existente["usuario_id"] != current_user.id:
+        return jsonify({"erro": "Acesso negado"}), 403
     if clientes_mod.excluir(cliente_id):
         return jsonify({"ok": True})
     return jsonify({"erro": "Cliente não encontrado"}), 404
