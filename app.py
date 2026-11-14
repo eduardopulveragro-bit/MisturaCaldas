@@ -436,6 +436,22 @@ def processar():
     vazao = operacao.get("vazao_L_ha")
     alertas_incomp = verificar_incompatibilidades(itens_ordenados, vazao)
 
+    # Registrar uso automaticamente a cada calda processada
+    try:
+        historico_mod.criar({
+            "usuario_id": current_user.id,
+            "cultura": (operacao.get("cultura") or "").strip(),
+            "vazao_L_ha": operacao.get("vazao_L_ha"),
+            "area_ha": operacao.get("area_tanque_ha"),
+            "produtos": [
+                {"produto": it["produto"], "dose": it.get("dose"), "unidade": it.get("unidade"), "base": it.get("base")}
+                for it in itens_ordenados
+            ],
+            "operacao": operacao if operacao else None,
+        })
+    except Exception as e:
+        logger.warning("auto-historico: %s", e)
+
     return jsonify({
         "ordem": [
             {
