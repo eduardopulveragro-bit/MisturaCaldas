@@ -310,9 +310,13 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
-      <button type="button" class="btn-pdf" id="btn-pdf" style="display:none;" onclick="gerarPDF()">
-        Baixar PDF
-      </button>
+      <div id="area-pdf" style="display:none;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;">
+        <input type="text" id="nome-pdf" placeholder="Nome do arquivo PDF" value="ordem_mistura_calda"
+          style="border:1px solid #ccc;border-radius:6px;padding:8px 11px;font-size:13px;font-family:inherit;flex:1;min-width:200px;max-width:340px;">
+        <button type="button" class="btn-pdf" id="btn-pdf" onclick="gerarPDF()">
+          Baixar PDF
+        </button>
+      </div>
       <button type="button" class="btn-historico" id="btn-historico" style="display:none;" onclick="abrirModalHistorico()">
         Salvar no Histórico
       </button>
@@ -665,7 +669,7 @@
         tabelaCorpo.appendChild(tr);
       });
 
-      document.getElementById('btn-pdf').style.display = '';
+      document.getElementById('area-pdf').style.display = 'flex';
       document.getElementById('btn-historico').style.display = '';
       renderDeltaT();
       resultado.style.display = 'block';
@@ -678,6 +682,7 @@
       status.textContent = '';
       status.className = '';
       resultado.style.display = 'none';
+      document.getElementById('area-pdf').style.display = 'none';
       document.getElementById('btn-historico').style.display = 'none';
       perguntaForm.style.display = 'none';
 
@@ -1194,7 +1199,8 @@
       doc.setTextColor(150, 150, 150);
       doc.text('PulverAgro — Consultoria em Pulverização', pw / 2, 290, { align: 'center' });
 
-      doc.save('ordem_mistura_calda.pdf');
+      var nomeArquivo = (document.getElementById('nome-pdf').value || 'ordem_mistura_calda').trim().replace(/[\/\\:*?"<>|]/g, '_');
+      doc.save(nomeArquivo + '.pdf');
     }
 
     /* Delta T: atualiza em tempo real conforme o usuário digita */

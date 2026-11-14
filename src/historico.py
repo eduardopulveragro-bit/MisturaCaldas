@@ -86,6 +86,20 @@ def excluir(historico_id: str, usuario_id: str) -> bool:
     return True
 
 
+def listar_todos(limit: int = 200) -> list[dict]:
+    """Retorna todas as caldas de todos os usuários (uso admin)."""
+    if not _disponivel():
+        return []
+    r = requests.get(
+        _url("/rest/v1/historico_caldas")
+        + f"?order=criado_em.desc&limit={limit}"
+        + "&select=*",
+        headers=_headers(), timeout=15,
+    )
+    r.raise_for_status()
+    return r.json()
+
+
 def contar_todos() -> dict:
     """Retorna {usuario_id: count} para todos os usuários."""
     if not _disponivel():

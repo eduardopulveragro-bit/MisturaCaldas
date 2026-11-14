@@ -364,6 +364,18 @@ def admin_excluir_usuario(user_id):
     return redirect(url_for("admin_usuarios"))
 
 
+@app.route("/admin/historico")
+@login_required
+def admin_historico():
+    if not current_user.admin:
+        return redirect(url_for("index"))
+    registros = historico_mod.listar_todos(limit=300)
+    usuarios = {u["id"]: u["nome"] for u in usuarios_mod.listar()}
+    for r in registros:
+        r["_usuario_nome"] = usuarios.get(r.get("usuario_id"), "—")
+    return render_template("admin_historico.html", registros=registros)
+
+
 # ── API ───────────────────────────────────────────────────────────────────────
 
 @app.route("/processar", methods=["POST"])
