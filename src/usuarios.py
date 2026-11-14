@@ -1,5 +1,6 @@
 """CRUD de usuários via Supabase."""
 import os
+from urllib.parse import quote
 
 import requests
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -25,7 +26,7 @@ def buscar_por_email(email: str) -> dict | None:
     if not _disponivel():
         return None
     r = requests.get(
-        f"{_SUPA_URL}/rest/v1/usuarios?email=eq.{email.lower().strip()}&select=*",
+        f"{_SUPA_URL}/rest/v1/usuarios?email=eq.{quote(email.lower().strip())}&select=*",
         headers=_headers(), timeout=10,
     )
     r.raise_for_status()

@@ -30,7 +30,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "dev-secret-troque-em-producao")
+_secret = os.environ.get("SECRET_KEY", "")
+if not _secret:
+    logger.warning("SECRET_KEY não definida — usando chave insegura. Defina SECRET_KEY em produção.")
+    _secret = "dev-secret-troque-em-producao"
+app.secret_key = _secret
 
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
@@ -63,8 +67,10 @@ def nao_autorizado():
 _SKIP_ONBOARDING = {
     "login", "logout", "cadastro", "setup",
     "onboarding", "onboarding_equipamentos",
-    "static", "favicon", "webhook", "init_db", "init_db_historico", "migrate_db", "migrate_db_historico",
+    "static", "favicon", "webhook",
+    "init_db", "init_db_historico", "migrate_db", "migrate_db_historico",
     "historico", "api_historico_listar", "api_historico_criar", "api_historico_excluir",
+    "admin_usuarios", "admin_criar_usuario", "admin_toggle_usuario", "admin_excluir_usuario", "admin_historico",
 }
 
 
@@ -114,8 +120,11 @@ def logout():
 
 
 @app.route("/init-db")
+@login_required
 def init_db():
     """Cria a tabela usuarios no Supabase. Visitar uma vez após o deploy."""
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
     resultado = usuarios_mod.criar_tabela()
     if resultado["status"] == 200:
         return jsonify({"ok": True, "msg": "Tabela usuarios criada com sucesso."})
@@ -123,8 +132,11 @@ def init_db():
 
 
 @app.route("/migrate-db")
+@login_required
 def migrate_db():
     """Adiciona colunas tipo/onboarding_completo se não existirem. Idempotente."""
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
     resultado = usuarios_mod.migrar_tabela()
     if resultado["status"] in (200, 201, 204):
         return jsonify({"ok": True, "msg": "Migração aplicada (ou já estava atualizada)."})
@@ -132,8 +144,11 @@ def migrate_db():
 
 
 @app.route("/migrate-db-historico")
+@login_required
 def migrate_db_historico():
     """Adiciona colunas ausentes em historico_caldas. Idempotente."""
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
     resultado = historico_mod.migrar_tabela()
     if resultado["status"] in (200, 201, 204):
         return jsonify({"ok": True, "msg": "Migração historico_caldas aplicada."})
@@ -141,8 +156,11 @@ def migrate_db_historico():
 
 
 @app.route("/init-db-historico")
+@login_required
 def init_db_historico():
     """Cria a tabela historico_caldas no Supabase. Visitar uma vez após o deploy."""
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
     resultado = historico_mod.criar_tabela()
     if resultado["status"] in (200, 201, 204):
         return jsonify({"ok": True, "msg": "Tabela historico_caldas criada com sucesso."})
@@ -385,6 +403,9 @@ def processar():
 
     if not mensagem:
         return jsonify({"erro": "Mensagem vazia"}), 400
+
+    if len(mensagem) > 4000:
+        return jsonify({"erro": "Mensagem muito longa (máximo 4000 caracteres)"}), 400
 
     try:
         dados_extraidos = extrair_itens(mensagem)
