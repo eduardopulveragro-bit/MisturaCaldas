@@ -334,8 +334,24 @@ def admin_usuarios():
         return redirect(url_for("index"))
     usuarios = usuarios_mod.listar()
     contagem_caldas = historico_mod.contar_todos()
+    registros = historico_mod.listar_todos(limit=1000)
+    # agrupa produtos por usuário: {uid: {nome_produto: contagem}}
+    freq: dict = {}
+    for r in registros:
+        uid = r.get("usuario_id")
+        if not uid:
+            continue
+        for p in (r.get("produtos") or []):
+            nome = (p.get("produto") or "").strip()
+            if nome:
+                freq.setdefault(uid, {})
+                freq[uid][nome] = freq[uid].get(nome, 0) + 1
     for u in usuarios:
         u["num_caldas"] = contagem_caldas.get(u["id"], 0)
+        # ordena por frequência decrescente
+        u["produtos_usados"] = sorted(
+            freq.get(u["id"], {}).items(), key=lambda x: x[1], reverse=True
+        )
     return render_template("admin_usuarios.html", usuarios=usuarios)
 
 

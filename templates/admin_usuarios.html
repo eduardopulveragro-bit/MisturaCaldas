@@ -37,6 +37,11 @@
     .admin-check { display: flex; align-items: center; gap: 5px; font-size: 13px; color: #444; padding-bottom: 2px; }
     .btn-criar { background: #10315A; color: white; border: none; border-radius: 5px; padding: 8px 20px; font-size: 13px; font-weight: 600; cursor: pointer; }
     .btn-criar:hover { background: #1a4070; }
+    .caldas-toggle { cursor: pointer; color: #10315A; font-weight: 700; text-decoration: underline dotted; user-select: none; }
+    .caldas-toggle:hover { color: #267A25; }
+    .tr-produtos td { padding: 4px 10px 10px 10px; background: #f8fafc; border-bottom: 2px solid #e2e8f0; }
+    .produto-pill { display: inline-block; background: #e8f0fe; color: #10315A; border-radius: 4px; padding: 2px 8px; font-size: 11px; margin: 2px; white-space: nowrap; }
+    .produto-freq { font-size: 10px; color: #888; margin-left: 2px; }
     @media (max-width: 600px) {
       header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
       .header-brand img { height: 52px; }
@@ -69,7 +74,7 @@
             <th>Nome</th>
             <th class="col-email">Email</th>
             <th>Plano</th>
-            <th>Caldas</th>
+            <th>Caldas / Produtos</th>
             <th>Status</th>
             <th></th>
           </tr>
@@ -83,7 +88,15 @@
             </td>
             <td class="col-email td-email">{{ u.email }}</td>
             <td>{{ u.plano or 'trial' }}</td>
-            <td style="text-align:center;font-weight:600;color:#10315A;">{{ u.num_caldas }}</td>
+            <td style="text-align:center;">
+              {% if u.num_caldas > 0 %}
+                <span class="caldas-toggle" onclick="toggleProdutos('u{{ loop.index }}')" title="Ver produtos usados">
+                  {{ u.num_caldas }} ▾
+                </span>
+              {% else %}
+                <span style="color:#bbb;">0</span>
+              {% endif %}
+            </td>
             <td>
               {% if u.ativo %}
                 <span class="badge badge-ativo">Ativo</span>
@@ -106,6 +119,16 @@
               {% endif %}
             </td>
           </tr>
+          {% if u.produtos_usados %}
+          <tr class="tr-produtos" id="u{{ loop.index }}" style="display:none;">
+            <td colspan="6">
+              <span style="font-size:11px;color:#888;margin-right:6px;">Produtos usados:</span>
+              {% for nome, qtd in u.produtos_usados %}
+                <span class="produto-pill">{{ nome }}<span class="produto-freq">×{{ qtd }}</span></span>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endif %}
           {% endfor %}
         </tbody>
       </table>
@@ -142,5 +165,11 @@
       </form>
     </div>
   </main>
+  <script>
+    function toggleProdutos(id) {
+      var tr = document.getElementById(id);
+      if (tr) tr.style.display = tr.style.display === 'none' ? '' : 'none';
+    }
+  </script>
 </body>
 </html>
