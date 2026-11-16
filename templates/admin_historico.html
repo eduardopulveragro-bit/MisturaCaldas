@@ -16,23 +16,51 @@
     .card { background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 20px; }
     h2 { font-size: 16px; color: #10315A; margin-bottom: 4px; font-weight: 700; }
     .subtitulo { font-size: 13px; color: #888; margin-bottom: 16px; }
+
+    /* tabs */
+    .abas { display: flex; gap: 0; margin-bottom: 20px; border-bottom: 2px solid #e2e8f0; }
+    .aba { padding: 9px 20px; font-size: 13px; font-weight: 600; cursor: pointer; color: #888; border-bottom: 3px solid transparent; margin-bottom: -2px; user-select: none; }
+    .aba.ativa { color: #10315A; border-bottom-color: #10315A; }
+    .aba:hover:not(.ativa) { color: #10315A; }
+    .painel { display: none; }
+    .painel.ativo { display: block; }
+
+    /* filtros */
     .filtros { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
     .filtros input, .filtros select { border: 1px solid #ccc; border-radius: 6px; padding: 7px 11px; font-size: 13px; font-family: inherit; }
     .filtros input:focus, .filtros select:focus { outline: none; border-color: #267A25; }
+
+    /* stats */
     .stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
     .stat { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 18px; text-align: center; min-width: 100px; }
     .stat-valor { font-size: 22px; font-weight: 700; color: #10315A; }
     .stat-label { font-size: 11px; color: #888; margin-top: 2px; }
+
+    /* tabela */
     .table-scroll { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     th { background: #10315A; color: white; padding: 8px 10px; text-align: left; font-size: 11px; white-space: nowrap; }
     td { padding: 7px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
     tr:hover td { background: #f8fafc; }
-    .badge { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; }
-    .badge-produtor { background: #e3f2fd; color: #1565c0; }
-    .badge-consultor { background: #f3e5f5; color: #6a1b9a; }
-    .produto-pill { display: inline-block; background: #e8f0fe; color: #10315A; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin: 1px; }
     .col-usuario { font-weight: 600; color: #267A25; }
+    .produto-pill { display: inline-block; background: #e8f0fe; color: #10315A; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin: 1px; }
+
+    /* cards de ordem */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .calda-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+    .calda-card-header { background: #10315A; color: white; padding: 10px 14px; }
+    .calda-card-usuario { font-size: 11px; color: #aed6f1; margin-bottom: 2px; }
+    .calda-card-titulo { font-size: 13px; font-weight: 700; }
+    .calda-card-meta { display: flex; gap: 10px; margin-top: 4px; font-size: 11px; color: #aed6f1; flex-wrap: wrap; }
+    .calda-card-body { padding: 12px 14px; }
+    .ordem-lista { list-style: none; }
+    .ordem-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f0f4f8; font-size: 12px; }
+    .ordem-item:last-child { border-bottom: none; }
+    .ordem-num { background: #10315A; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .ordem-produto { font-weight: 600; color: #1a1a2e; flex: 1; }
+    .ordem-dose { color: #267A25; font-size: 11px; white-space: nowrap; }
+    .sem-produtos { font-size: 12px; color: #aaa; font-style: italic; padding: 8px 0; }
+
     @media (max-width: 600px) {
       header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
       .header-brand img { height: 52px; }
@@ -40,6 +68,7 @@
       header > div::-webkit-scrollbar { display: none; }
       header a.nav-link { font-size: 12px; white-space: nowrap; padding: 6px 12px 6px 0; }
       .card { padding: 16px; }
+      .cards-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -78,65 +107,134 @@
         </div>
       </div>
 
+      <!-- filtros compartilhados -->
       <div class="filtros">
         <input type="text" id="filtro-usuario" placeholder="Filtrar por usuário..." oninput="filtrar()">
         <input type="text" id="filtro-busca" placeholder="Buscar cultura, talhão..." oninput="filtrar()">
         <input type="month" id="filtro-mes" title="Mês" onchange="filtrar()">
       </div>
 
-      <div class="table-scroll">
-        <table id="tabela">
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Usuário</th>
-              <th>Cultura / Talhão</th>
-              <th>Área (ha)</th>
-              <th>Taxa (L/ha)</th>
-              <th>Produtos</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for r in registros %}
-            <tr data-usuario="{{ r._usuario_nome | lower }}" data-texto="{{ (r.cultura or '') ~ ' ' ~ (r.talhao or '') | lower }}" data-mes="{{ (r.data_aplicacao or '')[:7] }}">
-              <td style="white-space:nowrap;color:#888;font-size:11px;">
-                {{ r.data_aplicacao or '—' }}
-              </td>
-              <td class="col-usuario">{{ r._usuario_nome }}</td>
-              <td>
-                {% if r.cultura %}<strong>{{ r.cultura }}</strong>{% endif %}
-                {% if r.talhao %}<span style="color:#888"> — {{ r.talhao }}</span>{% endif %}
-              </td>
-              <td style="text-align:right;">{{ r.area_ha or '—' }}</td>
-              <td style="text-align:right;">{{ r.vazao_l_ha or '—' }}</td>
-              <td>
-                {% if r.produtos %}
-                  {% for p in r.produtos[:4] %}
-                    <span class="produto-pill">{{ p.produto or '' }}</span>
-                  {% endfor %}
-                  {% if r.produtos|length > 4 %}
-                    <span class="produto-pill" style="background:#f1f5f9;color:#666;">+{{ r.produtos|length - 4 }}</span>
-                  {% endif %}
-                {% endif %}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+      <!-- abas -->
+      <div class="abas">
+        <div class="aba ativa" onclick="trocarAba('tabela')">Tabela</div>
+        <div class="aba" onclick="trocarAba('ordens')">Ordem de Mistura</div>
       </div>
+
+      <!-- painel tabela -->
+      <div class="painel ativo" id="painel-tabela">
+        <div class="table-scroll">
+          <table id="tabela">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Usuário</th>
+                <th>Cultura / Talhão</th>
+                <th>Área (ha)</th>
+                <th>Taxa (L/ha)</th>
+                <th>Produtos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in registros %}
+              <tr data-usuario="{{ r._usuario_nome | lower }}" data-texto="{{ (r.cultura or '') ~ ' ' ~ (r.talhao or '') | lower }}" data-mes="{{ (r.criado_em or '')[:7] }}">
+                <td style="white-space:nowrap;color:#888;font-size:11px;">
+                  {{ (r.criado_em or '—')[:10] }}
+                </td>
+                <td class="col-usuario">{{ r._usuario_nome }}</td>
+                <td>
+                  {% if r.cultura %}<strong>{{ r.cultura }}</strong>{% endif %}
+                  {% if r.talhao %}<span style="color:#888"> — {{ r.talhao }}</span>{% endif %}
+                </td>
+                <td style="text-align:right;">{{ r.area_ha or '—' }}</td>
+                <td style="text-align:right;">{{ r.vazao_l_ha or '—' }}</td>
+                <td>
+                  {% if r.produtos %}
+                    {% for p in r.produtos[:4] %}
+                      <span class="produto-pill">{{ p.produto or '' }}</span>
+                    {% endfor %}
+                    {% if r.produtos|length > 4 %}
+                      <span class="produto-pill" style="background:#f1f5f9;color:#666;">+{{ r.produtos|length - 4 }}</span>
+                    {% endif %}
+                  {% endif %}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- painel ordem de mistura -->
+      <div class="painel" id="painel-ordens">
+        <div class="cards-grid" id="grid-ordens">
+          {% for r in registros %}
+          <div class="calda-card"
+               data-usuario="{{ r._usuario_nome | lower }}"
+               data-texto="{{ (r.cultura or '') ~ ' ' ~ (r.talhao or '') | lower }}"
+               data-mes="{{ (r.criado_em or '')[:7] }}">
+            <div class="calda-card-header">
+              <div class="calda-card-usuario">{{ r._usuario_nome }}</div>
+              <div class="calda-card-titulo">
+                {% if r.cultura %}{{ r.cultura }}{% else %}Sem cultura{% endif %}
+                {% if r.talhao %} — {{ r.talhao }}{% endif %}
+              </div>
+              <div class="calda-card-meta">
+                <span>{{ (r.criado_em or '')[:10] }}</span>
+                {% if r.area_ha %}<span>{{ r.area_ha }} ha</span>{% endif %}
+                {% if r.vazao_l_ha %}<span>{{ r.vazao_l_ha }} L/ha</span>{% endif %}
+              </div>
+            </div>
+            <div class="calda-card-body">
+              {% if r.produtos %}
+                <ol class="ordem-lista">
+                  {% for p in r.produtos %}
+                  <li class="ordem-item">
+                    <span class="ordem-num">{{ loop.index }}</span>
+                    <span class="ordem-produto">{{ p.produto or '?' }}</span>
+                    {% if p.dose %}
+                      <span class="ordem-dose">{{ p.dose }} {{ p.unidade or '' }}</span>
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </ol>
+              {% else %}
+                <p class="sem-produtos">Sem produtos registrados</p>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
   </main>
 
   <script>
+    function trocarAba(nome) {
+      document.querySelectorAll('.aba').forEach((a, i) => {
+        const ids = ['tabela', 'ordens'];
+        a.classList.toggle('ativa', ids[i] === nome);
+      });
+      document.querySelectorAll('.painel').forEach(p => p.classList.remove('ativo'));
+      document.getElementById('painel-' + nome).classList.add('ativo');
+    }
+
     function filtrar() {
       const usuario = document.getElementById('filtro-usuario').value.toLowerCase();
       const busca = document.getElementById('filtro-busca').value.toLowerCase();
       const mes = document.getElementById('filtro-mes').value;
+
+      function ok(el) {
+        return (!usuario || el.dataset.usuario.includes(usuario))
+            && (!busca || el.dataset.texto.includes(busca))
+            && (!mes || el.dataset.mes === mes);
+      }
+
       document.querySelectorAll('#tabela tbody tr').forEach(tr => {
-        const ok = (!usuario || tr.dataset.usuario.includes(usuario))
-          && (!busca || tr.dataset.texto.includes(busca))
-          && (!mes || tr.dataset.mes === mes);
-        tr.style.display = ok ? '' : 'none';
+        tr.style.display = ok(tr) ? '' : 'none';
+      });
+      document.querySelectorAll('#grid-ordens .calda-card').forEach(card => {
+        card.style.display = ok(card) ? '' : 'none';
       });
     }
   </script>
