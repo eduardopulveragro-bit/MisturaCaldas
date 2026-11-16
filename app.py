@@ -519,7 +519,17 @@ def processar():
             "vazao_L_ha": operacao.get("vazao_L_ha"),
             "area_ha": operacao.get("area_tanque_ha"),
             "produtos": [
-                {"produto": it["produto"], "dose": it.get("dose"), "unidade": it.get("unidade"), "base": it.get("base")}
+                {
+                    "produto": it["produto"],
+                    "formulacao": it.get("formulacao", ""),
+                    "dose": it.get("dose"),
+                    "unidade": it.get("unidade", ""),
+                    "base": it.get("base"),
+                    "dose_tanque": it.get("dose_tanque"),
+                    "dose_tanque_unidade": it.get("dose_tanque_unidade", ""),
+                    "pendente": it.get("pendente", False),
+                    "alerta": it.get("alerta_pendente", ""),
+                }
                 for it in itens_ordenados
             ],
             "operacao": operacao if operacao else None,

@@ -46,20 +46,29 @@
     .produto-pill { display: inline-block; background: #e8f0fe; color: #10315A; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin: 1px; }
 
     /* cards de ordem */
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 16px; }
     .calda-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
-    .calda-card-header { background: #10315A; color: white; padding: 10px 14px; }
-    .calda-card-usuario { font-size: 11px; color: #aed6f1; margin-bottom: 2px; }
-    .calda-card-titulo { font-size: 13px; font-weight: 700; }
-    .calda-card-meta { display: flex; gap: 10px; margin-top: 4px; font-size: 11px; color: #aed6f1; flex-wrap: wrap; }
-    .calda-card-body { padding: 12px 14px; }
-    .ordem-lista { list-style: none; }
-    .ordem-item { display: flex; align-items: baseline; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f0f4f8; font-size: 12px; }
-    .ordem-item:last-child { border-bottom: none; }
-    .ordem-num { background: #10315A; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; flex-shrink: 0; }
-    .ordem-produto { font-weight: 600; color: #1a1a2e; flex: 1; }
-    .ordem-dose { color: #267A25; font-size: 11px; white-space: nowrap; }
-    .sem-produtos { font-size: 12px; color: #aaa; font-style: italic; padding: 8px 0; }
+    .calda-card-header { background: #10315A; color: white; padding: 10px 16px; }
+    .calda-card-usuario { font-size: 11px; color: #aed6f1; margin-bottom: 2px; font-style: italic; }
+    .calda-card-titulo { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; }
+    .calda-card-meta { display: flex; gap: 14px; margin-top: 5px; font-size: 11px; color: #aed6f1; flex-wrap: wrap; font-style: italic; }
+    .calda-card-body { padding: 0; }
+    .ordem-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .ordem-table th { background: #10315A; color: white; padding: 7px 12px; text-align: left; font-size: 11px; white-space: nowrap; }
+    .ordem-table th:not(:first-child) { text-align: right; }
+    .ordem-table td { padding: 8px 12px; border-bottom: 1px solid #f0f4f8; vertical-align: middle; }
+    .ordem-table td:not(:first-child):not(:nth-child(2)) { text-align: right; }
+    .ordem-table tr:last-child td { border-bottom: none; }
+    .ordem-table tr:hover td { background: #f8fafc; }
+    .td-num { width: 28px; color: #888; font-size: 11px; text-align: center !important; }
+    .td-produto { font-weight: 700; color: #1a1a2e; }
+    .td-form { color: #888; font-size: 11px; }
+    .td-dose { color: #1565c0; font-weight: 600; }
+    .td-tanque { font-weight: 700; color: #1a1a2e; }
+    .row-erro td { background: #fff8e1 !important; }
+    .row-erro .td-produto { color: #e65100; }
+    .alerta-pill { display: inline-block; background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin-top: 2px; }
+    .sem-produtos { font-size: 12px; color: #aaa; font-style: italic; padding: 12px; }
 
     @media (max-width: 600px) {
       header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
@@ -213,17 +222,39 @@
             </div>
             <div class="calda-card-body">
               {% if r.produtos %}
-                <ol class="ordem-lista">
-                  {% for p in r.produtos %}
-                  <li class="ordem-item">
-                    <span class="ordem-num">{{ loop.index }}</span>
-                    <span class="ordem-produto">{{ p.produto or '?' }}</span>
-                    {% if p.dose %}
-                      <span class="ordem-dose">{{ p.dose }} {{ p.unidade or '' }}</span>
-                    {% endif %}
-                  </li>
-                  {% endfor %}
-                </ol>
+                <table class="ordem-table">
+                  <thead>
+                    <tr>
+                      <th style="text-align:center;">#</th>
+                      <th>Produto</th>
+                      <th>Form.</th>
+                      <th>Dose/ha</th>
+                      <th>Dose/tanque</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for p in r.produtos %}
+                    <tr{% if p.pendente or p.alerta %} class="row-erro"{% endif %}>
+                      <td class="td-num">{{ loop.index }}</td>
+                      <td class="td-produto">
+                        {{ p.produto or '?' }}
+                        {% if p.alerta %}
+                          <br><span class="alerta-pill">⚠ {{ p.alerta }}</span>
+                        {% elif p.pendente %}
+                          <br><span class="alerta-pill">pendente confirmação</span>
+                        {% endif %}
+                      </td>
+                      <td class="td-form">{{ p.formulacao or '—' }}</td>
+                      <td class="td-dose">
+                        {% if p.dose %}{{ p.dose }} {{ p.unidade or '' }}{% else %}—{% endif %}
+                      </td>
+                      <td class="td-tanque">
+                        {% if p.dose_tanque %}{{ p.dose_tanque }} {{ p.dose_tanque_unidade or '' }}{% else %}—{% endif %}
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
               {% else %}
                 <p class="sem-produtos">Sem produtos registrados</p>
               {% endif %}
