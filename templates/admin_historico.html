@@ -95,15 +95,42 @@
           <div class="stat-label">Total caldas</div>
         </div>
         <div class="stat">
-          <div class="stat-valor">{{ registros | map(attribute='usuario_id') | list | unique | list | length }}</div>
-          <div class="stat-label">Usuários ativos</div>
+          <div class="stat-valor" style="color:#267A25;">{{ ativos_30d }}</div>
+          <div class="stat-label">Ativos (30 dias)</div>
         </div>
         <div class="stat">
-          <div class="stat-valor">
-            {% set areas = registros | selectattr('area_ha') | map(attribute='area_ha') | list %}
-            {% if areas %}{{ "%.0f" | format(areas | sum) }}{% else %}—{% endif %}
+          <div class="stat-valor" style="color:#c62828;">{{ sem_atividade }}</div>
+          <div class="stat-label">Inativos / sem caldas</div>
+        </div>
+        <div class="stat">
+          <div class="stat-valor">{{ total_ha or '—' }}</div>
+          <div class="stat-label">ha pulverizados</div>
+        </div>
+      </div>
+
+      <!-- atividade por usuário -->
+      <div style="margin-bottom:20px;">
+        <div style="font-size:12px;font-weight:700;color:#10315A;margin-bottom:8px;">Atividade por usuário</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          {% for u in atividade_usuarios %}
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:7px;padding:8px 12px;min-width:160px;">
+            <div style="font-size:12px;font-weight:700;color:#1a1a2e;">{{ u.nome }}</div>
+            <div style="font-size:11px;color:#888;margin-top:2px;">{{ u.num_caldas }} calda{{ 's' if u.num_caldas != 1 }}</div>
+            {% if u.dias_sem_calda is not none %}
+              {% if u.dias_sem_calda == 0 %}
+                <div style="font-size:11px;color:#267A25;font-weight:600;margin-top:3px;">Ativo hoje</div>
+              {% elif u.dias_sem_calda <= 7 %}
+                <div style="font-size:11px;color:#267A25;margin-top:3px;">{{ u.dias_sem_calda }}d atrás</div>
+              {% elif u.dias_sem_calda <= 30 %}
+                <div style="font-size:11px;color:#f57c00;margin-top:3px;">{{ u.dias_sem_calda }}d atrás</div>
+              {% else %}
+                <div style="font-size:11px;color:#c62828;margin-top:3px;">{{ u.dias_sem_calda }}d sem usar</div>
+              {% endif %}
+            {% else %}
+              <div style="font-size:11px;color:#bbb;margin-top:3px;">Sem caldas ainda</div>
+            {% endif %}
           </div>
-          <div class="stat-label">Total ha</div>
+          {% endfor %}
         </div>
       </div>
 

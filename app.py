@@ -403,11 +403,49 @@ def admin_excluir_usuario(user_id):
 def admin_historico():
     if not current_user.admin:
         return redirect(url_for("index"))
+    from datetime import datetime, timezone
     registros = historico_mod.listar_todos(limit=300)
-    usuarios = {u["id"]: u["nome"] for u in usuarios_mod.listar()}
+    todos_usuarios = usuarios_mod.listar()
+    usuarios_map = {u["id"]: u["nome"] for u in todos_usuarios}
     for r in registros:
-        r["_usuario_nome"] = usuarios.get(r.get("usuario_id"), "—")
-    return render_template("admin_historico.html", registros=registros)
+        r["_usuario_nome"] = usuarios_map.get(r.get("usuario_id"), "—")
+    # última atividade por usuário (data da calda mais recente)
+    ultima: dict = {}
+    for r in registros:
+        uid = r.get("usuario_id")
+        if not uid:
+            continue
+        ts = (r.get("criado_em") or "")[:10]
+        if ts and (uid not in ultima or ts > ultima[uid]):
+            ultima[uid] = ts
+    agora = datetime.now(timezone.utc).date()
+    atividade_usuarios = []
+    for u in todos_usuarios:
+        if u.get("admin"):
+            continue
+        ts = ultima.get(u["id"])
+        if ts:
+            dias = (agora - datetime.strptime(ts, "%Y-%m-%d").date()).days
+        else:
+            dias = None
+        atividade_usuarios.append({
+            "nome": u["nome"],
+            "ultima_calda": ts,
+            "dias_sem_calda": dias,
+            "num_caldas": sum(1 for r in registros if r.get("usuario_id") == u["id"]),
+        })
+    atividade_usuarios.sort(key=lambda x: (x["dias_sem_calda"] is None, x["dias_sem_calda"] or 9999))
+    ativos_30d = sum(1 for u in atividade_usuarios if u["dias_sem_calda"] is not None and u["dias_sem_calda"] <= 30)
+    sem_atividade = sum(1 for u in atividade_usuarios if u["dias_sem_calda"] is None or u["dias_sem_calda"] > 30)
+    total_ha = sum(r["area_ha"] for r in registros if r.get("area_ha"))
+    return render_template(
+        "admin_historico.html",
+        registros=registros,
+        atividade_usuarios=atividade_usuarios,
+        ativos_30d=ativos_30d,
+        sem_atividade=sem_atividade,
+        total_ha=int(total_ha) if total_ha else 0,
+    )
 
 
 # ── API ───────────────────────────────────────────────────────────────────────
