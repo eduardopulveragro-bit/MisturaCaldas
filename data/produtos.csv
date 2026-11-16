@@ -228,7 +228,8 @@ Quality,Quality WG|Quality Koppert,27915,BIO_FUNGICO,21,fungicida biológico Kop
 Metarriz,Metarriz WP|Metarriz Koppert,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
 Baculovirus AEE,Baculovirus|Baculovírus|CoolGuard,,BIO_VIRAL,22,inseticida biológico viral — lagartas,pendente (2026-10-16),Baculovirus anticarsia
 Sumisin,Sumisin 500 EC|Sumithion,,EC,11,inseticida EC — organofosforado,pendente (2026-10-16),fenitrothion
-Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Act Oil|Act Oleo|Actioleo,,OLEO,12,adjuvante óleo mineral/vegetal,pendente (2026-10-16),óleo mineral
+Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante óleo mineral/vegetal,pendente (2026-10-16),óleo mineral
+Act Oil,Act Oil Giroagro|ActOil|Act Oleo Giroagro,,OLEO,12,cadastro manual — óleo adjuvante Giroagro,2026-11-16,oleo mineral/vegetal
 Sapek Max,Sapek|Sapek Mais|Sapek Max SG|Mirny|Agrios|Babel|Kavez,34221,SG,3,herbicida SG — glufosinato de amônio,pendente (2026-10-16),glufosinato de amônio
 Kennox,Kennox 240 EC|Kennox CI,24518,EC,11,graminicida EC UPL — bula confirmada MAPA 24518,2026-10-22,cletodim + haloxifope-P-metilico
 Boro Max,Boro max|Boro Max Foliar|Boro Máx|Boromax,,FERTILIZANTE,18,fertilizante foliar boro — cadastro manual,2026-10-26,boro
