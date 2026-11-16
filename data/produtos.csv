@@ -575,3 +575,42 @@ Microthiol Disperss WG,Microthiol|Microthiol WG|Microthiol UPL|Enxofre WG UPL,,W
 Mavrik 200 EW,Mavrik|Mavrik Syngenta|Mavrik EW|Tau-fluvalinato Syngenta EW,,EW,14,pesquisa web — trigo,2026-11-11,tau-fluvalinato
 Camposan 480 EC,Camposan|Camposan EC|Camposan Bayer|Etefon 480 EC Bayer,,EC,11,pesquisa web — trigo,2026-11-11,etefon
 Manipulator 460 EC,Manipulator|Manipulator EC|Manipulator Nufarm|Clormequat Nufarm,,EC,11,pesquisa web — trigo,2026-11-11,clormequat
+Rivax SC,Rivax|Rivax Bayer|Fluoxastrobina+Protioconazol SC,,SC,8,cadastro manual — fungicida SC Bayer ferrugem soja,2026-11-16,fluoxastrobina+protioconazol
+Aprovia SC,Aprovia|Aprovia Syngenta|Benzovindiflupir SC solo,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
+Lucento SC,Lucento|Lucento Corteva|Isoflucypram SC soja,,SC,8,cadastro manual — fungicida SC Corteva SDHI isoflucypram,2026-11-16,isoflucypram
+Miravis Prime SC,Miravis Prime|Miravis Prime Syngenta|Pydiflumetofen+Ciprodinila SC,,SC,8,cadastro manual — fungicida SC Syngenta pydiflumetofen+cyprodinyl,2026-11-16,pydiflumetofen+cyprodinyl
+Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
+Switch WG,Switch|Switch Syngenta|Switch WG 625|Ciprodinil+Fludioxonil WG,,WG,6,cadastro manual — fungicida WG Syngenta ciprodinil+fludioxonil botrytis mofo cinzento,2026-11-16,ciprodinil+fludioxonil
+Scala SC,Scala|Scala SC Bayer|Pirimetanil SC|Pyrimethanil SC,,SC,8,cadastro manual — fungicida SC Bayer pirimetanil botrytis uvas/tomate,2026-11-16,pirimetanil
+Cobrethane WP,Cobrethane|Cobrethane WP Nufarm|Mancozebe+Cobre WP,,WP,5,cadastro manual — fungicida WP Nufarm mancozebe+oxicloreto de cobre,2026-11-16,mancozebe+oxicloreto de cobre
+Cobre SC,Cobre SC|Oxicloreto de Cobre SC|Oxicloreto Cobre SC generico,,SC,8,cadastro manual — fungicida SC oxicloreto de cobre formulacao SC generica,2026-11-16,oxicloreto de cobre
+Timorex Gold EC,Timorex Gold|Timorex|Timorex STK|Timol fungicida EC,,EC,11,cadastro manual — fungicida biologico EC timol STK Bio-Ag,2026-11-16,timol
+Polysect Ultra SL,Polysect Ultra|Polysect|Polysect FMC|Alfa-cipermetrina+Imidacloprido SL,,SL,16,cadastro manual — inseticida SL alfa-cipermetrina+imidacloprido Cheminova/FMC,2026-11-16,alfa-cipermetrina+imidacloprido
+Blackhawk WG,Blackhawk|Blackhawk WG Corteva|Espinosade 480 WG Corteva,,WG,6,cadastro manual — inseticida WG espinosade Corteva,2026-11-16,espinosade
+Exalt SC,Exalt|Exalt SC Corteva|Espinosade 240 SC Exalt,,SC,8,cadastro manual — inseticida SC espinosade 240 baixa dose Corteva,2026-11-16,espinosade
+Nomini OD,Nomini|Nomini OD|Nomini Nissan|Bispiribac+Propanil OD arroz,,OD,9,cadastro manual — herbicida OD bispiribac-sodio+propanil arroz Nissan,2026-11-16,bispiribac-sodio+propanil
+Primus SL,Primus|Primus Syngenta|Primus 50 SL|Florasulam SL,,SL,16,cadastro manual — herbicida SL florasulam trigo/pastagem Syngenta,2026-11-16,florasulam
+Zidua PRO WG,Zidua PRO|Zidua Pro BASF|Piroxasulfona+Flumioxazina WG,,WG,6,cadastro manual — herbicida WG BASF piroxasulfona+flumioxazina pre-emergente soja,2026-11-16,piroxasulfona+flumioxazina
+YaraVita Zincutec WP,YaraVita Zincutec|Zincutec WP|Zinco 90 WP Yara|Zinco WP Yara,,WP,18,cadastro manual — fertilizante foliar zinco 90% WP Yara,2026-11-16,zinco
+Rexolin APN WP,Rexolin APN|Rexolin WP|Rexolin ICL|Rexolin multinutriente WP,,WP,18,cadastro manual — fertilizante foliar quelato multinutriente WP ICL Fe+Zn+Mn,2026-11-16,ferro+zinco+manganes quelatados
+Fetrilon Combi WG,Fetrilon Combi|Fetrilon WG|Fetrilon BASF|Quelato multinutriente WG BASF Compo,,WG,18,cadastro manual — fertilizante foliar quelato multinutriente WG BASF/Compo,2026-11-16,ferro+manganes+zinco+cobre+boro quelatados
+Master Haifa WP,Master Haifa|Master WP|Master Haifa soluvel|NPK micro Haifa WP,,WP,18,cadastro manual — fertilizante soluvel WP multinutriente Haifa,2026-11-16,NPK+micronutrientes
+Magnisal WP,Magnisal|Magnisal WP Haifa|Nitrato Magnesio WP|MgNO3 WP,,WP,18,cadastro manual — fertilizante foliar nitrato de magnesio WP Haifa,2026-11-16,nitrato de magnesio
+Haifa MKP WP,Haifa MKP|MKP WP|Fosfato Monopotassico WP|Monofosfato Potassio WP,,WP,18,cadastro manual — fertilizante foliar fosfato monopotassico WP Haifa,2026-11-16,fosfato monopotassico
+Ultrasol WG,Ultrasol|Ultrasol WG SQM|Fertilizante SQM WG|Ultrasol Multi WG,,WG,18,cadastro manual — fertilizante soluvel WG multinutriente SQM,2026-11-16,NPK+micronutrientes
+Nitrato de Calcio SL,Nitrato Calcio|Calcinit SL|Calcio Nitrato SL|CaNO3 foliar|Nitrato Calcico,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de calcio SL,2026-11-16,nitrato de calcio
+Nitrato de Potassio SL,Nitrato Potassio|KNO3 foliar|Nitropot SL|Potassio Nitrato foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de potassio SL,2026-11-16,nitrato de potassio
+Nitrato de Magnesio SL,Nitrato Magnesio|MgNO3 SL|Magnesio Nitrato foliar SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de magnesio SL,2026-11-16,nitrato de magnesio
+Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zinco SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de zinco SL,2026-11-16,fosfito+zinco
+Fosfito de Calcio SL,Fosfito Calcio|Fosfito Ca SL|Calcium Phosphite foliar|Ca Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de calcio SL,2026-11-16,fosfito+calcio
+MAP Foliar SL,MAP SL|MAP foliar|Fosfato Monoamonico SL|Mono Ammonium Phosphate foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar MAP monofosfato amonico SL,2026-11-16,fosfato monoamonico
+KTS SL,KTS|Tiosulfato Potassio SL|K Tiosulfato|Potassium Thiosulfate SL|KTS foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar tiosulfato de potassio SL,2026-11-16,tiosulfato de potassio
+YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar boro SC Yara,2026-11-16,boro
+YaraVita Zintrac SC,YaraVita Zintrac|Zintrac SC|Zinco Yara SC|YaraVita Zinco Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar zinco SC Yara,2026-11-16,zinco
+YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Manganes Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar manganes SC Yara,2026-11-16,manganes
+YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar ferro SC Yara,2026-11-16,ferro
+ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
+Ryzup SG,Ryzup|Ryzup SG Certis|Giberelina Certis SG|Ryz Up SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico Certis,2026-11-16,acido giberelinico
+Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato Alga Marinha SL|Stimplex bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Acadian,2026-11-16,extrato de alga marinha
+Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,,OLEO,12,cadastro manual — oleo mineral adjuvante Iharabras,2026-11-16,oleo mineral
+Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO,12,cadastro manual — oleo mineral SC Dow/Corteva,2026-11-16,oleo mineral
