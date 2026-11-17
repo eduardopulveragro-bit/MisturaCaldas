@@ -42,14 +42,23 @@
     .btn-editar:hover { background: #BF360C; }
     .lista-vazia { text-align: center; color: #999; padding: 32px 0; font-size: 14px; }
 
-    .cliente-item {
-      border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px;
-      margin-bottom: 12px; background: #fafafa;
+    .fazenda-grupo {
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      margin-bottom: 14px; background: #fafafa; overflow: hidden;
     }
-    .cliente-item h3 { font-size: 15px; color: #10315A; margin-bottom: 8px; }
-    .cliente-info { font-size: 13px; color: #555; line-height: 1.8; }
-    .cliente-info strong { color: #333; }
-    .cliente-acoes { display: flex; gap: 8px; margin-top: 12px; }
+    .fazenda-titulo {
+      background: #10315A; color: white;
+      padding: 11px 16px; font-size: 15px; font-weight: 700;
+    }
+    .pulv-item {
+      padding: 12px 16px; border-top: 1px solid #e8edf2;
+    }
+    .pulv-item:first-of-type { border-top: none; }
+    .pulv-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .pulv-modelo { font-size: 14px; font-weight: 700; color: #10315A; }
+    .pulv-info { font-size: 12px; color: #555; line-height: 1.7; }
+    .pulv-info strong { color: #333; }
+    .cliente-acoes { display: flex; gap: 8px; margin-top: 10px; }
 
     .secao-titulo { font-size: 13px; font-weight: 700; color: #10315A; margin-bottom: 8px; margin-top: 16px; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
     .config-entry { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 8px; flex-wrap: wrap; }
@@ -156,21 +165,39 @@
           return;
         }
         div.innerHTML = '';
-        clientes.forEach(function(c) { div.appendChild(renderCliente(c)); });
+        // Agrupa por fazenda: parte antes do " — " no nome
+        const grupos = {};
+        const ordem = [];
+        clientes.forEach(function(c) {
+          const sep = c.nome.indexOf(' — ');
+          const fazenda = sep >= 0 ? c.nome.slice(0, sep).trim() : c.nome;
+          if (!grupos[fazenda]) { grupos[fazenda] = []; ordem.push(fazenda); }
+          grupos[fazenda].push(c);
+        });
+        ordem.forEach(function(fazenda) {
+          div.appendChild(renderGrupo(fazenda, grupos[fazenda]));
+        });
       } catch (e) {
         div.innerHTML = '<div class="lista-vazia" style="color:#C62828;">Erro ao carregar clientes.</div>';
       }
     }
 
-    function renderCliente(c) {
+    function renderGrupo(fazenda, clientes) {
+      const wrap = document.createElement('div');
+      wrap.className = 'fazenda-grupo';
+      wrap.innerHTML = '<div class="fazenda-titulo">' + esc(fazenda) + '</div>';
+      clientes.forEach(function(c) { wrap.appendChild(renderPulv(c)); });
+      return wrap;
+    }
+
+    function renderPulv(c) {
       const pulv = c.pulverizador || {};
       const infos = [];
-      if (pulv.modelo) infos.push('<strong>Equipamento:</strong> ' + esc(pulv.modelo));
       if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
       const configs = c.configs || [];
       if (configs.length === 1) {
         const cfg = configs[0];
-        if (cfg.vazao_L_ha != null) infos.push('<strong>Taxa de aplicação:</strong> ' + cfg.vazao_L_ha + ' L/ha' + (cfg.descricao ? ' (' + esc(cfg.descricao) + ')' : ''));
+        if (cfg.vazao_L_ha != null) infos.push('<strong>Taxa:</strong> ' + cfg.vazao_L_ha + ' L/ha' + (cfg.descricao ? ' (' + esc(cfg.descricao) + ')' : ''));
         if (cfg.area_tanque_ha != null) infos.push('<strong>Área/tanque:</strong> ' + cfg.area_tanque_ha + ' ha');
       } else if (configs.length > 1) {
         infos.push('<strong>Configurações:</strong><br>' + configs.map((cfg, i) =>
@@ -181,17 +208,21 @@
       if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));
       if (c.observacao) infos.push('<strong>Obs:</strong> ' + esc(c.observacao));
 
-      var div = document.createElement('div');
-      div.className = 'cliente-item';
-      div.innerHTML = '<h3>' + esc(c.nome) + '</h3>' +
-        '<div class="cliente-info">' + infos.join('<br>') + '</div>' +
+      const div = document.createElement('div');
+      div.className = 'pulv-item';
+      const modelo = pulv.modelo || c.nome;
+      div.innerHTML =
+        '<div class="pulv-header">' +
+          '<span class="pulv-modelo">' + esc(modelo) + '</span>' +
+        '</div>' +
+        '<div class="pulv-info">' + infos.join('<br>') + '</div>' +
         '<div class="cliente-acoes"></div>';
-      var acoes = div.querySelector('.cliente-acoes');
-      var btnEdit = document.createElement('button');
+      const acoes = div.querySelector('.cliente-acoes');
+      const btnEdit = document.createElement('button');
       btnEdit.className = 'btn btn-editar';
       btnEdit.textContent = 'Editar';
       btnEdit.addEventListener('click', function() { editar(c.id); });
-      var btnDel = document.createElement('button');
+      const btnDel = document.createElement('button');
       btnDel.className = 'btn btn-vermelho';
       btnDel.textContent = 'Excluir';
       btnDel.addEventListener('click', function() { excluir(c.id, c.nome); });
