@@ -18,6 +18,7 @@ from src.alertas_incompatibilidade import verificar_incompatibilidades
 from src import clientes as clientes_mod
 from src import usuarios as usuarios_mod
 from src import historico as historico_mod
+from src import sugestoes as sugestoes_mod
 
 _handlers = [logging.StreamHandler()]
 if os.path.isdir("logs"):
@@ -71,6 +72,7 @@ _SKIP_ONBOARDING = {
     "init_db", "init_db_historico", "migrate_db", "migrate_db_historico",
     "historico", "api_historico_listar", "api_historico_criar", "api_historico_excluir",
     "admin_usuarios", "admin_criar_usuario", "admin_toggle_usuario", "admin_excluir_usuario", "admin_historico",
+    "admin_sugestoes", "admin_sugestoes_aprovar", "admin_sugestoes_rejeitar", "init_db_sugestoes",
 }
 
 
@@ -448,6 +450,71 @@ def admin_historico():
     )
 
 
+# ── Admin sugestões ───────────────────────────────────────────────────────────
+
+@app.route("/admin/sugestoes")
+@login_required
+def admin_sugestoes():
+    if not current_user.admin:
+        return redirect(url_for("index"))
+    pendentes = sugestoes_mod.listar_pendentes()
+    usuarios_map = {u["id"]: u["nome"] for u in usuarios_mod.listar()}
+    for s in pendentes:
+        ids = s.get("usuario_ids") or []
+        s["_usuarios_nomes"] = [usuarios_map.get(uid, uid[:8]) for uid in ids]
+    return render_template("admin_sugestoes.html", sugestoes=pendentes)
+
+
+@app.route("/admin/sugestoes/<sugestao_id>/aprovar", methods=["POST"])
+@login_required
+def admin_sugestoes_aprovar(sugestao_id):
+    if not current_user.admin:
+        return redirect(url_for("index"))
+    nome = request.form.get("nome", "").strip()
+    formulacao = request.form.get("formulacao", "").strip().upper()
+    if nome and formulacao:
+        from src.busca_produto import salvar_produto
+        from src.ordenacao import _FORMULACAO_PARA_POSICAO, _FORM_ESPECIAL_POSICAO
+        posicao = _FORMULACAO_PARA_POSICAO.get(formulacao) or _FORM_ESPECIAL_POSICAO.get(formulacao) or 999
+        import csv as _csv
+        from datetime import date as _date
+        caminho = Path(__file__).parent / "data" / "produtos.csv"
+        hoje = _date.today().strftime("%Y-%m-%d")
+        try:
+            ja_existe = False
+            with open(caminho, encoding="utf-8", newline="") as _f:
+                for _row in _csv.DictReader(_f):
+                    if _row["nome"].lower().strip() == nome.lower().strip():
+                        ja_existe = True
+                        break
+            if not ja_existe:
+                with open(caminho, "a", encoding="utf-8", newline="") as _f:
+                    _w = _csv.DictWriter(_f, fieldnames=["nome","nomes_alternativos","registro_mapa","formulacao","posicao","fonte","data_conferencia","principio_ativo"])
+                    _w.writerow({"nome": nome, "nomes_alternativos": "", "registro_mapa": "", "formulacao": formulacao, "posicao": str(posicao), "fonte": f"aprovado pelo admin", "data_conferencia": hoje, "principio_ativo": ""})
+        except OSError as _e:
+            logger.warning("Erro ao salvar produto aprovado: %s", _e)
+        sugestoes_mod.atualizar_status(sugestao_id, "aprovado")
+    return redirect(url_for("admin_sugestoes"))
+
+
+@app.route("/admin/sugestoes/<sugestao_id>/rejeitar", methods=["POST"])
+@login_required
+def admin_sugestoes_rejeitar(sugestao_id):
+    if not current_user.admin:
+        return redirect(url_for("index"))
+    sugestoes_mod.atualizar_status(sugestao_id, "rejeitado")
+    return redirect(url_for("admin_sugestoes"))
+
+
+@app.route("/init-db-sugestoes")
+@login_required
+def init_db_sugestoes():
+    if not current_user.admin:
+        return jsonify({"erro": "Acesso negado"}), 403
+    resultado = sugestoes_mod.criar_tabela()
+    return jsonify(resultado)
+
+
 # ── API ───────────────────────────────────────────────────────────────────────
 
 @app.route("/processar", methods=["POST"])
@@ -483,6 +550,14 @@ def processar():
             pass
 
     itens_ordenados = ordenar_itens(itens, formulacoes_usuario)
+
+    # Registra sugestões: produtos onde o usuário selecionou a formulação manualmente
+    for it in itens_ordenados:
+        if it.get("fonte") == "formulação informada pelo usuário":
+            try:
+                sugestoes_mod.registrar(it["produto"], it.get("formulacao", ""), current_user.id)
+            except Exception:
+                pass
 
     operacao = extrair_operacao(mensagem)
 
