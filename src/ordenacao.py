@@ -94,7 +94,7 @@ def _posicao_por_formulacao(formulacao: str | None) -> int | None:
 
 
 _FORM_ESPECIAL_POSICAO = {
-    "OLEO": 12, "ADJUVANTE": 17, "FERTILIZANTE": 18,
+    "OLEO": 12, "ADJUVANTE": 2, "FERTILIZANTE": 18,
     "CONDICIONADOR": 2, "ANTIESPUMANTE": 19,
     "BIO_BACTERIANO": 20, "BIO_FUNGICO": 21, "BIO_VIRAL": 22,
 }

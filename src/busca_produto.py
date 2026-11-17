@@ -24,8 +24,7 @@ _PROMPT_BUSCA = """Você é um especialista em defensivos agrícolas no Brasil. 
 CLASSES e POSIÇÕES:
 - Defensivos (herbicida/fungicida/inseticida/acaricida): posição pela formulação: SG=3, SP=4, WP=5, WG=6, CS=7, SC=8, OD=9, SE=10, EC=11, EO=13, EW=14, ME=15, SL=16
 - Adjuvante óleo (mineral/vegetal/OLEO DE LARANJA): formulacao="OLEO", posicao=12
-- Adjuvante condicionador/pH/quelante: formulacao="ADJUVANTE", posicao=2
-- Adjuvante espalhante/surfactante: formulacao="ADJUVANTE", posicao=17
+- Adjuvante condicionador/pH/quelante/espalhante/surfactante: formulacao="ADJUVANTE", posicao=2
 - Fertilizante foliar/bioestimulante: formulacao="FERTILIZANTE", posicao=18
 - Biológico bacteriano (Bacillus): formulacao="BIO_BACTERIANO", posicao=20
 - Biológico fúngico (Trichoderma/Beauveria): formulacao="BIO_FUNGICO", posicao=21
@@ -125,7 +124,7 @@ def buscar_produto_ia(nome: str) -> dict | None:
 
 
 _POSICOES_DEFENSIVO = {3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16}
-_POSICOES_ADJUVANTE = {2, 12, 17, 19}
+_POSICOES_ADJUVANTE = {2, 12, 19}
 _POSICOES_BIOLOGICO = {20, 21, 22}
 
 
@@ -165,7 +164,13 @@ def salvar_produto(nome_original: str, dados_ia: dict) -> dict:
     """
     formulacao = (dados_ia.get("formulacao") or "").upper()
 
-    posicao = _FORMULACAO_PARA_POSICAO.get(formulacao) or _FORM_ESPECIAL_POSICAO.get(formulacao) or 999
+    # Usa a posição que a IA retornou como fonte primária (ela diferencia condicionador pos=2
+    # de espalhante pos=17, ambos com formulacao=ADJUVANTE). Fallback para tabela de posições.
+    posicao_ia = dados_ia.get("posicao")
+    if isinstance(posicao_ia, int) and 1 <= posicao_ia <= 22:
+        posicao = posicao_ia
+    else:
+        posicao = _FORMULACAO_PARA_POSICAO.get(formulacao) or _FORM_ESPECIAL_POSICAO.get(formulacao) or 999
 
     _FORM_ESPECIAL = {
         2: "ADJUVANTE", 12: "OLEO", 17: "ADJUVANTE", 18: "FERTILIZANTE", 19: "ADJUVANTE",
