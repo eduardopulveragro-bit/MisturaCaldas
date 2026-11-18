@@ -2,6 +2,8 @@
 import json as _json
 import logging
 import os
+import time
+from collections import defaultdict
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -40,6 +42,21 @@ app.secret_key = _secret
 login_manager = LoginManager(app)
 login_manager.login_view = "login"
 login_manager.login_message = ""
+
+# Rate limiting simples em memória: 15 req/min por usuário em /processar
+_RATE_LIMIT_MAX = 15
+_RATE_LIMIT_JANELA = 60  # segundos
+_rate_hits: dict = defaultdict(list)
+
+
+def _verificar_rate_limit(user_id: str) -> bool:
+    agora = time.time()
+    hits = _rate_hits[user_id]
+    _rate_hits[user_id] = [t for t in hits if agora - t < _RATE_LIMIT_JANELA]
+    if len(_rate_hits[user_id]) >= _RATE_LIMIT_MAX:
+        return False
+    _rate_hits[user_id].append(agora)
+    return True
 
 
 class User(UserMixin):
@@ -406,17 +423,19 @@ def admin_historico():
     if not current_user.admin:
         return redirect(url_for("index"))
     from datetime import datetime, timezone
-    registros = historico_mod.listar_todos(limit=300)
+    registros = historico_mod.listar_todos(limit=1000)
     todos_usuarios = usuarios_mod.listar()
     usuarios_map = {u["id"]: u["nome"] for u in todos_usuarios}
     for r in registros:
         r["_usuario_nome"] = usuarios_map.get(r.get("usuario_id"), "—")
-    # última atividade por usuário (data da calda mais recente)
+    # última atividade e contagem por usuário (uma passagem)
     ultima: dict = {}
+    caldas_por_usuario: dict = {}
     for r in registros:
         uid = r.get("usuario_id")
         if not uid:
             continue
+        caldas_por_usuario[uid] = caldas_por_usuario.get(uid, 0) + 1
         ts = (r.get("criado_em") or "")[:10]
         if ts and (uid not in ultima or ts > ultima[uid]):
             ultima[uid] = ts
@@ -434,7 +453,7 @@ def admin_historico():
             "nome": u["nome"],
             "ultima_calda": ts,
             "dias_sem_calda": dias,
-            "num_caldas": sum(1 for r in registros if r.get("usuario_id") == u["id"]),
+            "num_caldas": caldas_por_usuario.get(u["id"], 0),
         })
     atividade_usuarios.sort(key=lambda x: (x["dias_sem_calda"] is None, x["dias_sem_calda"] or 9999))
     ativos_30d = sum(1 for u in atividade_usuarios if u["dias_sem_calda"] is not None and u["dias_sem_calda"] <= 30)
@@ -520,6 +539,9 @@ def init_db_sugestoes():
 @app.route("/processar", methods=["POST"])
 @login_required
 def processar():
+    if not _verificar_rate_limit(current_user.id):
+        return jsonify({"erro": "Muitas requisições. Aguarde um momento e tente novamente."}), 429
+
     mensagem = request.form.get("mensagem", "").strip()
 
     if not mensagem:

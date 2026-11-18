@@ -105,7 +105,7 @@ def contar_todos() -> dict:
     if not _disponivel():
         return {}
     r = requests.get(
-        _url("/rest/v1/historico_caldas?select=usuario_id"),
+        _url("/rest/v1/historico_caldas?select=usuario_id&limit=20000"),
         headers=_headers(), timeout=15,
     )
     r.raise_for_status()
