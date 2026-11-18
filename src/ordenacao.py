@@ -318,8 +318,9 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
 
     resultado.remove(primeiro_sl)
 
-    # SL de alto volume (>=2.5 L/ha) nao-glif/24D: vai PRIMEIRO para maxima diluicao
-    if dose_ml >= 2500 and not tem_glif_sl and not tem_24d_sl:
+    # SL de alto volume (>=2.5 L/ha) nao-glif/24D e sem WG/WP na calda: vai PRIMEIRO para maxima diluicao
+    # Se houver WG/WP, os solidos precisam de mais agua para dispersar e ficam na frente
+    if dose_ml >= 2500 and not tem_glif_sl and not tem_24d_sl and not tem_po_suspensao:
         ponto = 0
         for i, item in enumerate(resultado):
             if item["posicao"] <= 2:
