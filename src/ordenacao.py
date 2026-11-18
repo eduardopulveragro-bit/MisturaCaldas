@@ -434,17 +434,24 @@ def _prediluir_graminicida_oleo(resultado: list[dict]) -> list[dict]:
 def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
     abamectina = None
     oleo = None
+    oleo_ja_usado = None  # óleo reclamado por outra pré-diluição (ex: graminicida)
     for item in resultado:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("abamectina", "abamectin", "vertimec", "kraft")):
             abamectina = item
-        elif (item["posicao"] == 12
-              and not item.get("alerta_prediluicao")
-              and not any(x in nome for x in ("laranja", "terpen"))):
-            oleo = item
-    if not abamectina or not oleo:
+        elif item["posicao"] == 12 and not any(x in nome for x in ("laranja", "terpen")):
+            if not item.get("alerta_prediluicao"):
+                oleo = item
+            else:
+                oleo_ja_usado = item
+    if not abamectina:
         return resultado
-    return _inserir_prediluicao(resultado, abamectina, oleo)
+    if oleo:
+        return _inserir_prediluicao(resultado, abamectina, oleo)
+    # Óleo foi reclamado por pré-diluição de outro produto: alerta para juntar no mesmo grupo
+    if oleo_ja_usado:
+        abamectina["alerta_prediluicao"] = f"adicionar junto na pré-diluição com {oleo_ja_usado['produto']}"
+    return resultado
 
 
 def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
