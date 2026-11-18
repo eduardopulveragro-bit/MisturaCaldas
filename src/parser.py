@@ -69,7 +69,7 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
 
     resposta = cliente.messages.create(
         model=modelo,
-        max_tokens=1024,
+        max_tokens=2048,
         system=[{
             "type": "text",
             "text": _SYSTEM_PROMPT,
