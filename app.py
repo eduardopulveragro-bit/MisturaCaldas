@@ -612,6 +612,7 @@ def processar():
     try:
         historico_mod.criar({
             "usuario_id": current_user.id,
+            "mensagem_original": mensagem,
             "cultura": (operacao.get("cultura") or "").strip(),
             "vazao_L_ha": operacao.get("vazao_L_ha"),
             "area_ha": operacao.get("area_tanque_ha"),

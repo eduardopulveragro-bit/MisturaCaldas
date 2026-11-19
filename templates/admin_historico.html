@@ -69,6 +69,9 @@
     .row-erro .td-produto { color: #e65100; }
     .alerta-pill { display: inline-block; background: #fff3e0; color: #e65100; border: 1px solid #ffcc80; border-radius: 4px; padding: 1px 6px; font-size: 10px; margin-top: 2px; }
     .sem-produtos { font-size: 12px; color: #aaa; font-style: italic; padding: 12px; }
+    .msg-original { margin: 10px 0 0; border-top: 1px solid #eef; padding-top: 8px; }
+    .msg-original summary { font-size: 11px; color: #267A25; cursor: pointer; font-weight: 600; padding: 2px 0; }
+    .msg-pre { background: #f5f7fa; border-radius: 6px; padding: 10px 12px; font-size: 12px; white-space: pre-wrap; word-break: break-word; color: #333; margin-top: 8px; font-family: inherit; }
 
     @media (max-width: 600px) {
       header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
@@ -258,6 +261,12 @@
                 </table>
               {% else %}
                 <p class="sem-produtos">Sem produtos registrados</p>
+              {% endif %}
+              {% if r.mensagem_original %}
+              <details class="msg-original">
+                <summary>Ver mensagem original</summary>
+                <pre class="msg-pre">{{ r.mensagem_original }}</pre>
+              </details>
               {% endif %}
             </div>
           </div>

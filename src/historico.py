@@ -58,6 +58,7 @@ def criar(dados: dict) -> dict:
         "rh_amb": _float_ou_none(dados.get("rh_amb")),
         "delta_t": _float_ou_none(dados.get("delta_t")),
         "notas": (dados.get("notas") or "").strip(),
+        "mensagem_original": (dados.get("mensagem_original") or "").strip(),
     }
     if dados.get("cliente_id"):
         row["cliente_id"] = dados["cliente_id"]
@@ -128,7 +129,8 @@ def migrar_tabela() -> dict:
       ADD COLUMN IF NOT EXISTS rh_amb float,
       ADD COLUMN IF NOT EXISTS delta_t float,
       ADD COLUMN IF NOT EXISTS notas text NOT NULL DEFAULT '',
-      ADD COLUMN IF NOT EXISTS talhao text NOT NULL DEFAULT '';
+      ADD COLUMN IF NOT EXISTS talhao text NOT NULL DEFAULT '',
+      ADD COLUMN IF NOT EXISTS mensagem_original text NOT NULL DEFAULT '';
     """
     r = requests.post(
         _url("/rest/v1/rpc/exec_sql"),
