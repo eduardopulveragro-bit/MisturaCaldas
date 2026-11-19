@@ -36,6 +36,7 @@ REGRAS:
 - Use base="tanque" quando a dose for seguida de "/tanque", "/tq", "/carga", ou a mensagem indicar "por tanque", "por carga", "por tq", "carga cheia" ou similar. Ex: "2 L/tanque" → base="tanque".
 - Se não houver indicação de base (ex: "Drive 2.5 L"), use base=null — não assuma.
 - Dose com vírgula decimal (ex: "0,5 L") → converta para ponto: 0.5
+- Formato "X/Bomba" + parênteses "/ha": quando um produto aparece com dose "/bomba" ou "/tq" e logo abaixo a equivalência por hectare entre parênteses, isso é a MESMA DOSE — extraia APENAS UMA vez usando a dose por hectare. Ex: "Actron - 2,5 Lt/Bomba\n(50 ml/ha)" → um item só: {produto:"Actron",dose:50,unidade:"mL",base:"ha"}. Ex: "Kennox - 50 Lt/Bomba\n(1,0 Lt/ha)" → {produto:"Kennox",dose:1.0,unidade:"L",base:"ha"}.
 - Se encontrar nome de pessoa, telefone, CPF ou fazenda: {"erro":"dados_pessoais","descricao":"dados pessoais detectados"}
 
 FORMATO:
