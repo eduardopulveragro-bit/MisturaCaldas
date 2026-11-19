@@ -199,6 +199,7 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
     resultado = _prediluir_abamectina_oleo(resultado)
     resultado = _separar_glif_24d(resultado)
     resultado = _posicionar_foliares(resultado)
+    resultado = _posicionar_actron_ativon(resultado)
     return resultado
 
 
@@ -497,6 +498,30 @@ def _separar_glif_24d(resultado: list[dict]) -> list[dict]:
 
 
 _FORMULACOES_SOLIDAS = {"SG", "SP", "WP", "WG"}
+
+
+def _eh_actron_ativon(item: dict) -> bool:
+    nome = _normalizar(item["produto"])
+    return any(x in nome for x in ("actron", "ativon"))
+
+
+def _posicionar_actron_ativon(resultado: list[dict]) -> list[dict]:
+    """Actron e Ativon vão após o último sólido (WG/WP/SG/SP). Se não houver sólidos, mantém posição natural."""
+    alvos = [item for item in resultado if _eh_actron_ativon(item)]
+    if not alvos:
+        return resultado
+    # Verifica se há sólidos na calda
+    if not any(item.get("formulacao", "").upper() in _FORM_SOLIDA for item in resultado):
+        return resultado
+    for alvo in alvos:
+        resultado.remove(alvo)
+    ponto = 0
+    for i, item in enumerate(resultado):
+        if item.get("formulacao", "").upper() in _FORM_SOLIDA:
+            ponto = i + 1
+    for i, alvo in enumerate(alvos):
+        resultado.insert(ponto + i, alvo)
+    return resultado
 
 
 def _posicionar_foliares(resultado: list[dict]) -> list[dict]:
