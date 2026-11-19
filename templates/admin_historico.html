@@ -73,6 +73,17 @@
     .msg-original summary { font-size: 11px; color: #267A25; cursor: pointer; font-weight: 600; padding: 2px 0; }
     .msg-pre { background: #f5f7fa; border-radius: 6px; padding: 10px 12px; font-size: 12px; white-space: pre-wrap; word-break: break-word; color: #333; margin-top: 8px; font-family: inherit; }
 
+    /* linha de detalhe expansível */
+    .btn-ver { background: #e8f0fe; border: none; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 12px; color: #10315A; font-weight: 700; line-height: 1.4; }
+    .btn-ver:hover { background: #c5d8ff; }
+    .tr-detalhe td { background: #f8fafc; border-bottom: 2px solid #e2e8f0; padding: 14px 16px; }
+    .tr-detalhe:hover td { background: #f8fafc; }
+    .detalhe-inner { max-width: 100%; }
+    .detalhe-titulo { font-size: 11px; font-weight: 700; color: #10315A; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 8px; }
+    .detalhe-secoes { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; }
+    .detalhe-ordem { flex: 1; min-width: 280px; }
+    .detalhe-msg { flex: 1; min-width: 220px; }
+
     @media (max-width: 600px) {
       header { padding: 8px 16px 0; flex-direction: column; align-items: flex-start; gap: 2px; }
       .header-brand img { height: 52px; }
@@ -172,11 +183,12 @@
                 <th>Área (ha)</th>
                 <th>Taxa (L/ha)</th>
                 <th>Produtos</th>
+                <th style="text-align:center;width:50px;">Ver</th>
               </tr>
             </thead>
             <tbody>
               {% for r in registros %}
-              <tr data-usuario="{{ r._usuario_nome | lower }}" data-texto="{{ (r.cultura or '') ~ ' ' ~ (r.talhao or '') | lower }}" data-mes="{{ (r.criado_em or '')[:7] }}">
+              <tr class="tr-main" data-usuario="{{ r._usuario_nome | lower }}" data-texto="{{ (r.cultura or '') ~ ' ' ~ (r.talhao or '') | lower }}" data-mes="{{ (r.criado_em or '')[:7] }}">
                 <td style="white-space:nowrap;color:#888;font-size:11px;">
                   {{ (r.criado_em or '—')[:10] }}
                 </td>
@@ -196,6 +208,63 @@
                       <span class="produto-pill" style="background:#f1f5f9;color:#666;">+{{ r.produtos|length - 4 }}</span>
                     {% endif %}
                   {% endif %}
+                </td>
+                <td style="text-align:center;">
+                  <button type="button" class="btn-ver" onclick="toggleDetalhe(this)">▼</button>
+                </td>
+              </tr>
+              <tr class="tr-detalhe" style="display:none;">
+                <td colspan="7">
+                  <div class="detalhe-inner">
+                    <div class="detalhe-secoes">
+                      <div class="detalhe-ordem">
+                        <div class="detalhe-titulo">Ordem de mistura</div>
+                        {% if r.produtos %}
+                          <table class="ordem-table">
+                            <thead>
+                              <tr>
+                                <th style="text-align:center;">#</th>
+                                <th>Produto</th>
+                                <th>Form.</th>
+                                <th>Dose/ha</th>
+                                <th>Dose/tanque</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {% for p in r.produtos %}
+                              <tr{% if p.pendente or p.alerta %} class="row-erro"{% endif %}>
+                                <td class="td-num">{{ loop.index }}</td>
+                                <td class="td-produto">
+                                  {{ p.produto or '?' }}
+                                  {% if p.alerta %}
+                                    <br><span class="alerta-pill">⚠ {{ p.alerta }}</span>
+                                  {% elif p.pendente %}
+                                    <br><span class="alerta-pill">pendente confirmação</span>
+                                  {% endif %}
+                                </td>
+                                <td class="td-form">{{ p.formulacao or '—' }}</td>
+                                <td class="td-dose">
+                                  {% if p.dose %}{{ p.dose }} {{ p.unidade or '' }}{% else %}—{% endif %}
+                                </td>
+                                <td class="td-tanque">
+                                  {% if p.dose_tanque %}{{ p.dose_tanque }} {{ p.dose_tanque_unidade or '' }}{% else %}—{% endif %}
+                                </td>
+                              </tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        {% else %}
+                          <p class="sem-produtos">Sem produtos registrados</p>
+                        {% endif %}
+                      </div>
+                      {% if r.mensagem_original %}
+                      <div class="detalhe-msg">
+                        <div class="detalhe-titulo">Mensagem original</div>
+                        <pre class="msg-pre">{{ r.mensagem_original }}</pre>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </div>
                 </td>
               </tr>
               {% endfor %}
@@ -287,6 +356,15 @@
       document.getElementById('painel-' + nome).classList.add('ativo');
     }
 
+    function toggleDetalhe(btn) {
+      const tr = btn.closest('tr');
+      const detalhe = tr.nextElementSibling;
+      if (!detalhe || !detalhe.classList.contains('tr-detalhe')) return;
+      const aberto = detalhe.style.display !== 'none';
+      detalhe.style.display = aberto ? 'none' : '';
+      btn.textContent = aberto ? '▼' : '▲';
+    }
+
     function filtrar() {
       const usuario = document.getElementById('filtro-usuario').value.toLowerCase();
       const busca = document.getElementById('filtro-busca').value.toLowerCase();
@@ -298,8 +376,15 @@
             && (!mes || el.dataset.mes === mes);
       }
 
-      document.querySelectorAll('#tabela tbody tr').forEach(tr => {
-        tr.style.display = ok(tr) ? '' : 'none';
+      document.querySelectorAll('#tabela tbody tr.tr-main').forEach(tr => {
+        const show = ok(tr);
+        tr.style.display = show ? '' : 'none';
+        const detalhe = tr.nextElementSibling;
+        if (detalhe && detalhe.classList.contains('tr-detalhe') && !show) {
+          detalhe.style.display = 'none';
+          const btn = tr.querySelector('.btn-ver');
+          if (btn) btn.textContent = '▼';
+        }
       });
       document.querySelectorAll('#grid-ordens .calda-card').forEach(card => {
         card.style.display = ok(card) ? '' : 'none';

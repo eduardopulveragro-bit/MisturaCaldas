@@ -68,6 +68,13 @@ def criar(dados: dict) -> dict:
         _url("/rest/v1/historico_caldas"),
         headers=_headers(), json=row, timeout=10,
     )
+    if not r.ok and r.status_code == 400 and "mensagem_original" in r.text:
+        # Coluna ainda não existe no banco — salva sem ela
+        row.pop("mensagem_original", None)
+        r = requests.post(
+            _url("/rest/v1/historico_caldas"),
+            headers=_headers(), json=row, timeout=10,
+        )
     if not r.ok:
         import logging as _log
         _log.getLogger(__name__).error("historico criar %s: %s", r.status_code, r.text)
