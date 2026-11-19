@@ -197,13 +197,14 @@ def cadastro():
         nome = request.form.get("nome", "").strip()
         email = request.form.get("email", "").strip()
         senha = request.form.get("senha", "")
+        telefone = request.form.get("telefone", "").strip()
         if not nome or not email or not senha:
             erro = "Preencha todos os campos."
         elif len(senha) < 6:
             erro = "Senha deve ter no mínimo 6 caracteres."
         else:
             try:
-                u = usuarios_mod.criar(email, nome, senha, admin=False)
+                u = usuarios_mod.criar(email, nome, senha, admin=False, telefone=telefone)
                 login_user(User(u), remember=True)
                 return redirect(url_for("onboarding"))
             except Exception as e:

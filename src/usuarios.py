@@ -72,7 +72,7 @@ def contar() -> int:
         return len(r.json())
 
 
-def criar(email: str, nome: str, senha: str, admin: bool = False) -> dict:
+def criar(email: str, nome: str, senha: str, admin: bool = False, telefone: str = "") -> dict:
     row = {
         "email": email.lower().strip(),
         "nome": nome.strip(),
@@ -80,6 +80,7 @@ def criar(email: str, nome: str, senha: str, admin: bool = False) -> dict:
         "ativo": True,
         "admin": admin,
         "plano": "trial",
+        "telefone": telefone.strip(),
     }
     r = requests.post(
         f"{_SUPA_URL}/rest/v1/usuarios",
