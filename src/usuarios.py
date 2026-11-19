@@ -86,6 +86,12 @@ def criar(email: str, nome: str, senha: str, admin: bool = False, telefone: str 
         f"{_SUPA_URL}/rest/v1/usuarios",
         headers=_headers(), json=row, timeout=10,
     )
+    if not r.ok and r.status_code == 400 and "telefone" in r.text:
+        row.pop("telefone", None)
+        r = requests.post(
+            f"{_SUPA_URL}/rest/v1/usuarios",
+            headers=_headers(), json=row, timeout=10,
+        )
     r.raise_for_status()
     return r.json()[0]
 
