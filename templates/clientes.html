@@ -104,16 +104,9 @@
       </div>
 
       <div class="secao-titulo">Equipamento</div>
-      <div class="row">
-        <div>
-          <label for="pulverizador_modelo">Modelo</label>
-          <input type="text" id="pulverizador_modelo" placeholder="Ex: Jacto Uniport 3030">
-        </div>
-        <div>
-          <label for="volume_tanque">Volume do tanque</label>
-          <input type="number" id="volume_tanque" placeholder="3000" min="1" step="any">
-          <div class="unidade">Litros</div>
-        </div>
+      <div class="campo">
+        <label for="pulverizador_modelo">Modelo</label>
+        <input type="text" id="pulverizador_modelo" placeholder="Ex: Jacto Uniport 3030">
       </div>
       <div class="secao-titulo" style="margin-top:12px;">Pontas</div>
       <div class="campo">
@@ -188,7 +181,7 @@
     function renderPulv(c) {
       const pulv = c.pulverizador || {};
       const infos = [];
-      if (pulv.volume_tanque_L != null) infos.push('<strong>Tanque:</strong> ' + pulv.volume_tanque_L + ' L');
+      if (pulv.modelo) infos.push('<strong>Modelo:</strong> ' + esc(pulv.modelo));
       if (c.pontas && c.pontas.length) infos.push('<strong>Pontas:</strong> ' + c.pontas.map(esc).join(', '));
       if (c.calibracao) infos.push('<strong>Calibracao:</strong> ' + esc(c.calibracao));
       if (c.observacao) infos.push('<strong>Obs:</strong> ' + esc(c.observacao));
@@ -226,7 +219,6 @@
       return {
         nome: document.getElementById('nome').value,
         pulverizador_modelo: document.getElementById('pulverizador_modelo').value,
-        volume_tanque: document.getElementById('volume_tanque').value,
         pontas: document.getElementById('pontas').value,
         calibracao: document.getElementById('calibracao').value,
         observacao: document.getElementById('observacao').value,
@@ -237,8 +229,6 @@
       document.getElementById('editando-id').value = c.id;
       document.getElementById('nome').value = c.nome || '';
       document.getElementById('pulverizador_modelo').value = (c.pulverizador || {}).modelo || '';
-      var vol = (c.pulverizador || {}).volume_tanque_L;
-      document.getElementById('volume_tanque').value = vol != null ? vol : '';
       document.getElementById('pontas').value = (c.pontas || []).join(', ');
       document.getElementById('calibracao').value = c.calibracao || '';
       document.getElementById('observacao').value = c.observacao || '';
@@ -250,7 +240,6 @@
       document.getElementById('editando-id').value = '';
       document.getElementById('nome').value = '';
       document.getElementById('pulverizador_modelo').value = '';
-      document.getElementById('volume_tanque').value = '';
       document.getElementById('pontas').value = '';
       document.getElementById('calibracao').value = '';
       document.getElementById('observacao').value = '';
