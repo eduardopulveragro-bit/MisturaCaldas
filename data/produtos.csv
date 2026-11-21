@@ -314,7 +314,7 @@ Abamex 18 CE,Abamex|Abamex CE|Abamectina CE|Abamex 18,,EC,11,acaricida/inseticid
 Kraft 36 EC,Kraft|Kraft EC|Abamectina 36 EC,,EC,11,acaricida/inseticida EC — abamectina+eprinomectina — IA busca web confirmou EC,2026-10-26,abamectina
 Apollo 500 SC,Apollo|Apollo SC|Apollo Agroquimico|Clofentezina SC,,SC,8,acaricida SC — clofentezina — IA busca web confirmou SC,2026-10-26,clofentezina
 Acaramik SC,Acaramik|Acaramik EC|Acaramik acaricida,,EC,11,acaricida — abamectina/milbemectina — IA busca web retornou EC; verificar se SC ou EC,pendente (2026-10-26),abamectina
-Nissorum 100 EC,Nissorum|Nissorum EC|Hexitiazox EC,,EC,11,acaricida EC — hexitiazox — IA busca web confirmou EC,2026-10-26,hexitiazox
+Nissorum 100 EC,Nissorum|Nissorum EC|Hexitiazox EC|Hexythiazox EC|Hexythiazox|Nissorun|Savey|Nissorun 100|Hexitiazox,,EC,11,acaricida EC — hexitiazox — IA busca web confirmou EC,2026-10-26,hexitiazox
 Radiant 120 SC,Radiant|Radiant SC|Radiant Corteva|Espinosade SC,,SC,8,inseticida SC Corteva — espinosade — IA busca web confirmou SC,2026-10-26,espinosade
 Spinetoram SC,Spinetoram|Spinetoram Corteva|Espinosina SC,,SC,8,inseticida SC Corteva — espinorama — IA busca web confirmou SC,2026-10-26,espinosina
 Talisman,Talisman EC|Talisman Bayer|Deltametrina+Piridafentiona,,EC,11,inseticida EC Bayer — deltametrina+piridafentiona — IA busca web confirmou EC,2026-10-26,deltametrina+piridafentiona
@@ -790,3 +790,7 @@ Hasten EC,Hasten|Hasten Adjuvante|Hasten Bond|Cropspray 11E|Cropspray|Mero|Codac
 Preference EC,Preference|Preference Adjuvante|Kinetic EC|Kinetic|Activator 90|Preference 1200 EC,,ADJUVANTE,2,helena,2026-11-21,surfactante noniônico+oleo metilado
 Equip SC,Equip SC Bayer|Foramsulfuron SC|Foramsulfuron|Foramsulfuron Bayer,,SC,8,bayer,2026-11-21,foramsulfuron
 Harmony 50 DF,Harmony|Harmony DF|Thifensulfuron DF|Thifensulfuron|Tifen,,WG,6,corteva,2026-11-21,thifensulfuron
+Pirate SC,Pirate|Pirate 240 SC|Chlorfenapyr SC|Chlorfenapyr|Clorfenapir SC,,SC,8,basf,2026-11-21,chlorfenapyr
+Ortus SC,Ortus|Ortus 50 SC|Fenpiroximate SC|Fenpyroximate|Fenpyroximate SC,,SC,8,nihon,2026-11-21,fenpiroximate
+Melody Duo 66.75 WP,Melody|Melody WP|Melody Duo|Iprovalicarb WP|Iprovalicarb+Mancozeb|Iprovalicarb,,WP,5,bayer,2026-11-21,iprovalicarbe+mancozebe
+Broadway WG,Broadway|Broadway WG Corteva|Pyroxsulam WG|Pyroxsulam|Olimpus WG,,WG,6,corteva,2026-11-21,piroxsulam
