@@ -72,7 +72,7 @@ Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant 
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
 Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Nativo 325 SC|Nativo Top,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
-Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol SC|Acanto Plus|Acanto Plus SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
+Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol SC|Acanto Plus|Acanto Plus SC|Acanto|Picoxistrobina|Picoxystrobin,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max|Cruse SC|Cruse,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
 Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
@@ -137,7 +137,7 @@ Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminic
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor|Isoclast SC|Isoclast,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
-Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
+Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox|Azoxystrobin|Azoxystrobin SC,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
@@ -224,7 +224,7 @@ Dipel,Dipel WG|Dipel WP|Dipel SC|Bacillus thuringiensis|Bt,4519,BIO_BACTERIANO,2
 Agree,Agree SC|Agree WG|Bt WG,4421,BIO_BACTERIANO,20,inseticida biológico UPL — Bt aizawai,pendente (2026-10-16),Bacillus thuringiensis aizawai
 Trichodermil,Trichodermil SC|Trichodermil 1306,19112,BIO_FUNGICO,21,fungicida biológico Koppert — Trichoderma,pendente (2026-10-16),Trichoderma harzianum
 Quality,Quality WG|Quality Koppert,27915,BIO_FUNGICO,21,fungicida biológico Koppert — Beauveria,pendente (2026-10-16),Beauveria bassiana
-Metarriz,Metarriz WP|Metarriz Koppert,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
+Metarriz,Metarriz WP|Metarriz Koppert|Metarhizium anisopliae|Metarhizium anisopliae WP,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
 Baculovirus AEE,Baculovirus|Baculovírus|CoolGuard,,BIO_VIRAL,22,inseticida biológico viral — lagartas,pendente (2026-10-16),Baculovirus anticarsia
 Sumisin,Sumisin 500 EC|Sumithion,,EC,11,inseticida EC — organofosforado,pendente (2026-10-16),fenitrothion
 Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante óleo mineral/vegetal,pendente (2026-10-16),óleo mineral
@@ -551,7 +551,7 @@ Plenno SC,Plenno|Plenno Bayer|Spirotetramate+Imidacloprido SC Bayer,,SC,8,pesqui
 CruiserMaxx Soja SC,CruiserMaxx|CruiserMaxx Soja|CruiserMaxx Syngenta|Tiametoxam+Fludioxonil+Metalaxil-M TS,,SC,8,pesquisa web — tratamento sementes Syngenta trio,2026-11-11,tiametoxam+fludioxonil+metalaxil-M
 Cruiser Opti SC,Cruiser Opti|Cruiser Opti Syngenta|Tiametoxam+Fludioxonil TS,,SC,8,pesquisa web — tratamento sementes Syngenta tiametoxam+fludioxonil,2026-11-11,tiametoxam+fludioxonil
 Chess Mix SC,Chess Mix|Chess Mix Syngenta|Pimetrozina+Imidacloprido SC,,SC,8,pesquisa web — inseticida SC aficida+sistemico pimetrozina+imidacloprido,2026-11-11,pimetrozina+imidacloprido
-Starkle WG,Starkle|Starkle WG|Starkle Mitsui|Dinotefuran WG,,WG,6,pesquisa web — inseticida neonicotinoide WG dinotefuran Mitsui,2026-11-11,dinotefuran
+Starkle WG,Starkle|Starkle WG|Starkle Mitsui|Dinotefuran WG|Oshin|Oshin Mitsui|Dinotefuran,,WG,6,pesquisa web — inseticida neonicotinoide WG dinotefuran Mitsui,2026-11-11,dinotefuran
 Achero 750 SP,Achero|Achero SP|Acefato Sipcam SP|Acefato Sipcam,,SP,4,pesquisa web — inseticida SP acefato Sipcam,2026-11-11,acefato
 Fenix 250 EC,Fenix|Fenix EC|Fenix Milenia|Cipermetrina 250 Milenia,,EC,11,pesquisa web — inseticida piretroide EC cipermetrina Milenia,2026-11-11,cipermetrina
 Arrivo 250 EC,Arrivo|Arrivo EC|Arrivo FMC|Arrivo Rotam|Cipermetrina FMC,,EC,11,pesquisa web — inseticida piretroide EC cipermetrina FMC/Rotam,2026-11-11,cipermetrina
@@ -812,3 +812,7 @@ Mikado SC,Mikado|Sulcotrione|Sulcotriom SC|Mikado Bayer|Sulcotriona,,SC,8,Bayer,
 Resource EC,Resource|Flumiclorac|Flumiclorac Pentil|Flumiclorac EC|Resource FMC,,EC,11,FMC,2026-11-21,flumiclorac-pentil
 Gesatop 500 SC,Gesatop|Simazine|Simazina|Simazina SC|Primatol|Simazina 500,,SC,8,Syngenta,2026-11-21,simazina
 Velpar K WG,Velpar|Hexazinone|Hexazinona|Velpar L|Velpar WG|Hexazinona WG|Hexazinone WG,,WG,6,DuPont/Corteva,2026-11-21,hexazinona
+Acanto SC,Acanto Syngenta|Picoxistrobina SC solo|Acanto 250 SC|Picoxistrobina 250 SC,,SC,8,Syngenta,2026-11-21,picoxistrobina
+Merivon SC,Merivon|Fluxapyroxade+Piraclostrobina|Fluxapyroxad SC|Fluxapyroxade|Merivon BASF,,SC,8,BASF,2026-11-21,fluxapyroxade+piraclostrobina
+Harvanta SC,Harvanta|Cyclaniliprole|Ciclaniliprole SC|Harvanta Corteva,,SC,8,Corteva,2026-11-21,cyclaniliprole
+Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro SC,,SC,8,BASF,2026-11-21,ametoctradin
