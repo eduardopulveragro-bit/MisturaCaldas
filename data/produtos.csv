@@ -141,7 +141,7 @@ Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobi
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
-Velpar K,Velpar|Diuron Hexazinona|Advance,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
+Velpar K,Velpar|Diuron Hexazinona|Advance|Krovar|Krovar WG|Colep|Hexazinona+Diuron WG,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
 Propiconazol,Propiconazol Nortox|Tilt|Tilt EC|Juno,,EC,11,cadastro manual — fungicida EC generico,2026-10-09,propiconazol
 Flutriafol,Flutriafol SC|Impact|Impact SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,flutriafol
 Thiobel,Thiobel 500|Cartape SP|Cartape,,SP,4,cadastro manual — inseticida SP comum,2026-10-09,cartape
@@ -199,7 +199,7 @@ Gallaxy,Galaxy|Gallaxy EC|Gallaxy 100,,SC,8,inseticida SC Bayer — imidacloprid
 Imunit,Imunit SC|Imunit Syngenta,,SC,8,inseticida SC Syngenta — lambda-cialotrina+clorantraniliprole,2026-10-13,lambda-cialotrina+clorantraniliprole
 Spat,Spat SC|Spat BASF,,SC,8,inseticida SC BASF — clorfenapir+lambda-cialotrina,2026-10-13,clorfenapir+lambda-cialotrina
 Minecto Pro,Minecto|Minecto SE,,SE,10,inseticida SE Syngenta — ciantraniliprole+abamectina,2026-10-13,ciantraniliprole+abamectina
-Cabrio Top,Cabrio|Cabrio WG,,WG,6,fungicida WG BASF — metiram+piraclostrobina — multissitio+estrobilurina,2026-10-13,metiram+piraclostrobina
+Cabrio Top,Cabrio|Cabrio WG|Cabrio EC|Piraclostrobina+Metiram|Piraclostrobina+Metiramate|Cabrio EC BASF,,WG,6,fungicida WG BASF — metiram+piraclostrobina — multissitio+estrobilurina,2026-10-13,metiram+piraclostrobina
 Revus,Revus SC|Mandipropamida,,SC,8,fungicida SC Syngenta — oomicetos/míldio,2026-10-13,mandipropamida
 Fusão,Fusao|Fusão SC,,SC,8,fungicida SC Nichino — mofo branco soja,2026-10-13,fluazinam+tiofluzamida
 Break Thru,BreakThru|Break-Thru|Breakthru|Silicone|Adjuvante Silicone|Siliconado|Silwet,,ADJUVANTE,2,adjuvante siliconado super espalhante Evonik — muito usado em drone,2026-10-13,surfactante siliconado
@@ -732,3 +732,7 @@ Baytroid 100 EC,Baytroid|Baytroid EC|Ciflutrina EC|Cyfluthrin|Ciflutrina|Ciflutr
 Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
 Goal BR 480 EC,Goal|Goal EC|Goal Rohm Haas|Oxifluorfem EC Goal,,EC,11,pesquisa web — herbicida EC oxifluorfem pre-emergente citros,2026-11-21,oxifluorfem
 Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
+Pivot H,Pivot|Pivot SL|Imazethapyr|Imazetapir|Imazethapir|Pivot Basf,,SL,16,pesquisa web — herbicida SL BASF imazethapyr soja,2026-11-21,imazethapyr
+Bladex 500 SC,Bladex|Bladex SC|Cianazina SC|Cianazina|Bladex FMC,,SC,8,pesquisa web — herbicida SC FMC cianazina milho,2026-11-21,cianazina
+Sumithion 500 EC,Sumithion|Sumithion EC|Fenitrothion|Fenitrotion|Fenitrothio|Metathion,,EC,11,pesquisa web — inseticida EC fenitrotion organofosforado,2026-11-21,fenitrotion
+Teldor 500 SC,Teldor|Teldor SC|Teldor Bayer|Fenhexamide SC|Fenhexamida SC,,SC,8,pesquisa web — fungicida SC Bayer fenhexamide botrytis frutas,2026-11-21,fenhexamide
