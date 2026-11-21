@@ -3,7 +3,7 @@ Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Orig
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
-Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
+Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox|Score EC,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Top|Priori Extra|Cyproconazol,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
@@ -119,7 +119,7 @@ Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad,,SC,8,cadastro 
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,espinetoram
 Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
 Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
-Sencor,Sencor SC|Sencor 480|Metribuzim SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metribuzim
+Sencor,Sencor SC|Sencor 480|Metribuzim SC|Sencor WP|Metribuzim WP,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metribuzim
 Kifix,Kifix WG|Imazapir Imazapique,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imazapir+imazapique
 Sanson,Sanson SC|Sanson 40|Nicosulfuron SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,nicosulfuron
 Lorsban,Lorsban EC|Lorsban 480|Clorpirifos|Clorpirifos EC|Clorpirifos Nortox|Nufos,,EC,11,cadastro manual — produto comercial comum,2026-10-09,clorpirifos
@@ -135,7 +135,7 @@ Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2
 Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
-Frowncide,Frowncide SC|Fluazinam SC|Fluazinam,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
+Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
@@ -385,7 +385,7 @@ Isofetamida SC,Isofetamida|Kenja SC|Isofetamida Nippon Soda,,SC,8,pesquisa web �
 Iprodiom SC,Rovral SC|Iprodiona 500 SC|Iprodiom Bayer,,SC,8,pesquisa web — fungicida SC iprodiona,2026-11-11,iprodiona
 Nativo 750 WG,Nativo WG|Nativo 750|Trifloxistrobina+Tebuconazol WG,,WG,6,pesquisa web — fungicida WG Bayer seca cereal,2026-11-11,trifloxistrobina+tebuconazol
 Sumilex 500 SC,Sumilex|Sumilex SC|Procimidona SC Sumitomo,,SC,8,pesquisa web — fungicida SC procimidona,2026-11-11,procimidona
-Metalaxil-M SC,Ridomil Gold MZ|Metalaxil-M|Mefenoxam SC|Apron XL,,SC,8,pesquisa web — fungicida sistemico oomiceto,2026-11-11,metalaxil-M
+Metalaxil-M SC,Ridomil Gold MZ|Metalaxil-M|Mefenoxam SC|Apron XL|Mefenoxam|Metalaxil M,,SC,8,pesquisa web — fungicida sistemico oomiceto,2026-11-11,metalaxil-M
 Phytus SC,Phytus|Phytus Syngenta|Mandipropamida+Clorotalonil,,SC,8,pesquisa web — fungicida SC Syngenta oídio+peronospora,2026-11-11,mandipropamida+clorotalonil
 Equation Pro WG,Equation Pro|Equation Pro Syngenta|Cymoxanil+Famoxadona WG,,WG,6,pesquisa web — fungicida WG Syngenta peronospora,2026-11-11,cymoxanil+famoxadona
 Folio Gold SC,Folio Gold|Folio Gold Syngenta|Metalaxil-M+Clorotalonil SC,,SC,8,pesquisa web — fungicida SC oomiceto+proteção,2026-11-11,metalaxil-M+clorotalonil
@@ -727,3 +727,8 @@ Ranger 480 SL,Ranger|Ranger SL|Ranger Nufarm|Roundup Aktiv|Glifosato Ranger|Roun
 Orthene 750 BR WP,Orthene|Orthene WP|Acefato WP|Acefato|Acephate|Orthene 750,,WP,5,pesquisa web — inseticida WP acefato organofosforado,2026-11-21,acefato
 Elatus Arc,Elatus|Elatus EC|Elatus Syngenta|Benzovindiflupir+Azoxistrobina|Azoxistrobina+Benzovindiflupir,,EC,11,pesquisa web — fungicida EC Syngenta benzovindiflupir+azoxistrobina,2026-11-21,benzovindiflupir+azoxistrobina
 Zartan 480 CS,Zartan|Zartan CS|Atrazina CS Dow|Zartan Corteva|Atrazina+Simazina,,CS,7,pesquisa web — herbicida CS Corteva atrazina encapsulada,2026-11-21,atrazina
+Tamaron 600 BR SL,Tamaron|Tamaron 600|Metamidofos|Metamidophos|Methamidophos|Hamidop,,SL,16,pesquisa web — inseticida SL metamidofos organofosforado,2026-11-21,metamidofos
+Baytroid 100 EC,Baytroid|Baytroid EC|Ciflutrina EC|Cyfluthrin|Ciflutrina|Ciflutrin|Baytroid Bayer,,EC,11,pesquisa web — inseticida EC Bayer ciflutrina piretroide,2026-11-21,ciflutrina
+Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
+Goal BR 480 EC,Goal|Goal EC|Goal Rohm Haas|Oxifluorfem EC Goal,,EC,11,pesquisa web — herbicida EC oxifluorfem pre-emergente citros,2026-11-21,oxifluorfem
+Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
