@@ -77,7 +77,7 @@ Sphere Max,Sphere|Esfera Max|Cruse SC|Cruse,,SC,8,cadastro manual — produto co
 Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
 Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+protioconazol
-Comet,Comet EC|Comet BASF|Piraclostrobina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
+Comet,Comet EC|Comet BASF|Piraclostrobina|Piraclostrobina EC|Pyraclostrobin|Pyraclostrobin EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
 Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox SC|Ciproconazol Nortox|Alto 100 SL,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
 Spider,Spider WG|Spider 840|Diclosulam WG|Diclosulam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
 Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG|Classic 250 DF|Classic DF,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
@@ -404,7 +404,7 @@ Buctril EC,Buctril|Buctril EC|Bromoxinil EC,,EC,11,pesquisa web — herbicida EC
 Lontrel SL,Lontrel|Lontrel SL|Clopyralid SL,,SL,16,pesquisa web — herbicida SL clopyralid pastagem/soja,2026-11-11,clopyralid
 Millennium SC,Millennium|Millennium SC|Hexazinona SC cana,,SC,8,pesquisa web — herbicida SC hexazinona cana,2026-11-11,hexazinona
 Folicur 200 EW,Folicur EW|Folicur 200 EW Bayer|Tebuconazol EW,,EW,14,pesquisa web — fungicida EW tebuconazol Bayer,2026-11-11,tebuconazol
-Caramba 90 SC,Caramba SC|Metconazol 90 SC|Metconazol Bayer,,SC,8,pesquisa web — fungicida SC metconazol Bayer trigo,2026-11-11,metconazol
+Caramba 90 SC,Caramba SC|Metconazol 90 SC|Metconazol Bayer|Metconazole|Metconazole 90 SC|Caramba BASF,,SC,8,pesquisa web — fungicida SC metconazol Bayer trigo,2026-11-11,metconazol
 Opal 500 WG,Opal|Opal WG|Enxofre 800 WG|Enxofre Micronizado,,WG,6,pesquisa web — fungicida enxofre WG,2026-11-11,enxofre
 Captano 480 SC,Captano|Captano SC|Captan SC|Captan,,SC,8,pesquisa web — fungicida SC captano multissitio,2026-11-11,captano
 Folpan 500 WP,Folpan|Folpan WP|Folpete WP,,WP,5,pesquisa web — fungicida WP folpete,2026-11-11,folpete
@@ -813,7 +813,7 @@ Resource EC,Resource|Flumiclorac|Flumiclorac Pentil|Flumiclorac EC|Resource FMC,
 Gesatop 500 SC,Gesatop|Simazine|Simazina|Simazina SC|Primatol|Simazina 500,,SC,8,Syngenta,2026-11-21,simazina
 Velpar K WG,Velpar|Hexazinone|Hexazinona|Velpar L|Velpar WG|Hexazinona WG|Hexazinone WG,,WG,6,DuPont/Corteva,2026-11-21,hexazinona
 Acanto SC,Acanto Syngenta|Picoxistrobina SC solo|Acanto 250 SC|Picoxistrobina 250 SC,,SC,8,Syngenta,2026-11-21,picoxistrobina
-Merivon SC,Merivon|Fluxapyroxade+Piraclostrobina|Fluxapyroxad SC|Fluxapyroxade|Merivon BASF,,SC,8,BASF,2026-11-21,fluxapyroxade+piraclostrobina
+Merivon SC,Merivon|Fluxapyroxade+Piraclostrobina|Fluxapyroxad SC|Fluxapyroxade|Merivon BASF|Xemium|Fluxapyroxad+Pyraclostrobin|Xemium EC,,SC,8,BASF,2026-11-21,fluxapyroxade+piraclostrobina
 Harvanta SC,Harvanta|Cyclaniliprole|Ciclaniliprole SC|Harvanta Corteva,,SC,8,Corteva,2026-11-21,cyclaniliprole
 Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro SC,,SC,8,BASF,2026-11-21,ametoctradin
 Cycocel SC,Cycocel|Chlormequat|Cloreto de Clormequat|CCC|Stabilan|Chlormequat chloride|Klormekwat,,SC,8,Nortox/BASF,2026-11-21,clormequat
@@ -837,3 +837,6 @@ Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,SC
 Sumi-Alpha EC,Sumi-Alpha|Esfenvalerate|Esfenvalerato|Sumi Alpha EC|Sumialpha|Hallmark EC|Alpha Sumitomo,,EC,11,Sumitomo,2026-11-21,esfenvalerato
 Vibrance SC,Vibrance|Sedaxane|Sedaxane SC|Vibrance Syngenta|Sedaxane Syngenta,,SC,8,Syngenta,2026-11-21,sedaxane
 Cercobin M 700 WP,Cercobin M|Cercobin M WP|Tiofanato Metilico+Mancozeb WP|Tiofanato+Mancozeb,,WP,5,Sumitomo,2026-11-21,tiofanato-metilico+mancozebe
+Fontelis SC,Fontelis|Penthiopyrad|Penthiopyrade|Penthiopyrad SC|Fontelis Corteva,,SC,8,DuPont/Corteva,2026-11-21,penthiopyrad
+Glean WG,Glean|Chlorsulfuron|Chlorsulfuron WG|Glean DuPont|Clorosulfuron,,WG,6,DuPont/Corteva,2026-11-21,clorosulfuron
+Cohere MSO EC,MSO|Methylated seed oil|Methyl seed oil|Crop oil concentrate|Merge adjuvante|MSO adjuvante,,EC,2,Corteva/vários,2026-11-21,oleo metilado
