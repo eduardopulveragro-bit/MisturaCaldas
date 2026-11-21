@@ -74,7 +74,7 @@ Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo minera
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Tebuconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
 Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Opera|Opera EC|Picoxistrobina+Ciproconazol|Opera Ultra,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
-Amistar Top,Amistar,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
+Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
 Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+protioconazol
 Comet,Comet EC|Comet BASF|Piraclostrobina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
@@ -138,7 +138,7 @@ Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual 
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
-Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
+Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
 Velpar K,Velpar|Diuron Hexazinona|Advance,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
@@ -264,7 +264,7 @@ Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva �
 Granstar,Granstar WG|Granstar Corteva|Tribenuron,,WG,6,herbicida WG Corteva — tribenuron-metilico trigo — consulta IA busca web pendente,pendente (2026-10-26),tribenuron-metilico
 Afinity 720 SC,Afinity|Affinity SC|Afinity Syngenta,,SC,8,herbicida SC Syngenta — consulta IA busca web pendente,pendente (2026-10-26),
 Facet SC,Facet|Facet SC BASF|Quinclorac SC,,SC,8,herbicida SC BASF — quinclorac — consulta IA busca web pendente,pendente (2026-10-26),quinclorac
-Rovral SC,Rovral|Rovral SC Bayer|Iprodiona Bayer|Iprodiona|Rovral,,SC,8,fungicida SC Bayer — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
+Rovral SC,Rovral|Rovral SC Bayer|Iprodiona Bayer|Iprodiona|Rovral|Rovral WP|Iprodiona WP,,SC,8,fungicida SC Bayer — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
 Iprodiona,Iprodion|Iprodiona SC|Iprodione,,SC,8,fungicida SC generico — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
 Velum Prime,Fluopiram|Fluopiram SC|Velum|Velum 400 SC|Velum Bayer|Velum Prime SC,,SC,8,nematicida/fungicida SC Bayer — fluopyram — consulta IA busca web pendente,2026-11-21,fluopiram
 Verango Prime,Verango|Verango Prime SC,32319,SC,8,nematicida SC Bayer — bula MAPA reg 32319 fluopyram,2026-10-26,fluopyram
@@ -393,7 +393,7 @@ Aliette 800 WG,Aliette|Aliette WG|Fosetila-Al WG|Fosetil-Al|Fosetil|Fosetila|Fos
 King EC,King EC Nortox|Cipermetrina+Clorpirifos King,,EC,11,pesquisa web — inseticida EC piretroide+organofosforado,2026-11-11,cipermetrina+clorpirifos
 Polytrin C EC,Polytrin C|Polytrin C 440|Profenofos+Cipermetrina EC,,EC,11,pesquisa web — inseticida EC Syngenta,2026-11-11,profenofos+cipermetrina
 Sumidan 25 EC,Sumidan|Sumidan EC|Tau-fluvalinate EC,,EC,11,pesquisa web — inseticida EC acaricida Sumitomo,2026-11-11,tau-fluvalinate
-Clincher EC,Clincher|Clincher EC|Cyhalofop-butilico EC|Clincher Corteva,,EC,11,pesquisa web — herbicida EC arroz Corteva,2026-11-11,cyhalofop-butilico
+Clincher EC,Clincher|Clincher EC|Cyhalofop-butilico EC|Clincher Corteva|Cyhalofop-butilico,,EC,11,pesquisa web — herbicida EC arroz Corteva,2026-11-11,cyhalofop-butilico
 Rifit 500 EC,Rifit|Rifit EC|Pretilachlor EC|Rifit Syngenta,,EC,11,pesquisa web — herbicida EC arroz Syngenta pre-emergente,2026-11-11,pretilachlor
 Nominee 400 SC,Nominee|Nominee SC|Bispiribac-sodio SC,,SC,8,pesquisa web — herbicida SC arroz Nichino,2026-11-11,bispiribac-sodio
 Sirius SC,Sirius|Sirius SC|Pirazossulfuron SC,,SC,8,pesquisa web — herbicida SC arroz,2026-11-11,pirazossulfuron-etilico
@@ -609,7 +609,7 @@ Signum WG,Signum|Signum BASF|Boscalida+Piraclostrobina 26 WG horticultura,,WG,6,
 Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
 Cantus WG,Cantus|Cantus BASF|Boscalida solo WG|Boscalid WG,,WG,6,cadastro manual — fungicida WG BASF boscalida puro botritis/mofo cinzento,2026-11-21,boscalida
 Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fungicida WG Bayer iprodiona puro,2026-11-21,iprodiona
-Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
+Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Thiabendazol|Tiabendazol,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
 Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cadastro manual — acaricida/fungicida WG meptildinocap oídio,2026-11-21,meptildinocap
 Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
 Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
@@ -719,3 +719,7 @@ Headline 250 EC,Headline|Headline EC|Headline BASF|Piraclostrobina 250 EC|Headli
 Stinger 480 SL,Stinger|Stinger SL|Clopiralida|Clopiralida SL|Stinger Corteva,,SL,16,pesquisa web — herbicida SL Corteva clopiralida pastagem,2026-11-21,clopiralida
 Prometrin 500 SC,Prometrin|Prometrina SC|Prometrin SC|Prometrina|Gesagard,,SC,8,pesquisa web — herbicida SC prometrina algodao/soja,2026-11-21,prometrina
 Plateau 700 WG,Plateau|Ceptor|Imazapic WG|Imazapic|Plateau WG|Imazapic BASF,,WG,6,pesquisa web — herbicida WG imazapic cana-de-acucar pastagem,2026-11-21,imazapic
+Decree 50 WDG,Decree|Decree WP|Decree WDG|Fenhexamide|Fenhexamida,,WG,6,pesquisa web — fungicida WG Bayer fenhexamide botrytis,2026-11-21,fenhexamide
+Scala 400 SC,Scala|Scala SC|Cyprodinila SC|Cyprodinila|Ciprodinila|Scala Bayer,,SC,8,pesquisa web — fungicida SC Bayer ciprodinila botrytis,2026-11-21,ciprodinila
+Dithianon 750 WG,Dithianon|Dithianon WG|Delan WG|Delan|Dithianon BASF,,WG,6,pesquisa web — fungicida WG BASF dithianon sarna citrus,2026-11-21,dithianon
+Captan 500 WP,Captan WP|Captana WP|Captan 500|Merpan|Orthocide,,WP,5,pesquisa web — fungicida WP captana multiuso frutas,2026-11-21,captana
