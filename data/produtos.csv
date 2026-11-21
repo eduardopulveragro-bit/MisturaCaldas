@@ -72,7 +72,7 @@ Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant 
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
 Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Tebuconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
-Aproach Prima,Aproach|Aproach SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
+Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Opera|Opera EC|Picoxistrobina+Ciproconazol|Opera Ultra,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
 Amistar Top,Amistar,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
@@ -102,7 +102,7 @@ Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600|Trifluralin,
 Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
-Tordon,Tordon SL|Picloram,,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
+Tordon,Tordon SL|Picloram|Tordon Ultra,,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC|Epoxiconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
@@ -715,3 +715,7 @@ Nemathorin 150 EC,Nemathorin|Nemathorin EC|Fostiazato EC|Fosthiazate|Fostiazato,
 Vitavax Thiram 200 SC,Vitavax|Vitavax SC|Vitavax Thiram|Carboxim+Thiram|Carboxim|Thiram,,SC,8,pesquisa web — fungicida tratamento sementes SC carboxim+thiram,2026-11-21,carboxim+thiram
 Floramite 240 SC,Floramite|Floramite SC|Floramite Chemtura|Bifenazato SC|Bifenazato,,SC,8,pesquisa web — acaricida SC Chemtura bifenazato,2026-11-21,bifenazato
 Phostoxin,Phostoxin|Fosfina|Gastoxin|Fosfeto de aluminio|Fosfeto aluminio,,GE,3,pesquisa web — fumigante GE fosfeto de aluminio armazenamento,2026-11-21,fosfeto de aluminio
+Headline 250 EC,Headline|Headline EC|Headline BASF|Piraclostrobina 250 EC|Headline AMP,,EC,11,pesquisa web — fungicida EC BASF piraclostrobina,2026-11-21,piraclostrobina
+Stinger 480 SL,Stinger|Stinger SL|Clopiralida|Clopiralida SL|Stinger Corteva,,SL,16,pesquisa web — herbicida SL Corteva clopiralida pastagem,2026-11-21,clopiralida
+Prometrin 500 SC,Prometrin|Prometrina SC|Prometrin SC|Prometrina|Gesagard,,SC,8,pesquisa web — herbicida SC prometrina algodao/soja,2026-11-21,prometrina
+Plateau 700 WG,Plateau|Ceptor|Imazapic WG|Imazapic|Plateau WG|Imazapic BASF,,WG,6,pesquisa web — herbicida WG imazapic cana-de-acucar pastagem,2026-11-21,imazapic
