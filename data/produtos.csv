@@ -256,9 +256,9 @@ Acramite 500 SC,Acramite|Acramite SC|Bifenazate SC,,SC,8,acaricida SC — bifena
 Magister SC,Magister|Magister FMC|Fenazaquin SC,,SC,8,acaricida SC FMC — fenazaquin — consulta IA busca web pendente,pendente (2026-10-26),fenazaquin
 Cossack 135 WG,Cossack|Cossack WG|Cossack Bayer,,WG,6,herbicida WG Bayer — mesossulfuron+iodossulfuron trigo — consulta IA busca web pendente,pendente (2026-10-26),mesossulfuron-metilico+iodossulfuron
 Traxos,Traxos EC|Traxos Syngenta,,EC,11,graminicida EC Syngenta — pinoxaden trigo — consulta IA busca web pendente,pendente (2026-10-26),pinoxaden
-Moddus,Moddus EC|Moddus Syngenta|Trinexapac,,EC,11,regulador crescimento EC Syngenta — trinexapac-etilico trigo — consulta IA busca web pendente,pendente (2026-10-26),trinexapac-etilico
+Moddus,Moddus EC|Moddus Syngenta|Trinexapac|Primo EC|Primo|Moddus Evo,,EC,11,regulador crescimento EC Syngenta — trinexapac-etilico trigo — consulta IA busca web pendente,pendente (2026-10-26),trinexapac-etilico
 Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
-Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL,,SL,16,regulador crescimento SL Bayer — etefon — consulta IA busca web pendente,pendente (2026-10-26),etefon
+Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL|Ethephon|Etefon|Cerone|Ethephon SL,,SL,16,regulador crescimento SL Bayer — etefon — consulta IA busca web pendente,pendente (2026-10-26),etefon
 Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
 Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva — piroxsulam trigo — consulta IA busca web pendente,pendente (2026-10-26),piroxsulam
 Granstar,Granstar WG|Granstar Corteva|Tribenuron,,WG,6,herbicida WG Corteva — tribenuron-metilico trigo — consulta IA busca web pendente,pendente (2026-10-26),tribenuron-metilico
@@ -373,7 +373,7 @@ Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdênio 100|Mo SL,,FERTI
 CoMo SL,Co+Mo foliar|Cobalto+Molibdenio|CoMo Fertilizante|Cobalto Molibdenio,,FERTILIZANTE,18,pesquisa web — micronutriente Co+Mo,2026-11-11,cobalto+molibdenio
 Plenifer Mn,Plenifer Manganes|Mn EDTA foliar|Manganes quelatado,,FERTILIZANTE,18,pesquisa web — fertilizante manganês quelatado,2026-11-11,manganes
 Triton 480 SL,Triton|Triton EC Nufarm|Triton Glifosato,,SL,16,pesquisa web — glifosato SL Nufarm,2026-11-11,glifosato
-Galant Super EC,Gallant Super|Haloxifope Super|Gallant Max EC,,EC,11,pesquisa web — graminicida EC haloxifope,2026-11-11,haloxifope-r-metilico
+Galant Super EC,Gallant Super|Haloxifope Super|Gallant Max EC|Galant Plus|Galant HA|Haloxifope HA,,EC,11,pesquisa web — graminicida EC haloxifope,2026-11-11,haloxifope-r-metilico
 Amistral SE,Amistral|Amistral SE|Piraclostrobina+Tebuconazol SE,,SE,10,pesquisa web — fungicida SE ferrugem,2026-11-11,piraclostrobina+tebuconazol
 Certeza SC,Certeza|Certeza Bayer|Tebuconazol+Fluopyram+Trifloxistrobina,,SC,8,pesquisa web — fungicida SC triplo Bayer,2026-11-11,tebuconazol+fluopyram+trifloxistrobina
 Nativo Xpro SC,Nativo Xpro|Nativo Xpro Bayer|Bixafen+Protioconazol+Trifloxistrobina,,SC,8,pesquisa web — fungicida SC Bayer nova geração,2026-11-11,bixafen+protioconazol+trifloxistrobina
@@ -433,7 +433,7 @@ Spiromesifen SC,Spiromesifen|Oberon generico|Spiromesifen Bayer,,SC,8,pesquisa w
 Spirodiclofeno SC,Spirodiclofeno|Envidor generico|Spirodiclofen,,SC,8,pesquisa web — acaricida SC spirodiclofeno,2026-11-11,spirodiclofeno
 Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,pesquisa web — acaricida EC propargito,2026-11-11,propargito
 Fenpirozamina SC,Fenpirozamina|Plenum generico|Fenpirozamina SC,,SC,8,pesquisa web — inseticida SC fenpirozamina,2026-11-11,fenpirozamina
-Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
+Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado|Extravon Plus|Hoemax,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
 In-Place,In Place|Adjuvante siliconado In-Place,,ADJUVANTE,2,pesquisa web — adjuvante siliconado ultra espalhante,2026-11-11,surfactante siliconado
 Bond,Bond EC|Bond Nufarm|Bond adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante Nufarm,2026-11-11,
 LI-700 Plus,LI700 Plus|LI 700 Plus|Adjuvante acido+silicone,,ADJUVANTE,2,pesquisa web — adjuvante LI 700 acidificante,2026-11-11,
@@ -456,7 +456,7 @@ Fulvato de Potassio,Fulvato|Acido Fulvico+K|Fulvato potassio,,FERTILIZANTE,18,pe
 Humato de Potassio,Humato|Acido Humico+K|Humato potassio,,FERTILIZANTE,18,pesquisa web — bioestimulante acido humico potassio,2026-11-11,acido humico+potassio
 PhospH SL,PhospH|Phosph SL|Fosforo+pH adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante acidificante fosforo,2026-11-11,fosforo+acidificante
 Fulltec,Fulltec Syngenta|Fulltec adjuvante|Fulltec silicone|Fulltec espalhante,,ADJUVANTE,2,cadastro manual — adjuvante siliconado super espalhante Syngenta,2026-11-16,surfactante siliconado
-Cohere,Cohere Corteva|Cohere Dow|Cohere adjuvante|Cohere oleo metilado,,ADJUVANTE,2,cadastro manual — adjuvante oleo canola metilado Corteva,2026-11-16,oleo de canola metilado
+Cohere,Cohere Corteva|Cohere Dow|Cohere adjuvante|Cohere oleo metilado|MSO|Cohere MSO|Oleo metilado,,ADJUVANTE,2,cadastro manual — adjuvante oleo canola metilado Corteva,2026-11-16,oleo de canola metilado
 Encourage,Encourage Syngenta|Encourage silicone|Encourage adjuvante,,ADJUVANTE,2,cadastro manual — adjuvante siliconado Syngenta,2026-11-16,surfactante siliconado
 Orion,Orion Nufarm|Orion silicone|Orion adjuvante siliconado,,ADJUVANTE,2,cadastro manual — adjuvante siliconado Nufarm,2026-11-16,surfactante siliconado
 Plex Silicone,Plex|Plex Silicone Nufarm|Plex adjuvante,,ADJUVANTE,2,cadastro manual — adjuvante siliconado Nufarm,2026-11-16,surfactante siliconado
