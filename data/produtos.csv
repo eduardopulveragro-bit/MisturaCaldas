@@ -631,7 +631,7 @@ Glifocal SL,Glifocal|Glifocal 480|Glifosato Calliope|Calliope glifosato SL,,SL,1
 MCPA SL,MCPA|MCPA 500|MCPA amina SL|Mephanate|MCPA herbicida,,SL,16,cadastro manual — herbicida SL MCPA amina folha larga cereais/pastagem,2026-11-21,MCPA
 Zargun WG,Zargun|Zargun WG Nortox|Flumioxazina+Imazetapir Nortox WG,,WG,6,cadastro manual — herbicida WG Nortox flumioxazina+imazetapir pre-soja,2026-11-21,flumioxazina+imazetapir
 Patrão WG,Patrao|Patrao WG|Patrao herbicida pastagem|Metsulfurom+Iodossulfurom WG|Metsulfurom,,WG,6,cadastro manual — herbicida WG metsulfurom+iodossulfurom pastagem,2026-11-21,metsulfurom-metilico+iodossulfurom
-Krismat WG,Krismat|Krismat Syngenta|Ametrina+Trifloxissulfurom WG cana,,WG,6,cadastro manual — herbicida WG Syngenta cana ametrina+trifloxissulfurom,2026-11-21,ametrina+trifloxissulfurom
+Krismat WG,Krismat|Krismat Syngenta|Ametrina+Trifloxissulfurom WG cana|trifloxyssulfuron|trifloxissulfurom,,WG,6,cadastro manual — herbicida WG Syngenta cana ametrina+trifloxissulfurom,2026-11-21,ametrina+trifloxissulfurom
 Finale WG,Finale|Finale Bayer|Glufosinato WG Bayer|Finale 150 WG|Basta WG|Basta,,WG,6,cadastro manual — herbicida WG Bayer glufosinato amônio 150g/kg,2026-11-21,glufosinato de amônio
 Enlist Duo SL,Enlist Duo|Enlist Duo Corteva|2.4-D-colina Glifosato SL|EnlistDuo,,SL,16,"cadastro manual — herbicida SL Corteva 2,4-D-colina+glifosato soja Enlist",2026-11-21,"2,4-D-colina+glifosato"
 Atanor SL,Atanor|Atanor 50 SL|Glifosato Atanor|Atanor Nufarm SL,,SL,16,cadastro manual — herbicida SL glifosato Atanor/Nufarm,2026-11-21,glifosato
@@ -797,7 +797,7 @@ Broadway WG,Broadway|Broadway WG Corteva|Pyroxsulam WG|Pyroxsulam|Olimpus WG,,WG
 Londax 600 WG,Londax|Londax WG|Bensulfuron WG|Bensulfuron|Bensulfuron-methyl|Bensulfuron-metil,,WG,6,dupont,2026-11-21,bensulfuron-metil
 Beacon 750 WG,Beacon|Beacon WG|Primissulfuron WG|Primossulfuron|Primissulfuron,,WG,6,syngenta,2026-11-21,primossulfuron
 Lumiposa FS,Lumiposa|Lumiposa FS|Cyantraniliprole FS|Ciantraniliprole FS,,FS,8,corteva,2026-11-21,ciantraniliprole
-Valbon WG,Valbon|Valbon WG|Valifenalate WG|Valifenalate|Belchim Valbon,,WG,6,belchim,2026-11-21,valifenalate+mancozebe
+Valbon WG,Valbon|Valbon WG|Valifenalate WG|Valifenalate|Belchim Valbon|Valis M|Valis M WG,,WG,6,belchim,2026-11-21,valifenalate+mancozebe
 Talendo SC,Talendo|Talendo SC|Proquinazid SC|Proquinazid|Proquinazida SC,,SC,8,corteva,2026-11-21,proquinazida
 Mirage 450 EC,Mirage|Mirage EC|Prochloraz EC|Prochloraz|Sportak EC|Sportak,,EC,11,adama,2026-11-21,procloraz
 Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis|Prohexadiona|Proexadiona|Proexadiona SC,,SC,8,basf,2026-11-21,prohexadiona de calcio
@@ -887,3 +887,6 @@ Sumi 8 WP,Sumi 8|Sumi-8|Sumi8|diniconazol|Diniconazol WP|Sumitomo fungicida,,WP,
 Acrinatrina SC,Acrinatrina|acrinathrin|Rufast Acaricida|Certero Mite,,SC,8,generic,2026-11-21,acrinatrina
 Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 125,,SC,8,Bayer,2026-11-21,beta-cipermetrina
 "Tordon 2,4-D SL","Tordon 2,4-D|picloram 2,4-D|picloram+2,4-D SL|Tordon Ultra 2,4-D",,SL,16,Corteva,2026-11-21,"2,4-D+picloram"
+Envoke WG,Envoke|Envoke Syngenta|trifloxissulfurom-sodio|trifloxyssulfuron-sodium|Trifloxyssulfuron WG,,WG,6,Syngenta,2026-11-21,trifloxissulfurom
+Aura 60 EC,Aura|Aura 60|Aura Syngenta|profoxidim|profoxydim|profoxydim rice,,EC,11,Syngenta,2026-11-21,profoxidim
+Valis WG,Valis|Valis WG|Valis Syngenta|valifenalate|iprovalicarb WG,,WG,6,Syngenta,2026-11-21,valifenalate
