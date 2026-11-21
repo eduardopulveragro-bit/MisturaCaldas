@@ -606,7 +606,7 @@ Forum 50 SC,Forum|Forum SC BASF|Dimetomorfe SC oomicetos|Dimethomorph SC|Dimetom
 Infinito SC,Infinito|Infinito Bayer|Propamocarbe+Fluopicolida SC mildio,,SC,8,cadastro manual — fungicida SC Bayer propamocarbe+fluopicolida mildio tomate,2026-11-21,propamocarbe+fluopicolida
 Acrobat WP,Acrobat|Acrobat BASF|Dimetomorfe+Mancozebe WP,,WP,5,cadastro manual — fungicida WP BASF dimetomorfe+mancozebe oomicetos,2026-11-21,dimetomorfe+mancozebe
 Signum WG,Signum|Signum BASF|Boscalida+Piraclostrobina 26 WG horticultura,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-21,boscalida+piraclostrobina
-Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
+Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG|boscalid kresoxim-methyl|kresoxim-methyl boscalid,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
 Cantus WG,Cantus|Cantus BASF|Boscalida solo WG|Boscalid WG,,WG,6,cadastro manual — fungicida WG BASF boscalida puro botritis/mofo cinzento,2026-11-21,boscalida
 Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fungicida WG Bayer iprodiona puro,2026-11-21,iprodiona
 Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Benomyl WP,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
@@ -890,3 +890,5 @@ Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 1
 Envoke WG,Envoke|Envoke Syngenta|trifloxissulfurom-sodio|trifloxyssulfuron-sodium|Trifloxyssulfuron WG,,WG,6,Syngenta,2026-11-21,trifloxissulfurom
 Aura 60 EC,Aura|Aura 60|Aura Syngenta|profoxidim|profoxydim|profoxydim rice,,EC,11,Syngenta,2026-11-21,profoxidim
 Valis WG,Valis|Valis WG|Valis Syngenta|valifenalate|iprovalicarb WG,,WG,6,Syngenta,2026-11-21,valifenalate
+Swing Gold SE,Swing Gold|Swing Gold BASF|dimoxistrobina+epoxiconazol|dimoxystrobin epoxiconazole,,SE,10,BASF,2026-11-21,dimoxistrobina+epoxiconazol
+Outlook 720 EC,Outlook|Outlook EC|Outlook BASF|dimetenamida-p|dimethenamid-p,,EC,11,BASF,2026-11-21,dimetenamida-p
