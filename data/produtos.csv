@@ -10,18 +10,18 @@ Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricant
 Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante|Nonionic|Non-ionic surfactant|Surfactante nao ionico,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10,carbendazim+tiram
-Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
+Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS|Hallmark|Hallmark Zeon|Lambda-cyhalothrin,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
 Galil SC,Galil|Galil Syngenta,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+benzovindiflupir
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
 Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08),
 Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC|Fox 075 EC|Fox 075 SC,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
-Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
+Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800|Manzeb|Mancozeb 800|Manzeb 800,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d|2,4-D Amine|DMA Amine",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),
 Heat,Heat 70 WG|Saflufenacil|Kixor|DuPont Kixor|Saflufenacil WG,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
-Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),beta-ciflutrina
+Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125|Betaciflutrina|Beta-Cyfluthrin|Betacyfluthrin,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),beta-ciflutrina
 Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,OLEO,12,adjuvante óleo — confirmado pelo consultor,2026-10-09,
 Dessek,,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Triclon,Triclopyr|Triclon EC,,EC,11,UPL — confirmado pelo consultor,pendente (2026-10-08),
@@ -103,7 +103,7 @@ Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP|Dimilin 25 WP|Diflubenzurom|Diflu
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
 Tordon,"Tordon SL|Picloram|Tordon Ultra|2,4-D+Picloram|Picloram+2,4-D",,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
-Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur 200 EW|Tebuzol|Tebuzol 200 EC|Tebuconazole,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
+Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur 200 EW|Tebuzol|Tebuzol 200 EC|Tebuconazole|Elite|Elite 200 EC|Elite Tebuconazol,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC|Epoxiconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
 Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam|Thiamethoxam WG|Thiamethoxam|Tiametoxam 250,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
@@ -834,3 +834,4 @@ Gallery 500 SC,Gallery|Isoxaben|Gallery Dow|Isoxaben SC,,SC,8,Dow/Corteva,2026-1
 Borneo SC,Borneo|Etoxazole|Etoxazol SC|Borneo Nippon Soda|Baroque SC|Baroque|Etoxazole SC,,SC,8,Nippon Soda,2026-11-21,etoxazole
 Sultan SC,Sultan|Cyflumetofen|Cyflumetofen SC|Sultan Nichino|Pole SC,,SC,8,Nichino,2026-11-21,cyflumetofen
 Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,SC,18,varios,2026-11-21,boro
+Sumi-Alpha EC,Sumi-Alpha|Esfenvalerate|Esfenvalerato|Sumi Alpha EC|Sumialpha|Hallmark EC|Alpha Sumitomo,,EC,11,Sumitomo,2026-11-21,esfenvalerato
