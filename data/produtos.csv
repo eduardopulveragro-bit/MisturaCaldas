@@ -387,7 +387,7 @@ Nativo 750 WG,Nativo WG|Nativo 750|Trifloxistrobina+Tebuconazol WG,,WG,6,pesquis
 Sumilex 500 SC,Sumilex|Sumilex SC|Procimidona SC Sumitomo,,SC,8,pesquisa web — fungicida SC procimidona,2026-11-11,procimidona
 Metalaxil-M SC,Ridomil Gold MZ|Mefenoxam SC|Apron XL|Mefenoxam|Metalaxil M|Metalaxyl-M|Metalaxyl M|Metalaxyl-m SC,,SC,8,pesquisa web — fungicida sistemico oomiceto,2026-11-11,metalaxil-M
 Phytus SC,Phytus|Phytus Syngenta|Mandipropamida+Clorotalonil,,SC,8,pesquisa web — fungicida SC Syngenta oídio+peronospora,2026-11-11,mandipropamida+clorotalonil
-Equation Pro WG,Equation Pro|Equation Pro Syngenta|Cymoxanil+Famoxadona WG,,WG,6,pesquisa web — fungicida WG Syngenta peronospora,2026-11-11,cymoxanil+famoxadona
+Equation Pro WG,Equation Pro|Equation Pro Syngenta|Cymoxanil+Famoxadona WG|famoxadone|cymoxanil famoxadone,,WG,6,pesquisa web — fungicida WG Syngenta peronospora,2026-11-11,cymoxanil+famoxadona
 Folio Gold SC,Folio Gold|Folio Gold Syngenta|Metalaxil-M+Clorotalonil SC,,SC,8,pesquisa web — fungicida SC oomiceto+proteção,2026-11-11,metalaxil-M+clorotalonil
 Aliette 800 WG,Aliette|Aliette WG|Fosetila-Al WG|Fosetil-Al|Fosetil|Fosetila|Fosetil aluminio,,WG,6,pesquisa web — fungicida sistêmico fosetil-aluminio,2026-11-11,fosetila-aluminio
 King EC,King EC Nortox|Cipermetrina+Clorpirifos King,,EC,11,pesquisa web — inseticida EC piretroide+organofosforado,2026-11-11,cipermetrina+clorpirifos
@@ -609,7 +609,7 @@ Signum WG,Signum|Signum BASF|Boscalida+Piraclostrobina 26 WG horticultura,,WG,6,
 Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
 Cantus WG,Cantus|Cantus BASF|Boscalida solo WG|Boscalid WG,,WG,6,cadastro manual — fungicida WG BASF boscalida puro botritis/mofo cinzento,2026-11-21,boscalida
 Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fungicida WG Bayer iprodiona puro,2026-11-21,iprodiona
-Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Thiabendazol|Tiabendazol|Tecto|Tecto 450 SC,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
+Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Benomyl WP,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
 Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cadastro manual — acaricida/fungicida WG meptildinocap oídio,2026-11-21,meptildinocap
 Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
 Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG|Actiguard,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
@@ -776,7 +776,7 @@ Fantic SC,Fantic|Fenamidone SC|Fenomidone|Fantic Bayer,,SC,8,bayer,2026-11-21,fe
 Clomazone 500 SC,Clomazone|Clomazone SC|Command 480 EC|Command|Gamit 360 CS|Gamit|Clomazone 480 EC,,SC,8,fmc,2026-11-21,clomazone
 Katana WG,Katana|Katana 250 WG|Flazassulfuron WG|Flazasulfuron WG|Flazasulfuron,,WG,6,syngenta,2026-11-21,flazasulfuron
 Sporan EC,Sporan|Sporan Fungicida|Extrato Cravo|Eugenol EC|Sporan BioFungicida,,EC,11,biocontrole,2026-11-21,eugenol
-Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Mertect WP|Topsin M,,WP,5,nufarm,2026-11-21,tiofanato-metilico
+Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Topsin M,,WP,5,nufarm,2026-11-21,tiofanato-metilico
 Baytan 150 FS,Baytan|Baytan FS|Triadimenol FS|Triadimenol|Triadimenol Bayer,,FS,8,bayer,2026-11-21,triadimenol
 Dividend 250 FS,Dividend|Dividend FS|Difenoconazol FS Syngenta|Difenoconazol FS|Divi FS,,FS,8,syngenta,2026-11-21,difenoconazol
 Broadstrike 500 SC,Broadstrike|Flumetsulam SC|Flumetsulam|Broadstrike Corteva|Discovery SC,,SC,8,corteva,2026-11-21,flumetsulam
@@ -821,7 +821,7 @@ Propulse SE,Propulse|Fluopyram+Proticonazol|Fluopyram+Prothioconazol|Prothiocona
 Metaldehido 5 GB,Metaldehido|Metaldehyde|Metaldehyde GB|Slug bait|Mata lesma|Limax|Namekil|Mesurol|Slug pellets,,GR,3,Nortox/Bayer,2026-11-21,metaldehido
 Consento SC,Consento|Fenamidone+Propamocarb|Consento Bayer|Fenamidona+Propamocarb SC|Fenamidone Propamocarb,,SC,8,Bayer,2026-11-21,fenamidona+propamocarb
 Legacy SC,Legacy|Diflufenican|Diflufenican SC|Legacy Nufarm|Legacy herbicida,,SC,8,Nufarm,2026-11-21,diflufenican
-Poncho Voxtran SC,Poncho Voxtran|Clothianidin+Beta-cyfluthrin|Clotianidina+Beta-ciflutrina Voxtran|Poncho Voxtran Bayer,,SC,8,Bayer,2026-11-21,clotianidina+beta-ciflutrina
+Poncho Voxtran SC,Poncho Voxtran|Clothianidin+Beta-cyfluthrin|Clotianidina+Beta-ciflutrina Voxtran|Poncho Voxtran Bayer|clothianidin beta-cyfluthrin,,SC,8,Bayer,2026-11-21,clotianidina+beta-ciflutrina
 Stargus SC,Stargus|Bacillus amyloliquefaciens QST 713|Bacillus velezensis|Serenade Max|Serenade Plus SC,,SC,20,Marrone Bio,2026-11-21,Bacillus velezensis
 Brassinolide SC,Brassinolide|Brassinosteroide|Brassinosteroid|Brassinolido|Viro SC|Plex BR,,SC,18,varios,2026-11-21,brassinolideo
 Buctril EC,Buctril|Bromoxynil|Bromoxinil|Bromoxynil EC|Buctril Nortox,,EC,11,Nortox/Bayer,2026-11-21,bromoxinil
@@ -867,3 +867,4 @@ Dermacor CS,Dermacor|Dermacor C|Dermacor Corteva|clorantraniliprole CS,,CS,7,Cor
 Racer EC,Racer|Racer Sipcam|flurocloridona|flurocloridone,,EC,11,Sipcam,2026-11-21,flurocloridona
 Cinch EC,Cinch|Cinch BASF|cinmetilina|cinmethylin,,EC,11,BASF,2026-11-21,cinmetilina
 Plenish SC,Plenish|Plenish SC FMC|flubendiamida plenish,,SC,8,FMC,2026-11-21,flubendiamida
+Tecto 450 SC,Tecto|Tecto SC|Mertect|Mertect SC|thiabendazol|thiabendazole|tiabendazol|TBZ,,SC,8,Syngenta,2026-11-21,tiabendazol
