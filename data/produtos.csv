@@ -152,7 +152,7 @@ Hexazinona,Hexazinona Nortox|Hexazinona SL,,SL,16,cadastro manual — herbicida 
 Naja,Naja EC|Lactofen Nortox,,EC,11,cadastro manual — herbicida EC generico,2026-10-09,lactofen
 Metconazol,Caramba|Caramba SC|Metconazol SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,metconazol
 Clorotalonil,Previnil|Bravonil|Daconil|Absoluto|Clorotalonil SC|Bravo|Echo|Bravonil 720,,SC,8,cadastro manual — fungicida multissitio ferrugem soja,2026-10-09,clorotalonil
-Prosaro,Prosaro EC|Prosaro Bayer|Protioconazol+Tebuconazol|Prothioconazol+Tebuconazol|Input EC,,EC,11,cadastro manual — fungicida EC trigo giberela Bayer,2026-10-09,protioconazol+tebuconazol
+Prosaro,Prosaro EC|Prosaro Bayer|Protioconazol+Tebuconazol|Prothioconazol+Tebuconazol|Input EC|Prothioconazole+Tebuconazole|Prothioconazole,,EC,11,cadastro manual — fungicida EC trigo giberela Bayer,2026-10-09,protioconazol+tebuconazol
 Blavity,Blavity SC|Blavity BASF,,SC,8,cadastro manual — fungicida SC ferrugem BASF,2026-10-09,fluxapiroxade+protioconazol
 Artea,Artea EC|Artea Syngenta,,EC,11,cadastro manual — fungicida EC Syngenta,2026-10-09,ciproconazol+propiconazol
 Guapo,Guapo SC|Guapo BASF,,SC,8,cadastro manual — fungicida SC BASF,2026-10-09,epoxiconazol+cresoxim-metilico
@@ -161,7 +161,7 @@ Manfil,Manfil WP|Manfil 800|Troia,,WP,5,cadastro manual — fungicida WP mancoze
 Provado,Provado SC|Provado 200 SC|Imidacloprido SC|Imidacloprido Nortox 700 SC|Imidacloprido Nortox,,SC,8,cadastro manual — inseticida SC Bayer,2026-10-09,imidacloprido
 Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC|Herbadox 400 EC|Pendimethalina 400 EC|Prowl 400,,EC,11,cadastro manual — herbicida pre-emergente EC,2026-10-09,pendimetalina
 Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,,EC,11,cadastro manual — herbicida pre-emergente Syngenta,2026-10-09,s-metolacloro
-Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
+Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC|Ametryn|Ametryn SC|Ametryne,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
 Curavial,Curavial WG|Sulfometurom|Sulfometurom-metilico,,WG,6,cadastro manual — herbicida WG pastagem,2026-10-09,sulfometurom-metilico
 Permit,Permit WG|Halosulfurom WG|Sempra|Halosulfuron WG|Halosulfuron|Halosulfurom|Halosulfuron-methyl,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
@@ -385,7 +385,7 @@ Isofetamida SC,Isofetamida|Kenja SC|Isofetamida Nippon Soda,,SC,8,pesquisa web �
 Iprodiom SC,Rovral SC|Iprodiona 500 SC|Iprodiom Bayer,,SC,8,pesquisa web — fungicida SC iprodiona,2026-11-11,iprodiona
 Nativo 750 WG,Nativo WG|Nativo 750|Trifloxistrobina+Tebuconazol WG,,WG,6,pesquisa web — fungicida WG Bayer seca cereal,2026-11-11,trifloxistrobina+tebuconazol
 Sumilex 500 SC,Sumilex|Sumilex SC|Procimidona SC Sumitomo,,SC,8,pesquisa web — fungicida SC procimidona,2026-11-11,procimidona
-Metalaxil-M SC,Ridomil Gold MZ|Mefenoxam SC|Apron XL|Mefenoxam|Metalaxil M,,SC,8,pesquisa web — fungicida sistemico oomiceto,2026-11-11,metalaxil-M
+Metalaxil-M SC,Ridomil Gold MZ|Mefenoxam SC|Apron XL|Mefenoxam|Metalaxil M|Metalaxyl-M|Metalaxyl M|Metalaxyl-m SC,,SC,8,pesquisa web — fungicida sistemico oomiceto,2026-11-11,metalaxil-M
 Phytus SC,Phytus|Phytus Syngenta|Mandipropamida+Clorotalonil,,SC,8,pesquisa web — fungicida SC Syngenta oídio+peronospora,2026-11-11,mandipropamida+clorotalonil
 Equation Pro WG,Equation Pro|Equation Pro Syngenta|Cymoxanil+Famoxadona WG,,WG,6,pesquisa web — fungicida WG Syngenta peronospora,2026-11-11,cymoxanil+famoxadona
 Folio Gold SC,Folio Gold|Folio Gold Syngenta|Metalaxil-M+Clorotalonil SC,,SC,8,pesquisa web — fungicida SC oomiceto+proteção,2026-11-11,metalaxil-M+clorotalonil
@@ -737,7 +737,7 @@ Bladex 500 SC,Bladex|Bladex SC|Cianazina SC|Cianazina|Bladex FMC,,SC,8,pesquisa 
 Sumithion 500 EC,Sumithion|Sumithion EC|Fenitrothion|Fenitrotion|Fenitrothio|Metathion,,EC,11,pesquisa web — inseticida EC fenitrotion organofosforado,2026-11-21,fenitrotion
 Teldor 500 SC,Teldor|Teldor SC|Teldor Bayer|Fenhexamide SC|Fenhexamida SC,,SC,8,pesquisa web — fungicida SC Bayer fenhexamide botrytis frutas,2026-11-21,fenhexamide
 Oxadiazon 250 EC,Oxadiazon|Oxadiazon EC|Ronstar Gold|Ronstar EC|Oxafluorfem,,EC,11,pesquisa web — herbicida EC oxadiazon pre-emergente,2026-11-21,oxadiazon
-Rancona 150 FS,Rancona|Rancona FS|Rancona Bayer|Ipconazol FS|Ipconazol|Trilex,,FS,8,pesquisa web — fungicida FS Bayer ipconazol tratamento sementes,2026-11-21,ipconazol
+Rancona 150 FS,Rancona|Rancona FS|Rancona Bayer|Ipconazol FS|Ipconazol|Trilex|Ipconazole|Ipconazole FS,,FS,8,pesquisa web — fungicida FS Bayer ipconazol tratamento sementes,2026-11-21,ipconazol
 Dynasty FS,Dynasty|Dynasty BASF|Azoxistrobina FS sementes|Azoxistrobina TS,,FS,8,pesquisa web — fungicida FS BASF azoxistrobina tratamento sementes,2026-11-21,azoxistrobina
 Carbaryl 850 WP,Carbaryl|Carbaril|Carbaril WP|Murvin 850|Murvin WP|Carbaryl Nortox|Sevin|Sevin WP,,WP,5,pesquisa web — inseticida WP carbaril para diversas culturas,2026-11-21,carbaril
 Dormex 520 SL,Dormex|Dormex SL|Dormex BASF|Cianamida hidrogenada|Hydrogen cyanamide|Cianamida|Dormhex,,SL,16,pesquisa web — regulador de crescimento SL cianamida hidrogenada quebra dormencia,2026-11-21,cianamida hidrogenada
@@ -835,3 +835,5 @@ Borneo SC,Borneo|Etoxazole|Etoxazol SC|Borneo Nippon Soda|Baroque SC|Baroque|Eto
 Sultan SC,Sultan|Cyflumetofen|Cyflumetofen SC|Sultan Nichino|Pole SC,,SC,8,Nichino,2026-11-21,cyflumetofen
 Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,SC,18,varios,2026-11-21,boro
 Sumi-Alpha EC,Sumi-Alpha|Esfenvalerate|Esfenvalerato|Sumi Alpha EC|Sumialpha|Hallmark EC|Alpha Sumitomo,,EC,11,Sumitomo,2026-11-21,esfenvalerato
+Vibrance SC,Vibrance|Sedaxane|Sedaxane SC|Vibrance Syngenta|Sedaxane Syngenta,,SC,8,Syngenta,2026-11-21,sedaxane
+Cercobin M 700 WP,Cercobin M|Cercobin M WP|Tiofanato Metilico+Mancozeb WP|Tiofanato+Mancozeb,,WP,5,Sumitomo,2026-11-21,tiofanato-metilico+mancozebe
