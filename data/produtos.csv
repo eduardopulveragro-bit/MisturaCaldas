@@ -152,7 +152,7 @@ Hexazinona,Hexazinona Nortox|Hexazinona SL,,SL,16,cadastro manual — herbicida 
 Naja,Naja EC|Lactofen Nortox,,EC,11,cadastro manual — herbicida EC generico,2026-10-09,lactofen
 Metconazol,Caramba|Caramba SC|Metconazol SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,metconazol
 Clorotalonil,Previnil|Bravonil|Daconil|Absoluto|Clorotalonil SC|Bravo|Echo|Bravonil 720,,SC,8,cadastro manual — fungicida multissitio ferrugem soja,2026-10-09,clorotalonil
-Prosaro,Prosaro EC|Prosaro Bayer,,EC,11,cadastro manual — fungicida EC trigo giberela Bayer,2026-10-09,protioconazol+tebuconazol
+Prosaro,Prosaro EC|Prosaro Bayer|Protioconazol+Tebuconazol|Prothioconazol+Tebuconazol|Input EC,,EC,11,cadastro manual — fungicida EC trigo giberela Bayer,2026-10-09,protioconazol+tebuconazol
 Blavity,Blavity SC|Blavity BASF,,SC,8,cadastro manual — fungicida SC ferrugem BASF,2026-10-09,fluxapiroxade+protioconazol
 Artea,Artea EC|Artea Syngenta,,EC,11,cadastro manual — fungicida EC Syngenta,2026-10-09,ciproconazol+propiconazol
 Guapo,Guapo SC|Guapo BASF,,SC,8,cadastro manual — fungicida SC BASF,2026-10-09,epoxiconazol+cresoxim-metilico
@@ -395,7 +395,7 @@ Polytrin C EC,Polytrin C|Polytrin C 440|Profenofos+Cipermetrina EC,,EC,11,pesqui
 Sumidan 25 EC,Sumidan|Sumidan EC|Tau-fluvalinate EC,,EC,11,pesquisa web — inseticida EC acaricida Sumitomo,2026-11-11,tau-fluvalinate
 Clincher EC,Clincher|Clincher EC|Cyhalofop-butilico EC|Clincher Corteva|Cyhalofop-butilico,,EC,11,pesquisa web — herbicida EC arroz Corteva,2026-11-11,cyhalofop-butilico
 Rifit 500 EC,Rifit|Rifit EC|Pretilachlor EC|Rifit Syngenta,,EC,11,pesquisa web — herbicida EC arroz Syngenta pre-emergente,2026-11-11,pretilachlor
-Nominee 400 SC,Nominee|Nominee SC|Bispiribac-sodio SC,,SC,8,pesquisa web — herbicida SC arroz Nichino,2026-11-11,bispiribac-sodio
+Nominee 400 SC,Nominee|Nominee SC|Bispiribac-sodio SC|Bispyribac|Bispyribac-sodium|Bispiribac,,SC,8,pesquisa web — herbicida SC arroz Nichino,2026-11-11,bispiribac-sodio
 Sirius SC,Sirius|Sirius SC|Pirazossulfuron SC,,SC,8,pesquisa web — herbicida SC arroz,2026-11-11,pirazossulfuron-etilico
 Grasp SC,Grasp|Grasp SC|Penoxsulam SC|Grasp Corteva,,SC,8,pesquisa web — herbicida SC arroz Corteva,2026-11-11,penoxsulam
 Triflurex 600 EC,Triflurex|Triflurex EC|Trifluralina 600 EC,,EC,11,pesquisa web — herbicida EC trifluralina Nufarm,2026-11-11,trifluralina
@@ -587,7 +587,7 @@ Timorex Gold EC,Timorex Gold|Timorex|Timorex STK|Timol fungicida EC,,EC,11,cadas
 Polysect Ultra SL,Polysect Ultra|Polysect|Polysect FMC|Alfa-cipermetrina+Imidacloprido SL,,SL,16,cadastro manual — inseticida SL alfa-cipermetrina+imidacloprido Cheminova/FMC,2026-11-16,alfa-cipermetrina+imidacloprido
 Blackhawk WG,Blackhawk|Blackhawk WG Corteva|Espinosade 480 WG Corteva,,WG,6,cadastro manual — inseticida WG espinosade Corteva,2026-11-16,espinosade
 Exalt SC,Exalt|Exalt SC Corteva|Espinosade 240 SC Exalt,,SC,8,cadastro manual — inseticida SC espinosade 240 baixa dose Corteva,2026-11-16,espinosade
-Nomini OD,Nomini|Nomini OD|Nomini Nissan|Bispiribac+Propanil OD arroz,,OD,9,cadastro manual — herbicida OD bispiribac-sodio+propanil arroz Nissan,2026-11-16,bispiribac-sodio+propanil
+Nomini OD,Nomini|Nomini OD|Nomini Nissan|Bispiribac+Propanil OD arroz|Propanil+Bispiribac,,OD,9,cadastro manual — herbicida OD bispiribac-sodio+propanil arroz Nissan,2026-11-16,bispiribac-sodio+propanil
 Primus SL,Primus|Primus Syngenta|Primus 50 SL|Florasulam SL,,SL,16,cadastro manual — herbicida SL florasulam trigo/pastagem Syngenta,2026-11-16,florasulam
 Zidua PRO WG,Zidua PRO|Zidua Pro BASF|Piroxasulfona+Flumioxazina WG,,WG,6,cadastro manual — herbicida WG BASF piroxasulfona+flumioxazina pre-emergente soja,2026-11-16,piroxasulfona+flumioxazina
 YaraVita Zincutec WP,YaraVita Zincutec|Zincutec WP|Zinco 90 WP Yara|Zinco WP Yara,,WP,18,cadastro manual — fertilizante foliar zinco 90% WP Yara,2026-11-16,zinco
@@ -766,3 +766,7 @@ Maneb 800 WP,Maneb|Maneb WP|Maneb 800|Maneb Nortox|Trimanoc WP,,WP,5,nortox,2026
 Radar 25 CS,Radar|Radar CS|Isoxaflutole CS|Isoxaflutol Bayer|Provence CS,,CS,7,bayer,2026-11-21,isoxaflutol
 Nortron 500 SC,Nortron|Nortron SC|Ethofumesate SC|Etofumesato SC|Etofumesato,,SC,8,bayer,2026-11-21,etofumesato
 Dacthal WP,Dacthal|DCPA WP|Dacthal 750 WP,,WP,5,amvac,2026-11-21,DCPA
+Stam 480 BR EC,Stam|Stam EC|Propanil EC|Propanil 480|Stam 480|Ricemaster,,EC,11,corteva,2026-11-21,propanil
+Rugby 200 CS,Rugby|Rugby CS|Cadusafos CS|Cadusafos 200,,CS,7,fmc,2026-11-21,cadusafos
+Aldicarb 15 GR,Temik|Temik GR|Aldicarb GR|Temik 150 GR,,GR,3,bayer,2026-11-21,aldicarb
+Mocap 150 GR,Mocap|Mocap GR|Etoprofos GR|Ethoprophos GR,,GR,3,chemtura,2026-11-21,etoprofos
