@@ -96,7 +96,7 @@ Rimon,Rimon EC|Rimon 100|Novalurom EC|Novaluron EC|Novaluron|Novalurom,,EC,11,ca
 Pirate,Pirate SC|Pirate BASF|Clorfenapir SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorfenapir
 Regent,Regent 800 WG|Regent WG|Fipronil WG|Fipronil,,WG,6,cadastro manual — produto comercial comum,2026-10-09,fipronil
 Larvin,Larvin 800 WG|Larvin WG|Tiodicarbe WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiodicarbe
-Cipermetrina,Cipermetrina Nortox|Cipermetrina 250 EC|Cipermil,,EC,11,cadastro manual — generico comum,2026-10-09,cipermetrina
+Cipermetrina,Cipermetrina Nortox|Cipermetrina 250 EC|Cipermil|Cypermethrin|Cypermethrin EC|Cypermetrina,,EC,11,cadastro manual — generico comum,2026-10-09,cipermetrina
 Aurora,Aurora 400 EC|Aurora EC|Carfentrazona|Carfentrazone EC|Spotlight|Spotlight Plus|Soja Brasil,,EC,11,cadastro manual — produto comercial comum,2026-10-09,carfentrazona-etilica
 Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600|Trifluralin,,EC,11,cadastro manual — generico comum,2026-10-09,trifluralina
 Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP|Dimilin 25 WP|Diflubenzurom|Diflubenzuron,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
@@ -113,7 +113,7 @@ Starane,Starane EC|Starane 200|Fluroxipir EC,,EC,11,cadastro manual — produto 
 Basagran,Basagran 600|Bentazona SL|Bentazone|Bentazon|Bentazona,,SL,16,cadastro manual — produto comercial comum,2026-10-09,bentazona
 Cobra,Cobra EC|Lactofen EC|Lactofen 240|Lactofen,,EC,11,cadastro manual — produto comercial comum,2026-10-09,lactofen
 Flex,Flex SL|Fomesafen SL|Fomesafem|Fomesafen|Flexstar|Flexstar GT,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
-Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
+Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC|Bifenthrin|Bifenthrin EC|Capture EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad|Success|Success 480 SC|Entrust SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,espinetoram
@@ -207,7 +207,7 @@ Dash HC,Dash|Dash BASF,,ADJUVANTE,2,adjuvante oleoso BASF — muito usado com gr
 Lanzar,Lanzar Adjuvante,,ADJUVANTE,2,adjuvante espalhante adesivo Arysta,2026-10-13,
 Silwet,Silwet L-77|Silwet Gold,,ADJUVANTE,2,adjuvante siliconado Momentive,2026-10-13,surfactante siliconado
 Nortox Espalhante,Espalhante Nortox,,ADJUVANTE,2,adjuvante espalhante adesivo Nortox,2026-10-13,
-Dinamic,Dinamic WG|Amicarbazona,,WG,6,herbicida WG Arysta — milho/cana,2026-10-13,amicarbazona
+Dinamic,Dinamic WG|Amicarbazona|Amicarbazone|Amicarbazone WG,,WG,6,herbicida WG Arysta — milho/cana,2026-10-13,amicarbazona
 Coyote,Coyote SC,,SC,8,herbicida SC — atrazina+tembotriona — milho,2026-10-13,atrazina+tembotriona
 Hussar,Hussar WG|Hussar Plus|Iodosulfurom,,WG,6,herbicida WG Bayer — trigo,2026-10-13,iodosulfurom
 Equip Plus,Equip|Equip WG,,WG,6,herbicida WG Bayer — foramsulfurom+iodosulfurom — milho,2026-10-13,foramsulfurom+iodosulfurom
@@ -675,7 +675,7 @@ Lift Oil Union,Lift Oil|LiftOil Union,,OLEO,12,cadastro manual — adjuvante ole
 Engenia 480 SL,Engenia|Engenia BASF|Engenia dicamba|Dicamba 480 BASF|Dicamba BASF,,SL,16,cadastro manual — herbicida SL dicamba BASF tecnologia Xtend soja,2026-11-21,dicamba
 Neoron 500 EC,Neoron|Neoron EC|Bromopropilato EC|Neoron Syngenta,,EC,11,cadastro manual — acaricida EC bromopropilato Syngenta citros/algodao,2026-11-21,bromopropilato
 Lebaycid 500 EC,Lebaycid|Lebaycid EC|Fenoato EC|Fentião EC|Fentoato Bayer,,EC,11,cadastro manual — acaricida/inseticida EC fentoato Bayer cafe/citros,2026-11-21,fentoato
-Ambush EC,Ambush 500|Ambush EC Syngenta|Permetrina 500 EC,,EC,11,cadastro manual — inseticida EC permetrina Syngenta algodao/soja,2026-11-21,permetrina
+Ambush EC,Ambush 500|Ambush EC Syngenta|Permetrina 500 EC|Permethrin|Permethrin EC|Permethrina EC,,EC,11,cadastro manual — inseticida EC permetrina Syngenta algodao/soja,2026-11-21,permetrina
 Sportak EC,Sportak|Sportak 450|Prochloraz EC|Procloraz EC Bayer,,EC,11,cadastro manual — fungicida EC procloraz Bayer trigo/arroz,2026-11-21,procloraz
 Folicurl SC,Folicurl|Folicurl SC|Tebuconazol SC Nortox|Nortox Tebuconazol SC,,SC,8,cadastro manual — fungicida SC tebuconazol Nortox soja/milho/trigo,2026-11-21,tebuconazol
 Maxim Gold FS,Maxim Gold|Maxim Gold Syngenta|Fludioxonil+Metalaxil-M+Tiametoxam FS,,SC,8,cadastro manual — tratamento semente fungicida+inseticida Syngenta,2026-11-21,fludioxonil+metalaxil-M+tiametoxam
@@ -840,3 +840,6 @@ Cercobin M 700 WP,Cercobin M|Cercobin M WP|Tiofanato Metilico+Mancozeb WP|Tiofan
 Fontelis SC,Fontelis|Penthiopyrad|Penthiopyrade|Penthiopyrad SC|Fontelis Corteva,,SC,8,DuPont/Corteva,2026-11-21,penthiopyrad
 Glean WG,Glean|Chlorsulfuron|Chlorsulfuron WG|Glean DuPont|Clorosulfuron,,WG,6,DuPont/Corteva,2026-11-21,clorosulfuron
 Cohere MSO EC,MSO|Methylated seed oil|Methyl seed oil|Crop oil concentrate|Merge adjuvante|MSO adjuvante,,EC,2,Corteva/vários,2026-11-21,oleo metilado
+Asulox SC,Asulox|Asulam|Asulam SC|Asulox cana|Asulam sugarcane,,SC,8,Nortox/Bayer,2026-11-21,asulam
+Terbacil 80 WP,Terbacil|Terbacil WP|Terbacil cana|Sinbar,,WP,5,DuPont/Corteva,2026-11-21,terbacil
+Dithiopyr SC,Dithiopyr|Dimension EC|Dithiopyr SC|Dimension Herbicide,,SC,8,Dow/Corteva,2026-11-21,dithiopyr
