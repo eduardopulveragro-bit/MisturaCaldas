@@ -81,7 +81,7 @@ Comet,Comet EC|Comet BASF|Piraclostrobina,,EC,11,cadastro manual — produto com
 Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox SC|Ciproconazol Nortox|Alto 100 SL,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
 Spider,Spider WG|Spider 840|Diclosulam WG|Diclosulam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
 Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG|Classic 250 DF|Classic DF,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
-Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
+Pacto,Pacto WG|Cloransulam|Cloransulam-metilico|Firstrate|Firstrate WG|FirstRate|Cloransulam Metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
 Callisto,Callisto SC|Mesotriona SC|Mesotriona|Mesotrione|Mesotrione SC|Calaris,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
 Connect,Connect SC|Connect Bayer|Imidacloprid|Imidacloprida,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
@@ -739,7 +739,7 @@ Teldor 500 SC,Teldor|Teldor SC|Teldor Bayer|Fenhexamide SC|Fenhexamida SC,,SC,8,
 Oxadiazon 250 EC,Oxadiazon|Oxadiazon EC|Ronstar Gold|Ronstar EC|Oxafluorfem,,EC,11,pesquisa web — herbicida EC oxadiazon pre-emergente,2026-11-21,oxadiazon
 Rancona 150 FS,Rancona|Rancona FS|Rancona Bayer|Ipconazol FS|Ipconazol|Trilex,,FS,8,pesquisa web — fungicida FS Bayer ipconazol tratamento sementes,2026-11-21,ipconazol
 Dynasty FS,Dynasty|Dynasty BASF|Azoxistrobina FS sementes|Azoxistrobina TS,,FS,8,pesquisa web — fungicida FS BASF azoxistrobina tratamento sementes,2026-11-21,azoxistrobina
-Carbaryl 850 WP,Carbaryl|Carbaril|Carbaril WP|Murvin 850|Murvin WP|Carbaryl Nortox,,WP,5,pesquisa web — inseticida WP carbaril para diversas culturas,2026-11-21,carbaril
+Carbaryl 850 WP,Carbaryl|Carbaril|Carbaril WP|Murvin 850|Murvin WP|Carbaryl Nortox|Sevin|Sevin WP,,WP,5,pesquisa web — inseticida WP carbaril para diversas culturas,2026-11-21,carbaril
 Dormex 520 SL,Dormex|Dormex SL|Dormex BASF|Cianamida hidrogenada|Hydrogen cyanamide|Cianamida|Dormhex,,SL,16,pesquisa web — regulador de crescimento SL cianamida hidrogenada quebra dormencia,2026-11-21,cianamida hidrogenada
 Furadan 50 GR,Furadan|Furadan GR|Carbofurano GR|Carbofuran|Carbosulfan GR|Furadam,,GR,3,pesquisa web — inseticida/nematicida GR carbofurano para cana,2026-11-21,carbofurano
 Bromacila 480 SC,Bromacila|Bromacil|Bromacila SC|Nomate|Nomate 480 SC,,SC,8,pesquisa web — herbicida SC bromacila para cana-de-acucar,2026-11-21,bromacila
@@ -817,3 +817,5 @@ Merivon SC,Merivon|Fluxapyroxade+Piraclostrobina|Fluxapyroxad SC|Fluxapyroxade|M
 Harvanta SC,Harvanta|Cyclaniliprole|Ciclaniliprole SC|Harvanta Corteva,,SC,8,Corteva,2026-11-21,cyclaniliprole
 Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro SC,,SC,8,BASF,2026-11-21,ametoctradin
 Cycocel SC,Cycocel|Chlormequat|Cloreto de Clormequat|CCC|Stabilan|Chlormequat chloride|Klormekwat,,SC,8,Nortox/BASF,2026-11-21,clormequat
+Propulse SE,Propulse|Fluopyram+Proticonazol|Fluopyram+Prothioconazol|Prothioconazol+Fluopyram SE|Propulse BASF,,SE,8,BASF,2026-11-21,fluopyram+prothioconazol
+Metaldehido 5 GB,Metaldehido|Metaldehyde|Metaldehyde GB|Slug bait|Mata lesma|Limax|Namekil|Mesurol|Slug pellets,,GR,3,Nortox/Bayer,2026-11-21,metaldehido
