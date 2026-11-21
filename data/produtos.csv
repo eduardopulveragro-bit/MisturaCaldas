@@ -84,7 +84,7 @@ Classic,Classic WG|Clorimuron|Clorimuron-etilico,,WG,6,cadastro manual — produ
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
 Callisto,Callisto SC|Mesotriona SC|Mesotriona,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
-Connect,Connect SC|Connect Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
+Connect,Connect SC|Connect Bayer|Imidacloprid|Imidacloprida,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
 Premio,Premio SC|Premio Corteva,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorantraniliprole
 Match,Match EC|Match Syngenta|Lufenurom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,lufenurom
 Mustang,Mustang EC|Mustang 350|Zetacipermetrina EC|Zetacipermetrina|Zeta-cipermetrina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,zetacipermetrina
@@ -115,7 +115,7 @@ Cobra,Cobra EC|Lactofen EC,,EC,11,cadastro manual — produto comercial comum,20
 Flex,Flex SL|Fomesafen SL|Fomesafem,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
 Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
-Tracer,Tracer SC|Tracer Corteva|Espinosade SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
+Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,espinetoram
 Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
 Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
@@ -283,7 +283,7 @@ Podium 125 EW,Podium|Podium EW|Fenoxaprop EW|Fenoxaprop-p Bayer,,EW,14,graminici
 Vydate 240 L,Vydate|Vydate SL|Oxamil SL|Oxamyl SL,,SL,16,nematicida/inseticida SL — oxamil — IA busca web confirmou SL,2026-10-26,oxamil
 Nimitz 480 SL,Nimitz|Nimitz SL|Fluensulfone SL,,SL,16,nematicida SL FMC — fluensulfone — nome contém SL portanto pos 16,2026-10-26,fluensulfone
 Pyrinex 480 EC,Pyrinex|Pyrinex EC|Clorpirifos EC|Clorpirifos Dow,,EC,11,inseticida EC Corteva — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
-Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC,,EC,11,inseticida EC BASF — dimetoato — IA busca web confirmou EC,2026-10-26,dimetoato
+Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC|Dimetoato|Dimethoate,,EC,11,inseticida EC BASF — dimetoato — IA busca web confirmou EC,2026-10-26,dimetoato
 Clinic 480 SL,Clinic|Clinic SL|Glifosato Clinic|Glifosato Zeneca,,SL,16,herbicida SL — glifosato — IA busca web confirmou SL,2026-10-26,glifosato
 Plateau,Plateau WG|Plateau BASF|Imazapique WG,,WG,6,herbicida WG BASF — imazapique — IA busca web confirmou WG,2026-10-26,imazapique
 Flexidor,Flexidor SL|Flexidor Bayer|Isoxaflutol SL,,SL,16,herbicida SL Bayer — isoxaflutol — IA busca web retornou SL (pendente confirmacao bula),pendente (2026-10-26),isoxaflutol
@@ -614,7 +614,7 @@ Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cad
 Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
 Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
 Fosfonate 400 SL,Fosfonate|Fosfonate SL|Fosfonate Nufarm|Fosfito Potassio Fosfonate,,SL,16,cadastro manual — fosfito potassio SL Nufarm citros/outros,2026-11-21,fosfito de potassio
-Calypso 480 SC,Calypso|Calypso SC|Calypso Bayer|Tiacloprido SC,,SC,8,cadastro manual — inseticida SC Bayer tiacloprido neonicotinoide,2026-11-21,tiacloprido
+Calypso 480 SC,Calypso|Calypso SC|Calypso Bayer|Tiacloprido SC|Thiacloprid|Tiacloprid,,SC,8,cadastro manual — inseticida SC Bayer tiacloprido neonicotinoide,2026-11-21,tiacloprido
 Vertimec Gold,Vertimec Gold EC|Vertimec Gold AZ|Abamectina+Azoxistrobina EC Syngenta,,EC,11,cadastro manual — inseticida/fungicida EC Syngenta abamectina+azoxistrobina,2026-11-21,abamectina+azoxistrobina
 AgroMos WG,AgroMos|AgroMos Alltech|Agro Mos|AgroMos bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante WG Alltech mananoligossacarideos imunidade,2026-11-21,mananoligossacarideos
 Fertiactyl GC WG,Fertiactyl GC|Fertiactyl WG|Fertiactyl Bayer|Fertiactyl aminoacidos,,FERTILIZANTE,18,cadastro manual — bioestimulante WG aminoacidos Bayer aplicacao foliar,2026-11-21,aminoacidos hidrolisados
@@ -704,3 +704,8 @@ Focus Ultra,Focus|Focus Ultra BASF|Setoxidim EC|Setoxidim,,EC,11,pesquisa web �
 Poast,Poast EC|Poast Syngenta|Setoxidim Syngenta,,EC,11,pesquisa web — graminicida EC Syngenta setoxidim,2026-11-21,setoxidim
 Simazina 500,Simazina|Simazina SC|Primatol|Herbazina|Simazinox,,SC,8,pesquisa web — herbicida SC simazina pre-emergente,2026-11-21,simazina
 Sulfossato 480 SL,Sulfossato|Sulfossato SL|Finale SL|Touchdown|Touchdown IQ,,SL,16,pesquisa web — herbicida SL sulfossato glifosato-trimesio,2026-11-21,sulfossato
+Mitac 200 EC,Mitac|Mitac EC|Amitraz EC|Amitraz|Amitraz Nortox,,EC,11,pesquisa web — acaricida/inseticida EC amitraz,2026-11-21,amitraz
+Omite 720 EC,Omite|Omite EC|Propargito|Propargite|Omite Crompton,,EC,11,pesquisa web — acaricida EC propargito,2026-11-21,propargito
+Ethion 500 EC,Ethion|Ethion EC|Etiona|Fosfur|Fosfur EC|Suprathion,,EC,11,pesquisa web — acaricida/inseticida organofosforado EC etiona,2026-11-21,etiona
+Sherpa 100 CE,Sherpa|Sherpa CE|Corsair|Pounce|Ambush EC|Cipermetrina Piretroide,,EC,11,pesquisa web — inseticida CE cipermetrina piretroide,2026-11-21,cipermetrina
+Gaucho FS,Gaucho|Gaucho Bayer|Poncho|Nuprid|Imidacloprid FS|Imidacloprida FS,,FS,8,pesquisa web — inseticida FS Bayer imidacloprida tratamento sementes,2026-11-21,imidacloprida
