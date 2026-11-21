@@ -202,7 +202,7 @@ Minecto Pro,Minecto|Minecto SE,,SE,10,inseticida SE Syngenta — ciantraniliprol
 Cabrio Top,Cabrio|Cabrio WG|Cabrio EC|Piraclostrobina+Metiram|Piraclostrobina+Metiramate|Cabrio EC BASF,,WG,6,fungicida WG BASF — metiram+piraclostrobina — multissitio+estrobilurina,2026-10-13,metiram+piraclostrobina
 Revus,Revus SC|Mandipropamida,,SC,8,fungicida SC Syngenta — oomicetos/míldio,2026-10-13,mandipropamida
 Fusão,Fusao|Fusão SC,,SC,8,fungicida SC Nichino — mofo branco soja,2026-10-13,fluazinam+tiofluzamida
-Break Thru,BreakThru|Break-Thru|Breakthru|Silicone|Adjuvante Silicone|Siliconado|Silwet,,ADJUVANTE,2,adjuvante siliconado super espalhante Evonik — muito usado em drone,2026-10-13,surfactante siliconado
+Break Thru,BreakThru|Break-Thru|Breakthru|Silicone|Adjuvante Silicone|Siliconado|Silwet|Organosilicone|Organossilicone,,ADJUVANTE,2,adjuvante siliconado super espalhante Evonik — muito usado em drone,2026-10-13,surfactante siliconado
 Dash HC,Dash|Dash BASF,,ADJUVANTE,2,adjuvante oleoso BASF — muito usado com graminicidas,2026-10-13,
 Lanzar,Lanzar Adjuvante,,ADJUVANTE,2,adjuvante espalhante adesivo Arysta,2026-10-13,
 Silwet,Silwet L-77|Silwet Gold,,ADJUVANTE,2,adjuvante siliconado Momentive,2026-10-13,surfactante siliconado
@@ -241,7 +241,7 @@ Sercadis,Sercadis SC|Sercadis BASF,35121,SC,8,fungicida SC BASF — fluxapiroxad
 Quilt Xcel,Quilt|Quilt Xcel SE,,SE,10,fungicida SE Syngenta — azoxistrobina+propiconazol — pendente confirmação reg MAPA BR,pendente (2026-10-26),azoxistrobina+propiconazol
 Galigan 240 EC,Galigan|Galigan EC|Oxifluorfem EC Adama,8598,EC,11,herbicida EC Adama — bula MAPA reg 8598 oxifluorfem,2026-10-26,oxifluorfem
 Stratego 250 EC,Stratego|Stratego EC|Stratego YLD|Stratego Bayer,302,EC,11,fungicida EC Bayer — bula MAPA reg 302 trifloxistrobina+propiconazol,2026-10-26,trifloxistrobina+propiconazol
-Domark 100 EC,Domark|Domark EC|Tetraconazol EC,6099,EC,11,fungicida EC Gowan — bula MAPA reg 6099 tetraconazol,2026-10-26,tetraconazol
+Domark 100 EC,Domark|Domark EC|Tetraconazol EC|Tetraconazole|Tetraconazole EC|Tetraconazol,6099,EC,11,fungicida EC Gowan — bula MAPA reg 6099 tetraconazol,2026-10-26,tetraconazol
 Luna Experience,Luna Experience SC|Luna Bayer|Luna Experience Bayer|Fluopyram+Tebuconazol SC|Luna Privilege|Luna Tranquility|Luna Sensation,,SC,8,fungicida SC Bayer — fluopyram+tebuconazol — consulta IA busca web pendente,pendente (2026-10-26),fluopyram+tebuconazol
 Duett Ultra,Duett|Duett Ultra BASF,,SC,8,fungicida SC BASF — epoxiconazol+tiofanato-metilico — consulta IA busca web pendente,pendente (2026-10-26),epoxiconazol+tiofanato-metilico
 Aprovia Top,Aprovia|Aprovia Top Syngenta|Benzovindiflupir,,EC,11,fungicida EC Syngenta — benzovindiflupir+difenoconazol — consulta IA busca web pendente,pendente (2026-10-26),benzovindiflupir+difenoconazol
@@ -300,7 +300,7 @@ Boro foliar,Boro SL|Boro liquido|Acido Borico foliar,,FERTILIZANTE,18,fertilizan
 Brio SC,Brio|Brio BASF|Piraclostrobina+Epoxiconazol SC,,SC,8,fungicida SC BASF — piraclostrobina+epoxiconazol — IA busca web confirmou SC,2026-10-26,piraclostrobina+epoxiconazol
 Adexar,Adexar SE|Adexar BASF|Fluxapiroxade+Epoxiconazol,,SE,10,fungicida SE BASF — fluxapiroxade+epoxiconazol — IA retornou EC mas formulacao correta e SE,pendente (2026-10-26),fluxapiroxade+epoxiconazol
 Topsin 500 SC,Topsin|Topsin SC|Tiofanato-metilico 500 SC,,SC,8,fungicida SC — tiofanato-metilico — IA busca web confirmou SC,2026-10-26,tiofanato-metilico
-Eminent 125 EW,Eminent|Eminent EW|Tetraconazol EW|Eminent Syngenta,,EW,14,fungicida EW Syngenta — tetraconazol — IA busca web confirmou EW,2026-10-26,tetraconazol
+Eminent 125 EW,Eminent|Eminent EW|Tetraconazol EW|Eminent Syngenta|Tetraconazole EW,,EW,14,fungicida EW Syngenta — tetraconazol — IA busca web confirmou EW,2026-10-26,tetraconazol
 Kumulus,Kumulus WG|Kumulus DF|Enxofre WG|Enxofre Basf,,WG,6,fungicida WG BASF — enxofre — IA busca web confirmou WG,2026-10-26,enxofre
 Dacostar 720 SC,Dacostar|Dacostar SC|Clorotalonil Adama,,SC,8,fungicida SC Adama — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Procymidone 500 SC,Procymidone|Procimidona SC|Procymidona SC,,SC,8,fungicida SC — procimidona — IA busca web confirmou SC,2026-10-26,procimidona
@@ -663,7 +663,7 @@ YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Li
 YaraVita Zintrac SC,YaraVita Zintrac|Zintrac SC|Zinco Yara SC|YaraVita Zinco Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar zinco SC Yara,2026-11-16,zinco
 YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Manganes Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar manganes SC Yara,2026-11-16,manganes
 YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar ferro SC Yara,2026-11-16,ferro
-ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
+ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG|Gibberellin|Gibberellic acid|Gibb SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
 Ryzup SG,Ryzup|Ryzup SG Certis|Giberelina Certis SG|Ryz Up SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico Certis,2026-11-16,acido giberelinico
 Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato Alga Marinha SL|Stimplex bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Acadian,2026-11-16,extrato de alga marinha
 Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,,OLEO,12,cadastro manual — oleo mineral adjuvante Iharabras,2026-11-16,oleo mineral
@@ -800,3 +800,5 @@ Lumiposa FS,Lumiposa|Lumiposa FS|Cyantraniliprole FS|Ciantraniliprole FS,,FS,8,c
 Valbon WG,Valbon|Valbon WG|Valifenalate WG|Valifenalate|Belchim Valbon,,WG,6,belchim,2026-11-21,valifenalate+mancozebe
 Talendo SC,Talendo|Talendo SC|Proquinazid SC|Proquinazid|Proquinazida SC,,SC,8,corteva,2026-11-21,proquinazida
 Mirage 450 EC,Mirage|Mirage EC|Prochloraz EC|Prochloraz|Sportak EC|Sportak,,EC,11,adama,2026-11-21,procloraz
+Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis,,SC,8,basf,2026-11-21,prohexadiona de calcio
+Acequinocil 500 SC,Acequinocil|Acequinocil SC|Kanemite SC|Kanemite|Acequinocyl,,SC,8,mitsui,2026-11-21,acequinocil
