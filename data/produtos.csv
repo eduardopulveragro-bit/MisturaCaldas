@@ -133,7 +133,7 @@ Avatar,Avatar WG|Avatar 300|Indoxacarbe WG|Avatar 150 EC|Integon|Integon WG|Inte
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,,CS,7,cadastro manual — inseticida CS comum,2026-10-09,alfa-cipermetrina
 Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2026-10-09,clorantraniliprole
 Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop|quizalofop-p-tefuryl|quizalofop tefuryl,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
-Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
+Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim|tepraloxydim|tepraloxydim EC,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500|Nando|Nando SC,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor|Isoclast SC|Isoclast,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
@@ -578,7 +578,7 @@ Rivax SC,Rivax|Rivax Bayer|Fluoxastrobina+Protioconazol SC,,SC,8,cadastro manual
 Aprovia SC,Aprovia SC solo|Aprovia Syngenta|Benzovindiflupir SC solo|Solatenol SC|Solatenol,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
 Lucento SC,Lucento|Lucento Corteva|Isoflucypram SC soja,,SC,8,cadastro manual — fungicida SC Corteva SDHI isoflucypram,2026-11-16,isoflucypram
 Miravis Prime SC,Miravis Prime|Miravis Prime Syngenta|Pydiflumetofen+Ciprodinila SC,,SC,8,cadastro manual — fungicida SC Syngenta pydiflumetofen+cyprodinyl,2026-11-16,pydiflumetofen+cyprodinyl
-Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
+Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG|boscalid pyraclostrobin|pyraclostrobin boscalid,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
 Switch WG,Switch|Switch Syngenta|Switch WG 625|Ciprodinil+Fludioxonil WG,,WG,6,cadastro manual — fungicida WG Syngenta ciprodinil+fludioxonil botrytis mofo cinzento,2026-11-16,ciprodinil+fludioxonil
 Scala SC,Scala|Scala SC Bayer|Pirimetanil SC|Pyrimethanil SC|Scala WG,,SC,8,cadastro manual — fungicida SC Bayer pirimetanil botrytis uvas/tomate,2026-11-16,pirimetanil
 Cobrethane WP,Cobrethane|Cobrethane WP Nufarm|Mancozebe+Cobre WP,,WP,5,cadastro manual — fungicida WP Nufarm mancozebe+oxicloreto de cobre,2026-11-16,mancozebe+oxicloreto de cobre
@@ -880,3 +880,6 @@ Maxim MZ FS,Maxim MZ|Maxim MZ Syngenta|fludioxonil+mancozeb|fludioxonil mancozeb
 Fortenza FS,Fortenza|Fortenza Corteva|ciantraniliprole CS|cyantraniliprole seed,,FS,8,Corteva,2026-11-21,ciantraniliprole
 Lumivia CS,Lumivia|Lumivia Corteva|clorantraniliprole+beta-ciflutrina CS|chlorantraniliprole beta-cyfluthrin,,CS,7,Corteva,2026-11-21,clorantraniliprole+beta-ciflutrina
 Jiken SC,Jiken|Jiken SC Syngenta|ciprodinil+fludioxonil SC,,SC,8,Syngenta,2026-11-21,ciprodinil+fludioxonil
+Agil 100 EC,Agil|Agil EC|propaquizafope|propaquizafop|Propaquizafop EC|Agil Corteva,,EC,11,Corteva,2026-11-21,propaquizafope
+Kerb 500 SC,Kerb|Kerb SC|propizamida|propyzamide|Propyzamide SC,,SC,8,Corteva,2026-11-21,propizamida
+Previcur Flex SL,Previcur Flex|Previcur Flex Bayer|propamocarbe+fludioxonil|propamocarb fludioxonil,,SL,16,Bayer,2026-11-21,propamocarbe+fludioxonil
