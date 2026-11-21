@@ -17,7 +17,7 @@ Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_
 Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08),
 Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
-Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
+Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),
 Heat,Heat 70 WG|Saflufenacil,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
@@ -257,16 +257,16 @@ Magister SC,Magister|Magister FMC|Fenazaquin SC,,SC,8,acaricida SC FMC — fenaz
 Cossack 135 WG,Cossack|Cossack WG|Cossack Bayer,,WG,6,herbicida WG Bayer — mesossulfuron+iodossulfuron trigo — consulta IA busca web pendente,pendente (2026-10-26),mesossulfuron-metilico+iodossulfuron
 Traxos,Traxos EC|Traxos Syngenta,,EC,11,graminicida EC Syngenta — pinoxaden trigo — consulta IA busca web pendente,pendente (2026-10-26),pinoxaden
 Moddus,Moddus EC|Moddus Syngenta|Trinexapac,,EC,11,regulador crescimento EC Syngenta — trinexapac-etilico trigo — consulta IA busca web pendente,pendente (2026-10-26),trinexapac-etilico
-Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
+Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
 Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL,,SL,16,regulador crescimento SL Bayer — etefon — consulta IA busca web pendente,pendente (2026-10-26),etefon
 Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
 Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva — piroxsulam trigo — consulta IA busca web pendente,pendente (2026-10-26),piroxsulam
 Granstar,Granstar WG|Granstar Corteva|Tribenuron,,WG,6,herbicida WG Corteva — tribenuron-metilico trigo — consulta IA busca web pendente,pendente (2026-10-26),tribenuron-metilico
 Afinity 720 SC,Afinity|Affinity SC|Afinity Syngenta,,SC,8,herbicida SC Syngenta — consulta IA busca web pendente,pendente (2026-10-26),
 Facet SC,Facet|Facet SC BASF|Quinclorac SC,,SC,8,herbicida SC BASF — quinclorac — consulta IA busca web pendente,pendente (2026-10-26),quinclorac
-Rovral SC,Rovral|Rovral SC Bayer|Iprodiona Bayer,,SC,8,fungicida SC Bayer — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
+Rovral SC,Rovral|Rovral SC Bayer|Iprodiona Bayer|Iprodiona|Rovral,,SC,8,fungicida SC Bayer — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
 Iprodiona,Iprodion|Iprodiona SC|Iprodione,,SC,8,fungicida SC generico — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
-Velum Prime,Velum|Velum Prime SC|Velum Bayer,,SC,8,nematicida/fungicida SC Bayer — fluopyram — consulta IA busca web pendente,pendente (2026-10-26),fluopyram
+Velum Prime,Fluopiram|Fluopiram SC|Velum|Velum 400 SC|Velum Bayer|Velum Prime SC,,SC,8,nematicida/fungicida SC Bayer — fluopyram — consulta IA busca web pendente,2026-11-21,fluopiram
 Verango Prime,Verango|Verango Prime SC,32319,SC,8,nematicida SC Bayer — bula MAPA reg 32319 fluopyram,2026-10-26,fluopyram
 Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller,,SL,16,bioestimulante SL Stoller — ácido indol butírico+ácido giberélico+cinetina — IA busca web confirmou SL,2026-10-26,ácido indol butírico+ácido giberélico+cinetina
 Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar potássio Uby — IA busca web confirmou FERTILIZANTE,2026-10-26,potássio foliar
@@ -359,7 +359,7 @@ Velum Total SC,Velum Total|Velum Total Bayer|Fluopyram+Imidacloprido SC,,SC,8,pe
 Topas 100 EC,Topas|Topas EC|Topas Syngenta|Penconazol EC,,EC,11,pesquisa web — cadastro manual,2026-11-11,penconazol
 Vivando SC,Vivando|Vivando BASF|Cyflufenamid SC,,SC,8,pesquisa web — cadastro manual,2026-11-11,cyflufenamid
 Dossier SC,Dossier|Dossier SC Nippon Soda|Pyriofenone SC,,SC,8,pesquisa web — cadastro manual,2026-11-11,pyriofenone
-Actellic 500 EC,Actellic|Actellic EC|Actellic Syngenta|Pirimifos-metil EC,,EC,11,pesquisa web — cadastro manual,2026-11-11,pirimifos-metil
+Actellic 500 EC,Actellic|Actellic EC|Actellic Syngenta|Pirimifos-metil EC|Pirimifos|Pirimifos-metil,,EC,11,pesquisa web — cadastro manual,2026-11-11,pirimifos-metil
 Nurelle D,Nurelle|Nurelle D 550|Nurelle EC|Cipermetrina+Clorpirifos EC,,EC,11,pesquisa web — cadastro manual,2026-11-11,cipermetrina+clorpirifos
 Arsenal 250 SL,Arsenal|Arsenal SL|Arsenal BASF|Imazapir SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,imazapir
 Starane Ultra EC,Starane Ultra|Starane 250|Fluroxipir ester EC|Fluroxipir,,EC,11,pesquisa web — cadastro manual,2026-11-11,fluroxipir ester
@@ -711,3 +711,7 @@ Sherpa 100 CE,Sherpa|Sherpa CE|Corsair|Pounce|Ambush EC|Cipermetrina Piretroide,
 Gaucho FS,Gaucho|Gaucho Bayer|Poncho|Nuprid|Imidacloprid FS|Imidacloprida FS,,FS,8,pesquisa web — inseticida FS Bayer imidacloprida tratamento sementes,2026-11-21,imidacloprida
 Miclobutanil 250 EW,Miclobutanil|Miclobutanil EW|Rally 400 EW|Rally|Systhane,,EW,14,pesquisa web — fungicida EW miclobutanil triazol,2026-11-21,miclobutanil
 Bayleton 250 WP,Bayleton|Bayleton WP|Triadimefon|Triadimefon WP|Triadimefon Bayer,,WP,5,pesquisa web — fungicida WP Bayer triadimefon triazol,2026-11-21,triadimefon
+Nemathorin 150 EC,Nemathorin|Nemathorin EC|Fostiazato EC|Fosthiazate|Fostiazato,,EC,11,pesquisa web — nematicida EC Syngenta fostiazato,2026-11-21,fostiazato
+Vitavax Thiram 200 SC,Vitavax|Vitavax SC|Vitavax Thiram|Carboxim+Thiram|Carboxim|Thiram,,SC,8,pesquisa web — fungicida tratamento sementes SC carboxim+thiram,2026-11-21,carboxim+thiram
+Floramite 240 SC,Floramite|Floramite SC|Floramite Chemtura|Bifenazato SC|Bifenazato,,SC,8,pesquisa web — acaricida SC Chemtura bifenazato,2026-11-21,bifenazato
+Phostoxin,Phostoxin|Fosfina|Gastoxin|Fosfeto de aluminio|Fosfeto aluminio,,GE,3,pesquisa web — fumigante GE fosfeto de aluminio armazenamento,2026-11-21,fosfeto de aluminio
