@@ -5,7 +5,7 @@ Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Score Ultra 250,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
-Priori Xtra,Priori|Priori Top|Priori Extra|Cyproconazol|Priori XTRA 500 SC,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
+Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
 Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
@@ -103,7 +103,7 @@ Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP|Dimilin 25 WP|Diflubenzurom|Diflu
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
 Tordon,"Tordon SL|Picloram|Tordon Ultra|2,4-D+Picloram|Picloram+2,4-D",,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
-Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur CE,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
+Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur 200 EW|Tebuzol|Tebuzol 200 EC|Tebuconazole,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC|Epoxiconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
 Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
@@ -379,7 +379,7 @@ Certeza SC,Certeza|Certeza Bayer|Tebuconazol+Fluopyram+Trifloxistrobina,,SC,8,pe
 Nativo Xpro SC,Nativo Xpro|Nativo Xpro Bayer|Bixafen+Protioconazol+Trifloxistrobina,,SC,8,pesquisa web — fungicida SC Bayer nova geração,2026-11-11,bixafen+protioconazol+trifloxistrobina
 Effento SC,Effento|Effento Bayer|Trifloxistrobina+Protioconazol SC,,SC,8,pesquisa web — fungicida SC Bayer,2026-11-11,trifloxistrobina+protioconazol
 Sulcotriona SC,Sulcotriona|NTCA SC|Nortox Sulcotriona,,SC,8,pesquisa web — herbicida SC sulcotriona milho,2026-11-11,sulcotriona
-Priori Top SC,Priori Top|Priori Top Syngenta|Azoxistrobina+Difenoconazol SC,,SC,8,pesquisa web — fungicida SC Syngenta,2026-11-11,azoxistrobina+difenoconazol
+Priori Top SC,Priori Top|Priori Top Syngenta|Azoxistrobina+Difenoconazol SC|Quadris Top|Quadris Top SC,,SC,8,pesquisa web — fungicida SC Syngenta,2026-11-11,azoxistrobina+difenoconazol
 Zoxamida SC,Zoxamida|Zoxium|Zorvec SC|Zorvec|Zorvec SC|Zorvec Encantia,,SC,8,pesquisa web — fungicida SC zoxamida,2026-11-11,zoxamida
 Isofetamida SC,Isofetamida|Kenja SC|Isofetamida Nippon Soda,,SC,8,pesquisa web — fungicida SC SDHI nova geração,2026-11-11,isofetamida
 Iprodiom SC,Rovral SC|Iprodiona 500 SC|Iprodiom Bayer,,SC,8,pesquisa web — fungicida SC iprodiona,2026-11-11,iprodiona
@@ -575,7 +575,7 @@ Mavrik 200 EW,Mavrik|Mavrik Syngenta|Mavrik EW|Tau-fluvalinato Syngenta EW,,EW,1
 Camposan 480 EC,Camposan|Camposan EC|Camposan Bayer|Etefon 480 EC Bayer,,EC,11,pesquisa web — trigo,2026-11-11,etefon
 Manipulator 460 EC,Manipulator|Manipulator EC|Manipulator Nufarm|Clormequat Nufarm,,EC,11,pesquisa web — trigo,2026-11-11,clormequat
 Rivax SC,Rivax|Rivax Bayer|Fluoxastrobina+Protioconazol SC,,SC,8,cadastro manual — fungicida SC Bayer ferrugem soja,2026-11-16,fluoxastrobina+protioconazol
-Aprovia SC,Aprovia SC solo|Aprovia Syngenta|Benzovindiflupir SC solo,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
+Aprovia SC,Aprovia SC solo|Aprovia Syngenta|Benzovindiflupir SC solo|Solatenol SC|Solatenol,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
 Lucento SC,Lucento|Lucento Corteva|Isoflucypram SC soja,,SC,8,cadastro manual — fungicida SC Corteva SDHI isoflucypram,2026-11-16,isoflucypram
 Miravis Prime SC,Miravis Prime|Miravis Prime Syngenta|Pydiflumetofen+Ciprodinila SC,,SC,8,cadastro manual — fungicida SC Syngenta pydiflumetofen+cyprodinyl,2026-11-16,pydiflumetofen+cyprodinyl
 Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
