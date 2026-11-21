@@ -15,7 +15,7 @@ Galil SC,Galil|Galil Syngenta,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azo
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
 Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08),
-Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
+Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC|Fox 075 EC|Fox 075 SC,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
@@ -37,11 +37,11 @@ Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 
 Methos,Methos 960 TM|S-metolacloro|Dual Gold|Dual Gold 960 EC|S-Metolachlor|Metolachlor,,EC,11,herbicida EC Proventis — bula confirmada,2026-11-21,
 Ativon,Ativon Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,2026-11-21,cletodim
-Diflumax,Diflumax 240 SC|Diflubenzurom,,SC,8,inseticida SC Helm — bula confirmada,2026-11-21,
+Diflumax,Diflumax 240 SC,,SC,8,inseticida SC Helm — bula confirmada,2026-11-21,
 Ademir Wet,Ademir,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Soberan,Soberam|Soberan 420 SC|Tembotriona,,SC,8,herbicida SC Bayer — bula confirmada,2026-11-21,
 Kasumin,Kassumin|Kasumaiz|Casugamicina,,SL,16,fungicida/bactericida SL UPL — bula confirmada,2026-11-21,
-Belt,Belt 480 SC|Flubendiamida,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,flubendiamida
+Belt,Belt 480 SC|Flubendiamida|Belt SC|Belt 480 SC|Flubendiamida SC,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,flubendiamida
 Multikel Zinco,Multikel Zn|Multikel,,FERTILIZANTE,18,fertilizante foliar zinco,2026-10-09,
 Biocomoni,BioCoMoNi|Bio Co Mo Ni|Multi Biocomoni|Multi BioCoMoNi|Biocomini|Multi Biocomini,,FERTILIZANTE,18,fertilizante foliar Co+Mo+Ni,2026-10-09,
 Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO,12,óleo de laranja — confirmado pelo consultor,2026-10-09,
@@ -72,7 +72,7 @@ Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant 
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
 Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
-Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
+Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol|Aproach Prima 500 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
 Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
@@ -80,7 +80,7 @@ Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-0
 Comet,Comet EC|Comet BASF|Piraclostrobina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
 Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox SC|Ciproconazol Nortox|Alto 100 SL,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
 Spider,Spider WG|Spider 840|Diclosulam WG|Diclosulam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
-Classic,Classic WG|Clorimuron|Clorimuron-etilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
+Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
 Callisto,Callisto SC|Mesotriona SC|Mesotriona,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
@@ -99,7 +99,7 @@ Larvin,Larvin 800 WG|Larvin WG|Tiodicarbe WG,,WG,6,cadastro manual — produto c
 Cipermetrina,Cipermetrina Nortox|Cipermetrina 250 EC|Cipermil,,EC,11,cadastro manual — generico comum,2026-10-09,cipermetrina
 Aurora,Aurora 400 EC|Aurora EC|Carfentrazona,,EC,11,cadastro manual — produto comercial comum,2026-10-09,carfentrazona-etilica
 Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600|Trifluralin,,EC,11,cadastro manual — generico comum,2026-10-09,trifluralina
-Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
+Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP|Dimilin 25 WP|Diflubenzurom|Diflubenzuron,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
 Tordon,"Tordon SL|Picloram|Tordon Ultra|2,4-D+Picloram|Picloram+2,4-D",,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
@@ -112,7 +112,7 @@ Gamit,Gamit Star|Gamit 360|Clomazona CS,,CS,7,cadastro manual — produto comerc
 Starane,Starane EC|Starane 200|Fluroxipir EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,fluroxipir
 Basagran,Basagran 600|Bentazona SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,bentazona
 Cobra,Cobra EC|Lactofen EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,lactofen
-Flex,Flex SL|Fomesafen SL|Fomesafem,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
+Flex,Flex SL|Fomesafen SL|Fomesafem|Fomesafen|Flexstar|Flexstar GT,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
 Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
