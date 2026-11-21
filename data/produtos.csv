@@ -3,7 +3,7 @@ Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Orig
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
-Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Score Ultra 250,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
+Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Difenoconazol EC|Difenconazol|Difenoconazole,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
@@ -84,7 +84,7 @@ Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG|Clas
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico|Firstrate|Firstrate WG|FirstRate|Cloransulam Metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
 Callisto,Callisto SC|Mesotriona SC|Mesotriona|Mesotrione|Mesotrione SC|Calaris,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
-Connect,Connect SC|Connect Bayer|Imidacloprid|Imidacloprida,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
+Connect,Connect SC|Connect Bayer|Imidacloprid|Imidacloprida|Imidacloprid beta-cyfluthrin|Beta-ciflutrina+Imidacloprido SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
 Premio,Premio SC|Premio Corteva,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorantraniliprole
 Match,Match EC|Match Syngenta|Lufenurom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,lufenurom
 Mustang,Mustang EC|Mustang 350|Zetacipermetrina EC|Zetacipermetrina|Zeta-cipermetrina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,zetacipermetrina
@@ -828,3 +828,6 @@ Buctril EC,Buctril|Bromoxynil|Bromoxinil|Bromoxynil EC|Buctril Nortox,,EC,11,Nor
 Beam WP,Beam|Tricyclazole|Tricyclazol WP|Tricyclazole WP|Beam Basf|Bim WP,,WP,5,BASF,2026-11-21,tricyclazol
 Fuji One EC,Fuji One|Isoprothiolane|Isoprothiolane EC|Fuji One Nichino|Furadan Gold,,EC,11,Nichino,2026-11-21,isoprothiolane
 Nustar EC,Nustar|Flusilazol|Flusilazole|Flusilazol EC|Nustar Dupont,,EC,11,DuPont/Corteva,2026-11-21,flusilazol
+Award FS,Award|Fipronil FS solo|Award Extreme|Fipronil Seed Treatment|Phenom FS,,FS,8,Bayer/FMC,2026-11-21,fipronil
+Treevix SC,Treevix|Cinidon-etilico|Cinidon Ethyl|Cinidon-Ethyl SC|Lotus herbicida,,SC,8,FMC,2026-11-21,cinidon-etilico
+Gallery 500 SC,Gallery|Isoxaben|Gallery Dow|Isoxaben SC,,SC,8,Dow/Corteva,2026-11-21,isoxaben
