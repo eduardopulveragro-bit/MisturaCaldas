@@ -80,7 +80,7 @@ Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-0
 Comet,Comet EC|Comet BASF|Piraclostrobina,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina
 Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox SC|Ciproconazol Nortox|Alto 100 SL,,EC,11,cadastro manual — fungicida EC ciproconazol Syngenta,2026-10-09,ciproconazol
 Spider,Spider WG|Spider 840|Diclosulam WG|Diclosulam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
-Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
+Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG|Classic 250 DF|Classic DF,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
 Callisto,Callisto SC|Mesotriona SC|Mesotriona,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
@@ -92,7 +92,7 @@ Orthene 750 BR,Orthene|Acefato|Acefato Nortox|Acefato 750,,SP,4,cadastro manual 
 Curyom 550 EC,Curyom|Curyom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,profenofos+lufenurom
 Intrepid 240 SC,Intrepid|Intrepid SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metoxifenozida
 Certero,Certero SC|Certero Bayer|Triflumurom SC|Certero SC|Certero 480 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,triflumurom
-Rimon,Rimon EC|Rimon 100|Novalurom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,novalurom
+Rimon,Rimon EC|Rimon 100|Novalurom EC|Novaluron EC|Novaluron|Novalurom,,EC,11,cadastro manual — produto comercial comum,2026-10-09,novalurom
 Pirate,Pirate SC|Pirate BASF|Clorfenapir SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorfenapir
 Regent,Regent 800 WG|Regent WG|Fipronil WG|Fipronil,,WG,6,cadastro manual — produto comercial comum,2026-10-09,fipronil
 Larvin,Larvin 800 WG|Larvin WG|Tiodicarbe WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiodicarbe
@@ -347,7 +347,7 @@ Enlist One,Enlist|Enlist One EC|Enlist Corteva,8923,EC,11,pesquisa web — cadas
 Warrant Ultra,Warrant|Warrant Ultra EC|Acetoclor EC|Acetoclor Bayer,,EC,11,pesquisa web — cadastro manual,2026-11-11,acetoclor
 Trophy EC,Trophy|Acetoclor Trophy|Acetoclor FMC,,EC,11,pesquisa web — cadastro manual,2026-11-11,acetoclor
 Sumisoya 500 WG,Sumisoya|Sumisoya WG|Flumixazina WG Sumitomo|Flumioxazina WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,flumioxazina
-Scepter 70 WG,Scepter|Scepter WG|Imazaquim WG BASF,,WG,6,pesquisa web — cadastro manual,2026-11-11,imazaquim
+Scepter 70 WG,Scepter|Scepter WG|Imazaquim WG BASF|Imazaquin WG|Imazaquin|Imazaquim,,WG,6,pesquisa web — cadastro manual,2026-11-11,imazaquim
 "Lumax 537,5 SE",Lumax|Lumax SE|Lumax Syngenta|S-metolacloro+Atrazina+Mesotriona,,SE,10,pesquisa web — cadastro manual,2026-11-11,s-metolacloro+atrazina+mesotriona
 Laudis OD,Laudis|Laudis OD|Laudis Bayer|Tembotriona OD Bayer,,OD,9,pesquisa web — cadastro manual,2026-11-11,tembotriona
 Acuron SC,Acuron|Acuron Syngenta|Bicyclopyrone+Mesotriona+Atrazina,,SC,8,pesquisa web — cadastro manual,2026-11-11,bicyclopyrone+mesotriona+atrazina
@@ -753,7 +753,7 @@ Thimet 150 GR,Thimet|Thimet GR|Phorate GR|Phorate 150,,GR,3,chemtura,2026-11-21,
 Counter 150 GR,Counter|Counter GR|Terbufos GR|Terbufos,,GR,3,fmc,2026-11-21,terbufos
 Force 20 CS,Force|Force CS|Teflutrin CS|Teflutrin 20,,CS,7,syngenta,2026-11-21,teflutrin
 Atplus 465,Atplus|At Plus|At Plus 465|Atplus 711|Surfactante Atplus,,ADJUVANTE,2,nufarm,2026-11-21,surfactante noniônico
-Raxil 60 FS,Raxil|Raxil FS|Raxil 60|Tebuconazol FS Bayer|Baytan FS,,FS,8,bayer,2026-11-21,tebuconazol
+Raxil 60 FS,Raxil|Raxil FS|Raxil 60|Tebuconazol FS Bayer,,FS,8,bayer,2026-11-21,tebuconazol
 Sonata SC,Sonata|Bacillus pumilus SC|Bacillus pumilus|Sonata Bayer,,BIO_BACTERIANO,20,bayer,2026-11-21,Bacillus pumilus
 Vertigo SC,Vertigo|Vertigo BASF|Beauveria bassiana BASF|BotaniGard,,BIO_FUNGICO,21,basf,2026-11-21,Beauveria bassiana
 Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,bionext,2026-11-21,Trichoderma harzianum
@@ -777,3 +777,6 @@ Clomazone 500 SC,Clomazone|Clomazone SC|Command 480 EC|Command|Gamit 360 CS|Gami
 Katana WG,Katana|Katana 250 WG|Flazassulfuron WG|Flazasulfuron WG|Flazasulfuron,,WG,6,syngenta,2026-11-21,flazasulfuron
 Sporan EC,Sporan|Sporan Fungicida|Extrato Cravo|Eugenol EC|Sporan BioFungicida,,EC,11,biocontrole,2026-11-21,eugenol
 Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Mertect WP|Topsin M,,WP,5,nufarm,2026-11-21,tiofanato-metilico
+Baytan 150 FS,Baytan|Baytan FS|Triadimenol FS|Triadimenol|Triadimenol Bayer,,FS,8,bayer,2026-11-21,triadimenol
+Dividend 250 FS,Dividend|Dividend FS|Difenoconazol FS Syngenta|Difenoconazol FS|Divi FS,,FS,8,syngenta,2026-11-21,difenoconazol
+Broadstrike 500 SC,Broadstrike|Flumetsulam SC|Flumetsulam|Broadstrike Corteva|Discovery SC,,SC,8,corteva,2026-11-21,flumetsulam
