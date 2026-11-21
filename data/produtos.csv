@@ -29,7 +29,7 @@ Cofenrin,Coferin|Bifentrina Coferin|Insectrin|Orsa|Indotrin,06922,EC,11,pesquisa
 Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
 Bivack,Bivak|Bivack EC,,EC,11,inseticida EC — pendente confirmação,pendente (2026-10-08)
 Terrador,Terrador 339 SC|Tiafenacil,,SC,8,bula SC 339g/L tiafenacil — Ouro Fino/FarmHannong,pendente (2026-10-08)
-Glufosinato,Glufusinato|Glufosinato de amônio|Finale|Liberty|Trusinate|Glufour|Glufosinate Wood,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
+Glufosinato,Glufusinato|Glufosinato de amônio|Liberty|Trusinate|Glufour|Glufosinate Wood,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,etiprole
@@ -136,7 +136,7 @@ Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop,,EC,11,cadastro manual — gra
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
-Closer,Closer SC|Transform|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
+Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
 Recop,Recop WP|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
@@ -575,7 +575,7 @@ Mavrik 200 EW,Mavrik|Mavrik Syngenta|Mavrik EW|Tau-fluvalinato Syngenta EW,,EW,1
 Camposan 480 EC,Camposan|Camposan EC|Camposan Bayer|Etefon 480 EC Bayer,,EC,11,pesquisa web — trigo,2026-11-11,etefon
 Manipulator 460 EC,Manipulator|Manipulator EC|Manipulator Nufarm|Clormequat Nufarm,,EC,11,pesquisa web — trigo,2026-11-11,clormequat
 Rivax SC,Rivax|Rivax Bayer|Fluoxastrobina+Protioconazol SC,,SC,8,cadastro manual — fungicida SC Bayer ferrugem soja,2026-11-16,fluoxastrobina+protioconazol
-Aprovia SC,Aprovia|Aprovia Syngenta|Benzovindiflupir SC solo,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
+Aprovia SC,Aprovia SC solo|Aprovia Syngenta|Benzovindiflupir SC solo,,SC,8,cadastro manual — fungicida SC Syngenta benzovindiflupir solo,2026-11-16,benzovindiflupir
 Lucento SC,Lucento|Lucento Corteva|Isoflucypram SC soja,,SC,8,cadastro manual — fungicida SC Corteva SDHI isoflucypram,2026-11-16,isoflucypram
 Miravis Prime SC,Miravis Prime|Miravis Prime Syngenta|Pydiflumetofen+Ciprodinila SC,,SC,8,cadastro manual — fungicida SC Syngenta pydiflumetofen+cyprodinyl,2026-11-16,pydiflumetofen+cyprodinyl
 Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
@@ -645,7 +645,7 @@ Serenade ASO SC,Serenade|Serenade ASO|Serenade Bayer|Bacillus amyloliquefaciens 
 Double Nickel 55 SC,Double Nickel|Double Nickel SC|Bacillus amyloliquefaciens D747,,BIO_BACTERIANO,20,cadastro manual — fungicida biologico SC Certis Bacillus amyloliquefaciens D747,2026-11-21,Bacillus amyloliquefaciens
 Regalia SC,Regalia|Regalia SC Marrone|Reynoutria sachalinensis SC,,BIO_FUNGICO,21,cadastro manual — indutor resistencia SC extrato Reynoutria sachalinensis Marrone,2026-11-21,Reynoutria sachalinensis
 Cobre Generico WP,Cobre|Cobre WP|Cobre puro|Cobre fungicida|Cobre simples|Cu WP|Cobre agro,,WP,5,cadastro manual — oxicloreto de cobre genérico WP alias para busca por produto genérico,2026-11-21,oxicloreto de cobre
-Enxofre WP,Enxofre|Enxofre puro|Enxofre micronizado|Enxofre solubilizavel|Enxofre WP generico|S WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
+Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
 Nutri Foliar SL,Nutri|Nutri SL|Nutri foliar|Nutrição Foliar|Nutri generico|Nutricao foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar genérico nutricional alias para busca genérica,2026-11-21,NPK foliar
 Calda Sulfocalcica SL,Sulfocalcica|Calda Sulfocalcica|Calda Bordalesa|Sulfocalcica SL|Polisulfeto Calcio,,FERTILIZANTE,18,cadastro manual — polissulfeto de calcio/calda sulfocalcica fungicida/acaricida biologico,2026-11-21,polissulfeto de calcio
 Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de manganes SL,2026-11-21,fosfito+manganes
@@ -688,13 +688,10 @@ Altor SL,Altor|Altor BASF|Metazaclor SL|Dimetaclor BASF,,SL,16,cadastro manual �
 Podium Ultra EW,Podium Ultra|Fenoxaprop-p Ultra EW,,EW,14,cadastro manual — graminicida EW fenoxaprop-p potencializado adjuvante,2026-11-21,fenoxaprop-p-etilico+antidoto
 Verdict R SC,Verdict R|Verdict SC|Haloxifope-R SC|Galant R SC,,SC,8,cadastro manual — graminicida SC haloxifope-metil soja/algodao,2026-11-21,haloxifope-R-metilico
 Discover NG SC,Discover NG|Discover SC|Fenoxaprop SC Bayer NG,,SC,8,cadastro manual — graminicida SC fenoxaprop-p Bayer NiceGuard trigo,2026-11-21,fenoxaprop-p-etilico
-Pivot 240 SL,Pivot 240|Pivot SL alternativa|Imazetapir 240 SL,,SL,16,cadastro manual — herbicida SL imazetapir 240g/L Clearfield,2026-11-21,imazetapir
 Optineem 30 EC,Optineem|Optineem EC|Neem Oil 30 EC|Ago-Neem EC,,EC,11,cadastro manual — inseticida botanico EC azadiractina 30g/L neem,2026-11-21,azadiractina
 Neem Priori SC,Neem Priori|Neem gold SC|Oleo Neem SC,,SC,8,cadastro manual — adjuvante/inseticida SC oleo de neem com 1% azadiractina,2026-11-21,oleo de neem
 Ferax SC,Ferax|Ferax SC|Ferax Ouro Fino|Trifloxistrobina+Tebuconazol SC Ouro Fino,,SC,8,cadastro manual — fungicida SC Ouro Fino soja/milho trifloxistrobina+tebuconazol,2026-11-21,trifloxistrobina+tebuconazol
 Primo Maxx SC,Primo Maxx|Primo Maxx Syngenta|Trinexapac-etil SC|Trinexapak,,SC,8,cadastro manual — regulador crescimento SC trinexapac-etil Syngenta trigo/arroz,2026-11-21,trinexapac-etil
 Medax Top WG,Medax Top|Medax WG BASF|Mepiquat+Prohexadiona BASF WG,,WG,6,cadastro manual — regulador crescimento WG BASF mepiquat+prohexadiona trigo,2026-11-21,mepiquat+prohexadiona
-Moddus SC,Moddus|Moddus Syngenta|Trinexapac-etil 250 SC,,SC,8,cadastro manual — regulador crescimento SC trinexapac Syngenta trigo/colza,2026-11-21,trinexapac-etil
-Ethrel SL,Ethrel|Ethrel SL|Etefon SL|Etefon BASF|Etherel,,SL,16,cadastro manual — regulador crescimento SL etileno Bayer maturacao cafe/cana,2026-11-21,etefon
 Harvade SC,Harvade|Harvade SC|Dimethipin SC|Desfolhante SC algodao,,SC,8,cadastro manual — desfolhante SC dimetipim algodao colheita,2026-11-21,dimetipim
 Dropp Ultra SC,Dropp Ultra|Dropp SC|Tidiazurom+Diuron SC algodao,,SC,8,cadastro manual — desfolhante SC tidiazurom+diuron algodao,2026-11-21,tidiazurom+diuron
