@@ -18,7 +18,7 @@ Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_
 Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC|Fox 075 EC|Fox 075 SC,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
-"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
+"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d|2,4-D Amine|DMA Amine",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),
 Heat,Heat 70 WG|Saflufenacil|Kixor|DuPont Kixor|Saflufenacil WG,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
 Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),beta-ciflutrina
@@ -475,7 +475,7 @@ Revus Top SC,Revus Top|Revus Top Syngenta|Mandipropamida+Difenoconazol SC,,SC,8,
 Cantor SC,Cantor|Cantor Nufarm|Fluazinam SC Nufarm mofo branco,,SC,8,pesquisa web — soja/milho,2026-11-11,fluazinam
 Blocus SC,Blocus|Blocus Helm|Fluazinam+Tiofanato-metilico SC Helm,,SC,8,pesquisa web — soja/milho,2026-11-11,fluazinam+tiofanato-metilico
 Pyrexone SC,Pyrexone|Pyrexone FMC|Clomazona+Ametrina SC FMC,,SC,8,pesquisa web — soja/milho,2026-11-11,clomazona+ametrina
-Blase EC,Blase|Blast EC|Blasé EC|Alaclor Nortox|Alachlor EC,,EC,11,pesquisa web — soja/milho,2026-11-11,alaclor
+Blase EC,Blase|Blast EC|Alaclor Nortox|Alachlor EC|Lazo|Lazo EC|Alachlor|Aclor EC,,EC,11,pesquisa web — soja/milho,2026-11-11,alaclor
 Blazer 240 SL,Blazer|Blazer SL|Blazer BASF|Acifluorfena-sodica SL|Acifluorfena,,SL,16,pesquisa web — soja/milho,2026-11-11,acifluorfena-sodica
 Milagro SC,Milagro|Milagro Syngenta|Nicossulfuron SC Syngenta milho,,SC,8,pesquisa web — soja/milho,2026-11-11,nicossulfuron
 Principal WG,Principal|Principal Corteva|Nicossulfuron+Rimsulfuron WG milho,,WG,6,pesquisa web — soja/milho,2026-11-11,nicossulfuron+rimsulfuron
@@ -645,7 +645,7 @@ Serenade ASO SC,Serenade|Serenade ASO|Serenade Bayer|Bacillus amyloliquefaciens 
 Double Nickel 55 SC,Double Nickel|Double Nickel SC|Bacillus amyloliquefaciens D747,,BIO_BACTERIANO,20,cadastro manual — fungicida biologico SC Certis Bacillus amyloliquefaciens D747,2026-11-21,Bacillus amyloliquefaciens
 Regalia SC,Regalia|Regalia SC Marrone|Reynoutria sachalinensis SC,,BIO_FUNGICO,21,cadastro manual — indutor resistencia SC extrato Reynoutria sachalinensis Marrone,2026-11-21,Reynoutria sachalinensis
 Cobre Generico WP,Cobre|Cobre WP|Cobre puro|Cobre fungicida|Cobre simples|Cu WP|Cobre agro,,WP,5,cadastro manual — oxicloreto de cobre genérico WP alias para busca por produto genérico,2026-11-21,oxicloreto de cobre
-Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
+Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP|Enxofre molhavel|Enxofre wettable|Wettable Sulfur|Sulphur WP|Sulfur WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
 Nutri Foliar SL,Nutri|Nutri SL|Nutri foliar|Nutrição Foliar|Nutri generico|Nutricao foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar genérico nutricional alias para busca genérica,2026-11-21,NPK foliar
 Calda Sulfocalcica SL,Sulfocalcica|Calda Sulfocalcica|Calda Bordalesa|Sulfocalcica SL|Polisulfeto Calcio,,FERTILIZANTE,18,cadastro manual — polissulfeto de calcio/calda sulfocalcica fungicida/acaricida biologico,2026-11-21,polissulfeto de calcio
 Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de manganes SL,2026-11-21,fosfito+manganes
@@ -802,3 +802,7 @@ Talendo SC,Talendo|Talendo SC|Proquinazid SC|Proquinazid|Proquinazida SC,,SC,8,c
 Mirage 450 EC,Mirage|Mirage EC|Prochloraz EC|Prochloraz|Sportak EC|Sportak,,EC,11,adama,2026-11-21,procloraz
 Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis,,SC,8,basf,2026-11-21,prohexadiona de calcio
 Acequinocil 500 SC,Acequinocil|Acequinocil SC|Kanemite SC|Kanemite|Acequinocyl,,SC,8,mitsui,2026-11-21,acequinocil
+Acetocloro 840 EC,Acetocloro|Harness|Surpass|Guardian|Acetocloro Nortox|Acetocloro FMC|Acetochlor,,EC,11,Nortox/FMC,2026-11-21,acetocloro
+Butachlor 600 EC,Butachlor|Machete|Butanil|Butamol|Butachloram,,EC,11,Monsanto/Nortox,2026-11-21,butachlor
+Flupyrimin SC,Flupyrimin|Myrina|Flupyrimin Mitsui|Myrina SC|BAS 300 I,,SC,8,BASF/Mitsui,2026-11-21,flupyrimin
+Nemacur 400 SC,Nemacur|Fenamiphos|Fenamifos|Fenamifast|Nemafast,,SC,8,Bayer,2026-11-21,fenamiphos
