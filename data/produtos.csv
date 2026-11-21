@@ -3,7 +3,7 @@ Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Orig
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
-Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox|Score EC,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
+Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Score Ultra 250,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Top|Priori Extra|Cyproconazol|Priori XTRA 500 SC,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
@@ -72,8 +72,8 @@ Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant 
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
 Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Nativo 325 SC|Nativo Top,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
-Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol|Aproach Prima 500 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
-Sphere Max,Sphere|Esfera Max,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
+Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol SC|Acanto Plus|Acanto Plus SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
+Sphere Max,Sphere|Esfera Max|Cruse SC|Cruse,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
 Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
 Orkestra,Orkestra SC|Orkestra BASF,,SC,8,cadastro manual — produto comercial comum,2026-10-09,piraclostrobina+fluxapiroxade
 Fox,Fox SC|Fox Bayer,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+protioconazol
@@ -753,3 +753,7 @@ Thimet 150 GR,Thimet|Thimet GR|Phorate GR|Phorate 150,,GR,3,chemtura,2026-11-21,
 Counter 150 GR,Counter|Counter GR|Terbufos GR|Terbufos,,GR,3,fmc,2026-11-21,terbufos
 Force 20 CS,Force|Force CS|Teflutrin CS|Teflutrin 20,,CS,7,syngenta,2026-11-21,teflutrin
 Atplus 465,Atplus|At Plus|At Plus 465|Atplus 711|Surfactante Atplus,,ADJUVANTE,2,nufarm,2026-11-21,surfactante noniônico
+Raxil 60 FS,Raxil|Raxil FS|Raxil 60|Tebuconazol FS Bayer|Baytan FS,,FS,8,bayer,2026-11-21,tebuconazol
+Sonata SC,Sonata|Bacillus pumilus SC|Bacillus pumilus|Sonata Bayer,,BIO_BACTERIANO,20,bayer,2026-11-21,Bacillus pumilus
+Vertigo SC,Vertigo|Vertigo BASF|Beauveria bassiana BASF|BotaniGard,,BIO_FUNGICO,21,basf,2026-11-21,Beauveria bassiana
+Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,bionext,2026-11-21,Trichoderma harzianum
