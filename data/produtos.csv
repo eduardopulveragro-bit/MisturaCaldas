@@ -121,7 +121,7 @@ Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno|Oberon 240 SC,,SC
 Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC|Envidor 240 SC|Espirodiclofeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
 Sencor,Sencor SC|Sencor 480|Metribuzim SC|Sencor WP|Metribuzim WP|Lexone|Lexone SC|Decisao,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metribuzim
 Kifix,Kifix WG|Imazapir Imazapique,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imazapir+imazapique
-Sanson,Sanson SC|Sanson 40|Nicosulfuron SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,nicosulfuron
+Sanson,Sanson SC|Sanson 40|Nicosulfuron SC|Samson|Samson SC|Samson 40,,SC,8,cadastro manual — produto comercial comum,2026-10-09,nicosulfuron
 Lorsban,Lorsban EC|Lorsban 480|Clorpirifos|Clorpirifos EC|Clorpirifos Nortox|Nufos|Lorsban 480 BR|Dursban|Dursban BR EC|Dursban EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,clorpirifos
 Mospilan,Mospilan SP|Mospilan 200|Acetamiprido SP,,SP,4,cadastro manual — produto comercial comum,2026-10-09,acetamiprido
 Benevia,Benevia OD|Benevia FMC|Ciantraniliprole OD,,OD,9,cadastro manual — produto comercial comum,2026-10-09,ciantraniliprole
@@ -164,7 +164,7 @@ Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,,EC,11,cadastro manual �
 Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
 Curavial,Curavial WG|Sulfometurom|Sulfometurom-metilico,,WG,6,cadastro manual — herbicida WG pastagem,2026-10-09,sulfometurom-metilico
-Permit,Permit WG|Halosulfurom WG|Sempra|Halosulfuron WG|Halosulfuron|Halosulfurom,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
+Permit,Permit WG|Halosulfurom WG|Sempra|Halosulfuron WG|Halosulfuron|Halosulfurom|Halosulfuron-methyl,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
 Zethamaxx,Zetamax|Zethamax|Zethamaxx SC,10416,SC,8,herbicida SC Nufarm — flumioxazina+imazetapir,pendente (2026-10-16),flumioxazina+imazetapir
 Zethamaxx Evo,Zethamaxx Evo SC|Zethamaxx evo,45924,SE,10,herbicida SE Sumitomo — s-metolacloro+flumioxazina+imazetapir,2026-10-10,s-metolacloro+flumioxazina+imazetapir
 Nitro Dry,Nitrodry|NitroDry|Nitro dry,,FERTILIZANTE,18,pesquisa web — fertilizante foliar Co/Mo/Ni Fastagro,2026-10-13,cobalto+molibdenio+niquel
@@ -806,3 +806,9 @@ Acetocloro 840 EC,Acetocloro|Harness|Surpass|Guardian|Acetocloro Nortox|Acetoclo
 Butachlor 600 EC,Butachlor|Machete|Butanil|Butamol|Butachloram,,EC,11,Monsanto/Nortox,2026-11-21,butachlor
 Flupyrimin SC,Flupyrimin|Myrina|Flupyrimin Mitsui|Myrina SC|BAS 300 I,,SC,8,BASF/Mitsui,2026-11-21,flupyrimin
 Nemacur 400 SC,Nemacur|Fenamiphos|Fenamifos|Fenamifast|Nemafast,,SC,8,Bayer,2026-11-21,fenamiphos
+Balance PRO SC,Balance PRO|Balance|Balanzo|Isoxaflutole|Isoxaflutol|Isoxaflutol SC,,SC,8,Bayer,2026-11-21,isoxaflutole
+Clio SC,Clio|Topramezone|Topramezona SC|Clio Bayer|Topramezone SC,,SC,8,Bayer,2026-11-21,topramezone
+Mikado SC,Mikado|Sulcotrione|Sulcotriom SC|Mikado Bayer|Sulcotriona,,SC,8,Bayer,2026-11-21,sulcotrione
+Resource EC,Resource|Flumiclorac|Flumiclorac Pentil|Flumiclorac EC|Resource FMC,,EC,11,FMC,2026-11-21,flumiclorac-pentil
+Gesatop 500 SC,Gesatop|Simazine|Simazina|Simazina SC|Primatol|Simazina 500,,SC,8,Syngenta,2026-11-21,simazina
+Velpar K WG,Velpar|Hexazinone|Hexazinona|Velpar L|Velpar WG|Hexazinona WG|Hexazinone WG,,WG,6,DuPont/Corteva,2026-11-21,hexazinona
