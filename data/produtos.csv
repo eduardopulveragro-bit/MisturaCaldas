@@ -1,5 +1,5 @@
 nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,principio_ativo
-Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal|Roundup UltraMax|Roundup Ultra Max,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
+Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Glyphosate|Glyphosate SL|Glyphosate isopropyl,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
@@ -110,7 +110,7 @@ Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam|Thiamethoxam WG|Thiamethoxa
 Boral,Boral SC|Boral 500|Sulfentrazona SC|Sulfentrazone|Sulfentrazona|Sulfentrazon,,SC,8,cadastro manual — produto comercial comum,2026-10-09,sulfentrazona
 Gamit,Gamit Star|Gamit 360|Clomazona CS,,CS,7,cadastro manual — produto comercial comum,2026-10-09,clomazona
 Starane,Starane EC|Starane 200|Fluroxipir EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,fluroxipir
-Basagran,Basagran 600|Bentazona SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,bentazona
+Basagran,Basagran 600|Bentazona SL|Bentazone|Bentazon|Bentazona,,SL,16,cadastro manual — produto comercial comum,2026-10-09,bentazona
 Cobra,Cobra EC|Lactofen EC|Lactofen 240|Lactofen,,EC,11,cadastro manual — produto comercial comum,2026-10-09,lactofen
 Flex,Flex SL|Fomesafen SL|Fomesafem|Fomesafen|Flexstar|Flexstar GT,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
 Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
@@ -824,3 +824,7 @@ Legacy SC,Legacy|Diflufenican|Diflufenican SC|Legacy Nufarm|Legacy herbicida,,SC
 Poncho Voxtran SC,Poncho Voxtran|Clothianidin+Beta-cyfluthrin|Clotianidina+Beta-ciflutrina Voxtran|Poncho Voxtran Bayer,,SC,8,Bayer,2026-11-21,clotianidina+beta-ciflutrina
 Stargus SC,Stargus|Bacillus amyloliquefaciens QST 713|Bacillus velezensis|Serenade Max|Serenade Plus SC,,SC,20,Marrone Bio,2026-11-21,Bacillus velezensis
 Brassinolide SC,Brassinolide|Brassinosteroide|Brassinosteroid|Brassinolido|Viro SC|Plex BR,,SC,18,varios,2026-11-21,brassinolideo
+Buctril EC,Buctril|Bromoxynil|Bromoxinil|Bromoxynil EC|Buctril Nortox,,EC,11,Nortox/Bayer,2026-11-21,bromoxinil
+Beam WP,Beam|Tricyclazole|Tricyclazol WP|Tricyclazole WP|Beam Basf|Bim WP,,WP,5,BASF,2026-11-21,tricyclazol
+Fuji One EC,Fuji One|Isoprothiolane|Isoprothiolane EC|Fuji One Nichino|Furadan Gold,,EC,11,Nichino,2026-11-21,isoprothiolane
+Nustar EC,Nustar|Flusilazol|Flusilazole|Flusilazol EC|Nustar Dupont,,EC,11,DuPont/Corteva,2026-11-21,flusilazol
