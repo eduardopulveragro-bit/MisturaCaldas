@@ -5,8 +5,8 @@ Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabr
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
-Priori Xtra,Priori|Priori Top|Priori Extra,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
-Nomolt 150,Nomolt|Teflubenzuron,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
+Priori Xtra,Priori|Priori Top|Priori Extra|Cyproconazol,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
+Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
 Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Oleo|Óleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10,carbendazim+tiram
@@ -91,7 +91,7 @@ Mustang,Mustang EC|Mustang 350|Zetacipermetrina EC|Zetacipermetrina|Zeta-ciperme
 Orthene 750 BR,Orthene|Acefato|Acefato Nortox|Acefato 750,,SP,4,cadastro manual — produto comercial comum,2026-10-09,acefato
 Curyom 550 EC,Curyom|Curyom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,profenofos+lufenurom
 Intrepid 240 SC,Intrepid|Intrepid SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metoxifenozida
-Certero,Certero SC|Certero Bayer|Triflumurom SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,triflumurom
+Certero,Certero SC|Certero Bayer|Triflumurom SC|Certero SC|Certero 480 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,triflumurom
 Rimon,Rimon EC|Rimon 100|Novalurom EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,novalurom
 Pirate,Pirate SC|Pirate BASF|Clorfenapir SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorfenapir
 Regent,Regent 800 WG|Regent WG|Fipronil WG|Fipronil,,WG,6,cadastro manual — produto comercial comum,2026-10-09,fipronil
@@ -305,7 +305,7 @@ Kumulus,Kumulus WG|Kumulus DF|Enxofre WG|Enxofre Basf,,WG,6,fungicida WG BASF �
 Dacostar 720 SC,Dacostar|Dacostar SC|Clorotalonil Adama,,SC,8,fungicida SC Adama — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Procymidone 500 SC,Procymidone|Procimidona SC|Procymidona SC,,SC,8,fungicida SC — procimidona — IA busca web confirmou SC,2026-10-26,procimidona
 Starmix,Starmix SC|Starmix fungicida,,SC,8,fungicida SC — mistura comercial — IA busca web confirmou SC,pendente (2026-10-26),
-Vectra 100 SC,Vectra|Vectra SC|Hexaconazol SC,,SC,8,fungicida SC — hexaconazol — IA busca web confirmou SC,2026-10-26,hexaconazol
+Vectra 100 SC,Vectra|Vectra SC|Hexaconazol SC|Hexaconazol,,SC,8,fungicida SC — hexaconazol — IA busca web confirmou SC,2026-10-26,hexaconazol
 Bayfidan 250 EC,Bayfidan|Bayfidan EC|Triticonazol EC,,EC,11,fungicida EC — triticonazol — IA busca web confirmou EC,2026-10-26,triticonazol
 Systhane 250 EC,Systhane|Systhane EC|Myclobutanil EC|Myclobutanil,,EC,11,fungicida EC Dow — myclobutanil — IA busca web confirmou EC,2026-10-26,myclobutanil
 Muralla Max,Muralla|Muralla OD|Muralla Max Bayer,,OD,9,inseticida OD Bayer — beta-ciflutrina+imidacloprido — IA busca web confirmou OD,2026-10-26,beta-ciflutrina+imidacloprido
@@ -709,3 +709,5 @@ Omite 720 EC,Omite|Omite EC|Propargito|Propargite|Omite Crompton,,EC,11,pesquisa
 Ethion 500 EC,Ethion|Ethion EC|Etiona|Fosfur|Fosfur EC|Suprathion,,EC,11,pesquisa web — acaricida/inseticida organofosforado EC etiona,2026-11-21,etiona
 Sherpa 100 CE,Sherpa|Sherpa CE|Corsair|Pounce|Ambush EC|Cipermetrina Piretroide,,EC,11,pesquisa web — inseticida CE cipermetrina piretroide,2026-11-21,cipermetrina
 Gaucho FS,Gaucho|Gaucho Bayer|Poncho|Nuprid|Imidacloprid FS|Imidacloprida FS,,FS,8,pesquisa web — inseticida FS Bayer imidacloprida tratamento sementes,2026-11-21,imidacloprida
+Miclobutanil 250 EW,Miclobutanil|Miclobutanil EW|Rally 400 EW|Rally|Systhane,,EW,14,pesquisa web — fungicida EW miclobutanil triazol,2026-11-21,miclobutanil
+Bayleton 250 WP,Bayleton|Bayleton WP|Triadimefon|Triadimefon WP|Triadimefon Bayer,,WP,5,pesquisa web — fungicida WP Bayer triadimefon triazol,2026-11-21,triadimefon
