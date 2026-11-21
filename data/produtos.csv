@@ -33,7 +33,7 @@ Glufosinato,Glufusinato|Glufosinato de amonio|Liberty|Trusinate|Glufour|Glufosin
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,etiprole
-Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox|Gesaprim|Herbazin|Herbazin 500 SC|Gesaprim 500 SC,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
+Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox|Gesaprim|Herbazin|Herbazin 500 SC|Gesaprim 500 SC|Atrazine|Atrazine SC,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
 Methos,Methos 960 TM|S-metolacloro|Dual Gold|Dual Gold 960 EC|S-Metolachlor|Metolachlor,,EC,11,herbicida EC Proventis — bula confirmada,2026-11-21,
 Ativon,Ativon Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,2026-11-21,cletodim
@@ -853,3 +853,6 @@ Calcario Agricola,Calcario|Calcario dolomítico|Calcario calcítico|Limestone|Ca
 Gesso Agricola,Gesso|Gesso agricola|Agricultural gypsum|Sulfato de calcio|Calcium sulfate|Gessagem,,GR,3,varios,2026-11-21,sulfato de calcio
 Fosfito Cobre SL,Fosfito Cobre|Fosfito Cu SL|Copper Phosphite|Fosfito de Cobre|Fosfito+Cobre,,SL,18,varios,2026-11-21,fosfito+cobre
 Fosfito Magnesio SL,Fosfito Magnesio|Fosfito Mg SL|Magnesium Phosphite|Fosfito de Magnesio|Fosfito+Magnesio,,SL,18,varios,2026-11-21,fosfito+magnesio
+Zoxium SC,Zoxium|Zoxamide|Zoxamide SC|Zoxamide Dowagro|Roxyl,,SC,8,Dowagro/Corteva,2026-11-21,zoxamide
+Viewpoint SC,Viewpoint|Amisulbrom|Amisulbrom SC|Viewpoint Nippon|NC-224,,SC,8,Nippon Soda,2026-11-21,amisulbrom
+Ziram 76 WG,Ziram|Ziram WG|Ziram 76|Zirex WG|Fungicida Dithiocarb,,WG,6,varios,2026-11-21,ziram
