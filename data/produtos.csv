@@ -2,7 +2,7 @@ nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,
 Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Glyphosate|Glyphosate SL|Glyphosate isopropyl,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
-Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
+Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Opera Ultra BASF,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Difenoconazol EC|Difenconazol|Difenoconazole,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
@@ -196,7 +196,7 @@ Hero,Hero EC|Hero FMC,,EC,11,inseticida EC FMC — premix piretroide muito popul
 Vayego,Vayego SC|Vayego Bayer|Tetraniliprole,,SC,8,inseticida SC Bayer — diamida nova geração,2026-10-13,tetraniliprole
 Polo,Polo SC|Polo 500|Diafentiurom,,SC,8,inseticida SC Syngenta — mosca-branca/percevejos,2026-10-13,diafentiurom
 Gallaxy,Galaxy|Gallaxy EC|Gallaxy 100,,SC,8,inseticida SC Bayer — imidacloprido+bifentrina,2026-10-13,imidacloprido+bifentrina
-Imunit,Imunit SC|Imunit Syngenta,,SC,8,inseticida SC Syngenta — lambda-cialotrina+clorantraniliprole,2026-10-13,lambda-cialotrina+clorantraniliprole
+Imunit,Imunit SC|Imunit Syngenta|lambda-clorantraniliprole|clorantraniliprole+lambda-cialotrina,,SC,8,inseticida SC Syngenta — lambda-cialotrina+clorantraniliprole,2026-10-13,lambda-cialotrina+clorantraniliprole
 Spat,Spat SC|Spat BASF,,SC,8,inseticida SC BASF — clorfenapir+lambda-cialotrina,2026-10-13,clorfenapir+lambda-cialotrina
 Minecto Pro,Minecto|Minecto SE,,SE,10,inseticida SE Syngenta — ciantraniliprole+abamectina,2026-10-13,ciantraniliprole+abamectina
 Cabrio Top,Cabrio|Cabrio WG|Cabrio EC|Piraclostrobina+Metiram|Piraclostrobina+Metiramate|Cabrio EC BASF,,WG,6,fungicida WG BASF — metiram+piraclostrobina — multissitio+estrobilurina,2026-10-13,metiram+piraclostrobina
@@ -361,7 +361,7 @@ Vivando SC,Vivando|Vivando BASF|Cyflufenamid SC,,SC,8,pesquisa web — cadastro 
 Dossier SC,Dossier|Dossier SC Nippon Soda|Pyriofenone SC,,SC,8,pesquisa web — cadastro manual,2026-11-11,pyriofenone
 Actellic 500 EC,Actellic|Actellic EC|Actellic Syngenta|Pirimifos-metil EC|Pirimifos|Pirimifos-metil,,EC,11,pesquisa web — cadastro manual,2026-11-11,pirimifos-metil
 Nurelle D,Nurelle|Nurelle D 550|Nurelle EC|Cipermetrina+Clorpirifos EC,,EC,11,pesquisa web — cadastro manual,2026-11-11,cipermetrina+clorpirifos
-Arsenal 250 SL,Arsenal|Arsenal SL|Arsenal BASF|Imazapir SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,imazapir
+Arsenal 250 SL,Arsenal|Arsenal SL|Arsenal BASF|Imazapir SL|imazapyr|imazapir,,SL,16,pesquisa web — cadastro manual,2026-11-11,imazapir
 Starane Ultra EC,Starane Ultra|Starane 250|Fluroxipir ester EC|Fluroxipir,,EC,11,pesquisa web — cadastro manual,2026-11-11,fluroxipir ester
 Velpar 75 WG,Velpar WG|Hexazinona+Diuron WG|Hexazinona 75 WG,,WG,6,pesquisa web — herbicida cana WG,2026-11-11,hexazinona+diuron
 Lorsban 750 BR WG,Lorsban WG|Clorpirifos 750 WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,clorpirifos
@@ -868,3 +868,7 @@ Racer EC,Racer|Racer Sipcam|flurocloridona|flurocloridone,,EC,11,Sipcam,2026-11-
 Cinch EC,Cinch|Cinch BASF|cinmetilina|cinmethylin,,EC,11,BASF,2026-11-21,cinmetilina
 Plenish SC,Plenish|Plenish SC FMC|flubendiamida plenish,,SC,8,FMC,2026-11-21,flubendiamida
 Tecto 450 SC,Tecto|Tecto SC|Mertect|Mertect SC|thiabendazol|thiabendazole|tiabendazol|TBZ,,SC,8,Syngenta,2026-11-21,tiabendazol
+Priaxor EC,Priaxor|Priaxor SE|Priaxor BASF|fluxapiroxade+piraclostrobina|fluxapyroxad pyraclostrobin,,EC,11,BASF,2026-11-21,fluxapiroxade+piraclostrobina
+Seguris SC,Seguris|Seguris Syngenta|boscalida+epoxiconazol|boscalid epoxiconazol,,SC,8,Syngenta,2026-11-21,boscalida+epoxiconazol
+Primextra SC,Primextra|Primextra Syngenta|atrazina+metolacloro|s-metolacloro+atrazina,,SC,8,Syngenta,2026-11-21,atrazina+metolacloro
+Cropstar FS,Cropstar|Cropstar Bayer|imidaclopride+tiodicarbe|imidacloprid thiodicarb,,FS,8,Bayer,2026-11-21,imidacloprido+tiodicarbe
