@@ -428,7 +428,7 @@ Imidacloprido 700 WG,Imidacloprido WG|Imidacloprido generico|Nuprid WG|Imida WG,
 Clotianidina 50 WG,Clotianidina WG|Clotianidina|Poncho WG|Clutch WG|Clothianidin WG|Clothianidin|Belem WG,,WG,6,pesquisa web — inseticida WG clotianidina,2026-11-11,clotianidina
 Diamida genérica SC,Rynaxypyr|Clorantraniliprole SC generico|Cyazypyr SC,,SC,8,pesquisa web — inseticida SC diamida generica,2026-11-11,clorantraniliprole
 Sulfoxaflor SC,Sulfoxaflor|Transform WG|Closer generico,,SC,8,pesquisa web — inseticida SC sulfoxaflor generico,2026-11-11,sulfoxaflor
-Flonicamida WG,Flonicamida|Teppeki WG|Flonicamida Ishihara,,WG,6,pesquisa web — inseticida WG flonicamida aficida,2026-11-11,flonicamida
+Flonicamida WG,Flonicamida|Teppeki WG|Flonicamida Ishihara|Teppeki|flonicamide|flonicamide WG,,WG,6,pesquisa web — inseticida WG flonicamida aficida,2026-11-11,flonicamida
 Spiromesifen SC,Spiromesifen|Oberon generico|Spiromesifen Bayer,,SC,8,pesquisa web — acaricida SC spiromesifen,2026-11-11,spiromesifen
 Spirodiclofeno SC,Spirodiclofeno|Envidor generico|Spirodiclofen,,SC,8,pesquisa web — acaricida SC spirodiclofeno,2026-11-11,spirodiclofeno
 Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,pesquisa web — acaricida EC propargito,2026-11-11,propargito
@@ -872,3 +872,7 @@ Priaxor EC,Priaxor|Priaxor SE|Priaxor BASF|fluxapiroxade+piraclostrobina|fluxapy
 Seguris SC,Seguris|Seguris Syngenta|boscalida+epoxiconazol|boscalid epoxiconazol,,SC,8,Syngenta,2026-11-21,boscalida+epoxiconazol
 Primextra SC,Primextra|Primextra Syngenta|atrazina+metolacloro|s-metolacloro+atrazina,,SC,8,Syngenta,2026-11-21,atrazina+metolacloro
 Cropstar FS,Cropstar|Cropstar Bayer|imidaclopride+tiodicarbe|imidacloprid thiodicarb,,FS,8,Bayer,2026-11-21,imidacloprido+tiodicarbe
+Raptor SL,Raptor|Raptor BASF|imazamox|Imazamox SL|imazamox herbicide,,SL,16,BASF,2026-11-21,imazamox
+Onduty WG,Onduty|Onduty BASF|imazetapir+imazapic|imazethapyr imazapic,,WG,6,BASF,2026-11-21,imazetapir+imazapic
+Bontima SC,Bontima|Bontima Syngenta|isopyrazam|Isopyrazam SC,,SC,8,Syngenta,2026-11-21,isopyrazam
+Inatreq EC,Inatreq|Inatreq Corteva|fenpicoxamide|fenpicoxamida,,EC,11,Corteva,2026-11-21,fenpicoxamida
