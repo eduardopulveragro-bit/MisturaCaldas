@@ -26,7 +26,7 @@ Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125,,EC
 Dessek,,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Triclon,Triclopyr|Triclon EC,,EC,11,UPL — confirmado pelo consultor,pendente (2026-10-08),
 Cofenrin,Coferin|Bifentrina Coferin|Insectrin|Orsa|Indotrin,06922,EC,11,pesquisa web — registro MAPA 06922 bifentrina 400g/L,2026-10-13,bifentrina
-Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
+Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB|Arrow|Arrow 240 EC|Verdict 240 EC|Verdict,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
 Bivack,Bivak|Bivack EC,,EC,11,inseticida EC — pendente confirmação,pendente (2026-10-08),
 Terrador,Terrador 339 SC|Tiafenacil,,SC,8,bula SC 339g/L tiafenacil — Ouro Fino/FarmHannong,pendente (2026-10-08),
 Glufosinato,Glufusinato|Glufosinato de amônio|Liberty|Trusinate|Glufour|Glufosinate Wood|Glufosinato amonio|Glufosinato de amônio amonio,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
@@ -49,7 +49,7 @@ Unizeb Gold,Unizeb|Mancozeb 750 WG|Disarm|Vigold,,WG,6,fungicida WG UPL — bula
 Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol|Pidiflumetofen|Pydiflumetofen,,SC,8,fungicida SC Syngenta — bula confirmada,2026-11-21,pydiflumetofen+difenoconazol
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,,SC,8,inseticida SC etiprole — bula confirmada,2026-11-21,etiprole
 Intense,,,OLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09,
-Flumioxazina,Flumioxazin|Flumioxazin 500 SC,,SC,8,herbicida SC — bula confirmada,2026-11-21,
+Flumioxazina,Flumioxazin|Flumioxazin 500 SC|Valor|Valor WG|Valor Nufarm,,SC,8,herbicida SC — bula confirmada,2026-11-21,
 Flumizin,Flumyzin|Flumyzin 500|Flumyzyn,,SC,8,SC — corrigido pelo usuario 2026-11-10,2026-11-10,flumioxazina
 Stone,Stone Herbicida|Stone Nufarm,,SL,16,SL — adicionado pelo usuario 2026-11-10,2026-11-10,cloransulam-metilico
 Diquat,Diquate|Reglone|Diquat 200 SL,,SL,16,herbicida dessecante SL — bula confirmada,2026-11-21,diquate
@@ -97,7 +97,7 @@ Pirate,Pirate SC|Pirate BASF|Clorfenapir SC,,SC,8,cadastro manual — produto co
 Regent,Regent 800 WG|Regent WG|Fipronil WG|Fipronil,,WG,6,cadastro manual — produto comercial comum,2026-10-09,fipronil
 Larvin,Larvin 800 WG|Larvin WG|Tiodicarbe WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiodicarbe
 Cipermetrina,Cipermetrina Nortox|Cipermetrina 250 EC|Cipermil,,EC,11,cadastro manual — generico comum,2026-10-09,cipermetrina
-Aurora,Aurora 400 EC|Aurora EC|Carfentrazona,,EC,11,cadastro manual — produto comercial comum,2026-10-09,carfentrazona-etilica
+Aurora,Aurora 400 EC|Aurora EC|Carfentrazona|Carfentrazone EC|Spotlight|Spotlight Plus|Soja Brasil,,EC,11,cadastro manual — produto comercial comum,2026-10-09,carfentrazona-etilica
 Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600|Trifluralin,,EC,11,cadastro manual — generico comum,2026-10-09,trifluralina
 Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP|Dimilin 25 WP|Diflubenzurom|Diflubenzuron,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
@@ -259,7 +259,7 @@ Traxos,Traxos EC|Traxos Syngenta,,EC,11,graminicida EC Syngenta — pinoxaden tr
 Moddus,Moddus EC|Moddus Syngenta|Trinexapac|Primo EC|Primo|Moddus Evo,,EC,11,regulador crescimento EC Syngenta — trinexapac-etilico trigo — consulta IA busca web pendente,pendente (2026-10-26),trinexapac-etilico
 Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
 Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL|Ethephon|Etefon|Cerone|Ethephon SL,,SL,16,regulador crescimento SL Bayer — etefon — consulta IA busca web pendente,pendente (2026-10-26),etefon
-Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
+Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG|Pyroxasulfone WG|Fierce|Fierce WG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
 Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva — piroxsulam trigo — consulta IA busca web pendente,pendente (2026-10-26),piroxsulam
 Granstar,Granstar WG|Granstar Corteva|Tribenuron,,WG,6,herbicida WG Corteva — tribenuron-metilico trigo — consulta IA busca web pendente,pendente (2026-10-26),tribenuron-metilico
 Afinity 720 SC,Afinity|Affinity SC|Afinity Syngenta,,SC,8,herbicida SC Syngenta — consulta IA busca web pendente,pendente (2026-10-26),
@@ -763,3 +763,6 @@ Fertikit SL,Fertikit|Fertikit Foliar|Fertikit Nortox SL,,FERTILIZANTE,18,nortox,
 Antracol 700 WP,Antracol|Antracol WP|Propineb WP|Propineb 700|Propineb Bayer,,WP,5,bayer,2026-11-21,propineb
 Zineb 750 WP,Zineb|Zineb WP|Zineb Nortox|Zineb 750,,WP,5,nortox,2026-11-21,zineb
 Maneb 800 WP,Maneb|Maneb WP|Maneb 800|Maneb Nortox|Trimanoc WP,,WP,5,nortox,2026-11-21,maneb
+Radar 25 CS,Radar|Radar CS|Isoxaflutole CS|Isoxaflutol Bayer|Provence CS,,CS,7,bayer,2026-11-21,isoxaflutol
+Nortron 500 SC,Nortron|Nortron SC|Ethofumesate SC|Etofumesato SC|Etofumesato,,SC,8,bayer,2026-11-21,etofumesato
+Dacthal WP,Dacthal|DCPA WP|Dacthal 750 WP,,WP,5,amvac,2026-11-21,DCPA
