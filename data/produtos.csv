@@ -312,7 +312,7 @@ Muralla Max,Muralla|Muralla OD|Muralla Max Bayer,,OD,9,inseticida OD Bayer — b
 Talendo,Talendo EC|Talendo Corteva|Proquinazida EC,,EC,11,fungicida EC Corteva — proquinazida — oídio — IA busca web confirmou EC,2026-10-26,proquinazida
 Abamex 18 CE,Abamex|Abamex CE|Abamectina CE|Abamex 18,,EC,11,acaricida/inseticida EC — abamectina — CE=EC no Brasil — IA busca web confirmou EC,2026-10-26,abamectina
 Kraft 36 EC,Kraft|Kraft EC|Abamectina 36 EC,,EC,11,acaricida/inseticida EC — abamectina+eprinomectina — IA busca web confirmou EC,2026-10-26,abamectina
-Apollo 500 SC,Apollo|Apollo SC|Apollo Agroquimico|Clofentezina SC,,SC,8,acaricida SC — clofentezina — IA busca web confirmou SC,2026-10-26,clofentezina
+Apollo 500 SC,Apollo|Apollo SC|Apollo Agroquimico|Clofentezina SC|Clofentezine|Clofentezine SC,,SC,8,acaricida SC — clofentezina — IA busca web confirmou SC,2026-10-26,clofentezina
 Acaramik SC,Acaramik|Acaramik EC|Acaramik acaricida,,EC,11,acaricida — abamectina/milbemectina — IA busca web retornou EC; verificar se SC ou EC,pendente (2026-10-26),abamectina
 Nissorum 100 EC,Nissorum|Nissorum EC|Hexitiazox EC|Hexythiazox EC|Hexythiazox|Nissorun|Savey|Nissorun 100|Hexitiazox,,EC,11,acaricida EC — hexitiazox — IA busca web confirmou EC,2026-10-26,hexitiazox
 Radiant 120 SC,Radiant|Radiant SC|Radiant Corteva|Espinosade SC,,SC,8,inseticida SC Corteva — espinosade — IA busca web confirmou SC,2026-10-26,espinosade
@@ -369,7 +369,7 @@ Natur Oil,Natur'l Oil|Natural Oil|Óleo Natural adjuvante|Oleo Natural,,OLEO,12,
 Zoom,Zoom Nufarm|Zoom Oil|Zoom Óleo|Zoom adjuvante oleo,,OLEO,12,cadastro manual — oleo adjuvante Nufarm,2026-11-16,oleo mineral
 Lannate Oil,Lannate Oleo|LannatOil,,OLEO,12,cadastro manual — oleo adjuvante,2026-11-16,oleo mineral
 Orobor Óleo,Orobor Oleo|Orobor|Orobor adjuvante,,OLEO,12,cadastro manual — oleo adjuvante,2026-11-16,oleo vegetal
-Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdênio 100|Mo SL,,FERTILIZANTE,18,pesquisa web — micronutriente molibdênio,2026-11-11,molibdenio
+Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdenio 100|Mo SL|Molybdenum|Molibdeno|Molibdenio quelado,,FERTILIZANTE,18,pesquisa web — micronutriente molibdênio,2026-11-11,molibdenio
 CoMo SL,Co+Mo foliar|Cobalto+Molibdenio|CoMo Fertilizante|Cobalto Molibdenio,,FERTILIZANTE,18,pesquisa web — micronutriente Co+Mo,2026-11-11,cobalto+molibdenio
 Plenifer Mn,Plenifer Manganes|Mn EDTA foliar|Manganes quelatado,,FERTILIZANTE,18,pesquisa web — fertilizante manganês quelatado,2026-11-11,manganes
 Triton 480 SL,Triton|Triton EC Nufarm|Triton Glifosato,,SL,16,pesquisa web — glifosato SL Nufarm,2026-11-11,glifosato
@@ -800,7 +800,7 @@ Lumiposa FS,Lumiposa|Lumiposa FS|Cyantraniliprole FS|Ciantraniliprole FS,,FS,8,c
 Valbon WG,Valbon|Valbon WG|Valifenalate WG|Valifenalate|Belchim Valbon,,WG,6,belchim,2026-11-21,valifenalate+mancozebe
 Talendo SC,Talendo|Talendo SC|Proquinazid SC|Proquinazid|Proquinazida SC,,SC,8,corteva,2026-11-21,proquinazida
 Mirage 450 EC,Mirage|Mirage EC|Prochloraz EC|Prochloraz|Sportak EC|Sportak,,EC,11,adama,2026-11-21,procloraz
-Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis,,SC,8,basf,2026-11-21,prohexadiona de calcio
+Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis|Prohexadiona|Proexadiona|Proexadiona SC,,SC,8,basf,2026-11-21,prohexadiona de calcio
 Acequinocil 500 SC,Acequinocil|Acequinocil SC|Kanemite SC|Kanemite|Acequinocyl,,SC,8,mitsui,2026-11-21,acequinocil
 Acetocloro 840 EC,Acetocloro|Harness|Surpass|Guardian|Acetocloro Nortox|Acetocloro FMC|Acetochlor,,EC,11,Nortox/FMC,2026-11-21,acetocloro
 Butachlor 600 EC,Butachlor|Machete|Butanil|Butamol|Butachloram,,EC,11,Monsanto/Nortox,2026-11-21,butachlor
@@ -831,3 +831,6 @@ Nustar EC,Nustar|Flusilazol|Flusilazole|Flusilazol EC|Nustar Dupont,,EC,11,DuPon
 Award FS,Award|Fipronil FS solo|Award Extreme|Fipronil Seed Treatment|Phenom FS,,FS,8,Bayer/FMC,2026-11-21,fipronil
 Treevix SC,Treevix|Cinidon-etilico|Cinidon Ethyl|Cinidon-Ethyl SC|Lotus herbicida,,SC,8,FMC,2026-11-21,cinidon-etilico
 Gallery 500 SC,Gallery|Isoxaben|Gallery Dow|Isoxaben SC,,SC,8,Dow/Corteva,2026-11-21,isoxaben
+Borneo SC,Borneo|Etoxazole|Etoxazol SC|Borneo Nippon Soda|Baroque SC|Baroque|Etoxazole SC,,SC,8,Nippon Soda,2026-11-21,etoxazole
+Sultan SC,Sultan|Cyflumetofen|Cyflumetofen SC|Sultan Nichino|Pole SC,,SC,8,Nichino,2026-11-21,cyflumetofen
+Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,SC,18,varios,2026-11-21,boro
