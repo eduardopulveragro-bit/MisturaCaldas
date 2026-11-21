@@ -421,7 +421,7 @@ HearNPV SC,HearNPV|HelicovirusSC|Certivo|Heliothis NPV,,BIO_VIRAL,22,pesquisa we
 SpodNPV SC,SpodNPV|Spodoptera NPV|Specter SC,,BIO_VIRAL,22,pesquisa web — inseticida biologico viral lagarta-do-cartucho,2026-11-11,Spodoptera frugiperda nucleopolyhedrovirus
 Spinosad SC,Spinosad|Tracer 480 SC|Espinosade generico,,SC,8,pesquisa web — inseticida SC espinosade generico,2026-11-11,espinosade
 Spinetorama SC,Spinetorama|Delegate SC|Espinetoram SC generico,,SC,8,pesquisa web — inseticida SC espinetoram generico,2026-11-11,espinetoram
-Chlorpyrifos 480 EC,Clorpirifos generico 480|Chlorpyrifos EC|Clorpirifos 480 EC,,EC,11,pesquisa web — inseticida EC clorpirifos generico,2026-11-11,clorpirifos-etilico
+Chlorpyrifos 480 EC,Clorpirifos generico 480|Chlorpyrifos EC|Clorpirifos 480 EC|Chlorpyrifos ethyl|Clorpirifos etil 480,,EC,11,pesquisa web — inseticida EC clorpirifos generico,2026-11-11,clorpirifos-etilico
 Profenofos 500 EC,Profenofos EC|Profenofos generico|Curacron EC,,EC,11,pesquisa web — inseticida EC profenofos,2026-11-11,profenofos
 Tiametoxam 250 WG,Tiametoxam WG|Tiametoxam generico|Cruiser WG,,WG,6,pesquisa web — inseticida WG tiametoxam generico,2026-11-11,tiametoxam
 Imidacloprido 700 WG,Imidacloprido WG|Imidacloprido generico|Nuprid WG|Imida WG,,WG,6,pesquisa web — inseticida WG imidacloprido generico,2026-11-11,imidacloprido
@@ -773,3 +773,7 @@ Mocap 150 GR,Mocap|Mocap GR|Etoprofos GR|Ethoprophos GR,,GR,3,chemtura,2026-11-2
 Lorox 500 SC,Lorox|Linuron SC|Linuron 500|Afalon SC|Lorox SC|Linuron,,SC,8,corteva,2026-11-21,linuron
 Betanal WP,Betanal|Betanal SE|Fenmedifam WP|Fenmedifam|Betanal Bayer,,WP,5,bayer,2026-11-21,fenmedifam
 Fantic SC,Fantic|Fenamidone SC|Fenomidone|Fantic Bayer,,SC,8,bayer,2026-11-21,fenamidone
+Clomazone 500 SC,Clomazone|Clomazone SC|Command 480 EC|Command|Gamit 360 CS|Gamit|Clomazone 480 EC,,SC,8,fmc,2026-11-21,clomazone
+Katana WG,Katana|Katana 250 WG|Flazassulfuron WG|Flazasulfuron WG|Flazasulfuron,,WG,6,syngenta,2026-11-21,flazasulfuron
+Sporan EC,Sporan|Sporan Fungicida|Extrato Cravo|Eugenol EC|Sporan BioFungicida,,EC,11,biocontrole,2026-11-21,eugenol
+Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Mertect WP|Topsin M,,WP,5,nufarm,2026-11-21,tiofanato-metilico
