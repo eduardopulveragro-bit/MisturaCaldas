@@ -272,7 +272,7 @@ Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller|Bioativo Stoller
 Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar potássio Uby — IA busca web confirmou FERTILIZANTE,2026-10-26,potássio foliar
 Bioamin,Bioamin SC|Bioamin fertilizante|Aminoácido foliar,,FERTILIZANTE,18,fertilizante foliar/bioestimulante aminoácido — IA busca web confirmou FERTILIZANTE,2026-10-26,aminoácidos
 Dithane NT,Dithane|Dithane WP|Mancozebe WP|Mancozebe Dow,,WP,5,fungicida WP Corteva — mancozebe — IA busca web confirmou WP,2026-10-26,mancozebe
-Curzate M,Curzate|Curzate WP|Cymoxanil WP|Cimoxanil WP|Cimoxanil|Cimoxanil+Mancozeb,,WP,5,fungicida WP — cymoxanil+mancozebe — IA busca web confirmou WP,2026-10-26,cymoxanil+mancozebe
+Curzate M,Curzate|Curzate WP|Cymoxanil WP|Cimoxanil WP|Cimoxanil|Cimoxanil+Mancozeb|cymoxanil mancozeb|cymoxanil+mancozeb,,WP,5,fungicida WP — cymoxanil+mancozebe — IA busca web confirmou WP,2026-10-26,cymoxanil+mancozebe
 Ridomil Gold,Ridomil|Ridomil WG|Metalaxil WG|Ridomil Gold Syngenta|Metalaxil|Metalaxil-M|Metalaxil mancozebe,,WG,6,fungicida WG Syngenta — metalaxil-M+mancozebe — IA busca web confirmou WG,2026-10-26,metalaxil-M+mancozebe
 Bravonil 720 SC,Bravonil|Bravonil SC|Clorotalonil SC,,SC,8,fungicida SC Syngenta — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Chlorothalonil 500 SC,Chlorothalonil|Clorotalonil 500|Clorotalonil SC generico,,SC,8,fungicida SC generico — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
@@ -338,7 +338,7 @@ Mitrion,Mitrion EC|Mitrion Syngenta,,EC,11,fungicida EC Syngenta - benzovindiflu
 Boro MEA,Boro MEA foliar|BorMEA|Boro Mea,,FERTILIZANTE,18,fertilizante foliar boro monoetanolamina — cadastro manual,2026-11-11,boro
 Glimor,Glimor WG|Glimor Nufarm,,WG,6,herbicida WG — cadastro manual,2026-11-11,glifosato
 Touchdown IQ,Touchdown|Touchdown IQ 500|Touchdown Total|Touchdown Syngenta|Glifosato IPA SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
-Roundup Power Max,Roundup PowerMAX|Roundup Power Max|PowerMax Glifosato|Roundup 648|Roundup Power|Powermax|Powermax 3 TF|Powermax 2|Roundup Powermax 3,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
+Roundup Power Max,Roundup PowerMAX|Roundup Power Max|PowerMax Glifosato|Roundup 648|Roundup Power|Powermax|Powermax 3 TF|Powermax 2|Roundup Powermax 3|Roundup Ultra Max|Roundup WCR|Nufosate|Glizmax|Glifosato Ultra,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Zapp 480 SL,Zapp 480|Zapp Nortox 480|Glifosato Zapp,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Envision,Envision SL|Glifosato-K|Glifosato Potassio SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Roundup Extend SL,Roundup Extend|Glifosato+Dicamba SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato+dicamba
@@ -712,7 +712,7 @@ Gaucho FS,Gaucho|Gaucho Bayer|Poncho|Imidacloprid FS|Imidacloprida FS,,FS,8,pesq
 Miclobutanil 250 EW,Miclobutanil|Miclobutanil EW|Rally 400 EW|Rally,,EW,14,pesquisa web — fungicida EW miclobutanil triazol,2026-11-21,miclobutanil
 Bayleton 250 WP,Bayleton|Bayleton WP|Triadimefon|Triadimefon WP|Triadimefon Bayer,,WP,5,pesquisa web — fungicida WP Bayer triadimefon triazol,2026-11-21,triadimefon
 Nemathorin 150 EC,Nemathorin|Nemathorin EC|Fostiazato EC|Fosthiazate|Fostiazato,,EC,11,pesquisa web — nematicida EC Syngenta fostiazato,2026-11-21,fostiazato
-Vitavax Thiram 200 SC,Vitavax|Vitavax SC|Vitavax Thiram|Carboxim+Thiram|Carboxim|Thiram|Vitavax Flo|Vitavax 200 SC,,SC,8,pesquisa web — fungicida tratamento sementes SC carboxim+thiram,2026-11-21,carboxim+thiram
+Vitavax Thiram 200 SC,Vitavax|Vitavax SC|Vitavax Thiram|Carboxim+Thiram|Carboxim|Thiram|Vitavax Flo|Vitavax 200 SC|carboxim thiram|carboxin thiram,,SC,8,pesquisa web — fungicida tratamento sementes SC carboxim+thiram,2026-11-21,carboxim+thiram
 Floramite 240 SC,Floramite|Floramite SC|Floramite Chemtura|Bifenazato SC|Bifenazato,,SC,8,pesquisa web — acaricida SC Chemtura bifenazato,2026-11-21,bifenazato
 Phostoxin,Phostoxin|Fosfina|Gastoxin|Fosfeto de aluminio|Fosfeto aluminio,,GE,3,pesquisa web — fumigante GE fosfeto de aluminio armazenamento,2026-11-21,fosfeto de aluminio
 Headline 250 EC,Headline|Headline EC|Headline BASF|Piraclostrobina 250 EC|Headline AMP,,EC,11,pesquisa web — fungicida EC BASF piraclostrobina,2026-11-21,piraclostrobina
@@ -886,3 +886,4 @@ Previcur Flex SL,Previcur Flex|Previcur Flex Bayer|propamocarbe+fludioxonil|prop
 Sumi 8 WP,Sumi 8|Sumi-8|Sumi8|diniconazol|Diniconazol WP|Sumitomo fungicida,,WP,5,Sumitomo,2026-11-21,diniconazol
 Acrinatrina SC,Acrinatrina|acrinathrin|Rufast Acaricida|Certero Mite,,SC,8,generic,2026-11-21,acrinatrina
 Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 125,,SC,8,Bayer,2026-11-21,beta-cipermetrina
+"Tordon 2,4-D SL","Tordon 2,4-D|picloram 2,4-D|picloram+2,4-D SL|Tordon Ultra 2,4-D",,SL,16,Corteva,2026-11-21,"2,4-D+picloram"
