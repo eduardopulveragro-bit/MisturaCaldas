@@ -272,7 +272,7 @@ Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller|Bioativo Stoller
 Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar potássio Uby — IA busca web confirmou FERTILIZANTE,2026-10-26,potássio foliar
 Bioamin,Bioamin SC|Bioamin fertilizante|Aminoácido foliar,,FERTILIZANTE,18,fertilizante foliar/bioestimulante aminoácido — IA busca web confirmou FERTILIZANTE,2026-10-26,aminoácidos
 Dithane NT,Dithane|Dithane WP|Mancozebe WP|Mancozebe Dow,,WP,5,fungicida WP Corteva — mancozebe — IA busca web confirmou WP,2026-10-26,mancozebe
-Curzate M,Curzate|Curzate WP|Cymoxanil WP,,WP,5,fungicida WP — cymoxanil+mancozebe — IA busca web confirmou WP,2026-10-26,cymoxanil+mancozebe
+Curzate M,Curzate|Curzate WP|Cymoxanil WP|Cimoxanil WP|Cimoxanil|Cimoxanil+Mancozeb,,WP,5,fungicida WP — cymoxanil+mancozebe — IA busca web confirmou WP,2026-10-26,cymoxanil+mancozebe
 Ridomil Gold,Ridomil|Ridomil WG|Metalaxil WG|Ridomil Gold Syngenta|Metalaxil|Metalaxil-M|Metalaxil mancozebe,,WG,6,fungicida WG Syngenta — metalaxil-M+mancozebe — IA busca web confirmou WG,2026-10-26,metalaxil-M+mancozebe
 Bravonil 720 SC,Bravonil|Bravonil SC|Clorotalonil SC,,SC,8,fungicida SC Syngenta — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Chlorothalonil 500 SC,Chlorothalonil|Clorotalonil 500|Clorotalonil SC generico,,SC,8,fungicida SC generico — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
@@ -717,7 +717,7 @@ Floramite 240 SC,Floramite|Floramite SC|Floramite Chemtura|Bifenazato SC|Bifenaz
 Phostoxin,Phostoxin|Fosfina|Gastoxin|Fosfeto de aluminio|Fosfeto aluminio,,GE,3,pesquisa web — fumigante GE fosfeto de aluminio armazenamento,2026-11-21,fosfeto de aluminio
 Headline 250 EC,Headline|Headline EC|Headline BASF|Piraclostrobina 250 EC|Headline AMP,,EC,11,pesquisa web — fungicida EC BASF piraclostrobina,2026-11-21,piraclostrobina
 Stinger 480 SL,Stinger|Stinger SL|Clopiralida|Clopiralida SL|Stinger Corteva,,SL,16,pesquisa web — herbicida SL Corteva clopiralida pastagem,2026-11-21,clopiralida
-Prometrin 500 SC,Prometrin|Prometrina SC|Prometrin SC|Prometrina|Gesagard,,SC,8,pesquisa web — herbicida SC prometrina algodao/soja,2026-11-21,prometrina
+Prometrin 500 SC,Prometrin|Prometrina SC|Prometrin SC|Prometrina|Gesagard|Prometryn|Prometryne,,SC,8,pesquisa web — herbicida SC prometrina algodao/soja,2026-11-21,prometrina
 Plateau 700 WG,Plateau|Ceptor|Imazapic WG|Imazapic|Plateau WG|Imazapic BASF,,WG,6,pesquisa web — herbicida WG imazapic cana-de-acucar pastagem,2026-11-21,imazapic
 Decree 50 WDG,Decree|Decree WP|Decree WDG|Fenhexamide|Fenhexamida,,WG,6,pesquisa web — fungicida WG Bayer fenhexamide botrytis,2026-11-21,fenhexamide
 Scala 400 SC,Scala|Scala SC|Cyprodinila SC|Cyprodinila|Ciprodinila|Scala Bayer,,SC,8,pesquisa web — fungicida SC Bayer ciprodinila botrytis,2026-11-21,ciprodinila
@@ -729,7 +729,7 @@ Elatus Arc,Elatus EC|Elatus Syngenta|Benzovindiflupir+Azoxistrobina|Azoxistrobin
 Zartan 480 CS,Zartan|Zartan CS|Atrazina CS Dow|Zartan Corteva,,CS,7,pesquisa web — herbicida CS Corteva atrazina encapsulada,2026-11-21,atrazina
 Tamaron 600 BR SL,Tamaron|Tamaron 600|Metamidofos|Metamidophos|Methamidophos|Hamidop,,SL,16,pesquisa web — inseticida SL metamidofos organofosforado,2026-11-21,metamidofos
 Baytroid 100 EC,Baytroid|Baytroid EC|Ciflutrina EC|Cyfluthrin|Ciflutrina|Ciflutrin|Baytroid Bayer,,EC,11,pesquisa web — inseticida EC Bayer ciflutrina piretroide,2026-11-21,ciflutrina
-Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
+Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer|Previcur N 600 SL,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
 Goal BR 480 EC,Goal|Goal EC|Goal Rohm Haas|Oxifluorfem EC Goal,,EC,11,pesquisa web — herbicida EC oxifluorfem pre-emergente citros,2026-11-21,oxifluorfem
 Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe|Aldicarb 100 GR|Temik GR,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
 Pivot H,Pivot|Pivot SL|Imazethapyr|Imazetapir|Imazethapir|Pivot Basf,,SL,16,pesquisa web — herbicida SL BASF imazethapyr soja,2026-11-21,imazethapyr
@@ -780,3 +780,9 @@ Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophana
 Baytan 150 FS,Baytan|Baytan FS|Triadimenol FS|Triadimenol|Triadimenol Bayer,,FS,8,bayer,2026-11-21,triadimenol
 Dividend 250 FS,Dividend|Dividend FS|Difenoconazol FS Syngenta|Difenoconazol FS|Divi FS,,FS,8,syngenta,2026-11-21,difenoconazol
 Broadstrike 500 SC,Broadstrike|Flumetsulam SC|Flumetsulam|Broadstrike Corteva|Discovery SC,,SC,8,corteva,2026-11-21,flumetsulam
+Starane 200 EC,Starane|Starane EC|Fluroxipir EC|Fluroxypyr EC|Fluroxypyr|Fluroxipir|Pasture,,EC,11,corteva,2026-11-21,fluroxipir
+Garlon 480 BR EC,Garlon|Garlon EC|Triclopir EC|Triclopyr EC|Triclopyr|Triclopir,,EC,11,corteva,2026-11-21,triclopir
+Previcur Energy SL,Previcur Energy|Previcur Energy Bayer|Propamocarbe+Fosetil SL|Fosetil+Propamocarbe|Previcur Fosetil,,SL,16,bayer,2026-11-21,propamocarbe+fosetil-aluminio
+Applaud 25 SC,Applaud|Applaud SC|Buprofezin SC|Buprofezin|Buprofezina SC,,SC,8,nichino,2026-11-21,buprofezim
+Trebon 100 EC,Trebon|Trebon EC|Etofenprox EC|Etofenprox|Vectron EC,,EC,11,mitsui,2026-11-21,etofenprox
+Spike 80 WP,Spike|Spike WP|Tebuthiuron WP|Tebuthiuron|Herbicide Cana,,WP,5,corteva,2026-11-21,tebuthiuron
