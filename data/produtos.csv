@@ -115,7 +115,7 @@ Cobra,Cobra EC|Lactofen EC|Lactofen 240|Lactofen,,EC,11,cadastro manual — prod
 Flex,Flex SL|Fomesafen SL|Fomesafem|Fomesafen|Flexstar|Flexstar GT,,SL,16,cadastro manual — produto comercial comum,2026-10-09,fomesafen
 Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,bifentrina
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
-Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
+Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad|Success|Success 480 SC|Entrust SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,espinetoram
 Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno|Oberon 240 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
 Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC|Envidor 240 SC|Espirodiclofeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
@@ -496,7 +496,7 @@ Muralla Delta EC,Muralla Delta|Imidacloprido+Deltametrina EC Bayer,,EC,11,pesqui
 Bariachi EC,Bariachi|Bariachi Bayer|Bifentrina+Imidacloprido EC Bayer,,EC,11,pesquisa web — inseticidas soja/milho por empresa,2026-11-11,bifentrina+imidacloprido
 Proline 250 EC,Proline|Proline EC|Proline Bayer|Protioconazol Bayer,,EC,11,pesquisa web — fungicida EC Bayer protioconazol,2026-11-11,protioconazol
 Pulsar 40 SL,Pulsar|Pulsar SL|Pulsar BASF|Imazapique+Imazapir SL,,SL,16,pesquisa web — herbicida SL BASF imazapique+imazapir soja,2026-11-11,imazapique+imazapir
-Gaucho 600 FS,Gaucho|Gaucho Bayer|Gaucho FS|Imidacloprido FS Bayer|Gaucho 350 FS,,SC,8,pesquisa web — tratamento sementes inseticida Bayer imidacloprido,2026-11-11,imidacloprido
+Gaucho 600 FS,Gaucho|Gaucho Bayer|Gaucho FS|Imidacloprido FS Bayer|Gaucho 350 FS|Gaucho NT|Gaucho 600,,SC,8,pesquisa web — tratamento sementes inseticida Bayer imidacloprido,2026-11-11,imidacloprido
 Cruiser 350 FS,Cruiser|Cruiser Syngenta|Cruiser FS|Tiametoxam FS Syngenta,,SC,8,pesquisa web — tratamento sementes inseticida Syngenta tiametoxam,2026-11-11,tiametoxam
 Sumicidin 25 EC,Sumicidin|Sumicidin EC|Fenvalerato EC Sumitomo,,EC,11,pesquisa web — inseticida piretroide EC Sumitomo,2026-11-11,fenvalerato
 Atabron 500 SC,Atabron|Atabron SC|Clorfluazurom SC UPL,,SC,8,pesquisa web — inseticida regulador crescimento UPL lagartas,2026-11-11,clorfluazurom
@@ -548,7 +548,7 @@ Corovin 480 EC,Corovin|Corovin EC|Corovin Cheminova|Clorpirifos Cheminova EC,,EC
 Hafgan 720 EC,Hafgan|Hafgan EC|Hafgan Sipcam|Profenofos Sipcam EC,,EC,11,pesquisa web — inseticida organofosforado EC profenofos Sipcam,2026-11-11,profenofos
 Arena 50 WG,Arena|Arena WG|Arena Bayer|Clotianidina 50 WG Bayer,,WG,6,pesquisa web — inseticida neonicotinoide WG clotianidina Bayer,2026-11-11,clotianidina
 Plenno SC,Plenno|Plenno Bayer|Spirotetramate+Imidacloprido SC Bayer,,SC,8,pesquisa web — inseticida SC Bayer spirotetramate+imidacloprido,2026-11-11,spirotetramate+imidacloprido
-CruiserMaxx Soja SC,CruiserMaxx|CruiserMaxx Soja|CruiserMaxx Syngenta|Tiametoxam+Fludioxonil+Metalaxil-M TS,,SC,8,pesquisa web — tratamento sementes Syngenta trio,2026-11-11,tiametoxam+fludioxonil+metalaxil-M
+CruiserMaxx Soja SC,CruiserMaxx|CruiserMaxx Soja|CruiserMaxx Syngenta|Tiametoxam+Fludioxonil+Metalaxil SC|Cruiser Maxx|CruiserMaxx Trigo|Cruiser Maxx Soja,,SC,8,pesquisa web — tratamento sementes Syngenta trio,2026-11-11,tiametoxam+fludioxonil+metalaxil-M
 Cruiser Opti SC,Cruiser Opti|Cruiser Opti Syngenta|Tiametoxam+Fludioxonil TS,,SC,8,pesquisa web — tratamento sementes Syngenta tiametoxam+fludioxonil,2026-11-11,tiametoxam+fludioxonil
 Chess Mix SC,Chess Mix|Chess Mix Syngenta|Pimetrozina+Imidacloprido SC,,SC,8,pesquisa web — inseticida SC aficida+sistemico pimetrozina+imidacloprido,2026-11-11,pimetrozina+imidacloprido
 Starkle WG,Starkle|Starkle WG|Starkle Mitsui|Dinotefuran WG|Oshin|Oshin Mitsui|Dinotefuran,,WG,6,pesquisa web — inseticida neonicotinoide WG dinotefuran Mitsui,2026-11-11,dinotefuran
@@ -819,3 +819,5 @@ Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro 
 Cycocel SC,Cycocel|Chlormequat|Cloreto de Clormequat|CCC|Stabilan|Chlormequat chloride|Klormekwat,,SC,8,Nortox/BASF,2026-11-21,clormequat
 Propulse SE,Propulse|Fluopyram+Proticonazol|Fluopyram+Prothioconazol|Prothioconazol+Fluopyram SE|Propulse BASF,,SE,8,BASF,2026-11-21,fluopyram+prothioconazol
 Metaldehido 5 GB,Metaldehido|Metaldehyde|Metaldehyde GB|Slug bait|Mata lesma|Limax|Namekil|Mesurol|Slug pellets,,GR,3,Nortox/Bayer,2026-11-21,metaldehido
+Consento SC,Consento|Fenamidone+Propamocarb|Consento Bayer|Fenamidona+Propamocarb SC|Fenamidone Propamocarb,,SC,8,Bayer,2026-11-21,fenamidona+propamocarb
+Legacy SC,Legacy|Diflufenican|Diflufenican SC|Legacy Nufarm|Legacy herbicida,,SC,8,Nufarm,2026-11-21,diflufenican
