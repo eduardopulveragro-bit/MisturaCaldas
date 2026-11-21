@@ -128,7 +128,7 @@ Benevia,Benevia OD|Benevia FMC|Ciantraniliprole OD,,OD,9,cadastro manual — pro
 Polytrin,Polytrin EC|Profenofos Cipermetrina|Profenofos,,EC,11,cadastro manual — produto comercial comum,2026-10-09,profenofos+cipermetrina
 Tiger,Tiger EC|Tiger 100|Piriproxifem EC|Cordial,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piriproxifem
 Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL|Dicamba+Glifosato|Roundup Extend|Fuse,,SL,16,cadastro manual — generico comum,2026-10-09,dicamba
-Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol,,SC,8,cadastro manual — generico comum,2026-10-09,carbendazim
+Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol|Bavistin|Bavistin 500 SC|Derosal SC,,SC,8,cadastro manual — generico comum,2026-10-09,carbendazim
 Avatar,Avatar WG|Avatar 300|Indoxacarbe WG|Avatar 150 EC|Integon|Integon WG|Integon Plus,,WG,6,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,,CS,7,cadastro manual — inseticida CS comum,2026-10-09,alfa-cipermetrina
 Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2026-10-09,clorantraniliprole
@@ -283,7 +283,7 @@ Podium 125 EW,Podium|Podium EW|Fenoxaprop EW|Fenoxaprop-p Bayer,,EW,14,graminici
 Vydate 240 L,Vydate|Vydate SL|Oxamil SL|Oxamyl SL,,SL,16,nematicida/inseticida SL — oxamil — IA busca web confirmou SL,2026-10-26,oxamil
 Nimitz 480 SL,Nimitz|Nimitz SL|Fluensulfone SL,,SL,16,nematicida SL FMC — fluensulfone — nome contém SL portanto pos 16,2026-10-26,fluensulfone
 Pyrinex 480 EC,Pyrinex|Pyrinex EC|Clorpirifos EC|Clorpirifos Dow,,EC,11,inseticida EC Corteva — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
-Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC|Dimetoato|Dimethoate,,EC,11,inseticida EC BASF — dimetoato — IA busca web confirmou EC,2026-10-26,dimetoato
+Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC|Dimetoato|Dimethoate|Dimex|Dimex 400,,EC,11,inseticida EC BASF — dimetoato — IA busca web confirmou EC,2026-10-26,dimetoato
 Clinic 480 SL,Clinic|Clinic SL|Glifosato Clinic|Glifosato Zeneca,,SL,16,herbicida SL — glifosato — IA busca web confirmou SL,2026-10-26,glifosato
 Plateau,Plateau WG|Plateau BASF|Imazapique WG,,WG,6,herbicida WG BASF — imazapique — IA busca web confirmou WG,2026-10-26,imazapique
 Flexidor,Flexidor SL|Flexidor Bayer|Isoxaflutol SL,,SL,16,herbicida SL Bayer — isoxaflutol — IA busca web retornou SL (pendente confirmacao bula),pendente (2026-10-26),isoxaflutol
@@ -609,7 +609,7 @@ Signum WG,Signum|Signum BASF|Boscalida+Piraclostrobina 26 WG horticultura,,WG,6,
 Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
 Cantus WG,Cantus|Cantus BASF|Boscalida solo WG|Boscalid WG,,WG,6,cadastro manual — fungicida WG BASF boscalida puro botritis/mofo cinzento,2026-11-21,boscalida
 Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fungicida WG Bayer iprodiona puro,2026-11-21,iprodiona
-Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Thiabendazol|Tiabendazol,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
+Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Thiabendazol|Tiabendazol|Tecto|Tecto 450 SC,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
 Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cadastro manual — acaricida/fungicida WG meptildinocap oídio,2026-11-21,meptildinocap
 Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
 Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
@@ -760,3 +760,6 @@ Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,b
 Wuxal SC,Wuxal|Wuxal Aminoplant|Wuxal Boron|Aminoplant|Wuxal Combi,,FERTILIZANTE,18,adama,2026-11-21,aminoacidos+micronutrientes
 Fertimax SC,Fertimax|Fertimax Foliar|Fertimax Combi SC|Fertimax Plus,,FERTILIZANTE,18,fertimax,2026-11-21,nitrogenio+fosforo+potassio+micronutrientes
 Fertikit SL,Fertikit|Fertikit Foliar|Fertikit Nortox SL,,FERTILIZANTE,18,nortox,2026-11-21,complexo nutricional foliar
+Antracol 700 WP,Antracol|Antracol WP|Propineb WP|Propineb 700|Propineb Bayer,,WP,5,bayer,2026-11-21,propineb
+Zineb 750 WP,Zineb|Zineb WP|Zineb Nortox|Zineb 750,,WP,5,nortox,2026-11-21,zineb
+Maneb 800 WP,Maneb|Maneb WP|Maneb 800|Maneb Nortox|Trimanoc WP,,WP,5,nortox,2026-11-21,maneb
