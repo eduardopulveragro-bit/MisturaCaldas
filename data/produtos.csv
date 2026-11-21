@@ -8,7 +8,7 @@ Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Mets
 Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
 Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
-Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
+Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante|Nonionic|Non-ionic surfactant|Surfactante nao ionico,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10,carbendazim+tiram
 Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
 Galil SC,Galil|Galil Syngenta,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+benzovindiflupir
@@ -433,7 +433,7 @@ Spiromesifen SC,Spiromesifen|Oberon generico|Spiromesifen Bayer,,SC,8,pesquisa w
 Spirodiclofeno SC,Spirodiclofeno|Envidor generico|Spirodiclofen,,SC,8,pesquisa web — acaricida SC spirodiclofeno,2026-11-11,spirodiclofeno
 Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,pesquisa web — acaricida EC propargito,2026-11-11,propargito
 Fenpirozamina SC,Fenpirozamina|Plenum generico|Fenpirozamina SC,,SC,8,pesquisa web — inseticida SC fenpirozamina,2026-11-11,fenpirozamina
-Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado|Extravon Plus|Hoemax,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
+Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado|Extravon Plus|Hoemax|Citowett|Tween 20|Tween 80|Nonilfenol,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
 In-Place,In Place|Adjuvante siliconado In-Place,,ADJUVANTE,2,pesquisa web — adjuvante siliconado ultra espalhante,2026-11-11,surfactante siliconado
 Bond,Bond EC|Bond Nufarm|Bond adjuvante|Bond Xtra|Bond Plus|Bond adjuvante SL,,ADJUVANTE,2,pesquisa web — adjuvante Nufarm,2026-11-11,
 LI-700 Plus,LI700 Plus|LI 700 Plus|Adjuvante acido+silicone,,ADJUVANTE,2,pesquisa web — adjuvante LI 700 acidificante,2026-11-11,
@@ -665,7 +665,7 @@ YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Mangan
 YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar ferro SC Yara,2026-11-16,ferro
 ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG|Gibberellin|Gibberellic acid|Gibb SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
 Ryzup SG,Ryzup|Ryzup SG Certis|Giberelina Certis SG|Ryz Up SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico Certis,2026-11-16,acido giberelinico
-Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato Alga Marinha SL|Stimplex bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Acadian,2026-11-16,extrato de alga marinha
+Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato alga marinha SL|Stimplex bioestimulante|Extrato de algas|Algas marinhas SL|Algas|Algamare,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Acadian,2026-11-16,extrato de alga marinha
 Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,,OLEO,12,cadastro manual — oleo mineral adjuvante Iharabras,2026-11-16,oleo mineral
 Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO,12,cadastro manual — oleo mineral SC Dow/Corteva,2026-11-16,oleo mineral
 Adver 240 SC,Adver SC|Adver 240|Clorfenapir Tecnomyl|Clorfenapir,01522,SC,8,pesquisa web — reg MAPA 01522 Tecnomyl clorfenapir 240g/L SC inseticida/acaricida,2026-11-19,clorfenapir
@@ -692,7 +692,7 @@ Optineem 30 EC,Optineem|Optineem EC|Neem Oil 30 EC|Ago-Neem EC,,EC,11,cadastro m
 Neem Priori SC,Neem Priori|Neem gold SC|Oleo Neem SC,,SC,8,cadastro manual — adjuvante/inseticida SC oleo de neem com 1% azadiractina,2026-11-21,oleo de neem
 Ferax SC,Ferax|Ferax SC|Ferax Ouro Fino|Trifloxistrobina+Tebuconazol SC Ouro Fino,,SC,8,cadastro manual — fungicida SC Ouro Fino soja/milho trifloxistrobina+tebuconazol,2026-11-21,trifloxistrobina+tebuconazol
 Primo Maxx SC,Primo Maxx|Primo Maxx Syngenta|Trinexapac-etil SC|Trinexapak,,SC,8,cadastro manual — regulador crescimento SC trinexapac-etil Syngenta trigo/arroz,2026-11-21,trinexapac-etil
-Medax Top WG,Medax Top|Medax WG BASF|Mepiquat+Prohexadiona BASF WG,,WG,6,cadastro manual — regulador crescimento WG BASF mepiquat+prohexadiona trigo,2026-11-21,mepiquat+prohexadiona
+Medax Top WG,Medax Top|Medax WG BASF|Mepiquat+Prohexadiona BASF WG|Pix|Pix HC|Mepiquat Cloreto|Mepiquat|Mepiquat+Prohexadiona,,WG,6,cadastro manual — regulador crescimento WG BASF mepiquat+prohexadiona trigo,2026-11-21,mepiquat+prohexadiona
 Harvade SC,Harvade|Harvade SC|Dimethipin SC|Desfolhante SC algodao,,SC,8,cadastro manual — desfolhante SC dimetipim algodao colheita,2026-11-21,dimetipim
 Dropp Ultra SC,Dropp Ultra|Dropp SC|Tidiazurom+Diuron SC algodao,,SC,8,cadastro manual — desfolhante SC tidiazurom+diuron algodao,2026-11-21,tidiazurom+diuron
 Revystar XL,Revystar|Revystar BASF|Mefentrifluconazol+Fluxapiroxade|Mefentrifluconazol,,EC,11,pesquisa web — fungicida BASF EC mefentrifluconazol+fluxapiroxade,2026-11-21,mefentrifluconazol+fluxapiroxade
@@ -816,3 +816,4 @@ Acanto SC,Acanto Syngenta|Picoxistrobina SC solo|Acanto 250 SC|Picoxistrobina 25
 Merivon SC,Merivon|Fluxapyroxade+Piraclostrobina|Fluxapyroxad SC|Fluxapyroxade|Merivon BASF,,SC,8,BASF,2026-11-21,fluxapyroxade+piraclostrobina
 Harvanta SC,Harvanta|Cyclaniliprole|Ciclaniliprole SC|Harvanta Corteva,,SC,8,Corteva,2026-11-21,cyclaniliprole
 Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro SC,,SC,8,BASF,2026-11-21,ametoctradin
+Cycocel SC,Cycocel|Chlormequat|Cloreto de Clormequat|CCC|Stabilan|Chlormequat chloride|Klormekwat,,SC,8,Nortox/BASF,2026-11-21,clormequat
