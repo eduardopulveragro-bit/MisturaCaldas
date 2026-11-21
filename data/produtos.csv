@@ -63,7 +63,7 @@ Feroce,Feroce WG|Acefato+Bifentrina,,WG,6,inseticida WG UPL — bula confirmada,
 Primatop,Primatop SC|Atrazina+Simazina,,SC,8,herbicida SC Syngenta — bula confirmada,2026-11-21,
 Adengo,Adengo SC|Isoxaflutol+Tiencarbazona,,SC,8,herbicida SC Bayer — bula confirmada,2026-11-21,
 Elevore,Elevore SC|Halauxifeno,,SC,8,herbicida SC Corteva — bula confirmada,2026-11-21,
-Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda,,SC,8,inseticida Syngenta reg 0610 — bula confirmada,2026-11-21,
+Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda|Coragen|Coragen 200 SC|Prevathon|Rynaxypyr+Lambda,,SC,8,inseticida Syngenta reg 0610 — bula confirmada,2026-11-21,
 Kellus Zinc,Kellus Zn|Kellus Zinco,,FERTILIZANTE,18,fertilizante foliar zinco quelatado,2026-10-09,
 Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG|Roundup Transorb,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Xeque Mate SG,Glifumax|Glifosato SG,,SG,3,herbicida SG — pesquisa MAPA,pendente (2026-10-09),glifosato
@@ -129,12 +129,12 @@ Polytrin,Polytrin EC|Profenofos Cipermetrina|Profenofos,,EC,11,cadastro manual �
 Tiger,Tiger EC|Tiger 100|Piriproxifem EC|Cordial,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piriproxifem
 Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL|Dicamba+Glifosato|Roundup Extend|Fuse,,SL,16,cadastro manual — generico comum,2026-10-09,dicamba
 Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol,,SC,8,cadastro manual — generico comum,2026-10-09,carbendazim
-Avatar,Avatar WG|Avatar 300|Indoxacarbe WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
+Avatar,Avatar WG|Avatar 300|Indoxacarbe WG|Avatar 150 EC|Integon|Integon WG|Integon Plus,,WG,6,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,,CS,7,cadastro manual — inseticida CS comum,2026-10-09,alfa-cipermetrina
 Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2026-10-09,clorantraniliprole
 Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
-Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
+Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
@@ -190,7 +190,7 @@ Lufenuron,Lufenurom|Lufenurom EC|Match generico,,EC,11,pendente confirmação �
 Óleo Vegetal,Oleo Vegetal|Óleo vegetal|oleo vegetal,,OLEO,12,adjuvante óleo vegetal genérico,2026-10-13,oleo vegetal
 Concorde,,,FERTILIZANTE,18,confirmado pelo usuário — fertilizante foliar,2026-10-13,
 Tônus,Tonus|Tônus,,FERTILIZANTE,18,confirmado pelo usuário — fertilizante foliar,2026-10-13,
-Voliam Targa,Voliam|Volian Targa,,SC,8,inseticida SC Syngenta — clorantraniliprole+abamectina — um dos mais vendidos,2026-10-13,clorantraniliprole+abamectina
+Voliam Targa,Voliam|Volian Targa|Voliam Express|Voliam Flexi|Volia Targa,,SC,8,inseticida SC Syngenta — clorantraniliprole+abamectina — um dos mais vendidos,2026-10-13,clorantraniliprole+abamectina
 Proclaim,Denim|Emamectina|Emamectin|Proclaim 5 SG,,SG,3,inseticida SG Syngenta — emamectina benzoato — lagartas,2026-10-13,emamectina benzoato
 Hero,Hero EC|Hero FMC,,EC,11,inseticida EC FMC — premix piretroide muito popular,2026-10-13,bifentrina+zetacipermetrina
 Vayego,Vayego SC|Vayego Bayer|Tetraniliprole,,SC,8,inseticida SC Bayer — diamida nova geração,2026-10-13,tetraniliprole
@@ -235,14 +235,14 @@ Boro Max,Boro max|Boro Max Foliar|Boro Máx|Boromax,,FERTILIZANTE,18,fertilizant
 Compat,Compat Nortox|Compat Adama|Compat Buffer,,ADJUVANTE,2,condicionador/buffer de calda — cadastro manual,2026-10-26,
 Arkeiro Nortox,Arkeiro|Arkeiro Nortox CI,6723,WG,6,herbicida WG Nortox — bula MAPA reg 6723 pré-semeadura soja,2026-10-26,clorimurom-etilico+flumioxazina+imazetapir
 Miravis Top,Miravis Top SC|Miravis|Pidiflumetofen|Pydiflumetofen,14922,SC,8,fungicida SC Syngenta — bula MAPA reg 14922 pidiflumetofen+difenoconazol,2026-10-26,pidiflumetofen+difenoconazol
-Pristine WG,Pristine|Pristine BASF|Pristine Xpro,,WG,6,fungicida WG BASF — boscalida+piraclostrobina — pendente confirmação reg MAPA BR,pendente (2026-10-26),boscalida+piraclostrobina
+Pristine WG,Pristine|Pristine BASF|Pristine Xpro|Signum|Signum WG|Boscalid+Piraclostrobina|Boscalid,,WG,6,fungicida WG BASF — boscalida+piraclostrobina — pendente confirmação reg MAPA BR,pendente (2026-10-26),boscalida+piraclostrobina
 Flint 500 WG,Flint|Flint WG|Flint Bayer,11301,WG,6,fungicida WG Bayer — bula MAPA reg 11301 trifloxistrobina,2026-10-26,trifloxistrobina
 Sercadis,Sercadis SC|Sercadis BASF,35121,SC,8,fungicida SC BASF — fluxapiroxade — reg Agrolink 35121 pendente Agrofit,pendente (2026-10-26),fluxapiroxade
 Quilt Xcel,Quilt|Quilt Xcel SE,,SE,10,fungicida SE Syngenta — azoxistrobina+propiconazol — pendente confirmação reg MAPA BR,pendente (2026-10-26),azoxistrobina+propiconazol
 Galigan 240 EC,Galigan|Galigan EC|Oxifluorfem EC Adama,8598,EC,11,herbicida EC Adama — bula MAPA reg 8598 oxifluorfem,2026-10-26,oxifluorfem
 Stratego 250 EC,Stratego|Stratego EC|Stratego YLD|Stratego Bayer,302,EC,11,fungicida EC Bayer — bula MAPA reg 302 trifloxistrobina+propiconazol,2026-10-26,trifloxistrobina+propiconazol
 Domark 100 EC,Domark|Domark EC|Tetraconazol EC,6099,EC,11,fungicida EC Gowan — bula MAPA reg 6099 tetraconazol,2026-10-26,tetraconazol
-Luna Experience,Luna Experience SC|Luna Bayer|Luna Experience Bayer|Fluopyram+Tebuconazol SC,,SC,8,fungicida SC Bayer — fluopyram+tebuconazol — consulta IA busca web pendente,pendente (2026-10-26),fluopyram+tebuconazol
+Luna Experience,Luna Experience SC|Luna Bayer|Luna Experience Bayer|Fluopyram+Tebuconazol SC|Luna Privilege|Luna Tranquility|Luna Sensation,,SC,8,fungicida SC Bayer — fluopyram+tebuconazol — consulta IA busca web pendente,pendente (2026-10-26),fluopyram+tebuconazol
 Duett Ultra,Duett|Duett Ultra BASF,,SC,8,fungicida SC BASF — epoxiconazol+tiofanato-metilico — consulta IA busca web pendente,pendente (2026-10-26),epoxiconazol+tiofanato-metilico
 Aprovia Top,Aprovia|Aprovia Top Syngenta|Benzovindiflupir,,EC,11,fungicida EC Syngenta — benzovindiflupir+difenoconazol — consulta IA busca web pendente,pendente (2026-10-26),benzovindiflupir+difenoconazol
 Indar 75 EW,Indar|Indar EW|Fenbuconazol EW,,EW,14,fungicida EW Bayer — fenbuconazol — consulta IA busca web pendente,pendente (2026-10-26),fenbuconazol
