@@ -5,7 +5,7 @@ Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabr
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
-Priori Xtra,Priori|Priori Top,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
+Priori Xtra,Priori|Priori Top|Priori Extra,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
 Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Oleo|Óleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
@@ -65,7 +65,7 @@ Adengo,Adengo SC|Isoxaflutol+Tiencarbazona,,SC,8,herbicida SC Bayer — bula con
 Elevore,Elevore SC|Halauxifeno,,SC,8,herbicida SC Corteva — bula confirmada,2026-11-21,
 Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda,,SC,8,inseticida Syngenta reg 0610 — bula confirmada,2026-11-21,
 Kellus Zinc,Kellus Zn|Kellus Zinco,,FERTILIZANTE,18,fertilizante foliar zinco quelatado,2026-10-09,
-Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glifosato
+Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG|Roundup Transorb,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Xeque Mate SG,Glifumax|Glifosato SG,,SG,3,herbicida SG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Atrazina WG,Gesaprim|Gesaprim GrDa|Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueo WG|Atrast 900 WG|Atrazina 900 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,,EC,11,graminicida EC — pesquisa MAPA,pendente (2026-10-09),haloxifop
@@ -151,7 +151,7 @@ Sivanto,Sivanto Prime|Sivanto SL|Flupyradifurone,,SL,16,cadastro manual — inse
 Hexazinona,Hexazinona Nortox|Hexazinona SL,,SL,16,cadastro manual — herbicida SL cana,2026-10-09,hexazinona
 Naja,Naja EC|Lactofen Nortox,,EC,11,cadastro manual — herbicida EC generico,2026-10-09,lactofen
 Metconazol,Caramba|Caramba SC|Metconazol SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,metconazol
-Clorotalonil,Previnil|Bravonil|Daconil|Absoluto|Clorotalonil SC,,SC,8,cadastro manual — fungicida multissitio ferrugem soja,2026-10-09,clorotalonil
+Clorotalonil,Previnil|Bravonil|Daconil|Absoluto|Clorotalonil SC|Bravo|Echo|Bravonil 720,,SC,8,cadastro manual — fungicida multissitio ferrugem soja,2026-10-09,clorotalonil
 Prosaro,Prosaro EC|Prosaro Bayer,,EC,11,cadastro manual — fungicida EC trigo giberela Bayer,2026-10-09,protioconazol+tebuconazol
 Blavity,Blavity SC|Blavity BASF,,SC,8,cadastro manual — fungicida SC ferrugem BASF,2026-10-09,fluxapiroxade+protioconazol
 Artea,Artea EC|Artea Syngenta,,EC,11,cadastro manual — fungicida EC Syngenta,2026-10-09,ciproconazol+propiconazol
@@ -406,7 +406,7 @@ Millennium SC,Millennium|Millennium SC|Hexazinona SC cana,,SC,8,pesquisa web —
 Folicur 200 EW,Folicur EW|Folicur 200 EW Bayer|Tebuconazol EW,,EW,14,pesquisa web — fungicida EW tebuconazol Bayer,2026-11-11,tebuconazol
 Caramba 90 SC,Caramba SC|Metconazol 90 SC|Metconazol Bayer,,SC,8,pesquisa web — fungicida SC metconazol Bayer trigo,2026-11-11,metconazol
 Opal 500 WG,Opal|Opal WG|Enxofre 800 WG|Enxofre Micronizado,,WG,6,pesquisa web — fungicida enxofre WG,2026-11-11,enxofre
-Captano 480 SC,Captano|Captano SC|Captan SC,,SC,8,pesquisa web — fungicida SC captano multissitio,2026-11-11,captano
+Captano 480 SC,Captano|Captano SC|Captan SC|Captan,,SC,8,pesquisa web — fungicida SC captano multissitio,2026-11-11,captano
 Folpan 500 WP,Folpan|Folpan WP|Folpete WP,,WP,5,pesquisa web — fungicida WP folpete,2026-11-11,folpete
 Dithiocarb 800 WG,Dithiocarb|Tiram+Carboxina WG|Carboxin WG,,WG,6,pesquisa web — fungicida tratamento sementes WG,2026-11-11,tiram+carboxina
 Maxim XL FS,Maxim XL|Maxim FS|Fludioxonil+Metalaxil-M FS,,SC,8,pesquisa web — fungicida tratamento semente Syngenta,2026-11-11,fludioxonil+metalaxil-M
@@ -696,3 +696,7 @@ Medax Top WG,Medax Top|Medax WG BASF|Mepiquat+Prohexadiona BASF WG,,WG,6,cadastr
 Harvade SC,Harvade|Harvade SC|Dimethipin SC|Desfolhante SC algodao,,SC,8,cadastro manual — desfolhante SC dimetipim algodao colheita,2026-11-21,dimetipim
 Dropp Ultra SC,Dropp Ultra|Dropp SC|Tidiazurom+Diuron SC algodao,,SC,8,cadastro manual — desfolhante SC tidiazurom+diuron algodao,2026-11-21,tidiazurom+diuron
 Revystar XL,Revystar|Revystar BASF|Mefentrifluconazol+Fluxapiroxade|Mefentrifluconazol,,EC,11,pesquisa web — fungicida BASF EC mefentrifluconazol+fluxapiroxade,2026-11-21,mefentrifluconazol+fluxapiroxade
+Tronador Plus,Tronador|Tronador BASF|Glifosato+Metsulfurom|Roundup Tronador,,WG,6,pesquisa web — herbicida BASF WG glifosato+metsulfurom-metilico,2026-11-21,glifosato+metsulfurom-metilico
+Dicarzol 500 SP,Dicarzol|Dicarzol SP|Formetanato|Formetanato cloridrato,,SP,4,pesquisa web — acaricida/inseticida SP formetanato cloridrato,2026-11-21,formetanato cloridrato
+Confirm 240 SC,Confirm|Tebufenozide|Confirm SC|Confirm Rohm Haas,,SC,8,pesquisa web — inseticida SC tebufenozide lagartas,2026-11-21,tebufenozide
+Trigard 750 WP,Trigard|Trigard WP|Cyromazine|Cirozamine|Trigard Syngenta,,WP,5,pesquisa web — inseticida WP cyromazine minador,2026-11-21,cyromazine
