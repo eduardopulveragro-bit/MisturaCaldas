@@ -505,7 +505,7 @@ Sumilarv 0.5 WP,Sumilarv|Sumilarv WP|Piriproxifeno WP Sumitomo,,WP,5,pesquisa we
 Diazonon 600 EC,Diazonon|Diazonon EC|Diazinon EC Adama,,EC,11,pesquisa web — inseticida organofosforado EC diazinon,2026-11-11,diazinon
 Supracide 400 EC,Supracide|Supracide EC|IHARA Supracide|Metidation EC,,EC,11,pesquisa web — inseticida organofosforado EC IHARA pragas sugadores,2026-11-11,metidation
 Pounce 384 EC,Pounce|Pounce EC|Pounce Corteva|Permetrina 384 EC Corteva,,EC,11,pesquisa web — inseticida piretroide EC Corteva permetrina,2026-11-11,permetrina
-Rufast 100 EC,Rufast|Rufast BASF|Alfacipermetrina 100 EC BASF|Alfa-cipermetrina EC,,EC,11,pesquisa web — inseticida piretroide EC BASF alfa-cipermetrina,2026-11-11,alfa-cipermetrina
+Rufast 100 EC,Rufast|Rufast BASF|Alfacipermetrina 100 EC BASF|Alfa-cipermetrina EC|alpha-cypermethrin|alpha-cypermethrin EC,,EC,11,pesquisa web — inseticida piretroide EC BASF alfa-cipermetrina,2026-11-11,alfa-cipermetrina
 Lannate 25 WP,Lannate WP|Lannate 25|Metomil 25 WP|Metomil WP Corteva,,WP,5,pesquisa web — inseticida WP metomil formulacao po molhavel,2026-11-11,metomil
 Talstar S SC,Talstar S|Talstar S SC|Bifentrina+Espinosade SC FMC,,SC,8,pesquisa web — inseticida SC FMC bifentrina+espinosade lagartas,2026-11-11,bifentrina+espinosade
 Nortox 500 EC,Nortox 500|Nortox Deltametrina Triazofos|Deltametrina+Triazofos EC Nortox,,EC,11,pesquisa web — inseticida EC Nortox piretroide+organofosforado,2026-11-11,deltametrina+triazofos
@@ -883,3 +883,6 @@ Jiken SC,Jiken|Jiken SC Syngenta|ciprodinil+fludioxonil SC,,SC,8,Syngenta,2026-1
 Agil 100 EC,Agil|Agil EC|propaquizafope|propaquizafop|Propaquizafop EC|Agil Corteva,,EC,11,Corteva,2026-11-21,propaquizafope
 Kerb 500 SC,Kerb|Kerb SC|propizamida|propyzamide|Propyzamide SC,,SC,8,Corteva,2026-11-21,propizamida
 Previcur Flex SL,Previcur Flex|Previcur Flex Bayer|propamocarbe+fludioxonil|propamocarb fludioxonil,,SL,16,Bayer,2026-11-21,propamocarbe+fludioxonil
+Sumi 8 WP,Sumi 8|Sumi-8|Sumi8|diniconazol|Diniconazol WP|Sumitomo fungicida,,WP,5,Sumitomo,2026-11-21,diniconazol
+Acrinatrina SC,Acrinatrina|acrinathrin|Rufast Acaricida|Certero Mite,,SC,8,generic,2026-11-21,acrinatrina
+Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 125,,SC,8,Bayer,2026-11-21,beta-cipermetrina
