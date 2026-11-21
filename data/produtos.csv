@@ -231,7 +231,7 @@ Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante óleo minera
 Act Oil,Act Oil Giroagro|ActOil|Act Oleo Giroagro,,OLEO,12,cadastro manual — óleo adjuvante Giroagro,2026-11-16,oleo mineral/vegetal
 Sapek Max,Sapek|Sapek Mais|Sapek Max SG|Mirny|Agrios|Babel|Kavez,34221,SG,3,herbicida SG — glufosinato de amônio,pendente (2026-10-16),glufosinato de amônio
 Kennox,Kennox 240 EC|Kennox CI,24518,EC,11,graminicida EC UPL — bula confirmada MAPA 24518,2026-10-22,cletodim + haloxifope-P-metilico
-Boro Max,Boro max|Boro Max Foliar|Boro Máx|Boromax,,FERTILIZANTE,18,fertilizante foliar boro — cadastro manual,2026-10-26,boro
+Boro Max,Boro max|Boro Max Foliar|Boro Max|Boromax|Masterbor|Borosol,,FERTILIZANTE,18,fertilizante foliar boro — cadastro manual,2026-10-26,boro
 Compat,Compat Nortox|Compat Adama|Compat Buffer,,ADJUVANTE,2,condicionador/buffer de calda — cadastro manual,2026-10-26,
 Arkeiro Nortox,Arkeiro|Arkeiro Nortox CI,6723,WG,6,herbicida WG Nortox — bula MAPA reg 6723 pré-semeadura soja,2026-10-26,clorimurom-etilico+flumioxazina+imazetapir
 Miravis Top,Miravis Top SC|Miravis|Pidiflumetofen|Pydiflumetofen,14922,SC,8,fungicida SC Syngenta — bula MAPA reg 14922 pidiflumetofen+difenoconazol,2026-10-26,pidiflumetofen+difenoconazol
@@ -268,7 +268,7 @@ Rovral SC,Rovral|Rovral SC Bayer|Iprodiona Bayer|Iprodiona|Rovral|Rovral WP|Ipro
 Iprodiona,Iprodion|Iprodiona SC|Iprodione,,SC,8,fungicida SC generico — iprodiona — consulta IA busca web pendente,pendente (2026-10-26),iprodiona
 Velum Prime,Fluopiram|Fluopiram SC|Velum|Velum 400 SC|Velum Bayer|Velum Prime SC,,SC,8,nematicida/fungicida SC Bayer — fluopyram — consulta IA busca web pendente,2026-11-21,fluopiram
 Verango Prime,Verango|Verango Prime SC,32319,SC,8,nematicida SC Bayer — bula MAPA reg 32319 fluopyram,2026-10-26,fluopyram
-Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller,,SL,16,bioestimulante SL Stoller — ácido indol butírico+ácido giberélico+cinetina — IA busca web confirmou SL,2026-10-26,ácido indol butírico+ácido giberélico+cinetina
+Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller|Bioativo Stoller|Bioativo,,SL,16,bioestimulante SL Stoller — ácido indol butírico+ácido giberélico+cinetina — IA busca web confirmou SL,2026-10-26,ácido indol butírico+ácido giberélico+cinetina
 Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar potássio Uby — IA busca web confirmou FERTILIZANTE,2026-10-26,potássio foliar
 Bioamin,Bioamin SC|Bioamin fertilizante|Aminoácido foliar,,FERTILIZANTE,18,fertilizante foliar/bioestimulante aminoácido — IA busca web confirmou FERTILIZANTE,2026-10-26,aminoácidos
 Dithane NT,Dithane|Dithane WP|Mancozebe WP|Mancozebe Dow,,WP,5,fungicida WP Corteva — mancozebe — IA busca web confirmou WP,2026-10-26,mancozebe
@@ -659,7 +659,7 @@ Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zi
 Fosfito de Calcio SL,Fosfito Calcio|Fosfito Ca SL|Calcium Phosphite foliar|Ca Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de calcio SL,2026-11-16,fosfito+calcio
 MAP Foliar SL,MAP SL|MAP foliar|Fosfato Monoamonico SL|Mono Ammonium Phosphate foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar MAP monofosfato amonico SL,2026-11-16,fosfato monoamonico
 KTS SL,KTS|Tiosulfato Potassio SL|K Tiosulfato|Potassium Thiosulfate SL|KTS foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar tiosulfato de potassio SL,2026-11-16,tiosulfato de potassio
-YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar boro SC Yara,2026-11-16,boro
+YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Liquido|Bortrac|Borotrac,,FERTILIZANTE,18,cadastro manual — fertilizante foliar boro SC Yara,2026-11-16,boro
 YaraVita Zintrac SC,YaraVita Zintrac|Zintrac SC|Zinco Yara SC|YaraVita Zinco Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar zinco SC Yara,2026-11-16,zinco
 YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Manganes Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar manganes SC Yara,2026-11-16,manganes
 YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar ferro SC Yara,2026-11-16,ferro
@@ -757,3 +757,6 @@ Raxil 60 FS,Raxil|Raxil FS|Raxil 60|Tebuconazol FS Bayer|Baytan FS,,FS,8,bayer,2
 Sonata SC,Sonata|Bacillus pumilus SC|Bacillus pumilus|Sonata Bayer,,BIO_BACTERIANO,20,bayer,2026-11-21,Bacillus pumilus
 Vertigo SC,Vertigo|Vertigo BASF|Beauveria bassiana BASF|BotaniGard,,BIO_FUNGICO,21,basf,2026-11-21,Beauveria bassiana
 Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,bionext,2026-11-21,Trichoderma harzianum
+Wuxal SC,Wuxal|Wuxal Aminoplant|Wuxal Boron|Aminoplant|Wuxal Combi,,FERTILIZANTE,18,adama,2026-11-21,aminoacidos+micronutrientes
+Fertimax SC,Fertimax|Fertimax Foliar|Fertimax Combi SC|Fertimax Plus,,FERTILIZANTE,18,fertimax,2026-11-21,nitrogenio+fosforo+potassio+micronutrientes
+Fertikit SL,Fertikit|Fertikit Foliar|Fertikit Nortox SL,,FERTILIZANTE,18,nortox,2026-11-21,complexo nutricional foliar
