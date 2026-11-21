@@ -1,5 +1,5 @@
 nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,principio_ativo
-Roundup Original DI,Roundup|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
+Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
@@ -7,7 +7,7 @@ Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Top,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
-Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
+Nimbus,Nimbus Óleo Mineral|Óleo mineral|Óleo Mineral|Oleo|Óleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Oleo mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10
 Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10,carbendazim+tiram
 Karate Zeon,Karate|Lambda-cialotrina|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
@@ -106,7 +106,7 @@ Tordon,Tordon SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,"
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
-Actara,Actara WG|Actara 250|Tiametoxam WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
+Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
 Boral,Boral SC|Boral 500|Sulfentrazona SC|Sulfentrazone|Sulfentrazona|Sulfentrazon,,SC,8,cadastro manual — produto comercial comum,2026-10-09,sulfentrazona
 Gamit,Gamit Star|Gamit 360|Clomazona CS,,CS,7,cadastro manual — produto comercial comum,2026-10-09,clomazona
 Starane,Starane EC|Starane 200|Fluroxipir EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,fluroxipir
@@ -138,7 +138,7 @@ Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop,,EW,14,cadastro manual 
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
-Recop,Recop WP|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
+Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
 Velpar K,Velpar|Diuron Hexazinona|Advance,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
