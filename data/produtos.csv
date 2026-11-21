@@ -199,7 +199,6 @@ Gallaxy,Galaxy|Gallaxy EC|Gallaxy 100,,SC,8,inseticida SC Bayer — imidacloprid
 Imunit,Imunit SC|Imunit Syngenta,,SC,8,inseticida SC Syngenta — lambda-cialotrina+clorantraniliprole,2026-10-13,lambda-cialotrina+clorantraniliprole
 Spat,Spat SC|Spat BASF,,SC,8,inseticida SC BASF — clorfenapir+lambda-cialotrina,2026-10-13,clorfenapir+lambda-cialotrina
 Minecto Pro,Minecto|Minecto SE,,SE,10,inseticida SE Syngenta — ciantraniliprole+abamectina,2026-10-13,ciantraniliprole+abamectina
-Verango Prime,Verango|Verango SC|Fluopiram,,SC,8,nematicida SC Bayer — fluopiram,2026-10-13,fluopiram
 Cabrio Top,Cabrio|Cabrio WG,,WG,6,fungicida WG BASF — metiram+piraclostrobina — multissitio+estrobilurina,2026-10-13,metiram+piraclostrobina
 Revus,Revus SC|Mandipropamida,,SC,8,fungicida SC Syngenta — oomicetos/míldio,2026-10-13,mandipropamida
 Fusão,Fusao|Fusão SC,,SC,8,fungicida SC Nichino — mofo branco soja,2026-10-13,fluazinam+tiofluzamida
@@ -680,9 +679,7 @@ Ambush EC,Ambush 500|Ambush EC Syngenta|Permetrina 500 EC,,EC,11,cadastro manual
 Sportak EC,Sportak|Sportak 450|Prochloraz EC|Procloraz EC Bayer,,EC,11,cadastro manual — fungicida EC procloraz Bayer trigo/arroz,2026-11-21,procloraz
 Folicurl SC,Folicurl|Folicurl SC|Tebuconazol SC Nortox|Nortox Tebuconazol SC,,SC,8,cadastro manual — fungicida SC tebuconazol Nortox soja/milho/trigo,2026-11-21,tebuconazol
 Maxim Gold FS,Maxim Gold|Maxim Gold Syngenta|Fludioxonil+Metalaxil-M+Tiametoxam FS,,SC,8,cadastro manual — tratamento semente fungicida+inseticida Syngenta,2026-11-21,fludioxonil+metalaxil-M+tiametoxam
-Cruiser 350 FS,Cruiser|Cruiser FS|Cruiser Syngenta|Tiametoxam FS Syngenta,,SC,8,cadastro manual — tratamento semente inseticida tiametoxam Syngenta,2026-11-21,tiametoxam
 Standak Top FS,Standak Top|Standak|Standak BASF|Piraclostrobina+Tiofanato-metilico+Fipronil FS,,SC,8,cadastro manual — tratamento semente fungicida+inseticida BASF soja,2026-11-21,piraclostrobina+tiofanato-metilico+fipronil
-Artea,Artea SC|Artea Plus|Ciproconazol+Propiconazol SC,,SC,8,cadastro manual — fungicida SC duplo triazol Syngenta trigo/soja,2026-11-21,ciproconazol+propiconazol
 Artea 330 EC,Artea 330|Artea EC|Ciproconazol+Propiconazol EC Syngenta,,EC,11,cadastro manual — fungicida EC duplo triazol Syngenta trigo/soja,2026-11-21,ciproconazol+propiconazol
 Treoris,Treoris SC|Treoris Syngenta|Ciproconazol+Picoxistrobina SC,,SC,8,cadastro manual — fungicida SC Syngenta trigo/cevada,2026-11-21,ciproconazol+picoxistrobina
 Orquestra Ultra,Orquestra|Orquestra Ultra SC|Trifloxistrobina+Protioconazol+Tebuconazol SC,,SC,8,cadastro manual — fungicida SC Bayer trigo triplo,2026-11-21,trifloxistrobina+protioconazol+tebuconazol
