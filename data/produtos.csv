@@ -1,7 +1,7 @@
 nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,principio_ativo
 Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
-Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
+Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox|Score EC,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
@@ -117,8 +117,8 @@ Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC,,
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espinosade
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,espinetoram
-Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
-Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
+Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno|Oberon 240 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
+Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC|Envidor 240 SC|Espirodiclofeno,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espirodiclofeno
 Sencor,Sencor SC|Sencor 480|Metribuzim SC|Sencor WP|Metribuzim WP,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metribuzim
 Kifix,Kifix WG|Imazapir Imazapique,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imazapir+imazapique
 Sanson,Sanson SC|Sanson 40|Nicosulfuron SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,nicosulfuron
@@ -246,7 +246,7 @@ Luna Experience,Luna Experience SC|Luna Bayer|Luna Experience Bayer|Fluopyram+Te
 Duett Ultra,Duett|Duett Ultra BASF,,SC,8,fungicida SC BASF — epoxiconazol+tiofanato-metilico — consulta IA busca web pendente,pendente (2026-10-26),epoxiconazol+tiofanato-metilico
 Aprovia Top,Aprovia|Aprovia Top Syngenta|Benzovindiflupir,,EC,11,fungicida EC Syngenta — benzovindiflupir+difenoconazol — consulta IA busca web pendente,pendente (2026-10-26),benzovindiflupir+difenoconazol
 Indar 75 EW,Indar|Indar EW|Fenbuconazol EW,,EW,14,fungicida EW Bayer — fenbuconazol — consulta IA busca web pendente,pendente (2026-10-26),fenbuconazol
-Movento,Movento SC|Movento Bayer|Spirotetramat SC|Spirotetramat,,SC,8,inseticida SC Bayer — spirotetramat — consulta IA busca web pendente,pendente (2026-10-26),spirotetramat
+Movento,Movento SC|Movento Bayer|Spirotetramat SC|Spirotetramat|Movento 240 SC|Movento OD,,SC,8,inseticida SC Bayer — spirotetramat — consulta IA busca web pendente,pendente (2026-10-26),spirotetramat
 Takumi SC,Takumi|Takumi Nichino,16320,SC,8,inseticida SC Nichino — bula MAPA reg 16320 flubendiamida,2026-10-26,flubendiamida
 Exirel,Exirel SE|Exirel FMC,,SE,10,inseticida SE FMC — ciantraniliprole — consulta IA busca web pendente,pendente (2026-10-26),ciantraniliprole
 Plenum,Plenum WG|Plenum Syngenta|Pymetrozine,,ME,15,inseticida ME Syngenta — pymetrozine — consulta IA busca web pendente,pendente (2026-10-26),pymetrozine
@@ -435,7 +435,7 @@ Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,pesquisa web — acaricid
 Fenpirozamina SC,Fenpirozamina|Plenum generico|Fenpirozamina SC,,SC,8,pesquisa web — inseticida SC fenpirozamina,2026-11-11,fenpirozamina
 Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado|Extravon Plus|Hoemax,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
 In-Place,In Place|Adjuvante siliconado In-Place,,ADJUVANTE,2,pesquisa web — adjuvante siliconado ultra espalhante,2026-11-11,surfactante siliconado
-Bond,Bond EC|Bond Nufarm|Bond adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante Nufarm,2026-11-11,
+Bond,Bond EC|Bond Nufarm|Bond adjuvante|Bond Xtra|Bond Plus|Bond adjuvante SL,,ADJUVANTE,2,pesquisa web — adjuvante Nufarm,2026-11-11,
 LI-700 Plus,LI700 Plus|LI 700 Plus|Adjuvante acido+silicone,,ADJUVANTE,2,pesquisa web — adjuvante LI 700 acidificante,2026-11-11,
 Transcend SC,Transcend|Transcend adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante concentrado Syngenta,2026-11-11,
 Ultramol SL,Ultramol|Ultramol Molibdenio|Molibdenio 25 SL,,FERTILIZANTE,18,pesquisa web — micronutriente molibdênio foliar,2026-11-11,molibdenio
@@ -739,3 +739,5 @@ Teldor 500 SC,Teldor|Teldor SC|Teldor Bayer|Fenhexamide SC|Fenhexamida SC,,SC,8,
 Oxadiazon 250 EC,Oxadiazon|Oxadiazon EC|Ronstar Gold|Ronstar EC|Oxafluorfem,,EC,11,pesquisa web — herbicida EC oxadiazon pre-emergente,2026-11-21,oxadiazon
 Rancona 150 FS,Rancona|Rancona FS|Rancona Bayer|Ipconazol FS|Ipconazol|Trilex,,FS,8,pesquisa web — fungicida FS Bayer ipconazol tratamento sementes,2026-11-21,ipconazol
 Dynasty FS,Dynasty|Dynasty BASF|Azoxistrobina FS sementes|Azoxistrobina TS,,FS,8,pesquisa web — fungicida FS BASF azoxistrobina tratamento sementes,2026-11-21,azoxistrobina
+Carbaryl 850 WP,Carbaryl|Carbaril|Carbaril WP|Murvin 850|Murvin WP|Carbaryl Nortox,,WP,5,pesquisa web — inseticida WP carbaril para diversas culturas,2026-11-21,carbaril
+Dormex 520 SL,Dormex|Dormex SL|Dormex BASF|Cianamida hidrogenada|Hydrogen cyanamide|Cianamida|Dormhex,,SL,16,pesquisa web — regulador de crescimento SL cianamida hidrogenada quebra dormencia,2026-11-21,cianamida hidrogenada
