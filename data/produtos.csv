@@ -1,5 +1,5 @@
 nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,principio_ativo
-Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
+Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal|Roundup UltraMax|Roundup Ultra Max,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
@@ -33,7 +33,7 @@ Glufosinato,Glufusinato|Glufosinato de amônio|Liberty|Trusinate|Glufour|Glufosi
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,etiprole
-Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
+Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox|Gesaprim|Herbazin|Herbazin 500 SC|Gesaprim 500 SC,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
 Methos,Methos 960 TM|S-metolacloro|Dual Gold|Dual Gold 960 EC|S-Metolachlor|Metolachlor,,EC,11,herbicida EC Proventis — bula confirmada,2026-11-21,
 Ativon,Ativon Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,2026-11-21,cletodim
@@ -67,11 +67,11 @@ Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda|Coragen|Coragen 200 SC|Prevatho
 Kellus Zinc,Kellus Zn|Kellus Zinco,,FERTILIZANTE,18,fertilizante foliar zinco quelatado,2026-10-09,
 Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG|Roundup Transorb,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glifosato
 Xeque Mate SG,Glifumax|Glifosato SG,,SG,3,herbicida SG — pesquisa MAPA,pendente (2026-10-09),glifosato
-Atrazina WG,Gesaprim|Gesaprim GrDa|Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueo WG|Atrast 900 WG|Atrazina 900 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),atrazina
+Atrazina WG,Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueo WG|Atrast 900 WG|Atrazina 900 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,,EC,11,graminicida EC — pesquisa MAPA,pendente (2026-10-09),haloxifop
 Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
 Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
-Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
+Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Nativo 325 SC|Nativo Top,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+tebuconazol
 Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol|Aproach Prima 500 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max,,SC,8,cadastro manual — produto comercial comum,2026-10-09,trifloxistrobina+ciproconazol
 Amistar Top,Amistar|Amistar Opti|Amistar Opti SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,azoxistrobina+difenoconazol
@@ -141,7 +141,7 @@ Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobi
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,,WG,6,cadastro manual — fungicida cobre WG,2026-10-09,hidroxido de cobre
 Diuron,Diuron Nortox|Diuron 500 SC|Herburon|Karmex,,SC,8,cadastro manual — herbicida SC generico,2026-10-09,diuron
-Velpar K,Velpar|Diuron Hexazinona|Advance|Krovar|Krovar WG|Colep|Hexazinona+Diuron WG,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
+Velpar K,Velpar|Diuron Hexazinona|Advance|Krovar|Krovar WG|Colep|Hexazinona+Diuron WG|Velpar DF|Krovar DF,,WG,6,cadastro manual — herbicida WG cana,2026-10-09,diuron+hexazinona
 Propiconazol,Propiconazol Nortox|Tilt|Tilt EC|Juno,,EC,11,cadastro manual — fungicida EC generico,2026-10-09,propiconazol
 Flutriafol,Flutriafol SC|Impact|Impact SC,,SC,8,cadastro manual — fungicida SC generico,2026-10-09,flutriafol
 Thiobel,Thiobel 500|Cartape SP|Cartape,,SP,4,cadastro manual — inseticida SP comum,2026-10-09,cartape
@@ -731,7 +731,7 @@ Tamaron 600 BR SL,Tamaron|Tamaron 600|Metamidofos|Metamidophos|Methamidophos|Ham
 Baytroid 100 EC,Baytroid|Baytroid EC|Ciflutrina EC|Cyfluthrin|Ciflutrina|Ciflutrin|Baytroid Bayer,,EC,11,pesquisa web — inseticida EC Bayer ciflutrina piretroide,2026-11-21,ciflutrina
 Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
 Goal BR 480 EC,Goal|Goal EC|Goal Rohm Haas|Oxifluorfem EC Goal,,EC,11,pesquisa web — herbicida EC oxifluorfem pre-emergente citros,2026-11-21,oxifluorfem
-Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
+Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe|Aldicarb 100 GR|Temik GR,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
 Pivot H,Pivot|Pivot SL|Imazethapyr|Imazetapir|Imazethapir|Pivot Basf,,SL,16,pesquisa web — herbicida SL BASF imazethapyr soja,2026-11-21,imazethapyr
 Bladex 500 SC,Bladex|Bladex SC|Cianazina SC|Cianazina|Bladex FMC,,SC,8,pesquisa web — herbicida SC FMC cianazina milho,2026-11-21,cianazina
 Sumithion 500 EC,Sumithion|Sumithion EC|Fenitrothion|Fenitrotion|Fenitrothio|Metathion,,EC,11,pesquisa web — inseticida EC fenitrotion organofosforado,2026-11-21,fenitrotion
@@ -741,3 +741,5 @@ Rancona 150 FS,Rancona|Rancona FS|Rancona Bayer|Ipconazol FS|Ipconazol|Trilex,,F
 Dynasty FS,Dynasty|Dynasty BASF|Azoxistrobina FS sementes|Azoxistrobina TS,,FS,8,pesquisa web — fungicida FS BASF azoxistrobina tratamento sementes,2026-11-21,azoxistrobina
 Carbaryl 850 WP,Carbaryl|Carbaril|Carbaril WP|Murvin 850|Murvin WP|Carbaryl Nortox,,WP,5,pesquisa web — inseticida WP carbaril para diversas culturas,2026-11-21,carbaril
 Dormex 520 SL,Dormex|Dormex SL|Dormex BASF|Cianamida hidrogenada|Hydrogen cyanamide|Cianamida|Dormhex,,SL,16,pesquisa web — regulador de crescimento SL cianamida hidrogenada quebra dormencia,2026-11-21,cianamida hidrogenada
+Furadan 50 GR,Furadan|Furadan GR|Carbofurano GR|Carbofuran|Carbosulfan GR|Furadam,,GR,3,pesquisa web — inseticida/nematicida GR carbofurano para cana,2026-11-21,carbofurano
+Bromacila 480 SC,Bromacila|Bromacil|Bromacila SC|Nomate|Nomate 480 SC,,SC,8,pesquisa web — herbicida SC bromacila para cana-de-acucar,2026-11-21,bromacila
