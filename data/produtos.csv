@@ -4,7 +4,7 @@ Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,t
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
 Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Score Ultra 250,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
-Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
+Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
 Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
@@ -164,7 +164,7 @@ Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,,EC,11,cadastro manual �
 Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
 Curavial,Curavial WG|Sulfometurom|Sulfometurom-metilico,,WG,6,cadastro manual — herbicida WG pastagem,2026-10-09,sulfometurom-metilico
-Permit,Permit WG|Halosulfurom WG|Sempra,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
+Permit,Permit WG|Halosulfurom WG|Sempra|Halosulfuron WG|Halosulfuron|Halosulfurom,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
 Zethamaxx,Zetamax|Zethamax|Zethamaxx SC,10416,SC,8,herbicida SC Nufarm — flumioxazina+imazetapir,pendente (2026-10-16),flumioxazina+imazetapir
 Zethamaxx Evo,Zethamaxx Evo SC|Zethamaxx evo,45924,SE,10,herbicida SE Sumitomo — s-metolacloro+flumioxazina+imazetapir,2026-10-10,s-metolacloro+flumioxazina+imazetapir
 Nitro Dry,Nitrodry|NitroDry|Nitro dry,,FERTILIZANTE,18,pesquisa web — fertilizante foliar Co/Mo/Ni Fastagro,2026-10-13,cobalto+molibdenio+niquel
@@ -305,7 +305,7 @@ Kumulus,Kumulus WG|Kumulus DF|Enxofre WG|Enxofre Basf,,WG,6,fungicida WG BASF �
 Dacostar 720 SC,Dacostar|Dacostar SC|Clorotalonil Adama,,SC,8,fungicida SC Adama — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Procymidone 500 SC,Procymidone|Procimidona SC|Procymidona SC,,SC,8,fungicida SC — procimidona — IA busca web confirmou SC,2026-10-26,procimidona
 Starmix,Starmix SC|Starmix fungicida,,SC,8,fungicida SC — mistura comercial — IA busca web confirmou SC,pendente (2026-10-26),
-Vectra 100 SC,Vectra|Vectra SC|Hexaconazol SC|Hexaconazol,,SC,8,fungicida SC — hexaconazol — IA busca web confirmou SC,2026-10-26,hexaconazol
+Vectra 100 SC,Vectra|Vectra SC|Hexaconazol SC|Hexaconazol|Anvil|Anvil 500 SC|Hexaconazole,,SC,8,fungicida SC — hexaconazol — IA busca web confirmou SC,2026-10-26,hexaconazol
 Bayfidan 250 EC,Bayfidan|Bayfidan EC|Triticonazol EC,,EC,11,fungicida EC — triticonazol — IA busca web confirmou EC,2026-10-26,triticonazol
 Systhane 250 EC,Systhane|Systhane EC|Myclobutanil EC|Myclobutanil,,EC,11,fungicida EC Dow — myclobutanil — IA busca web confirmou EC,2026-10-26,myclobutanil
 Muralla Max,Muralla|Muralla OD|Muralla Max Bayer,,OD,9,inseticida OD Bayer — beta-ciflutrina+imidacloprido — IA busca web confirmou OD,2026-10-26,beta-ciflutrina+imidacloprido
@@ -794,3 +794,5 @@ Pirate SC,Pirate|Pirate 240 SC|Chlorfenapyr SC|Chlorfenapyr|Clorfenapir SC,,SC,8
 Ortus SC,Ortus|Ortus 50 SC|Fenpiroximate SC|Fenpyroximate|Fenpyroximate SC,,SC,8,nihon,2026-11-21,fenpiroximate
 Melody Duo 66.75 WP,Melody|Melody WP|Melody Duo|Iprovalicarb WP|Iprovalicarb+Mancozeb|Iprovalicarb,,WP,5,bayer,2026-11-21,iprovalicarbe+mancozebe
 Broadway WG,Broadway|Broadway WG Corteva|Pyroxsulam WG|Pyroxsulam|Olimpus WG,,WG,6,corteva,2026-11-21,piroxsulam
+Londax 600 WG,Londax|Londax WG|Bensulfuron WG|Bensulfuron|Bensulfuron-methyl|Bensulfuron-metil,,WG,6,dupont,2026-11-21,bensulfuron-metil
+Beacon 750 WG,Beacon|Beacon WG|Primissulfuron WG|Primossulfuron|Primissulfuron,,WG,6,syngenta,2026-11-21,primossulfuron
