@@ -82,7 +82,7 @@ Alto 100,Alto|Alto EC|Ciproconazol|Ciproconazol EC|Cypress|Ciproconazol Nortox S
 Spider,Spider WG|Spider 840|Diclosulam WG|Diclosulam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,diclosulam
 Classic,Classic WG|Clorimuron|Clorimuron-etilico|Chlorimuron|Classic 250 WG|Classic 250 DF|Classic DF,,WG,6,cadastro manual — produto comercial comum,2026-10-09,clorimuron-etilico
 Pacto,Pacto WG|Cloransulam|Cloransulam-metilico,,WG,6,cadastro manual — produto comercial comum,2026-10-09,cloransulam-metilico
-Callisto,Callisto SC|Mesotriona SC|Mesotriona,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
+Callisto,Callisto SC|Mesotriona SC|Mesotriona|Mesotrione|Mesotrione SC|Calaris,,SC,8,cadastro manual — produto comercial comum,2026-10-09,mesotriona
 Pivot,Pivot SL|Pivot 240|Imazetapir|Vezir,,SL,16,cadastro manual — produto comercial comum,2026-10-09,imazetapir
 Connect,Connect SC|Connect Bayer|Imidacloprid|Imidacloprida,,SC,8,cadastro manual — produto comercial comum,2026-10-09,imidacloprido+beta-ciflutrina
 Premio,Premio SC|Premio Corteva,,SC,8,cadastro manual — produto comercial comum,2026-10-09,clorantraniliprole
@@ -211,7 +211,7 @@ Dinamic,Dinamic WG|Amicarbazona,,WG,6,herbicida WG Arysta — milho/cana,2026-10
 Coyote,Coyote SC,,SC,8,herbicida SC — atrazina+tembotriona — milho,2026-10-13,atrazina+tembotriona
 Hussar,Hussar WG|Hussar Plus|Iodosulfurom,,WG,6,herbicida WG Bayer — trigo,2026-10-13,iodosulfurom
 Equip Plus,Equip|Equip WG,,WG,6,herbicida WG Bayer — foramsulfurom+iodosulfurom — milho,2026-10-13,foramsulfurom+iodosulfurom
-Accent,Accent WG|Nicosulfurom WG|Nicossulfuron|Nicosulfuron,,WG,6,herbicida WG Corteva — nicosulfurom — milho,2026-10-13,nicosulfurom
+Accent,Accent WG|Nicosulfurom WG|Nicossulfuron|Nicosulfuron|Saurus|Saurus WG,,WG,6,herbicida WG Corteva — nicosulfurom — milho,2026-10-13,nicosulfurom
 Brodal,Brodal SC|Brodal Bayer|Diflufenican,,SC,8,herbicida SC Bayer — trigo,2026-10-13,diflufenican
 Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO,12,óleo de laranja d-limoneno — espalhante e penetrante,2026-10-16,d-limoneno (óleo de laranja)
 Tec Catp 2.8,Catp|Catp 2.8|Tec Catp|Comando BT,8323,BIO_BACTERIANO,20,inseticida biológico Solubio — bula ADAPAR/PR 2024,2026-10-16,Bacillus thuringiensis kurstaki CBMAI 1398
@@ -349,7 +349,7 @@ Trophy EC,Trophy|Acetoclor Trophy|Acetoclor FMC,,EC,11,pesquisa web — cadastro
 Sumisoya 500 WG,Sumisoya|Sumisoya WG|Flumixazina WG Sumitomo|Flumioxazina WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,flumioxazina
 Scepter 70 WG,Scepter|Scepter WG|Imazaquim WG BASF|Imazaquin WG|Imazaquin|Imazaquim,,WG,6,pesquisa web — cadastro manual,2026-11-11,imazaquim
 "Lumax 537,5 SE",Lumax|Lumax SE|Lumax Syngenta|S-metolacloro+Atrazina+Mesotriona,,SE,10,pesquisa web — cadastro manual,2026-11-11,s-metolacloro+atrazina+mesotriona
-Laudis OD,Laudis|Laudis OD|Laudis Bayer|Tembotriona OD Bayer,,OD,9,pesquisa web — cadastro manual,2026-11-11,tembotriona
+Laudis OD,Laudis|Laudis OD|Laudis Bayer|Tembotriona OD Bayer|Tembotrione|Tembotrione OD,,OD,9,pesquisa web — cadastro manual,2026-11-11,tembotriona
 Acuron SC,Acuron|Acuron Syngenta|Bicyclopyrone+Mesotriona+Atrazina,,SC,8,pesquisa web — cadastro manual,2026-11-11,bicyclopyrone+mesotriona+atrazina
 Bicep Nitro II,Bicep|Bicep II|Bicep Nitro Syngenta|S-metolacloro+Atrazina SE,,SE,10,pesquisa web — cadastro manual,2026-11-11,s-metolacloro+atrazina
 Flint Star WG,Flint Star|Flint Star Bayer|Trifloxistrobina+Boscalida WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,trifloxistrobina+boscalida
@@ -612,7 +612,7 @@ Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fu
 Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Thiabendazol|Tiabendazol|Tecto|Tecto 450 SC,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
 Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cadastro manual — acaricida/fungicida WG meptildinocap oídio,2026-11-21,meptildinocap
 Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
-Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
+Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG|Actiguard,,WG,6,cadastro manual — indutor resistencia WG acibenzolar-s-metil Syngenta,2026-11-21,acibenzolar-s-metil
 Fosfonate 400 SL,Fosfonate|Fosfonate SL|Fosfonate Nufarm|Fosfito Potassio Fosfonate,,SL,16,cadastro manual — fosfito potassio SL Nufarm citros/outros,2026-11-21,fosfito de potassio
 Calypso 480 SC,Calypso|Calypso SC|Calypso Bayer|Tiacloprido SC|Thiacloprid|Tiacloprid,,SC,8,cadastro manual — inseticida SC Bayer tiacloprido neonicotinoide,2026-11-21,tiacloprido
 Vertimec Gold,Vertimec Gold EC|Vertimec Gold AZ|Abamectina+Azoxistrobina EC Syngenta,,EC,11,cadastro manual — inseticida/fungicida EC Syngenta abamectina+azoxistrobina,2026-11-21,abamectina+azoxistrobina
@@ -786,3 +786,7 @@ Previcur Energy SL,Previcur Energy|Previcur Energy Bayer|Propamocarbe+Fosetil SL
 Applaud 25 SC,Applaud|Applaud SC|Buprofezin SC|Buprofezin|Buprofezina SC,,SC,8,nichino,2026-11-21,buprofezim
 Trebon 100 EC,Trebon|Trebon EC|Etofenprox EC|Etofenprox|Vectron EC,,EC,11,mitsui,2026-11-21,etofenprox
 Spike 80 WP,Spike|Spike WP|Tebuthiuron WP|Tebuthiuron|Herbicide Cana,,WP,5,corteva,2026-11-21,tebuthiuron
+Hasten EC,Hasten|Hasten Adjuvante|Hasten Bond|Cropspray 11E|Cropspray|Mero|Codacide,,ADJUVANTE,2,victoria,2026-11-21,oleo de soja metilado
+Preference EC,Preference|Preference Adjuvante|Kinetic EC|Kinetic|Activator 90|Preference 1200 EC,,ADJUVANTE,2,helena,2026-11-21,surfactante noniônico+oleo metilado
+Equip SC,Equip|Equip SC|Foramsulfuron SC|Foramsulfuron|Foramsulfuron Bayer,,SC,8,bayer,2026-11-21,foramsulfuron
+Harmony 50 DF,Harmony|Harmony DF|Thifensulfuron DF|Thifensulfuron|Tifen,,WG,6,corteva,2026-11-21,thifensulfuron
