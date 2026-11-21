@@ -29,7 +29,7 @@ Cofenrin,Coferin|Bifentrina Coferin|Insectrin|Orsa|Indotrin,06922,EC,11,pesquisa
 Cletodim,Cletodin|Select 240 EC|Select|Clethodim|Poquer|Poker|Freno|Freno 240 EC|Luxor RA|Pre-Force|Alba|Clethion|Cletodim CHDS|Cletodim CCAB|Arrow|Arrow 240 EC|Verdict 240 EC|Verdict,,EC,11,graminicida — pesquisa MAPA,pendente (2026-10-09),cletodim
 Bivack,Bivak|Bivack EC,,EC,11,inseticida EC — pendente confirmação,pendente (2026-10-08),
 Terrador,Terrador 339 SC|Tiafenacil,,SC,8,bula SC 339g/L tiafenacil — Ouro Fino/FarmHannong,pendente (2026-10-08),
-Glufosinato,Glufusinato|Glufosinato de amônio|Liberty|Trusinate|Glufour|Glufosinate Wood|Glufosinato amonio|Glufosinato de amônio amonio,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
+Glufosinato,Glufusinato|Glufosinato de amonio|Liberty|Trusinate|Glufour|Glufosinate|Glufosinato amonio SL|Basta SL|Finale SL,,SL,16,herbicida SL — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbicida WG — pesquisa MAPA,pendente (2026-10-09),glufosinato
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,etiprole
@@ -106,7 +106,7 @@ Tordon,"Tordon SL|Picloram|Tordon Ultra|2,4-D+Picloram|Picloram+2,4-D",,SL,16,ca
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur 200 EW|Tebuzol|Tebuzol 200 EC|Tebuconazole,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC|Epoxiconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
-Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
+Actara,Actara WG|Actara 250|Tiametoxam WG|Tiametoxam|Thiamethoxam WG|Thiamethoxam|Tiametoxam 250,,WG,6,cadastro manual — produto comercial comum,2026-10-09,tiametoxam
 Boral,Boral SC|Boral 500|Sulfentrazona SC|Sulfentrazone|Sulfentrazona|Sulfentrazon,,SC,8,cadastro manual — produto comercial comum,2026-10-09,sulfentrazona
 Gamit,Gamit Star|Gamit 360|Clomazona CS,,CS,7,cadastro manual — produto comercial comum,2026-10-09,clomazona
 Starane,Starane EC|Starane 200|Fluroxipir EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,fluroxipir
@@ -632,7 +632,7 @@ MCPA SL,MCPA|MCPA 500|MCPA amina SL|Mephanate|MCPA herbicida,,SL,16,cadastro man
 Zargun WG,Zargun|Zargun WG Nortox|Flumioxazina+Imazetapir Nortox WG,,WG,6,cadastro manual — herbicida WG Nortox flumioxazina+imazetapir pre-soja,2026-11-21,flumioxazina+imazetapir
 Patrão WG,Patrao|Patrao WG|Patrao herbicida pastagem|Metsulfurom+Iodossulfurom WG|Metsulfurom,,WG,6,cadastro manual — herbicida WG metsulfurom+iodossulfurom pastagem,2026-11-21,metsulfurom-metilico+iodossulfurom
 Krismat WG,Krismat|Krismat Syngenta|Ametrina+Trifloxissulfurom WG cana,,WG,6,cadastro manual — herbicida WG Syngenta cana ametrina+trifloxissulfurom,2026-11-21,ametrina+trifloxissulfurom
-Finale WG,Finale|Finale Bayer|Glufosinato WG Bayer|Finale 150 WG,,WG,6,cadastro manual — herbicida WG Bayer glufosinato amônio 150g/kg,2026-11-21,glufosinato de amônio
+Finale WG,Finale|Finale Bayer|Glufosinato WG Bayer|Finale 150 WG|Basta WG|Basta,,WG,6,cadastro manual — herbicida WG Bayer glufosinato amônio 150g/kg,2026-11-21,glufosinato de amônio
 Enlist Duo SL,Enlist Duo|Enlist Duo Corteva|2.4-D-colina Glifosato SL|EnlistDuo,,SL,16,"cadastro manual — herbicida SL Corteva 2,4-D-colina+glifosato soja Enlist",2026-11-21,"2,4-D-colina+glifosato"
 Atanor SL,Atanor|Atanor 50 SL|Glifosato Atanor|Atanor Nufarm SL,,SL,16,cadastro manual — herbicida SL glifosato Atanor/Nufarm,2026-11-21,glifosato
 Velpar Ultra WG,Velpar Ultra|Velpar Ultra Bayer|Hexazinona+Diuron Ultra WG|Velpar 75+25,,WG,6,cadastro manual — herbicida WG cana hexazinona+diuron formulacao ultra,2026-11-21,hexazinona+diuron
