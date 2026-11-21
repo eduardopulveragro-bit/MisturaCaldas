@@ -135,7 +135,7 @@ Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2
 Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop|quizalofop-p-tefuryl|quizalofop tefuryl,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
-Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
+Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500|Nando|Nando SC,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
 Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor|Isoclast SC|Isoclast,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox|Azoxystrobin|Azoxystrobin SC,,SC,8,cadastro manual — fungicida SC Syngenta,2026-10-09,azoxistrobina
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,,WP,5,cadastro manual — fungicida cobre WP,2026-10-09,oxicloreto de cobre
@@ -259,7 +259,7 @@ Traxos,Traxos EC|Traxos Syngenta,,EC,11,graminicida EC Syngenta — pinoxaden tr
 Moddus,Moddus EC|Moddus Syngenta|Trinexapac|Primo EC|Primo|Moddus Evo,,EC,11,regulador crescimento EC Syngenta — trinexapac-etilico trigo — consulta IA busca web pendente,pendente (2026-10-26),trinexapac-etilico
 Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
 Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL|Ethephon|Etefon|Cerone|Ethephon SL,,SL,16,regulador crescimento SL Bayer — etefon — consulta IA busca web pendente,pendente (2026-10-26),etefon
-Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG|Pyroxasulfone WG|Fierce|Fierce WG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
+Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG|Pyroxasulfone WG|Fierce|Fierce WG|Sakura|Sakura WDG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
 Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva — piroxsulam trigo — consulta IA busca web pendente,pendente (2026-10-26),piroxsulam
 Granstar,Granstar WG|Granstar Corteva|Tribenuron,,WG,6,herbicida WG Corteva — tribenuron-metilico trigo — consulta IA busca web pendente,pendente (2026-10-26),tribenuron-metilico
 Afinity 720 SC,Afinity|Affinity SC|Afinity Syngenta,,SC,8,herbicida SC Syngenta — consulta IA busca web pendente,pendente (2026-10-26),
@@ -476,7 +476,7 @@ Cantor SC,Cantor|Cantor Nufarm|Fluazinam SC Nufarm mofo branco,,SC,8,pesquisa we
 Blocus SC,Blocus|Blocus Helm|Fluazinam+Tiofanato-metilico SC Helm,,SC,8,pesquisa web — soja/milho,2026-11-11,fluazinam+tiofanato-metilico
 Pyrexone SC,Pyrexone|Pyrexone FMC|Clomazona+Ametrina SC FMC,,SC,8,pesquisa web — soja/milho,2026-11-11,clomazona+ametrina
 Blase EC,Blase|Blast EC|Alaclor Nortox|Alachlor EC|Lazo|Lazo EC|Alachlor|Aclor EC,,EC,11,pesquisa web — soja/milho,2026-11-11,alaclor
-Blazer 240 SL,Blazer|Blazer SL|Blazer BASF|Acifluorfena-sodica SL|Acifluorfena,,SL,16,pesquisa web — soja/milho,2026-11-11,acifluorfena-sodica
+Blazer 240 SL,Blazer|Blazer SL|Blazer BASF|Acifluorfena-sodica SL|Acifluorfena|Tackle|Tackle SL,,SL,16,pesquisa web — soja/milho,2026-11-11,acifluorfena-sodica
 Milagro SC,Milagro|Milagro Syngenta|Nicossulfuron SC Syngenta milho,,SC,8,pesquisa web — soja/milho,2026-11-11,nicossulfuron
 Principal WG,Principal|Principal Corteva|Nicossulfuron+Rimsulfuron WG milho,,WG,6,pesquisa web — soja/milho,2026-11-11,nicossulfuron+rimsulfuron
 Convey SC,Convey|Convey FMC|Flumicloraque-pentilico SC FMC soja,,SC,8,pesquisa web — soja/milho,2026-11-11,flumicloraque-pentilico
@@ -866,3 +866,4 @@ Reoute SC,Reoute|Reoute FMC|fluindapyr|Fluindapyr SC,,SC,8,FMC,2026-11-21,fluind
 Dermacor CS,Dermacor|Dermacor C|Dermacor Corteva|clorantraniliprole CS,,CS,7,Corteva,2026-11-21,clorantraniliprole
 Racer EC,Racer|Racer Sipcam|flurocloridona|flurocloridone,,EC,11,Sipcam,2026-11-21,flurocloridona
 Cinch EC,Cinch|Cinch BASF|cinmetilina|cinmethylin,,EC,11,BASF,2026-11-21,cinmetilina
+Plenish SC,Plenish|Plenish SC FMC|flubendiamida plenish,,SC,8,FMC,2026-11-21,flubendiamida
