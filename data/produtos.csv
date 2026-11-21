@@ -452,8 +452,8 @@ Solubor DF,Solubor|Solubor DF|Boro Borax WG|Borato Sodio DF,,WG,18,cadastro manu
 Cobre EDTA,Cu EDTA|Cobre quelatado EDTA|Quelato Cu,,FERTILIZANTE,18,pesquisa web — micronutriente cobre quelatado EDTA,2026-11-11,cobre
 Silício SL,Silicio foliar|Silica SL|Silicio solubilizado,,FERTILIZANTE,18,pesquisa web — silício foliar,2026-11-11,silicio
 Aminoácido SL,Aminoacido SL|Aminoácido hidrolisado|Peptídeo foliar,,FERTILIZANTE,18,pesquisa web — bioestimulante aminoácido,2026-11-11,aminoacidos hidrolisados
-Fulvato de Potassio,Fulvato|Acido Fulvico+K|Fulvato potassio,,FERTILIZANTE,18,pesquisa web — bioestimulante acido fulvico potassio,2026-11-11,acido fulvico+potassio
-Humato de Potassio,Humato|Acido Humico+K|Humato potassio,,FERTILIZANTE,18,pesquisa web — bioestimulante acido humico potassio,2026-11-11,acido humico+potassio
+Fulvato de Potassio,Fulvato K|Fulvato potassio SL|Potassium Fulvate|Acido Fulvico|Fulvic acid|Acido Fulvico SL,,FERTILIZANTE,18,pesquisa web — bioestimulante acido fulvico potassio,2026-11-11,acido fulvico+potassio
+Humato de Potassio,Humato de K|Humato potassio SL|Potassium Humate|Acido Humico|Humic acid|Acido Humico SL|Humate SL,,FERTILIZANTE,18,pesquisa web — bioestimulante acido humico potassio,2026-11-11,acido humico+potassio
 PhospH SL,PhospH|Phosph SL|Fosforo+pH adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante acidificante fosforo,2026-11-11,fosforo+acidificante
 Fulltec,Fulltec Syngenta|Fulltec adjuvante|Fulltec silicone|Fulltec espalhante,,ADJUVANTE,2,cadastro manual — adjuvante siliconado super espalhante Syngenta,2026-11-16,surfactante siliconado
 Cohere,Cohere Corteva|Cohere Dow|Cohere adjuvante|Cohere oleo metilado|MSO|Cohere MSO|Oleo metilado,,ADJUVANTE,2,cadastro manual — adjuvante oleo canola metilado Corteva,2026-11-16,oleo de canola metilado
@@ -648,14 +648,14 @@ Cobre Generico WP,Cobre|Cobre WP|Cobre puro|Cobre fungicida|Cobre simples|Cu WP|
 Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP|Enxofre molhavel|Enxofre wettable|Wettable Sulfur|Sulphur WP|Sulfur WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
 Nutri Foliar SL,Nutri|Nutri SL|Nutri foliar|Nutrição Foliar|Nutri generico|Nutricao foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar genérico nutricional alias para busca genérica,2026-11-21,NPK foliar
 Calda Sulfocalcica SL,Sulfocalcica|Calda Sulfocalcica|Calda Bordalesa|Sulfocalcica SL|Polisulfeto Calcio,,FERTILIZANTE,18,cadastro manual — polissulfeto de calcio/calda sulfocalcica fungicida/acaricida biologico,2026-11-21,polissulfeto de calcio
-Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de manganes SL,2026-11-21,fosfito+manganes
+Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito|Fosfito de Manganes|Manganese Phosphite,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de manganes SL,2026-11-21,fosfito+manganes
 Nitrobor SL,Nitrobor|Nitrobor foliar|Nitrobor SL Yara|Nitrogenio+Boro foliar|Nitrogenio Boro SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrogenio+boro SL Yara,2026-11-21,nitrogenio+boro
 Basfoliar Combi SP,Basfoliar Combi|Basfoliar SP|Basfoliar BASF|Basfoliar multinutriente SP,,SP,4,cadastro manual — fertilizante foliar multinutriente SP BASF Compo,2026-11-21,NPK+micronutrientes
 Trissulfurom WG,Trissulfurom|Trisulfuron WG|Trissulfurom herbicida,,WG,6,cadastro manual — herbicida WG trissulfurom-metilico pastagem,2026-11-21,trissulfuron-metilico
 Prowl 400 EC,Prowl 400|Prowl EC Nortox|Pendimetalina 400 EC Nortox|Prowl BASF 400,,EC,11,cadastro manual — herbicida EC pendimetalina 400 g/L formulacao EC,2026-11-21,pendimetalina
 Posse 400 SC,Posse|Posse SC|Posse Ouro Fino|Sulfentrazona SC Ouro Fino,,SC,8,cadastro manual — herbicida SC Ouro Fino sulfentrazona marca Posse,2026-11-21,sulfentrazona
 Plateau Plus WG,Plateau Plus|Plateau Plus BASF|Imazapique+Imazapir WG BASF,,WG,6,cadastro manual — herbicida WG BASF imazapique+imazapir pré-emergente pastagem,2026-11-21,imazapique+imazapir
-Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zinco SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de zinco SL,2026-11-16,fosfito+zinco
+Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zinco|Fosfito de Zinco,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de zinco SL,2026-11-16,fosfito+zinco
 Fosfito de Calcio SL,Fosfito Calcio|Fosfito Ca SL|Calcium Phosphite foliar|Ca Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de calcio SL,2026-11-16,fosfito+calcio
 MAP Foliar SL,MAP SL|MAP foliar|Fosfato Monoamonico SL|Mono Ammonium Phosphate foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar MAP monofosfato amonico SL,2026-11-16,fosfato monoamonico
 KTS SL,KTS|Tiosulfato Potassio SL|K Tiosulfato|Potassium Thiosulfate SL|KTS foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar tiosulfato de potassio SL,2026-11-16,tiosulfato de potassio
@@ -848,3 +848,8 @@ Dropp Ultra SC,Dropp Ultra|Thidiazuron|Thidiazuron SC|Dropp SC|Harvade tidiazuro
 Prime Plus SC,Prime Plus|Flumetralin|Flumetralin SC|Prime Plus Nortox|Regulador algodao,,SC,8,Nortox,2026-11-21,flumetralin
 Reclaim SL,Reclaim|Aminopyralid|Aminopyralid SL|Aminopiralide|Reclaim Corteva|Milestone,,SL,16,Corteva,2026-11-21,aminopiralide
 Azoxystrobin 500 SC,Azoxystrobin solo|Azoxystrobin 500|Azoxystrobin SC solo|Quadris Flow|Quadris Flowable,,SC,8,Syngenta/vários,2026-11-21,azoxistrobina
+Ureia SC,Ureia|Ureia foliar|Urea foliar|Urea SC|Ureia liquida|Urea,,SC,18,varios,2026-11-21,nitrogenio (ureia)
+Calcario Agricola,Calcario|Calcario dolomítico|Calcario calcítico|Limestone|Calcario moído|Corretivo calcareo,,GR,3,varios,2026-11-21,calcio+magnesio
+Gesso Agricola,Gesso|Gesso agricola|Agricultural gypsum|Sulfato de calcio|Calcium sulfate|Gessagem,,GR,3,varios,2026-11-21,sulfato de calcio
+Fosfito Cobre SL,Fosfito Cobre|Fosfito Cu SL|Copper Phosphite|Fosfito de Cobre|Fosfito+Cobre,,SL,18,varios,2026-11-21,fosfito+cobre
+Fosfito Magnesio SL,Fosfito Magnesio|Fosfito Mg SL|Magnesium Phosphite|Fosfito de Magnesio|Fosfito+Magnesio,,SL,18,varios,2026-11-21,fosfito+magnesio
