@@ -2,7 +2,7 @@ nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,
 Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Zapp QI 620|Zapp QI|Zap QI 620|Zap QI|Glifosato UPL|Glifosato Nortox|Gliforte|Roundup Ultra|Roundup Original|Glifosato Atanor|Glifosato Helm|Glifosato 480|Glyphotal,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
 Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
 Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
-Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
+Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Priaxor|Piraclostrobina+Fluxapiroxade SE,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
 Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kayko|Sevare|Difenoconazol Nortox,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Top|Priori Extra|Cyproconazol,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
@@ -34,7 +34,7 @@ Glufosinato WG,Serpens|Serpens 800 WG|Audace WG|Glufosinate 850 WG,,WG,6,herbici
 Li 700,Li700|LI 700|LI-700,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Curbix,Curbix 200 SC|Etiprole,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,etiprole
 Aclamado,Aclamado BR|Atrazina|Atrazina 500|Atrazina SC|Atrazina Nortox|Gesaprim 500|Atrazinax|Atrazinax 500 SC|Atrazinax Nortox,,SC,8,herbicida SC — pesquisa MAPA,pendente (2026-10-09),atrazina
-Methos,Methos 960 TM|S-metolacloro,,EC,11,herbicida EC Proventis — bula confirmada,2026-11-21,
+Methos,Methos 960 TM|S-metolacloro|Dual Gold|Dual Gold 960 EC|S-Metolachlor|Metolachlor,,EC,11,herbicida EC Proventis — bula confirmada,2026-11-21,
 Ativon,Ativon Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Cartago,Cartago EC|Cletodim Cartago,,EC,11,cletodim 240 EC — bula confirmada,2026-11-21,cletodim
 Diflumax,Diflumax 240 SC|Diflubenzurom,,SC,8,inseticida SC Helm — bula confirmada,2026-11-21,
@@ -159,7 +159,7 @@ Guapo,Guapo SC|Guapo BASF,,SC,8,cadastro manual — fungicida SC BASF,2026-10-09
 Stroby,Stroby WG|Cresoxim-metilico WG,,WG,6,cadastro manual — fungicida WG estrobilurina,2026-10-09,cresoxim-metilico
 Manfil,Manfil WP|Manfil 800|Troia,,WP,5,cadastro manual — fungicida WP mancozebe,2026-10-09,mancozebe
 Provado,Provado SC|Provado 200 SC|Imidacloprido SC|Imidacloprido Nortox 700 SC|Imidacloprido Nortox,,SC,8,cadastro manual — inseticida SC Bayer,2026-10-09,imidacloprido
-Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC|Herbadox 400 EC|Pendimethalina 400 EC,,EC,11,cadastro manual — herbicida pre-emergente EC,2026-10-09,pendimetalina
+Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC|Herbadox 400 EC|Pendimethalina 400 EC|Pendimethalin|Prowl|Prowl 400,,EC,11,cadastro manual — herbicida pre-emergente EC,2026-10-09,pendimetalina
 Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,,EC,11,cadastro manual — herbicida pre-emergente Syngenta,2026-10-09,s-metolacloro
 Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC,,SC,8,cadastro manual — herbicida SC cana,2026-10-09,ametrina
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
@@ -723,3 +723,7 @@ Decree 50 WDG,Decree|Decree WP|Decree WDG|Fenhexamide|Fenhexamida,,WG,6,pesquisa
 Scala 400 SC,Scala|Scala SC|Cyprodinila SC|Cyprodinila|Ciprodinila|Scala Bayer,,SC,8,pesquisa web — fungicida SC Bayer ciprodinila botrytis,2026-11-21,ciprodinila
 Dithianon 750 WG,Dithianon|Dithianon WG|Delan WG|Delan|Dithianon BASF,,WG,6,pesquisa web — fungicida WG BASF dithianon sarna citrus,2026-11-21,dithianon
 Captan 500 WP,Captan WP|Captana WP|Captan 500|Merpan|Orthocide,,WP,5,pesquisa web — fungicida WP captana multiuso frutas,2026-11-21,captana
+Ranger 480 SL,Ranger|Ranger SL|Ranger Nufarm|Roundup Aktiv|Glifosato Ranger|Roundup Active,,SL,16,pesquisa web — herbicida SL Nufarm glifosato-sal isopropilamina,2026-11-21,glifosato
+Orthene 750 BR WP,Orthene|Orthene WP|Acefato WP|Acefato|Acephate|Orthene 750,,WP,5,pesquisa web — inseticida WP acefato organofosforado,2026-11-21,acefato
+Elatus Arc,Elatus|Elatus EC|Elatus Syngenta|Benzovindiflupir+Azoxistrobina|Azoxistrobina+Benzovindiflupir,,EC,11,pesquisa web — fungicida EC Syngenta benzovindiflupir+azoxistrobina,2026-11-21,benzovindiflupir+azoxistrobina
+Zartan 480 CS,Zartan|Zartan CS|Atrazina CS Dow|Zartan Corteva|Atrazina+Simazina,,CS,7,pesquisa web — herbicida CS Corteva atrazina encapsulada,2026-11-21,atrazina
