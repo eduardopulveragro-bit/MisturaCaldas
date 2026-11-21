@@ -15,7 +15,7 @@ Galil SC,Galil|Galil Syngenta,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azo
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
 Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
 Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08),
-Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
+Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
@@ -102,7 +102,7 @@ Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600|Trifluralin,
 Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG|Imidacloprido,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
-Tordon,Tordon SL|Picloram|Tordon Ultra,,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
+Tordon,"Tordon SL|Picloram|Tordon Ultra|2,4-D+Picloram|Picloram+2,4-D",,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius|Folicur CE,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC|Epoxiconazol,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
@@ -127,7 +127,7 @@ Mospilan,Mospilan SP|Mospilan 200|Acetamiprido SP,,SP,4,cadastro manual — prod
 Benevia,Benevia OD|Benevia FMC|Ciantraniliprole OD,,OD,9,cadastro manual — produto comercial comum,2026-10-09,ciantraniliprole
 Polytrin,Polytrin EC|Profenofos Cipermetrina|Profenofos,,EC,11,cadastro manual — produto comercial comum,2026-10-09,profenofos+cipermetrina
 Tiger,Tiger EC|Tiger 100|Piriproxifem EC|Cordial,,EC,11,cadastro manual — produto comercial comum,2026-10-09,piriproxifem
-Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL,,SL,16,cadastro manual — generico comum,2026-10-09,dicamba
+Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL|Dicamba+Glifosato|Roundup Extend|Fuse,,SL,16,cadastro manual — generico comum,2026-10-09,dicamba
 Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol,,SC,8,cadastro manual — generico comum,2026-10-09,carbendazim
 Avatar,Avatar WG|Avatar 300|Indoxacarbe WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,,CS,7,cadastro manual — inseticida CS comum,2026-10-09,alfa-cipermetrina
@@ -324,7 +324,7 @@ Cloropirifos 480 EC,Cloropirifos|Clorpirifos 480|Cloropirifos EC generico,,EC,11
 Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boro
 Stomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
 Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta|Nortrel|Nortrel Nortox|Paraquate Nortox SL,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
-Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
+Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta|Fosfito|Fosfito de potassio|Fosfito K|Fosfito SL,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,fosfito de potassio SL generico — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
 Picoxistrobina 250 SC,Picoxistrobina SC|Picoxistrobina generico,,SC,8,estrobilurina SC generica — IA busca web confirmou SC,2026-10-27,picoxistrobina
 Impulse,Impulse SL|Impulso|Impulse herbicida,,SL,16,herbicida SL — confirmado por bula pelo usuário,2026-10-27,
@@ -338,7 +338,7 @@ Mitrion,Mitrion EC|Mitrion Syngenta,,EC,11,fungicida EC Syngenta - benzovindiflu
 Boro MEA,Boro MEA foliar|BorMEA|Boro Mea,,FERTILIZANTE,18,fertilizante foliar boro monoetanolamina — cadastro manual,2026-11-11,boro
 Glimor,Glimor WG|Glimor Nufarm,,WG,6,herbicida WG — cadastro manual,2026-11-11,glifosato
 Touchdown IQ,Touchdown|Touchdown IQ 500|Touchdown Total|Touchdown Syngenta|Glifosato IPA SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
-Roundup Power Max,Roundup PowerMAX|Roundup Power Max|PowerMax Glifosato|Roundup 648,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
+Roundup Power Max,Roundup PowerMAX|Roundup Power Max|PowerMax Glifosato|Roundup 648|Roundup Power,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Zapp 480 SL,Zapp 480|Zapp Nortox 480|Glifosato Zapp,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Envision,Envision SL|Glifosato-K|Glifosato Potassio SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Roundup Extend SL,Roundup Extend|Glifosato+Dicamba SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato+dicamba
