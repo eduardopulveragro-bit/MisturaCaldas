@@ -18,7 +18,7 @@ Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_
 Fox Xpro,fox x pro,,SC,8,consulta_ia — pendente confirmação,pendente (2026-10-08),trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08)
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP,,WP,5,consulta_ia — pendente confirmação,pendente (2026-10-08),mancozebe
-"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),2,4-D
+"2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d",,SL,16,pesquisa MAPA — amina SL,pendente (2026-10-09),"2,4-D"
 Decanto,Decanto Prime,,SC,8,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08)
 Heat,Heat 70 WG|Saflufenacil,,WG,6,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),saflufenacil
 Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),beta-ciflutrina
@@ -102,7 +102,7 @@ Trifluralina,Trifluralina Nortox|Premerlin|Treflan|Trifluralina 600,,EC,11,cadas
 Dimilin,Dimilin WP|Dimilin 80|Diflubenzurom WP,,WP,5,cadastro manual — produto comercial comum,2026-10-09,diflubenzurom
 Evidence,Evidence 700 WG|Evidence WG|Imidacloprido WG,,WG,6,cadastro manual — produto comercial comum,2026-10-09,imidacloprido
 Primestra Gold,Primestra|Primestra SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,atrazina+s-metolacloro
-Tordon,Tordon SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,2,4-D+picloram
+Tordon,Tordon SL,,SL,16,cadastro manual — produto comercial comum,2026-10-09,"2,4-D+picloram"
 Folicur,Folicur EC|Folicur 200|Tebuconazol|Tebuconazol Nortox|Tebuconazol 200 EC|Orius,,EC,11,cadastro manual — produto comercial comum,2026-10-09,tebuconazol
 Cercobin,Cercobin SC|Cercobin 500|Tiofanato-metilico SC|Tiofanato Nortox SC|Tiofanato Nortox,,SC,8,cadastro manual — produto comercial comum,2026-10-09,tiofanato-metilico
 Opus,Opus SC|Opus BASF|Epoxiconazol SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,epoxiconazol
@@ -634,7 +634,7 @@ Zargun WG,Zargun|Zargun WG Nortox|Flumioxazina+Imazetapir Nortox WG,,WG,6,cadast
 Patrão WG,Patrao|Patrao WG|Patrao herbicida pastagem|Metsulfurom+Iodossulfurom WG,,WG,6,cadastro manual — herbicida WG metsulfurom+iodossulfurom pastagem,2026-11-21,metsulfurom-metilico+iodossulfurom
 Krismat WG,Krismat|Krismat Syngenta|Ametrina+Trifloxissulfurom WG cana,,WG,6,cadastro manual — herbicida WG Syngenta cana ametrina+trifloxissulfurom,2026-11-21,ametrina+trifloxissulfurom
 Finale WG,Finale|Finale Bayer|Glufosinato WG Bayer|Finale 150 WG,,WG,6,cadastro manual — herbicida WG Bayer glufosinato amônio 150g/kg,2026-11-21,glufosinato de amônio
-Enlist Duo SL,Enlist Duo|Enlist Duo Corteva|2.4-D-colina Glifosato SL|EnlistDuo,,SL,16,cadastro manual — herbicida SL Corteva 2,4-D-colina+glifosato soja Enlist,2026-11-21,"2,4-D-colina+glifosato"
+Enlist Duo SL,Enlist Duo|Enlist Duo Corteva|2.4-D-colina Glifosato SL|EnlistDuo,,SL,16,"cadastro manual — herbicida SL Corteva 2,4-D-colina+glifosato soja Enlist",2026-11-21,"2,4-D-colina+glifosato"
 Atanor SL,Atanor|Atanor 50 SL|Glifosato Atanor|Atanor Nufarm SL,,SL,16,cadastro manual — herbicida SL glifosato Atanor/Nufarm,2026-11-21,glifosato
 Velpar Ultra WG,Velpar Ultra|Velpar Ultra Bayer|Hexazinona+Diuron Ultra WG|Velpar 75+25,,WG,6,cadastro manual — herbicida WG cana hexazinona+diuron formulacao ultra,2026-11-21,hexazinona+diuron
 Mágico OD,Mágico|Magico OD|Magico Ouro Fino|Mágico adjuvante|Magico adjuvante,,ADJUVANTE,2,cadastro manual — adjuvante OD oleo vegetal+siliconado Ouro Fino,2026-11-21,oleo vegetal+surfactante siliconado
