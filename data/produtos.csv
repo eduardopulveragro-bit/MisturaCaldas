@@ -132,7 +132,7 @@ Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol|Bavistin|Bavistin 500
 Avatar,Avatar WG|Avatar 300|Indoxacarbe WG|Avatar 150 EC|Integon|Integon WG|Integon Plus,,WG,6,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,,CS,7,cadastro manual — inseticida CS comum,2026-10-09,alfa-cipermetrina
 Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2026-10-09,clorantraniliprole
-Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
+Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop|quizalofop-p-tefuryl|quizalofop tefuryl,,EC,11,cadastro manual — graminicida EC comum,2026-10-09,quizalofop-p-tefuril
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,,EW,14,cadastro manual — graminicida EW Syngenta,2026-10-09,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500,,SC,8,cadastro manual — fungicida SC mofo branco,2026-10-09,fluazinam
@@ -278,7 +278,7 @@ Bravonil 720 SC,Bravonil|Bravonil SC|Clorotalonil SC,,SC,8,fungicida SC Syngenta
 Chlorothalonil 500 SC,Chlorothalonil|Clorotalonil 500|Clorotalonil SC generico,,SC,8,fungicida SC generico — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
 Kresoxim 500 SC,Kresoxim|Kresoxim SC|Kresoxim-metil SC|Kresoxim-methyl|Kresoxim-methyl SC,,SC,8,fungicida SC — kresoxim-metil — IA busca web confirmou SC,2026-10-26,kresoxim-metil
 Ronstar 250 EC,Ronstar|Ronstar EC|Oxifluorfem Bayer,,EC,11,herbicida EC Bayer — oxifluorfem — IA busca web confirmou EC,2026-10-26,oxifluorfem
-Topik 240 EC,Topik|Clodinafop|Clodinafop EC|Topik EC|Clodinafop-propargil,,EC,11,graminicida EC Syngenta — clodinafop-propargil — IA busca web confirmou EC,2026-10-26,clodinafop-propargil
+Topik 240 EC,Topik|Clodinafop|Clodinafop EC|Topik EC|Clodinafop-propargil|clodinafop-propargyl,,EC,11,graminicida EC Syngenta — clodinafop-propargil — IA busca web confirmou EC,2026-10-26,clodinafop-propargil
 Podium 125 EW,Podium|Podium EW|Fenoxaprop EW|Fenoxaprop-p Bayer,,EW,14,graminicida EW Bayer — fenoxaprop-p-etilico — IA busca web confirmou EW,2026-10-26,fenoxaprop-p-etilico
 Vydate 240 L,Vydate|Vydate SL|Oxamil SL|Oxamyl SL,,SL,16,nematicida/inseticida SL — oxamil — IA busca web confirmou SL,2026-10-26,oxamil
 Nimitz 480 SL,Nimitz|Nimitz SL|Fluensulfone SL,,SL,16,nematicida SL FMC — fluensulfone — nome contém SL portanto pos 16,2026-10-26,fluensulfone
@@ -701,7 +701,7 @@ Dicarzol 500 SP,Dicarzol|Dicarzol SP|Formetanato|Formetanato cloridrato,,SP,4,pe
 Confirm 240 SC,Confirm|Tebufenozide|Confirm SC|Confirm Rohm Haas,,SC,8,pesquisa web — inseticida SC tebufenozide lagartas,2026-11-21,tebufenozide
 Trigard 750 WP,Trigard|Trigard WP|Cyromazine|Cirozamine|Trigard Syngenta,,WP,5,pesquisa web — inseticida WP cyromazine minador,2026-11-21,cyromazine
 Focus Ultra,Focus|Focus Ultra BASF|Setoxidim EC|Setoxidim,,EC,11,pesquisa web — graminicida EC BASF setoxidim pós-emergente,2026-11-21,setoxidim
-Poast,Poast EC|Poast Syngenta|Setoxidim Syngenta,,EC,11,pesquisa web — graminicida EC Syngenta setoxidim,2026-11-21,setoxidim
+Poast,Poast EC|Poast Syngenta|Setoxidim Syngenta|sethoxydim|Fervinal|Fervinal EC,,EC,11,pesquisa web — graminicida EC Syngenta setoxidim,2026-11-21,setoxidim
 Simazina 500,Simazina|Simazina SC|Primatol|Herbazina|Simazinox,,SC,8,pesquisa web — herbicida SC simazina pre-emergente,2026-11-21,simazina
 Sulfossato 480 SL,Sulfossato|Sulfossato SL|Finale SL|Touchdown|Touchdown IQ,,SL,16,pesquisa web — herbicida SL sulfossato glifosato-trimesio,2026-11-21,sulfossato
 Mitac 200 EC,Mitac|Mitac EC|Amitraz EC|Amitraz|Amitraz Nortox,,EC,11,pesquisa web — acaricida/inseticida EC amitraz,2026-11-21,amitraz
@@ -856,3 +856,8 @@ Fosfito Magnesio SL,Fosfito Magnesio|Fosfito Mg SL|Magnesium Phosphite|Fosfito d
 Zoxium SC,Zoxium|Zoxamide|Zoxamide SC|Zoxamide Dowagro|Roxyl,,SC,8,Dowagro/Corteva,2026-11-21,zoxamide
 Viewpoint SC,Viewpoint|Amisulbrom|Amisulbrom SC|Viewpoint Nippon|NC-224,,SC,8,Nippon Soda,2026-11-21,amisulbrom
 Ziram 76 WG,Ziram|Ziram WG|Ziram 76|Zirex WG|Fungicida Dithiocarb,,WG,6,varios,2026-11-21,ziram
+Hachi-Hachi SC,Hachi Hachi|Hachi-Hachi|tolfenpyrad|Tolfenpyrad SC|Pyranica SC,,SC,8,Mitsui,2026-11-21,tolfenpiraldo
+Imicyafos SC,imicyafos|Nemacur Neo|Nemacur Neo SC|Imicyafos Bayer,,SC,8,Bayer,2026-11-21,imiciafos
+Cormoran OD,Cormoran|Cormoran Corteva|abamectina afidopirofen|afidopirofen abamectina,,OD,9,Corteva,2026-11-21,abamectina+afidopirofen
+Basamid GR,Basamid|Basamid Certis|dazomet|Dazomet GR,,GR,3,Certis,2026-11-21,dazomet
+Telone II EC,"Telone|Telone EC|1,3-dichloropropene|1,3-dicloropropeno|Telone Corteva",,EC,11,Corteva,2026-11-21,"1,3-dicloropropeno"
