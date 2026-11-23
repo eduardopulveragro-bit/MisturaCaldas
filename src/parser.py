@@ -68,16 +68,29 @@ def extrair_itens(mensagem: str, modelo: str = "claude-haiku-5-5") -> dict:
     cliente = _criar_cliente()
     inicio = datetime.now()
 
-    resposta = cliente.messages.create(
-        model=modelo,
-        max_tokens=2048,
-        system=[{
-            "type": "text",
-            "text": _SYSTEM_PROMPT,
-            "cache_control": {"type": "ephemeral"},
-        }],
-        messages=[{"role": "user", "content": mensagem}],
-    )
+    try:
+        resposta = cliente.messages.create(
+            model=modelo,
+            max_tokens=2048,
+            system=[{
+                "type": "text",
+                "text": _SYSTEM_PROMPT,
+                "cache_control": {"type": "ephemeral"},
+            }],
+            messages=[{"role": "user", "content": mensagem}],
+        )
+    except anthropic.AuthenticationError:
+        raise EnvironmentError(
+            "Chave API inválida ou revogada. Acesse console.anthropic.com, "
+            "gere uma nova chave e execute: python configurar_chave.py"
+        )
+    except anthropic.RateLimitError:
+        raise EnvironmentError("Limite de taxa da API atingido. Aguarde alguns segundos e tente novamente.")
+    except anthropic.APIConnectionError as e:
+        raise EnvironmentError(f"Sem conexão com a API Anthropic: {e}")
+    except anthropic.APIStatusError as e:
+        raise EnvironmentError(f"Erro na API Anthropic (código {e.status_code}): {e.message}")
+
     duracao = (datetime.now() - inicio).total_seconds()
 
     tokens_in = resposta.usage.input_tokens
