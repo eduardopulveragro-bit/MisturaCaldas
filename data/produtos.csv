@@ -1,28 +1,28 @@
 nome,nomes_alternativos,registro_mapa,formulacao,posicao,fonte,data_conferencia,principio_ativo
-Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Glyphosate|Glyphosate SL|Glyphosate isopropyl,BR-001-EXEMPLO,SL,16,bula_fabricante + pesquisa MAPA,2024-01-10,glifosato
-Engeo Pleno S,Engeo|Engeo Pleno,BR-002-EXEMPLO,SC,8,bula_fabricante,2024-01-10,tiametoxam+lambda-cialotrina
-Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,BR-003-EXEMPLO,SL,16,bula_fabricante — Lannate 215 g/L SL corrigido de SP,2026-10-27,metomil
-Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Opera Ultra BASF,BR-004-EXEMPLO,SE,10,bula_fabricante,2024-01-10,piraclostrobina+epoxiconazol
-Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Difenoconazol EC|Difenconazol|Difenoconazole,BR-005-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,difenoconazol
-Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,BR-006-EXEMPLO,WG,6,bula_fabricante,2024-01-10,metsulfuron-metilico
-Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,BR-007-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+ciproconazol
-Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,BR-008-EXEMPLO,SC,8,bula_fabricante,2024-01-10,teflubenzurom
-Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,BR-009-EXEMPLO,OLEO,12,bula_fabricante + pesquisa MAPA,2024-01-10,oleo mineral
-Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante|Nonionic|Non-ionic surfactant|Surfactante nao ionico,BR-010-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
-Derosal Plus,Derosal|Carbendazim tiram,BR-011-EXEMPLO,SC,8,bula_fabricante,2024-01-10,carbendazim+tiram
-Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS|Hallmark|Hallmark Zeon|Lambda-cyhalothrin,BR-012-EXEMPLO,CS,7,bula_fabricante + pesquisa MAPA,2024-01-10,lambda-cialotrina
-Galil SC,Galil|Galil Syngenta,BR-013-EXEMPLO,SC,8,bula_fabricante,2024-01-10,azoxistrobina+benzovindiflupir
-Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,BR-014-EXEMPLO,EC,11,bula_fabricante + pesquisa MAPA,2024-01-10,deltametrina
-Sequência Solúvel,Sequência|Condicionador pH,BR-015-EXEMPLO,ADJUVANTE,2,bula_fabricante,2024-01-10,
-Óleo de laranja,oleo da laranja,,OLEO,12,consulta_ia (ingrediente: óleo de laranja) — pendente confirmação,pendente (2026-10-08),
+Roundup Original DI,Roundup|Glifosato|Glifosato Nufarm|Glifos|Original Mais|Original DI|Xeque Mate|Trop|Trop Max|Crucial|Glyphosate|Glyphosate SL|Glyphosate isopropyl,,SL,16,placeholder removido - aguarda registro MAPA real,2024-01-10,glifosato
+Engeo Pleno S,Engeo|Engeo Pleno,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,tiametoxam+lambda-cialotrina
+Lannate BR,Lannate|Metomil|Lannate 215|Metomil SL|Lannate 215 SL,123860,SL,16,ADAPAR PR — bula PDF 2026,2026-11-24,metomil
+Opera Ultra,Opera|Opera 183|Opera SE|Piraclostrobina+Epoxiconazol SE|Opera Ultra BASF,9310,SE,10,ADAPAR PR — bula PDF 2026,2026-11-24,piraclostrobina+epoxiconazol
+Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|Score Ultra|Difenoconazol EC|Difenconazol|Difenoconazole,002894,EC,11,ADAPAR PR — bula PDF 2026,2026-11-24,difenoconazol
+Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,,WG,6,placeholder removido - aguarda registro MAPA real,2024-01-10,metsulfuron-metilico
+Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,04903,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,azoxistrobina+ciproconazol
+Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,teflubenzurom
+Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,,OLEO,12,placeholder removido - aguarda registro MAPA real,2024-01-10,oleo mineral
+Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante|Nonionic|Non-ionic surfactant|Surfactante nao ionico,,ADJUVANTE,2,placeholder removido - aguarda registro MAPA real,2024-01-10,
+Derosal Plus,Derosal|Carbendazim tiram,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,carbendazim+tiram
+Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS|Hallmark|Hallmark Zeon|Lambda-cyhalothrin,,CS,7,placeholder removido - aguarda registro MAPA real,2024-01-10,lambda-cialotrina
+Galil SC,Galil|Galil Syngenta,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,azoxistrobina+benzovindiflupir
+Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,,EC,11,placeholder removido - aguarda registro MAPA real,2024-01-10,deltametrina
+Sequência Solúvel,Sequência|Condicionador pH,,ADJUVANTE,2,placeholder removido - aguarda registro MAPA real,2024-01-10,
+Óleo de laranja,oleo da laranja,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
 Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC|Fox 075 EC|Fox 075 SC,24117,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800|Manzeb|Mancozeb 800|Manzeb 800,12319,WP,5,Siagro ADAPAR 2025,2026-11-24,mancozebe
 "2,4-D Amina","2,4-D|2,4-D Nortox|DMA 806|DMA 806 BR|U-46|U-46 BR|U46|U46 Prime|U46 prime|Aminol|Aminol 806|2,4 D Aminol|2,4-D CHDS|2,4-D Copalliance|Atulamina|Atulamina 806|Campeon|Cortador|Dez|Dical|Grant|Herbi D-480|Herbimax|Krost|Mirant|Navajo|Troller|2,4-D Agritec|2,4-D 806 RN|Esteron|2.4D|2.4-D|2.4 D|2.4d|2.4 d|2,4-D Amine|DMA Amine",2108604,SL,16,Siagro ADAPAR 2025,2026-11-24,"2,4-D"
 Decanto,Decanto Prime,9826,SC,8,Siagro ADAPAR 2025,2026-11-24,saflufenacil
 Heat,Heat 70 WG|Saflufenacil|Kixor|DuPont Kixor|Saflufenacil WG,1013,WG,6,Siagro ADAPAR 2025,2026-11-24,saflufenacil
-Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125|Betaciflutrina|Beta-Cyfluthrin|Betacyfluthrin,,EC,11,análise ordem agrônomo — pendente confirmação,pendente (2026-10-08),beta-ciflutrina
-Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,OLEO,12,adjuvante óleo — confirmado pelo consultor,2026-10-09,
+Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125|Betaciflutrina|Beta-Cyfluthrin|Betacyfluthrin,01192,EC,11,ADAPAR PR — bula PDF 2026,2026-11-24,beta-ciflutrina
+Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
 Dessek,,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Triclon,Triclopyr|Triclon EC,17208,EC,11,Siagro ADAPAR 2025,2026-11-24,triclopir-butotilico
 Cofenrin,Coferin|Bifentrina Coferin|Insectrin|Orsa|Indotrin,06922,EC,11,pesquisa web — registro MAPA 06922 bifentrina 400g/L,2026-10-13,bifentrina
@@ -41,19 +41,19 @@ Diflumax,Diflumax 240 SC,162017,SC,8,Siagro ADAPAR 2025,2026-11-24,diflubenzurom
 Ademir Wet,Ademir,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Soberan,Soberam|Soberan 420 SC|Tembotriona,5108,SC,8,Siagro ADAPAR 2025,2026-11-24,tembotriona
 Kasumin,Kassumin|Kasumaiz|Casugamicina,1648702,SL,16,Siagro ADAPAR 2025,2026-11-24,casugamicina
-Belt,Belt 480 SC|Flubendiamida|Belt SC|Flubendiamida SC|Flubendiamide|Flubendiamide SC,,SC,8,inseticida SC Bayer — bula confirmada,2026-11-21,flubendiamida
-Multikel Zinco,Multikel Zn|Multikel,,FERTILIZANTE,18,fertilizante foliar zinco,2026-10-09,
-Biocomoni,BioCoMoNi|Bio Co Mo Ni|Multi Biocomoni|Multi BioCoMoNi|Biocomini|Multi Biocomini,,FERTILIZANTE,18,fertilizante foliar Co+Mo+Ni,2026-10-09,
-Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO,12,óleo de laranja — confirmado pelo consultor,2026-10-09,
+Belt,Belt 480 SC|Flubendiamida|Belt SC|Flubendiamida SC|Flubendiamide|Flubendiamide SC,02509,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,flubendiamida
+Multikel Zinco,Multikel Zn|Multikel,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
+Biocomoni,BioCoMoNi|Bio Co Mo Ni|Multi Biocomoni|Multi BioCoMoNi|Biocomini|Multi Biocomini,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
+Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
 Unizeb Gold,Unizeb|Mancozeb 750 WG|Disarm|Vigold,18007,WG,6,Siagro ADAPAR 2025,2026-11-24,mancozeb
 Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol|Pidiflumetofen|Pydiflumetofen,14222,SC,8,Siagro ADAPAR 2025,2026-11-24,pydiflumetofen+difenoconazol
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,36224,SC,8,Siagro ADAPAR 2025,2026-11-24,etiprole
-Intense,,,OLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09,
+Intense,,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
 Flumioxazina,Flumioxazin|Flumioxazin 500 SC|Valor|Valor WG|Valor Nufarm,19425,SC,8,Siagro ADAPAR 2025,2026-11-24,flumioxazina
 Flumizin,Flumyzin|Flumyzin 500|Flumyzyn,22617,SC,8,Siagro ADAPAR 2025,2026-11-24,flumioxazina
 Stone,Stone Herbicida|Stone Nufarm,1116,SL,16,Siagro ADAPAR 2025,2026-11-24,cloransulam-metilico
 Diquat,Diquate|Reglone|Diquat 200 SL,34621,SL,16,Siagro ADAPAR 2025,2026-11-24,diquate
-Auron,,,OLEO,12,óleo vegetal — confirmado pelo consultor,2026-10-09,
+Auron,,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
 Abamectina,Abamectin|Kraft|Epimec|Pausato|Abamectin Nortox|Abamectin CCAB|Acarigen|Vertimec|Vertimec 18 CE|Vertimec Gold|Vertimec Gold 18 EC,29617,EC,11,Siagro ADAPAR 2025,2026-11-24,abamectina
 Vertimec,Vertimec 84 SC|Savivo,618895,SC,8,Siagro ADAPAR 2025,2026-11-24,abamectina
 Teburaz,Teburaz CI|Azoxistrobina+Tebuconazol,20420,SC,8,Siagro ADAPAR 2025,2026-11-24,azoxistrobina+tebuconazol
@@ -64,13 +64,13 @@ Primatop,Primatop SC|Atrazina+Simazina,,SC,8,herbicida SC Syngenta — bula conf
 Adengo,Adengo SC|Isoxaflutol+Tiencarbazona,,SC,8,herbicida SC Bayer — bula confirmada,2026-11-21,
 Elevore,Elevore SC|Halauxifeno,,SC,8,herbicida SC Corteva — bula confirmada,2026-11-21,
 Ampligo,Ampligo 150 ZC|Clorantraniliprole+Lambda|Coragen|Coragen 200 SC|Prevathon|Rynaxypyr+Lambda,610,SC,8,Siagro ADAPAR 2025,2026-11-24,lambda cialotrina +
-Kellus Zinc,Kellus Zn|Kellus Zinco,,FERTILIZANTE,18,fertilizante foliar zinco quelatado,2026-10-09,
+Kellus Zinc,Kellus Zn|Kellus Zinco,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
 Roundup WG,Roundup Transorb WG|Glifosato WG|Xeque Mate WG|Stinger WG|Zapp WG|Glifa 720 WG|Glifosato 72 WG|Glifosato CHDS 720 WG|Fortop Glifosato 720 WG|Roundup Transorb,2094,WG,6,Siagro ADAPAR 2025,2026-11-24,glifosato
 Xeque Mate SG,Glifumax|Glifosato SG,10023,SG,3,Siagro ADAPAR 2025,2026-11-24,glifosato
 Atrazina WG,Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueio|Atranex,2999,WG,6,Siagro ADAPAR 2025,2026-11-24,atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,29217,EC,11,Siagro ADAPAR 2025,2026-11-24,haloxifop
-Paxeo,Paxeo WG,,WG,6,herbicida WG Corteva — pesquisa MAPA reg 28021,pendente (2026-10-09),halauxifeno-metil+diclosulam
-Oxyon,,,OLEO,12,óleo mineral — informado pelo usuário,2026-10-09,oleo mineral
+Paxeo,Paxeo WG,28021,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,halauxifeno-metil+diclosulam
+Oxyon,,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Nativo 325 SC|Nativo Top|Trifloxystrobin|Trifloxystrobin SC,205,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+tebuconazol
 Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol SC|Acanto Plus|Acanto Plus SC|Acanto|Picoxistrobina|Picoxystrobin,9107,SC,8,Siagro ADAPAR 2025,2026-11-24,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max|Cruse SC|Cruse,8608,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+ciproconazol
@@ -117,26 +117,26 @@ Talstar,Talstar EC|Talstar 100|Bifentrina EC|Brigade|Bifentrina|Talstar 100 EC|B
 Avaunt,Avaunt EC|Avaunt 150|Indoxacarbe EC,,EC,11,cadastro manual — produto comercial comum,2026-10-09,indoxacarbe
 Tracer,Tracer SC|Tracer Corteva|Espinosade SC|Spinosade|Spinosad|Success|Success 480 SC|Entrust SC,7798,SC,8,Siagro ADAPAR 2025,2026-11-24,espinosade
 Delegate,Delegate WG|Delegate 250|Espinetoram WG,14414,WG,6,Siagro ADAPAR 2025,2026-11-24,espinetoram
-Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno|Oberon 240 SC,,SC,8,cadastro manual — produto comercial comum,2026-10-09,espiromesifeno
+Oberon,Oberon SC|Oberon Bayer|Espiromesifeno SC|Espiromesifeno|Oberon 240 SC,01706,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,espiromesifeno
 Envidor,Envidor SC|Envidor Bayer|Espirodiclofeno SC|Envidor 240 SC|Espirodiclofeno,703,SC,8,Siagro ADAPAR 2025,2026-11-24,espirodiclofeno
 Sencor,Sencor SC|Sencor 480|Metribuzim SC|Sencor WP|Metribuzim WP|Lexone|Lexone SC|Decisao,,SC,8,cadastro manual — produto comercial comum,2026-10-09,metribuzim
 Kifix,Kifix WG|Imazapir Imazapique,7907,WG,6,Siagro ADAPAR 2025,2026-11-24,imazapir+imazapique
 Sanson,Sanson SC|Sanson 40|Nicosulfuron SC|Samson|Samson SC|Samson 40,9011,SC,8,Siagro ADAPAR 2025,2026-11-24,nicosulfuron
 Lorsban,Lorsban EC|Lorsban 480|Clorpirifos|Clorpirifos EC|Clorpirifos Nortox|Nufos|Lorsban 480 BR|Dursban|Dursban BR EC|Dursban EC,36822,EC,11,Siagro ADAPAR 2025,2026-11-24,clorpirifos
 Mospilan,Mospilan SP|Mospilan 200|Acetamiprido SP,,SP,4,cadastro manual — produto comercial comum,2026-10-09,acetamiprido
-Benevia,Benevia OD|Benevia FMC|Ciantraniliprole OD,,OD,9,cadastro manual — produto comercial comum,2026-10-09,ciantraniliprole
+Benevia,Benevia OD|Benevia FMC|Ciantraniliprole OD,02723,OD,9,ADAPAR PR — bula PDF 2026,2026-11-24,ciantraniliprole
 Polytrin,Polytrin EC|Profenofos Cipermetrina|Profenofos,9507,EC,11,Siagro ADAPAR 2025,2026-11-24,profenofos+cipermetrina
 Tiger,Tiger EC|Tiger 100|Piriproxifem EC|Cordial,5498,EC,11,Siagro ADAPAR 2025,2026-11-24,piriproxifem
-Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL|Dicamba+Glifosato|Roundup Extend|Fuse,,SL,16,cadastro manual — generico comum,2026-10-09,dicamba
-Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol|Bavistin|Bavistin 500 SC|Derosal SC,,SC,8,cadastro manual — generico comum,2026-10-09,carbendazim
+Dicamba,Banvel|Banvel 480|Atectra|Dicamba SL|Dicamba+Glifosato|Roundup Extend|Fuse,,SL,16,nome generico - multiplos registros MAPA por empresa,2026-11-24,dicamba
+Carbendazim,Carbendazim Nortox|Carbendazim 500 SC|Bendazol|Bavistin|Bavistin 500 SC|Derosal SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,carbendazim
 Avatar,Avatar WG|Avatar 300|Indoxacarbe WG|Avatar 150 EC|Integon|Integon WG|Integon Plus,1415,WG,6,Siagro ADAPAR 2025,2026-11-24,indoxacarbe
 Fastac,Fastac 100|Alfa-cipermetrina|Alfacipermetrina|Fastac CS,2793,CS,7,Siagro ADAPAR 2025,2026-11-24,alfa-cipermetrina
-Altacor,Altacor WG|Altacor 350,,WG,6,cadastro manual — inseticida WG Corteva,2026-10-09,clorantraniliprole
+Altacor,Altacor WG|Altacor 350,08909,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,clorantraniliprole
 Targa,Targa EC|Targa Max|Quizalofop EC|Quizalofop|quizalofop-p-tefuryl|quizalofop tefuryl,10222,EC,11,Siagro ADAPAR 2025,2026-11-24,quizalofop-p-tefuril
 Aramo,Aramo 200|Tepraloxidim EC|Tepraloxidim|tepraloxydim|tepraloxydim EC,,EC,11,cadastro manual — graminicida EC BASF,2026-10-09,tepraloxidim
 Fusilade,Fusilade 250|Fusilade EW|Fluazifop EW|Fluazifop|Fusilade Forte|Fluazifop-P-butilico|Fluazifop-P|Fusilade DX,28121,EW,14,Siagro ADAPAR 2025,2026-11-24,fluazifop-p-butilico
 Frowncide,Frowncide SC|Fluazinam SC|Fluazinam|Shirlan|Shirlan SC|Fluazinam SC 500|Nando|Nando SC,7695,SC,8,Siagro ADAPAR 2025,2026-11-24,fluazinam
-Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor|Isoclast SC|Isoclast,,SC,8,cadastro manual — inseticida SC Corteva,2026-10-09,sulfoxaflor
+Closer,Closer SC|Sulfoxaflor SC|Sulfoxaflor|Isoclast SC|Isoclast,22819,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,sulfoxaflor
 Amistar,Amistar SC|Azoxistrobina|Azoxistrobina SC|Azoxistrobina solo|Azoxistrobina Nortox SC|Azoxistrobina Nortox|Azoxystrobin|Azoxystrobin SC,3809,SC,8,Siagro ADAPAR 2025,2026-11-24,azoxistrobina
 Recop,Recop WP|Oxicloreto|Oxicloreto de cobre|Cuprogarb|Cobre WP|Oxicloreto de Cobre Nortox|Cobre Nortox|Cupravit|Funguran|Hidrossido de cobre|Sulfato de cobre,1308704,WP,5,Siagro ADAPAR 2025,2026-11-24,oxicloreto de cobre
 Kocide,Kocide WG|Kocide 3000|Hidroxido de cobre WG,2400,WG,6,Siagro ADAPAR 2025,2026-11-24,hidroxido de cobre
@@ -159,7 +159,7 @@ Guapo,Guapo SC|Guapo BASF,8509,SC,8,Siagro ADAPAR 2025,2026-11-24,epoxiconazol+c
 Stroby,Stroby WG|Cresoxim-metilico WG,,WG,6,cadastro manual — fungicida WG estrobilurina,2026-10-09,cresoxim-metilico
 Manfil,Manfil WP|Manfil 800|Troia,6313,WP,5,Siagro ADAPAR 2025,2026-11-24,mancozebe
 Provado,Provado SC|Provado 200 SC|Imidacloprido SC|Imidacloprido Nortox 700 SC|Imidacloprido Nortox,6301,SC,8,Siagro ADAPAR 2025,2026-11-24,imidacloprido
-Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC|Herbadox 400 EC|Pendimethalina 400 EC|Prowl 400,,EC,11,cadastro manual — herbicida pre-emergente EC,2026-10-09,pendimetalina
+Pendimetalina,Herbadox|Herbadox EC|Pendimentalin EC|Herbadox 400 EC|Pendimethalina 400 EC|Prowl 400,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,pendimetalina
 Dual Gold,Dual|S-metolacloro EC|S-metolacloro Syngenta,8499,EC,11,Siagro ADAPAR 2025,2026-11-24,s-metolacloro
 Ametrina,Ametrina Nortox|Gesapax|Gesapax 500|Ametrina SC|Ametryn|Ametryn SC|Ametryne,16318,SC,8,Siagro ADAPAR 2025,2026-11-24,ametrina
 Gardoprim,Gardoprim SC|Terbutilazina SC,,SC,8,cadastro manual — herbicida SC milho Syngenta,2026-10-09,terbutilazina
@@ -167,7 +167,7 @@ Curavial,Curavial WG|Sulfometurom|Sulfometurom-metilico,8198,WG,6,Siagro ADAPAR 
 Permit,Permit WG|Halosulfurom WG|Sempra|Halosulfuron WG|Halosulfuron|Halosulfurom|Halosulfuron-methyl,,WG,6,cadastro manual — herbicida WG tiririca,2026-10-09,halosulfurom-metilico
 Zethamaxx,Zetamax|Zethamax|Zethamaxx SC,10416,SC,8,herbicida SC Nufarm — flumioxazina+imazetapir,pendente (2026-10-16),flumioxazina+imazetapir
 Zethamaxx Evo,Zethamaxx Evo SC|Zethamaxx evo,45924,SE,10,herbicida SE Sumitomo — s-metolacloro+flumioxazina+imazetapir,2026-10-10,s-metolacloro+flumioxazina+imazetapir
-Nitro Dry,Nitrodry|NitroDry|Nitro dry,,FERTILIZANTE,18,pesquisa web — fertilizante foliar Co/Mo/Ni Fastagro,2026-10-13,cobalto+molibdenio+niquel
+Nitro Dry,Nitrodry|NitroDry|Nitro dry,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobalto+molibdenio+niquel
 Prisma Plus,Ehvero|Prisma,9917,EC,11,pesquisa web — registro MAPA 9917 Helm difenoconazol 250g/L,2026-10-13,difenoconazol
 Vessarya,Vessarya BR,19916,EC,11,pesquisa web — registro MAPA 19916 Corteva,2026-10-13,benzovindiflupir+picoxistrobina
 Elatus Easy,Elatus,24122,WG,6,pesquisa web — registro MAPA 24122 Syngenta soja/milho,2026-10-13,azoxistrobina+benzovindiflupir
@@ -187,9 +187,9 @@ Fuse,,10724,OD,9,pesquisa web — registro MAPA 10724 Adama soja,2026-10-13,manc
 Off Road,OffRoad|Off-Road,4220,SL,16,bula Agrolink — registro MAPA 4220 Ouro Fino glufosinato 200g/L,2026-10-13,glufosinato
 Bombardeiro,Bombardeiro SC,274321,SC,8,Siagro ADAPAR 2025,2026-11-24,bifentrina+imidacloprido
 Lufenuron,Lufenurom|Lufenurom EC|Match generico,28124,EC,11,Siagro ADAPAR 2025,2026-11-24,lufenurom
-Óleo Vegetal,Oleo Vegetal|Óleo vegetal|oleo vegetal,,OLEO,12,adjuvante óleo vegetal genérico,2026-10-13,oleo vegetal
-Concorde,,,FERTILIZANTE,18,confirmado pelo usuário — fertilizante foliar,2026-10-13,
-Tônus,Tonus|Tônus,,FERTILIZANTE,18,confirmado pelo usuário — fertilizante foliar,2026-10-13,
+Óleo Vegetal,Oleo Vegetal|Óleo vegetal|oleo vegetal,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Concorde,,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
+Tônus,Tonus|Tônus,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
 Voliam Targa,Voliam|Volian Targa|Voliam Express|Voliam Flexi|Volia Targa,2413,SC,8,Siagro ADAPAR 2025,2026-11-24,clorantraniliprole+abamectina
 Proclaim,Denim|Emamectina|Emamectin|Proclaim 5 SG,29817,SG,3,Siagro ADAPAR 2025,2026-11-24,emamectina benzoato
 Hero,Hero EC|Hero FMC,16812,EC,11,Siagro ADAPAR 2025,2026-11-24,bifentrina+zetacipermetrina
@@ -210,15 +210,15 @@ Nortox Espalhante,Espalhante Nortox,,ADJUVANTE,2,adjuvante espalhante adesivo No
 Dinamic,Dinamic WG|Amicarbazona|Amicarbazone|Amicarbazone WG,10601,WG,6,Siagro ADAPAR 2025,2026-11-24,amicarbazona
 Coyote,Coyote SC,,SC,8,herbicida SC — atrazina+tembotriona — milho,2026-10-13,atrazina+tembotriona
 Hussar,Hussar WG|Hussar Plus|Iodosulfurom,1404,WG,6,Siagro ADAPAR 2025,2026-11-24,iodosulfurom
-Equip Plus,Equip|Equip WG,,WG,6,herbicida WG Bayer — foramsulfurom+iodosulfurom — milho,2026-10-13,foramsulfurom+iodosulfurom
-Accent,Accent WG|Nicosulfurom WG|Nicossulfuron|Nicosulfuron|Saurus|Saurus WG,,WG,6,herbicida WG Corteva — nicosulfurom — milho,2026-10-13,nicosulfurom
+Equip Plus,Equip|Equip WG,011401,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,foramsulfurom+iodosulfurom
+Accent,Accent WG|Nicosulfurom WG|Nicossulfuron|Nicosulfuron|Saurus|Saurus WG,05806,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,nicosulfurom
 Brodal,Brodal SC|Brodal Bayer|Diflufenican,,SC,8,herbicida SC Bayer — trigo,2026-10-13,diflufenican
-Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO,12,óleo de laranja d-limoneno — espalhante e penetrante,2026-10-16,d-limoneno (óleo de laranja)
+Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,d-limoneno (óleo de laranja)
 Tec Catp 2.8,Catp|Catp 2.8|Tec Catp|Comando BT,8323,BIO_BACTERIANO,20,inseticida biológico Solubio — bula ADAPAR/PR 2024,2026-10-16,Bacillus thuringiensis kurstaki CBMAI 1398
 Calaris,Calaris SC|Calaris Syngenta,9419,SC,8,herbicida SC Syngenta — mesotrione+atrazine — milho,2026-10-16,mesotrione+atrazine
-biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante óleo vegetal/biológico — compatível com biológicos,2026-10-16,óleo vegetal
-Strong,Strong Nutricional|Strong Foliar,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
-Leaf,Leaf Foliar|Leaf Nutricional,,FERTILIZANTE,18,fertilizante foliar nutricional — nutrição foliar,2026-10-16,complexo de nutrientes
+biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,óleo vegetal
+Strong,Strong Nutricional|Strong Foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo de nutrientes
+Leaf,Leaf Foliar|Leaf Nutricional,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo de nutrientes
 Actron,Actron Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-16,
 Dipel,Dipel WG|Dipel WP|Dipel SC|Bacillus thuringiensis|Bt,4519,BIO_BACTERIANO,20,inseticida biológico Sumitomo — Bt kurstaki,pendente (2026-10-16),Bacillus thuringiensis kurstaki
 Agree,Agree SC|Agree WG|Bt WG,4421,BIO_BACTERIANO,20,inseticida biológico UPL — Bt aizawai,pendente (2026-10-16),Bacillus thuringiensis aizawai
@@ -227,11 +227,11 @@ Quality,Quality WG|Quality Koppert,27915,BIO_FUNGICO,21,fungicida biológico Kop
 Metarriz,Metarriz WP|Metarriz Koppert|Metarhizium anisopliae|Metarhizium anisopliae WP,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
 Baculovirus AEE,Baculovirus|Baculovírus|CoolGuard,6813,BIO_VIRAL,22,Siagro ADAPAR 2025,2026-11-24,Baculovirus anticarsia
 Sumisin,Sumisin 500 EC|Sumithion,518309,EC,11,Siagro ADAPAR 2025,2026-11-24,fenitrothion
-Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante óleo mineral/vegetal,pendente (2026-10-16),óleo mineral
-Act Oil,Act Oil Giroagro|ActOil|Act Oleo Giroagro,,OLEO,12,cadastro manual — óleo adjuvante Giroagro,2026-11-16,oleo mineral/vegetal
+Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,óleo mineral
+Act Oil,Act Oil Giroagro|ActOil|Act Oleo Giroagro,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral/vegetal
 Sapek Max,Sapek|Sapek Mais|Sapek Max SG|Mirny|Agrios|Babel|Kavez,34221,SG,3,herbicida SG — glufosinato de amônio,pendente (2026-10-16),glufosinato de amônio
 Kennox,Kennox 240 EC|Kennox CI,24518,EC,11,graminicida EC UPL — bula confirmada MAPA 24518,2026-10-22,cletodim + haloxifope-P-metilico
-Boro Max,Boro max|Boro Max Foliar|Boro Max|Boromax|Masterbor|Borosol,,FERTILIZANTE,18,fertilizante foliar boro — cadastro manual,2026-10-26,boro
+Boro Max,Boro max|Boro Max Foliar|Boro Max|Boromax|Masterbor|Borosol,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
 Compat,Compat Nortox|Compat Adama|Compat Buffer,,ADJUVANTE,2,condicionador/buffer de calda — cadastro manual,2026-10-26,
 Arkeiro Nortox,Arkeiro|Arkeiro Nortox CI,6723,WG,6,herbicida WG Nortox — bula MAPA reg 6723 pré-semeadura soja,2026-10-26,clorimurom-etilico+flumioxazina+imazetapir
 Miravis Top,Miravis Top SC|Miravis|Pidiflumetofen|Pydiflumetofen,14922,SC,8,fungicida SC Syngenta — bula MAPA reg 14922 pidiflumetofen+difenoconazol,2026-10-26,pidiflumetofen+difenoconazol
@@ -257,7 +257,7 @@ Magister SC,Magister|Magister FMC|Fenazaquin SC,,SC,8,acaricida SC FMC — fenaz
 Cossack 135 WG,Cossack|Cossack WG|Cossack Bayer,,WG,6,herbicida WG Bayer — mesossulfuron+iodossulfuron trigo — consulta IA busca web pendente,pendente (2026-10-26),mesossulfuron-metilico+iodossulfuron
 Traxos,Traxos EC|Traxos Syngenta,36722,EC,11,Siagro ADAPAR 2025,2026-11-24,pinoxaden
 Moddus,Moddus EC|Moddus Syngenta|Trinexapac|Primo EC|Primo|Moddus Evo,296,EC,11,Siagro ADAPAR 2025,2026-11-24,trinexapac-etilico
-Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,,EC,11,regulador crescimento EC Syngenta — paclobutrazol soja — consulta IA busca web pendente,pendente (2026-10-26),paclobutrazol
+Palisade EC,Palisade|Palisade Syngenta|Paclobutrazol EC|Paclobutrazol,08798,EC,11,ADAPAR PR — bula PDF 2026,2026-11-24,paclobutrazol
 Ethrel,Ethrel SL|Ethrel Bayer|Etefon SL|Ethephon|Etefon|Cerone|Ethephon SL,993,SL,16,Siagro ADAPAR 2025,2026-11-24,etefon
 Zidua,Zidua WG|Zidua BASF|Piroxasulfona WG|Pyroxasulfone WG|Fierce|Fierce WG|Sakura|Sakura WDG,,WG,6,herbicida WG BASF — piroxasulfona pre-emergente soja — consulta IA busca web pendente,pendente (2026-10-26),piroxasulfona
 Broadway,Broadway WG|Broadway Corteva|Piroxsulam WG,,WG,6,herbicida WG Corteva — piroxsulam trigo — consulta IA busca web pendente,pendente (2026-10-26),piroxsulam
@@ -269,14 +269,14 @@ Iprodiona,Iprodion|Iprodiona SC|Iprodione,12120,SC,8,Siagro ADAPAR 2025,2026-11-
 Velum Prime,Fluopiram|Fluopiram SC|Velum|Velum 400 SC|Velum Bayer|Velum Prime SC,,SC,8,nematicida/fungicida SC Bayer — fluopyram — consulta IA busca web pendente,2026-11-21,fluopiram
 Verango Prime,Verango|Verango Prime SC,32319,SC,8,nematicida SC Bayer — bula MAPA reg 32319 fluopyram,2026-10-26,fluopyram
 Stimulate,Stimulate SL|Stimulate Stoller|Bioestimulante Stoller|Bioativo Stoller|Bioativo,3601,SL,16,Siagro ADAPAR 2025,2026-11-24,ácido indol butírico+ácido giberélico+cinetina
-Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar potássio Uby — IA busca web confirmou FERTILIZANTE,2026-10-26,potássio foliar
-Bioamin,Bioamin SC|Bioamin fertilizante|Aminoácido foliar,,FERTILIZANTE,18,fertilizante foliar/bioestimulante aminoácido — IA busca web confirmou FERTILIZANTE,2026-10-26,aminoácidos
+Ubyfol Potassio,Ubyfol K|Ubyfol Potássio|Ubyfol Potassio Uby,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,potássio foliar
+Bioamin,Bioamin SC|Bioamin fertilizante|Aminoácido foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoácidos
 Dithane NT,Dithane|Dithane WP|Mancozebe WP|Mancozebe Dow,2438798,WP,5,Siagro ADAPAR 2025,2026-11-24,mancozebe
 Curzate M,Curzate|Curzate WP|Cymoxanil WP|Cimoxanil WP|Cimoxanil|Cimoxanil+Mancozeb|cymoxanil mancozeb|cymoxanil+mancozeb,19507,WP,5,Siagro ADAPAR 2025,2026-11-24,cymoxanil+mancozebe
 Ridomil Gold,Ridomil|Ridomil WG|Metalaxil WG|Ridomil Gold Syngenta|Metalaxil|Metalaxil-M|Metalaxil mancozebe,8408,WG,6,Siagro ADAPAR 2025,2026-11-24,metalaxil-M+mancozebe
 Bravonil 720 SC,Bravonil|Bravonil SC|Clorotalonil SC,6300,SC,8,Siagro ADAPAR 2025,2026-11-24,clorotalonil
-Chlorothalonil 500 SC,Chlorothalonil|Clorotalonil 500|Clorotalonil SC generico,,SC,8,fungicida SC generico — clorotalonil — IA busca web confirmou SC,2026-10-26,clorotalonil
-Kresoxim 500 SC,Kresoxim|Kresoxim SC|Kresoxim-metil SC|Kresoxim-methyl|Kresoxim-methyl SC,,SC,8,fungicida SC — kresoxim-metil — IA busca web confirmou SC,2026-10-26,kresoxim-metil
+Chlorothalonil 500 SC,Chlorothalonil|Clorotalonil 500|Clorotalonil SC generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,clorotalonil
+Kresoxim 500 SC,Kresoxim|Kresoxim SC|Kresoxim-metil SC|Kresoxim-methyl|Kresoxim-methyl SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,kresoxim-metil
 Ronstar 250 EC,Ronstar|Ronstar EC|Oxifluorfem Bayer,1408402,EC,11,Siagro ADAPAR 2025,2026-11-24,oxifluorfem
 Topik 240 EC,Topik|Clodinafop|Clodinafop EC|Topik EC|Clodinafop-propargil|clodinafop-propargyl,1506,EC,11,Siagro ADAPAR 2025,2026-11-24,clodinafop-propargil
 Podium 125 EW,Podium|Podium EW|Fenoxaprop EW|Fenoxaprop-p Bayer,338996,EW,14,Siagro ADAPAR 2025,2026-11-24,fenoxaprop-p-etilico
@@ -285,19 +285,19 @@ Nimitz 480 SL,Nimitz|Nimitz SL|Fluensulfone SL,8218,SL,16,Siagro ADAPAR 2025,202
 Pyrinex 480 EC,Pyrinex|Pyrinex EC|Clorpirifos EC|Clorpirifos Dow,9298,EC,11,Siagro ADAPAR 2025,2026-11-24,clorpirifos-etilico
 Perfekthion 400 EC,Perfekthion|Dimetoato EC|Dimethoate EC|Dimetoato|Dimethoate|Dimex|Dimex 400,1808701,EC,11,Siagro ADAPAR 2025,2026-11-24,dimetoato
 Clinic 480 SL,Clinic|Clinic SL|Glifosato Clinic|Glifosato Zeneca,,SL,16,herbicida SL — glifosato — IA busca web confirmou SL,2026-10-26,glifosato
-Plateau,Plateau WG|Plateau BASF|Imazapique WG,,WG,6,herbicida WG BASF — imazapique — IA busca web confirmou WG,2026-10-26,imazapique
+Plateau,Plateau WG|Plateau BASF|Imazapique WG,02298,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,imazapique
 Flexidor,Flexidor SL|Flexidor Bayer|Isoxaflutol SL,,SL,16,herbicida SL Bayer — isoxaflutol — IA busca web retornou SL (pendente confirmacao bula),pendente (2026-10-26),isoxaflutol
 Alion,Alion SC|Alion Syngenta|Indaziflam SC,3116,SC,8,Siagro ADAPAR 2025,2026-11-24,indaziflam
-Hussar OD,Hussar OD Bayer|Iodosulfurom OD|Hussar Maxx OD,,OD,9,herbicida OD Bayer — iodosulfurom — trigo — variante OD diferente do WG,2026-10-26,iodosulfurom
+Hussar OD,Hussar OD Bayer|Iodosulfurom OD|Hussar Maxx OD,01404,OD,9,ADAPAR PR — bula PDF 2026,2026-11-24,iodosulfurom
 Tivian 40 WG,Tivian|Tivian WG|Tivian Syngenta|Tiametoxam+Clorantraniliprole WG,,WG,6,inseticida WG Syngenta — tiametoxam+clorantraniliprole — IA busca web confirmou WG,2026-10-26,tiametoxam+clorantraniliprole
-Epoxiconazol 125 SC,Epoxiconazol SC|Epoxiconazol generico,,SC,8,fungicida SC generico — epoxiconazol — IA busca web confirmou SC,2026-10-26,epoxiconazol
-Azoxistrobina 500 SC,Azoxistrobina 500|Azoxistrobina generico SC,,SC,8,fungicida SC generico — azoxistrobina — IA busca web confirmou SC,2026-10-26,azoxistrobina
-Piraclostrobina 250 EC,Piraclostrobina EC|Piraclostrobina generico EC,,EC,11,fungicida EC generico — piraclostrobina — IA busca web confirmou EC,2026-10-26,piraclostrobina
-Borozinco,Boro Zinco|Borozinco fertilizante|Boro+Zinco foliar,,FERTILIZANTE,18,fertilizante foliar boro+zinco — IA busca web confirmou FERTILIZANTE,2026-10-26,boro+zinco
-Sulfato de Zinco,Sulfato Zinco|ZnSO4 foliar|Zinco Sulfato,,FERTILIZANTE,18,fertilizante foliar zinco — IA busca web confirmou FERTILIZANTE,2026-10-26,zinco
-Sulfato de Manganês,Sulfato Manganes|MnSO4 foliar|Manganes Sulfato,,FERTILIZANTE,18,fertilizante foliar manganes — IA busca web confirmou FERTILIZANTE,2026-10-26,manganes
-Boro foliar,Boro SL|Boro liquido|Acido Borico foliar,,FERTILIZANTE,18,fertilizante foliar boro — IA busca web confirmou FERTILIZANTE,2026-10-26,boro
-Brio SC,Brio|Brio BASF|Piraclostrobina+Epoxiconazol SC,,SC,8,fungicida SC BASF — piraclostrobina+epoxiconazol — IA busca web confirmou SC,2026-10-26,piraclostrobina+epoxiconazol
+Epoxiconazol 125 SC,Epoxiconazol SC|Epoxiconazol generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,epoxiconazol
+Azoxistrobina 500 SC,Azoxistrobina 500|Azoxistrobina generico SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,azoxistrobina
+Piraclostrobina 250 EC,Piraclostrobina EC|Piraclostrobina generico EC,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,piraclostrobina
+Borozinco,Boro Zinco|Borozinco fertilizante|Boro+Zinco foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro+zinco
+Sulfato de Zinco,Sulfato Zinco|ZnSO4 foliar|Zinco Sulfato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco
+Sulfato de Manganês,Sulfato Manganes|MnSO4 foliar|Manganes Sulfato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes
+Boro foliar,Boro SL|Boro liquido|Acido Borico foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
+Brio SC,Brio|Brio BASF|Piraclostrobina+Epoxiconazol SC,09009,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,piraclostrobina+epoxiconazol
 Adexar,Adexar SE|Adexar BASF|Fluxapiroxade+Epoxiconazol,,SE,10,fungicida SE BASF — fluxapiroxade+epoxiconazol — IA retornou EC mas formulacao correta e SE,pendente (2026-10-26),fluxapiroxade+epoxiconazol
 Topsin 500 SC,Topsin|Topsin SC|Tiofanato-metilico 500 SC,,SC,8,fungicida SC — tiofanato-metilico — IA busca web confirmou SC,2026-10-26,tiofanato-metilico
 Eminent 125 EW,Eminent|Eminent EW|Tetraconazol EW|Eminent Syngenta|Tetraconazole EW,3004,EW,14,Siagro ADAPAR 2025,2026-11-24,tetraconazol
@@ -316,26 +316,26 @@ Apollo 500 SC,Apollo|Apollo SC|Apollo Agroquimico|Clofentezina SC|Clofentezine|C
 Acaramik SC,Acaramik|Acaramik EC|Acaramik acaricida,,EC,11,acaricida — abamectina/milbemectina — IA busca web retornou EC; verificar se SC ou EC,pendente (2026-10-26),abamectina
 Nissorum 100 EC,Nissorum|Nissorum EC|Hexitiazox EC|Hexythiazox EC|Hexythiazox|Nissorun|Savey|Nissorun 100|Hexitiazox,,EC,11,acaricida EC — hexitiazox — IA busca web confirmou EC,2026-10-26,hexitiazox
 Radiant 120 SC,Radiant|Radiant SC|Radiant Corteva|Espinosade SC,4695,SC,8,Siagro ADAPAR 2025,2026-11-24,espinosade
-Spinetoram SC,Spinetoram|Spinetoram Corteva|Espinosina SC,,SC,8,inseticida SC Corteva — espinorama — IA busca web confirmou SC,2026-10-26,espinosina
+Spinetoram SC,Spinetoram|Spinetoram Corteva|Espinosina SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,espinosina
 Talisman,Talisman EC|Talisman Bayer|Deltametrina+Piridafentiona,18107,EC,11,Siagro ADAPAR 2025,2026-11-24,deltametrina+piridafentiona
 Pirimor 500 WG,Pirimor|Pirimor WG|Pirimor Syngenta|Pirimicarbe WG,,WG,6,aficida WG Syngenta — pirimicarbe — IA busca web confirmou WG,2026-10-26,pirimicarbe
 Marafix 480 EC,Marafix|Marafix EC|Clorpirifos Marafix,,EC,11,inseticida EC — clorpirifos-etilico — IA busca web confirmou EC,2026-10-26,clorpirifos-etilico
 Cloropirifos 480 EC,Cloropirifos|Clorpirifos 480|Cloropirifos EC generico,36822,EC,11,Siagro ADAPAR 2025,2026-11-24,clorpirifos-etilico
-Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar boro 10% — fertilizante pos 18,2026-10-27,boro
+Boro 10 plus,Boro 10|Boro 10 Plus|Boro 10plus foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
 Stomp Aqua 330 CS,Stomp Aqua|Stomp CS|Pendimetalina CS|Stomp Aqua BASF,,CS,7,herbicida pre-emergente CS BASF — pendimetalina 330 g/L — IA busca web confirmou CS,2026-10-27,pendimetalina
 Gramoxone 200 SL,Gramoxone|Gramoxone SL|Paraquat|Paraquate|Gramoxone Syngenta|Nortrel|Nortrel Nortox|Paraquate Nortox SL,,SL,16,herbicida dessecante SL Syngenta — paraquate 200 g/L — IA busca web confirmou SL,2026-10-27,paraquate
 Phytogard 400 SL,Phytogard|Phytogard SL|Fosfito Potassio SL|Phytogard Arysta|Fosfito|Fosfito de potassio|Fosfito K|Fosfito SL,,SL,16,fosfito de potassio SL Arysta — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
-Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,fosfito de potassio SL generico — defensivo/foliar — IA busca web confirmou SL,2026-10-27,fosfito de potassio
-Picoxistrobina 250 SC,Picoxistrobina SC|Picoxistrobina generico,,SC,8,estrobilurina SC generica — IA busca web confirmou SC,2026-10-27,picoxistrobina
+Fosfito de Potassio 40 SL,Fosfito Potassio|Fosfito de K|Fosfito foliar|Fosfato de Potassio SL,,SL,16,nome generico - multiplos registros MAPA por empresa,2026-11-24,fosfito de potassio
+Picoxistrobina 250 SC,Picoxistrobina SC|Picoxistrobina generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,picoxistrobina
 Impulse,Impulse SL|Impulso|Impulse herbicida,3202,SL,16,Siagro ADAPAR 2025,2026-11-24,etefom
-Multimag,Multimag nutricional|Multimag foliar|Multi Mag,,FERTILIZANTE,18,nutricional foliar — informado pelo usuário,2026-10-29,magnesio
+Multimag,Multimag nutricional|Multimag foliar|Multi Mag,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,magnesio
 Neutro,Neutro adjuvante|Neutro pH|Adjuvante Neutro|Neutro Nortox,,ADJUVANTE,2,condicionador de tanque/pH — vai primeiro — informado pelo usuário,2026-10-29,
 Drive,Drive adjuvante|Assist Drive,,ADJUVANTE,2,adjuvante condicionador/pH - vai primeiro - informado pelo usuario,2026-10-30,
-Nutrimol,Nutrimol foliar|Nutrimol fertilizante,,FERTILIZANTE,18,fertilizante foliar - informado pelo usuario,2026-10-30,
-Sulfato de Niquel,Sulfato de Niquel|Sulfato de Níquel|NiSO4 foliar|Niquel Sulfato,,FERTILIZANTE,18,micronutriente niquel - fertilizante foliar,2026-10-30,niquel
+Nutrimol,Nutrimol foliar|Nutrimol fertilizante,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
+Sulfato de Niquel,Sulfato de Niquel|Sulfato de Níquel|NiSO4 foliar|Niquel Sulfato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,niquel
 Afiado,Afiado SC|Proud|Afiado inseticida,13323,SC,8,inseticida SC - acetamipride+bifentrina - Albaugh - confirmado Agrolink,2026-10-30,acetamipride+bifentrina
 Mitrion,Mitrion EC|Mitrion Syngenta,7621,EC,11,Siagro ADAPAR 2025,2026-11-24,benzovindiflupyr+prothioconazol
-Boro MEA,Boro MEA foliar|BorMEA|Boro Mea,,FERTILIZANTE,18,fertilizante foliar boro monoetanolamina — cadastro manual,2026-11-11,boro
+Boro MEA,Boro MEA foliar|BorMEA|Boro Mea,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
 Glimor,Glimor WG|Glimor Nufarm,46519,WG,6,Siagro ADAPAR 2025,2026-11-24,glifosato
 Touchdown IQ,Touchdown|Touchdown IQ 500|Touchdown Total|Touchdown Syngenta|Glifosato IPA SL,4201,SL,16,Siagro ADAPAR 2025,2026-11-24,glifosato
 Roundup Power Max,Roundup PowerMAX|Roundup Power Max|PowerMax Glifosato|Roundup 648|Roundup Power|Powermax|Powermax 3 TF|Powermax 2|Roundup Powermax 3|Roundup Ultra Max|Roundup WCR|Nufosate|Glizmax|Glifosato Ultra,9106,SL,16,Siagro ADAPAR 2025,2026-11-24,glifosato
@@ -343,7 +343,7 @@ Zapp 480 SL,Zapp 480|Zapp Nortox 480|Glifosato Zapp,,SL,16,pesquisa web — cada
 Envision,Envision SL|Glifosato-K|Glifosato Potassio SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato
 Roundup Extend SL,Roundup Extend|Glifosato+Dicamba SL,,SL,16,pesquisa web — cadastro manual,2026-11-11,glifosato+dicamba
 Enlist One,Enlist|Enlist One EC|Enlist Corteva,8923,EC,11,pesquisa web — cadastro manual,2026-11-11,"2,4-D-colina"
-"2,4-D Ester EC","2,4-D Ester|Esteron 400 BR|2,4-D Isooctil|DMA Ester|2,4-D ester 480",,EC,11,pesquisa web — cadastro manual,2026-11-11,"2,4-D ester"
+"2,4-D Ester EC","2,4-D Ester|Esteron 400 BR|2,4-D Isooctil|DMA Ester|2,4-D ester 480",,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,"2,4-D ester"
 Warrant Ultra,Warrant|Warrant Ultra EC|Acetoclor EC|Acetoclor Bayer,8709,EC,11,Siagro ADAPAR 2025,2026-11-24,acetoclor
 Trophy EC,Trophy|Acetoclor Trophy|Acetoclor FMC,5194,EC,11,Siagro ADAPAR 2025,2026-11-24,acetoclor
 Sumisoya 500 WG,Sumisoya|Sumisoya WG|Flumixazina WG Sumitomo|Flumioxazina WG,22317,WG,6,Siagro ADAPAR 2025,2026-11-24,flumioxazina
@@ -365,13 +365,13 @@ Arsenal 250 SL,Arsenal|Arsenal SL|Arsenal BASF|Imazapir SL|imazapyr|imazapir,,SL
 Starane Ultra EC,Starane Ultra|Starane 250|Fluroxipir ester EC|Fluroxipir,31024,EC,11,Siagro ADAPAR 2025,2026-11-24,fluroxipir ester
 Velpar 75 WG,Velpar WG|Hexazinona+Diuron WG|Hexazinona 75 WG,,WG,6,pesquisa web — herbicida cana WG,2026-11-11,hexazinona+diuron
 Lorsban 750 BR WG,Lorsban WG|Clorpirifos 750 WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,clorpirifos
-Natur Oil,Natur'l Oil|Natural Oil|Óleo Natural adjuvante|Oleo Natural,,OLEO,12,pesquisa web — adjuvante óleo vegetal,2026-11-11,oleo vegetal
-Zoom,Zoom Nufarm|Zoom Oil|Zoom Óleo|Zoom adjuvante oleo,,OLEO,12,cadastro manual — oleo adjuvante Nufarm,2026-11-16,oleo mineral
-Lannate Oil,Lannate Oleo|LannatOil,,OLEO,12,cadastro manual — oleo adjuvante,2026-11-16,oleo mineral
-Orobor Óleo,Orobor Oleo|Orobor|Orobor adjuvante,,OLEO,12,cadastro manual — oleo adjuvante,2026-11-16,oleo vegetal
-Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdenio 100|Mo SL|Molybdenum|Molibdeno|Molibdenio quelado,,FERTILIZANTE,18,pesquisa web — micronutriente molibdênio,2026-11-11,molibdenio
-CoMo SL,Co+Mo foliar|Cobalto+Molibdenio|CoMo Fertilizante|Cobalto Molibdenio,,FERTILIZANTE,18,pesquisa web — micronutriente Co+Mo,2026-11-11,cobalto+molibdenio
-Plenifer Mn,Plenifer Manganes|Mn EDTA foliar|Manganes quelatado,,FERTILIZANTE,18,pesquisa web — fertilizante manganês quelatado,2026-11-11,manganes
+Natur Oil,Natur'l Oil|Natural Oil|Óleo Natural adjuvante|Oleo Natural,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Zoom,Zoom Nufarm|Zoom Oil|Zoom Óleo|Zoom adjuvante oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Lannate Oil,Lannate Oleo|LannatOil,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Orobor Óleo,Orobor Oleo|Orobor|Orobor adjuvante,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdenio 100|Mo SL|Molybdenum|Molibdeno|Molibdenio quelado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,molibdenio
+CoMo SL,Co+Mo foliar|Cobalto+Molibdenio|CoMo Fertilizante|Cobalto Molibdenio,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobalto+molibdenio
+Plenifer Mn,Plenifer Manganes|Mn EDTA foliar|Manganes quelatado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes
 Triton 480 SL,Triton|Triton EC Nufarm|Triton Glifosato,,SL,16,pesquisa web — glifosato SL Nufarm,2026-11-11,glifosato
 Galant Super EC,Gallant Super|Haloxifope Super|Gallant Max EC|Galant Plus|Galant HA|Haloxifope HA,,EC,11,pesquisa web — graminicida EC haloxifope,2026-11-11,haloxifope-r-metilico
 Amistral SE,Amistral|Amistral SE|Piraclostrobina+Tebuconazol SE,,SE,10,pesquisa web — fungicida SE ferrugem,2026-11-11,piraclostrobina+tebuconazol
@@ -410,50 +410,50 @@ Captano 480 SC,Captano|Captano SC|Captan SC|Captan,1908305,SC,8,Siagro ADAPAR 20
 Folpan 500 WP,Folpan|Folpan WP|Folpete WP,3848304,WP,5,Siagro ADAPAR 2025,2026-11-24,folpete
 Dithiocarb 800 WG,Dithiocarb|Tiram+Carboxina WG|Carboxin WG,,WG,6,pesquisa web — fungicida tratamento sementes WG,2026-11-11,tiram+carboxina
 Maxim XL FS,Maxim XL|Maxim FS|Fludioxonil+Metalaxil-M FS|Maxim Quattro FS|Maxim Advanced FS|Maxim Advanced,9499,SC,8,Siagro ADAPAR 2025,2026-11-24,fludioxonil+metalaxil-M
-Trichoderma asperellum SC,Trichoderma SC|Trichoderma biocontrole|Asperello T34,,BIO_FUNGICO,21,pesquisa web — biocontrole Trichoderma asperellum,2026-11-11,Trichoderma asperellum
-Bacillus subtilis WP,Bacillus subtilis|Serenade WP|Bacillus subtilis QST,,BIO_BACTERIANO,20,pesquisa web — biocontrole bacteriano fungo,2026-11-11,Bacillus subtilis
-Coniothyrium minitans WG,Contans WG|Contans|Coniothyrium WG,,BIO_FUNGICO,21,pesquisa web — biocontrole mofo branco Sclerotinia,2026-11-11,Coniothyrium minitans
-Beauveria bassiana SC,Beauveria SC|Boveril WP|Myco-Jari|Naturalis,,BIO_FUNGICO,21,pesquisa web — inseticida biologico fungico mosca-branca,2026-11-11,Beauveria bassiana
-Metarhizium rileyi SC,Metarhizium rileyi|Nomuraea rileyi|MET52 SC,,BIO_FUNGICO,21,pesquisa web — inseticida biologico lagarta-da-soja,2026-11-11,Metarhizium rileyi
-Isaria fumosorosea SC,Isaria|Pae WP|Paecilomyces SC,,BIO_FUNGICO,21,pesquisa web — inseticida biologico fungico mosca-branca,2026-11-11,Isaria fumosorosea
-Lecanicillium muscarium SC,Lecanicillium|Mycotal SC,,BIO_FUNGICO,21,pesquisa web — inseticida biologico mosca-branca,2026-11-11,Lecanicillium muscarium
-HearNPV SC,HearNPV|HelicovirusSC|Certivo|Heliothis NPV,,BIO_VIRAL,22,pesquisa web — inseticida biologico viral heliothis,2026-11-11,Helicoverpa armigera nucleopolyhedrovirus
-SpodNPV SC,SpodNPV|Spodoptera NPV|Specter SC,,BIO_VIRAL,22,pesquisa web — inseticida biologico viral lagarta-do-cartucho,2026-11-11,Spodoptera frugiperda nucleopolyhedrovirus
-Spinosad SC,Spinosad|Tracer 480 SC|Espinosade generico,,SC,8,pesquisa web — inseticida SC espinosade generico,2026-11-11,espinosade
-Spinetorama SC,Spinetorama|Delegate SC|Espinetoram SC generico,,SC,8,pesquisa web — inseticida SC espinetoram generico,2026-11-11,espinetoram
+Trichoderma asperellum SC,Trichoderma SC|Trichoderma biocontrole|Asperello T34,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Trichoderma asperellum
+Bacillus subtilis WP,Bacillus subtilis|Serenade WP|Bacillus subtilis QST,,BIO_BACTERIANO,20,nome generico - multiplos registros MAPA por empresa,2026-11-24,Bacillus subtilis
+Coniothyrium minitans WG,Contans WG|Contans|Coniothyrium WG,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Coniothyrium minitans
+Beauveria bassiana SC,Beauveria SC|Boveril WP|Myco-Jari|Naturalis,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Beauveria bassiana
+Metarhizium rileyi SC,Metarhizium rileyi|Nomuraea rileyi|MET52 SC,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Metarhizium rileyi
+Isaria fumosorosea SC,Isaria|Pae WP|Paecilomyces SC,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Isaria fumosorosea
+Lecanicillium muscarium SC,Lecanicillium|Mycotal SC,,BIO_FUNGICO,21,nome generico - multiplos registros MAPA por empresa,2026-11-24,Lecanicillium muscarium
+HearNPV SC,HearNPV|HelicovirusSC|Certivo|Heliothis NPV,,BIO_VIRAL,22,nome generico - multiplos registros MAPA por empresa,2026-11-24,Helicoverpa armigera nucleopolyhedrovirus
+SpodNPV SC,SpodNPV|Spodoptera NPV|Specter SC,,BIO_VIRAL,22,nome generico - multiplos registros MAPA por empresa,2026-11-24,Spodoptera frugiperda nucleopolyhedrovirus
+Spinosad SC,Spinosad|Tracer 480 SC|Espinosade generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,espinosade
+Spinetorama SC,Spinetorama|Delegate SC|Espinetoram SC generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,espinetoram
 Chlorpyrifos 480 EC,Clorpirifos generico 480|Chlorpyrifos EC|Clorpirifos 480 EC|Chlorpyrifos ethyl|Clorpirifos etil 480,36822,EC,11,Siagro ADAPAR 2025,2026-11-24,clorpirifos-etilico
-Profenofos 500 EC,Profenofos EC|Profenofos generico|Curacron EC,,EC,11,pesquisa web — inseticida EC profenofos,2026-11-11,profenofos
-Tiametoxam 250 WG,Tiametoxam WG|Tiametoxam generico|Cruiser WG,,WG,6,pesquisa web — inseticida WG tiametoxam generico,2026-11-11,tiametoxam
+Profenofos 500 EC,Profenofos EC|Profenofos generico|Curacron EC,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,profenofos
+Tiametoxam 250 WG,Tiametoxam WG|Tiametoxam generico|Cruiser WG,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,tiametoxam
 Imidacloprido 700 WG,Imidacloprido WG|Imidacloprido generico|Nuprid WG|Imida WG,30224,WG,6,Siagro ADAPAR 2025,2026-11-24,imidacloprido
-Clotianidina 50 WG,Clotianidina WG|Clotianidina|Poncho WG|Clutch WG|Clothianidin WG|Clothianidin|Belem WG,,WG,6,pesquisa web — inseticida WG clotianidina,2026-11-11,clotianidina
-Diamida genérica SC,Rynaxypyr|Clorantraniliprole SC generico|Cyazypyr SC,,SC,8,pesquisa web — inseticida SC diamida generica,2026-11-11,clorantraniliprole
-Sulfoxaflor SC,Sulfoxaflor|Transform WG|Closer generico,,SC,8,pesquisa web — inseticida SC sulfoxaflor generico,2026-11-11,sulfoxaflor
-Flonicamida WG,Flonicamida|Teppeki WG|Flonicamida Ishihara|Teppeki|flonicamide|flonicamide WG,,WG,6,pesquisa web — inseticida WG flonicamida aficida,2026-11-11,flonicamida
-Spiromesifen SC,Spiromesifen|Oberon generico|Spiromesifen Bayer,,SC,8,pesquisa web — acaricida SC spiromesifen,2026-11-11,spiromesifen
+Clotianidina 50 WG,Clotianidina WG|Clotianidina|Poncho WG|Clutch WG|Clothianidin WG|Clothianidin|Belem WG,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,clotianidina
+Diamida genérica SC,Rynaxypyr|Clorantraniliprole SC generico|Cyazypyr SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,clorantraniliprole
+Sulfoxaflor SC,Sulfoxaflor|Transform WG|Closer generico,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,sulfoxaflor
+Flonicamida WG,Flonicamida|Teppeki WG|Flonicamida Ishihara|Teppeki|flonicamide|flonicamide WG,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,flonicamida
+Spiromesifen SC,Spiromesifen|Oberon generico|Spiromesifen Bayer,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,spiromesifen
 Spirodiclofeno SC,Spirodiclofeno|Envidor generico|Spirodiclofen,29024,SC,8,Siagro ADAPAR 2025,2026-11-24,spirodiclofeno
-Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,pesquisa web — acaricida EC propargito,2026-11-11,propargito
-Fenpirozamina SC,Fenpirozamina|Plenum generico|Fenpirozamina SC,,SC,8,pesquisa web — inseticida SC fenpirozamina,2026-11-11,fenpirozamina
+Propargito EC,Propargito|Omite EC|Propargite EC,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,propargito
+Fenpirozamina SC,Fenpirozamina|Plenum generico|Fenpirozamina SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,fenpirozamina
 Extravon,Extravon BASF|Extravon SL|Nonilfenol etoxilado|Extravon Plus|Hoemax|Citowett|Tween 20|Tween 80|Nonilfenol,,ADJUVANTE,2,pesquisa web — adjuvante espalhante adesivo BASF,2026-11-11,nonilfenol etoxilado
 In-Place,In Place|Adjuvante siliconado In-Place,,ADJUVANTE,2,pesquisa web — adjuvante siliconado ultra espalhante,2026-11-11,surfactante siliconado
 Bond,Bond EC|Bond Nufarm|Bond adjuvante|Bond Xtra|Bond Plus|Bond adjuvante SL,,ADJUVANTE,2,pesquisa web — adjuvante Nufarm,2026-11-11,
 LI-700 Plus,LI700 Plus|LI 700 Plus|Adjuvante acido+silicone,,ADJUVANTE,2,pesquisa web — adjuvante LI 700 acidificante,2026-11-11,
 Transcend SC,Transcend|Transcend adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante concentrado Syngenta,2026-11-11,
-Ultramol SL,Ultramol|Ultramol Molibdenio|Molibdenio 25 SL,,FERTILIZANTE,18,pesquisa web — micronutriente molibdênio foliar,2026-11-11,molibdenio
-Cobalto SL,Cobalto foliar|Cobalto 10|Co SL,,FERTILIZANTE,18,pesquisa web — micronutriente cobalto foliar,2026-11-11,cobalto
-Manganes EDTA,Mn EDTA|Manganes quelatado EDTA|Quelato Mn,,FERTILIZANTE,18,pesquisa web — micronutriente manganês quelatado EDTA,2026-11-11,manganes
-Zinco EDTA,Zn EDTA|Zinco quelatado EDTA|Quelato Zn,,FERTILIZANTE,18,pesquisa web — micronutriente zinco quelatado EDTA,2026-11-11,zinco
-Ferro EDTA,Fe EDTA|Ferro quelatado EDTA|Quelato Fe,,FERTILIZANTE,18,pesquisa web — micronutriente ferro quelatado EDTA,2026-11-11,ferro
-Vitta Cobre,Vitta Cobre WP|Vittia Cobre|Cobre Vittia|Vitta Cu WP,,WP,18,cadastro manual — fertilizante foliar cobre WP Vittia,2026-11-13,oxicloreto de cobre
-Sulfato de Cobre,CuSO4|Sulfato Cobre|Cobre sulfato|Copper sulfate WP|Sulfato cuproso,,WP,18,cadastro manual — fertilizante foliar cobre sulfato em pó,2026-11-13,sulfato de cobre
+Ultramol SL,Ultramol|Ultramol Molibdenio|Molibdenio 25 SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,molibdenio
+Cobalto SL,Cobalto foliar|Cobalto 10|Co SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobalto
+Manganes EDTA,Mn EDTA|Manganes quelatado EDTA|Quelato Mn,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes
+Zinco EDTA,Zn EDTA|Zinco quelatado EDTA|Quelato Zn,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco
+Ferro EDTA,Fe EDTA|Ferro quelatado EDTA|Quelato Fe,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,ferro
+Vitta Cobre,Vitta Cobre WP|Vittia Cobre|Cobre Vittia|Vitta Cu WP,,WP,18,nome generico - multiplos registros MAPA por empresa,2026-11-24,oxicloreto de cobre
+Sulfato de Cobre,CuSO4|Sulfato Cobre|Cobre sulfato|Copper sulfate WP|Sulfato cuproso,,WP,18,nome generico - multiplos registros MAPA por empresa,2026-11-24,sulfato de cobre
 Folicare,Folicare WP|Folicare Nufarm|Folicare micronutrientes|Folicare NPK,,WP,18,cadastro manual — fertilizante foliar multinutriente WP Nufarm,2026-11-16,boro+cobre+ferro+manganes+molibdenio+zinco
 Microplex,Microplex WP|Microplex foliar|Microplex micronutrientes|Multi Mikro WP,,WP,18,cadastro manual — fertilizante foliar multinutriente WP generico,2026-11-16,multinutriente
 Librel BMX,Librel|Librel WP|Librel Nufarm|Librel BMX WP|Librel multinutriente|Quelato BMX,,WP,18,cadastro manual — fertilizante foliar quelato multinutriente WP Nufarm,2026-11-16,ferro+zinco+manganes+cobre quelatados
 Solubor DF,Solubor|Solubor DF|Boro Borax WG|Borato Sodio DF,,WG,18,cadastro manual — fertilizante foliar boro borato de sódio WG Koch,2026-11-16,borato de sodio
-Cobre EDTA,Cu EDTA|Cobre quelatado EDTA|Quelato Cu,,FERTILIZANTE,18,pesquisa web — micronutriente cobre quelatado EDTA,2026-11-11,cobre
-Silício SL,Silicio foliar|Silica SL|Silicio solubilizado,,FERTILIZANTE,18,pesquisa web — silício foliar,2026-11-11,silicio
-Aminoácido SL,Aminoacido SL|Aminoácido hidrolisado|Peptídeo foliar,,FERTILIZANTE,18,pesquisa web — bioestimulante aminoácido,2026-11-11,aminoacidos hidrolisados
-Fulvato de Potassio,Fulvato K|Fulvato potassio SL|Potassium Fulvate|Acido Fulvico|Fulvic acid|Acido Fulvico SL,,FERTILIZANTE,18,pesquisa web — bioestimulante acido fulvico potassio,2026-11-11,acido fulvico+potassio
-Humato de Potassio,Humato de K|Humato potassio SL|Potassium Humate|Acido Humico|Humic acid|Acido Humico SL|Humate SL,,FERTILIZANTE,18,pesquisa web — bioestimulante acido humico potassio,2026-11-11,acido humico+potassio
+Cobre EDTA,Cu EDTA|Cobre quelatado EDTA|Quelato Cu,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobre
+Silício SL,Silicio foliar|Silica SL|Silicio solubilizado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,silicio
+Aminoácido SL,Aminoacido SL|Aminoácido hidrolisado|Peptídeo foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos hidrolisados
+Fulvato de Potassio,Fulvato K|Fulvato potassio SL|Potassium Fulvate|Acido Fulvico|Fulvic acid|Acido Fulvico SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,acido fulvico+potassio
+Humato de Potassio,Humato de K|Humato potassio SL|Potassium Humate|Acido Humico|Humic acid|Acido Humico SL|Humate SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,acido humico+potassio
 PhospH SL,PhospH|Phosph SL|Fosforo+pH adjuvante,,ADJUVANTE,2,pesquisa web — adjuvante acidificante fosforo,2026-11-11,fosforo+acidificante
 Fulltec,Fulltec Syngenta|Fulltec adjuvante|Fulltec silicone|Fulltec espalhante,,ADJUVANTE,2,cadastro manual — adjuvante siliconado super espalhante Syngenta,2026-11-16,surfactante siliconado
 Cohere,Cohere Corteva|Cohere Dow|Cohere adjuvante|Cohere oleo metilado|MSO|Cohere MSO|Oleo metilado,,ADJUVANTE,2,cadastro manual — adjuvante oleo canola metilado Corteva,2026-11-16,oleo de canola metilado
@@ -522,12 +522,12 @@ Sivanto One,Sivanto One SC|Sivanto One Bayer|Flupyradifurone SC nova versao,,SC,
 Bay Fox SC,Bay Fox|Spirotetramate SC|Spirotetramat Bayer,,SC,8,pesquisa web — inseticida SC Bayer spirotetramate movento similar,2026-11-11,spirotetramate
 Trioxil SL,Trioxil|Trioxil Nortox|Glifosato+2.4-D SL Nortox,,SL,16,pesquisa web — Nortox,2026-11-11,"glifosato+2,4-D"
 Nortox 600 CS,Nortox 600|Clorpirifos CS Nortox|Nortox Clorpirifos CS 600,,CS,7,pesquisa web — Nortox,2026-11-11,clorpirifos-etilico
-Nortox Silicone SC,Silicone Nortox|Nortox Silicone|Espalhante Silicone Nortox,,ADJUVANTE,2,pesquisa web — Nortox,2026-11-11,surfactante siliconado
-Tiametoxam Nortox WG,Tiametoxam Nortox|Tiametoxam Nortox 250|Nortox 250 WG Tiametoxam,,WG,6,pesquisa web — Nortox,2026-11-11,tiametoxam
-Clotianidina Nortox WS,Clotianidina Nortox|Nortox Clotianidina|Clotianidina Nortox tratamento sementes,,WG,6,pesquisa web — Nortox,2026-11-11,clotianidina
-Alfa-cipermetrina Nortox EC,Alfa-cipermetrina Nortox 100 EC|Alfacipermetrina Nortox|Nortox Alfa-cipermetrina,,EC,11,pesquisa web — Nortox,2026-11-11,alfa-cipermetrina
-Bifentrina Nortox EC,Bifentrina Nortox 100 EC|Nortox Bifentrina|Bifentrina Nortox 100,,EC,11,pesquisa web — Nortox,2026-11-11,bifentrina
-Permetrina Nortox EC,Permetrina Nortox 384 EC|Nortox Permetrina|Permetrina Nortox,,EC,11,pesquisa web — Nortox,2026-11-11,permetrina
+Nortox Silicone SC,Silicone Nortox|Nortox Silicone|Espalhante Silicone Nortox,,ADJUVANTE,2,nome generico - multiplos registros MAPA por empresa,2026-11-24,surfactante siliconado
+Tiametoxam Nortox WG,Tiametoxam Nortox|Tiametoxam Nortox 250|Nortox 250 WG Tiametoxam,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,tiametoxam
+Clotianidina Nortox WS,Clotianidina Nortox|Nortox Clotianidina|Clotianidina Nortox tratamento sementes,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,clotianidina
+Alfa-cipermetrina Nortox EC,Alfa-cipermetrina Nortox 100 EC|Alfacipermetrina Nortox|Nortox Alfa-cipermetrina,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,alfa-cipermetrina
+Bifentrina Nortox EC,Bifentrina Nortox 100 EC|Nortox Bifentrina|Bifentrina Nortox 100,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,bifentrina
+Permetrina Nortox EC,Permetrina Nortox 384 EC|Nortox Permetrina|Permetrina Nortox,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,permetrina
 Lambda Nortox CS,Lambda-cialotrina Nortox CS|Lambda Nortox 50 CS|Nortox Lambda CS,9425,CS,7,Siagro ADAPAR 2025,2026-11-24,lambda-cialotrina
 Metribuzin Nortox WP,Metribuzim Nortox|Metribuzin Nortox WP|Nortox Metribuzim 480,30923,WP,5,Siagro ADAPAR 2025,2026-11-24,metribuzim
 Proteus OD,Proteus|Proteus Bayer|Tiametoxam+Deltametrina OD|Proteus 110 OD,32122,OD,9,Siagro ADAPAR 2025,2026-11-24,tiametoxam+deltametrina
@@ -555,7 +555,7 @@ Starkle WG,Starkle|Starkle WG|Starkle Mitsui|Dinotefuran WG|Oshin|Oshin Mitsui|D
 Achero 750 SP,Achero|Achero SP|Acefato Sipcam SP|Acefato Sipcam,,SP,4,pesquisa web — inseticida SP acefato Sipcam,2026-11-11,acefato
 Fenix 250 EC,Fenix|Fenix EC|Fenix Milenia|Cipermetrina 250 Milenia,4715,EC,11,Siagro ADAPAR 2025,2026-11-24,cipermetrina
 Arrivo 250 EC,Arrivo|Arrivo EC|Arrivo FMC|Arrivo Rotam|Cipermetrina FMC,,EC,11,pesquisa web — inseticida piretroide EC cipermetrina FMC/Rotam,2026-11-11,cipermetrina
-Profenofos 500 Nortox EC,Profenofos Nortox|Profenofos 500 EC Nortox,,EC,11,pesquisa web — inseticida organofosforado EC profenofos Nortox,2026-11-11,profenofos
+Profenofos 500 Nortox EC,Profenofos Nortox|Profenofos 500 EC Nortox,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,profenofos
 Nufos 480 EC,Nufos|Nufos EC|Nufos UPL|Clorpirifos UPL EC,11013,EC,11,Siagro ADAPAR 2025,2026-11-24,clorpirifos-etilico
 Axial EC,Axial|Axial Syngenta|Pinoxaden EC|Pinoxadena EC,36122,EC,11,Siagro ADAPAR 2025,2026-11-24,pinoxadena
 Puma Super EC,Puma Super|Puma EC|Puma Super 75 EW|Fenoxaprop Bayer,,EC,11,pesquisa web — trigo,2026-11-11,fenoxaprop-p-etilico+mefenpir-dietil
@@ -579,7 +579,7 @@ Aprovia SC,Aprovia SC solo|Aprovia Syngenta|Benzovindiflupir SC solo|Solatenol S
 Lucento SC,Lucento|Lucento Corteva|Isoflucypram SC soja,,SC,8,cadastro manual — fungicida SC Corteva SDHI isoflucypram,2026-11-16,isoflucypram
 Miravis Prime SC,Miravis Prime|Miravis Prime Syngenta|Pydiflumetofen+Ciprodinila SC,,SC,8,cadastro manual — fungicida SC Syngenta pydiflumetofen+cyprodinyl,2026-11-16,pydiflumetofen+cyprodinyl
 Bellis 38 WG,Bellis|Bellis BASF|Bellis WG|Boscalida+Piraclostrobina 38 WG|boscalid pyraclostrobin|pyraclostrobin boscalid,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-16,boscalida+piraclostrobina
-Switch WG,Switch|Switch Syngenta|Switch WG 625|Ciprodinil+Fludioxonil WG,,WG,6,cadastro manual — fungicida WG Syngenta ciprodinil+fludioxonil botrytis mofo cinzento,2026-11-16,ciprodinil+fludioxonil
+Switch WG,Switch|Switch Syngenta|Switch WG 625|Ciprodinil+Fludioxonil WG,6819,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,ciprodinil+fludioxonil
 Scala SC,Scala|Scala SC Bayer|Pirimetanil SC|Pyrimethanil SC|Scala WG,,SC,8,cadastro manual — fungicida SC Bayer pirimetanil botrytis uvas/tomate,2026-11-16,pirimetanil
 Cobrethane WP,Cobrethane|Cobrethane WP Nufarm|Mancozebe+Cobre WP,,WP,5,cadastro manual — fungicida WP Nufarm mancozebe+oxicloreto de cobre,2026-11-16,mancozebe+oxicloreto de cobre
 Cobre SC,Cobre SC|Oxicloreto de Cobre SC|Oxicloreto Cobre SC generico,4024,SC,8,Siagro ADAPAR 2025,2026-11-24,oxicloreto de cobre
@@ -597,38 +597,38 @@ Master Haifa WP,Master Haifa|Master WP|Master Haifa soluvel|NPK micro Haifa WP,,
 Magnisal WP,Magnisal|Magnisal WP Haifa|Nitrato Magnesio WP|MgNO3 WP,,WP,18,cadastro manual — fertilizante foliar nitrato de magnesio WP Haifa,2026-11-16,nitrato de magnesio
 Haifa MKP WP,Haifa MKP|MKP WP|Fosfato Monopotassico WP|Monofosfato Potassio WP,,WP,18,cadastro manual — fertilizante foliar fosfato monopotassico WP Haifa,2026-11-16,fosfato monopotassico
 Ultrasol WG,Ultrasol|Ultrasol WG SQM|Fertilizante SQM WG|Ultrasol Multi WG,,WG,18,cadastro manual — fertilizante soluvel WG multinutriente SQM,2026-11-16,NPK+micronutrientes
-Nitrato de Calcio SL,Nitrato Calcio|Calcinit SL|Calcio Nitrato SL|CaNO3 foliar|Nitrato Calcico,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de calcio SL,2026-11-16,nitrato de calcio
-Nitrato de Potassio SL,Nitrato Potassio|KNO3 foliar|Nitropot SL|Potassio Nitrato foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de potassio SL,2026-11-16,nitrato de potassio
-Nitrato de Magnesio SL,Nitrato Magnesio|MgNO3 SL|Magnesio Nitrato foliar SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrato de magnesio SL,2026-11-16,nitrato de magnesio
+Nitrato de Calcio SL,Nitrato Calcio|Calcinit SL|Calcio Nitrato SL|CaNO3 foliar|Nitrato Calcico,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de calcio
+Nitrato de Potassio SL,Nitrato Potassio|KNO3 foliar|Nitropot SL|Potassio Nitrato foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de potassio
+Nitrato de Magnesio SL,Nitrato Magnesio|MgNO3 SL|Magnesio Nitrato foliar SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de magnesio
 Versys WG,Versys|Versys Corteva|Flonicamida+Ciantraniliprole WG,,WG,6,cadastro manual — inseticida WG Corteva flonicamida+ciantraniliprole,2026-11-21,flonicamida+ciantraniliprole
 Inscalis SC,Inscalis|Inscalis Syngenta|Spiropidion SC,,SC,8,cadastro manual — inseticida SC Syngenta spiropidion nova diamida,2026-11-21,spiropidion
 Forum 50 SC,Forum|Forum SC BASF|Dimetomorfe SC oomicetos|Dimethomorph SC|Dimetomorfe,1395,SC,8,Siagro ADAPAR 2025,2026-11-24,dimetomorfe
 Infinito SC,Infinito|Infinito Bayer|Propamocarbe+Fluopicolida SC mildio,18308,SC,8,Siagro ADAPAR 2025,2026-11-24,propamocarbe+fluopicolida
 Acrobat WP,Acrobat|Acrobat BASF|Dimetomorfe+Mancozebe WP,2605,WP,5,Siagro ADAPAR 2025,2026-11-24,dimetomorfe+mancozebe
 Signum WG,Signum|Signum BASF|Boscalida+Piraclostrobina 26 WG horticultura,,WG,6,cadastro manual — fungicida WG BASF horticultura boscalida+piraclostrobina,2026-11-21,boscalida+piraclostrobina
-Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG|boscalid kresoxim-methyl|kresoxim-methyl boscalid,,WG,6,cadastro manual — fungicida WG BASF boscalida+kresoxim-metil oídio,2026-11-21,boscalida+kresoxim-metil
+Collis WG,Collis|Collis BASF|Boscalida+Kresoxim-metil WG|boscalid kresoxim-methyl|kresoxim-methyl boscalid,01804,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,boscalida+kresoxim-metil
 Cantus WG,Cantus|Cantus BASF|Boscalida solo WG|Boscalid WG,7503,WG,6,Siagro ADAPAR 2025,2026-11-24,boscalida
-Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,,WG,6,cadastro manual — fungicida WG Bayer iprodiona puro,2026-11-21,iprodiona
+Rovral WG,Rovral WG Bayer|Iprodiona WG|Iprodione WG,008786,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,iprodiona
 Benlate 500 WP,Benlate|Benlate WP|Benomil WP|Benomil 500|Benomyl|Benomyl WP,,WP,5,cadastro manual — fungicida WP benomil sistemico amplo espectro,2026-11-21,benomil
 Karathane WG,Karathane|Karathane Gold WG|Karathane LC|Meptildinocap WG,,WG,6,cadastro manual — acaricida/fungicida WG meptildinocap oídio,2026-11-21,meptildinocap
-Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,cadastro manual — fungicida SP tiofanato-metilico formulacao solubilizavel,2026-11-21,tiofanato-metilico
+Tiofanato Metilico SP,Cercobin SP|Tiofanato SP|Tiofanato-metilico 500 SP|Tiofanato SP Iharabras,,SP,4,nome generico - multiplos registros MAPA por empresa,2026-11-24,tiofanato-metilico
 Bion WG,Bion|Bion 50 WG|Acibenzolar|Acibenzolar-s-metil WG|ASM WG|Actiguard,5801,WG,6,Siagro ADAPAR 2025,2026-11-24,acibenzolar-s-metil
 Fosfonate 400 SL,Fosfonate|Fosfonate SL|Fosfonate Nufarm|Fosfito Potassio Fosfonate,,SL,16,cadastro manual — fosfito potassio SL Nufarm citros/outros,2026-11-21,fosfito de potassio
 Calypso 480 SC,Calypso|Calypso SC|Calypso Bayer|Tiacloprido SC|Thiacloprid|Tiacloprid,1800,SC,8,Siagro ADAPAR 2025,2026-11-24,tiacloprido
 Vertimec Gold,Vertimec Gold EC|Vertimec Gold AZ|Abamectina+Azoxistrobina EC Syngenta,,EC,11,cadastro manual — inseticida/fungicida EC Syngenta abamectina+azoxistrobina,2026-11-21,abamectina+azoxistrobina
-AgroMos WG,AgroMos|AgroMos Alltech|Agro Mos|AgroMos bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante WG Alltech mananoligossacarideos imunidade,2026-11-21,mananoligossacarideos
-Fertiactyl GC WG,Fertiactyl GC|Fertiactyl WG|Fertiactyl Bayer|Fertiactyl aminoacidos,,FERTILIZANTE,18,cadastro manual — bioestimulante WG aminoacidos Bayer aplicacao foliar,2026-11-21,aminoacidos hidrolisados
-Starter SL,Starter|Starter bioestimulante|Starter NC SL|Starter inicio vegetativo,,FERTILIZANTE,18,cadastro manual — bioestimulante SL inicio vegetativo auxinas+citocininas,2026-11-21,auxinas+citocininas+giberelinas
-Roos L SL,Roos L|Roos L bioestimulante|Roos L alga|Extrato Alga Roos|Roos bioestimulante,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Roos,2026-11-21,extrato de alga marinha
-Eco Energy SL,Eco Energy|Eco Energy bioestimulante|Eco Energy Syngenta SL,,FERTILIZANTE,18,cadastro manual — bioestimulante SL energia nutricional Syngenta,2026-11-21,complexo nutricional
-ProFertil SL,ProFertil|Pro Fertil|Profertil bioestimulante SL,,FERTILIZANTE,18,cadastro manual — bioestimulante/nutricional SL aminoacidos aplicacao foliar,2026-11-21,aminoacidos
-Totum SL,Totum|Totum SL Nutrição|Totum foliar|Totum multinutriente,,FERTILIZANTE,18,cadastro manual — fertilizante foliar multinutriente SL,2026-11-21,NPK+micronutrientes
-Calci Nitro SL,Calcinitro|Calci Nitro|Calcio Nitro SL|Calcio+Nitrogenio SL|CaNO3 complexado,,FERTILIZANTE,18,cadastro manual — fertilizante foliar calcio+nitrogenio SL,2026-11-21,calcio+nitrogenio
-Calcio Foliar SL,Calcio SL|Calcio foliar|Calcio Boro SL|Ca foliar|Calcio liquido|Calcio generico,,FERTILIZANTE,18,cadastro manual — fertilizante foliar calcio genérico SL,2026-11-21,calcio
-Magnesio Foliar SL,Magnesio SL|Magnesio foliar|MgSO4 liquido|Mg foliar|Magnesio liquido|Magnesio generico,,FERTILIZANTE,18,cadastro manual — fertilizante foliar magnesio genérico SL,2026-11-21,magnesio
+AgroMos WG,AgroMos|AgroMos Alltech|Agro Mos|AgroMos bioestimulante,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,mananoligossacarideos
+Fertiactyl GC WG,Fertiactyl GC|Fertiactyl WG|Fertiactyl Bayer|Fertiactyl aminoacidos,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos hidrolisados
+Starter SL,Starter|Starter bioestimulante|Starter NC SL|Starter inicio vegetativo,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,auxinas+citocininas+giberelinas
+Roos L SL,Roos L|Roos L bioestimulante|Roos L alga|Extrato Alga Roos|Roos bioestimulante,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,extrato de alga marinha
+Eco Energy SL,Eco Energy|Eco Energy bioestimulante|Eco Energy Syngenta SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo nutricional
+ProFertil SL,ProFertil|Pro Fertil|Profertil bioestimulante SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos
+Totum SL,Totum|Totum SL Nutrição|Totum foliar|Totum multinutriente,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,NPK+micronutrientes
+Calci Nitro SL,Calcinitro|Calci Nitro|Calcio Nitro SL|Calcio+Nitrogenio SL|CaNO3 complexado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,calcio+nitrogenio
+Calcio Foliar SL,Calcio SL|Calcio foliar|Calcio Boro SL|Ca foliar|Calcio liquido|Calcio generico,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,calcio
+Magnesio Foliar SL,Magnesio SL|Magnesio foliar|MgSO4 liquido|Mg foliar|Magnesio liquido|Magnesio generico,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,magnesio
 Nufosato 480 SL,Nufosato|Nufosato Nufarm|Nufosato 480|Glifosato Nufarm 480,,SL,16,cadastro manual — herbicida SL glifosato Nufarm marca Nufosato,2026-11-21,glifosato
 Glifocal SL,Glifocal|Glifocal 480|Glifosato Calliope|Calliope glifosato SL,,SL,16,cadastro manual — herbicida SL glifosato Calliope genérico,2026-11-21,glifosato
-MCPA SL,MCPA|MCPA 500|MCPA amina SL|Mephanate|MCPA herbicida,,SL,16,cadastro manual — herbicida SL MCPA amina folha larga cereais/pastagem,2026-11-21,MCPA
+MCPA SL,MCPA|MCPA 500|MCPA amina SL|Mephanate|MCPA herbicida,,SL,16,nome generico - multiplos registros MAPA por empresa,2026-11-24,MCPA
 Zargun WG,Zargun|Zargun WG Nortox|Flumioxazina+Imazetapir Nortox WG,,WG,6,cadastro manual — herbicida WG Nortox flumioxazina+imazetapir pre-soja,2026-11-21,flumioxazina+imazetapir
 Patrão WG,Patrao|Patrao WG|Patrao herbicida pastagem|Metsulfurom+Iodossulfurom WG|Metsulfurom,,WG,6,cadastro manual — herbicida WG metsulfurom+iodossulfurom pastagem,2026-11-21,metsulfurom-metilico+iodossulfurom
 Krismat WG,Krismat|Krismat Syngenta|Ametrina+Trifloxissulfurom WG cana|trifloxyssulfuron|trifloxissulfurom,,WG,6,cadastro manual — herbicida WG Syngenta cana ametrina+trifloxissulfurom,2026-11-21,ametrina+trifloxissulfurom
@@ -639,39 +639,39 @@ Velpar Ultra WG,Velpar Ultra|Velpar Ultra Bayer|Hexazinona+Diuron Ultra WG|Velpa
 Mágico OD,Mágico|Magico OD|Magico Ouro Fino|Mágico adjuvante|Magico adjuvante,,ADJUVANTE,2,cadastro manual — adjuvante OD oleo vegetal+siliconado Ouro Fino,2026-11-21,oleo vegetal+surfactante siliconado
 Super Wet SC,SuperWet|Super Wet|Superwet adjuvante|Super Wet espalhante,,ADJUVANTE,2,cadastro manual — adjuvante SC super espalhante molhante não-ionico,2026-11-21,surfactante nao-ionico
 Flexil SL,Flexil|Flexil SL adjuvante|Flexil condicionador pH|Flexil acidificante,,ADJUVANTE,2,cadastro manual — adjuvante condicionador pH acidificante SL,2026-11-21,acido citrico+surfactante
-Engreen SL,Engreen|Engreen Syngenta|En Green bioestimulante|Engreen aminoacidos,,FERTILIZANTE,18,cadastro manual — bioestimulante foliar Syngenta base aminoacidos,2026-11-21,aminoacidos
+Engreen SL,Engreen|Engreen Syngenta|En Green bioestimulante|Engreen aminoacidos,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos
 Juvaphos SL,Juvaphos|Juvaphos Helm|Juvaphos citros|Fosfito Potassio Helm,,SL,16,cadastro manual — fosfito potassio SL Helm citros/fruticultura,2026-11-21,fosfito de potassio
-Serenade ASO SC,Serenade|Serenade ASO|Serenade Bayer|Bacillus amyloliquefaciens QST 713,,BIO_BACTERIANO,20,cadastro manual — fungicida biologico SC Bayer Bacillus amyloliquefaciens,2026-11-21,Bacillus amyloliquefaciens
-Double Nickel 55 SC,Double Nickel|Double Nickel SC|Bacillus amyloliquefaciens D747,,BIO_BACTERIANO,20,cadastro manual — fungicida biologico SC Certis Bacillus amyloliquefaciens D747,2026-11-21,Bacillus amyloliquefaciens
+Serenade ASO SC,Serenade|Serenade ASO|Serenade Bayer|Bacillus amyloliquefaciens QST 713,,BIO_BACTERIANO,20,biológico - registro MAPA específico por empresa,2026-11-24,Bacillus amyloliquefaciens
+Double Nickel 55 SC,Double Nickel|Double Nickel SC|Bacillus amyloliquefaciens D747,,BIO_BACTERIANO,20,biológico - registro MAPA específico por empresa,2026-11-24,Bacillus amyloliquefaciens
 Regalia SC,Regalia|Regalia SC Marrone|Reynoutria sachalinensis SC,13514,BIO_FUNGICO,21,Siagro ADAPAR 2025,2026-11-24,Reynoutria sachalinensis
 Cobre Generico WP,Cobre|Cobre WP|Cobre puro|Cobre fungicida|Cobre simples|Cu WP|Cobre agro,1788703,WP,5,Siagro ADAPAR 2025,2026-11-24,oxicloreto de cobre
-Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP|Enxofre molhavel|Enxofre wettable|Wettable Sulfur|Sulphur WP|Sulfur WP,,WP,5,cadastro manual — enxofre micronizado WP genérico alias para busca genérica,2026-11-21,enxofre
-Nutri Foliar SL,Nutri|Nutri SL|Nutri foliar|Nutrição Foliar|Nutri generico|Nutricao foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar genérico nutricional alias para busca genérica,2026-11-21,NPK foliar
-Calda Sulfocalcica SL,Sulfocalcica|Calda Sulfocalcica|Calda Bordalesa|Sulfocalcica SL|Polisulfeto Calcio,,FERTILIZANTE,18,cadastro manual — polissulfeto de calcio/calda sulfocalcica fungicida/acaricida biologico,2026-11-21,polissulfeto de calcio
-Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito|Fosfito de Manganes|Manganese Phosphite,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de manganes SL,2026-11-21,fosfito+manganes
-Nitrobor SL,Nitrobor|Nitrobor foliar|Nitrobor SL Yara|Nitrogenio+Boro foliar|Nitrogenio Boro SL,,FERTILIZANTE,18,cadastro manual — fertilizante foliar nitrogenio+boro SL Yara,2026-11-21,nitrogenio+boro
+Enxofre WP,Enxofre|Enxofre puro|Enxofre solubilizavel|Enxofre WP generico|S WP|Enxofre molhavel|Enxofre wettable|Wettable Sulfur|Sulphur WP|Sulfur WP,,WP,5,nome generico - multiplos registros MAPA por empresa,2026-11-24,enxofre
+Nutri Foliar SL,Nutri|Nutri SL|Nutri foliar|Nutrição Foliar|Nutri generico|Nutricao foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,NPK foliar
+Calda Sulfocalcica SL,Sulfocalcica|Calda Sulfocalcica|Calda Bordalesa|Sulfocalcica SL|Polisulfeto Calcio,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,polissulfeto de calcio
+Fosfito Manganes SL,Fosfito Mn|Fosfito Manganes SL|Fosfito+Manganes SL|Mn Fosfito|Fosfito de Manganes|Manganese Phosphite,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,fosfito+manganes
+Nitrobor SL,Nitrobor|Nitrobor foliar|Nitrobor SL Yara|Nitrogenio+Boro foliar|Nitrogenio Boro SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrogenio+boro
 Basfoliar Combi SP,Basfoliar Combi|Basfoliar SP|Basfoliar BASF|Basfoliar multinutriente SP,,SP,4,cadastro manual — fertilizante foliar multinutriente SP BASF Compo,2026-11-21,NPK+micronutrientes
-Trissulfurom WG,Trissulfurom|Trisulfuron WG|Trissulfurom herbicida,,WG,6,cadastro manual — herbicida WG trissulfurom-metilico pastagem,2026-11-21,trissulfuron-metilico
+Trissulfurom WG,Trissulfurom|Trisulfuron WG|Trissulfurom herbicida,,WG,6,nome generico - multiplos registros MAPA por empresa,2026-11-24,trissulfuron-metilico
 Prowl 400 EC,Prowl 400|Prowl EC Nortox|Pendimetalina 400 EC Nortox|Prowl BASF 400,,EC,11,cadastro manual — herbicida EC pendimetalina 400 g/L formulacao EC,2026-11-21,pendimetalina
 Posse 400 SC,Posse|Posse SC|Posse Ouro Fino|Sulfentrazona SC Ouro Fino,,SC,8,cadastro manual — herbicida SC Ouro Fino sulfentrazona marca Posse,2026-11-21,sulfentrazona
 Plateau Plus WG,Plateau Plus|Plateau Plus BASF|Imazapique+Imazapir WG BASF,,WG,6,cadastro manual — herbicida WG BASF imazapique+imazapir pré-emergente pastagem,2026-11-21,imazapique+imazapir
-Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zinco|Fosfito de Zinco,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de zinco SL,2026-11-16,fosfito+zinco
-Fosfito de Calcio SL,Fosfito Calcio|Fosfito Ca SL|Calcium Phosphite foliar|Ca Fosfito,,FERTILIZANTE,18,cadastro manual — fertilizante foliar fosfito de calcio SL,2026-11-16,fosfito+calcio
-MAP Foliar SL,MAP SL|MAP foliar|Fosfato Monoamonico SL|Mono Ammonium Phosphate foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar MAP monofosfato amonico SL,2026-11-16,fosfato monoamonico
-KTS SL,KTS|Tiosulfato Potassio SL|K Tiosulfato|Potassium Thiosulfate SL|KTS foliar,,FERTILIZANTE,18,cadastro manual — fertilizante foliar tiosulfato de potassio SL,2026-11-16,tiosulfato de potassio
-YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Liquido|Bortrac|Borotrac,,FERTILIZANTE,18,cadastro manual — fertilizante foliar boro SC Yara,2026-11-16,boro
-YaraVita Zintrac SC,YaraVita Zintrac|Zintrac SC|Zinco Yara SC|YaraVita Zinco Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar zinco SC Yara,2026-11-16,zinco
-YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Manganes Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar manganes SC Yara,2026-11-16,manganes
-YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,cadastro manual — fertilizante foliar ferro SC Yara,2026-11-16,ferro
+Fosfito de Zinco SL,Fosfito Zinco|Fosfito Zn SL|Zinc Phosphite foliar|Fosfito+Zinco|Fosfito de Zinco,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,fosfito+zinco
+Fosfito de Calcio SL,Fosfito Calcio|Fosfito Ca SL|Calcium Phosphite foliar|Ca Fosfito,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,fosfito+calcio
+MAP Foliar SL,MAP SL|MAP foliar|Fosfato Monoamonico SL|Mono Ammonium Phosphate foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,fosfato monoamonico
+KTS SL,KTS|Tiosulfato Potassio SL|K Tiosulfato|Potassium Thiosulfate SL|KTS foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,tiosulfato de potassio
+YaraVita Borotrac SC,YaraVita Borotrac|Borotrac SC|Boro Yara SC|YaraVita Boro Liquido|Bortrac|Borotrac,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
+YaraVita Zintrac SC,YaraVita Zintrac|Zintrac SC|Zinco Yara SC|YaraVita Zinco Liquido,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco
+YaraVita Mantrac SC,YaraVita Mantrac|Mantrac SC|Manganes Yara SC|YaraVita Manganes Liquido,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes
+YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Ferro Liquido,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,ferro
 ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG|Gibberellin|Gibberellic acid|Gibb SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
 Ryzup SG,Ryzup|Ryzup SG Certis|Giberelina Certis SG|Ryz Up SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico Certis,2026-11-16,acido giberelinico
-Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato alga marinha SL|Stimplex bioestimulante|Extrato de algas|Algas marinhas SL|Algas|Algamare,,FERTILIZANTE,18,cadastro manual — bioestimulante SL extrato de alga marinha Acadian,2026-11-16,extrato de alga marinha
-Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,,OLEO,12,cadastro manual — oleo mineral adjuvante Iharabras,2026-11-16,oleo mineral
-Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO,12,cadastro manual — oleo mineral SC Dow/Corteva,2026-11-16,oleo mineral
+Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato alga marinha SL|Stimplex bioestimulante|Extrato de algas|Algas marinhas SL|Algas|Algamare,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,extrato de alga marinha
+Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,024583,OLEO,12,ADAPAR PR — bula PDF 2026,2026-11-24,oleo mineral
+Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
 Adver 240 SC,Adver SC|Adver 240|Clorfenapir Tecnomyl|Clorfenapir,01522,SC,8,pesquisa web — reg MAPA 01522 Tecnomyl clorfenapir 240g/L SC inseticida/acaricida,2026-11-19,clorfenapir
 Viance,Viance 240 EC|Viance cletodim,28917,EC,11,pesquisa web — reg MAPA 28917 Tecnomyl cletodim 240g/L EC graminicida,2026-11-19,cletodim
-Mbio Stimulus,MBio Stimulus|Mbio|Stimulus Mosaic,,FERTILIZANTE,18,pesquisa web — Mosaic Biosciences fertilizante organomineral aminoacidos aplicacao foliar,2026-11-19,aminoacidos
-Lift Oil Union,Lift Oil|LiftOil Union,,OLEO,12,cadastro manual — adjuvante oleo — pendente confirmacao de formulacao,2026-11-19,oleo
+Mbio Stimulus,MBio Stimulus|Mbio|Stimulus Mosaic,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos
+Lift Oil Union,Lift Oil|LiftOil Union,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo
 Engenia 480 SL,Engenia|Engenia BASF|Engenia dicamba|Dicamba 480 BASF|Dicamba BASF,,SL,16,cadastro manual — herbicida SL dicamba BASF tecnologia Xtend soja,2026-11-21,dicamba
 Neoron 500 EC,Neoron|Neoron EC|Bromopropilato EC|Neoron Syngenta,,EC,11,cadastro manual — acaricida EC bromopropilato Syngenta citros/algodao,2026-11-21,bromopropilato
 Lebaycid 500 EC,Lebaycid|Lebaycid EC|Fenoato EC|Fentião EC|Fentoato Bayer,,EC,11,cadastro manual — acaricida/inseticida EC fentoato Bayer cafe/citros,2026-11-21,fentoato
@@ -689,7 +689,7 @@ Podium Ultra EW,Podium Ultra|Fenoxaprop-p Ultra EW,,EW,14,cadastro manual — gr
 Verdict R SC,Verdict R|Verdict SC|Haloxifope-R SC|Galant R SC,,SC,8,cadastro manual — graminicida SC haloxifope-metil soja/algodao,2026-11-21,haloxifope-R-metilico
 Discover NG SC,Discover NG|Discover SC|Fenoxaprop SC Bayer NG,,SC,8,cadastro manual — graminicida SC fenoxaprop-p Bayer NiceGuard trigo,2026-11-21,fenoxaprop-p-etilico
 Optineem 30 EC,Optineem|Optineem EC|Neem Oil 30 EC|Ago-Neem EC,,EC,11,cadastro manual — inseticida botanico EC azadiractina 30g/L neem,2026-11-21,azadiractina
-Neem Priori SC,Neem Priori|Neem gold SC|Oleo Neem SC,,SC,8,cadastro manual — adjuvante/inseticida SC oleo de neem com 1% azadiractina,2026-11-21,oleo de neem
+Neem Priori SC,Neem Priori|Neem gold SC|Oleo Neem SC,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,oleo de neem
 Ferax SC,Ferax|Ferax SC|Ferax Ouro Fino|Trifloxistrobina+Tebuconazol SC Ouro Fino,,SC,8,cadastro manual — fungicida SC Ouro Fino soja/milho trifloxistrobina+tebuconazol,2026-11-21,trifloxistrobina+tebuconazol
 Primo Maxx SC,Primo Maxx|Primo Maxx Syngenta|Trinexapac-etil SC|Trinexapak,,SC,8,cadastro manual — regulador crescimento SC trinexapac-etil Syngenta trigo/arroz,2026-11-21,trinexapac-etil
 Medax Top WG,Medax Top|Medax WG BASF|Mepiquat+Prohexadiona BASF WG|Pix|Pix HC|Mepiquat Cloreto|Mepiquat|Mepiquat+Prohexadiona,6400,WG,6,Siagro ADAPAR 2025,2026-11-24,mepiquat+prohexadiona
@@ -702,7 +702,7 @@ Confirm 240 SC,Confirm|Tebufenozide|Confirm SC|Confirm Rohm Haas,,SC,8,pesquisa 
 Trigard 750 WP,Trigard|Trigard WP|Cyromazine|Cirozamine|Trigard Syngenta,13289,WP,5,Siagro ADAPAR 2025,2026-11-24,cyromazine
 Focus Ultra,Focus|Focus Ultra BASF|Setoxidim EC|Setoxidim,,EC,11,pesquisa web — graminicida EC BASF setoxidim pós-emergente,2026-11-21,setoxidim
 Poast,Poast EC|Poast Syngenta|Setoxidim Syngenta|sethoxydim|Fervinal|Fervinal EC,,EC,11,pesquisa web — graminicida EC Syngenta setoxidim,2026-11-21,setoxidim
-Simazina 500,Simazina|Simazina SC|Primatol|Herbazina|Simazinox,,SC,8,pesquisa web — herbicida SC simazina pre-emergente,2026-11-21,simazina
+Simazina 500,Simazina|Simazina SC|Primatol|Herbazina|Simazinox,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,simazina
 Sulfossato 480 SL,Sulfossato|Sulfossato SL|Finale SL|Touchdown|Touchdown IQ,4201,SL,16,Siagro ADAPAR 2025,2026-11-24,sulfossato
 Mitac 200 EC,Mitac|Mitac EC|Amitraz EC|Amitraz|Amitraz Nortox,,EC,11,pesquisa web — acaricida/inseticida EC amitraz,2026-11-21,amitraz
 Omite 720 EC,Omite|Omite EC|Propargito|Propargite|Omite Crompton,1868303,EC,11,Siagro ADAPAR 2025,2026-11-24,propargito
@@ -729,7 +729,7 @@ Elatus Arc,Elatus EC|Elatus Syngenta|Benzovindiflupir+Azoxistrobina|Azoxistrobin
 Zartan 480 CS,Zartan|Zartan CS|Atrazina CS Dow|Zartan Corteva,4607,CS,7,Siagro ADAPAR 2025,2026-11-24,atrazina
 Tamaron 600 BR SL,Tamaron|Tamaron 600|Metamidofos|Metamidophos|Methamidophos|Hamidop,,SL,16,pesquisa web — inseticida SL metamidofos organofosforado,2026-11-21,metamidofos
 Baytroid 100 EC,Baytroid|Baytroid EC|Ciflutrina EC|Cyfluthrin|Ciflutrina|Ciflutrin|Baytroid Bayer,,EC,11,pesquisa web — inseticida EC Bayer ciflutrina piretroide,2026-11-21,ciflutrina
-Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer|Previcur N 600 SL,,SL,16,pesquisa web — fungicida SL Bayer propamocarbe mildio,2026-11-21,propamocarbe
+Previcur N SL,Previcur N|Previcur|Propamocarbe SL|Propamocarbe|Previcur Bayer|Previcur N 600 SL,026287,SL,16,ADAPAR PR — bula PDF 2026,2026-11-24,propamocarbe
 Goal BR 480 EC,Goal|Goal EC|Goal Rohm Haas|Oxifluorfem EC Goal,1838604,EC,11,Siagro ADAPAR 2025,2026-11-24,oxifluorfem
 Aldicarb 150 GR,Aldicarb|Temik|Aldicarb GR|Temik 150|Aldicarbe|Aldicarb 100 GR|Temik GR,,GR,3,pesquisa web — inseticida/nematicida GR aldicarbe sistêmico,2026-11-21,aldicarbe
 Pivot H,Pivot|Pivot SL|Imazethapyr|Imazetapir|Imazethapir|Pivot Basf,4713,SL,16,Siagro ADAPAR 2025,2026-11-24,imazethapyr
@@ -754,15 +754,15 @@ Counter 150 GR,Counter|Counter GR|Terbufos GR|Terbufos,1098,GR,3,Siagro ADAPAR 2
 Force 20 CS,Force|Force CS|Teflutrin CS|Teflutrin 20,1924,CS,7,Siagro ADAPAR 2025,2026-11-24,teflutrin
 Atplus 465,Atplus|At Plus|At Plus 465|Atplus 711|Surfactante Atplus,,ADJUVANTE,2,nufarm,2026-11-21,surfactante noniônico
 Raxil 60 FS,Raxil|Raxil FS|Raxil 60|Tebuconazol FS Bayer,,FS,8,bayer,2026-11-21,tebuconazol
-Sonata SC,Sonata|Bacillus pumilus SC|Bacillus pumilus|Sonata Bayer,,BIO_BACTERIANO,20,bayer,2026-11-21,Bacillus pumilus
-Vertigo SC,Vertigo|Vertigo BASF|Beauveria bassiana BASF|BotaniGard,,BIO_FUNGICO,21,basf,2026-11-21,Beauveria bassiana
-Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,bionext,2026-11-21,Trichoderma harzianum
-Wuxal SC,Wuxal|Wuxal Aminoplant|Wuxal Boron|Aminoplant|Wuxal Combi,,FERTILIZANTE,18,adama,2026-11-21,aminoacidos+micronutrientes
-Fertimax SC,Fertimax|Fertimax Foliar|Fertimax Combi SC|Fertimax Plus,,FERTILIZANTE,18,fertimax,2026-11-21,nitrogenio+fosforo+potassio+micronutrientes
-Fertikit SL,Fertikit|Fertikit Foliar|Fertikit Nortox SL,,FERTILIZANTE,18,nortox,2026-11-21,complexo nutricional foliar
+Sonata SC,Sonata|Bacillus pumilus SC|Bacillus pumilus|Sonata Bayer,,BIO_BACTERIANO,20,biológico - registro MAPA específico por empresa,2026-11-24,Bacillus pumilus
+Vertigo SC,Vertigo|Vertigo BASF|Beauveria bassiana BASF|BotaniGard,,BIO_FUNGICO,21,biológico - registro MAPA específico por empresa,2026-11-24,Beauveria bassiana
+Trichodel SC,Trichodel|Trichoderma harzianum SC|Ecoss SC|Ecoss,,BIO_FUNGICO,21,biológico - registro MAPA específico por empresa,2026-11-24,Trichoderma harzianum
+Wuxal SC,Wuxal|Wuxal Aminoplant|Wuxal Boron|Aminoplant|Wuxal Combi,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos+micronutrientes
+Fertimax SC,Fertimax|Fertimax Foliar|Fertimax Combi SC|Fertimax Plus,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrogenio+fosforo+potassio+micronutrientes
+Fertikit SL,Fertikit|Fertikit Foliar|Fertikit Nortox SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo nutricional foliar
 Antracol 700 WP,Antracol|Antracol WP|Propineb WP|Propineb 700|Propineb Bayer,901,WP,5,Siagro ADAPAR 2025,2026-11-24,propineb
-Zineb 750 WP,Zineb|Zineb WP|Zineb Nortox|Zineb 750,,WP,5,nortox,2026-11-21,zineb
-Maneb 800 WP,Maneb|Maneb WP|Maneb 800|Maneb Nortox|Trimanoc WP,,WP,5,nortox,2026-11-21,maneb
+Zineb 750 WP,Zineb|Zineb WP|Zineb Nortox|Zineb 750,,WP,5,nome generico - multiplos registros MAPA por empresa,2026-11-24,zineb
+Maneb 800 WP,Maneb|Maneb WP|Maneb 800|Maneb Nortox|Trimanoc WP,,WP,5,nome generico - multiplos registros MAPA por empresa,2026-11-24,maneb
 Radar 25 CS,Radar|Radar CS|Isoxaflutole CS|Isoxaflutol Bayer|Provence CS,,CS,7,bayer,2026-11-21,isoxaflutol
 Nortron 500 SC,Nortron|Nortron SC|Ethofumesate SC|Etofumesato SC|Etofumesato,,SC,8,bayer,2026-11-21,etofumesato
 Dacthal WP,Dacthal|DCPA WP|Dacthal 750 WP,,WP,5,amvac,2026-11-21,DCPA
@@ -776,7 +776,7 @@ Fantic SC,Fantic|Fenamidone SC|Fenomidone|Fantic Bayer,,SC,8,bayer,2026-11-21,fe
 Clomazone 500 SC,Clomazone|Clomazone SC|Command 480 EC|Command|Gamit 360 CS|Gamit|Clomazone 480 EC,121,SC,8,Siagro ADAPAR 2025,2026-11-24,clomazone
 Katana WG,Katana|Katana 250 WG|Flazassulfuron WG|Flazasulfuron WG|Flazasulfuron,,WG,6,syngenta,2026-11-21,flazasulfuron
 Sporan EC,Sporan|Sporan Fungicida|Extrato Cravo|Eugenol EC|Sporan BioFungicida,29822,EC,11,Siagro ADAPAR 2025,2026-11-24,eugenol
-Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Topsin M,,WP,5,nufarm,2026-11-21,tiofanato-metilico
+Tiofanato Metilico 700 WP,Tiofanato Metilico|Tiofanato-metilico|Methyl Thiophanate|Cerconil WP|Topsin M,,WP,5,nome generico - multiplos registros MAPA por empresa,2026-11-24,tiofanato-metilico
 Baytan 150 FS,Baytan|Baytan FS|Triadimenol FS|Triadimenol|Triadimenol Bayer,888798,FS,8,Siagro ADAPAR 2025,2026-11-24,triadimenol
 Dividend 250 FS,Dividend|Dividend FS|Difenoconazol FS Syngenta|Difenoconazol FS|Divi FS,11917,FS,8,Siagro ADAPAR 2025,2026-11-24,difenoconazol
 Broadstrike 500 SC,Broadstrike|Flumetsulam SC|Flumetsulam|Broadstrike Corteva|Discovery SC,,SC,8,corteva,2026-11-21,flumetsulam
@@ -801,10 +801,10 @@ Valbon WG,Valbon|Valbon WG|Valifenalate WG|Valifenalate|Belchim Valbon|Valis M|V
 Talendo SC,Talendo|Talendo SC|Proquinazid SC|Proquinazid|Proquinazida SC,,SC,8,corteva,2026-11-21,proquinazida
 Mirage 450 EC,Mirage|Mirage EC|Prochloraz EC|Prochloraz|Sportak EC|Sportak,21122,EC,11,Siagro ADAPAR 2025,2026-11-24,procloraz
 Prohexadione SC,Prohexadione|Apogee|Apogee SC|Prohexadiona SC|Regalis|Prohexadiona|Proexadiona|Proexadiona SC,,SC,8,basf,2026-11-21,prohexadiona de calcio
-Acequinocil 500 SC,Acequinocil|Acequinocil SC|Kanemite SC|Kanemite|Acequinocyl,,SC,8,mitsui,2026-11-21,acequinocil
-Acetocloro 840 EC,Acetocloro|Harness|Surpass|Guardian|Acetocloro Nortox|Acetocloro FMC|Acetochlor,,EC,11,Nortox/FMC,2026-11-21,acetocloro
-Butachlor 600 EC,Butachlor|Machete|Butanil|Butamol|Butachloram,,EC,11,Monsanto/Nortox,2026-11-21,butachlor
-Flupyrimin SC,Flupyrimin|Myrina|Flupyrimin Mitsui|Myrina SC|BAS 300 I,,SC,8,BASF/Mitsui,2026-11-21,flupyrimin
+Acequinocil 500 SC,Acequinocil|Acequinocil SC|Kanemite SC|Kanemite|Acequinocyl,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,acequinocil
+Acetocloro 840 EC,Acetocloro|Harness|Surpass|Guardian|Acetocloro Nortox|Acetocloro FMC|Acetochlor,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,acetocloro
+Butachlor 600 EC,Butachlor|Machete|Butanil|Butamol|Butachloram,,EC,11,nome generico - multiplos registros MAPA por empresa,2026-11-24,butachlor
+Flupyrimin SC,Flupyrimin|Myrina|Flupyrimin Mitsui|Myrina SC|BAS 300 I,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,flupyrimin
 Nemacur 400 SC,Nemacur|Fenamiphos|Fenamifos|Fenamifast|Nemafast,,SC,8,Bayer,2026-11-21,fenamiphos
 Balance PRO SC,Balance PRO|Balance|Balanzo|Isoxaflutole|Isoxaflutol|Isoxaflutol SC,44724,SC,8,Siagro ADAPAR 2025,2026-11-24,isoxaflutole
 Clio SC,Clio|Topramezone|Topramezona SC|Clio Bayer|Topramezone SC,,SC,8,Bayer,2026-11-21,topramezone
@@ -819,7 +819,7 @@ Initium SC,Initium|Ametoctradin|Ametoctradin SC|Ametoctradin BASF|Zampro|Zampro 
 Cycocel SC,Cycocel|Chlormequat|Cloreto de Clormequat|CCC|Stabilan|Chlormequat chloride|Klormekwat,,SC,8,Nortox/BASF,2026-11-21,clormequat
 Propulse SE,Propulse|Fluopyram+Proticonazol|Fluopyram+Prothioconazol|Prothioconazol+Fluopyram SE|Propulse BASF,,SE,8,BASF,2026-11-21,fluopyram+prothioconazol
 Metaldehido 5 GB,Metaldehido|Metaldehyde|Metaldehyde GB|Slug bait|Mata lesma|Limax|Namekil|Mesurol|Slug pellets,,GR,3,Nortox/Bayer,2026-11-21,metaldehido
-Consento SC,Consento|Fenamidone+Propamocarb|Consento Bayer|Fenamidona+Propamocarb SC|Fenamidone Propamocarb,,SC,8,Bayer,2026-11-21,fenamidona+propamocarb
+Consento SC,Consento|Fenamidone+Propamocarb|Consento Bayer|Fenamidona+Propamocarb SC|Fenamidone Propamocarb,00409,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,fenamidona+propamocarb
 Legacy SC,Legacy|Diflufenican|Diflufenican SC|Legacy Nufarm|Legacy herbicida,5911,SC,8,Siagro ADAPAR 2025,2026-11-24,diflufenican
 Poncho Voxtran SC,Poncho Voxtran|Clothianidin+Beta-cyfluthrin|Clotianidina+Beta-ciflutrina Voxtran|Poncho Voxtran Bayer|clothianidin beta-cyfluthrin,,SC,8,Bayer,2026-11-21,clotianidina+beta-ciflutrina
 Stargus SC,Stargus|Bacillus amyloliquefaciens QST 713|Bacillus velezensis|Serenade Max|Serenade Plus SC,,SC,20,Marrone Bio,2026-11-21,Bacillus velezensis
@@ -845,10 +845,10 @@ Dithiopyr SC,Dithiopyr|Dimension EC|Dithiopyr SC|Dimension Herbicide,,SC,8,Dow/C
 Presidio SC,Presidio|Fluopicolide|Fluopicolide SC|Presidio Bayer|Fluopicolide Bayer,,SC,8,Bayer,2026-11-21,fluopicolide
 Prime Plus SC,Prime Plus|Flumetralin|Flumetralin SC|Prime Plus Nortox|Regulador algodao,,SC,8,Nortox,2026-11-21,flumetralin
 Reclaim SL,Reclaim|Aminopyralid|Aminopyralid SL|Aminopiralide|Reclaim Corteva|Milestone,7825,SL,16,Siagro ADAPAR 2025,2026-11-24,aminopiralide
-Azoxystrobin 500 SC,Azoxystrobin solo|Azoxystrobin 500|Azoxystrobin SC solo|Quadris Flow|Quadris Flowable,,SC,8,Syngenta/vários,2026-11-21,azoxistrobina
-Ureia SC,Ureia|Ureia foliar|Urea foliar|Urea SC|Ureia liquida|Urea,,SC,18,varios,2026-11-21,nitrogenio (ureia)
-Calcario Agricola,Calcario|Calcario dolomítico|Calcario calcítico|Limestone|Calcario moído|Corretivo calcareo,,GR,3,varios,2026-11-21,calcio+magnesio
-Gesso Agricola,Gesso|Gesso agricola|Agricultural gypsum|Sulfato de calcio|Calcium sulfate|Gessagem,,GR,3,varios,2026-11-21,sulfato de calcio
+Azoxystrobin 500 SC,Azoxystrobin solo|Azoxystrobin 500|Azoxystrobin SC solo|Quadris Flow|Quadris Flowable,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,azoxistrobina
+Ureia SC,Ureia|Ureia foliar|Urea foliar|Urea SC|Ureia liquida|Urea,,SC,18,nome generico - multiplos registros MAPA por empresa,2026-11-24,nitrogenio (ureia)
+Calcario Agricola,Calcario|Calcario dolomítico|Calcario calcítico|Limestone|Calcario moído|Corretivo calcareo,,GR,3,nome generico - multiplos registros MAPA por empresa,2026-11-24,calcio+magnesio
+Gesso Agricola,Gesso|Gesso agricola|Agricultural gypsum|Sulfato de calcio|Calcium sulfate|Gessagem,,GR,3,nome generico - multiplos registros MAPA por empresa,2026-11-24,sulfato de calcio
 Fosfito Cobre SL,Fosfito Cobre|Fosfito Cu SL|Copper Phosphite|Fosfito de Cobre|Fosfito+Cobre,,SL,18,varios,2026-11-21,fosfito+cobre
 Fosfito Magnesio SL,Fosfito Magnesio|Fosfito Mg SL|Magnesium Phosphite|Fosfito de Magnesio|Fosfito+Magnesio,,SL,18,varios,2026-11-21,fosfito+magnesio
 Zoxium SC,Zoxium|Zoxamide|Zoxamide SC|Zoxamide Dowagro|Roxyl,,SC,8,Dowagro/Corteva,2026-11-21,zoxamide
@@ -883,7 +883,7 @@ Kerb 500 SC,Kerb|Kerb SC|propizamida|propyzamide|Propyzamide SC,,SC,8,Corteva,20
 Previcur Flex SL,Previcur Flex|Previcur Flex Bayer|propamocarbe+fludioxonil|propamocarb fludioxonil,,SL,16,Bayer,2026-11-21,propamocarbe+fludioxonil
 Sumi 8 WP,Sumi 8|Sumi-8|Sumi8|diniconazol|Diniconazol WP|Sumitomo fungicida,,WP,5,Sumitomo,2026-11-21,diniconazol
 Acrinatrina SC,Acrinatrina|acrinathrin|Rufast Acaricida|Certero Mite,,SC,8,generic,2026-11-21,acrinatrina
-Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 125,,SC,8,Bayer,2026-11-21,beta-cipermetrina
+Bulldock 125 SC,Bulldock 125 SC beta|beta-cipermetrina SC|Beta-Cypermethrin SC 125,01192,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,beta-cipermetrina
 "Tordon 2,4-D SL","Tordon 2,4-D|picloram 2,4-D|picloram+2,4-D SL|Tordon Ultra 2,4-D",4420,SL,16,Siagro ADAPAR 2025,2026-11-24,"2,4-D+picloram"
 Envoke WG,Envoke|Envoke Syngenta|trifloxissulfurom-sodio|trifloxyssulfuron-sodium|Trifloxyssulfuron WG,7001,WG,6,Siagro ADAPAR 2025,2026-11-24,trifloxissulfurom
 Aura 60 EC,Aura|Aura 60|Aura Syngenta|profoxidim|profoxydim|profoxydim rice,7107,EC,11,Siagro ADAPAR 2025,2026-11-24,profoxidim
@@ -932,13 +932,13 @@ Haiposol Adjuvante,Haiposol|Silicone Adjuvante|Surfactante Haiposol,,ADJUVANTE,2
 Triton B-1956,Triton|Triton B1956|Alquilaril|Triton Rohm Haas,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,alquilarilpolietoxilado
 Extravon Adjuvante,Extravon|Surfactante Extravon|Alquilnaftaleno Adjuvante,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,alquilnaftaleno sulfonato
 Silwet L-77,Silwet|Silwet L77|Surfactante Silicone|Organosilicone,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,organosilicone
-Quelato de Zinco EDTA,Quelato Zinco|Zinco EDTA|Zn EDTA|Zinco Quelato|Zinco quelatado,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,zinco quelato EDTA
-Quelato de Manganes EDTA,Quelato Manganes|Manganes EDTA|Mn EDTA|Manganes Quelato|Manganes quelatado,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,manganes quelato EDTA
-Nitrato de Calcio Fertilizante,Nitrato de Calcio|Ca(NO3)2|Calcio Nitrato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,nitrato de calcio
-Sulfato de Manganes Fertilizante,Sulfato de Manganes|MnSO4|Manganes Sulfato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,sulfato de manganes
-Sulfato de Zinco Fertilizante,Sulfato de Zinco|ZnSO4|Zinco Sulfato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,sulfato de zinco
-Molibdenio Fertilizante,Molibdenio|Molibdato de Amonio|Mo Fertilizante|Molibde,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,molibdenio
-Quelato de Ferro EDTA,Quelato Ferro|Ferro EDTA|Fe EDTA|Ferro Quelato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,ferro quelato EDTA
+Quelato de Zinco EDTA,Quelato Zinco|Zinco EDTA|Zn EDTA|Zinco Quelato|Zinco quelatado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco quelato EDTA
+Quelato de Manganes EDTA,Quelato Manganes|Manganes EDTA|Mn EDTA|Manganes Quelato|Manganes quelatado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes quelato EDTA
+Nitrato de Calcio Fertilizante,Nitrato de Calcio|Ca(NO3)2|Calcio Nitrato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de calcio
+Sulfato de Manganes Fertilizante,Sulfato de Manganes|MnSO4|Manganes Sulfato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,sulfato de manganes
+Sulfato de Zinco Fertilizante,Sulfato de Zinco|ZnSO4|Zinco Sulfato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,sulfato de zinco
+Molibdenio Fertilizante,Molibdenio|Molibdato de Amonio|Mo Fertilizante|Molibde,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,molibdenio
+Quelato de Ferro EDTA,Quelato Ferro|Ferro EDTA|Fe EDTA|Ferro Quelato,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,ferro quelato EDTA
 Ethrel 720,ETHREL 720|etefon 720 SL|etefom 720 g/L Bayer|ETHREL 720 SL,03292,SL,16,ADAPAR bula 2026-03 — reg 03292 reg Bayer — etefon 720 g/L SL,2026-11-24,etefom (etefon)
 Moddus Neo,MODDUS NEO|MODDUS NEO EC|trinexapaque 250 g/L Syngenta|Moddus Neo Syngenta,00622,EC,11,ADAPAR bula 2024-11 — reg 00622 Syngenta — trinexapaque-etilico 250 g/L EC,2026-11-24,trinexapaque-etilico
 Progibb 400,PROGIBB 400|acido giberelico 400 WG|GA3 400 WG|giberelina 400 WG|Progibb 40%,11912,WG,6,ADAPAR bula 2025-09 — reg 11912 — acido giberelico 400 g/kg WG,2026-11-24,acido giberelico
@@ -973,20 +973,20 @@ Messenger,Messenger WP|Messenger Bionematicida|Bacillus subtilis Paecilomyces WP
 Presence Full,Presence Full WG|Presence Full FMC|Kalivar|Kalivar WG|Kalivar FMC,01423,BIO_BACTERIANO,21,ADAPAR bula nematicida biologico FMC Bacillus subtilis FMCH002,2026-11-24,Bacillus subtilis FMCH002+Bacillus licheniformis FMCH001
 Surface,Surface WG|Surface FMC|Surface Bionematicida,00317,BIO_BACTERIANO,21,ADAPAR bula nematicida biologico FMC,2026-11-24,Bacillus subtilis FMCH002+Bacillus licheniformis FMCH001
 Magnevus,Magnevus SC|Magnevus Livolta|Burkholderia rinojensis SC,13724,BIO_BACTERIANO,21,ADAPAR bula 2025-02 inseticida/acaricida biologico Burkholderia rinojensis,2026-11-24,Burkholderia rinojensis cepa A396
-Brexil Zn,Brexil Zn SC|Brexil Zinco ICL|Zinco Quelato EDTA Brexil|ICL Brexil Zn,,FERTILIZANTE,18,fertilizante foliar ICL zinco quelato EDTA 15%,2026-11-24,zinco quelato EDTA
-Brexil Ca,Brexil Ca SL|Brexil Calcio ICL|ICL Brexil Ca|Calcio Nitrogenio Brexil,,FERTILIZANTE,18,fertilizante foliar ICL calcio+nitrogenio foliar,2026-11-24,calcio+nitrogenio
-Brexil Multi,Brexil Multi SC|Brexil Multinutriente ICL|ICL Brexil Multi,,FERTILIZANTE,18,fertilizante foliar ICL multinutriente quelato EDTA,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
-Brexil Fe,Brexil Fe SC|Brexil Ferro ICL|ICL Brexil Fe|Ferro Quelato EDTA Brexil,,FERTILIZANTE,18,fertilizante foliar ICL ferro quelato EDTA 7.5%,2026-11-24,ferro quelato EDTA
-Brexil Mn,Brexil Mn SC|Brexil Manganes ICL|ICL Brexil Mn,,FERTILIZANTE,18,fertilizante foliar ICL manganes quelato EDTA 15%,2026-11-24,manganes quelato EDTA
-Brexil B,Brexil B SL|Brexil Boro ICL|ICL Brexil B|Boro Brexil,,FERTILIZANTE,18,fertilizante foliar ICL boro 10%,2026-11-24,boro
-Brexil Mg,Brexil Mg SL|Brexil Magnesio ICL|ICL Brexil Mg|Magnesio Brexil,,FERTILIZANTE,18,fertilizante foliar ICL magnesio foliar,2026-11-24,magnesio
-Wuxal Top K,Wuxal Top K SL|Wuxal Potassio Aminoacidos|Compo Expert Top K,,FERTILIZANTE,18,fertilizante foliar Compo Expert N+K+aminoacidos,2026-11-24,nitrogenio+potassio+aminoacidos
-Wuxal Micro,Wuxal Micro SL|Wuxal Micronutrientes|Compo Expert Wuxal Micro,,FERTILIZANTE,18,fertilizante foliar Compo Expert micronutrientes quelatos,2026-11-24,cobre+ferro+manganes+molibdenio+zinco quelatos
-Fertileader Gold,Fertileader Gold SL|Fertileader Gold Timac|Timac Fertileader Gold|Aminoacidos Fertileader,,FERTILIZANTE,18,fertilizante foliar Timac Agro aminoacidos livres+quelatos minerais,2026-11-24,aminoacidos livres+quelatos minerais
-Fertileader Vital,Fertileader Vital SL|Fertileader Vital Timac|Timac Fertileader Vital,,FERTILIZANTE,18,fertilizante foliar Timac Agro aminoacidos+bioestimulantes,2026-11-24,aminoacidos+fitohormonios naturais
-Nutriplant LC,Nutriplant LC SL|Nutriplant Liquid Concentrado|Nutriplant Micronutrientes|LC Nutriplant,,FERTILIZANTE,18,fertilizante foliar Nutriplant Zn+Mn+B+Co+Mo concentrado liquido,2026-11-24,zinco+manganes+boro+cobalto+molibdenio
-Nutriplant ZM,Nutriplant ZM SL|Nutriplant Zinco Manganes|ZM Nutriplant,,FERTILIZANTE,18,fertilizante foliar Nutriplant zinco+manganes,2026-11-24,zinco+manganes
-Rexolin ABC,Rexolin ABC WP|Rexolin ICL|ICL Rexolin ABC|Quelato Multinutriente WP ICL,,FERTILIZANTE,18,fertilizante foliar ICL multinutriente quelato EDTA po soluvel,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
-Calcinit,Calcinit WG|Calcinit Yara|Yara Calcinit|Nitrato de Calcio Yara,,FERTILIZANTE,18,fertilizante Yara nitrato de calcio soluvel,2026-11-24,nitrato de calcio
-Kristalon,Kristalon WG|Kristalon Yara|Yara Kristalon|Kristalon NPK Micro,,FERTILIZANTE,18,fertilizante Yara NPK+micronutrientes soluvel,2026-11-24,nitrogenio+fosforo+potassio+micronutrientes
+Brexil Zn,Brexil Zn SC|Brexil Zinco ICL|Zinco Quelato EDTA Brexil|ICL Brexil Zn,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco quelato EDTA
+Brexil Ca,Brexil Ca SL|Brexil Calcio ICL|ICL Brexil Ca|Calcio Nitrogenio Brexil,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,calcio+nitrogenio
+Brexil Multi,Brexil Multi SC|Brexil Multinutriente ICL|ICL Brexil Multi,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
+Brexil Fe,Brexil Fe SC|Brexil Ferro ICL|ICL Brexil Fe|Ferro Quelato EDTA Brexil,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,ferro quelato EDTA
+Brexil Mn,Brexil Mn SC|Brexil Manganes ICL|ICL Brexil Mn,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes quelato EDTA
+Brexil B,Brexil B SL|Brexil Boro ICL|ICL Brexil B|Boro Brexil,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro
+Brexil Mg,Brexil Mg SL|Brexil Magnesio ICL|ICL Brexil Mg|Magnesio Brexil,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,magnesio
+Wuxal Top K,Wuxal Top K SL|Wuxal Potassio Aminoacidos|Compo Expert Top K,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrogenio+potassio+aminoacidos
+Wuxal Micro,Wuxal Micro SL|Wuxal Micronutrientes|Compo Expert Wuxal Micro,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobre+ferro+manganes+molibdenio+zinco quelatos
+Fertileader Gold,Fertileader Gold SL|Fertileader Gold Timac|Timac Fertileader Gold|Aminoacidos Fertileader,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos livres+quelatos minerais
+Fertileader Vital,Fertileader Vital SL|Fertileader Vital Timac|Timac Fertileader Vital,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos+fitohormonios naturais
+Nutriplant LC,Nutriplant LC SL|Nutriplant Liquid Concentrado|Nutriplant Micronutrientes|LC Nutriplant,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco+manganes+boro+cobalto+molibdenio
+Nutriplant ZM,Nutriplant ZM SL|Nutriplant Zinco Manganes|ZM Nutriplant,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,zinco+manganes
+Rexolin ABC,Rexolin ABC WP|Rexolin ICL|ICL Rexolin ABC|Quelato Multinutriente WP ICL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
+Calcinit,Calcinit WG|Calcinit Yara|Yara Calcinit|Nitrato de Calcio Yara,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de calcio
+Kristalon,Kristalon WG|Kristalon Yara|Yara Kristalon|Kristalon NPK Micro,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrogenio+fosforo+potassio+micronutrientes
 Atplus 300,Atplus 300 EC|Atplus 300 Syngenta|Adjuvante Syngenta 300|Atplus Nononico 300,,ADJUVANTE,2,adjuvante Syngenta surfactante nononico concentracao menor Atplus 465,2026-11-24,surfactante nononico
