@@ -902,3 +902,42 @@ Victrato Gold,Victrato Gold FS|Victrato Gold Syngenta|Ciclobutrifluram+Difenocon
 Victrato Pro,Victrato Pro FS|Victrato Pro Syngenta|Ciclobutrifluram 500 FS,58725,FS,8,Syngenta — tratamento sementes FS ciclobutrifluram 500 g/L,2026-11-24,ciclobutrifluram
 ConfianteBR,ConfianteBR WG|Confiantebr|Tiafenacil 700 WG|Tiafenacil FarmHannong WG,20623,WG,6,FarmHannong — herbicida WG tiafenacil 700 g/kg pré-plantio dessecação — Agrolink/Cultivar confirmado,2026-11-24,tiafenacil
 Burntop,Burntop WG|Burntop FarmHannong|Tiafenacil 300 WG,02123,WG,6,FarmHannong — herbicida WG tiafenacil 300 g/kg — Cultivar confirmado,2026-11-24,tiafenacil
+Elatus WG,Elatus|Benzovindiflupir|Azoxistrobina Benzovindiflupir,2414,WG,6,Agrolink/Revista Cultivar - Syngenta,2026-11-24,azoxistrobina+benzovindiflupir
+Opera SE,Opera|Piraclostrobina Epoxiconazol|Opera BASF,8601,SE,10,Agrolink/Revista Cultivar - BASF,2026-11-24,piraclostrobina+epoxiconazol
+Fox Ultra WG,Fox Ultra|Protioconazol Trifloxistrobina Ultra|Fox Ultra Bayer,10834,WG,6,Agrolink/Revista Cultivar - Bayer,2026-11-24,protioconazol+trifloxistrobina
+Fox Supra WG,Fox Supra|Protioconazol Fox Supra|Fox Supra Bayer,15064,WG,6,Agrolink/Revista Cultivar - Bayer,2026-11-24,protioconazol+trifloxistrobina
+Miravis Maxx SC,Miravis Maxx|Azoxistrobina Pydiflumetofen Difenoconazol|Miravis Maxx Syngenta,24626,SC,8,Agrolink/Revista Cultivar - Syngenta,2026-11-24,azoxistrobina+pydiflumetofen+difenoconazol
+Cypress EC,Cypress|Epoxiconazol EC|Epoxiconazol BASF,7066,EC,11,Agrolink/Revista Cultivar - BASF,2026-11-24,epoxiconazol
+Orquesta Ultra SC,Orquesta Ultra|Flutriafol Difenoconazol Picoxistrobina|Orquesta,9107,SC,8,Agrolink/Revista Cultivar - Corteva,2026-11-24,flutriafol+difenoconazol+picoxistrobina
+Preza EC,Preza|Metconazol EC|Metconazol BASF,10146,EC,11,Agrolink/Revista Cultivar - BASF,2026-11-24,metconazol
+Vesaro SE,Vesaro|Fluxapiroxade Piraclostrobina Epoxiconazol|Vesaro BASF,20068,SE,10,Agrolink/Revista Cultivar - BASF,2026-11-24,fluxapiroxade+piraclostrobina+epoxiconazol
+Avitta SE,Avitta|Metominostrobina Tetraconazol|Avitta Sipcam,11098,SE,10,Agrolink/Revista Cultivar - Sipcam,2026-11-24,metominostrobina+tetraconazol
+Belyan SC,Belyan|Piraclostrobina Mefentrifluconazol|Belyan BASF,23018,SC,8,Agrolink/Revista Cultivar - BASF,2026-11-24,piraclostrobina+mefentrifluconazol
+Priori SC,Priori|Azoxistrobina SC|Azoxistrobina Syngenta,2198,SC,8,Agrolink/Revista Cultivar - Syngenta,2026-11-24,azoxistrobina
+Engeo Pleno CS,Engeo Pleno|Tiametoxam Lambda-Cialotrina|Engeo,11249,CS,7,Agrolink/Revista Cultivar - Syngenta,2026-11-24,tiametoxam+lambda-cialotrina
+Mavrik EW,Mavrik|Tau-Fluvalinato|Tau Fluvalinate|Mavrik FMC,3626,EW,14,Agrolink/Revista Cultivar - FMC,2026-11-24,tau-fluvalinato
+Acramite SC,Acramite|Bifenazate|Bifenazato|Acramite Chemtura,10548,SC,8,Agrolink/Revista Cultivar - Chemtura,2026-11-24,bifenazate
+Klap SC,Klap|Imidacloprido Beta-Cipermetrina|Klap Stockton,12468,SC,8,Agrolink/Revista Cultivar - Stockton,2026-11-24,imidacloprido+beta-cipermetrina
+Dimilin SC,Dimilin|Diflubenzurom|Diflubenzuron|Dimilin Crompton,1456,SC,8,Agrolink/Revista Cultivar - Crompton,2026-11-24,diflubenzurom
+Sumithion EC,Sumithion|Fenitrotion|Fenitrothion,1198,EC,11,Agrolink/Revista Cultivar - Sumitomo,2026-11-24,fenitrotion
+Voliam Targo SC,Voliam Targo|Clorantraniliprole Abamectina|Voliam,10815,SC,8,Agrolink/Revista Cultivar - Syngenta,2026-11-24,clorantraniliprole+abamectina
+Premio SC,Premio|Clorantraniliprole|Premio Dupont,10478,SC,8,Agrolink/Revista Cultivar - Corteva,2026-11-24,clorantraniliprole
+Podium EC,Podium|Setoxidim|Sethoxydim|Podium BASF,1952,EC,11,Agrolink/Revista Cultivar - BASF,2026-11-24,setoxidim
+Verdict R EC,Verdict R|Verdict|Fluazifope-P-Butilico|Fluazifop,7524,EC,11,Agrolink/Revista Cultivar - Syngenta,2026-11-24,fluazifope-p-butilico
+Convida WG,Convida|Diclosulam|Diclosulam Corteva,7368,WG,6,Agrolink/Revista Cultivar - Corteva,2026-11-24,diclosulam
+Topik EC,Topik|Clodinafop-Propargil|Clodinafope|Topik Syngenta,3568,EC,11,Agrolink/Revista Cultivar - Syngenta,2026-11-24,clodinafop-propargil
+Staple WG,Staple|Pirithiobac-Sodium|Piritionato de Sodio,7312,WG,6,Agrolink/Revista Cultivar - Corteva,2026-11-24,piritionato-sodico
+Sahara WG,Sahara|Imazapique Imazapir|Sahara Basf,7656,WG,6,Agrolink/Revista Cultivar - BASF,2026-11-24,imazapique+imazapir
+Callisto SC,Callisto|Mesotriona|Callisto Syngenta,7268,SC,8,Agrolink/Revista Cultivar - Syngenta,2026-11-24,mesotriona
+Accent WG,Accent|Nicossulfurom|Nicosulfuron|Accent Corteva,3626,WG,6,Agrolink/Revista Cultivar - Corteva,2026-11-24,nicossulfurom
+Haiposol Adjuvante,Haiposol|Silicone Adjuvante|Surfactante Haiposol,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,silicone siliconado
+Triton B-1956,Triton|Triton B1956|Alquilaril|Triton Rohm Haas,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,alquilarilpolietoxilado
+Extravon Adjuvante,Extravon|Surfactante Extravon|Alquilnaftaleno Adjuvante,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,alquilnaftaleno sulfonato
+Silwet L-77,Silwet|Silwet L77|Surfactante Silicone|Organosilicone,,ADJUVANTE,2,Agrolink/Revista Cultivar,2026-11-24,organosilicone
+Quelato de Zinco EDTA,Quelato Zinco|Zinco EDTA|Zn EDTA|Zinco Quelato|Zinco quelatado,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,zinco quelato EDTA
+Quelato de Manganes EDTA,Quelato Manganes|Manganes EDTA|Mn EDTA|Manganes Quelato|Manganes quelatado,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,manganes quelato EDTA
+Nitrato de Calcio Fertilizante,Nitrato de Calcio|Ca(NO3)2|Calcio Nitrato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,nitrato de calcio
+Sulfato de Manganes Fertilizante,Sulfato de Manganes|MnSO4|Manganes Sulfato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,sulfato de manganes
+Sulfato de Zinco Fertilizante,Sulfato de Zinco|ZnSO4|Zinco Sulfato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,sulfato de zinco
+Molibdenio Fertilizante,Molibdenio|Molibdato de Amonio|Mo Fertilizante|Molibde,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,molibdenio
+Quelato de Ferro EDTA,Quelato Ferro|Ferro EDTA|Fe EDTA|Ferro Quelato,,FERTILIZANTE,18,Agrolink/Revista Cultivar,2026-11-24,ferro quelato EDTA
