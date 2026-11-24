@@ -966,3 +966,29 @@ Bio Solubilize,BIO SOLUBILIZE|BIOSOLUBILIZE|Priestia megaterium CCT7987|bio solu
 Nemakill,NEMAKILL|NEMAKILL SL|Paecilomyces lilacinus CCT7766|nematicida Paecilomyces|fungo nematicida,25818,BIO_FUNGICO,21,ADAPAR bula 2026-06 — reg 25818 — Paecilomyces lilacinus cepa CCT 7766 SL nematicida bio,2026-11-24,Paecilomyces lilacinus cepa CCT 7766
 NemaControl,NEMACONTROL|NemaControl SC|Bacillus amyloliquefaciens SIMBI BS10|nemacontrol fungicida nematicida,12016,BIO_BACTERIANO,21,ADAPAR bula 2025-07 — reg 12016 — Bacillus amyloliquefaciens SIMBI BS 10 (CCT 7600) SC fungicida+nematicida bio,2026-11-24,Bacillus amyloliquefaciens SIMBI BS 10 (CCT 7600)
 Biohakka,BIOHAKKA|extrato Ocimum gratissimum|BIOHAKKA nematicida fitoquimico|Ocimum gratissimum nematicide,03826,SC,8,ADAPAR bula 2026-09 — reg 03826 — extrato de Ocimum gratissimum SC nematicida fitoquimico,2026-11-24,extrato de Ocimum gratissimum
+Kelpak,Kelpak SL|Kelpak Kelp Company|Extrato de Alga Marinha Kelpak|Ecklonia maxima SL,00512,SL,16,ADAPAR bula 2020-10 regulador crescimento extrato alga Ecklonia maxima,2026-11-24,extrato de Ecklonia maxima
+Fisiogen,Fisiogen SL|Fisiogen Stoller|Bioregulador Foliar Fisiogen,06021,SL,16,ADAPAR bula 2024-05 regulador crescimento Stoller,2026-11-24,cinetina+acido giberelico+acido indolbutirico
+Maxcel,Maxcel SL|Maxcel Valent|Benziladenina SL|6-Benziladenina|BA SL,03506,SL,16,ADAPAR bula 2024-09 regulador crescimento citocinina Valent,2026-11-24,benziladenina
+Stimulate 10X,Stimulate 10X SL|Stoller 10X|Stimulate Alta Concentracao,05322,SL,16,ADAPAR bula 2026-10 regulador crescimento Stoller versao 10x,2026-11-24,cinetina+acido giberelico+acido indolbutirico
+Royal MH SL,Royal MH|Royal MH Rotam|Hidrazida Maleica SL|Maleic Hydrazide SL,004494,SL,16,ADAPAR bula 2020-10 regulador crescimento hidrazida maleica,2026-11-24,hidrazida maleica
+Messenger,Messenger WP|Messenger Bionematicida|Bacillus subtilis Paecilomyces WP,17220,BIO_BACTERIANO,21,ADAPAR bula 2026-09 nematicida biologico Bacillus+Paecilomyces,2026-11-24,Bacillus subtilis ATCC 6051+Bacillus licheniformis ATCC 12713+Paecilomyces lilacinus
+Presence Full,Presence Full WG|Presence Full FMC|Kalivar|Kalivar WG|Kalivar FMC,01423,BIO_BACTERIANO,21,ADAPAR bula nematicida biologico FMC Bacillus subtilis FMCH002,2026-11-24,Bacillus subtilis FMCH002+Bacillus licheniformis FMCH001
+Surface,Surface WG|Surface FMC|Surface Bionematicida,00317,BIO_BACTERIANO,21,ADAPAR bula nematicida biologico FMC,2026-11-24,Bacillus subtilis FMCH002+Bacillus licheniformis FMCH001
+Magnevus,Magnevus SC|Magnevus Livolta|Burkholderia rinojensis SC,13724,BIO_BACTERIANO,21,ADAPAR bula 2025-02 inseticida/acaricida biologico Burkholderia rinojensis,2026-11-24,Burkholderia rinojensis cepa A396
+Brexil Zn,Brexil Zn SC|Brexil Zinco ICL|Zinco Quelato EDTA Brexil|ICL Brexil Zn,,FERTILIZANTE,18,fertilizante foliar ICL zinco quelato EDTA 15%,2026-11-24,zinco quelato EDTA
+Brexil Ca,Brexil Ca SL|Brexil Calcio ICL|ICL Brexil Ca|Calcio Nitrogenio Brexil,,FERTILIZANTE,18,fertilizante foliar ICL calcio+nitrogenio foliar,2026-11-24,calcio+nitrogenio
+Brexil Multi,Brexil Multi SC|Brexil Multinutriente ICL|ICL Brexil Multi,,FERTILIZANTE,18,fertilizante foliar ICL multinutriente quelato EDTA,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
+Brexil Fe,Brexil Fe SC|Brexil Ferro ICL|ICL Brexil Fe|Ferro Quelato EDTA Brexil,,FERTILIZANTE,18,fertilizante foliar ICL ferro quelato EDTA 7.5%,2026-11-24,ferro quelato EDTA
+Brexil Mn,Brexil Mn SC|Brexil Manganes ICL|ICL Brexil Mn,,FERTILIZANTE,18,fertilizante foliar ICL manganes quelato EDTA 15%,2026-11-24,manganes quelato EDTA
+Brexil B,Brexil B SL|Brexil Boro ICL|ICL Brexil B|Boro Brexil,,FERTILIZANTE,18,fertilizante foliar ICL boro 10%,2026-11-24,boro
+Brexil Mg,Brexil Mg SL|Brexil Magnesio ICL|ICL Brexil Mg|Magnesio Brexil,,FERTILIZANTE,18,fertilizante foliar ICL magnesio foliar,2026-11-24,magnesio
+Wuxal Top K,Wuxal Top K SL|Wuxal Potassio Aminoacidos|Compo Expert Top K,,FERTILIZANTE,18,fertilizante foliar Compo Expert N+K+aminoacidos,2026-11-24,nitrogenio+potassio+aminoacidos
+Wuxal Micro,Wuxal Micro SL|Wuxal Micronutrientes|Compo Expert Wuxal Micro,,FERTILIZANTE,18,fertilizante foliar Compo Expert micronutrientes quelatos,2026-11-24,cobre+ferro+manganes+molibdenio+zinco quelatos
+Fertileader Gold,Fertileader Gold SL|Fertileader Gold Timac|Timac Fertileader Gold|Aminoacidos Fertileader,,FERTILIZANTE,18,fertilizante foliar Timac Agro aminoacidos livres+quelatos minerais,2026-11-24,aminoacidos livres+quelatos minerais
+Fertileader Vital,Fertileader Vital SL|Fertileader Vital Timac|Timac Fertileader Vital,,FERTILIZANTE,18,fertilizante foliar Timac Agro aminoacidos+bioestimulantes,2026-11-24,aminoacidos+fitohormonios naturais
+Nutriplant LC,Nutriplant LC SL|Nutriplant Liquid Concentrado|Nutriplant Micronutrientes|LC Nutriplant,,FERTILIZANTE,18,fertilizante foliar Nutriplant Zn+Mn+B+Co+Mo concentrado liquido,2026-11-24,zinco+manganes+boro+cobalto+molibdenio
+Nutriplant ZM,Nutriplant ZM SL|Nutriplant Zinco Manganes|ZM Nutriplant,,FERTILIZANTE,18,fertilizante foliar Nutriplant zinco+manganes,2026-11-24,zinco+manganes
+Rexolin ABC,Rexolin ABC WP|Rexolin ICL|ICL Rexolin ABC|Quelato Multinutriente WP ICL,,FERTILIZANTE,18,fertilizante foliar ICL multinutriente quelato EDTA po soluvel,2026-11-24,boro+cobre+ferro+manganes+molibdenio+zinco quelatos EDTA
+Calcinit,Calcinit WG|Calcinit Yara|Yara Calcinit|Nitrato de Calcio Yara,,FERTILIZANTE,18,fertilizante Yara nitrato de calcio soluvel,2026-11-24,nitrato de calcio
+Kristalon,Kristalon WG|Kristalon Yara|Yara Kristalon|Kristalon NPK Micro,,FERTILIZANTE,18,fertilizante Yara NPK+micronutrientes soluvel,2026-11-24,nitrogenio+fosforo+potassio+micronutrientes
+Atplus 300,Atplus 300 EC|Atplus 300 Syngenta|Adjuvante Syngenta 300|Atplus Nononico 300,,ADJUVANTE,2,adjuvante Syngenta surfactante nononico concentracao menor Atplus 465,2026-11-24,surfactante nononico
