@@ -311,7 +311,7 @@
         <tbody id="tabela-corpo"></tbody>
       </table>
       <div id="area-pdf" style="display:none;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;">
-        <input type="text" id="nome-pdf" placeholder="Nome para o PDF gerado" value="ordem_mistura_calda"
+        <input type="text" id="nome-pdf" placeholder="Nome para o PDF gerado" value="fieldmix_ordem"
           style="border:1px solid #ccc;border-radius:6px;padding:8px 11px;font-size:13px;font-family:inherit;flex:1;min-width:200px;max-width:340px;">
         <button type="button" class="btn-pdf" id="btn-pdf" onclick="gerarPDF()">
           Baixar PDF
@@ -1199,7 +1199,7 @@
       doc.setTextColor(150, 150, 150);
       doc.text('PulverAgro — Consultoria em Pulverização', pw / 2, 290, { align: 'center' });
 
-      var nomeArquivo = (document.getElementById('nome-pdf').value || 'ordem_mistura_calda').trim().replace(/[\/\\:*?"<>|]/g, '_');
+      var nomeArquivo = (document.getElementById('nome-pdf').value || 'fieldmix_ordem').trim().replace(/[\/\\:*?"<>|]/g, '_');
       doc.save(nomeArquivo + '.pdf');
     }
 
