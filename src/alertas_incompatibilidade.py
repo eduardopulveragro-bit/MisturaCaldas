@@ -21,6 +21,11 @@ def _eh_glifosato(item: dict) -> bool:
     return any(x in n for x in ("glifosato", "roundup", "glifos", "touchdown", "zapp"))
 
 
+def _eh_24d(item: dict) -> bool:
+    n = _norm(item["produto"])
+    return any(x in n for x in ("2,4-d", "2,4 d", "2,4d", "2.4-d", "aminol", "dma 806", "u-46", "u46", "enlist", "tordon"))
+
+
 def verificar_incompatibilidades(itens: list[dict], vazao_L_ha: float | None) -> list[dict]:
     """
     Retorna lista de alertas de incompatibilidade.
@@ -30,10 +35,11 @@ def verificar_incompatibilidades(itens: list[dict], vazao_L_ha: float | None) ->
 
     mancozeb_items = [it for it in itens if _eh_mancozeb(it)]
     glif_items = [it for it in itens if _eh_glifosato(it)]
+    d24_items = [it for it in itens if _eh_24d(it)]
 
     if not mancozeb_items or not glif_items:
-        # Sem par de risco — verifica só vazão com glifosato SL
-        if glif_items and vazao_L_ha and vazao_L_ha <= 50:
+        # Vazão baixa só alerta quando glifosato SL está junto com 2,4-D
+        if glif_items and d24_items and vazao_L_ha and vazao_L_ha <= 50:
             glif = glif_items[0]
             form = (glif.get("formulacao") or "").upper()
             if form == "SL":
