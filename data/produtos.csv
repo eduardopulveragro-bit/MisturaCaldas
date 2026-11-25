@@ -1002,3 +1002,12 @@ Compress,Compress Nufarm|Compress adjuvante|Oleo vegetal metilado Nufarm,,ADJUVA
 Zelia,Zelia SC Bayer|Mesotrione Nicossulfuron SC|Zelia milho,,SC,8,ADAPAR 2026,2026-11-25,mesotrione+nicossulfuron
 Cletodim Oleum Nortox,Cletodim Oleum|Cletodim oleo Nortox EC|Cletodim oleo,,EC,11,ADAPAR 2026,2026-11-25,cletodim+oleo mineral
 Avenue Ultra,Avenue Ultra EC BASF|Avenue BASF|Clodinafop-propargil EC,,EC,11,ADAPAR 2026,2026-11-25,clodinafop-propargil
+Kraton,kraton adjuvante,,ADJUVANTE,2,usuario,2026-11-25,alquil poliglicosideo
+Cartugen Max,cartugen,,FERTILIZANTE,18,usuario,2026-11-25,cobalto+niquel+molibdenio
+Sulfato de Cobalto,cobalto sulfato,,FERTILIZANTE,18,usuario,2026-11-25,cobalto
+Molibdato de Sodio,"molibdato de sodio,molibdato",,FERTILIZANTE,18,usuario,2026-11-25,molibdenio
+Sulfato de Magnesio,"sulfato magnesio,sal de epsom,magnésio sulfato",,FERTILIZANTE,18,usuario,2026-11-25,magnesio
+MKP,"fosfato monopotassico,mkp,monofosfato de potassio",,FERTILIZANTE,18,usuario,2026-11-25,fosforo+potassio
+Cloreto de Calcio,calcio cloreto,,FERTILIZANTE,18,usuario,2026-11-25,calcio
+Sulfato Ferroso,"sulfato de ferro,ferro sulfato",,FERTILIZANTE,18,usuario,2026-11-25,ferro
+Provide,"provide co+mo,provide cobalto",,FERTILIZANTE,18,usuario,2026-11-25,cobalto+molibdenio
