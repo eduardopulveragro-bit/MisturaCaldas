@@ -101,6 +101,17 @@ def _row_para_cliente(row: dict) -> dict:
         if area is not None:
             cfg["area_tanque_ha"] = area
         dados["configs"] = [cfg]
+    # migra formato antigo (pulverizador + pontas + calibracao) para equipamentos
+    if "pulverizador" in dados and "equipamentos" not in dados:
+        pulv = dados.pop("pulverizador") or {}
+        pontas = dados.pop("pontas", [])
+        calibracao = dados.pop("calibracao", "")
+        dados["equipamentos"] = [{
+            "modelo": (pulv.get("modelo") or "").strip(),
+            "volume_tanque_L": pulv.get("volume_tanque_L"),
+            "pontas": pontas if isinstance(pontas, list) else [],
+            "calibracao": calibracao,
+        }]
     return {"id": row["id"], "nome": row["nome"], "criado_em": row.get("criado_em", ""), **dados}
 
 
@@ -176,13 +187,8 @@ def criar(dados: dict) -> dict:
         "id": str(uuid.uuid4()),
         "nome": (dados.get("nome") or "").strip(),
         "usuario_id": dados.get("usuario_id", ""),
-        "pulverizador": {
-            "modelo": (dados.get("pulverizador_modelo") or "").strip(),
-            "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
-        },
+        "equipamentos": _parse_equipamentos(dados.get("equipamentos")),
         "configs": _parse_configs(dados.get("configs")),
-        "pontas": _parse_pontas(dados.get("pontas", "")),
-        "calibracao": (dados.get("calibracao") or "").strip(),
         "observacao": (dados.get("observacao") or "").strip(),
         "criado_em": datetime.now().strftime("%Y-%m-%d"),
     }
@@ -198,13 +204,8 @@ def criar(dados: dict) -> dict:
 def atualizar(cliente_id: str, dados: dict) -> dict | None:
     campos = {
         "nome": (dados.get("nome") or "").strip(),
-        "pulverizador": {
-            "modelo": (dados.get("pulverizador_modelo") or "").strip(),
-            "volume_tanque_L": _float_ou_none(dados.get("volume_tanque")),
-        },
+        "equipamentos": _parse_equipamentos(dados.get("equipamentos")),
         "configs": _parse_configs(dados.get("configs")),
-        "pontas": _parse_pontas(dados.get("pontas", "")),
-        "calibracao": (dados.get("calibracao") or "").strip(),
         "observacao": (dados.get("observacao") or "").strip(),
     }
     if _USA_SUPABASE:
@@ -251,6 +252,32 @@ def _parse_pontas(texto: str) -> list[str]:
     if not texto:
         return []
     return [p.strip() for p in texto.split(",") if p.strip()]
+
+
+def _parse_equipamentos(valor) -> list[dict]:
+    if not valor:
+        return []
+    if isinstance(valor, str):
+        try:
+            valor = json.loads(valor)
+        except (ValueError, TypeError):
+            return []
+    if not isinstance(valor, list):
+        return []
+    result = []
+    for item in valor:
+        if not isinstance(item, dict):
+            continue
+        pontas = item.get("pontas", "")
+        if isinstance(pontas, str):
+            pontas = [p.strip() for p in pontas.split(",") if p.strip()]
+        result.append({
+            "modelo": (item.get("modelo") or "").strip(),
+            "volume_tanque_L": _float_ou_none(item.get("volume_tanque_L")),
+            "pontas": pontas if isinstance(pontas, list) else [],
+            "calibracao": (item.get("calibracao") or "").strip(),
+        })
+    return result
 
 
 def _parse_configs(valor) -> list[dict]:
