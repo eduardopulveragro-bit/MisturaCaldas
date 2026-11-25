@@ -592,11 +592,11 @@ Primus SL,Primus|Primus Syngenta|Primus 50 SL|Florasulam SL,,SL,16,cadastro manu
 Zidua PRO WG,Zidua PRO|Zidua Pro BASF|Piroxasulfona+Flumioxazina WG,,WG,6,cadastro manual — herbicida WG BASF piroxasulfona+flumioxazina pre-emergente soja,2026-11-16,piroxasulfona+flumioxazina
 YaraVita Zincutec WP,YaraVita Zincutec|Zincutec WP|Zinco 90 WP Yara|Zinco WP Yara,,WP,18,cadastro manual — fertilizante foliar zinco 90% WP Yara,2026-11-16,zinco
 Rexolin APN WP,Rexolin APN|Rexolin WP|Rexolin ICL|Rexolin multinutriente WP,,WP,18,cadastro manual — fertilizante foliar quelato multinutriente WP ICL Fe+Zn+Mn,2026-11-16,ferro+zinco+manganes quelatados
-Fetrilon Combi WG,Fetrilon Combi|Fetrilon WG|Fetrilon BASF|Quelato multinutriente WG BASF Compo,,WG,18,cadastro manual — fertilizante foliar quelato multinutriente WG BASF/Compo,2026-11-16,ferro+manganes+zinco+cobre+boro quelatados
+Fetrilon Combi WG,Fetrilon Combi|Fetrilon WG|Fetrilon BASF|Quelato multinutriente WG BASF Compo,,FERTILIZANTE,18,cadastro manual — fertilizante foliar quelato multinutriente WG BASF/Compo,2026-11-25,ferro+manganes+zinco+cobre+boro quelatados
 Master Haifa WP,Master Haifa|Master WP|Master Haifa soluvel|NPK micro Haifa WP,,WP,18,cadastro manual — fertilizante soluvel WP multinutriente Haifa,2026-11-16,NPK+micronutrientes
 Magnisal WP,Magnisal|Magnisal WP Haifa|Nitrato Magnesio WP|MgNO3 WP,,WP,18,cadastro manual — fertilizante foliar nitrato de magnesio WP Haifa,2026-11-16,nitrato de magnesio
 Haifa MKP WP,Haifa MKP|MKP WP|Fosfato Monopotassico WP|Monofosfato Potassio WP,,WP,18,cadastro manual — fertilizante foliar fosfato monopotassico WP Haifa,2026-11-16,fosfato monopotassico
-Ultrasol WG,Ultrasol|Ultrasol WG SQM|Fertilizante SQM WG|Ultrasol Multi WG,,WG,18,cadastro manual — fertilizante soluvel WG multinutriente SQM,2026-11-16,NPK+micronutrientes
+Ultrasol WG,Ultrasol|Ultrasol WG SQM|Fertilizante SQM WG|Ultrasol Multi WG,,FERTILIZANTE,18,cadastro manual — fertilizante soluvel WG multinutriente SQM,2026-11-25,NPK+micronutrientes
 Nitrato de Calcio SL,Nitrato Calcio|Calcinit SL|Calcio Nitrato SL|CaNO3 foliar|Nitrato Calcico,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de calcio
 Nitrato de Potassio SL,Nitrato Potassio|KNO3 foliar|Nitropot SL|Potassio Nitrato foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de potassio
 Nitrato de Magnesio SL,Nitrato Magnesio|MgNO3 SL|Magnesio Nitrato foliar SL,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,nitrato de magnesio
@@ -832,7 +832,7 @@ Treevix SC,Treevix|Cinidon-etilico|Cinidon Ethyl|Cinidon-Ethyl SC|Lotus herbicid
 Gallery 500 SC,Gallery|Isoxaben|Gallery Dow|Isoxaben SC,,SC,8,Dow/Corteva,2026-11-21,isoxaben
 Borneo SC,Borneo|Etoxazole|Etoxazol SC|Borneo Nippon Soda|Baroque SC|Baroque|Etoxazole SC,2107,SC,8,Siagro ADAPAR 2025,2026-11-24,etoxazole
 Sultan SC,Sultan|Cyflumetofen|Cyflumetofen SC|Sultan Nichino|Pole SC,33624,SC,8,Siagro ADAPAR 2025,2026-11-24,cyflumetofen
-Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,SC,18,varios,2026-11-21,boro
+Boretim SC,Boretim|Boro quelado|Boro EDTA|Boro solubilizado SC|Boro chelated,,FERTILIZANTE,18,varios,2026-11-25,boro
 Sumi-Alpha EC,Sumi-Alpha|Esfenvalerate|Esfenvalerato|Sumi Alpha EC|Sumialpha|Hallmark EC|Alpha Sumitomo,,EC,11,Sumitomo,2026-11-21,esfenvalerato
 Vibrance SC,Vibrance|Sedaxane|Sedaxane SC|Vibrance Syngenta|Sedaxane Syngenta,,SC,8,Syngenta,2026-11-21,sedaxane
 Cercobin M 700 WP,Cercobin M|Cercobin M WP|Tiofanato Metilico+Mancozeb WP|Tiofanato+Mancozeb,,WP,5,Sumitomo,2026-11-21,tiofanato-metilico+mancozebe
@@ -846,7 +846,7 @@ Presidio SC,Presidio|Fluopicolide|Fluopicolide SC|Presidio Bayer|Fluopicolide Ba
 Prime Plus SC,Prime Plus|Flumetralin|Flumetralin SC|Prime Plus Nortox|Regulador algodao,,SC,8,Nortox,2026-11-21,flumetralin
 Reclaim SL,Reclaim|Aminopyralid|Aminopyralid SL|Aminopiralide|Reclaim Corteva|Milestone,7825,SL,16,Siagro ADAPAR 2025,2026-11-24,aminopiralide
 Azoxystrobin 500 SC,Azoxystrobin solo|Azoxystrobin 500|Azoxystrobin SC solo|Quadris Flow|Quadris Flowable,,SC,8,nome generico - multiplos registros MAPA por empresa,2026-11-24,azoxistrobina
-Ureia SC,Ureia|Ureia foliar|Urea foliar|Urea SC|Ureia liquida|Urea,,SC,18,nome generico - multiplos registros MAPA por empresa,2026-11-24,nitrogenio (ureia)
+Ureia SC,Ureia|Ureia foliar|Urea foliar|Urea SC|Ureia liquida|Urea,,FERTILIZANTE,18,nome generico - multiplos registros MAPA por empresa,2026-11-25,nitrogenio (ureia)
 Calcario Agricola,Calcario|Calcario dolomítico|Calcario calcítico|Limestone|Calcario moído|Corretivo calcareo,,GR,3,nome generico - multiplos registros MAPA por empresa,2026-11-24,calcio+magnesio
 Gesso Agricola,Gesso|Gesso agricola|Agricultural gypsum|Sulfato de calcio|Calcium sulfate|Gessagem,,GR,3,nome generico - multiplos registros MAPA por empresa,2026-11-24,sulfato de calcio
 Fosfito Cobre SL,Fosfito Cobre|Fosfito Cu SL|Copper Phosphite|Fosfito de Cobre|Fosfito+Cobre,,SL,18,varios,2026-11-21,fosfito+cobre
