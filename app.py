@@ -599,8 +599,10 @@ def processar():
 
     doses_por_tanque = request.form.get("doses_por_tanque") == "on"
     for item in itens_ordenados:
-        if not item.get("base"):
-            item["base"] = "tanque" if doses_por_tanque else "ha"
+        if doses_por_tanque:
+            item["base"] = "tanque"
+        elif not item.get("base"):
+            item["base"] = "ha"
 
     area = operacao.get("area_tanque_ha")
     if area:
