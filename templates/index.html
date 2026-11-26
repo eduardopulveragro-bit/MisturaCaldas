@@ -716,6 +716,7 @@
 
       document.getElementById('area-pdf').style.display = 'flex';
       document.getElementById('btn-historico').style.display = '';
+      atualizarNomePDF();
       renderDeltaT();
       resultado.style.display = 'block';
       resultado.scrollIntoView({ behavior: 'smooth' });
@@ -948,6 +949,17 @@
         img.src = url;
       });
     }
+
+    function atualizarNomePDF() {
+      var talhao = (document.getElementById('hst-talhao').value || '').trim();
+      var nomePdf = document.getElementById('nome-pdf');
+      if (talhao) nomePdf.value = talhao;
+      else if (!nomePdf.value || nomePdf.value === 'fieldmix_ordem') nomePdf.value = 'fieldmix_ordem';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('hst-talhao').addEventListener('input', atualizarNomePDF);
+    });
 
     async function gerarPDF() {
       if (!dadosAtual) return;
