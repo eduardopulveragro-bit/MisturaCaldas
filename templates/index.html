@@ -421,6 +421,19 @@
     const clienteSel = document.getElementById('cliente-sel');
     const obsField = document.getElementById('observacao');
 
+    // Suporte a formato novo (equipamentos[]) e antigo (pulverizador + pontas)
+    function _getPulvPrincipal(c) {
+      if (c.equipamentos && c.equipamentos.length) return c.equipamentos[0];
+      return c.pulverizador || null;
+    }
+    function _getPontasCliente(c, equipIdx) {
+      if (c.equipamentos && c.equipamentos.length) {
+        const eq = c.equipamentos[equipIdx != null ? equipIdx : 0];
+        return (eq && eq.pontas) ? eq.pontas : [];
+      }
+      return c.pontas || [];
+    }
+
     (async function carregarClientes() {
       try {
         const resp = await fetch('/api/clientes');
@@ -436,13 +449,17 @@
             nomeEl.textContent = nomeFazenda;
           }
 
-          // só entra no select clientes que têm modelo de pulverizador
-          const comPulv = clientes.filter(c => c.pulverizador && c.pulverizador.modelo);
+          // só entra no select clientes que têm pelo menos um equipamento com modelo
+          const comPulv = clientes.filter(c => {
+            const p = _getPulvPrincipal(c);
+            return p && p.modelo;
+          });
           comPulv.forEach(c => {
             const opt = document.createElement('option');
             opt.value = c.id;
+            const pulv = _getPulvPrincipal(c);
             // produtor: mostra modelo do pulverizador; consultor: mostra nome da fazenda
-            opt.textContent = isModoProdutor ? c.pulverizador.modelo : c.nome;
+            opt.textContent = isModoProdutor ? (pulv ? pulv.modelo : c.nome) : c.nome;
             opt.dataset.cliente = JSON.stringify(c);
             opt.dataset.fazenda = c.nome.split(' — ')[0];
             clienteSel.appendChild(opt);
@@ -474,13 +491,21 @@
         pulvSelCons.innerHTML = '';
         if (opt && opt.dataset.cliente) {
           const cTemp = JSON.parse(opt.dataset.cliente);
-          if (cTemp.pulverizador && cTemp.pulverizador.modelo) {
-            const o = document.createElement('option');
-            o.value = cTemp.id;
-            o.textContent = cTemp.pulverizador.modelo;
-            o.selected = true;
-            pulvSelCons.appendChild(o);
-            pulvWrapper.style.display = 'block';
+          const equipamentos = cTemp.equipamentos && cTemp.equipamentos.length
+            ? cTemp.equipamentos
+            : (cTemp.pulverizador ? [cTemp.pulverizador] : []);
+          const comModelo = equipamentos.filter(e => e.modelo);
+          if (comModelo.length) {
+            comModelo.forEach(function(e, idx) {
+              const o = document.createElement('option');
+              o.value = cTemp.id;
+              o.dataset.equipIdx = idx;
+              o.dataset.equip = JSON.stringify(e);
+              o.textContent = e.modelo;
+              if (idx === 0) o.selected = true;
+              pulvSelCons.appendChild(o);
+            });
+            pulvWrapper.style.display = comModelo.length > 1 ? 'block' : 'block';
           } else {
             pulvWrapper.style.display = 'none';
           }
@@ -494,7 +519,7 @@
       }
       const c = JSON.parse(opt.dataset.cliente);
       // guarda volume do tanque para recalcular ha ao mudar taxa
-      volumeTanqueAtual = (c.pulverizador && c.pulverizador.volume_tanque_L) ? c.pulverizador.volume_tanque_L : null;
+      volumeTanqueAtual = (_getPulvPrincipal(c) || {}).volume_tanque_L || null;
       // suporta formato novo (configs) e antigo (vazao_L_ha)
       const cfgs = c.configs || [];
       if (cfgs.length > 0) {
@@ -506,8 +531,9 @@
       }
       obsField.value = c.observacao || '';
 
-      if (c.pontas && c.pontas.length > 0) {
-        c.pontas.forEach(p => {
+      const pontas = _getPontasCliente(c, 0);
+      if (pontas.length > 0) {
+        pontas.forEach(p => {
           const o = document.createElement('option');
           o.value = p;
           o.textContent = p;
@@ -517,6 +543,25 @@
       } else {
         pontasPressaoDiv.style.display = 'none';
       }
+    });
+
+    // Quando equipamento muda (consultor com múltiplos equipamentos), atualiza pontas/volume
+    const pulvSelCons2 = document.getElementById('pulv-sel-consultor');
+    if (pulvSelCons2) pulvSelCons2.addEventListener('change', function() {
+      const opt = this.selectedOptions[0];
+      if (!opt || !opt.dataset.equip) return;
+      try {
+        const eq = JSON.parse(opt.dataset.equip);
+        volumeTanqueAtual = eq.volume_tanque_L || null;
+        pontaSel.innerHTML = '<option value="">-- Selecione a ponta --</option>';
+        const pontas = eq.pontas || [];
+        pontas.forEach(p => {
+          const o = document.createElement('option');
+          o.value = p; o.textContent = p;
+          pontaSel.appendChild(o);
+        });
+        pontasPressaoDiv.style.display = pontas.length > 0 ? 'block' : 'none';
+      } catch(e) {}
     });
 
     // cálculo bidirecional: taxa ↔ ha/tanque
@@ -531,7 +576,7 @@
       if (!vol && clienteSel && clienteSel.selectedOptions && clienteSel.selectedOptions[0]) {
         try {
           var cd = JSON.parse(clienteSel.selectedOptions[0].dataset.cliente || 'null');
-          if (cd && cd.pulverizador) vol = cd.pulverizador.volume_tanque_L;
+          if (cd) vol = (_getPulvPrincipal(cd) || {}).volume_tanque_L;
         } catch(e) {}
       }
       return vol || null;
@@ -974,7 +1019,8 @@
       if (selEquip && selEquip.selectedOptions[0] && selEquip.selectedOptions[0].dataset.cliente) {
         try {
           var cd = JSON.parse(selEquip.selectedOptions[0].dataset.cliente);
-          if (cd && cd.pulverizador && cd.pulverizador.modelo) equipamento = cd.pulverizador.modelo;
+          const _p = _getPulvPrincipal(cd);
+          if (_p && _p.modelo) equipamento = _p.modelo;
         } catch(e) {}
       }
       if (!equipamento) {
