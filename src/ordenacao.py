@@ -29,6 +29,7 @@ def _normalizar(texto: str) -> str:
 
 _FORM_SOLIDA = {"WG", "WP", "SG", "SP"}
 _FORM_LIQUIDA = {"SL", "SC", "EC", "EW", "ME", "SE", "OD", "CS", "EO"}
+_FORM_OLEO = {"OLEO", "OLEO_MINERAL", "OLEO_VEGETAL", "OLEO_LARANJA"}
 
 
 def _melhor_match(matches: list[dict], unidade: str | None) -> dict:
@@ -94,7 +95,8 @@ def _posicao_por_formulacao(formulacao: str | None) -> int | None:
 
 
 _FORM_ESPECIAL_POSICAO = {
-    "OLEO": 12, "ADJUVANTE": 2, "FERTILIZANTE": 18,
+    "OLEO": 12, "OLEO_MINERAL": 12, "OLEO_VEGETAL": 12, "OLEO_LARANJA": 12,
+    "ADJUVANTE": 2, "FERTILIZANTE": 18,
     "CONDICIONADOR": 2, "ANTIESPUMANTE": 19,
     "BIO_BACTERIANO": 20, "BIO_FUNGICO": 21, "BIO_VIRAL": 22,
 }
@@ -365,8 +367,17 @@ def _posicionar_sl(resultado: list[dict]) -> list[dict]:
     return resultado
 
 
+def _eh_oleo_laranja(item: dict) -> bool:
+    form = (item.get("formulacao") or "").upper()
+    if form == "OLEO_LARANJA":
+        return True
+    # fallback para produtos com OLEO genérico mas nome indica laranja
+    nome = _normalizar(item["produto"])
+    return any(x in nome for x in ("laranja", "terpen", "limoneno"))
+
+
 def _posicionar_oleo(resultado: list[dict]) -> list[dict]:
-    oleos = [item for item in resultado if item["posicao"] == 12]
+    oleos = [item for item in resultado if (item.get("formulacao") or "").upper() in _FORM_OLEO]
     if not oleos:
         return resultado
     for oleo in oleos:
@@ -389,8 +400,7 @@ def _oleo_laranja_com_mancozeb(resultado: list[dict]) -> list[dict]:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("mancozeb", "mancozebe", "unizeb")):
             mancozeb = item
-        elif (any(x in nome for x in ("oleo de laranja", "oleo da laranja", "terpen"))
-              or item.get("formulacao", "").upper() == "OLEO DE LARANJA"):
+        elif _eh_oleo_laranja(item):
             oleo_laranja = item
     if not mancozeb or not oleo_laranja:
         return resultado
@@ -427,12 +437,11 @@ def _prediluir_graminicida_oleo(resultado: list[dict]) -> list[dict]:
     graminicida = None
     oleo = None
     for item in resultado:
-        nome = _normalizar(item["produto"])
         if _eh_graminicida_ec(item) and not item.get("alerta_prediluicao"):
             graminicida = item
-        elif (item["posicao"] == 12
-              and not item.get("alerta_prediluicao")
-              and not any(x in nome for x in ("laranja", "terpen"))):
+        elif ((item.get("formulacao") or "").upper() in _FORM_OLEO
+              and not _eh_oleo_laranja(item)
+              and not item.get("alerta_prediluicao")):
             oleo = item
     if not graminicida or not oleo:
         return resultado
@@ -447,7 +456,8 @@ def _prediluir_abamectina_oleo(resultado: list[dict]) -> list[dict]:
         nome = _normalizar(item["produto"])
         if any(x in nome for x in ("abamectina", "abamectin", "vertimec", "kraft")):
             abamectina = item
-        elif item["posicao"] == 12 and not any(x in nome for x in ("laranja", "terpen")):
+        elif ((item.get("formulacao") or "").upper() in _FORM_OLEO
+              and not _eh_oleo_laranja(item)):
             if not item.get("alerta_prediluicao"):
                 oleo = item
             else:

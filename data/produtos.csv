@@ -7,14 +7,14 @@ Score,Score 250 EC|Difenoconazol|Fleris|Difo 250|Agrotop|Pilardifen|Ditor|Kaori|
 Ally,Ally 60 WG|Metsulfuron|Metsulfuron-metilico|Ally WG|Metsulfuron-methyl|Metsulfuron methyl,,WG,6,placeholder removido - aguarda registro MAPA real,2024-01-10,metsulfuron-metilico
 Priori Xtra,Priori|Priori Extra|Priori XTRA 500 SC|Quadris Xtra|Quadris Xtra SC|Quadris,04903,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,azoxistrobina+ciproconazol
 Nomolt 150,Nomolt|Teflubenzuron|Nomolt 150 SC,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,teflubenzurom
-Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,,OLEO,12,placeholder removido - aguarda registro MAPA real,2024-01-10,oleo mineral
+Nimbus,Nimbus Oleo Mineral|Oleo mineral|Oleo Mineral|Oleo|Assist|Agefix|Miner Oil|Lupoil|Attach|Naturoleo|Assist Oleo Mineral,,OLEO_MINERAL,12,placeholder removido - aguarda registro MAPA real,2024-01-10,oleo mineral
 Agral,Agral 90|Espalhante adesivo Agral|Espalhante|Espalhante adesivo|Surfactante|Espalhante molhante|Nonionic|Non-ionic surfactant|Surfactante nao ionico,,ADJUVANTE,2,placeholder removido - aguarda registro MAPA real,2024-01-10,
 Derosal Plus,Derosal|Carbendazim tiram,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,carbendazim+tiram
 Karate Zeon,Karate|Lambda-cialotrina|Lambda|Samurai|Bushi|Waza-Ari|Kadosh|Surrateiro|Trinca Caps|Kusti|Lecar|Lambda-Cialotrina Nortox|Kaiso|Kaiso 250 CS|Kaiso Sorbie|Kaiso Max|Karate Zeon 50 CS|Karate Zeon CS|Warrior|Warrior CS|Hallmark|Hallmark Zeon|Lambda-cyhalothrin,,CS,7,placeholder removido - aguarda registro MAPA real,2024-01-10,lambda-cialotrina
 Galil SC,Galil|Galil Syngenta,,SC,8,placeholder removido - aguarda registro MAPA real,2024-01-10,azoxistrobina+benzovindiflupir
 Decis Protech,Decis|Deltametrina|Decis 25 EC|Delros|Keshet|Deltametrina Nortox,,EC,11,placeholder removido - aguarda registro MAPA real,2024-01-10,deltametrina
 Sequência Solúvel,Sequência|Condicionador pH,,ADJUVANTE,2,placeholder removido - aguarda registro MAPA real,2024-01-10,
-Óleo de laranja,oleo da laranja,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
+Óleo de laranja,oleo da laranja,,OLEO_LARANJA,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,d-limoneno
 Fox Xpro,fox x pro|Protioconazol|Trifloxistrobina|Bixafen|Fox EC|Fox Xpro EC|Fox 075 EC|Fox 075 SC,24117,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+protioconazol+bixafen
 Adjuvante (genérico),adjuvante,,ADJUVANTE,2,condicionador genérico — confirmado pelo consultor,pendente (2026-10-08),
 Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|Dithane 800|Dithane WP|Dithane|Dithane NT 750 WP|Manzate 800 WG|Manzate 800|Manzeb|Mancozeb 800|Manzeb 800,12319,WP,5,Siagro ADAPAR 2025,2026-11-24,mancozebe
@@ -22,7 +22,7 @@ Mancozeb,Dithane NT|Manzate|Mancozeb Nortox|Mancozebe|Vondozeb|Mancozeb 800 WP|D
 Decanto,Decanto Prime,9826,SC,8,Siagro ADAPAR 2025,2026-11-24,saflufenacil
 Heat,Heat 70 WG|Saflufenacil|Kixor|DuPont Kixor|Saflufenacil WG,1013,WG,6,Siagro ADAPAR 2025,2026-11-24,saflufenacil
 Bulldock,Buldock|Bulldock 25 EC|Beta-ciflutrina|Bulldock 125 SC|Bulldock 125|Betaciflutrina|Beta-Cyfluthrin|Betacyfluthrin,01192,EC,11,ADAPAR PR — bula PDF 2026,2026-11-24,beta-ciflutrina
-Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
+Áureo,Aureo|Áureo Nufarm|Áureo Óleo|Aureo Oleo,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal soja
 Dessek,,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-09,
 Triclon,Triclopyr|Triclon EC,17208,EC,11,Siagro ADAPAR 2025,2026-11-24,triclopir-butotilico
 Cofenrin,Coferin|Bifentrina Coferin|Insectrin|Orsa|Indotrin,06922,EC,11,pesquisa web — registro MAPA 06922 bifentrina 400g/L,2026-10-13,bifentrina
@@ -44,7 +44,7 @@ Kasumin,Kassumin|Kasumaiz|Casugamicina,1648702,SL,16,Siagro ADAPAR 2025,2026-11-
 Belt,Belt 480 SC|Flubendiamida|Belt SC|Flubendiamida SC|Flubendiamide|Flubendiamide SC,02509,SC,8,ADAPAR PR — bula PDF 2026,2026-11-24,flubendiamida
 Multikel Zinco,Multikel Zn|Multikel,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
 Biocomoni,BioCoMoNi|Bio Co Mo Ni|Multi Biocomoni|Multi BioCoMoNi|Biocomini|Multi Biocomini,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
-Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
+Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO_LARANJA,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,d-limoneno
 Unizeb Gold,Unizeb|Mancozeb 750 WG|Disarm|Vigold,18007,WG,6,Siagro ADAPAR 2025,2026-11-24,mancozeb
 Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol|Pidiflumetofen|Pydiflumetofen,14222,SC,8,Siagro ADAPAR 2025,2026-11-24,pydiflumetofen+difenoconazol
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,36224,SC,8,Siagro ADAPAR 2025,2026-11-24,etiprole
@@ -70,7 +70,7 @@ Xeque Mate SG,Glifumax|Glifosato SG,10023,SG,3,Siagro ADAPAR 2025,2026-11-24,gli
 Atrazina WG,Atranex WG|Coyote WG|Proof|Herbitrin|Atrazina Nortox WG|Bloqueio|Atranex,2999,WG,6,Siagro ADAPAR 2025,2026-11-24,atrazina
 Haloxifop,Haloxifope|Haloxyfop|Verdict|Verdict Ultra|Verdict NF|Gallant|Gallant R|Gallant Max|Gallant Ultra|Missil Ultra|Viggie Force|Halox|Verdão,29217,EC,11,Siagro ADAPAR 2025,2026-11-24,haloxifop
 Paxeo,Paxeo WG,28021,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,halauxifeno-metil+diclosulam
-Oxyon,,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Oxyon,,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
 Nativo,Nativo SC|Nativo Bayer|Trifloxistrobina|Nativo 325 SC|Nativo Top|Trifloxystrobin|Trifloxystrobin SC,205,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+tebuconazol
 Aproach Prima,Aproach|Aproach SC|Aproach Prima SC|Picoxistrobina+Ciproconazol SC|Acanto Plus|Acanto Plus SC|Acanto|Picoxistrobina|Picoxystrobin,9107,SC,8,Siagro ADAPAR 2025,2026-11-24,picoxistrobina+ciproconazol
 Sphere Max,Sphere|Esfera Max|Cruse SC|Cruse,8608,SC,8,Siagro ADAPAR 2025,2026-11-24,trifloxistrobina+ciproconazol
@@ -187,7 +187,7 @@ Fuse,,10724,OD,9,pesquisa web — registro MAPA 10724 Adama soja,2026-10-13,manc
 Off Road,OffRoad|Off-Road,4220,SL,16,bula Agrolink — registro MAPA 4220 Ouro Fino glufosinato 200g/L,2026-10-13,glufosinato
 Bombardeiro,Bombardeiro SC,274321,SC,8,Siagro ADAPAR 2025,2026-11-24,bifentrina+imidacloprido
 Lufenuron,Lufenurom|Lufenurom EC|Match generico,28124,EC,11,Siagro ADAPAR 2025,2026-11-24,lufenurom
-Óleo Vegetal,Oleo Vegetal|Óleo vegetal|oleo vegetal,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Óleo Vegetal,Oleo Vegetal|Óleo vegetal|oleo vegetal,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
 Concorde,,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
 Tônus,Tonus|Tônus,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,
 Voliam Targa,Voliam|Volian Targa|Voliam Express|Voliam Flexi|Volia Targa,2413,SC,8,Siagro ADAPAR 2025,2026-11-24,clorantraniliprole+abamectina
@@ -213,10 +213,10 @@ Hussar,Hussar WG|Hussar Plus|Iodosulfurom,1404,WG,6,Siagro ADAPAR 2025,2026-11-2
 Equip Plus,Equip|Equip WG,011401,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,foramsulfurom+iodosulfurom
 Accent,Accent WG|Nicosulfurom WG|Nicossulfuron|Nicosulfuron|Saurus|Saurus WG,05806,WG,6,ADAPAR PR — bula PDF 2026,2026-11-24,nicosulfurom
 Brodal,Brodal SC|Brodal Bayer|Diflufenican,,SC,8,herbicida SC Bayer — trigo,2026-10-13,diflufenican
-Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,d-limoneno (óleo de laranja)
+Cytron,Cytron|Óleo de Laranja|Cytron óleo laranja|Cytron oleo|Citron oleo,,OLEO_LARANJA,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,d-limoneno
 Tec Catp 2.8,Catp|Catp 2.8|Tec Catp|Comando BT,8323,BIO_BACTERIANO,20,inseticida biológico Solubio — bula ADAPAR/PR 2024,2026-10-16,Bacillus thuringiensis kurstaki CBMAI 1398
 Calaris,Calaris SC|Calaris Syngenta,9419,SC,8,herbicida SC Syngenta — mesotrione+atrazine — milho,2026-10-16,mesotrione+atrazine
-biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,óleo vegetal
+biooleo,Bio Óleo|Biooleo|Bio-Oleo,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
 Strong,Strong Nutricional|Strong Foliar,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo de nutrientes
 Leaf,Leaf Foliar|Leaf Nutricional,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,complexo de nutrientes
 Actron,Actron Adjuvante,,ADJUVANTE,2,adjuvante condicionador de calda,2026-10-16,
@@ -227,7 +227,7 @@ Quality,Quality WG|Quality Koppert,27915,BIO_FUNGICO,21,fungicida biológico Kop
 Metarriz,Metarriz WP|Metarriz Koppert|Metarhizium anisopliae|Metarhizium anisopliae WP,33418,BIO_FUNGICO,21,inseticida biológico Koppert — Metarhizium,pendente (2026-10-16),Metarhizium anisopliae
 Baculovirus AEE,Baculovirus|Baculovírus|CoolGuard,6813,BIO_VIRAL,22,Siagro ADAPAR 2025,2026-11-24,Baculovirus anticarsia
 Sumisin,Sumisin 500 EC|Sumithion,518309,EC,11,Siagro ADAPAR 2025,2026-11-24,fenitrothion
-Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,óleo mineral
+Actioleo,Acti Oleo|ActiÓleo|Acti Óleo|Actioleo,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
 Act Oil,Act Oil Giroagro|ActOil|Act Oleo Giroagro,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral/vegetal
 Sapek Max,Sapek|Sapek Mais|Sapek Max SG|Mirny|Agrios|Babel|Kavez,34221,SG,3,herbicida SG — glufosinato de amônio,pendente (2026-10-16),glufosinato de amônio
 Kennox,Kennox 240 EC|Kennox CI,24518,EC,11,graminicida EC UPL — bula confirmada MAPA 24518,2026-10-22,cletodim + haloxifope-P-metilico
@@ -365,10 +365,10 @@ Arsenal 250 SL,Arsenal|Arsenal SL|Arsenal BASF|Imazapir SL|imazapyr|imazapir,,SL
 Starane Ultra EC,Starane Ultra|Starane 250|Fluroxipir ester EC|Fluroxipir,31024,EC,11,Siagro ADAPAR 2025,2026-11-24,fluroxipir ester
 Velpar 75 WG,Velpar WG|Hexazinona+Diuron WG|Hexazinona 75 WG,,WG,6,pesquisa web — herbicida cana WG,2026-11-11,hexazinona+diuron
 Lorsban 750 BR WG,Lorsban WG|Clorpirifos 750 WG,,WG,6,pesquisa web — cadastro manual,2026-11-11,clorpirifos
-Natur Oil,Natur'l Oil|Natural Oil|Óleo Natural adjuvante|Oleo Natural,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
-Zoom,Zoom Nufarm|Zoom Oil|Zoom Óleo|Zoom adjuvante oleo,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
-Lannate Oil,Lannate Oleo|LannatOil,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
-Orobor Óleo,Orobor Oleo|Orobor|Orobor adjuvante,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Natur Oil,Natur'l Oil|Natural Oil|Óleo Natural adjuvante|Oleo Natural,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
+Zoom,Zoom Nufarm|Zoom Oil|Zoom Óleo|Zoom adjuvante oleo,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Lannate Oil,Lannate Oleo|LannatOil,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Orobor Óleo,Orobor Oleo|Orobor|Orobor adjuvante,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo vegetal
 Molibdenio SL,Molibdenio foliar|Molibdato amonio SL|Molibdenio 100|Mo SL|Molybdenum|Molibdeno|Molibdenio quelado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,molibdenio
 CoMo SL,Co+Mo foliar|Cobalto+Molibdenio|CoMo Fertilizante|Cobalto Molibdenio,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,cobalto+molibdenio
 Plenifer Mn,Plenifer Manganes|Mn EDTA foliar|Manganes quelatado,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,manganes
@@ -666,8 +666,8 @@ YaraVita Ferratrac SC,YaraVita Ferratrac|Ferratrac SC|Ferro Yara SC|YaraVita Fer
 ProGibb SG,ProGibb|ProGibb SG Valent|Giberelina 10 SG Valent|Acido Giberelinico SG|Gibberellin|Gibberellic acid|Gibb SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico 10% Valent,2026-11-16,acido giberelinico
 Ryzup SG,Ryzup|Ryzup SG Certis|Giberelina Certis SG|Ryz Up SG,,SG,3,cadastro manual — regulador crescimento SG acido giberelinico Certis,2026-11-16,acido giberelinico
 Stimplex SL,Stimplex|Stimplex SL Acadian|Extrato alga marinha SL|Stimplex bioestimulante|Extrato de algas|Algas marinhas SL|Algas|Algamare,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,extrato de alga marinha
-Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,024583,OLEO,12,ADAPAR PR — bula PDF 2026,2026-11-24,oleo mineral
-Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
+Iharol EC,Iharol|Iharol EC|Iharol Iharabras|Oleo Mineral Iharabras EC,024583,OLEO_MINERAL,12,ADAPAR PR — bula PDF 2026,2026-11-24,oleo mineral
+Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo mineral
 Adver 240 SC,Adver SC|Adver 240|Clorfenapir Tecnomyl|Clorfenapir,01522,SC,8,pesquisa web — reg MAPA 01522 Tecnomyl clorfenapir 240g/L SC inseticida/acaricida,2026-11-19,clorfenapir
 Viance,Viance 240 EC|Viance cletodim,28917,EC,11,pesquisa web — reg MAPA 28917 Tecnomyl cletodim 240g/L EC graminicida,2026-11-19,cletodim
 Mbio Stimulus,MBio Stimulus|Mbio|Stimulus Mosaic,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos
@@ -891,7 +891,7 @@ Valis WG,Valis|Valis WG|Valis Syngenta|valifenalate|iprovalicarb WG,,WG,6,Syngen
 Swing Gold SE,Swing Gold|Swing Gold BASF|dimoxistrobina+epoxiconazol|dimoxystrobin epoxiconazole,,SE,10,BASF,2026-11-21,dimoxistrobina+epoxiconazol
 Outlook 720 EC,Outlook|Outlook EC|Outlook BASF|dimetenamida-p|dimethenamid-p,,EC,11,BASF,2026-11-21,dimetenamida-p
 Hampton 400 EC,Hampton|Carfentrazona|Carfentrazona-etilica|Carfentrazone,12825,EC,11,Agrolink/Revista Cultivar - Tecnomyl,2026-11-23,carfentrazona-etilica
-Oransix,Oransix oleo de laranja|Oleo de laranja Oransix|Oransix Unity|Oransix EC,,OLEO,12,Unity Agro - oleo de laranja d-limoneno,2026-11-23,d-limoneno
+Oransix,Oransix oleo de laranja|Oleo de laranja Oransix|Oransix Unity|Oransix EC,,OLEO_LARANJA,12,Unity Agro - oleo de laranja d-limoneno,2026-11-23,d-limoneno
 Onsuva,Onsuva SC|Onsuva FMC|Fluindapir+Difenoconazol SC|Fluindapyr SC FMC,22923,SC,8,FMC — fungicida SC fluindapyr+difenoconazol — Revista Cultivar confirmado,2026-11-24,fluindapyr+difenoconazol
 Ferus,Ferus SC|Ferus FMC|Azoxistrobina+Fluindapyr+Difenoconazol SC,01524,SC,8,FMC — fungicida SC tripla associação fluindapyr — Agrolink/Cultivar confirmado,2026-11-24,azoxistrobina+fluindapyr+difenoconazol
 Fluarys,Fluarys EC|Fluarys Gowan|Fluindapyr+Protioconazol EC,36824,EC,11,Gowan — fungicida EC fluindapyr+protioconazol — Cultivar/Agrolink confirmado,2026-11-24,fluindapyr+protioconazol

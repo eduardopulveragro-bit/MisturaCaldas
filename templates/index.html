@@ -675,7 +675,7 @@
       dados.ordem.forEach((item, i) => {
         const tr = document.createElement('tr');
         const formUpper = (item.formulacao || '').toUpperCase();
-        const _formMap = {'OLEO': 'ÓLEO', 'DESCONHECIDA': '—'};
+        const _formMap = {'OLEO': 'ÓLEO', 'OLEO_MINERAL': 'ÓL.MINERAL', 'OLEO_VEGETAL': 'ÓL.VEGETAL', 'OLEO_LARANJA': 'ÓL.LARANJA', 'DESCONHECIDA': '—'};
         const formDisplay = _formMap[formUpper] !== undefined ? _formMap[formUpper] : formUpper;
 
         let doseHa = '—';
@@ -1112,7 +1112,8 @@
 
       var body = dadosAtual.ordem.map(function(item, i) {
         var formUpper = (item.formulacao || '').toUpperCase();
-        var formDisplay = formUpper === 'DESCONHECIDA' ? '---' : formUpper;
+        var _fmapPdf = {'OLEO': 'ÓLEO', 'OLEO_MINERAL': 'ÓL.MINERAL', 'OLEO_VEGETAL': 'ÓL.VEGETAL', 'OLEO_LARANJA': 'ÓL.LARANJA', 'DESCONHECIDA': '---'};
+        var formDisplay = _fmapPdf[formUpper] !== undefined ? _fmapPdf[formUpper] : formUpper;
         var doseHa;
         if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
           if (item.base === 'tanque' && item.dose_ha_calculada != null) {

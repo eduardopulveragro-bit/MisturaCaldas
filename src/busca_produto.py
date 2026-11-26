@@ -23,7 +23,9 @@ _PROMPT_BUSCA = """Você é um especialista em defensivos agrícolas no Brasil. 
 
 CLASSES e POSIÇÕES:
 - Defensivos (herbicida/fungicida/inseticida/acaricida): posição pela formulação: SG=3, SP=4, WP=5, WG=6, CS=7, SC=8, OD=9, SE=10, EC=11, EO=13, EW=14, ME=15, SL=16
-- Adjuvante óleo (mineral/vegetal/OLEO DE LARANJA): formulacao="OLEO", posicao=12
+- Adjuvante óleo mineral (petróleo/parafínico): formulacao="OLEO_MINERAL", posicao=12
+- Adjuvante óleo vegetal (soja/girassol/canola): formulacao="OLEO_VEGETAL", posicao=12
+- Adjuvante óleo de laranja (d-limoneno/citrus): formulacao="OLEO_LARANJA", posicao=12
 - Adjuvante condicionador/pH/quelante/espalhante/surfactante: formulacao="ADJUVANTE", posicao=2
 - Fertilizante foliar/bioestimulante: formulacao="FERTILIZANTE", posicao=18
 - Biológico bacteriano (Bacillus): formulacao="BIO_BACTERIANO", posicao=20
@@ -224,7 +226,8 @@ def salvar_produto(nome_original: str, dados_ia: dict) -> dict:
         2: "ADJUVANTE", 12: "OLEO", 17: "ADJUVANTE", 18: "FERTILIZANTE", 19: "ADJUVANTE",
         20: "BIO_BACTERIANO", 21: "BIO_FUNGICO", 22: "BIO_VIRAL",
     }
-    if posicao in _FORM_ESPECIAL and formulacao not in _FORMULACAO_PARA_POSICAO:
+    _FORM_OLEO_VALIDAS = {"OLEO", "OLEO_MINERAL", "OLEO_VEGETAL", "OLEO_LARANJA"}
+    if posicao in _FORM_ESPECIAL and formulacao not in _FORMULACAO_PARA_POSICAO and formulacao not in _FORM_OLEO_VALIDAS:
         formulacao = _FORM_ESPECIAL[posicao]
 
     registro = dados_ia.get("registro_mapa") or ""
