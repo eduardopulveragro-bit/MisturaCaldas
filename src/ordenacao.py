@@ -122,6 +122,13 @@ def ordenar_itens(itens: list[dict], formulacoes_usuario: dict | None = None) ->
         info = buscar_produto(item["produto"], produtos, item.get("unidade"))
 
         if info is not None:
+            # Unidade sólida (kg/g) com formulação líquida → força WG
+            unidade_item = (item.get("unidade") or "").lower()
+            form_info = (info.get("formulacao") or "").upper()
+            if unidade_item in ("kg", "g") and form_info in _FORM_LIQUIDA:
+                info = dict(info)
+                info["formulacao"] = "WG"
+                info["posicao"] = _FORMULACAO_PARA_POSICAO["WG"]
             resultado.append({
                 **item,
                 "posicao": int(info["posicao"]),
