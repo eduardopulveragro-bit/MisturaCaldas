@@ -951,14 +951,14 @@
     }
 
     function atualizarNomePDF() {
-      var talhao = (document.getElementById('hst-talhao').value || '').trim();
+      var talhao = (document.getElementById('nome-aplicacao').value || '').trim();
       var nomePdf = document.getElementById('nome-pdf');
       if (talhao) nomePdf.value = talhao;
       else if (!nomePdf.value || nomePdf.value === 'fieldmix_ordem') nomePdf.value = 'fieldmix_ordem';
     }
 
     document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('hst-talhao').addEventListener('input', atualizarNomePDF);
+      document.getElementById('nome-aplicacao').addEventListener('input', atualizarNomePDF);
     });
 
     async function gerarPDF() {
