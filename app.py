@@ -684,17 +684,22 @@ def reordenar():
     if not itens or not instrucao:
         return jsonify({"erro": "dados insuficientes"}), 400
 
+    n = len(itens)
     lista = "\n".join(
-        f"{i + 1}. {it['produto']} ({it.get('formulacao') or '?'})"
+        f"[{i}] {it['produto']} ({it.get('formulacao') or '?'})"
         for i, it in enumerate(itens)
     )
+    exemplo_n = min(n, 4)
+    exemplo = list(range(exemplo_n))
+    if exemplo_n >= 3:
+        exemplo[0], exemplo[2] = exemplo[2], exemplo[0]
     prompt = (
-        f"Você está reordenando produtos em uma calda de pulverização agrícola.\n\n"
-        f"Lista atual (número. produto (formulação)):\n{lista}\n\n"
-        f"Instrução do usuário: {instrucao}\n\n"
-        f"Retorne APENAS JSON com array de índices base-0 na nova ordem. "
-        f"Mova só os produtos mencionados; mantenha os demais na posição relativa original.\n"
-        f'Exemplo com 4 produtos: {{"nova_ordem": [2, 0, 1, 3]}}'
+        f"Reordene produtos de uma calda agrícola conforme a instrução.\n\n"
+        f"Lista atual (índice entre colchetes):\n{lista}\n\n"
+        f"Instrução: {instrucao}\n\n"
+        f"Retorne SOMENTE JSON no formato: {{\"nova_ordem\": [lista de TODOS os {n} índices na nova ordem]}}\n"
+        f"Os índices vão de 0 a {n - 1}. Mova apenas os produtos mencionados; mantenha os demais na mesma ordem relativa.\n"
+        f"Exemplo com {exemplo_n} produtos: {{\"nova_ordem\": {exemplo}}}"
     )
     try:
         from src.parser import _criar_cliente, _limpar_markdown
@@ -706,8 +711,8 @@ def reordenar():
         )
         texto = _limpar_markdown(resp.content[0].text.strip())
         nova_ordem = _json.loads(texto).get("nova_ordem", [])
-        if sorted(nova_ordem) != list(range(len(itens))):
-            raise ValueError("índices inválidos")
+        if len(nova_ordem) != n or sorted(nova_ordem) != list(range(n)):
+            raise ValueError(f"índices inválidos: {nova_ordem}")
         return jsonify({"itens": [itens[i] for i in nova_ordem]})
     except Exception as e:
         logger.warning("reordenar: %s", e)
