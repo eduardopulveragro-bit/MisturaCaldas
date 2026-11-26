@@ -310,6 +310,22 @@
         </thead>
         <tbody id="tabela-corpo"></tbody>
       </table>
+
+      <!-- Chat de reordenação -->
+      <div id="area-reordenar" style="display:none;margin-top:12px;">
+        <div id="chat-msgs" style="display:none;margin-bottom:6px;font-size:13px;color:#555;"></div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="text" id="chat-instrucao"
+            placeholder="Ex: coloca o glifosato depois do adjuvante"
+            style="flex:1;border:1px solid #ccc;border-radius:6px;padding:9px 12px;font-size:13px;font-family:inherit;"
+            onkeydown="if(event.key==='Enter')enviarReordenacao()">
+          <button type="button" onclick="enviarReordenacao()"
+            style="background:#1b5e20;color:#fff;border:none;border-radius:6px;padding:9px 16px;font-size:13px;cursor:pointer;white-space:nowrap;">
+            Reordenar
+          </button>
+        </div>
+      </div>
+
       <div id="area-pdf" style="display:none;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;">
         <input type="text" id="nome-pdf" placeholder="Nome para o PDF gerado" value="fieldmix_ordem"
           style="border:1px solid #ccc;border-radius:6px;padding:8px 11px;font-size:13px;font-family:inherit;flex:1;min-width:200px;max-width:340px;">
@@ -668,52 +684,8 @@
         if (partes.length) operacaoInfo.textContent = partes.join(' | ');
       }
 
-      tabelaCorpo.innerHTML = '';
-      const temTotais = dados.ordem.some(item => item.total_tanque != null);
-      thTanque.style.display = temTotais ? '' : 'none';
-
-      dados.ordem.forEach((item, i) => {
-        const tr = document.createElement('tr');
-        const formUpper = (item.formulacao || '').toUpperCase();
-        const _formMap = {'OLEO': 'ÓLEO', 'OLEO_MINERAL': 'ÓL.MINERAL', 'OLEO_VEGETAL': 'ÓL.VEGETAL', 'OLEO_LARANJA': 'ÓL.LARANJA', 'DESCONHECIDA': '—'};
-        const formDisplay = _formMap[formUpper] !== undefined ? _formMap[formUpper] : formUpper;
-
-        let doseHa = '—';
-        if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
-          if (item.base === 'tanque') {
-            if (item.dose_ha_calculada != null) {
-              doseHa = '<strong>' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha</strong>' +
-                       '<br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
-            } else {
-              doseHa = '<span style="color:#888">—</span><br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
-            }
-          } else {
-            doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
-          }
-        }
-
-        let produtoHtml = '<strong>' + escHtml(item.produto) + '</strong>';
-        if (item.alerta_prediluicao) {
-          produtoHtml += '<span class="prediluicao">&gt;&gt; ' + escHtml(item.alerta_prediluicao) + '</span>';
-        }
-
-        let html =
-          '<td class="col-num">' + (i + 1) + '</td>' +
-          '<td>' + produtoHtml + '</td>' +
-          '<td>' + formDisplay + '</td>' +
-          '<td class="col-dose">' + doseHa + '</td>';
-
-        if (temTotais) {
-          const doseTanque = item.total_tanque != null
-            ? '<strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>'
-            : '—';
-          html += '<td class="col-dose">' + doseTanque + '</td>';
-        }
-
-        tr.innerHTML = html;
-        tabelaCorpo.appendChild(tr);
-      });
-
+      renderizarOrdem(dados);
+      document.getElementById('area-reordenar').style.display = 'block';
       document.getElementById('area-pdf').style.display = 'flex';
       document.getElementById('btn-historico').style.display = '';
       atualizarNomePDF();
@@ -728,6 +700,10 @@
       status.textContent = '';
       status.className = '';
       resultado.style.display = 'none';
+      document.getElementById('area-reordenar').style.display = 'none';
+      document.getElementById('chat-msgs').style.display = 'none';
+      document.getElementById('chat-msgs').innerHTML = '';
+      document.getElementById('chat-instrucao').value = '';
       document.getElementById('area-pdf').style.display = 'none';
       document.getElementById('btn-historico').style.display = 'none';
       perguntaForm.style.display = 'none';
@@ -948,6 +924,76 @@
         img.onerror = function() { URL.revokeObjectURL(url); reject(); };
         img.src = url;
       });
+    }
+
+    function renderizarOrdem(dados) {
+      const _formMap = {'OLEO': 'ÓLEO', 'OLEO_MINERAL': 'ÓL.MINERAL', 'OLEO_VEGETAL': 'ÓL.VEGETAL', 'OLEO_LARANJA': 'ÓL.LARANJA', 'DESCONHECIDA': '—'};
+      tabelaCorpo.innerHTML = '';
+      const temTotais = dados.ordem.some(item => item.total_tanque != null);
+      thTanque.style.display = temTotais ? '' : 'none';
+      dados.ordem.forEach((item, i) => {
+        const tr = document.createElement('tr');
+        const formUpper = (item.formulacao || '').toUpperCase();
+        const formDisplay = _formMap[formUpper] !== undefined ? _formMap[formUpper] : formUpper;
+        let doseHa = '—';
+        if (typeof item.dose === 'number' && item.unidade && item.unidade !== '—') {
+          if (item.base === 'tanque') {
+            if (item.dose_ha_calculada != null) {
+              doseHa = '<strong>' + item.dose_ha_calculada + ' ' + item.dose_ha_unidade + '/ha</strong>' +
+                       '<br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
+            } else {
+              doseHa = '<span style="color:#888">—</span><br><small style="color:#888">(tanque: ' + item.dose + ' ' + item.unidade + ')</small>';
+            }
+          } else {
+            doseHa = item.dose + ' ' + item.unidade + '/' + (item.base || 'ha');
+          }
+        }
+        let produtoHtml = '<strong>' + escHtml(item.produto) + '</strong>';
+        if (item.alerta_prediluicao) {
+          produtoHtml += '<span class="prediluicao">&gt;&gt; ' + escHtml(item.alerta_prediluicao) + '</span>';
+        }
+        let html =
+          '<td class="col-num">' + (i + 1) + '</td>' +
+          '<td>' + produtoHtml + '</td>' +
+          '<td>' + formDisplay + '</td>' +
+          '<td class="col-dose">' + doseHa + '</td>';
+        if (temTotais) {
+          const doseTanque = item.total_tanque != null
+            ? '<strong>' + item.total_tanque + ' ' + item.total_unidade + '</strong>'
+            : '—';
+          html += '<td class="col-dose">' + doseTanque + '</td>';
+        }
+        tr.innerHTML = html;
+        tabelaCorpo.appendChild(tr);
+      });
+    }
+
+    async function enviarReordenacao() {
+      var instrucao = document.getElementById('chat-instrucao').value.trim();
+      if (!instrucao || !dadosAtual) return;
+      var chatMsgs = document.getElementById('chat-msgs');
+      chatMsgs.style.display = 'block';
+      chatMsgs.innerHTML += '<div style="color:#555;margin-bottom:4px;">▶ ' + instrucao + '</div>';
+      document.getElementById('chat-instrucao').value = '';
+      var btn = document.querySelector('#area-reordenar button');
+      btn.disabled = true; btn.textContent = '...';
+      try {
+        var r = await fetch('/reordenar', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({itens: dadosAtual.ordem, instrucao: instrucao})
+        });
+        var resp = await r.json();
+        if (resp.erro) { chatMsgs.innerHTML += '<div style="color:#c00;margin-bottom:4px;">✗ ' + resp.erro + '</div>'; return; }
+        dadosAtual.ordem = resp.itens;
+        renderizarOrdem(dadosAtual);
+        chatMsgs.innerHTML += '<div style="color:#1b5e20;margin-bottom:4px;">✓ Ordem atualizada</div>';
+        chatMsgs.scrollTop = chatMsgs.scrollHeight;
+      } catch(e) {
+        chatMsgs.innerHTML += '<div style="color:#c00;margin-bottom:4px;">✗ Erro de conexão</div>';
+      } finally {
+        btn.disabled = false; btn.textContent = 'Reordenar';
+      }
     }
 
     function atualizarNomePDF() {

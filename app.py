@@ -675,6 +675,45 @@ def processar():
     })
 
 
+@app.route("/reordenar", methods=["POST"])
+@login_required
+def reordenar():
+    dados = request.json or {}
+    itens = dados.get("itens", [])
+    instrucao = (dados.get("instrucao") or "").strip()
+    if not itens or not instrucao:
+        return jsonify({"erro": "dados insuficientes"}), 400
+
+    lista = "\n".join(
+        f"{i + 1}. {it['produto']} ({it.get('formulacao') or '?'})"
+        for i, it in enumerate(itens)
+    )
+    prompt = (
+        f"Você está reordenando produtos em uma calda de pulverização agrícola.\n\n"
+        f"Lista atual (número. produto (formulação)):\n{lista}\n\n"
+        f"Instrução do usuário: {instrucao}\n\n"
+        f"Retorne APENAS JSON com array de índices base-0 na nova ordem. "
+        f"Mova só os produtos mencionados; mantenha os demais na posição relativa original.\n"
+        f'Exemplo com 4 produtos: {{"nova_ordem": [2, 0, 1, 3]}}'
+    )
+    try:
+        from src.parser import _criar_cliente, _limpar_markdown
+        cliente = _criar_cliente()
+        resp = cliente.messages.create(
+            model="claude-haiku-5-5",
+            max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        texto = _limpar_markdown(resp.content[0].text.strip())
+        nova_ordem = _json.loads(texto).get("nova_ordem", [])
+        if sorted(nova_ordem) != list(range(len(itens))):
+            raise ValueError("índices inválidos")
+        return jsonify({"itens": [itens[i] for i in nova_ordem]})
+    except Exception as e:
+        logger.warning("reordenar: %s", e)
+        return jsonify({"erro": "Não consegui entender a instrução. Tente ser mais específico."}), 400
+
+
 @app.route("/delta-t")
 @login_required
 def delta_t():
