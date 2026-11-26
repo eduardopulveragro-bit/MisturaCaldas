@@ -289,9 +289,12 @@ def onboarding_equipamentos():
                         clientes_mod.criar({
                             "nome": nome_cliente,
                             "usuario_id": current_user.id,
-                            "pulverizador_modelo": modelo,
-                            "volume_tanque": pulv.get("volume_tanque_L"),
-                            "pontas": ",".join(pulv.get("pontas") or []),
+                            "equipamentos": [{
+                                "modelo": modelo,
+                                "volume_tanque_L": pulv.get("volume_tanque_L"),
+                                "pontas": pulv.get("pontas") or [],
+                                "calibracao": "",
+                            }],
                             "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
                                      if pulv.get("vazao_L_ha") else [],
                         })
@@ -323,9 +326,12 @@ def onboarding_equipamentos():
                     clientes_mod.criar({
                         "nome": nome_cliente,
                         "usuario_id": current_user.id,
-                        "pulverizador_modelo": modelo,
-                        "volume_tanque": pulv.get("volume_tanque_L"),
-                        "pontas": ",".join(pulv.get("pontas") or []),
+                        "equipamentos": [{
+                            "modelo": modelo,
+                            "volume_tanque_L": pulv.get("volume_tanque_L"),
+                            "pontas": pulv.get("pontas") or [],
+                            "calibracao": "",
+                        }],
                         "configs": [{"descricao": "Padrão", "vazao_L_ha": pulv.get("vazao_L_ha"), "area_tanque_ha": pulv.get("area_tanque_ha")}]
                                  if pulv.get("vazao_L_ha") else [],
                     })

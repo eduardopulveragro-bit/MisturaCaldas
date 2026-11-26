@@ -75,6 +75,13 @@ def criar(dados: dict) -> dict:
             _url("/rest/v1/historico_caldas"),
             headers=_headers(), json=row, timeout=10,
         )
+    if not r.ok and r.status_code == 400 and "cliente_id" in r.text:
+        # Coluna cliente_id ainda não migrada — salva sem ela
+        row.pop("cliente_id", None)
+        r = requests.post(
+            _url("/rest/v1/historico_caldas"),
+            headers=_headers(), json=row, timeout=10,
+        )
     if not r.ok:
         import logging as _log
         _log.getLogger(__name__).error("historico criar %s: %s", r.status_code, r.text)
@@ -137,7 +144,8 @@ def migrar_tabela() -> dict:
       ADD COLUMN IF NOT EXISTS delta_t float,
       ADD COLUMN IF NOT EXISTS notas text NOT NULL DEFAULT '',
       ADD COLUMN IF NOT EXISTS talhao text NOT NULL DEFAULT '',
-      ADD COLUMN IF NOT EXISTS mensagem_original text NOT NULL DEFAULT '';
+      ADD COLUMN IF NOT EXISTS mensagem_original text NOT NULL DEFAULT '',
+      ADD COLUMN IF NOT EXISTS cliente_id uuid REFERENCES clientes(id) ON DELETE SET NULL;
     """
     r = requests.post(
         _url("/rest/v1/rpc/exec_sql"),
