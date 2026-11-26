@@ -29,7 +29,7 @@ Para CADA produto extraia:
 - dose: valor numérico (null se ausente)
 - unidade: L, mL, kg, g (null se ausente)
 - base: "ha" (por hectare), "L_calda" (por litro de calda), "tanque" (dose total por carga/tanque), null se omitido
-- formulacao: sigla se aparecer no nome (ex: "Score 250 EC" → "EC"), senão null
+- formulacao: sigla de formulação se aparecer em qualquer parte do nome (ex: "Score 250 EC"→"EC", "Stiger WG"→"WG", "Roundup Original SL"→"SL"), senão null. Siglas válidas: WG, SC, EC, SL, WP, SE, CS, GR, EW, OD, FS, SP, SG, ME, EO.
 
 REGRAS:
 - produto: APENAS o nome, nunca dose ou unidade junto.

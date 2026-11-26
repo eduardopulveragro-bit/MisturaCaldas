@@ -39,6 +39,47 @@ FORMATO (JSON puro):
 {"encontrado":true,"nome_completo":"Nome","classe":"herbicida","formulacao":"EC","posicao":11,"registro_mapa":"12345","ingrediente_ativo":"glifosato","tipo_adjuvante":null,"confianca":"alta"}"""
 
 
+_SIGLAS_FORMULACAO = ["WG", "SC", "EC", "SL", "WP", "SE", "CS", "GR", "EW", "OD", "FS", "SP", "SG", "ME", "EO"]
+
+_PADROES_FERTILIZANTE = [
+    "foliar", "sulfato de", "nitrato de", "molibdato", "quelato de",
+    "organomineral", "micronutriente", "npk", "cloreto de",
+    "fosfato mono", "boro foliar", "cobalto", "manganes", "manganês",
+    "niquel", "níquel", "magnesio", "magnésio", "silicio", "silício",
+    "aminoacido", "aminoácido", "bioestimulante", "humato", "fulvato",
+]
+
+
+def _inferir_por_nome(nome: str) -> dict | None:
+    """Infere formulação/classe pelo nome, sem chamar a IA."""
+    import re
+    n = nome.lower().strip()
+
+    # Formulação explícita no nome (ex: "Stiger WG", "Score 250 EC")
+    for sigla in _SIGLAS_FORMULACAO:
+        if re.search(r'\b' + sigla.lower() + r'\b', n):
+            posicao = _FORMULACAO_PARA_POSICAO.get(sigla) or _FORM_ESPECIAL_POSICAO.get(sigla)
+            if posicao:
+                return {
+                    "encontrado": True, "nome_completo": nome,
+                    "formulacao": sigla, "posicao": posicao,
+                    "classe": "desconhecida", "confianca": "media",
+                    "registro_mapa": "", "ingrediente_ativo": "",
+                }
+
+    # Padrões que indicam fertilizante foliar
+    for padrao in _PADROES_FERTILIZANTE:
+        if padrao in n:
+            return {
+                "encontrado": True, "nome_completo": nome,
+                "formulacao": "FERTILIZANTE", "posicao": 18,
+                "classe": "fertilizante", "confianca": "media",
+                "registro_mapa": "", "ingrediente_ativo": "",
+            }
+
+    return None
+
+
 def buscar_produto_ia(nome: str) -> dict | None:
     """
     Consulta a IA sobre um produto não cadastrado.
@@ -49,6 +90,13 @@ def buscar_produto_ia(nome: str) -> dict | None:
     if chave in _CACHE_PRODUTOS:
         logger.info("busca_produto CACHE_HIT nome='%s'", nome)
         return _CACHE_PRODUTOS[chave]
+
+    # Tenta inferir direto do nome antes de acionar a IA
+    inferido = _inferir_por_nome(nome)
+    if inferido:
+        logger.info("busca_produto INFERIDO_NOME nome='%s' form=%s", nome, inferido["formulacao"])
+        _CACHE_PRODUTOS[chave] = inferido
+        return inferido
 
     from src.parser import _criar_cliente
     try:
