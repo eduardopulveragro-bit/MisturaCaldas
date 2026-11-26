@@ -728,7 +728,7 @@ def reordenar():
         return jsonify({"itens": nova_lista})
     except Exception as e:
         logger.warning("reordenar: %s", e)
-        return jsonify({"erro": "Não consegui entender a instrução. Tente ser mais específico."}), 400
+        return jsonify({"erro": f"DEBUG: {e}"}), 400
 
 
 @app.route("/delta-t")
