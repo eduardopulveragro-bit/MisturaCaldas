@@ -48,7 +48,7 @@ Terpen,Terpen Óleo de Laranja|Terpem|Terpen Agro,,OLEO_LARANJA,12,adjuvante/ól
 Unizeb Gold,Unizeb|Mancozeb 750 WG|Disarm|Vigold,18007,WG,6,Siagro ADAPAR 2025,2026-11-24,mancozeb
 Miravis Duo,Miravis|Pidiflumetofen+Difenoconazol|Pidiflumetofen|Pydiflumetofen,14222,SC,8,Siagro ADAPAR 2025,2026-11-24,pydiflumetofen+difenoconazol
 Flasher,Flasher SC|Flasher CHDS|Etiprole 200 SC,36224,SC,8,Siagro ADAPAR 2025,2026-11-24,etiprole
-Intense,,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,
+Intense,,,OLEO_VEGETAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-26,oleo vegetal
 Flumioxazina,Flumioxazin|Flumioxazin 500 SC|Valor|Valor WG|Valor Nufarm,19425,SC,8,Siagro ADAPAR 2025,2026-11-24,flumioxazina
 Flumizin,Flumyzin|Flumyzin 500|Flumyzyn,22617,SC,8,Siagro ADAPAR 2025,2026-11-24,flumioxazina
 Stone,Stone Herbicida|Stone Nufarm,1116,SL,16,Siagro ADAPAR 2025,2026-11-24,cloransulam-metilico
@@ -671,7 +671,7 @@ Volck SC,Volck|Volck SC|Volck Dow|Oleo Mineral Dow SC|Volck Corteva,,OLEO_MINERA
 Adver 240 SC,Adver SC|Adver 240|Clorfenapir Tecnomyl|Clorfenapir,01522,SC,8,pesquisa web — reg MAPA 01522 Tecnomyl clorfenapir 240g/L SC inseticida/acaricida,2026-11-19,clorfenapir
 Viance,Viance 240 EC|Viance cletodim,28917,EC,11,pesquisa web — reg MAPA 28917 Tecnomyl cletodim 240g/L EC graminicida,2026-11-19,cletodim
 Mbio Stimulus,MBio Stimulus|Mbio|Stimulus Mosaic,,FERTILIZANTE,18,fertilizante foliar - sem número de registro agrotóxico MAPA,2026-11-24,aminoacidos
-Lift Oil Union,Lift Oil|LiftOil Union,,OLEO,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-24,oleo
+Lift Oil Union,Lift Oil|LiftOil Union,,OLEO_MINERAL,12,adjuvante/óleo mineral-vegetal - verificar MAPA,2026-11-26,oleo mineral
 Engenia 480 SL,Engenia|Engenia BASF|Engenia dicamba|Dicamba 480 BASF|Dicamba BASF,,SL,16,cadastro manual — herbicida SL dicamba BASF tecnologia Xtend soja,2026-11-21,dicamba
 Neoron 500 EC,Neoron|Neoron EC|Bromopropilato EC|Neoron Syngenta,,EC,11,cadastro manual — acaricida EC bromopropilato Syngenta citros/algodao,2026-11-21,bromopropilato
 Lebaycid 500 EC,Lebaycid|Lebaycid EC|Fenoato EC|Fentião EC|Fentoato Bayer,,EC,11,cadastro manual — acaricida/inseticida EC fentoato Bayer cafe/citros,2026-11-21,fentoato
