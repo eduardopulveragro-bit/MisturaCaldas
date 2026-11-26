@@ -684,36 +684,48 @@ def reordenar():
     if not itens or not instrucao:
         return jsonify({"erro": "dados insuficientes"}), 400
 
-    n = len(itens)
+    nomes = [it["produto"] for it in itens]
     lista = "\n".join(
-        f"[{i}] {it['produto']} ({it.get('formulacao') or '?'})"
-        for i, it in enumerate(itens)
+        f"- {nome} ({it.get('formulacao') or '?'})"
+        for nome, it in zip(nomes, itens)
     )
-    exemplo_n = min(n, 4)
-    exemplo = list(range(exemplo_n))
-    if exemplo_n >= 3:
-        exemplo[0], exemplo[2] = exemplo[2], exemplo[0]
     prompt = (
-        f"Reordene produtos de uma calda agrícola conforme a instrução.\n\n"
-        f"Lista atual (índice entre colchetes):\n{lista}\n\n"
+        f"Você está reordenando produtos em uma calda de pulverização agrícola.\n\n"
+        f"Lista atual:\n{lista}\n\n"
         f"Instrução: {instrucao}\n\n"
-        f"Retorne SOMENTE JSON no formato: {{\"nova_ordem\": [lista de TODOS os {n} índices na nova ordem]}}\n"
-        f"Os índices vão de 0 a {n - 1}. Mova apenas os produtos mencionados; mantenha os demais na mesma ordem relativa.\n"
-        f"Exemplo com {exemplo_n} produtos: {{\"nova_ordem\": {exemplo}}}"
+        f"Retorne SOMENTE JSON com a chave \"nomes\" contendo todos os {len(itens)} nomes de produtos na nova ordem.\n"
+        f"Use exatamente os mesmos nomes da lista. Mova só o(s) produto(s) mencionado(s); mantenha os demais na mesma ordem relativa.\n"
+        f'Exemplo: {{"nomes": ["Prod A", "Prod B", "Prod C"]}}'
     )
     try:
         from src.parser import _criar_cliente, _limpar_markdown
         cliente = _criar_cliente()
         resp = cliente.messages.create(
             model="claude-haiku-5-5",
-            max_tokens=300,
+            max_tokens=400,
             messages=[{"role": "user", "content": prompt}],
         )
         texto = _limpar_markdown(resp.content[0].text.strip())
-        nova_ordem = _json.loads(texto).get("nova_ordem", [])
-        if len(nova_ordem) != n or sorted(nova_ordem) != list(range(n)):
-            raise ValueError(f"índices inválidos: {nova_ordem}")
-        return jsonify({"itens": [itens[i] for i in nova_ordem]})
+        nomes_novos = _json.loads(texto).get("nomes", [])
+        if len(nomes_novos) != len(itens):
+            raise ValueError(f"nomes retornados={len(nomes_novos)} esperado={len(itens)}")
+        # Mapeia nome → item original (case-insensitive, aceita correspondência parcial)
+        nome_para_item = {n.lower(): it for n, it in zip(nomes, itens)}
+        nova_lista = []
+        usados = set()
+        for nome_novo in nomes_novos:
+            chave = nome_novo.lower()
+            if chave not in nome_para_item:
+                # Tenta match parcial
+                match = next((k for k in nome_para_item if k.startswith(chave[:4]) and k not in usados), None)
+                if not match:
+                    raise ValueError(f"nome desconhecido: {nome_novo!r}")
+                chave = match
+            if chave in usados:
+                raise ValueError(f"nome duplicado: {nome_novo!r}")
+            usados.add(chave)
+            nova_lista.append(nome_para_item[chave])
+        return jsonify({"itens": nova_lista})
     except Exception as e:
         logger.warning("reordenar: %s", e)
         return jsonify({"erro": "Não consegui entender a instrução. Tente ser mais específico."}), 400
