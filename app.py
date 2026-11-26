@@ -75,6 +75,14 @@ def carregar_usuario(user_id: str):
     return User(data) if data else None
 
 
+@app.before_request
+def redirecionar_dominio_antigo():
+    host = request.host or ""
+    if "mistura-caldas" in host:
+        nova_url = request.url.replace(host, "fieldmix.vercel.app", 1)
+        return redirect(nova_url, 301)
+
+
 @login_manager.unauthorized_handler
 def nao_autorizado():
     if request.is_json or request.headers.get("X-Requested-With") == "XMLHttpRequest":
